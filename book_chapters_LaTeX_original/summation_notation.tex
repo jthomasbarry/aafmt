@@ -174,7 +174,7 @@ The first term has $i=0$ and $j=0$: we write this as $(i,j)=(0,0)$. When $i=1$, 
 \end{figure} 
 
 Alternatively, we can arrange these index pairs by $j$ coordinate.  When $j$ is 0, $i$ takes the values (0,1,2), when $j$ is 1, $i$ takes the values of (1,2) and when $j$ is 2 $i$ takes the value 2.  This can be expressed as the sum:
-\[\sum_{j=0}^{2} \left(\sum_{i=j}^{2}i \right)\]
+\[\sum_{j=0}^{2} \left(\sum_{i=j}^{2}1 \right)\]
 
 So far our examples have only two Sigmas, but it's quite possible to have an unlimited number of nested Sigmas. For example, with three nested Sigmas we would have grid points in three dimensions.  It doesn't matter what order you sum the terms in--as long as you include them all!
 
@@ -200,7 +200,7 @@ $\displaystyle{\sum_{i=m}^{n}\left(\sum_{j=q}^{i}(i-j)^2 \right)}$
 \end {enumerate}
 \end{exercise}
 Another useful fact: in a nested sum, the outer summation index can be treated as a constant in the inner summation.  So for example:
-\[ \sum_{i=1}^{9} \sum_{j=1}^7 ij = \sum_{i=1}^{9} i \sum_{j=1}^7 j = \sum_{i=1}^{9} i\left (\sum_{j=1}^7 j\right) = \left(\sum_{i=1}^{9} i\right) \left(\sum_{j=1}^7 j\right) = 40\cdot 28=1120. \]
+\[ \sum_{i=1}^{9} \sum_{j=1}^7 ij = \sum_{i=1}^{9} i \sum_{j=1}^7 j = \sum_{i=1}^{9} i\left (\sum_{j=1}^7 j\right) = \left(\sum_{i=1}^{9} i\right) \left(\sum_{j=1}^7 j\right) = 45\cdot 28=1260. \]
 \begin{exercise}{}
 Using exchange of summation and other sum manipulation techniques, find the exact values of the following sums:
 
@@ -364,7 +364,7 @@ We know that if a matrix $B$ is the inverse of the $n \times n$ matrix $A$ then 
 \end{exercise}
 
 \begin{exercise}{}
-Show that: $\displaystyle{ \sum_k  \delta_{ik}\delta_{kj}=\delta_{ij}}.$
+Show that: $\displaystyle{ \sum_{k=1}^n  \delta_{ik}\delta_{kj}=\delta_{ij}}.$
 \end{exercise}
 
 
