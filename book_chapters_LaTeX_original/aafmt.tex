@@ -136,8 +136,14 @@
 
 % New commands defined by CPT (legacy from P & C)
 \newcommand{\var}[1]{\sf{#1}} 
+
+\usepackage{ifthen}
+\newcommand{\term}[1]{\ifthenelse{\equal{#1}{*}}%
+  {\terminology}%
+  {\textbf{\textit{{#1}}}}%
+}
 \newcommand{\terminology}[1]{\textbf{\textit{{#1}}}}
-\newcommand{\term}[1]{\terminology{#1}} 
+%\newcommand{\term}[1]{\terminology{#1}} 
 \newcommand{\hint}[1]{\emph{#1}} 
 \newcommand{\cref}[1]{\sf{\term{ #1}}} %%%% Cross-reference, legacy from P & C
 \newcommand{\Cref}[1]{\sf{\term{ #1}}} %%%% Cross-reference, legacy from P & C
