@@ -1,0 +1,222 @@
+\chap{Math 432 Test Questions}{TestPractice}
+
+
+\begin{exercise}{20}
+Let ${\mathbb N}$ be the universal set and suppose that
+\begin{align*}
+A &= \{ x \in {\mathbb N} : x \text{ is a perfect square (that is,} x=y^2 \text{ where } y \text{ is a natural number)}\} \\ 
+B &= \{ x \in {\mathbb N} : x \text{ is divisible by 5}\} \\ 
+C &= \{ x \in {\mathbb N} : x  \equiv 2 \text{ mod 3} \\
+D &= \{ x \in {\mathbb N} : x  \equiv 0 \text{ mod 3} \\
+\end{align*} 
+Specify each of the following sets. You may specify a set either by describing a property, by enumerating the elements, or as one of the four sets $A, B, C, D$:
+\begin{enumerate}[(a)]
+\item
+$(A \cap B)$
+\item
+$B \cap C$
+\item
+$B \setminus {C \cup D)$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{cap_group}
+Given a set $S$, let $G$ be the set of all subsets of $S$. We will define an operation `\textcircled{s}' on $G$ as follows.  If $X$ and $Y$ are two elements of $G$  then we define $X \textcircled{s} Y$ as follows:
+\[ X \textcircled{s} Y = (X \cup Y) \setminus (X \cap Y) .\]
+\begin{enumerate}[(a)]
+\item
+Prove that the set $G$ is closed under the operation $\textcircled{s}$.
+\item
+It turns out that the operation $\textcircled{s}$ has an identity: that is, there is a set $Z \in G$ such that
+\[  Z \textcircled{s} X = X \textcircled{s} Z = X  \qquad \text{for any $X \in G$.} \]
+Which element of $G$ has this property?  \emph{Prove} your answer.  (\emph{Hint}:  The answer is either the empty set $\emptyset$ or the entire set $S$. Tell which one, and prove your answer.)  
+\item
+Given a set $X \in G$, what is the inverse of $X$ under the operation $\textcircled{s}$?  \emph{Prove} your answer. 
+\item
+Is the operation $\textcircled{s}$ defined on the set $G$ commutative? \emph{Prove} your answer. 
+\item
+It also turns out that $\textcircled{s}$ is associative (you don't need to prove this).  Is $G$ a group under the operation $\textcircled{s}$?  \emph{Prove} your answer.
+\end{enumerate}
+\end{exercise} 
+
+
+\begin{exercise}{LinearWhenBijectionExer}
+Let $a \in \mathbb{Z}_6$, and define $f_a \colon \mathbb{Z}_6 \to \mathbb{Z}_6$ by $f_a(x) = a \odot x$.  (Here the multiplication is mod 6.) 
+\begin{enumerate}[(a)]
+\item \label{LinearWhenBijectionExer-not0}
+For which values of $a$  is $f_a$ a bijection? (Hint: $f_0$ is not a bijection (explain why), and $f_1$ is a bijection (explain why).  You need to check $f_2, f_3, f_4, and f_5$.
+\item \label{LinearWhenBijectionExer-0}
+For all values of $a$ for which $f_a$ is a bijection, find the inverse of $f_a$.
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{funtable}
+Here is a function~$f$ given by a table of values.
+
+\begin{center}
+\begin{tabular}{c|c}
+$x$ & $f(x)$ \\ \hline
+
+0 & 0 \\
+1 & 3 \\
+2 & 1 \\
+3 & 4 \\
+4 & 2 \\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[(a)]
+\item  \label{FunctionByTableEx-domain}
+What are the domain and range  of~$f$?
+\item  \label{FunctionByTableEx-pairs}
+Represent $f$ by an arrow diagram.
+\item
+Is $f$ a bijection? If so, give a table for $f^{-1}$.
+\item  \label{FunctionByTableEx-formula}
+Find a formula to represent~$f$. (\emph{Hint}:  Consider arithmetic mod 5).
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{27}
+ For the given sets $A$ and~$B$:
+\[ A = \{\var{a},\var{b},\var{c}\}, B = \{\var{d},\var{e}\} \]
+\begin{enumerate}[(a)] 
+\item How many different functions are there from $A$ to $B$?
+\item Write each function from~$A$ to~$B$ as a set of ordered pairs. 
+\item  Indicate which of the functions are onto.
+\item Indicate which of the functions are one-to-one.
+\end{enumerate}
+\end{exercise}
+
+%\begin{exercise}{} 
+%For each function, either prove that it is a bijection, or prove that it is not.
+%\begin{enumerate}[(a)]
+%\item \label{modular9}
+% $g \colon {\mathbb Z}_6 \to {\mathbb Z}_6$ defined by $g(x)= (x \odot 3) \oplus  (x \odot 2)$ .
+%\item \label{modular_m6}
+% $g \colon {\mathbb Z}_6 \to {\mathbb Z}_6$ defined by $g(x) = (x \odot 2) \oplus (x \odot 2) $ .
+% \end{enumerate}
+%\end{exercise}
+
+\begin{exercise}{ComposeExers-form} 
+Find formulas for $(f \compose g)(x)$ and $(g \compose f)(x)$, where 
+ $f(x) = ax^2 $ and $g(x) = \sqrt{b x^2 + c}$ (where $a,b,c \in \real$)
+\end{exercise}
+
+ \begin{exercise}{VerifyInverseExers}
+ In each case, determine whether $g$ is an inverse of~$f$.
+ \begin{enumerate}[(a)]
+ \item \label{VerifyInverseExers-(x^2)}
+$f \colon \real^+ \to \real^+$ is defined by $f(x) =2x^2$ and 
+ \\ $g \colon \real^+ \to \real^+$ is defined by $g(y) = \sqrt{y}/2$.
+ \item \label{VerifyInverseExers-(sqrt(x+1)-1)}
+$f \colon \real^+ \to \real^+$ is defined by $f(x) = \sqrt{x+1} - 1$ and 
+ \\ $g \colon \real^+ \to \real^+$ is defined by $g(y) = y^2 + 2y$.
+ \end{enumerate}
+ \end{exercise}
+
+\begin{exer} \label{DrawBinRelExer}
+Let $A =  \{-2,-1,0,1,2\}$ Draw a digraph for each of the following binary relations on~$A$: 
+ \begin{enumerate}[(a)]
+ \item \label{DrawBinRelExer-married}
+ $ R_c = \{\, (x,y) \mid  (x-y)^2 < 2 \,\} .$
+  \item \label{DrawBinRelExer-lived}
+$ R_d = \{\, (x,y) \mid  x\equiv y \pmod{2} \,\} .$
+ \end{enumerate}
+ \end{exer}
+
+\begin{exercise}{17}
+For each of the following, explain your answers. 
+\begin{enumerate}[(a)]
+\item Define the relation $\rel$ on $\mathbb{Z}$ as follows: $ a \rel b$ iff $|a - b|< 4$. Is $\rel$ transitive? Is it reflexive? Is it symmetric?
+\end{enumerate}
+\end{exercise}
+
+\begin{exer} \label{BinRelSomePropsEx}
+Find binary relations on $\{1,2,3,4\}$ that meet each of the following conditions 
+(Express each relation as a set of ordered pairs, and draw the corresponding digraph.)
+\begin{enumerate}[(a)]
+\item \label{BinRelSomePropsEx-transandsymm}
+transitive and symmetric, but not reflexive.
+\end{enumerate}
+\end{exer}
+
+\begin{exercise}{EquivClassEasyEx}
+Let $B = \{1,2,3,4,5\}$ and 
+	$$S = \left\{ (1,1),\, (1,4),\, (2,2),\, (2,3),\, (3.2),\, 
+		(3,3),\, (4,1),\, (4,4),\, (5,5)
+		 \right\} .$$
+Assume (without proof) that $S$ is an equivalence relation on~$B$. Find the equivalence class of each element of~$B$.
+\end{exercise}
+
+\begin{exercise}{}
+Let $C = \{1,2,3,4,5,6\}$ and define $\rel_C$ by 
+\[ x \rel_C y \iff x + y \text{ is divisible by 3.} \]
+Draw the arrow diagram for $\rel_C$, and prove that it is an equivalence relation.
+\end{exercise}
+
+\begin{exercise}{Mod3TablesEx}
+Make tables that show the results of:
+\begin{enumerate}[(a)]
+\item \label{Mod3TablesEx-multiplication}
+multiplication modulo~$5$.
+\item \label{Mod3TablesEx-subtraction}
+subtraction modulo~$5$ (For $\class{a} - \class{b}$,  put the result in row $\class{a}$ and column; $\class{b}$.)
+\end{enumerate}
+For both (a) and (b), all table entries should be  either $\class{0} \ldots \class{4}$.
+\end{exercise}
+
+\begin{exercise}{ModArithEx2}  
+Find $x,y \in \integer_{51}$ such that $x \neq \class{0}$ and $y \neq \class{0}$, but $x \cdot y = \class{0}$.
+\end{exercise}
+
+\begin{exercise}{WellDefEx}
+ Show that$f(x)=x^2$ provides a well-defined function from~$\integer_5$ to~$\integer_5$. That is, show that if $a,b \in \integer$, such that 
+\[ [a]_5 = [b]_5, \text{ then } [ a^2]_7 = [ b^2]_7.\]
+\end{exercise}
+
+\begin{exercise}{57}
+Show that there is a well-defined function 
+$f \colon \integer_4 \to \integer_{12}$, given by \\
+$ f \bigl( [a]_4 \bigr) = [a]_{12}$. 
+That is, show that if $[a]_{12} = [b]_{12}$, then $f \bigl( [a]_4 \bigr) = f \bigl( [b]_4 \bigr)$.
+\end{exercise}
+
+\begin{exercise}{66}
+Let $f\colon \ZZ_8 \to \ZZ_8$ be defined by $f(x) =  x^2 $. Define a relation $\sim$ on $\ZZ_8$ by: $n \sim m$ iff $f(n) = f(m)$.
+\begin{enumerate}[(a)]
+\item
+Show that $\sim$ is an equivalence relation: that is, show that $\sim$ is reflexive, symmetric, and transitive.
+\item
+According to Proposition~\ref{EquivRel->Part}, this equivalence relation produces a partition on  $\ZZ_8$. List the sets in the partition.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{16}
+With reference to a hexagon with vertices labeled $A,B,C,D,E,F$ counterclockwise, for the symmetries $f$ and $g$:
+\begin{enumerate}[(i)]
+\item
+Write the symmetries $f$ and $g$ in tableau form.
+\item
+Compute $f \compose g$ and $g \compose f$, expressing your answers in tableau form.
+\item 
+Describe the symmetries that correspond to $f \compose g$ and $g \compose f$, respectively.
+\end{enumerate}
+\medskip
+$f=$rotation by $ 180^\circ, g=$reflection across the line $CF$
+\end{exercise}
+
+\bigskip
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Write the symmetries of a square (vertices labeled $A,B,C,D$) in tableau form.
+\item
+Write the Cayley table for the symmetries of a square. You may use letters to represent each symmetry. 
+\item
+List the inverses of each symmetry of the symmetries of a square.
+\end{enumerate}
+\end{exercise}
+
