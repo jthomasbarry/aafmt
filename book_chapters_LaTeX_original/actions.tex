@@ -3,10 +3,13 @@ We've defined a  ``group'' as as set with an operation defined on it.  From this
 
 Later on we introduced the idea that permutations form a group. Permutations are actually bijections (1-1, onto functions) that map a set of objects to itself.  Another way of saying this is that permutations ``act on'' a set by moving the elements around.  Similarly, we saw in Figure~\ref{groups_s3_symmetry_fig} in Section~\ref{SymmetryGroup} that the symmetries of an equilateral triangle (which are elements of the group $S_3$) move the vertices of the triangle from one position to another.  As a third example, in the group $\mathbb {Q}^*$ of non-zero rational numbers we can think of left multiplying by $2$ as ``moving''  $-5$ over to $-10$.  Left multiplying again by $2$ ``moves'' $-10$ to $-20$: and so on.   
 
-The examples in the previous paragraph  illustrate a general concept called \emph{group actions}\index{Actions!group}. We will see in this chapter how group actions can give us deeper insight into many of the symmetries that we see in the world around us: for instance, in the geometric solids and in crystals.\footnote{This chapter  is by Holly Webb (edited by C.T.). Thanks to Tom Judson for material used in this chapter.}
+The examples in the previous paragraph  illustrate a general concept called \emph{group actions}\index{Actions!group}. We will see in this chapter how group actions can give us deeper insight into many of the symmetries that we see in the world around us: for instance, in the geometric solids and in crystals.
+\bigskip
+
+This chapter  is by Holly Webb (edited by C.T.). Thanks to Tom Judson for material used in this chapter.
 
 \section {Basic definitions}\label{DefActions}
-We'll get to definitions momentarily, but first it's helpful to look at one more example.
+We'll get to definitions momentarily, but first it's helpful to look at an example.
 
 \begin{example}{Actions1} 
 Consider the $60^{\circ}$ counterclockwise rotation of regular hexagon, an element of the group $D_6$.  We've seen this before (see Example~\ref{example:symmetries:hexagon} in Chapter~\ref{symmetries}). Following are the tableau and cycle representations of this rotation. 
@@ -16,7 +19,7 @@ Consider the $60^{\circ}$ counterclockwise rotation of regular hexagon, an eleme
 \end{example}
 	\begin {exercise}{Actions2}  Generalize the previous example to any regular $n$-gon. Include a tableau in your answer.
 \end {exercise}
-Now we're ready to give a general definition of group action. 
+These examples show how it's possible for the elements of a group to ``act on'' a set. This idea can be generalized to a wide variety of sets and groups. Based on our experience with symmetries of plane figures, we give the following  general definition of group action. 
 
 \begin{defn}
 Let $X$ be a set and $G$ be a group. A \term{(left) action}\index{Actions!group} of $G$ on $X$ is a map $G\times X\rightarrow X$
@@ -128,7 +131,7 @@ In the case of a cube where $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{v
 
 \begin{defn} \label{noteorbit}
 If $X$ is a $G$-set, then each set in the partition of $X$ associated with
-$G$-equivalence is called an\term{orbit}\index{Orbit!Of a $G$-set} of $X$ under $G$. We will denote the orbit that contains an element $x$ of $X$ by
+$G$-equivalence is called an \term{orbit}\index{Orbit!Of a $G$-set} of $X$ under $G$. We will denote the orbit that contains an element $x$ of $X$ by
 ${\cal O}_x$. 
 \end {defn}
 The next example shows how these concepts apply to permutation groups as well.
@@ -158,7 +161,11 @@ and $X = \{ 1, 2, 3, 4, 5,6,7,8\}$. Then $X$ is a $G$-set.  List the orbits of $
 
  Let's return to the cube to illustrate another new concept. Every rotation of a cube has an axis of rotation as well as an angle.   
  For rotations which are symmetries we've considered 3 possible axes, passing through opposite pairs of faces. 
-For every pair of opposite faces, all rotational symmetries whose axis passes through those faces leaves them fixed.   Note that these rotations form a subgroup.  Similar subgroups are obtained when we take the axes through opposite edges, or opposite vertices. These are all examples of \emph{stabilizer subgroups}. The general definition is as follows.
+Take for instance the axis which passes through $x_+$ and $x_-$, and consider the set of all the rotational symmetries having this axis.
+In fact, this set of symmetries forms a subgroup  of the symmetries of the cube (in this case, the subgroup is isomorphic to the rotations of the square or ($\integer_4$,+)). Now all of the elements of this subgroup leave the face  $x_+$ fixed (although $x_+$ rotates, it remains in the same place).
+Similarly, the rotations about the axis through $y_+$ and $y_-$ form a subgroup whose elements leave  $y_+$ fixed; and the rotations about the axis through $z_+$ and $z_-$ behave the same way for $z_+$.  
+
+ These are all examples of \emph{stabilizer subgroups}. The general definition is as follows.
 
 \begin {defn}\label {StabilizerSubgroups} 
 Given that $X$ is a $G$-set and  $x \in X$, let $G_x$ be the set of  group elements $g$ that fix $x$:  in other words, $gx=x$.  Then $G_x$ is called the \term{stabilizer subgroup}\index{Subgroup!stabilizer} or \term{isotropy 
@@ -169,8 +176,9 @@ subgroup}\index{Subgroup!isotropy} of $x$.
 Given any $x$ in $X$, prove that the stabilizer subgroup $G_x$  is a subgroup of $G$.  (Recall this involves proving closure under composition and inverse.)
 \end {exercise}
 
-On the other hand, each element of $G$ has an associated subset of $X$ that it leaves unchanged. 
-Recall that the group of rotations of a cube act on the set:   $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$.  Any rotation about the $x$ axis ($r_x^n$) leaves the faces $x_+$ and $x_-$ fixed.   $\{x_+,x_-\}$is a subset of $X$. Similarly, $\{y_+$ ,$y_-\}$ and $\{z_+,z_-\}$ are  fixed by rotations about the $y$ axis and $z$ axis, respectively.   Thus, $\{x_+,x_-\},\{y_+,y_-\},\{z_+,z_-\},$  are all examples of \emph{fixed point sets} in $X$.
+Definition~\ref{StabilizerSubgroups} talks about elements of the group $G$ which leave a particular element of set $X$ fixed. We can turn this around and consider elements of $X$ which are fixed by a particular element of $G$. In fact, each element of $G$ has an associated subset of $X$ that it leaves unchanged. 
+
+Consider for instance the group of rotations of a cube. We may describe the cube as consisting of faces, edges, and vertices. So let's take   $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$.  Rotations about the $x$ axis (which can all be expressed as ${r_x}^n$ for some $n$) leave the faces $x_+$ and $x_-$ fixed. Similarly, $\{y_+$ ,$y_-\}$ and $\{z_+,z_-\}$ are  fixed by rotations about the $y$ axis and $z$ axis, respectively.   Thus, $\{x_+,x_-\},\{y_+,y_-\},\{z_+,z_-\},$  are all examples of \emph{fixed point sets} in $X$.
 This leads to another definition:
 
 \begin{defn} \label {FixedPoint}
@@ -185,10 +193,10 @@ It is important to remember that $X_g \subset X$ and $G_x \subset G$.
 Let's use this notation to describe some stabilizer subgroups and fixed point sets for familiar examples of group actions.
 
 \begin {example}{FixedPoint1}
-Let $G$ be the rotational symmetries of a cube and $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$
+Let $G$ be the rotational symmetries of a cube and $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$.
 The fixed point set of $\var{id}$ is: 
 
-$$X_{\var{id}}=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$$
+$$X_{\var{id}}=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\},$$
 since the identity rotation  leaves the entire cube unchanged.  
 \end {example}
 
@@ -272,7 +280,7 @@ Repeat part (c) with $G = A_n$.
 
 \subsection{Counting formula for the order of  polyhedral rotational symmetry groups}
 
-It is possible to characterize the size of the rotational symmetry group $G$ for a regular polyhedron in terms of $|{\cal O}_x|$and $|G_x|$ . We'll show this with an example.
+It is possible to characterize the size of the rotational symmetry group $G$ for a regular polyhedron in terms of $|{\cal O}_x|$and $|G_x|$. We'll show this with an example.
 
 \begin{example}{CountingFormula1} 
 Consider our old friend the group of rotational symmetries of a cube acting on $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$. We've seen that $G_{x_+}=\{\var{id},r_x,r_x^2,r_x^3\}$ is the stabilizer subgroup for $x_+$.  Thus there are four rotations that take $x_+$ to itself.  We've also seen that there's at least one rotation that takes $x_+$ to each of the six faces of the cube:  this is the same thing as saying that the orbit of a face is the set of all faces.  Each of these rotations can be composed with any of the elements of $G_{x_+}$ for a total of $6\cdot 4=24$ rotational symmetries of a cube.  To summarize, we've discovered that 
@@ -285,7 +293,7 @@ In the previous example we used faces to count the rotational symmetries of a cu
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=2.5in]{images/CubeFold.png}
-\caption{A paper cube to print, cut and fold from www.korthalsaltes.com}
+\caption{A paper cube to print, cut and fold (from \url{www.korthalsaltes.com}).}
  \label{fig:CubeFold}
 \end{center}
 \end{figure}
@@ -323,7 +331,7 @@ then $|{\cal O}_x| = [G:G_x]$.
 \end{thm}
 
 \begin{proof}
-In general, a good way to show that two sets are the same size is to show that there is a \emph{bijection}. (1-1 and onto map) between the two sets.  
+In general, a good way to show that two sets are the same size is to show that there is a \emph{bijection} (1-1 and onto map) between the two sets.  
  We will define a map $\phi$
 between the orbit ${\cal O}_x$ and the set of left cosets of $G_x$ in $G$ as follows. Let $y \in {\cal O}_x$. Then there 
 exists a $g$ in $G$ such that $g x = y$. Define $\phi$ by $\phi( y ) 
@@ -356,8 +364,11 @@ Let $g G_x$ be any  left coset. If $g x =y$, then $\phi(y) = g G_x$.  Thus $gG_x
 
 \subsection{Representing $G$ in terms of stabilizer subgroups}
 We can approach the structure of the group of rotational symmetries of a cube from another direction.  We've talked about stabilizer subgroups, and we can see how these subgroups ``fit together'' within $G$.
-For example, we've seen that for every face there are three rotations (besides the identity) that leaves that face fixed. These rotations correspond to 90, 180, and 270 degree rotations of a square: so they have order 4,2, and 4 respectively.\footnote{Recall that the ``order'' of a group element $g$ is the smallest positive integer $n$ such that $g^n = \var{id}$.} So for each face, there are two rotations of order 4 and one rotation of order 2 in the stabilizer of that face. Since there are 6 faces of a cube, this seems to imply that there must be twelve rotations of order 4 and six rotations of order 2 associated with the stabilizers of the different faces.  Unfortunately, this is not quite true. The reason is that any rotation that leaves the front face fixed also leaves the back face fixed. So the stabilizer of the front face is the same as the stabilizer  of the back face. In fact, the faces of the cube are stabilized in pairs: front-back, left-right, and top-bottom. Since there are 3 pairs, this means that we only have 6 rotations of order 4 and 3 rotations of order 2. If we add in the identity, this gives a total of 10 rotations. But we've already shown that the group of rotational symmetries of a cube has 24 elements. Where are the other 14?
-Well, we haven't exhausted the possible stabilizers. Consider for instance the stabilizer of a vertex. We know that 3 faces meet at each vertex. So if I twirl the cube around the vertex, the three faces can rotate into each other. So besides the identity, there are two rotations of order 3. As with the faces, each vertex has a corresponding opposite vertex--so the vertices are stabilized in pairs. Since there are 8 vertices, this means there are 4 pairs, which means there are 8 rotations of order 3. This brings us up to a total of 18 rotations. Where are the other six?
+For example, we've seen that for every face there are three rotations (besides the identity) that leaves that face fixed. These rotations correspond to 90, 180, and 270 degree rotations of a square: so they have order 4,2, and 4 respectively.\footnote{Recall that the ``order'' of a group element $g$ is the smallest positive integer $n$ such that $g^n = \var{id}$.} So for each face, there are two rotations of order 4 and one rotation of order 2 in the stabilizer of that face. Since there are 6 faces of a cube, this seems to imply that there must be twelve rotations of order 4 and six rotations of order 2 associated with the stabilizers of the different faces.  
+
+Unfortunately, this is not quite true. The reason is that any rotation that leaves the front face fixed also leaves the back face fixed. So the stabilizer of the front face is the same as the stabilizer  of the back face. In fact, the faces of the cube are stabilized in pairs: front-back, left-right, and top-bottom. Since there are 3 pairs, this means that we only have 6 rotations of order 4 and 3 rotations of order 2. If we add in the identity, this gives a total of 10 rotations. But we've already shown that the group of rotational symmetries of a cube has 24 elements. So where are the other 14?
+
+Well, we haven't exhausted the possible stabilizers. Consider for instance the stabilizer of a vertex. We know that 3 faces meet at each vertex. So if I twirl the cube around the vertex, the three faces can rotate into each other. So besides the identity, there are two rotations of order 3. As with the faces, each vertex has a corresponding opposite vertex--so the vertices are stabilized in pairs. Since there are 8 vertices, this means there are 4 pairs, which means there are 8 rotations of order 3. This brings us up to a total of 18 rotations. So where are the other six?
 
 \begin{exercise}{Stabilizers1}
 Consider the edges of a cube.
@@ -400,7 +411,7 @@ Complete the following table to characterize the group elements of the rotationa
 \section{Examples of other regular polyhedral rotation groups}
 Let's get to know some other regular polyhedra using orbits and stabilizer subgroups to describe their rotational symmetry groups.
 \subsection{The tetrahedron}
-Consider a regular tetrahedron, as shown in Figure~\ref {fig:TetRot} This polyhedron has 4 faces, 6 edges and 4 vertices.  Each face is a triangle and each face is opposite a vertex. We will consider the rotations of a tetrahedron around 4 axes.  Each axis passes through a vertex and the face opposite that vertex. See Figure~\ref {fig:TetRot}. For example, a rotation of the axis through vertex $A$ will also stabilize face $a$.  We can call this axis $\overset{\leftrightarrow}{Aa}$.  Similarly, we will call the other axes $\overset{\leftrightarrow}{Bb}$, $\overset{\leftrightarrow}{Cc}$ and $\overset{\leftrightarrow}{Dd}$.
+Consider a regular tetrahedron, as shown in Figure~\ref {fig:TetRot}. This polyhedron has 4 faces, 6 edges and 4 vertices.  Each face is a triangle and each face is opposite a vertex. We will consider the rotations of a tetrahedron around 4 axes.  Each axis passes through a vertex and the face opposite that vertex. See Figure~\ref {fig:TetRot}. For example, a rotation of the axis through vertex $A$ will also stabilize face $a$.  We can call this axis $\overset{\leftrightarrow}{Aa}$.  Similarly, we will call the other axes $\overset{\leftrightarrow}{Bb}$, $\overset{\leftrightarrow}{Cc}$ and $\overset{\leftrightarrow}{Dd}$.
 
 \begin{figure}[ht]
 \begin{center}
@@ -410,7 +421,7 @@ Consider a regular tetrahedron, as shown in Figure~\ref {fig:TetRot} This polyhe
 \end{figure}
 
 
-Note that each of these axes rotates a triangular face. We'll write one counterclockwise rotation of face $a$ around $\overset{\leftrightarrow}{Aa}$ as $r_{Aa}$ (and similarly for the other axes).
+Each of these axes rotates a triangular face. We'll write one counterclockwise rotation of face $a$ around $\overset{\leftrightarrow}{Aa}$ as $r_{Aa}$ (and similarly for the other axes).
 An animation of the rotations of a tetrahedron is available at:
 
 \url{https://www.youtube.com/watch?v=qAR8BFMS3Bc}
@@ -420,7 +431,7 @@ You can also make your own tetrahedron like the one in Figure~\ref{fig:TetraFold
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=2.5in]{images/TetrahedronFold.png}
-\caption{Tetrahedron to print, cut and fold from www.korthalsaltes.com}
+\caption{Tetrahedron to print, cut and fold ( from \url{www.korthalsaltes.com}).}
  \label{fig:TetraFold}
 \end{center}
 \end{figure}
@@ -499,13 +510,14 @@ In Exercise~\ref{exercise:actions:Tetra6} we constructed a formula for $|G|$ in 
 \end{exercise}
 
 \begin{exercise}{Tetra9}
-Complete the following table to characterize the group elements of the rotational symmetries of a tetrahedron.  We show two rows, how many more to complete the table?
+Complete the following table to characterize the group elements of the rotational symmetries of a tetrahedron.  We show two rows--how many more are needed to complete the table?
   
 \begin{tabular}{| l |c|c| r |} \hline
   Number of elements & order of the element & Type of set that it stabilizes \\ \hline
   --&  --& entire tetrahedron (identity) \\ \hline
   -- & --& face and vertex \\  
 \end{tabular}
+
 \end{exercise}
 % begin{tabular}{ l c r }
   %Number of elements & order of the element & Type of set that it stabilizes \\
@@ -515,13 +527,13 @@ Complete the following table to characterize the group elements of the rotationa
 %\end{tabular}
 \subsection{The octahedron}
 Another regular polyhedron is the octahedron.  We will see that in some ways an octahedron is like a cube. 
-When viewed on a vertical $z$ axis the octahedron has no vertical or horizontal faces.  See Figure~\ref{fig:OctaRot}.  We can call a 90 degree counterclockwise rotation around the vertical axis $r_z$ (and similarly for rotations around the $x$, and $y$ axes).
+When opposite points are lined up  on a vertical $z$ axis, the octahedron has no vertical or horizontal faces, as shown in Figure~\ref{fig:OctaRot}.  We denote a 90 degree counterclockwise rotation around the $z$ axis by $r_z$ (and similarly for rotations around the $x$, and $y$ axes).
 Since each vertex of the octahedron lies on an axis, we can use the $x,y$, and $z$ axis to label the vertices.  For example $y_+$ is the vertex on the positive $y$ axis.   We can also name the edges using this notation for their endpoints.   Let's use the axes to label the faces of the octahedron too.  Consider Figure~\ref{fig:OctaRot}, we'll refer to the the face in the first octant as $\triangle_{ +++}$ (the other faces will be labeled similarly).
 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=2.5in]{images/AxesOfOctahedron.png}
-\caption{Octahedron with 3 axes of rotation that give symmetries. Figure modified from https://en.wikipedia.org/wiki/File:Octahedron.svg
+\caption{Octahedron with 3 axes of rotation that give symmetries (figure modified from https://en.wikipedia.org/wiki/File:Octahedron.svg)
 }\label{fig:OctaRot}
 \end{center}
 \end{figure}
@@ -630,7 +642,7 @@ Let's practice finding the elements of the rotation group of another regular pol
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=2.5in]{images/Dodecahedron.png}
-\caption{Dodecahedron. Source:\url{https://en.wikipedia.org}.}
+\caption{Dodecahedron (source:\url{https://en.wikipedia.org})}
 \label{fig:Dodeca}
 \end{center}
 \end{figure}
@@ -719,8 +731,9 @@ Complete the following table to characterize the group elements of the rotationa
  % 15 & 2 & edge \\
 %20 & 3  & vertices\\
 
-\subsection{Soccer ball}
-All the polyhedra we've studied so far have congruent regular faces.  These are also known as \term{Platonic solids}\index{Platonic solids}.  Let's explore the rotation group of a polyhedron whose faces are not all congruent.  A familiar example is the football (``soccer ball' in the U.S.), as shown in  Figure~\ref{fig:Soccer}\index{Soccer ball}.  The soccer ball has 32 faces, 12 regular pentagons and 20 hexagons.  
+\subsection{Football (a.k.a. ``soccer ball''}
+All the polyhedra we've studied so far have congruent regular faces.  These are also known as \term{Platonic solids}\index{Platonic solids}.  Let's explore the rotation group of a polyhedron whose faces are not all congruent.  A familiar example is the football (following 
+american usage, we'll call it a``soccer ball'), as shown in  Figure~\ref{fig:Soccer}\index{Soccer ball}.  The soccer ball has 32 faces, 12 regular pentagons and 20 hexagons.  
 
 \begin{figure}[ht]
 \begin{center}
@@ -789,16 +802,16 @@ We'll start with the faces.   For any face $f$ we already have a formula for $|G
 
  By the same method, we can count the number of stabilizers of vertices and edges. This gives us $2|{\cal O}_e|-|{\cal O}_v|$ and $2|{\cal O}_e|-|{\cal O}_e|$ stabilizers of vertices and edges, respectively.  Putting these numbers into our stabilizer counting formula we \emph {apparently} get
  \begin{align*}
-``|G| &= 1+ 2|{\cal O}_e|-|{\cal O}_f|+ 2|{\cal O}_e|-|{\cal O}_v| +|{\cal O}_e| \\
-&= 1+ 5|{\cal O}_e|-|{\cal O}_f|-|{\cal O}_v|''.
+|G| &\stackrel{?}{=} 1+ 2|{\cal O}_e|-|{\cal O}_f|+ 2|{\cal O}_e|-|{\cal O}_v| +|{\cal O}_e| \\
+&\stackrel{?}{=} 1+ 5|{\cal O}_e|-|{\cal O}_f|-|{\cal O}_v|\,''.
 \end{align*}
-We've put this equation in quotes for a reason.  Let's see if it actually works. 
+We've put question marks above the equal signs for a reason, because we haven't shown yet that the formula actually works. 
 
 \begin{exercise}{Eulers2}
 Let $G$ be the rotational symmetries of a cube.  Then $|G|=24$.  Verify whether the above formula accurately calculates $|G|$.
 \end{exercise}
 Something is wrong!  How come we have too many elements?
-For all previous examples of polyhedra every element in a rotation group $G$ stabilizes at least two elements of the set $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$. For example, In the rotational symmetry group of a cube faces are stabilized in pairs.  This means that we've counted every stabilizer twice. So we need to divide by two in our formula: 
+For all previous examples of polyhedra every element in a rotation group $G$ stabilizes at least two elements of the set $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$. For example, in the rotational symmetry group of a cube faces are stabilized in pairs.  This means that we've counted every stabilizer twice. So we need to modify the previous formula to account for this: 
 $$|G| = 1+ 5|{\cal O}_e|/2-|{\cal O}_f|/2 -|{\cal O}_v|/2 .$$
 Let's see if the stabilizer counting formula works now.
 
@@ -815,21 +828,21 @@ Let's put this equation together with our expression $|G|=2\cdot |{\cal O}_e|$ t
 & 2|{\cal O}_e|=1+5|{\cal O}_e|/2-|{\cal O}_f|/2-|{\cal O}_v|/2 \qquad \text{(by substitution)}\\
 & |{\cal O}_f|+|{\cal O}_v|-|{\cal O}_e|=2 \qquad \text{(by basic algebra)}\\
 \end {align*}
-This powerful tool is known as\term{Euler's formula}\index{Euler's formula}.  Let's see how it can be used.
+This powerful tool is known as \term{Euler's formula}\index{Euler's formula}.  Let's see how it can be used.
 
 \begin {exercise}{Euler5}
 A regular icosahedron has 12 triangular faces and 30 edges.  By Euler's formula, how many vertices does an icosahedron have?
 \end {exercise}
 We should clarify that what we've shown is only a very special case of Euler's formula which is much more general and has lots of applications in graph theory and topology.  
 
-\section{Closing comments on polyhedral symmetry groups}
-Finally we mention that the rotational symmetries of the regular solids are not the only possible symmetries. Recall that in the dihedral group, besides rotations there were reflections. Consider for example the hexagon: it had 6 rotations (including the identity) and 6 reflections. It's possible to rotate the hexagon and keep the hexagon in the same plane. However, to reflect the hexagon, you have to ``flip'' it, which requires three dimensions.  It turns out that something similar is true for the regular solids. There are also reflection symmetries for the regular solids: in fact, there are as many reflections as rotations, just as in the dihedral group. Also like the dihedral group, to reflect a solid requires one extra dimension. It is rather mind-blowing to think that if we lived in a world with four physical dimensions, it would be possible to turn a cube inside out just by moving it!
+\section{Reflection symmetries of polyhedra}
+We have never shown that the rotational symmetries are the \emph{only}  symmetries of the regular solids In fact, there are others! Recall that in the dihedral group, besides rotations there were reflections. Consider for example the hexagon: it had 6 rotations (including the identity) and 6 reflections. It's possible to rotate the hexagon and keep the hexagon in the same plane. However, to reflect the hexagon, you have to ``flip'' it, which requires three dimensions.  It turns out that something similar is true for the regular solids. There are also reflection symmetries for the regular solids: in fact, there are as many reflections as rotations, just as in the dihedral group. Also like the dihedral group, to reflect a solid requires one extra dimension. It is rather mind-blowing to think that if we lived in a world with four physical dimensions, it would be possible to turn a cube inside out just by moving it!
 \section{Group actions on subgroups and cosets}\label{SubgroupsAndCosets}
-Let's explore some other examples of group action with applications that we may find familiar.   It turns out that if the set $X$ is also a group, then it's always possible to define a group action of $X$ on itself.
+Until now, we have considered how groups can act on sets which represent geometrical objects. Let's now take this concept of group action and apply it somewhat more abstractly.   It turns out that if the set $X$ is also a group, then it's always possible to define a group action of $X$ on itself.
 
 \begin{example}{SubgroupAction1}
 Let $X= Z_5$  and $G = Z_5$. Show that in this case, $X$ is a $G$-set.
-In order to show that $X$ is a $G$-set we must show $1x = x$ for all $x \in\mathbb {Z}_5$; this is true by identity property of multiplication $\mathbb{Z}_5$.  Then we need to show: $(g_1g_2)x = g_1(g_2x)$ for all $x, g_1,g_2 \in\mathbb{ Z}_5$. This is true by the associative property of multiplication $\mathbb {Z}_5$.  Therefore, by definition of $G$-set, $\mathbb{Z}_5$ is a $G$-set of itself.
+In order to show that $X$ is a $G$-set we must show $1x = x$ for all $x \in\mathbb {Z}_5$; this is true by identity property of multiplication $\mathbb{Z}_5$.  Then we need to show: $(g_1g_2)x = g_1(g_2x)$ for all $x, g_1,g_2 \in\mathbb{ Z}_5$. This is true by the associative property of multiplication in $\mathbb {Z}_5$.  Therefore, by definition of $G$-set, $\mathbb{Z}_5$ is a $G$-set of itself.
 \end {example}
 
 \begin {exercise}{SubgroupAction2}
@@ -870,20 +883,28 @@ $(g,x+2\pi\mathbb{Z}) \rightarrow g+x+2\pi\mathbb{Z}$. Let's verify the two axio
 \item 
 For the second axiom consider two real numbers $a,b$.  Then, by associativity of real number addition, $(a+b)+x+2\pi\mathbb{Z}=a+(b+x+2\pi\mathbb{Z})$ for any $x+2\pi\mathbb{Z}$  in $L$.  So the second axiom is true.  $L$ is a $G$-set of the additive group of real numbers.
 \end {enumerate}
-This example has a very practical significance. We know that angles on a unit circle are arbitrary up to multiples of $2\pi$. So we can think of each angle as a coset:  that is, the angle $\theta$ where $0\leq\theta<2\pi$ represents the coset $\{\theta +2k\pi\}$ or $\theta + 2\pi \mathbb{Z}$. Now consider what an arbitrary rotation $\phi$ does to the angle $\theta$. For instance, consider the case where $\theta=\frac{\pi}{4}$--then $\theta+H=\{ \frac{\pi}{4}+2k\pi\}$.  We'll suppose that the rotation angle is $\phi=\frac{15\pi}{2}$.  According to the group action, $\phi+\theta+H =\frac{15\pi}{2}+\{\frac{\pi}{4}+2k\pi\}$ which will result in the new coset $\{\frac{31\pi}{4}+2k\pi\}=\{\frac{7\pi}{4}+2k\pi\}$.
-As we can see, the action of the additive group $(R,+)$ on the cosets ${\theta + 2\pi k}$ corresponds to rotation by arbitrary angles around the unit circle. If the rotation is more than $2 \pi$, the action still works because the cosets take care of any extra factors of $2 \pi$.
+This example has a very practical significance. We know that angles on a unit circle are arbitrary up to multiples of $2\pi$. So we can think of each angle as a coset:  that is, the angle $\theta$ where $0\leq\theta<2\pi$ corresponds to  the coset $\theta + 2\pi \mathbb{Z}$, which represents the set of values $\{\theta +2k\pi\}$, where $k \in \mathbb{Z}$. Now consider what an arbitrary rotation $\phi$ does to the angle $\theta$. For instance, consider the case where $\theta=\frac{\pi}{4}$--then $\theta+H=\{ \frac{\pi}{4}+2k\pi\}$.  We'll suppose that the rotation angle is $\phi=\frac{15\pi}{2}$.  According to the group action, $\phi+\theta+H =\frac{15\pi}{2}+\{\frac{\pi}{4}+2k\pi\}$ which will result in the new coset $\{\frac{31\pi}{4}+2k\pi\}=\{\frac{7\pi}{4}+2k\pi\}$.
+As we can see, the action of the additive group $(R,+)$ on the cosets $\theta + 2\pi \mathbb{Z}$ corresponds to rotation by arbitrary angles around the unit circle. If the rotation is more than $2 \pi$, the action still works because the cosets take care of any extra factors of $2 \pi$.
 \end {example}
 Let's consider another example of group action on a set of cosets.  This example can be thought of as a two-dimensional version of the previous example, and can be envisioned using computer graphics.
 
 \begin {example}{IntLat1}
 Let $G$ be the $xy$ plane under addition (that is, $G=(\mathbb {R}^2,+)$).  Let $H=\mathbb{Z}\times \mathbb{Z}$, which is a subgroup of $G$ ($H$ is called the \term{integer lattice}\index{Integer!lattice}).  
-A coset of $H$ in $G$ is defined as $x+H=\{(x+m, y+n):m,n \in\mathbb{ Z}\}$
-Each coset of the form $x+H$ has a single point inside the unit square.
-Consider, $g=(0.2,0), x=(0.9,0.5)$ and  $h=(m,n)$, for $g,x\in G$ and $h\in H$.
-  $g+x+H={(0.2+.9+m, 0+0.5+n):m, n \in Z}={(1.1+m, 0.5+n):m, n \in Z}$
-Using $h= (-1, 0)$ yields $g+x+h=(0.1, 0.5)$, the single point for the coset $g+x+H $ which is inside the unit square.
-$g+x+H$ is equivalent to the coset $(0.1, 0.5)+H$ 
-Imagine the unit square is your computer screen.  The example above can be used to describe the motion of a character on the screen of a “wraparound'' video game.  That is, if he moves off the right edge of the screen, he re-appears on the left edge as shown in Figure~\ref{fig:UnitSquare}. 
+Cosets of $H$ in $G$ may be written as $x+H=\{(x_1+m, x_2+n):m,n \in\mathbb{ Z}\}$, where $x :=(x_1,x_2)$ can be any element of $G$.
+
+It can be shown that each coset of the form $x+H$ has a single point inside the unit square.
+Consider for example a particular group element $g=(0.2,0)$, and a second group element $x=(0.9,0.5)$. The element $g$ acts on the coset $x+H$ as follows:  
+\begin{align*}
+ g+x+H &=\{(0.2+.9+m, 0+0.5+n):m, n \in Z\}\\
+&=\{(1.1+m, 0.5+n):m, n \in Z\}. 
+\end{align*}
+If we take  $h= (-1, 0)$ (which is an element of $H$), we find $g+x+h=(0.1, 0.5)$, which is the only point of the coset $g+x+H $ which is inside the unit square. By basic properties of cosets, it follows that 
+$g+x+H =(0.1, 0.5)+H$. 
+
+ This example can be used to describe the motion of a character on the screen of a “wraparound'' video game.  Imagine the unit square is your computer screen. Suppose the character starts near
+the right edge at the point $x=(0.9,0.5)$, and undergoes motion to the right corresponding to the displacement
+vector $g=(0.2,0)$ then he moves off the right edge of the screen and re-appears at the left edge, ending
+up at the point (0.1,0.5) as shown in Figure~\ref{fig:UnitSquare}. 
 \end{example}
 
 \begin{figure}[ht]
@@ -894,7 +915,7 @@ Imagine the unit square is your computer screen.  The example above can be used 
 \end{center}
 \end{figure}
 
-Recall that by definition a left coset of the integer lattice $x+H$  means adding the same point $\{x=(a,b)|a,b\in \mathbb{R}\}$ to each point in the integer lattice. a group action simply changes one coset of $H$ in $G$ to a different coset.  The three illustrations below show the progression of the group action  in the Example~\ref{example:actions:IntLat1}. You can duplicate this illustration by drawing the coset points on a transparency, placing it over a graph of the integer lattice and moving the transparency $0.2$ units to the right.
+Recall that by definition a left coset of the integer lattice $x+H$  means adding the same point $\{x=(a,b)|a,b\in \mathbb{R}\}$ to each point in the integer lattice. A group action simply changes one coset of $H$ in $G$ to a different coset.  The three illustrations below show the progression of the group action  in the Example~\ref{example:actions:IntLat1}. You can duplicate this illustration by drawing the coset points on a transparency, placing it over a graph of the integer lattice and moving the transparency $0.2$ units to the right.
 
 \begin{figure}[ht]
 \begin{center}
@@ -908,7 +929,7 @@ The rectangles should be thought of as unit squares (the scales on the $x$ and $
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=4.0in]{images/IntLat2.png}
-\caption{Illustrating $g+x+H$ for $g=(0.1,0)$ and $x=(0.9,0.5)$}
+\caption{Illustrating $g+x+H$ for $g=(0.1,0)$ and $x=(0.9,0.5)$.}
 \label{fig:IntegerLattice2}
 \end{center}
 \end{figure}
@@ -917,7 +938,7 @@ The rectangles should be thought of as unit squares (the scales on the $x$ and $
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=4.0in]{images/IntLat3.png}
-\caption{Illustrating $g+x+H$ for $g=(0.2,0)$ and $x=(0.9,0.5)$}
+\caption{Illustrating $g+x+H$ for $g=(0.2,0)$ and $x=(0.9,0.5)$.}
 \label{fig:IntegerLattice3}
 \end{center}
 \end{figure}
@@ -972,11 +993,20 @@ The previous exercise shows that we can't always do the same thing with right co
 \end {enumerate}
 \end {exercise}
 \section{Conjugation}\label {Conjugation}
-\subsection*{Commutative diagrams and the definition of conjugation}
+\subsection{Commutative diagrams and the definition of conjugation}
 When we talked about permutations, we saw that the objects we were permuting didn't really change the situation.  For example, we saw that permuting $\{1,2,3,4\}$ was the ``same thing'' as permuting $\{A,B,C,D\}$. Now what do we really mean by the ``same thing''? Well for example, if we take any permutation of $\{1,2,3,4\}$ and replace $1$ with $A$, $2$ with $B$ and so on, then we'll get a permutation of $\{A,B,C,D\}$. To be specific let's take $\sigma=(123)$ and $f=\begin {pmatrix} 1&2&3&4\\A&B&C&D\end {pmatrix}$.  It's possible to represent this situation with diagram in Figure~\ref{fig:Commutative1}. This type of diagram is called a \term{commutative diagram}.\index{Commutative!diagram}
 
 
-The commutative diagram illustrates the construction of a conjugation. We can begin in the upper right corner and travel to the upper left, in the opposite direction of the $f$ arrow. That is $f^{-1}$.  Then, from upper left to lower left represents the permutation $\sigma=(123)$.  Then, proceed in the direction of the arrow, that is $f$ from lower left to lower right.  At the lower right corner, we arrive at the mapping of $\mu$.  So the diagram shows $\mu=f\sigma f^{-1}$.  (Recall functions are composed from right to left.).  
+The commutative diagram illustrates the construction of a conjugation. We can begin in the upper right corner and move to the upper left, in the opposite direction of the $f$ arrow. This motion corresponds to
+applying the inverse of $f$, that is 
+ $f^{-1}$.  Then, moving from upper left to lower left represents applying the permutation $\sigma=(123)$, as shown in the diagram.  Finally, by moving from lower left to lower right (which corresponds to 
+applying the function $f$), we end up at the lower right-hand corner. The three motions, performed one after the other thus corresponds to the composition of functions $f^{-1}$, then $\sigma$, then $f$, which we write as
+$f \sigma f^{-1}$ (recall that function composition proceeds from right to left). 
+
+On the other hand, moving directly from upper right to lower right corresponds to the application of 
+the permutation $\mu$. Since this motion starts at upper right and ends at lower right just like the previous
+one, it should represent the same permutation as before. This gives us the result:
+ $\mu=f\sigma f^{-1}$.    
 
 \begin{figure}[ht]
 \begin{center}
@@ -985,9 +1015,10 @@ The commutative diagram illustrates the construction of a conjugation. We can be
 \end{center}
 \end{figure}
 
-Let's think of this another way. We can follow the path $f\sigma$ or $\mu f$.  Both take us to the lower right. 
- So we can write $f\sigma$= $\mu f$. By right multiplying by $f^{-1}$ we discover the algebraic structure of the conjugate of $\sigma$,  $f\sigma f^{-1}=\mu$.  
-There is a short cut to arrive at $\mu$.  $\mu$ is simply $\sigma$ relabeled according to $f$.  That is, if we take the cycle representation of $\sigma$ and replace the numbers according to $f$ ($1\rightarrow A, 2\rightarrow B, 3\rightarrow C$), then we end up with $\mu$.  We will call this short cut, ``the relabeling method''.\index{Conjugation!relabling method}
+We may also think of this another way. The paths $f\sigma$ and $\mu f$.  both take us from upper left to lower right. 
+ So we can write $f\sigma$= $\mu f$. By right multiplying by $f^{-1}$ we discover the algebraic structure of the conjugate of $\sigma$,  $f\sigma f^{-1}=\mu$. 
+ 
+There's a short cut to arrive at $\mu$.  $\mu$ is simply $\sigma$ relabeled according to $f$.  That is, if we take the cycle representation of $\sigma$ and replace the numbers according to $f$ ($1\rightarrow A, 2\rightarrow B, 3\rightarrow C$), then we end up with $\mu$.  We will call this short cut, ``the relabeling method''.\index{Conjugation!relabling method}
 
 \begin{exercise}{Conj1}
 For each $\sigma$ and and $f$, complete a commutative diagram like the one in Figure~\ref{fig:Commutative1}. Find the conjugate mapping in two ways, using conjugation and the relabeling method.
@@ -1055,7 +1086,7 @@ $$\tau = (b¬_{11}~b_{12}~\ldots~b_{1n_1})(b¬_{21}~b_{22}~\ldots~b_{2n_2})  \ld
 Then we can define a bijection $f$ by: $f(a_{ij}) = b_{ij}$, for any $i$ and $j$. Using the above cycle structures, we can show that $\tau$ is equal to $f \sigma f^{-1}$.  All we have to do is show that this works for any $ b_{ij}$.  For example, consider $b_{11}$: then $f \sigma f^{-1}( b_{11}) = f \sigma ( a_{11}) = f ( a_{12})= b_{12}$, which is exactly equal to $ \tau(b_{11})$.
 \end{proof}
 
-\subsection*{Conjugacy and group action}
+\subsection{Conjugacy and group action}
 
 We will now relate the idea of conjugacy with the notion of group action that was introduced earlier in the chapter.
 
@@ -1076,7 +1107,7 @@ Note something very interesting in the previous exercise.  When $h=e$ the all el
  We can generalize Example \ref{example:actions:Conj6} using the following definition.
 
 \begin{defn}
-Given two group elements $g,h$ in $G$, then $hgh^{-1}$ is said to a \term{conjugate element}\index{Conjugate!element} to $g$. In this case, we would say that $h$ acts on $g$ by conjugation.\index{Conjugation!operation on groups}
+Given two group elements $g,h$ in $G$, then $hgh^{-1}$ is said to be a \term{conjugate element}\index{Conjugate!element} to $g$. In this case, we would say that $h$ acts on $g$ by conjugation.\index{Conjugation!operation on groups}
 \end{defn}
 %try to come up with another example of conjugation
 The definition of conjugation gives us a new group action for any subgroup $H$ acting on a group $G$ which contains $H$:
@@ -1108,7 +1139,7 @@ we see that the second condition is also satisfied.
 %= h1(h2g\underline{h_2} ^{- 1})\underline{h_1}^{-1}
 %= (h1, (\underline{h_2}, g)),\]
 
-\subsection*{Order of conjugate elements}
+\subsection{Order of conjugate elements}
 
 In order to illustrate some properties of the action of conjugation, we will take a familiar example: the group of rotational symmetries of a cube.
 What are the conjugate elements?
@@ -1211,7 +1242,7 @@ We've shown that if elements are conjugate they must have the same order.
  
 %In summary the stabilizers of the different faces are either 90  degree rotations (order 4) or 180 degree rotations (order 2) (as we've seen above, 270 degree counterclockwise rotations can be counted as 90 degree clockwise rotations). All of these 90 degree rotations are conjugate, and all 180 degree rotations are conjugate.  Since stabilizers of vertices are 120 or 240 degree rotations (both order 3) these stabilizers are conjugate to each other.  Also the 180 degree (order 2) rotations of about axes through edges are conjugate to each other.  
 
-\subsection*{Conjugacy classes and the class equation}
+\subsection{Conjugacy classes and the class equation}
 
 We have seen before that $g$-equivalent elements form an equivalence class. This means that the operation of conjugacy defines an equivalence relation, and every set of conjugate elements is an equivalence classes. These equivalence classes are known as \term{conjugacy classes}.\index{Conjugacy!class}
 The upshot is that we have the group $G$ partitioned into 5 conjugacy classes, consisting of: 

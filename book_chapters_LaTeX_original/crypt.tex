@@ -7,18 +7,27 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Introduction to Cryptography}{crypt}
+\chap{Applications of Group Theory I: Introduction to Cryptography}{crypt}
+\chaptermark{Introduction to Cryptography}
 
 Cryptography is the study of sending and receiving secret messages.
-\footnote{Thanks to Tom Judson for material used in this chapter.}
 The aim of cryptography is to send messages across a channel so only
 the intended recipient of the message can read it. In addition, when a
 message is received, the recipient usually requires some assurance that
 the message is authentic; that is, that it has not been sent by
 someone who is trying to deceive the recipient. Modern cryptography is
 heavily dependent on abstract algebra and number theory. 
+\medskip
+
+\noindent
+\underline{\bf Prerequisites}: The cryptographic systems we'll be looking at are all based on modular arithmetic.
+To understand this chapter, the reader should be familiar with the material in  Chapter~\ref{modular}. Section \ref{subsec:polyCodes} uses some simple matrix multiplication.
+\bigskip
+
+Thanks to Tom Judson for material used in this chapter.
+
  
- 
+ \section{Overview and basic terminology}
 The message to be sent is called the \term{
 plaintext}\index{Plaintext} message. The disguised message is called
 the \term{ciphertext}\index{Ciphertext}. The plaintext and the
@@ -45,29 +54,29 @@ vice versa, $A$ must use two separate keys, so one cryptosystem is
 used for exchanging messages with $B$, and another is used for
 exchanging messages with $C$.
  
- 
-Systems that use two separate keys, one for encoding and another for
-decoding, are called \term{public key
-cryptosystems}\index{Key!public}\index{Cryptosystem!public key}. Since
-knowledge of the encoding key does not allow anyone to guess at the
-decoding key, the encoding key can be made public. A public key
+Some systems  use two separate keys, one for encoding and another for
+decoding. These are called \term{public key
+cryptosystems}\index{Key!public}\index{Cryptosystem!public key}, because typically the encoding key is made public
+while the decoding key is kept secret. A public key
 cryptosystem allows $A$ and $B$ to send messages to $C$ using the same
 encoding key.  Anyone is capable of encoding a message to be sent to
 $C$, but only $C$ knows how to decode such a message.
  
- 
- 
-\section{Private key cryptography}
- 
- 
-In \term{single}\index{Key!single}\index{Cryptosystem!single key} or
+On the other hand, in \term{single}\index{Key!single}\index{Cryptosystem!single key} or
 \term{private key
 cryptosystems}\index{Key!private}\index{Cryptosystem!private key}
 the same key is used for both encrypting and decrypting messages. To
-encrypt a  plaintext message, we apply to the message procedure which transforms a  plaintext message into an encrypted message.  We will call this procedure an \term{encryption function}\index{Encryption!function}\index{Function!encryption}some \emph{function}\index{Function!in cryptography}, and denote it by the letter $f$ (we'll have a lot more to say about functions in Chapter~\ref{functions}).  Given the encrypted form of the message, we can recover the 
-original message by applying the \term{decryption function}\index{Decryption!function}\index{Function!decryption} $f^{-1}$, which basically undoes the transformation performed by the encryption function.\footnote{In fact, $f^{-1}$ is the \emph{inverse}\index{Inverse function!in cryptography} of $f$--we will study inverse functions in general in Chapter~\ref{functions}.} Both the
+encrypt a  plaintext message, we apply to the message procedure which transforms a  plaintext message into an encrypted message.  We will call this procedure an \term{encryption function}\index{Encryption!function}\index{Function!encryption}, and denote it by the letter $f$.  Given the encrypted form of the message, we can recover the 
+original message by applying the \term{decryption function}\index{Decryption!function}\index{Function!decryption} $f^{-1}$, which basically undoes the transformation performed by the encryption function.\footnote{In fact, $f^{-1}$ is the \emph{inverse}\index{Inverse function!in cryptography} of $f$--we will study inverse functions in general in Chapter~\ref{functions}.} 
+Both the
 encryption function $f$ and the decryption function $f^{-1}$ must be relatively easy to compute; however, they must be virtually impossible to guess if only
 examples of coded messages are available.
+
+In Section~\ref{sec:privateKeyCrypto} we will look at private key cryptography, beginning  with a classic example from antiquity. In Section~\ref{sec:publicKeyCrypto} we will look at a famous example of a public key cryptosystem, 
+which was only discovered in the last century and has had an enormous impact on information security in the digital age.
+ 
+\section{Private key cryptography}\label{sec:privateKeyCrypto}
+  
  
 \subsection{Shift codes} 
  
@@ -364,7 +373,7 @@ What is the total number of monoalphabetic cryptosystems?
 Although there are many different possible monoalphabetic cryptosystems, they are relatively easy to break using frequency analysis. (You may even find web sites that can automatically decode cryptoquips.)
 
 
-\subsection{Polyalphabetic codes}
+\subsection{Polyalphabetic codes}\label{subsec:polyCodes}
 
 A cryptosystem would be more secure if a ciphertext letter could
 represent more than one plaintext letter.  To give an example of this
@@ -685,7 +694,7 @@ EXUFQPRRGA, $A= \left(
 \end{exercise}
 
 
-\section{Public key cryptography}
+\section{Public key cryptography}\label{sec:publicKeyCrypto}
   
 If traditional cryptosystems are used, anyone who knows enough to
 encode a message will also know enough to decode an intercepted
@@ -1089,7 +1098,7 @@ Show that if $\mod(n,4)=3$, then $y$ must be odd.
 \end{enumerate}
 \end{exercise}
 
-The Fermat primality testing scheme is better for finding factors that are nearly equal. The brute force method of Exercise~\ref{exercise:crypt:brute}  is much better when one factor is much better than the other one.
+The Fermat primality testing scheme is better for finding factors that are nearly equal. The brute force method of Exercise~\ref{exercise:crypt:brute}  is much better when one factor is much bigger than the other one.
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]

@@ -3,9 +3,12 @@
 % ### when proving 1-1, give piecewise examples
 % ### proving 1-1 and onto -- give more examples of algebraic functions
 % ### bivariate example for 1-1, and for onto
-\chap{Functions: basic concepts}{functions}
+\chap{Functions: Basic Concepts}{functions}
 
-The idea of a function should be familiar to you from previous math classes. Your calculus class no doubt was all about functions defined on real numbers. In this book, we will be more interested in functions on \emph{finite} sets.  Rather than ``doing things'' to these functions (such as integrating and differentiating), instead we will dig more deeply into the basic nature of functions themselves. This will eventually lead us to discover profound connections between groups and functions (see the Permutations chapter).\footnote{This chapter  is an adapted and expanded version of a chapter by D. and J. Morris.} 
+The idea of a function should be familiar to you from previous math classes. Your calculus class no doubt was all about functions defined on real numbers. In this book, we will be more interested in functions on \emph{finite} sets.  Rather than ``doing things'' to these functions (such as integrating and differentiating), instead we will dig more deeply into the basic nature of functions themselves. This will eventually lead us to discover profound connections between groups and functions (see the Permutations chapter).
+\medskip
+
+This chapter  is an adapted and expanded version of a chapter by D. and J. Morris.
 
 \section{The Cartesian product: a different type of set operation}
 
@@ -18,7 +21,7 @@ For any objects x and y, mathematicians use (x, y) to denote the \term{ordered p
 \end{defn}
 
 \begin{example}{R2}
-The ''coordinate plane'' (or '$'xy$-plane'') that is used for graphing functions is one example of a set of ordered pairs. The $xy$-plane corresponds to ${\mathbb R} \times {\mathbb R}$  (sometimes written as  ${\mathbb R}^2$),  and is the set of ordered pairs of real numbers:
+The ``coordinate plane'' (or ``$xy$-plane'') that is used for graphing functions is one example of a set of ordered pairs. The $xy$-plane corresponds to ${\mathbb R} \times {\mathbb R}$  (sometimes written as  ${\mathbb R}^2$),  and is the set of ordered pairs of real numbers:
 
 \[ 
 {\mathbb R} \times {\mathbb R} = \{ (x, y) | x \in {\mathbb R}, y \in {\mathbb R} \} \]
@@ -297,8 +300,11 @@ $\var{donut}$ & 99 \\
 $\var{banana}$ & 155 \\
 \end{tabular}
 \end{center}
-There is a problem here, because there are two possible prices for a banana, depending on which line of the table is looked at. (So you might pick up a banana, expecting to pay 83~cents, and end up having the cashier charge you \$1.55.) This is not allowed in a function: each input must have exactly one output, not a number of different possible outputs. Thus, if a table represents a function, and an item appears in the left side of more than one row, then all of those rows must have the same output listed on the right side.
+There's a problem here. Lines 2 and 5 of the table list two different prices for a banana. So you might pick up a banana, expecting to pay 83~cents, and end up having the cashier charge you \$1.55. This is not allowed in a function: each input must have exactly one output. So if a table represents a function, and an item appears in the left side of more than one row, then all of those rows must have the same output listed on the right side. (In such a case, the duplicate rows are unnecessary because they add no new information.)
 \end{example}
+
+The following remark summarizes the characteristics that a 2-column table must possess if it 
+does indeed correspond to a function.
 
 \begin{rem}
 A 2-column table represents a function from~$A$ to~$B$ if and only if:
@@ -312,21 +318,21 @@ and
 \end{rem}
 
 \noindent
-In a similar way to tables, not all sets of ordered pairs represent a function.  For instance, if we convert the table in Example~\ref{example:functions:nottablefunc} into a set of ordered pairs, we get:
+Just as with  tables, not all sets of ordered pairs represent functions.  For instance, if we convert the table in Example~\ref{example:functions:nottablefunc} into a set of ordered pairs, we get:
 $$ \bigl\{\, (\var{apple}, 65), 
  (\var{banana}, 83), 
  (\var{cherry}, 7),
   (\var{donut}, 99), 
   (\var{banana}, 155) \,\bigr\} .$$
-How can we tell that this set of ordered pairs doesn't represent a function?  Because the input "banana" has two outputs:  83 and 155~cents.  
+Do you see why this set of ordered pairs doesn't represent a function?  It's because the input "banana" has two different outputs:  83 and 155~cents.  
 
-Suppose  we used the set of ordered pairs from Example~\ref{example:functions:nottablefunc}, but we deleted one of the ordered pairs, say the one corresponding to the input donut.  Our set then becomes
- $$ C = \bigl\{\, (\var{apple}, 65), 
+Suppose  on the other hand we start with  the set of ordered pairs from Example~\ref{example:functions:InformalFuncPriceList} and delete the ordered pair containing ``donut''.  Our set of ordered pairs then becomes
+ $$ C := \bigl\{\, (\var{apple}, 65), 
  (\var{banana}, 83), 
  (\var{cherry}, 7),
   (\var{eggs}, 155) \,\bigr\} .$$
 
-Why would $C$ not represent a function?  Bear in mind that the domain is still $A = \{  \var{apple} , \var{banana} , \var{cherry} , \var{donut} , \var{eggs} \}$; that is, when I walk into the store, I can still pick up a donut.  But when I scan the donut at the register, what price do I pay?  Our set of ordered pairs doesn't say.  Therefore $C$ is not a function because it doesn't define an output for all possible inputs of $A$, just as in the beginning of the chapter $g(x) = 1/x$ was not a function from~$\mathbb{R}$ to~$\mathbb{R}$ because the input 0 had no output in $\mathbb{R}$.  
+In Example~\ref{example:functions:InformalFuncPriceList} the domain was $A:=\{  \var{apple} , \var{banana} , \var{cherry} , \var{donut} , \var{eggs} \}$. However, the set $C$ no longer tells us the price of a donut, which is one of the items in $A$. .  Therefore $C$ doesn't specify a function on the domain $A$  because it doesn't define an output for all possible inputs in $A$. This is similar to the case of $g(x) = 1/x$, which we previously saw was not a function from~$\mathbb{R}$ to~$\mathbb{R}$ because the input 0 had no output in $\mathbb{R}$.  (However, you should note that $g(x)$ is a function if we change  the domain to $\mathbb{R} \setminus \{0\}).$ 
 %CPT I took out the next sentence.
 %In other words, if $B = \{ \mbox{ price (in cents) } \}$ is the codomain, then $C$ is not a function because $ \mbox{ price(donut) } \notin B$. 
 
@@ -363,7 +369,7 @@ $A \times B$
 \end{exercise}
 
 \begin{exercise}{}
-In parts (b) - (k) of Exercise~\ref{exercise:functions:ExOrderPairs}, notice that all the sets that correspond to functions are subsets of $A \times B$.  Explain why the set of ordered pairs describing a function from $A$ to $B$ must be a subset of $A \times B$.
+In  Exercise~\ref{exercise:functions:ExOrderPairs}, those sets that correspond to functions from $A$ to $B$ are subsets of $A \times B$.  Explain why the set of ordered pairs describing a function from $A$ to $B$ must necessarily be a subset of $A \times B$.
 \end{exercise}
 
 In summary, a set of ordered pairs $C$ is a function from $A$ to $B$ if and only if :\index{Ordered pair!as a function}
@@ -439,7 +445,7 @@ $f(a) = b$ if and only if $(a,b) \in f$.
 \item \label{FunctionNotation-range}
  Each element~$a$ of~$A$ provides us with an element $f(a)$ of~$B$. The \terminology{range} of~$f$ is the set that includes all of these elements $f(a)$. That is,
 
-\[ \mbox{Range of }f = \{b \in B \mbox{ such that } \exists a \in A \mbox{ with } f(a)=b.\]
+\[ \mbox{Range of }f = \{b \in B : \exists a \in A \mbox{ with } f(a)=b\}.\]
 
 The range is always a subset of the codomain. The range can be denoted $\{\, f(a) \mid a \in A \, \}$.
 \end{enumerate}
@@ -614,7 +620,7 @@ $A = \{\var{a},\var{b}\}$, $B = \{\var{c},\var{d},\var{e}\}$
 \subsection{Concept and definition}
 
 \medskip\noindent
-We begin this chapter with an example.
+We begin this section with an example.
 
 \begin{example}{} 
 \begin{itemize}
@@ -624,16 +630,16 @@ We begin this chapter with an example.
 and
 \item Alice is Bob's wife.
 \end{enumerate}
-Then the Inspector can arrest Bob for theft,
+Then the inspector can arrest Bob for theft,
 because a woman cannot (legally) be the wife of more than one husband.
 
-\item On the other hand, suppose the Inspector knows:
+\item On the other hand, suppose the inspector knows:
 \begin{enumerate}
 \item Alice is the forger's mother,
 and
 \item Alice is Charlie's mother.
 \end{enumerate}
-Then the Inspector does not know enough to be sure who the forger is,
+Then the inspector does not know enough to be sure who the forger is,
 because it could be some other child of Alice.
 \end{itemize}
 This example illustrates a fundamental difference between the $\var{wife}$ function and the $\var{mother}$ function: two different people can have the same mother, but only one person can have any particular person as their wife. 
@@ -641,7 +647,7 @@ In mathematical terms, this important property of the $\var{wife}$ function is e
 \end{example}
 
 \begin{example}{}
-Now let's revisit the function we saw in Example~\ref{example:functions:nonnumfuncs} part (1).  $\var{Temp}$ is the function from the set of points on the earth to the set of measured temperatures at those points.  Is $\var{Temp}$ a one-to-one function?  Not at all: it is very likely that at any given time, at least two points on earth have the same temperature.  
+Now let's revisit the function we saw in Example~\ref{example:functions:nonnumfuncs} part (1).  $\var{Temp}$ is the function from the set of points on the earth to the set of measured temperatures at those points.  Is $\var{Temp}$ a one-to-one function?  Not at all: it's very likely that at any given time, at least two points on the equator have exactly the same temperature (to arbitrary precision).  
 \footnote{It's not only likely: it's a sure thing. This can be proven mathematically, given that $\var{Temp}$ is a continuous function.  Can you prove it?}
 
 Another way to say this is that at any given time, 
@@ -659,7 +665,7 @@ Is the function $\var{Atomic Number}$ from the set of chemical elements to the s
 If you have an arrow diagram of a function, then it is easy to tell whether or not the function is one-to-one. For example:
 
 \begin{enumerate}
-\item The function~$f$ of \ref{arrow11}(a) on page~\pageref{arrow11} is \emph{not} one-to-one. This is because the arrow from~$\var{b}$ and the arrow from~$\var{c}$ go to the same place, so $f(\var{b}) = f(\var{c})$. In general, if arrows from two different elements of the domain go to the same element of the range, then the function is not one-to-one. 
+\item The function~$f$ in Figure~\ref{arrow11}(a) is \emph{not} one-to-one. This is because the arrow from~$\var{b}$ and the arrow from~$\var{c}$ go to the same place, so $f(\var{b}) = f(\var{c})$. In general, if arrows from two different elements of the domain go to the same element of the range, then the function is not one-to-one. 
 \item The function~$g$ of \ref{arrow11}(b) is one-to-one. This is because the arrows from two different elements of the domain never go to the same element of the range.  In short, there is only \emph{one} element of the domain that goes \emph{to} any \emph{one} element of the range.  
 %(This is the reason for the terminology ``one-to-one." A function is ``two-to-one" if there are two elements of the domain mapping to each element of the range, as is true of the function~$h$ in \cref{arrow11}(c).)
 \end{enumerate}
@@ -744,27 +750,34 @@ making $x=y$.  Hence $h$ is one-to-one.
 \end{example}
 
 \begin{rem}\label{rem:onetoone}
-In your college algebra and calculus classes you may have used the \term{horizontal line test}\index{Horizontal line test} to get an idea of whether a function was one-to-one.  For instance, consider the function $f(x)=x +1$ from Part 1 of Example~\ref{example:functions:1_to_1_or_not} above.  Figure~\ref{fig:xplus1} is the graph of $f$ with a horizontal line passing through the function at a particular point.\index{Horizontal line test}\index{One-to-one!horizontal line test}
+In your previous classes you may have used the \term*{horizontal line test}\index{Horizontal line test!for one-to-one functions}\index{One-to-one!horizontal line test}  to show whether or not a function $f: \mathbb{R} \rightarrow \mathbb{R}$ was one-to-one.  We may show how this works using the function $f(x)=x +1$ (which we already know is one-to-one from Example~\ref{example:functions:1_to_1_or_not} above.  Figure~\ref{fig:xplus1} is the graph of $f$, together with the graph of a  horizontal line (dotted line).
 \begin{figure}[h]
 \includegraphics[width=3.5in]{images/xplus1.png}
 \caption{Graph of function $f(x)=x +1$.}
 \label{fig:xplus1}
 \end{figure}
 
-Based on the horizontal line test, would $f$ be a one-to-one function?  Indeed it seems so, because as we move the horizontal line up and down, it always passes through at most one point.  But how do we know somewhere outside the range of the graph we don't have a $y$-value in which the horizontal line intersects the graph at more than one point?  To prove there isn't such a $y$-value, we would need either an infinite graph, or an infinite number of graphs to view our infinite domain and range; neither of which is possible.  If you remember, in the Modular Arithmetic chapter we had this same problem for using addition and multiplication tables to prove that ${\mathbb Z}_n$ is closed for all $n \in {\mathbb N}$.   
+Now, the  the horizontal line has an equation of the form $y=c$ (Why is this?). Any solution of the equation $f(x)=c$ corresponds to a point of intersection between the graphs of $y=c$ and $y=f(x)$. Now here's the key point.  If for \emph{every} horizontal line there's at most one intersection for \emph{every} horizontal line, then  for \emph{every} real number $c$, the equation $f(x)=c$ has at most one solution --which is the same thing as saying that $f(x)$ is one-to-one. We may state this result in general as follows:
+\bigskip
+
+\noindent 
+The function $f:\mathbb{R} \rightarrow \mathbb{R}$ is one-to-one if and only if the graph of $f(x)$ intersects every horizontal line \emph{at most once}.
+\bigskip
+
+Based on the horizontal line test, would $f$ be a one-to-one function?  It sure looks like it, because as we move the horizontal line up and down it always passes through at most one point.  But how do we know somewhere outside the range of the graph we don't have a $y$-value in which the horizontal line intersects the graph at more than one point?  To prove there isn't such a $y$-value, we would need either an infinite graph, or an infinite number of graphs to view our infinite domain and range--neither of which is possible.  (You may remember that in the Modular Arithmetic chapter we had with using addition and multiplication tables to prove that ${\mathbb Z}_n$ is closed for all $n \in {\mathbb N}$.)   
 
 So while the horizontal line test \emph{suggests} that $f$ is one-to-one, we would still need the proof in Part 1 of Example~\ref{example:functions:1_to_1_or_not} to \emph{prove} that it is.
 
 On the other hand, to disprove a function is one-to-one, you only need a single counterexample.  Consider the function $g(x)= |x|$ from Part 2 of Example~\ref{example:functions:1_to_1_or_not}, which is graphed in Figure~\ref{fig:absx}.
+Using the graph we can easily identify two values in the domain that produce the same value in the codomain.  However, while the horizontal line test here suggests our counterexample, we still need to verify that the counterexample works.  So again we need the disproof in Part 2 of Example~\ref{example:functions:1_to_1_or_not}, not just a picture.
+
 \begin{figure}[h]
 \includegraphics[width=3.5in]{images/absx.png}
 \caption{Graph of function $f(x)=|x|$.}
 \label{fig:absx}
 \end{figure}
 
-Using the graph we can easily identify two values in the domain that produce the same value in the codomain.  However, while the horizontal line test here suggests our counterexample, we still need to verify that the counterexample works.  So again we need the disproof in Part 2 of Example~\ref{example:functions:1_to_1_or_not}, not just a picture.
-
-In summary, the horizontal line test can only \emph{suggest} whether a function is one-to-one or not; you still need proof or disproof.  Furthermore, the horizontal line test is usually only a good tool for functions whose domain and codomain are ${\mathbb R}$ (or subsets of ${\mathbb R}$).
+In summary, the horizontal line test can only \emph{suggest} whether or not a function is one-to-one. In the end, you still need to prove or disprove.\footnote{Although `a picture is worth a thousand words', unfortunately it still falls short of mathematical proof!}  Furthermore, the horizontal line test is usually only a good tool for functions whose domain and codomain are ${\mathbb R}$ (or subsets of ${\mathbb R}$).
 \end{rem}    
 
 % CPT I took out the following sentence, it seems repetitive.
@@ -782,13 +795,12 @@ $g(x) = x$.
 \item \label{11Exers-formula-h}
 $h(x) = x^2$.
 \item \label{11Exers-formula-i}
-$i(x) = 3x + 2$.
+$p(x) = 3x + 2$.
 \item \label{11Exers-formula-j}
-$j(x) = 1/ \bigl( |x| + 1 \bigr)$.
+$q(x) = 1/ \bigl( |x| + 1 \bigr)$.
 \end{enumerate}
 \end{multicols}
 \end{exercise}
-
 
 
 There is an equivalent way to show functions are one-to-one that is also useful.  To see it, recall the $\var{wife}$ function from the beginning of the section.  The $\var{wife}$ function is one-to-one because one woman can't be (legally) married to two different husbands. We can express the same thing in a different way by saying that two different husbands must be married to two different wives. These two statements are \term{contrapositives}\index{Contrapositive} of each other, and are in fact equivalent.  (``contrapositive'' is a logical term--you may have run across it before in a Discrete Math class.)
@@ -1053,7 +1065,7 @@ g(x) = y  &\implies 5x-2 = y \qquad \text{[by substitution]}\\
 \end{align*}
 
 \noindent
-Now that we have $x$, lets do our proof.
+Now that we have $x$, let's do our proof.
 \end{scratchwork}
 
 \begin{proof} 
@@ -1077,9 +1089,15 @@ Although you need the scratchwork to come up with the formula for $x$, you don't
 %\section*{Proof exercises}
 
 \begin{rem}
-In your college algebra and calculus classes you may have used the horizontal line test\index{Onto!horizontal line test}\index{Horizontal line test} to show whether a function was onto.  
-For instance, recall the function $f(x)=x +1$ shown in Figure~\ref{fig:xplus1}. is the graph of $f$ with a horizontal line passing through the function at a particular point.
-Based on the horizontal line test, would $f$ be a onto function? What we're looking for is whether or not each horizontal line intersects the graph in \emph{at least} one point. The figure suggests this is true, but to prove it for \emph{all} horizontal lines we would need an infinite graph.  So again, the horizontal line test \emph{suggests} that $f$ is onto, but we still need the proof in Part 1 of Example~\ref{example:functions:onto} to \emph{prove} that it is.
+We may use a variant of the horizontal line test\index{Onto!horizontal line test for}\index{Horizontal line test!for onto functions} to show whether a function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto.  
+For instance, recall the function $f(x)=x +1$ shown in Figure~\ref{fig:xplus1}. In the case of an onto function, the equation $f(x)=c$ has \emph{at least one} solution for any real vaule $c \in \mathbb{R}$.  (Recall that for one-to-one it was \emph{at most one}, so there's a slight difference here.) By tweaking the argument we used for the original horizontal line test, we arrive at the following general rule:
+\bigskip
+
+\noindent 
+The function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto if and only if the graph of $f(x)$ intersects every horizontal line at least once.
+\bigskip
+
+From Figure~\ref{fig:xplus1}, it \emph{appears} that $f(x)=x+1$ s onto. Just as before, this observation falls short of being a mathematical proof. Nonetheless, it strongly hints that we should try to prove onto-ness rather than non--onto-ness. Indeed, we may obtain a proof by following Part 1 of Example~\ref{example:functions:onto}.
 
 On the other hand, to disprove a function is onto, you only need a counterexample.  Consider the function $g(x)= |x|$ shown in Figure~\ref{fig:absx}. Using the graph, we can easily find a horizontal line that doesn't intersect the graph: this corresponds to a value in $\mathbb{R}$ that is not in the range of $g$.  But while the horizontal line test here suggests a counterexample to show $g$ is not onto, we still need to verify that it works.
 \end{rem}    
@@ -1153,7 +1171,7 @@ $$ f(x) =
 e^x & \mbox{if $x > 0$} \\
 1 - x^2 & \mbox{if $x \le 0$}
 \end{cases} $$
-If you graph this function, you wil find that the horizontal line tests suggest $f(x)$ is indeed one-to-one and onto. To complete the actual proof, we need to prove four separate statements:
+If you graph this function, you wil find that the horizontal line tests suggest that  $f(x)$ is indeed one-to-one and onto. To complete the actual proof, we need to prove four separate statements:
 \begin{enumerate}[(a)] 
 \item[(a)]
 If $y > 1$, there exists a unique $x>0$ such that $e^x = y$.
@@ -1371,14 +1389,15 @@ And all possible outputs of the codomain are paired (onto)
 %\end{rem}
 
  \begin{example}{MarriedEg}
- Consider a hypothetical country $\var{Married}$, in which 
+ Consider a hypothetical country $\var{Z}$, in which 
  \begin{itemize}
- \item everyone is married (to only one person --- there is no polygamy),
+ \item every person is married to at least one other person (no singles),
+\item everyone is married to at most one other person (no polygamists or polyandrists),
  and
- \item every marriage is between a man and a woman (there are no same-sex marriages). 
+ \item every marriage is between a man and a woman (no same-sex marriages). 
  \end{itemize}
-Let ${\var Men} = \{\text{men in the country}\}$, and 
-${\var Women} = \{\text{women in the country}\}$.
+Let ${\var Men} = \{\text{male inhabitants of } \var{Z}\}$, and 
+${\var Women} = \{\text{female inhabitants of } \var{Z}\}$.
 Then the function $\var{wife} \colon \var{Men} \to \var{Women}$ is a bijection, since:
 \begin{itemize}
  \item Two different men cannot have the same wife, so we know that $\var{wife}$ is one-to-one. 
@@ -1388,7 +1407,7 @@ Similarly, the function $\var{husband} \colon \var{Women} \to \var{Men}$ is also
  \end{example}
 
 \begin{rem}
-In the country $\var{Married}$ described above, it is clear that the number of men is exactly equal to the number of women. (If there were more men than women, then not every man could have a wife; if there were more women than men, then not every women could have a husband.) This is an example of the following important principle:
+In the country $\var{Z}$ described above, it is clear that the number of men is exactly equal to the number of women. (If there were more men than women, then not every man could have a wife; if there were more women than men, then not every women could have a husband.) This is an example of the following important principle:
 	
 \begin{center}
 If $A$ and $B$ are finite sets, and there exists a bijection from~$A$ to~$B$, 
@@ -1541,15 +1560,15 @@ For each function, either prove that it is a bijection, or prove that it is not.
  Define $f \colon \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ by $f(m,n) = m^2 + n - 1$. 
  \begin{enumerate}[(a)]
  \item \label{NxNBijection-m2+n-onto}  
- Show that $f$ is onto.
+ Prove or disprove: $f$ is onto.
  \hyperref[sec:functions:hints]{(*Hint*)}
 % Show that these values include every possible natural number.)
  \item \label{NxNBijection-m2+n-not11}  
- Show that $f$ is \emph{not} one-to-one.
+Prove or disprove: $f$ is one-to-one.
  \hyperref[sec:functions:hints]{(*Hint*)}
 %  for $j=1,2,3,\ldots$, and show that there exists an $i$ and $j$ such that  $f(1,i) = f(2,j)$).
 \item
-Is $f$ a bijection?
+Prove or disprove:  $f$ is a bijection.
  \end{enumerate}
 \end{exercise}
 
@@ -1557,15 +1576,15 @@ Is $f$ a bijection?
 Define $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ by $g(m,n) = (m + n, m + 2n)$. 
  \begin{enumerate}[(a)]
  \item  \label{NxNBijection-mpmn-notonto1}  
-Show that $g$ is onto.
+Prove or disprove: $g$ is onto.
 \hyperref[sec:functions:hints]{(*Hint*)} 
 %Then show that $g(m,n) = (i,j)$ for the $m$ and $n$ that you have found.
  \item  \label{NxNBijection-mpmn-111}  
-Show that $g$ is one-to-one.
+Prove or disprove: $g$ is one-to-one.
 \hyperref[sec:functions:hints]{(*Hint*)}
 % Use these two equations to conclude that $m=p$ and $n=q$.)
 \item
-Is $g$ a bijection?
+Prove or disprove: $g$ is a bijection.
  \end{enumerate}
 \end{exercise}
 
@@ -1573,11 +1592,11 @@ Is $g$ a bijection?
 Define $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ by $g(m,n) = (m + n, m - n)$. 
  \begin{enumerate}[(a)]
  \item  \label{NxNBijection-mpmn-notonto}  
-*Show that $g$ is \emph{not} onto.
+*Prove or disprove: $g$ is  onto.
  \item  \label{NxNBijection-mpmn-11}  
-Show that $g$ is one-to-one.
+Prove or disprove: $g$ is one-to-one.
 \item
-Is $g$ a bijection?
+Prove or disprove: $g$ is a bijection.
  \end{enumerate}
 \end{exercise}
 
@@ -1618,7 +1637,7 @@ The term ``composition" is a name that mathematicians use for applying one funct
 
 \begin{example}{} 
 \begin{enumerate}
-\item The father of the mother of a person is the grandfather the person.
+\item The father of the mother of a person is a grandfather of the person.
  (To be precise, it is the \emph{maternal} grandfather of the person --- and his or her other grandfather is \emph{paternal}.) To express the relationship in a mathematical formula, we can write:
  $$ \forall x,  \Bigl( \var{grandfather}(x) = \var{father} \bigl( \var{mother}(x) \bigr) \Bigr) .$$
  A mathematician abbreviates this formula by writing
@@ -1679,11 +1698,11 @@ Notice that (in this example) $f \compose g \neq g \compose f$, so \emph{composi
 \end{example}
 
 \begin{warn} \label{ComposeWarn}
-To calculate the value of the function $g \compose f$ at the point~$a$, do \emph{not} begin by calculating $g(a)$. Instead, you need to calculate $f(a)$. Then plug that value into the function~$g$.
+To calculate the value of the function $g \compose f$ at the point~$a$, do \emph{not} begin by calculating $g(a)$. Instead, you need to calculate $f(a)$. Then plug that value into the function~$g$ This may seem strange, but it follows from the fact that $g \compose f(a)$ means the same thing as $g ( f(a))$, and you're always supposed to evaluate what's inside the parentheses first and work your way outward.
 \end{warn}
 
 \begin{exercise}{func_comp_assoc}
-Fill in the blanks of the following proof to show that function composition is associative.\index{Composition!Associative property}
+Fill in the blanks of the following proof to show that function composition is associative.\index{Composition!Associative property}\index{Associativity! of function composition}
 
 \begin{proof}
 Suppose $f: X \to Y$, $g: Y \to W$, and $h: W \to Z$. 
@@ -2035,7 +2054,7 @@ This is simply a restatement of the fact that
 \end{enumerate}
 \end{rem}
 
-\begin{defn}{}
+\begin{defn}\label{identityMap}
 For any set~$A$, define the \terminology{identity map} $\Id_A \colon A \to A$ by $\Id_A(a) = a$ for every $a \in A$.
 \end{defn}\index{Identity map} 
 
@@ -2060,8 +2079,76 @@ Suppose $f \colon X \to Y$ is a bijection. Show that the inverse of~$f^{-1}$ is~
 \end{enumerate}
 \end{exercise}
 
+\section{Do functions from $A$ to $B$ form a group?}
 
+At the end of the Sets chapter in Section~\ref{SetGroup} we considered the question, Do the subsets of a set form a group? Let's consider a similar question, but this time with functions. 
 
+Recall (once again) from Section~\ref{DefOfGroup} that a group is a set together with an operation defined on that set such that:  
+\begin{enumerate}
+\item
+The set is \emph{closed} under the operation (in other words, the operation has the property of \emph{closure});
+\item
+The set has  a unique \emph{identity};
+\item
+Every element of the set has its own \emph{inverse};
+\item
+The set elements satisfy the \emph{associative property} under the group operation;
+\end{enumerate}
+
+If we're going to make a group out the set of functions from $A$ to $B$, the first thing we need to do is define an operation. So far, the only operation we have on functions is composition. But this gives us a problem, because the composition of two functions that have the same domain and the same codomain  isn't always well-defined: 
+
+\begin{exercise}{}
+Give an example of sets $A$ and $B$ and two functions $f: A \rightarrow B$ and $g: A \rightarrow B$ such that the composition $f \compose g$ is \emph{not} well-defined.
+\end{exercise}
+
+For $f \compose g$ to be well-defined,  the domain of $f$ must contain the range of $g$. We can guarantee this by taking $B=A$, so we consider only functions from a set $A$ to itself:
+
+\begin{exercise}{AAclosed}
+Given that $f: A \rightarrow A$ and $g: A \rightarrow A$, show that $f \compose g$ and $g \compose f$  are both  well-defined functions from $A$ to $A$.
+\end{exercise}
+
+Exercise~\ref{exercise:functions:AAclosed} confirms that  the set of functions from $A$ to $A$ is closed under the operation of composition.
+So far, so good--but we still have more fish to fry. We still need to find an identity for our set.  This one's not hard: Definition~\ref{identityMap} gives us the identity map $\Id_A$. 
+
+That takes care of two group properties--we have two more to go. Let's look at inverses. We've seen that not all functions have inverses under composition. So to make this part work, we'll have to further restrict ourselves to the set of \emph{invertible} functions from $A$ to $A$.
+
+The last thing we need to verify is the associtive property. Fortunately, you already showed that function composition is associative in Exercise~\ref{exercise:functions:func_comp_assoc}.
+
+The foregoing discussion amounts to a proof of the following proposition.
+
+\begin{prop}{functionGroup}
+Let $A$ be a set, and let $G$ be the set of all invertible functions from $A$ to $A$. Then $G$ is a group under composition.
+\end{prop}
+
+In the following exercise we look at some particular sets of functions, and investigate whether or not these sets form groups under composition. 
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Let $G_1$ be the set of all nonzero functions from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax$, where $a$ is a nonzero real number.  (For example, the functions $g(x) = -7x$ and $h(x) = \sqrt{2}x$ are both elements of $G_1$.)\footnote{ $G_1$ is the set of nonzero \term*{linear functions}\index{Linear functions! from $\mathbb{R}$ to $\mathbb{R}$}.}
+ Prove or disprove: $G_1$ is a group under composition.
+\item
+Let $G_2$ be the set of all nonzero functions  from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax+b$ where $a$ and $b$ are real numbers which are not both zero.  (For example, the functions $p(x) = 29.4x + 42.3$, $q(x) = 15$ and  $r(x) = -\pi x$ are all elements of $G_2$.)\footnote{$G_2$ is the set of all  nonzero \term*{affine functions}\index{Affine functions! from $\mathbb{R}$ to $\mathbb{R}$}.}
+ Prove or disprove: $G_2$ is a group under composition.
+\item
+Let $G_3$ be the set of all  nonconstant  functions from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax+b$ where $a$ is a nonzero real number and $b$ can be any real number.  Prove or disprove: $G_3$ is a group under composition.
+\item
+Let $G_4$ be the set of all functions  from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax^3$,where $a$ is a nonzero real number.  Prove or disprove: $G_4$ is a group under composition.
+\item
+*Let $G_5$ be the set of all functions  from $\mathbb{R}$ to $\mathbb{R}$ of the form 
+\[ f(x)= \begin{cases} ax, \qquad \text{for } x \text{ rational}\\ bx, \qquad \text{for } x \text{ irrational}
+\end{cases}
+\] 
+where $a$ and $b$ are nonzero \emph{rational} numbers.  Prove or disprove: $G_5$ is a group under composition.
+\end{enumerate}
+\end{exercise}
+
+Finally, recall that some groups are commutative (or ``abelian''). Are groups under composition always abelian? Let's find out:
+
+\begin{exercise}{}
+Is the group $G$ defined in Proposition~\ref{proposition:functions:functionGroup} always an \term{abelian} group? (That is, is it always commutative?)  If so, then prove it; and if not, give an example of a set $A$ for which the corresponding group $G$ is non-abelian (not commutative). 
+\end{exercise}
+  
 % CPT put this back in if we put in pre-image section
 %\begin{warn}
 %We have already introduced $f^{-1}$ as notation for pre-images, even when $f^{-1}$ was not a function (that is, even when $f$ was not a bijection).  Be aware that this notation is used in both contexts.

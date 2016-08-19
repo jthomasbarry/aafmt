@@ -56,6 +56,7 @@
 % Per-chapter items
 \newcommand{\chaplabel}{\relax}
 \newcounter{example}[chapter]
+\numberwithin{equation}{section}
 
 % Usage: \chap{title}{label}
 \newcommand{\chap}[2]{
@@ -66,41 +67,41 @@
 
 % Examples as environment
 \newenvironment{example}[1]
-  {\refstepcounter{example}{\bigskip\noindent\bf Example~\arabic{example}.}\label{example:\chaplabel:#1}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Example~\arabic{chapter}.\arabic{section}.\arabic{equation}.}\label{example:\chaplabel:#1}}
   {\hspace\fill$\blacklozenge$\par\medskip}
 
 %%% Other environments (CPT, Dec 22 2010) %%%
 \newenvironment{prop}[1]
-  {\refstepcounter{example}{\bigskip\noindent\bf Proposition~\arabic{example}.}\label{proposition:\chaplabel:#1}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Proposition~\arabic{chapter}.\arabic{section}.\arabic{equation}.}\label{proposition:\chaplabel:#1}}
   {\par\medskip}
 
 \newenvironment{exercise}[1]
-  {\refstepcounter{example}{\bigskip\noindent\bf Exercise~\arabic{example}.}\label{exercise:\chaplabel:#1}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Exercise~\arabic{chapter}.\arabic{section}.\arabic{equation}.}\label{exercise:\chaplabel:#1}}
   {\hspace\fill$\lozenge$\par\medskip}
 
 \newenvironment{defn}
-  {\refstepcounter{example}{\bigskip\noindent\bf Definition~\arabic{example}.}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Definition~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
   {\hspace\fill$\triangle$\par\medskip}
 
 \newenvironment{rem}
-  {\refstepcounter{example}{\bigskip\noindent\bf Remark~\arabic{example}.}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Remark~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
   {\hspace\fill$\triangle$\par\medskip}
 
 \newenvironment{notation}[1]
-  {\refstepcounter{example}{\bigskip\noindent\bf Notation~\arabic{example}.}\label{notation:\chaplabel:#1}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Notation~\arabic{chapter}.\arabic{section}.\arabic{equation}.}\label{notation:\chaplabel:#1}}
   {\hspace\fill$\triangle$\par\medskip}
 
 %%% Legacy from P&C
 \newenvironment{thm}
-  {\refstepcounter{example}{\bigskip\noindent\bf Proposition~\arabic{example}.}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Proposition~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
   {\par\medskip}
 
 \newenvironment{eg}
-  {\refstepcounter{example}{\bigskip\noindent\bf Example~\arabic{example}.}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Example~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
   {\hspace\fill$\lozenge$\par\medskip}
 
 \newenvironment{exer}
-  {\refstepcounter{example}{\bigskip\noindent\bf Exercise~\arabic{example}.}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Exercise~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
   {\hspace\fill$\lozenge$\par\medskip}
 
 \newenvironment{exers}
@@ -130,7 +131,7 @@
 {\newcommand{\chapterletter}[1]{#1}}
 
 \renewenvironment{corollary}
-  {\refstepcounter{example}{\bigskip\noindent\bf Corollary~\arabic{example}.}}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Corollary~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
   {\par\medskip}
 
 
@@ -158,7 +159,7 @@
 \newcommand{\qed}{\Box}
 \newcommand{\compose}{\circ}
 \newcommand{\bigset}[1]{ \left\{ #1 \right\}}
-\newcommand{\Id}{\sf{Id}}
+\newcommand{\Id}{{\sf Id}}
 \newcommand{\rel}{\sim}
 
 \newcommand{\class}[1]{\overline{#1}}
@@ -236,7 +237,7 @@
 %
 \begin{titlepage}
 \title{Elementary Abstract Algebra: Examples and Applications}
-\author{Justin Hill, Chris Thron (eds), Thomas Judson, Dave Witte Morris, Joy Morris, A. J. Hildebrand, Holly Webb, Johnny Watts, David Weathers, Semi Harrison, Khoi Tran}
+\author{Justin Hill, Chris Thron (eds), Thomas Judson, Dave Witte Morris, Joy Morris, A. J. Hildebrand (sources), Holly Webb, Johnny Watts, David Weathers, Semi Harrison, Khoi Tran, Rachel McCoy (contributors)}
 \begin{center}
 \vspace{3.5cm}
 {\huge \textbf{ Elementary Abstract Algebra: Examples and Applications}}\\[1cm]
@@ -249,7 +250,7 @@ Incorporating source materials by\\[0.4cm]
 \textbf{A. J. Hildebrand} (University of Illinois Urbana-Champaign) \\
 [0.4cm]
 Additional contributions by\\[0.4cm]
-\textbf {Holly Webb, David Weathers, Johnny Watts, and Semi Harrison} (TAMU-CT)\\[0.4cm]
+\textbf {Holly Webb, David Weathers, Johnny Watts, Semi Harrison, Khoi Tran, Rachel McCoy} (TAMU-CT)\\[0.4cm]
 
 \vfill
 
@@ -305,7 +306,7 @@ ISBN:  978-1-312-85635-6
 \include{whatyouknow}
 \include{complex}
 \include{modular_arithmetic}
-\include{crypt}
+
 \include{set_chapter}
 \include{functions}
 \include{equivalencerelations}
@@ -313,10 +314,11 @@ ISBN:  978-1-312-85635-6
 \include{permute}
 \include{groups}
 \include{cosets}
-\include{actions}
-\include{algcodes} 
 \include{isomorph}
 \include{homomorph}
+\include{actions}
+\include{crypt}
+\include{algcodes} 
 \include{summation_notation}
 \include{polyrings}
 \include{PolyVec}
@@ -325,7 +327,6 @@ ISBN:  978-1-312-85635-6
 \chap{Hints}{Hints}
 \input{complex_hints}
 \input{modular_arithmetic_hints}
-\input{crypt_hints}
 \input{set_chapter_hints}
 \input{functions_hints}
 \input{equivalencerelations_hints}
@@ -333,10 +334,11 @@ ISBN:  978-1-312-85635-6
 \input{permute_hints}
 \input{groups_hints}
 \input{cosets_hints}
-\input{actions_hints}
-\input{algcodes_hints}
 \input{isomorph_hints}
 \input{homomorph_hints}
+\input{actions_hints}
+\input{crypt_hints}
+\input{algcodes_hints}
 \input{summation_notation_hints}
 \input{polyrings_hints}
 \input{polyvec_hints}

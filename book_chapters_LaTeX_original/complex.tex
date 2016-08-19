@@ -27,7 +27,10 @@ Than are dreamt of in your philosophy.
 (Source: Shakespeare, \emph{Hamlet}, Act 1 Scene 5.)
 \bigskip
 
-Although complex numbers are defined to include ``imaginary'' numbers, the practical applications of complex numbers are far from ``imaginary''.  We shall touch on some of the applications in this chapter: but there are many many more in engineering, in physics, and in other sciences as well.\footnote{Thanks to Tom Judson for material used in this chapter.}
+Although complex numbers are defined to include ``imaginary'' numbers, the practical applications of complex numbers are far from ``imaginary''.  We shall touch on some of the applications in this chapter: but there are many many more in engineering, in physics, and in other sciences as well.
+\medskip
+
+Thanks to Tom Judson for material used in this chapter.
 
 \section{The origin of complex numbers}\label{origin_complex}
 
@@ -74,7 +77,7 @@ $a^{2}=-1$. Now we know that any real number is either positive, or zero, or neg
 In the case that $a>0$ then $a^{2}= a\cdot a =$ (\emph{positive})$\cdot$(\emph{positive})
 = a positive number (that is, $a^{2}>0$). But this couldn't possibly
 be true, because we have already supposed that $a^{2}=-1$: there's
-not way that $a^{2}>0$ and $a^{2}=-1$ can both be true at the same
+no way that $a^{2}>0$ and $a^{2}=-1$ can both be true at the same
 time!
 
 \item
@@ -96,7 +99,7 @@ words, -1 has no real square root. This completes the proof. $\square$
 \footnote{The '$\square$' symbol will be used to indicate the end of a proof. In other words: Ta-da!}
 \medskip{}
 \newline
-The above proof is pretty wordy. When mathematicians write up proofs they leave out many of the details--and you should too. Following is a more typical proof:
+The above proof is pretty wordy. Often the first draft of a proof can be pretty messy. So it's usually good to go back and rewrite the proof in such a  way as to bring out the essential details. Here's our second crack at the above proof:
 \medskip{}
 \newline
 \noindent \textbf{Streamlined proof of Proposition~\ref{proposition:complex:no_sqrt} (suitable for writing up homework exercises)}
@@ -208,7 +211,7 @@ with\emph{ new} symbols ($i$) and \emph{new} arithmetic rules
 In fact, this was not the first time that a controversial new number
 system was founded. The ancient Greeks thought that all numbers could
 be expressed as a ratio of integers $\frac{m}{n}$ --- in other words, the Greeks thought all numbers were rational.  It came as a huge
-shock when someone proved that some real numbers are \emph{not} rational. We will presently give the original proof, but first we will need some properties odd and even integers:
+shock when someone proved that some real numbers are \emph{not} rational. We will presently give the original proof, but first we will need some properties of odd and even integers:
 
 \begin{exercise}{m2even}
 \begin{enumerate}[(a)]
@@ -233,7 +236,7 @@ Given a right isosceles triangle where both legs have length 1 (see Figure~\ref{
 	  \caption{\label{fig:complex:isosceles_right} Isosceles right triangle }
 \end{figure}
 \begin{proof}
-The proof is by contradiction.\index{Irrational number!existence proof}   \emph{Suppose} that $x$ is rational: that is, $x = \frac{m}{n}$ for some integers $m$ and $n$. We can always reduce a fraction to lowest terms, so we can assume $m$ and $n$ have no common factors.\footnote{Note that this is another one of those facts that ``everyone knows'', but is not easy to prove mathematically. We will make use of it in our current discussion, but note that technically it requires a proof.} 
+The proof is by contradiction.\index{Irrational number!existence proof}   \emph{Suppose} that $x$ is rational: that is, $x = \frac{m}{n}$ for some integers $m$ and $n$.We can always reduce a fraction to lowest terms ( as noted in Section~\ref{subsec:eqsAndIneqs}), so we can assume $m$ and $n$ have no common factors. 
 
 Since $x$ is the hypotenuse of a right triangle, the Pythagorean Theorem gives us $x^2 = 1^2 + 1^2 = 2$.
 We can plug $x=\frac{m}{n}$ into $x^2 = 2$ to get $\left(\frac{m}{n}\right) ^2 = 2$, which can be rearranged to give 
@@ -324,11 +327,10 @@ Prove that $p^{1/n}$ is irrational, if $p$ is a prime and $n$ is any integer wit
 The inconvenient truth expressed in Proposition~\ref{proposition:complex:irrational} forced mathematicians to extend
 the 'real' numbers to include \emph{irrational} as well as \emph{rational}
 numbers. But complex numbers opened the floodgates by setting a precedent. New generations of mathematicians 
-became so used to working with ``unreal'' numbers that they thought nothing of making up other number systems!
+became so used to working with ``unreal'' numbers that they became accustomed to making up other number systems whenever it suited their purpose.
 Within a few centuries after the complex numbers, several new
-number systems were created; and eventually there were so many 
-that mathematicians started studying the properties of general numbers
-systems. This was the beginning of what we today call  abstract
+number systems were created. This eventually prompted  mathematicians to study the properties of general numbers
+systems. The outcome of this is what is known today as  abstract
 algebra!
 
 To close this section, here's another exercise to practice using substitution:
@@ -382,6 +384,7 @@ $z + w = (a + bi) + (c + di)$ &substitution\\
 ~~~~~~ $= (c + di) + (a + bi)$ & def. of complex addition\\
 ~~~~~~ $= w + z$. & substitution\\
 \end{tabular}
+
 \end{proof}
 
 Notice how we started in this proof with one side of the equality, and through a series of steps ended up with the other side. This is a good method to follow, when you're trying to prove two things are equal.
@@ -391,7 +394,7 @@ Prove that addition on complex numbers is associative.
 \end{exercise}
 
 Now that we have addition worked out, let's do multiplication. We observe that the complex number $a + bi$ looks just  like the polynomial $a + bx$, except the imaginary $i$ replaces the unknown $x$. So we'll take a cue from polynomial multiplication, and  multiply complex numbers just like
-polynomial factors, using the FOIL (first, outside, inside, last)\index{FOIL (FLOI) method} method. (Actually, with complex numbers it's more convenient to use FLOI (first, last, outside, inside)  instead.) The product of $z$ and
+polynomial factors, using the FOIL (first, outside, inside, last)\index{FOIL (FLOI) method} method. Better yet, with complex numbers it's more convenient to use FLOI (first, last, outside, inside) instead.  The product of $z$ and
 $w$ is \[
 (a+bi)(c+di)=ac+bdi^{2}+adi+bci=(ac-bd)+(ad+bc)i.\]
 Question: How did we get rid of the $i^2$ in the final equality?  Answer: Remember, we defined $i^2 = -1$, and we just made the substitution.
@@ -540,14 +543,14 @@ The proof of Proposition~\ref{proposition:complex:nonzero_complex_product} is ou
 Complete the proof of Proposition~\ref{proposition:complex:nonzero_complex_product} by filling in the blanks.
 
 \begin{enumerate}[(a)]
-\item The proof is by contradiction. So we begin by \emph{supposing} $z \neq \_\_\_\_$  and $w \neq \_\_\_\_$.
+\item The proof is by contradiction. So we begin by \emph{supposing} that $z \neq  \underline{~<1>~}$  and $w \neq  \underline{~<2>~}$ (which is the negation of what we're trying to prove).
 \item 
-Since $z \neq \_\_\_\_ $, it follows that $z$ has an inverse $z^{-1}$ such that $z^{-1} \cdot z = \_\_\_\_$.
+Since $z \neq  \underline{~<3>~} $, it follows that $z$ has an inverse $z^{-1}$ such that $z^{-1} \cdot z =  \underline{~<4>~}$.
 \item
-Since $z \cdot w = 0$, we can multiply both sides of this equation by $ \_\_\_\_$ and obtain the equation 
-$w = \_\_\_\_$. This equation contradicts the \emph{supposition} that $\_\_\_\_$.
+Since $z \cdot w = 0$, we can multiply both sides of this equation by $  \underline{~<5>~}$ and obtain the equation 
+$w =  \underline{~<6>~}$. This equation contradicts the \emph{supposition} that $ \underline{~<7>~}$.
 \item
-Since our supposition has led to a false conclusion, it follows that our supposition must be $\_\_\_\_$. Therefore it cannot be true that $\_\_\_\_$, so it must be true that $\_\_\_\_$.
+Since our supposition has led to a false conclusion, it follows that our supposition must be $ \underline{~<8>~}$. Therefore it cannot be true that $ \underline{~<9>~}$, so it must be true that $ \underline{~<10>~}$.
 \end{enumerate}
 \end{exercise}
 
@@ -607,8 +610,7 @@ for different number systems, in the same way we can talk about the
 
 The integers have multiplicative identity 1 because $n\cdot1=1\cdot n=n$.
 However, most integers do \emph{not} have a multiplicative inverse.
-Take the number 5, for example. There is no \emph{integer} that multiplies
-5 to give 1 (of course, $5\cdot\frac{1}{5}=\frac{1}{5}\cdot5=1$,
+Take the number 5, for example. There is no \emph{integer} that can be multiplied by 5 to give 1 (of course, $5\cdot\frac{1}{5}=\frac{1}{5}\cdot5=1$,
 but $\frac{1}{5}$ is not an integer, so it doesn't
 count).
 
@@ -652,7 +654,7 @@ Prove FOIL for complex numbers: that is, if $u,v,w,$ and $z$ are complex numbers
 
 We are familiar with the absolute value of a real number: for instance,
 $|-\sqrt{7}|=\sqrt{7}$. In general, for a real number $x$ the absolute
-value can be defined as $|x|\equiv+\sqrt{x^{2}}$.
+value can be defined as $|x|\equiv\sqrt{x^{2}}$. (Here and elsewhere, the square root symbol is used to denote the \emph{positive} square root.)
 
 \begin{defn}
 For a complex number $z$, the \term{absolute value} or \term{modulus}\index{Modulus}\index{Complex numbers!modulus}
@@ -789,7 +791,7 @@ The Mandelbrot set is defined by means of \emph{iteration} of the function $f(z)
 
 First consider $c=1$, so $f(z) = z^2 + 1$. We start with $z=0$, which gives $f(0) = 1$; and we iterate by evaluating the function on the result of the previous evaluation. So we compute $f(1) = 2, f(2) = 5, f(5) = 26, ...$. It is clear that $|f(z)|$ is getting larger and larger after repeated iterations. 
 
-On the other hand, if we use $c=i$ and start with $z=0$, we get $f(0) = i$ at first, and repeated iteration gives $f(i) = -1+i, f(-1+i) = i, f(i) = -1 + i, \ldots$ so that this time $|f(z)|$ doesn't continue to grow indefinitely after repeated iterations. 
+On the other hand, if we use $c=i$ and start with $z=0$, we get $f(0) = i$ at first, and repeated iteration gives $f(i) = -1+i, f(-1+i) =- i, f(i) = -1 + i, \ldots$ so that this time $|f(z)|$ doesn't continue to grow indefinitely after repeated iterations. 
 
 The Mandelbrot set is defined to be the set of values $c$ for which the iterations do \emph{not} grow indefinitely upon iteration. Thus $i$ is in the Mandelbrot set, while $1$ is not. 
 
@@ -811,7 +813,7 @@ $c = 1+i$
 \begin{figure}[hbt]  
 \center{\includegraphics[width=2.5in]
 	         {images/mandelbrot.png}}
-\caption{Mandelbrot set (from Wikipedia): the set is colored black.\label{mandelbrot}}
+\caption{Mandelbrot set (from Wikipedia): the set corresponds to the black region. The actual set has additional filaments that extend from the different bulb-shaped areas, which are not visible in this representation. (The reader may search the web for beautiful colored representations of this set.) \label{mandelbrot}}
 \end{figure}
 
 \begin{exercise}{excel} (\emph{for geeks})
@@ -1332,7 +1334,7 @@ $(\sqrt{2 + \sqrt{2}} - i\sqrt{2 - \sqrt{2}})^{16}$
 \end{exercise}
 
 
-\subsection{A Remark on representations of complex numbers}
+\subsection{A Remark on representations of complex numbers}\label{remRepComplex}
 
 We have seen that a complex number \emph{z} can be expressed in a
 number of different ways: 
@@ -1354,7 +1356,7 @@ structures that are the ``same'' algebraically are said to be
 \term{isomorphic}. We will be seeing isomorphic structures
 throughout this course.
 
-The importance of isomorphism in mathematics cannot be overstated.\footnote{There are other types of ``morphisms'' as well, such as homeomorphism (in topology), diffeomorphism (in differential topology), and just plain morphism (in category theory).}  Realizing that the same thing can be represented in two different ways is often the key to mathematical progress, and can lead to enormous simplifications. For instance, we have seen that it's  easier to add complex numbers in Cartesian form, while it's much simpler to multiply complex numbers in polar form.  Since Cartesian and polar forms are are simply two different ways of representing the same thing, we can freely switch back and forth between the two forms, using whichever is most convenient at the moment. 
+The importance of isomorphism in mathematics cannot be overstated.\footnote{There are other types of ``morphisms'' as well, such as homeomorphism (in topology), diffeomorphism (in differential topology), and just plain morphism (in category theory).}  Realizing that the same thing can be represented in two different ways is often the key to mathematical progress, and can lead to enormous simplifications. For instance, we have seen that it's  easier to add complex numbers in Cartesian form, while it's much simpler to multiply complex numbers in polar form.  Since Cartesian and polar forms  are simply two different ways of representing the same thing, we can freely switch back and forth between the two forms, using whichever is most convenient at the moment. 
 
 \begin{exercise}{cos form}
 \begin{enumerate}[(a)]
@@ -1370,7 +1372,7 @@ Using part (a), find a formula for $\cos 3 \theta$ in terms of $\cos \theta$.
 \end{enumerate}
 \end{exercise}
 
-We also wish to emphasize the importance of representations using \emph{pictures}.  These are essential for developing a deep, intuitive grasp of how complex numbers work.
+We also wish to emphasize the importance of representations using \emph{pictures}.  These are essential for developing an intuitive grasp of how complex numbers work. They're also a lot more fun to draw than mathematical symbols. 
 
 \begin{exercise}{cos form2}
 \begin{enumerate}[(a)]
@@ -1506,7 +1508,7 @@ We may also understand this situation in terms of two-dimensional vectors with t
 	  \caption{\label{fig:complex:3} Graphs of the vector representation and the wave representation of cosine }
 \end{figure}
 
-Now it's possible to add two waves together; we've all seen at the beach or pool (or physics class) how two water waves that cross each other create another wave of with a different shape. This is called {\bf \emph{wave superposition}}\index{Wave superposition}. In general, the superposition of two waves is a wave with a different shape; we will now see how complex numbers make it easy to compute this new wave.
+Now when two waves cross each other they produce a wave of a different shape--we may see this in water waves at the beach or pool (or physics class). This is called {\bf \emph{wave superposition}}\index{Wave superposition}. We will now see how complex numbers make it easy to compute the shape of this new wave.
 
 \begin{exercise}{45}
 \begin{enumerate}[(a)]
@@ -1533,7 +1535,7 @@ Associated with each sine or cosine wave is a complex number $A \cis( \theta) $ 
 \item
 The sum of two sine or cosine waves is also equal to a cosine wave
 \item
-The amplitude and phase shift of the sum of two cosine waves may be obtained by adding the phasors of the two consituent cosine waves.
+The amplitude and phase shift of the sum of two cosine waves may be obtained by adding the phasors of the two constituent cosine waves.
 \end{itemize}
 
 \begin{exercise}{46}
@@ -1775,7 +1777,7 @@ The previous exercises (when suitably generalized) lead to the following stupend
 
 \begin{itemize}
 \item
-Every \emph{rigid} motion of a regular $n$-gon is equivalent to some combination of complex conjugation and multiplication by one of the $n$th roots of unity.
+Every \emph{rigid} motion of a regular $n$-gon is equivalent to some combination of complex conjugation and multiplication by one of the $n$th roots of unity. (By ``rigid motion'' we mean any motion that a rigid object could undergo, without stretching or bending or distorting it in any we. We'll have more to say about rigid motions in Chapter~\ref{symmetries}.) 
 \end{itemize}
 
 \begin{exercise}{non_comm}
@@ -1799,7 +1801,7 @@ What geometrical motion corresponds to the following algebraic operation:
 \end{enumerate}
 \end{exercise}
 
-Exercise~\ref{exercise:complex:non_comm} also gives us our first exposure to a phenomenon that is quite common in abstract algebra, namely the existence of non-commutative operations (also known as \term{non-abelian}\index{abelian} operations).
+Exercise~\ref{exercise:complex:non_comm} also gives us our first exposure to a phenomenon that is quite common in abstract algebra, namely the existence of non-commutative operations (also known as \term*{non-abelian}\index{operations!non-abelian}\index{non-abelian operations} operations).
  We saw that both multiplication by a $n$th root of unity and complex conjugation corresponded to motions of a regular $n$-gon. However, the \emph{order} of the motions matters: rotating first and then conjugating (i.e. ``flipping'') gives a \emph{different} result than conjugating first, then performing the rotation afterwards.
 
 \begin{exercise}{56}
@@ -1855,7 +1857,7 @@ Next, let us consider the case of cube roots. Consider for example the cube root
 \[ z^3 = 1 + i. \]
 It turns out that it is easier to use polar form, so we rewrite this as
 \[ z^3 = \sqrt{2} \cis\left(\frac{\pi}{4}\right). \]
-Recalling de Moivre's theorem, one solution should be clear:
+Using de Moivre's theorem, we may easily verify that one solution is:
 \begin{align*}
 z &= (\sqrt{2})^{1/3} \cis \left( \frac{\pi}{4}/3 \right) \\
 &= 2^{1/6} \cis(\pi/12).
@@ -1889,7 +1891,7 @@ Find all fourth roots of $ \sqrt{1/2 + \sqrt{2}/4} + i\sqrt{1/2 - \sqrt{2}/4}$.
 
 \section{Complex roots of polynomial equations}\label{sec:FTOA}
 
-Next we consider more general algebraic equations than the basic $n$'th root equations we've been looking at so far. As a first example, consider the equation $z^2 + pz = q$, where $p$ and  $q$ are real numbers. Using  the quadratic formula, it is not too hard to show that if $a + bi$ is a solution of $z^2 + pz = q$ then the complex conjugate $a - bi$ is also a solution. This is because  $z^2 + pz = q$ can also be written as  $z^2 + pz - q = 0$, and the quadratic formula tells us that there are two solutions, given by:
+Next we consider more general algebraic equations than the basic $n$th root equations we've been looking at so far. As a first example, consider the equation $z^2 + pz = q$, where $p$ and  $q$ are real numbers. Using  the quadratic formula, it is not too hard to show that if $a + bi$ is a solution of $z^2 + pz = q$ then the complex conjugate $a - bi$ is also a solution. This is because  $z^2 + pz = q$ can also be written as  $z^2 + pz - q = 0$, and the quadratic formula tells us that there are two solutions, given by:
 $$ z = \frac{-p \pm \sqrt{p^2 - (4)(1)(-q)}}{2} = \frac{-p}{2}  \pm \frac{\sqrt{p^2 + 4q}}{2}.$$
 The $-p/2$ term is always real, but the square root term is either real or imaginary depending on the sign of $p^2 + 4q$  (since $q$ could be negative).  If the square root term is real, then both roots are real, and each root is its own complex conjugate.  If the square root term is imaginary, then the $\pm$ means that the imaginary parts of the two roots are negatives of each other, so that the two roots are complex conjugates.
 
@@ -1934,7 +1936,7 @@ The most famous result concerning complex roots of polynomials is known as the {
 \begin{prop}{FTOA} Given any equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, ... a_{n-1}$ are real numbers. Then there exists at least one and at most $n$ distinct complex numbers which solve the given equation. 
 \end{prop}
 
-The Fundamental Theorem of Algebra actually has two parts. The easy part is the ``at most $n$ distinct complex roots'' part, and the hard part is the ``at least one complex root'' part. We will eventually prove the easy part in Chapter~\ref{poly}, but sadly the hard part is beyond our scope.\footnote{You may see a proof if you take a class in complex analysis}
+The Fundamental Theorem of Algebra actually has two parts. The easy part is the ``at most $n$ distinct complex roots'' part, and the hard part is the ``at least one complex root'' part. We will eventually prove the easy part in Chapter~\ref{poly}, but sadly the hard part is beyond our scope. (For more information on this see the ``Historical note'' at the end of the chapter.
 
 \begin{exercise}{70}
 \begin{enumerate}[(a)]
@@ -1966,7 +1968,7 @@ Give an example of a polynomial of the form  $z^6 + a_{5}z^{5} + a_{4} z^{4} + \
  
  
 \noindent{\small \histf
-Several great mathematicians (Euler, Lagrange, Laplace, and Gauss) produced ``proofs'' that every polynomial has at least one complex root which turned out to be faulty. The first correct proof was given by Argand in 1806. See \url{en.wikipedia.org/wiki/Fundamental_theorem_of_algebra} for the fascinating detals.
+The Fundamental Theorem of Algebra is a famous ``hard problem'' in the history of mathematics. Some of the greatest mathematicians in history (including Euler, Lagrange, Laplace, and Gauss) thought they had proofs, only to have later mathematicians point out flaws or gaps in the arguments. See \url{http://www-history.mcs.st-and.ac.uk/HistTopics/Fund_theorem_of_algebra.html} for more details. In the modern mathematics curriculum, the proof  is usually given in courses on complex analysis as an easy consequence of ``Liouville's theorem'', which was first proved in 1847. Modern college students who learn basic concepts from the theory of complex variables can readily grasp the theorem which stymied the greatest mathematical minds of history.
 \histbox 
 }
 

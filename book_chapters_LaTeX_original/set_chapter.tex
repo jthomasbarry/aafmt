@@ -4,10 +4,16 @@
 
 \chap{Set Theory}{sets}
 
+
+
 \section{Set Basics}
+
+You've probably seen sets, set relations, and set operations in previous classes.  In fact, in the previous two chapters of this book you've already been working with sets.  So we'll review them quickly before moving on to further properties and proofs concerning sets and their accessories.
+\medskip
+
+This chapter is an adapted and expanded version of a chapter by D. and J. Morris.
  
 \subsection{What's a set? (mathematically speaking, that is)}
-You've probably seen sets, set relations, and set operations in previous classes.  In fact, in the previous two chapters of this book you've already been working with sets.  So we'll review them quickly before moving on to further properties and proofs concerning sets and their accessories.\footnote{This chapter is an adapted and expanded version of a chapter by D. and J. Morris.}
 
 First of all, we provide a precise mathematical definition for ``set'':
 
@@ -29,7 +35,7 @@ for a set containing elements $x_1, x_2, \ldots, x_n$ or
 \[
 X = \{ x :x \text{ satisfies }{\mathcal P}\}
 \]
-if each $x$ in $X$ satisfies a certain property ${\mathcal P}$.  
+if each $x$ in $X$ satisfies a certain property ${\mathcal P}$. (Here the ``:'' signifies ``such that''.)  
 
 Specifically: if $E$ is the set of even positive integers, we can describe $E$ by writing either 
 \[
@@ -643,7 +649,8 @@ This completes the proof of (I). Now we'll  prove (II). Take any element $x \in 
 (i) $x \in A$, or (ii) $x \not\in A$.
 
 \noindent
-\emph{Case i}:  If $x \in A$, then by by Proposition~\ref{proposition:sets:cupcapincl} it's also true that $x \in A \cup  B$ and $x \in A \cup  C$.  By the definition of $\cap$, this means that $x \in (A \cup  B) \cap (A  \cup  C)$.  
+\emph{Case i}:  If $x \in A$, then by by Proposition~\ref{proposition:sets:cupcapincl} it's also true that 
+$x \in A \cup (B \cap C)$.  
 
 \noindent
 \emph{Case ii}:  Suppose $x \not\in  A$. Now, since $x \in (A \cup B) \cap (A \cup C)$, by the definitions of $\cap$ and $\cup$ we know that $(x \in A \text{ or } x \in B)$ and $(x \in A \text{ or } x \in C)$. But since  $x \not\in  A$, it must be true that $x\in B$, and also $x\in C$. By the definition of $\cap$, this means that $x\in B \cap C$. by Proposition~\ref{proposition:sets:cupcapincl}, we have that  $x \in A \cup (B \cap C)$. This completes the proof of (II), which completes the proof of (7).
@@ -809,7 +816,7 @@ The set elements satisfy the \emph{associative property} under the group operati
 \end{enumerate}
 
 \noindent
-If you forgot what these properties mean, look back at Section~\ref{sec:ClosureZn} and the following subsections in the Integers mod $n$ chapter.
+If you forgot what these properties mean, look back at Section~\ref{sec:ClosureZn} and the following subsections, where we discuss these properties as applied to the integers mod $n$.
 
 What we're going to do now is a first taste of a magic recipe that you're going to see again and again in Abstract Algebra. We're going to turn \emph{sets} into \emph{elements}. Abracadabra!
 
@@ -884,7 +891,7 @@ Is the set $G$ a group under the $\cap$ operation?  \emph{Justify} your answer.
 \end{exercise} 
  
 
-No doubt you're bitterly disappointed that neither $\cap$ nor $\cup$ can be used to define a group. However, take heart! Mathematicians use the $\cap$ nor $\cup$ operations to define a different sort of algebraic structure called (appropriately enough) a \emph{Boolean algebra}. We won't deal further with Boolean algebras in this course: suffice it to say that mathematicians have defined a large variety of abstract algebraic structures for different purposes.
+No doubt you're bitterly disappointed that neither $\cap$ nor $\cup$ can be used to define a group. However, take heart! Mathematicians use these operations to define a different sort of algebraic structure called (appropriately enough) a \emph{Boolean algebra}. We won't deal further with Boolean algebras in this course: suffice it to say that mathematicians have defined a large variety of abstract algebraic structures for different purposes.
 
 Although $\cap$ and $\cup$ didn't work, there is a consolation prize:
  

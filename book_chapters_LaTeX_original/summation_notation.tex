@@ -13,11 +13,14 @@
 %If its not already included, it would be useful to have a list of identities involving summation notation. JW
 
 \chap{Sigma Notation}{Sigma}
-We are about to start looking at polynomials, which means we will be working with sums of terms -- sometimes many terms. Such sums are often written using \emph{Sigma notation}.  It's possible that you are already a master of Sigma notation. If not, you can brush up with the material in this section. (At very least, you should try some of the exercises to make sure that you haven't gotten rusty!)\footnote{This chapter was written by David Weathers and Johnny Watts (edited by CT).}
+We're about to start looking at polynomials, which means we'ill be working with sums of terms--sometimes many terms. Such sums are often written using a special notation known as ``sigma notation''.  It's possible that you are already a master of sigma notation. If not, you can brush up with the material in this section. (At very least, you should try some of the exercises to make sure that you haven't gotten rusty.)
+\bigskip
+
+The original version of this chapter was written by David Weathers. Johnny Watts also contributed several sections, and Rachel McCoy worked on the summation by parts section.
 
 \section{Lots of examples}
 
-It's unavoidable that in mathematics, one often encounters sums.  Sometimes these sums have very few terms, but occasionally the sums can reach hundreds, thousands or even an infinite number of terms.  In these cases, rather than listing each and every term or listing the first several terms and assuming the pattern is obvious, one can represent a sum using \emph{summation notation}\index{Summation notation}, often referred to as \emph{Sigma notation}\index{Sigma notation}. 
+It's unavoidable that in mathematics, one often encounters sums.  Sometimes these sums have very few terms, but occasionally the sums can reach hundreds, thousands or even an infinite number of terms.  In these cases, rather than listing each and every term or listing the first several terms and assuming the pattern is obvious, one can represent a sum using \term{summation notation}, often referred to as \term{sigma notation}. 
 
  Sigma notation has four main parts:  the \emph{index variable}, the \emph{starting value}, the \emph{final value} and the \emph{formula}.
 These parts are illustrated in the following example.
@@ -35,12 +38,11 @@ Therefore we have:
 This notation has a lot of flexibility. For example, the sum's formula can be a constant value:
 \[\sum _{i=1}^{10}5 = 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 = 50.\]
 Or we could have the index as an exponent:
-operator value
 \[\sum _{i=1}^{10}(2^i) = 2^1 + 2^2 + 2^3 + 2^4 + 2^5 + 2^6+ 2^7+ 2^8+ 2^9+ 2^{10} \]
 Now all the examples so far have a numerical value that can be calculated.  However, summation notation can also be used to express functions of variables such as:  
 \[\sum _{i=1}^{10}(x^i)= x^1 + x^2 + x^3 + x^4 + x^5 + x^6+ x^7+ x^8+ x^9+ x^{10} \]
 Note that any variables in the formula that do not match the index are left as variables (such as $x$ in the previous example).  
-While we do not know what the sum value is other than in terms of $x$, we can much more concisely state the sum in Sigma notation.
+While we do not know what the sum value is other than in terms of $x$, we can much more concisely state the sum in sigma notation.
 
 Another typical use for the index in the formula is to denote an index in a coefficient.  Consider the polynomial:
 \[ax^2 + bx + c.\]
@@ -76,10 +78,10 @@ $\displaystyle{ \sum_{k=0}^{100} \left(\frac{1}{k+2} - \frac{1}{k+1}\right)}$
 \section{Sigma notation properties}
 
 % Sigma, as with any other math notation, is designed not only to offer control and concise notation, but to offer the ability to change the representation of that notation without changing the value.  There are some circumstances where numbers can be moved or removed from the sum and yet the sum maintains the same value.  
-As with any algebraic notation, there are rules that allow us to do algebraic manipulations with expressions that involve Sigma. 
+As with any algebraic notation, there are rules that allow us to do algebraic manipulations with expressions that involve sigmas. 
 Take for example:
 \[\sum_{i=0}^{5}2i\]
-We know this is the Sigma notation for $2\cdot1+2\cdot2+2\cdot3+2\cdot4+2\cdot5$. Using the distributive property of addition and multiplication of integers, we know this sum is the same as $2\cdot(1+2+3+4+5)$.  Now we convert the sum in the parenthesis to Sigma notation to yield
+We know this is the sigma notation for $2\cdot1+2\cdot2+2\cdot3+2\cdot4+2\cdot5$. Using the distributive property of addition and multiplication of integers, we know this sum is the same as $2\cdot(1+2+3+4+5)$.  Now we convert the sum in the parenthesis to sigma notation to yield
 \[2\cdot\sum_{i=0}^{5}i.\]
 The same argument could be used for any sum  multiplied by any constant. We can write this rule as:
 \[\sum_{i=a}^{b} c \cdot d_i = c \cdot \sum_{i=a}^{b}  d_i,\]
@@ -101,8 +103,12 @@ $1+2+3+4+5+6$, which can be represented as:
 %This can even be used when the index in the formula is being affected by another function.
 %Or in general, \sum_{n=j}^k f(n) = \sum_{n=j+p}^{k+p} f(n-p) JW
 A similar example is:
-\[\sum_{i=2}^{4}(i+1)(i+2)=(2+1)(2+2) + (3+1)(3+2)+(4+1)(4+2) = 62\]
- \[(3+0)(3+1) + (4+0)(4+1)+(5+0)(5+1) = \sum_{j=3}^{5}j(j+1).\] 
+\begin{align*}
+\sum_{i=2}^{4}(i+1)(i+2)&=(2+1)(2+2) + (3+1)(3+2)+(4+1)(4+2) \\
+ &=(3+0)(3+1) + (4+0)(4+1)+(5+0)(5+1) \\
+&= \sum_{j=3}^{5}j(j+1).
+\end{align*}
+ 
 %Notice that whenever the index and ending condition change, it must change all instance of the index in the formula. Another way to think about it, is substituting a new index into the whole summation. Given:
 Changing the starting and final values in this way can be thought of as a change of variable. For instance, in the previous example we had
 \[\sum_{i=2}^{i=4}(i+1)(i+2).\]
@@ -113,18 +119,18 @@ and after algebraic simplification we get
 \[\sum_{j=3}^{5}j(j+1),\]
 as before.
 
-Occasionally, it may be necessary to add or remove a single term from the sum.  This can be done by changing the start value or end condition.The following example illustrates this, as well as demonstrating some of our summation manipulation rules:
-\[\sum_{i=1}^{10}i = 1 + \sum_{i=2}^{10} i = 1+ \sum_{i=1}^9 ( i+1) = 1 +  \sum_{i=1}^9  i +  \sum_{i=1}^9  1 =  \sum_{i=1}^9  i + 10.\]
+Occasionally, it may be necessary to add or remove a single term from the sum.  This can be done by changing the start value or end condition. The following example illustrates this, as well as demonstrating some of our summation manipulation rules:
+\[\sum_{i=1}^{10}i = 1 + \sum_{i=2}^{10} i = 1+ \sum_{i=1}^9 ( i+1) = 1 +  \sum_{i=1}^9  i +  \sum_{i=1}^9  1 = 1+ \sum_{i=1}^9  i + 9 =  \sum_{i=1}^9  i + 10.\]
 When removing a term from the middle, it may be necessary to split the sum into two separate sums.
 \[\sum_{i=1}^{10}i = \sum_{i=1}^{3}i + 4 + \sum_{i=5}^{10}i.\]
 %However adding a term to a sum can be quite difficult.  The formula has to account for the new term which is not always possible.  Take for example the sum off odd numbers from 1 to 51.
 %\[\sum_{i=0}^{25}(2i+1)  \]
-%If it were necessary to add the number 2 to the sum, it would not be possible to merely change the parameters of Sigma to include 2.  In this case it is better to leave the notation as :
+%If it were necessary to add the number 2 to the sum, it would not be possible to merely change the parameters of the sigma to include 2.  In this case it is better to leave the notation as :
 %\[2 + \sum_{i=0}^{25}(2i+1)  \]
 
 %insert exercises for sigma notation modification
 \begin {exercise}{}
-Take the following Sigma notation examples and change the formula and final value so that the starting value becomes 0 and the sum maintains the same value.  Calculate the value of both the listed sum and the resulting sum to show that the value is the same.
+Take the following sigma notation examples and change the formula and final value so that the starting value becomes 0 and the sum maintains the same value.  Calculate the value of both the listed sum and the resulting sum to show that the value is the same.
 \begin {enumerate} [(a)]
  \item
 $\displaystyle{\sum_{i=3}^{46}2i}$
@@ -137,46 +143,46 @@ $\displaystyle{\sum_{j=20}^{40}(j-20)}$
 
 \begin {exercise}{}
 We have shown that a ``sum rule'' holds for sigma notation.  Is there a corresponding ``product rule''? That is: is it true that
-\[ \sum_{i=0}^n x_i y_i \stackrel{?}{=} \left(\sum_{i=0}^n x_i \right) \left(  \sum_{i=0}^n y_i \right). \]
+\[ \sum_{i=0}^n x_i y_i \stackrel{?}{=} \left(\sum_{i=0}^n x_i \right) \cdot  \left(  \sum_{i=0}^n y_i \right). \]
 If true then prove it; if not, give a counterexample.
 \end{exercise}
 
 
-\section{Nested Sigmas}
-Since any  sufficiently patterned summation can be replaced with Sigma notation, it's quite possible for one Sigma to end up inside another:
+\section{Nested sigmas}
+Since any  sufficiently patterned summation can be replaced with sigma notation, it's quite possible for one sigma to end up inside another:
 
 \[\sum_{i=0}^{3}\left( \sum_{j=0}^{2}1\right)\]
 
-This means that for each value of the index of the outside Sigma, the entire sum of the inside Sigma must be calculated.  In this case, $\sum_{j=0}^{2}(1)=3$, so we have
+This means that for each value of the index of the outside sigma, the entire sum of the inside sigma must be calculated.  In this case, $\sum_{j=0}^{2}(1)=3$, so we have
 
-\[\sum_{i=0}^{3}\left( \sum_{j=0}^{2}1\right) =  \sum_{i=0}^{3}\ 3  = 3+3+3+3 = 12. \]
+\[\sum_{i=0}^{3}\sum_{j=0}^{2}1 =  \sum_{i=0}^{3}\ 3  = 3+3+3+3 = 12. \]
+(Note that this time we didn't put a parenthesis around the inner sum--when two sums are written next to each other, it's understood that the second sum is nested inside the first.)
+The situation becomes more interesting when the sum inside depends on the the index variable of the outside sigma:
 
-The situation becomes more interesting when the sum inside depends on the the index variable of the outside Sigma:
-
-\[\sum_{i=0}^{3}\left(\sum_{j=0}^{i}1\right)\]
+\[\sum_{i=0}^{3}\sum_{j=0}^{i}1\]
 
 Unlike the previous case, the inside sum will change depending on what $i$ is.  When $i=0$ then $\sum_{j=0}^{i}1=\sum_{j=0}^{0}1=1$ so 1 would be the first term in the outside sum.  When $i=1$ then $\sum_{j=0}^{i}1=\sum_{j=0}^{1}1=1+1=2$ so 2 would be the next term.  With each successive term, the inside sum increases by 1, so the result is $1+2+3+4 = 10$.
 
  Note that the index of the outer sum may appear in any or all parts of the inner sum. Here are some examples:  
 
-\[\sum_{i=0}^{3} \left(\sum_{j=i}^{10}1\right); \qquad
-\sum_{i=0}^{3} \left(\sum_{j=1}^{10}i \right); \qquad
-\sum_{i=0}^{3}\left(\sum_{j=i}^{2i}3i+x^j\right).\]
+\[\sum_{i=0}^{3} \sum_{j=i}^{10}1; \qquad
+\sum_{i=0}^{3} \sum_{j=1}^{10}i ; \qquad
+\sum_{i=0}^{3}\sum_{j=i}^{2i}(3i+x^j).\]
 
 When using nested sums, it is possible to rearrange the order of summation.  Take for example:
-\[\sum_{i=0}^{2} \left( \sum_{j=0}^{i}1 \right)\]
+\[\sum_{i=0}^{2}  \sum_{j=0}^{i}1 \]
 The first term has $i=0$ and $j=0$: we write this as $(i,j)=(0,0)$. When $i=1$, then we have two terms:  $j=0$ and $j=1$. Finally, when $i=2$, we have $j=0,1,$ or 2.  Altogether we have the index pairs: $(0,0), (1,0), (1,1), (2,0), (2,1), (2,2)$. These index pairs may be displayed on a grid, as shown in Figure~\ref{fig:summation1}.
 \begin{figure}[htb]
 \begin{center}
 	\includegraphics[width=3.0in]{images/i02j0igraph.png}
-\caption{\label{fig:summation1} Grid points corresponding to the terms in the sum: $ \sum_{i=0}^{2} \left( \sum_{j=0}^{i}1 \right)$.}
+\caption{\label{fig:summation1} Grid points corresponding to the terms in the sum: $ \sum_{i=0}^{2}  \sum_{j=0}^{i}1 $.}
 \end{center}
 \end{figure} 
 
-Alternatively, we can arrange these index pairs by $j$ coordinate.  When $j$ is 0, $i$ takes the values (0,1,2), when $j$ is 1, $i$ takes the values of (1,2) and when $j$ is 2 $i$ takes the value 2.  This can be expressed as the sum:
-\[\sum_{j=0}^{2} \left(\sum_{i=j}^{2}1 \right)\]
+Alternatively, we can arrange these index pairs by $j$ coordinate.  When $j$ is 0, $i$ takes the values (0,1,2); when $j$ is 1, $i$ takes the values of (1,2); and when $j$ is 2, $i$ takes the value 2.  This can be expressed as the sum:
+\[\sum_{j=0}^{2} \sum_{i=j}^{2}1 \]
 
-So far our examples have only two Sigmas, but it's quite possible to have an unlimited number of nested Sigmas. For example, with three nested Sigmas we would have grid points in three dimensions.  It doesn't matter what order you sum the terms in--as long as you include them all!
+So far our examples have only two sigmas, but it's quite possible to have an unlimited number of nested sigmas. For example, with three nested sigmas we would have grid points in three dimensions.  It doesn't matter what order you sum the terms in--as long as you include them all!
 
 %Another handy identity for more than one index:JW
 %\sum_{i=n}^s \sum_{j=m}^t a_{i,j} = \sum_{j=m}^t sum_{i=n}^s a_{i,j} 
@@ -184,23 +190,23 @@ So far our examples have only two Sigmas, but it's quite possible to have an unl
 Rewrite each of the following nested sums, exchanging the order of sums and changing the start values and end conditions as needed so that the nested sum maintains the same value. (In some cases, drawing a grid point diagram similar to Figure~\ref{fig:summation1} may be helpful.)
 \begin {enumerate}[(a)]
 \item
-$\displaystyle{\sum_{i=0}^{4}\left(\sum_{j=0}^{8}i\right)}$
+$\displaystyle{\sum_{i=0}^{4}\sum_{j=0}^{8}i}$
 \item
-$\displaystyle{\sum_{j=0}^{3}\left( \sum_{i=j}^{j+3}i+j\right)}$~~(Write as the sum of two summations.)
+$\displaystyle{\sum_{j=0}^{3} \sum_{i=j}^{j+3}*(i+j)}$~~(Write as the sum of two summations.)
 \item
-$\displaystyle{\sum_{k=0}^{17}\left(\sum_{i=0}^{k}2i+1 \right)}$
+$\displaystyle{\sum_{k=0}^{17}\sum_{i=0}^{k}(2i+1) }$
 \item
-$\displaystyle{\sum_{i=1}^{10}\left(\sum_{j=i}^{i+1} (i-j) \right)}$~~(Write as a nested sum plus two additional terms.)
+$\displaystyle{\sum_{i=1}^{10}\sum_{j=i}^{i+1} (i-j) }$~~(Write as a nested sum plus two additional terms.)
 \item
-$\displaystyle{\sum_{i=1}^{10}\left(\sum_{j=i}^{10} ij \right)}$
+$\displaystyle{\sum_{i=1}^{10}\sum_{j=i}^{10} ij }$
 \item
-$\displaystyle{\sum_{i=m}^{n}\left(\sum_{j=i}^{p}jx^i \right)}$
+$\displaystyle{\sum_{i=m}^{n}\sum_{j=i}^{2n}jx^i }$~~(Write as the sum of two summations.)
 \item
-$\displaystyle{\sum_{i=m}^{n}\left(\sum_{j=q}^{i}(i-j)^2 \right)}$
+$\displaystyle{\sum_{i=m}^{n}\sum_{j=0}^{i}(i-j)^2 }$~~(You may assume $m>0$.  Write as the sume of two summations.)
 \end {enumerate}
 \end{exercise}
 Another useful fact: in a nested sum, the outer summation index can be treated as a constant in the inner summation.  So for example:
-\[ \sum_{i=1}^{9} \sum_{j=1}^7 ij = \sum_{i=1}^{9} i \sum_{j=1}^7 j = \sum_{i=1}^{9} i\left (\sum_{j=1}^7 j\right) = \left(\sum_{i=1}^{9} i\right) \left(\sum_{j=1}^7 j\right) = 45\cdot 28=1260. \]
+\[ \sum_{i=1}^{9} \sum_{j=1}^7 ij = \sum_{i=1}^{9} i \sum_{j=1}^7 j = \sum_{i=1}^{9} i\sum_{j=1}^7 j = \left(\sum_{i=1}^{9} i\right) \left(\sum_{j=1}^7 j\right) = 45\cdot 28=1260. \]
 \begin{exercise}{}
 Using exchange of summation and other sum manipulation techniques, find the exact values of the following sums:
 
@@ -224,7 +230,7 @@ $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i (j+i)}$
 \end{exercise}
 
 \section{Common Sums}
-There are several sums, even a few infinite sums, that the total value is known. One very basic example is:
+There are several sums, even a few infinite sums, for which the total value is known. One very basic example is:
 \[\sum_{i=1}^{k}1\]
 The answer is NOT 1. (What is it?) Make sure you don't get tripped up by this one.
 
@@ -245,25 +251,24 @@ where $a$ and $k$ are integers and $a<k$.
 \begin {exercise}{}
 \begin {enumerate}[(a)]
 \item 
-Write the sum of odd integers from $2a+1$ to $2k+1$ in Sigma notation.
+Write the sum of odd integers from $2a+1$ to $2k+1$ in sigma notation.
 \item
 Give a formula for the sum that you wrote in (a).  (Use the same reasoning that we used to find sums of consecutive integers.)
 \item 
-Write the sum of even integers from $2a$ to $2k$ in Sigma notation.
+Write the sum of even integers from $2a$ to $2k$ in sigma notation.
 \item
 Give a formula for the sum that you wrote in (c). 
 \item 
-Write the sum of every $5^{\text{th}}$ integer from $a$ to $a + 5k$ in Sigma notation.
+Write the sum of every $5^{\text{th}}$ integer from $a$ to $a + 5k$ in sigma notation.
 \item
 Give a formula for the sum that you wrote in (e). 
 \end {enumerate}
 \end {exercise}
 
 %%% Give the derivation of the geometric series for a finite number of terms.
-One infinite sum called the \emph{geometric series}, and is defined as the sum of integer powers of a common base.  For example, here is the geometric series when the base is 1/2:
+The so-called \emph{geometric series} is defined as the sum of non-negative integer powers of a common base.  For example, here is the geometric series when the base is 1/2:
 \[\sum_{i=0}^{\infty}\left({\dfrac{1}{2}}\right)^i=\left({\dfrac{1}{2}}\right)^0+\left({\dfrac{1}{2}}\right)^1+\left({\dfrac{1}{2}}\right)^2\cdots = 1 + {\dfrac{1}{2}} + {\dfrac{1}{4}} + {\dfrac{1}{8}}\cdots\]
-As we add the terms of the sum together it becomes apparent that the total sum gets closer to 2, but never quite gets there.  However if we add all the terms together, the sum approaches:
-\[\dfrac{1}{1-\dfrac{1}{2}}.\]
+As we continue to add  terms,  the sum approaches $2$ but never quite gets there. But since we can approach as close as we want to 2 by taking more terms, we say that the sum of the infinite series is ``equal to'' 2. 
 More generally for any value $-1<x<1$ the series:
 \[\sum_{i=0}^{\infty}x^i = \dfrac{1}{1-x}\]
 We can easily prove this using some fairly simple algebra.  Let $S$ be the value of this sum.  We can solve for $S$  by writing:
@@ -273,7 +278,7 @@ Subtracting these two equations gives $S-xS=1$, and solving for $S$ gives:
 \[S=\dfrac{1}{1-x}. \]
 This same technique can be used to prove the formula for a geometric series with a finite number of terms:
 \[ \sum_{i=0}^{n-1} ar^i = a \dfrac{1-r^n}{1-r} \]
-As before, we let $S$ be the value of this sum. We then compute $S - rS$ (most terms in the sums cancel) and solve for $S$.  See if you can do this for yourself.  (It may be on the test!)
+As before, we let $S$ be the value of this sum. We then compute $S - rS$ (most terms in the sums cancel) and solve for $S$.  See if you can do this for yourself.  (It may come in handy--many teachers consider this a good test problem.)
 
 Other sums with known values include:
 \[\sum_{i=0}^{\infty}\dfrac{x^i}{i!} =1+\dfrac{x^1}{1!}+\dfrac{x^2}{2!}+\dfrac{x^3}{3!} \cdots=e^x\]
@@ -308,7 +313,7 @@ a_{1,1} b_{1,1} + a_{1,2} b_{2,1} + a_{1,3} b_{3,1} & a_{1,1} b_{1,2} + a_{1,2} 
 a_{2,1} b_{1,1} + a_{2,2} b_{2,1} + a_{2,3} b_{3,1} & a_{2,1} b_{1,2} + a_{2,2} b_{2,2} + a_{2,3} b_{3,2}  \\
 a_{3,1} b_{1,1} + a_{3,2} b_{2,1} + a_{3,3} b_{3,1} & a_{3,1} b_{1,2} + a_{3,2} b_{2,2} + a_{3,3} b_{3,2}  \end{array} \right) \]
 
-How great would it be if we shorten that mess?  Fortunately we can!  Let the matrix ${C}$ be the product ${A} {B}$, where ${A}$ is an $m ~\times ~n$ matrix  and ${B}$ is an $n ~\times ~p$ matrix \footnote{Remember the requirement for multiplying any two matrices is that the number of columns of the first must match the number of rows of the second.}, which implies that the dimensions of ${C}$ will be $m ~ \times ~ p$.  If the row number is given by the first index (in this case $i$), and the column number is given by the second index (in this case $j$), we can write the entries of  ${C}$ as: 
+How great would it be if we shorten that mess?  Fortunately we can!  Let the matrix ${C}$ be the product ${A} {B}$, where ${A}$ is an $m ~\times ~n$ matrix  and ${B}$ is an $n ~\times ~p$ matrix , which implies that the dimensions of ${C}$ will be $m ~ \times ~ p$.\footnote{Remember the requirement for multiplying any two matrices is that the number of columns of the first must match the number of rows of the second.}  If the row number is given by the first index (in this case $i$), and the column number is given by the second index (in this case $j$), we can write the entries of  ${C}$ as: 
 
 \[ {c}_{i,j}= \sum_{k=1}^n a_{i,k} b_{k,j} \]
 
@@ -357,7 +362,7 @@ There is a summation notation counterpart, called the \term{Kronecker delta}\ind
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
-What is the relationship between $\delta_{ij}$ the entries of the identity matrix $I$?
+What is the relationship between $\delta_{ij}$ and  the entries of the identity matrix $I$?
 \item
 We know that if a matrix $B$ is the inverse of the $n \times n$ matrix $A$ then we have the equations: $BA = I$ and $AB = I$.  Rewrite these matrix equations in summation notation, making use of the Kronecker delta $\delta_{ij}$.
 \end{enumerate}
@@ -438,11 +443,11 @@ In the above exercise, we have considered the trace of the sum of two matrices. 
 
 All we've done here is take the matrix product formula, and set the second index of the second  matrix entry equal to first index of the first matrix entry.  Now to make things interesting, let's find the trace for the reverse order:
 
-\[ \text{Tr} \left({B} {A}\right) = \sum_{i=1}^n [BA]_{i,i} = \sum_{i=1}^n \sum_{k=1}^n b_{ik}a_{k,i}. \]
+\[ \text{Tr} \left({B} {A}\right) = \sum_{i=1}^n [BA]_{i,i} = \sum_{i=1}^n \sum_{k=1}^n b_{i,k}a_{k,i}. \]
 
 Let's play with this last equation a bit. Since the matrix entries commute, and also  we can change the order of the summations without changing the result, it follows that we can do the following rearrangment:
 
-\[ \text{Tr} \left({B} {A}\right) =\sum_{i=1}^n \sum_{k=1}^n b_{ik}a_{k,i} = \sum_{i=1}^n \sum_{k=1}^n a_{k,i}b_{i,k} = \sum_{k=1}^n \sum_{i=1}^n a_{k,i}b_{i,k}. \]
+\[ \text{Tr} \left({B} {A}\right) =\sum_{i=1}^n \sum_{k=1}^n b_{i,k}a_{k,i} = \sum_{i=1}^n \sum_{k=1}^n a_{k,i}b_{i,k} = \sum_{k=1}^n \sum_{i=1}^n a_{k,i}b_{i,k}. \]
 
 Finally, we rename the indices by changing $k$ to $i$ and $i$ to $k$.  (Remember, it's the positions of the indices that are important, not the letters we call them by!)  After renaming, we get:
 
@@ -478,7 +483,7 @@ Prove that if $A$ is similar to $B$, then $\text{Tr} ({A}) = \text{Tr} ({B})$.
 \end{exercise}
 
 \begin {exercise}{}
-Let $A$ be a $n \times n$ diagonal matrix with positive entries, so that the entries of $A$ are given by:  $ [A]_{ij} = a_{i} \delta_{ij}$ where $a_i > 0, i = 1, \ldots, n$.  Define the matrix $\log A$ as follows:  $ [\log A]_{ij} = \log(a_{i}) \delta_{ij}$, where $\log$ refers to natural logarithm.  Show that:
+Let $A$ be a $n \times n$ diagonal matrix with positive entries, so that the entries of $A$ are given by:  $ [A]_{i,j} = a_{i} \delta_{ij}$ where $a_i > 0, i = 1, \ldots, n$.  Define the matrix $\log A$ as follows:  $ [\log A]_{i,j} = \log(a_{i}) \delta_{ij}$, where $\log$ refers to natural logarithm.  Show that:
 
 \[ \text{Tr}(\log A) = \log (\det A). \]
 (This formula is actually quite general, and applies to many non-diagonal matrices as well, as long as $\log A$ is properly defined.)\footnote{In some cases, the formula can be used to estimate the determinants of very large matrices: see \url{http://arxiv.org/pdf/hep-lat/9707001}.} 
@@ -540,11 +545,12 @@ This means that you may count all the elements contained in set $A$ or set $B$ b
 \begin{enumerate}[(a)]
 \item
 Show that for any values $i,j,k \in \{1,2,3\}$, it is always true that 
-\[ 1=|\epsilon_{ijk}|+\delta_{ij}+\delta_{jk}+\delta_{ik}-2\delta_{ij}\delta_{ik} \qquad \hyperref[sec:sigma:hints]{(*Hint*)}.\]   
+\[ 1=|\epsilon_{ijk}|+\delta_{ij}+\delta_{jk}+\delta_{ik}-2\delta_{ij}\delta_{ik}\]
+ \hyperref[sec:sigma:hints]{(*Hint*)}.   
 \item
 Show that 
 \[
-\sum_{i,j,k} a_{ijk}=\sum_{i,j,k~\text{all unequal}}a_{ijk}+\sum_{i,k}a_{iik}+\sum_{i,j}a_{ijj}+\sum_{j,k}a_{kjk}-2\sum_{i}a_{iii}.
+\sum_{i,j,k} a_{i,j,k}=\sum_{i,j,k~\text{all unequal}}a_{i,j,k}+\sum_{i,k}a_{i,i,k}+\sum_{i,j}a_{i,j,j}+\sum_{j,k}a_{k,j,k}-2\sum_{i}a_{i,i,i}.
 \]
 \hyperref[sec:sigma:hints]{(*Hint*)} 
 \end{enumerate}
@@ -552,7 +558,7 @@ Show that
 
 
 \subsubsection*{Levi-Civita symbols and determinants} 
-Now that we have defined what the Levi-Civita symbol is, we can actually use if for something!  The first application we'll look at is determinants.  Suppose you have a $2 \times 2 $ matrix $A$:\footnote{Previously we wrote our matrix subscripts with a comma between, e.g. $a_{i,j}$. But from now on we'll leave out the comma (e.g. $a_{ij}$), which is the way most math books do it.}
+Now that we've defined Levi-Civita symbols, we can actually use them for something!  The first application we'll look at is determinants.  Suppose you have a $2 \times 2 $ matrix $A$:\footnote{Previously we wrote our matrix subscripts with a comma between, e.g. $a_{i,j}$. But from now on we'll leave out the comma (e.g. $a_{ij}$), which is the way most math books do it.}
 
 \[ A = \left( \begin{array}{cc}
 a_{11} & a_{12} \\
@@ -634,7 +640,7 @@ First of all, lets not lose sight that both the left hand side and the right han
 We showed that if the first and second row of a $3\times 3$ matrix is the same, the determinant is zero.  Now finish the proof that the determinant of a $3\times 3$ matrix is always zero if \emph{any} two rows are the same; that is, prove it for the remaining cases.
 \end{exercise}{} 
 
-We can take the notion of equal and unequal indices as step farther by proving that the determinant of a product of two matricies is equal to the product of their determinants.  Lets start with a simple $2 \times 2$ matrix.  If matrices $A$ and $B$ are both 2x2, we want to prove that $\text{det}(AB)=\text{det}A\\,text{det}B$.  We can write $\text{det}(AB)$ as:
+We can take the notion of equal and unequal indices as step farther by proving that the determinant of a product of two matricies is equal to the product of their determinants.  Let's start with a simple $2 \times 2$ matrix.  If matrices $A$ and $B$ are both 2x2, we want to prove that $\text{det}(AB)=\text{det}A \,\text{det}B$.  We can write $\text{det}(AB)$ as:
 \[
 \text{det}(AB)= \sum_{x,y} \epsilon_{xy} [AB]_{1x} [AB]_{2y}
 \]
@@ -649,8 +655,8 @@ At this point we can now consider the product of two possibilities for our indic
 \]
 Of the two sums in the square brackets, the first makes zero contribution:
 
-\begin{exercise}{}
-Given that $i=j$ show that $\sum_{x,y} \epsilon_{xy}  b_{ix}b_{jy}$  is equal to 0. Use this to show that the first summation in the square brackets makes zero contribution.
+\begin{exercise}{EqualZero}
+Given that $i=j$ show that $\sum_{x,y} \epsilon_{xy}  b_{ix}b_{jy}$  is equal to 0. Use this to show that the first summation in the square brackets makes zero contribution. \hyperref[sec:sigma:hints]{(*Hint*)} 
 \end{exercise}
 Since we can ignore the case where $i=j$, let us look at the case where $i \neq j$.  There are actually two cases: $i=1, j=2$ and $i=2, j=1$.  Notice that:
 \begin{align*}
@@ -710,16 +716,17 @@ and therefore:
 
 
 \subsubsection*{Levi-Civita symbols and cross products}
-Since we can define determinants using the Levi-Civita symbol, we can also define cross products of vectors, but before going any further it is important to know that in this section we are writing vectors in a very particular way.  For vectors, we are labeling the components using numbered subscripts.  For example, the vector $\textbf{a}$ is written out as $\textbf{a}=(a_1, a_2, a_3)$, and intuitively you can think of $a_1$ as the $x-$component of vector $\textbf{a}$, $a_2$ as the $y-$component, and $a_3$ as the $z-$component.  The reason for doing it this way is that having indices refer to natural numbers (such as the indices of the Levi-Civita symbol) makes the rest of the notation much easier to work with, especially if we want to make it more general .   
+Since we can define determinants using the Levi-Civita symbol, we can also define cross products of vectors, but before going any further it is important to know that in this section we are writing vectors in a very particular way.  For vectors, we are labeling the components using numbered subscripts.  For example, the vector $\textbf{a}$ is written out as $\textbf{a}=(a_1, a_2, a_3)$, and intuitively you can think of $a_1$ as the $x-$component of vector $\textbf{a}$, $a_2$ as the $y-$component, and $a_3$ as the $z-$component.  The reason for doing it this way is that having indices refer to natural numbers (such as the indices of the Levi-Civita symbol) makes the rest of the notation much easier to work with, especially if we want to make it more general.   
 
-If you think back to vector calculus (or for some of you college physics), the cross product of two vectors $\textbf{a}$ and $\textbf{b}$, where the components of each vector are $\textbf{a}=(a_1, a_2, a_3)$ and $\textbf{b}=(b_1, b_2, b_3)$ with a basis \footnote{Sometimes the basis is written as $\{ \textbf{i}, \textbf{j},\textbf{k} \}$, not to be confused with the indices $i,j,k$.} of $\textbf{e}_1, \textbf{e}_2, \textbf{e}_3$ (intuitively you can think of these basis components as labels for the $x,y$ and $z$ components, respectively), is given by the determinant of a matrix:
+You may hav seen the formula for the cross product of two vectors in vector calculus, or college physics. Given two three-dimensional vectors $\textbf{a}=(a_1, a_2, a_3)$ and $\textbf{b}=(b_1, b_2, b_3$, the \term{cross product} of $\textbf{a}$ and $\textbf(b)$ can be expressed as  (note that the absolute value brackets in the formula  indicate that it'is a determinant and not a matrix.)
 
 \[ \textbf{a} \times \textbf{b}=
  \left| \begin{array}{ccc}
 \textbf{e}_1 & \textbf{e}_2  & \textbf{e}_3  \\
 a_1 & a_2 & a_3 \\
 b_1 & b_2 & b_3 \end{array} \right|,\]
-(Note that the absolute value brackets $\left|\cdots\right|$ indicate that this is a determinant, and not a matrix.)
+where $\textbf{e}_1,  \textbf{e}_2 , \textbf{e}_3$ are the vectors along the $x$, $y$, and $z$ directions  in $\mathbb{R}^3$ (sometimes they're written as $\textbf{i}, \textbf{j}, \textbf{k}$ instead).
+
 For example, suppose we have the vectors:
 
 \[ \textbf{a}= [2~ 2~ 4] \qquad \text{and} \qquad \textbf{b}=[-1~2~-3]. \]
@@ -746,12 +753,12 @@ Therefore:
 Or we can write the last line in a more familiar fashion:
 \[ [-14, ~ 2, ~ 6]. \] 
 So all we have to do to define a cross product using the Levi-Civita symbol is to simply plug these terms into the formula for the $3 \times 3$ determinant from earlier:
-\[\textbf{a} \times \textbf{b} = \,\text{det} A = \sum_{i=1}^3 \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} \textbf{e}_i  a_j b_k \]
+\[\textbf{a} \times \textbf{b} = \,\text{det} A = \sum_{i=1}^3 \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} \textbf{e}_i  a_j b_k. \]
 Notice that we have dropped the first index on each term.  The reason is that the $\textbf{e}$ terms will always be on the first row, $a$ on the second, and $b$ on the third.  
 We can actually shorten this up a little bit more, by rewriting the formula to find the $i^{\text{th}}$ component of $\textbf{a} \times \textbf{b}$.  In other words, we don't want the summation of all three $\textbf{e}_i$ terms, just one particular $\textbf{e}_i$ term.  That means we remove the summation over $i$, which leaves us with:
-\[ (\textbf{a} \times \textbf{b})_i = \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} a_j b_k \]
+\[ (\textbf{a} \times \textbf{b})_i = \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} a_j b_k. \]
 So for example, the first component (intuitively the $x$ component, or as we would say, the $\textbf{e}_1$ component) is:
-\[ (\textbf{a} \times \textbf{b})_1 = a_2 b_3 - a_3 b_2 \]
+\[ (\textbf{a} \times \textbf{b})_1 = a_2 b_3 - a_3 b_2. \]
 Now see if you can find the equations for the second and third components.  For those of you who are familiar enough with cyclic permutations, this is a relatively easy exercise.  
 
 \begin{exercise}{}
@@ -880,49 +887,140 @@ Using some facts from the discussion above, show that  $S_{ijmn}$ can also be wr
 \end{exercise}
 
 \section{Summation by parts}
-Those of you who have studied integrals in calculus are probably familiar with integration by parts, where you use it to find the integral of the product of two terms.  It turns out that there is a discrete version, called summation by parts:
-\[ \sum_{k=m}^n a_k \left(b_{k+1} - b_k \right)   = \left[a_{n+1} b_{n+1} - a_m b_m \right] - \sum_{k=m}^n b_{k+1} \left(a_{k+1} - a_k \right) \]
-There are other ways of rewriting this to make it a little bit shorter.  Suppose our sum starts at 0, and furthermore, suppose we define the following term:
-\[ B_n = \sum_{k=0}^n b_k ~\text{for every $n > 0$} \]
-Then we have:
-\[ \sum_{n=0}^N a_n b_n = a_N B_N - \sum_{n=0}^{N-1} B_n \left(a_{n+1} - a_n \right) \]
-In this form, summation by parts is relatively easy to prove.  Notice that:
-\[ b_n = B_n - B_{n-1} \]
-Then we can say:
-\begin{align}
- \sum_{n=0}^N a_n b_n =& a_0 b_0 + \sum_{n=1}^N  a_n \left(B_n - B_{n-1} \right) \notag\\
-=& a_0 b_0 - a_1B_0 + a_N B_N + \sum_{n=1}^{N-1} B_n \left( a_n - a_{n+1}\right) \notag\\
-=&  a_N B_N - \sum_{n=0}^{N-1} B_n \left(a_{n+1} - a_n \right) \notag
-\end{align}
-To make some sense of this, let's try an example.  Suppose we want to prove the following:
-\[ \sum_{k=1}^n k^2 = \frac{n^3}{3} + \frac{n^2}{2} + \frac{n}{6} \]
-We could use induction to prove this. But we can also prove it directly using the summation by parts formula we wrote earlier:
-\[ \sum_{k=m}^n a_k \left(b_{k+1} - b_k \right)   = \left[a_{n+1} b_{n+1} - a_m b_m \right] - \sum_{k=m}^n b_{k+1} \left(a_{k+1} - a_k \right) \]
-Just as is the case with integration by parts, deciding what the terms will be will determine if we have an easy or difficult (sometimes impossible) time.  In this case, a good choice is to let $a_k=k^2$ and $b_k=k$.  Notice that with this choice, we have:
-\[ \sum_{k=1}^n a_k \left(b_{k+1} - b_k \right)   = \sum_{k=1}^n k^2 \left((k+1) - k \right) = \sum_{k=1}^n k^2 \]
-So our choice of terms does indeed give us $k^2$.  Now that we have our two sequences $\{a_k\}$ and $\{b_k\}$, let's plug them in to the summation by parts formula and see what we get:
-\begin{align}
-\sum_{k=1}^n k^2 = \sum_{k=1}^n k^2 \left((k+1) - k \right) =& \left((n+1)^2(n+1)-1 \right) - \sum_{k=1}^n \left((k+1)^2-k^2 \right)(k+1) \notag\\
-=& (n+1)^3 - 1 - \sum_{k=1}^n (k+1)^3 - \left( k^3 + k^2 \right) \notag\\
-=& n^3 + 3n^2 + 3n - \sum_{k=1}^n k^3 +3k^2 +3k +1 - k^3 - k^2 \notag\\
-=&n^3 + 3n^2 + 3n  - \sum_{k=1}^n \left( 2k^2 + 3k +1\right) \notag\\
-=& n^3 + nk^2 + nk - \sum_{k=1}^n 2k^2 - \sum_{k=1}^n 3k - \sum_{k=1}^n 1 \notag
-\end{align}
-Notice that we have the summation of $k^2$ on the right, and one of the summation terms on the left is $-2k^2$.  We can combine these on the left to get:
-\[ 3 \sum_{k=1}^n k^2 =n^3 + 3n^2 + 3n - 3\sum_{k=1}^n k - \sum_{k=1}^n 1 \]
-The remaining sums on the right are common sums that we can easily find:
-\begin{align}
-3 \sum_{k=1}^n k^2 =& n^3 + 3n^2 + 3n - 3\frac{n(n+1)}{2} - n \notag\\
-=& n^3 + \frac{3n^2}{2} + \frac{n}{2} \notag
-\end{align}
-And finally dividing by three gives us our final result:
-\[ \sum_{k=1}^n k^2 = \frac{n^3}{3} + \frac{n^2}{2} + \frac{n}{6} \]
+
+Those who have studied integrals in calculus may be familiar with the process of integration by parts.  This is used when you need to find the integral of the product of two terms.  While this process is used for continuous situations, there is a version of this process for discrete situations called \term{summation by parts}.  
+
+To show how summation by parts works, we'll look at a particular case. Consider the following product of sums:
+\[\left( \sum_{n=1}^{5}a_{n} \right) \left( \sum_{n=1}^{5}b_{n} \right). \] 
+If we broke this up into individual terms, we'd obtain $n \cdot n = n^2$ terms of the form $a_j b_k$.  Figure~\ref{fig:IBP}
+shows the terms arranged on a grid. We've separated these terms into two parts using  a diagonal line, and we've further
+grouped terms either by row (above the line) or by column (below the line). You'll see in a minute why we've arranged things like this.
+
+\begin{figure}[htb]
+\begin{center}
+	\includegraphics[width=3.0in]{images/IBP.png}
+\caption{\label{fig:IBP} Arrangements of terms in the product of sums $\left( \sum_{n=1}^{5}a_{n} \right) \left( \sum_{n=1}^{5}b_{n} \right)$.}
+\end{center}
+\end{figure} 
+
+
+Now let's go back and express the sum of all these terms a different way. We'll introduce the notation:
+\[ A_{m}= \sum_{k=1}^{m}a_{k} \text{ and } B_{m}= \sum_{k=1}^{m}b_{k}. \]
+$A_m$ and $B_m$ are the $m$th \term{partial sums} for the series $\sum a_k$ and $\sum b_k$, respectively.
+The product of sums that we started with can be written succinctly as $A_{5}B_{5}$. 
+
+We may use this new notation to 
+re-express the grouped terms in the figure. 
+Consider first the terms below the diagonal line. These terms are grouped by column, and each group is encircled by an oval:
+\begin{itemize}
+\item
+The sum of the first oval(column on far left) is: $a_{1}b_{1}= a_{1}B_{1}$;
+ \item
+The sum of the second oval(column second from the left) is: $a_{2}\left ( b_{1}+b_{2} \right )= a_{2}B_{2}$;
+\item
+The sum the third oval(column third from the left) is: $a_{3}\left ( b_{1}+b_{2}+b_{3} \right )= a_{3}B_{3}$;
+\item
+The sum of the fourth oval(column fourth from left) is: $a_{4}\left ( b_{1}+b_{2}+b_{3}+b_{4} \right )= a_{4}B_{4}$;
+\item 
+The sum of the fifth oval(column on the far right) is: $a_{5}\left (b _{1}+b_{2}+b_{3}+b_{4}+b_{5} \right )=a _{5}B_{5}$.
+\end{itemize}
+Adding these five sums together accounts for all the terms below the diagonal line:
+\[ a_1B_1 + a_2B_2 + \ldots + a_5B_5 = \sum_{k=1}^{5}a_kB_k,\]
+where we've used summation notation to make the expression more compact.
+
+Now let’s repeat this process for the horizontal ovals above the diagonal line:
+\begin{itemize}
+\item
+The sum for the first oval(bottom row above line) is: $a_{1}b_{2}= A_{1}b_{2}$;
+\item
+The sum for the second oval( second row from bottom) is: $\left ( a_{1}+a_{2} \right)b_{3}= A_{2}b_{3}$;
+\item
+The sum for the third oval(third row from bottom) is: $\left ( a_{1}+a_{2}+a_{3} \right )b_{4}= A_{3}b_{4}$;
+\item
+The sum for the fourth oval(top row above line) is: $\left ( a_{1}+a_{2}+a_{3}+a_{4} \right)b_{5}= A_{4}b_{5}$.
+\end{itemize}
+Adding these five sums together accounts for all the terms below the diagonal line:
+\[ A_1b_2 +  \ldots + A_4b_5 = \sum_{k=1}^{5-1}A_kb_{k+1}.\]
+Since we've now accounted for terms both above and below the line, we obtain the sum of all terms by adding together:
+\[ A_{5}B_{5}= \sum_{k=1}^{5}a_{k}B_{k}+\sum_{k=1}^{5-1}A_{k}b_{k+1}. \]
+By rearranging this equation, we find:
+\[ \sum_{k=1}^{5}a_{k}B_{k}= A_{5}B_{5}-\sum_{k=1}^{5-1}A_{k}b_{k+1}. \]
+
+There's really nothing special about the number `5' in our above expression--we just chose it because 
+this was a relatively simple case that we could illustrate. To get the general formula, we simply replace '5' with '$n$':
+\[\sum_{k=1}^{n}a_{k}B_{k}= A_{n}B_{n}-\sum_{k=1}^{n-1}A_{k}b_{k+1}. \]
+Notice the striking similarity between this formula and the formula for integration by parts:
+\[ \int_a^b u dv =\left. uv\right|_a^b - \int_a^b v du. \] 
+The resemblance is brought out especially if we consider that integration is essentially a kind of summation (more precisely,
+a summation taken to a limit.)
+
+Now let’s look at some examples to see how we can make use of this formula.
+
+\begin{example}{} Evaluate $\sum_{k=1}^{n}2^{k-1}k$.
+ 
+In order to use the summation by parts formula, we need to define $a_k$ and $B_k$ so that the summand $2^{k-1}k$ is the product of $a_k$ and $B_k$. Just as in integration by parts, we want to make our choice based on what makes the calculations easiest. 
+Note that $B_{k}$  is a partial sum of $k$ terms, and that $k = 1 + \ldots + 1$. So it's natural to choose $B_{k}=k$, which means that $a_{k}=2^{k-1}$.
+ 
+Based on our choice of $B_{k}$ and  $a_{k}$, we can now figure out $b_{k}$ and $A_{k}$.  As we noted above, $B_{k}$ is the sum of $k$ 1's, so that $b_k=1$. This leaves us with $a_k = 2^{k-1}$, so that 
+\[A_{n}=\sum_{k=1}^{n}2^{k-1}.\]
+ As we've seen before, we may rewrite this by shifting the starting value of the index, so that 
+\[A_{n}=\sum_{k=0}^{n-1}2^k =  \frac{2^k-1}{2-1} = 2^k-1,\]
+where we've used our standard formula for the sum of geometric series.
+
+Summarizing our progress so far, we have:
+\[ a_k=2^{k-1};\quad B_k=k;\quad  b_k=1; \quad A_n=\frac{2^k-1}{1}. \]
+Plugging the above values into the summation by parts formula, we find:
+\[ \sum_{k=1}^{n}2^{k-1}k= \left (2 ^{n}-1 \right )n-\sum_{k=1}^{n-1}\left ( 2^{k}-1 \right ). \]
+The summation on the far right can be evaluated by breaking it into two separate parts:
+\[ \sum_{k=1}^{n-1}\left ( 2^{k}-1 \right )= \sum_{k=1}^{n-1}2^{k}-\sum_{k=1}^{n-1}1 = (2^{n}-1)- (n-1).\]
+\end{example}
+We can put this into our equality and do some further algebraic puttering to obtain the final result:
+\begin{align*}
+\sum_{k=1}^{n}2^{k-1}k &= (2 ^{n}-1)n- (2^{n}-1)+(n-1)\\
+&=  2^{n}n-n-(2^{n}-1)+(n-1)\\
+&=  2^{n}n-2^{n}\\
+&=  2^{n}(n-1).
+\end{align*}	
+
+\begin{exercise}{}
+Evaluate $\sum_{k=1}^{n}k^{2}$ by taking $B_k=k$ and $a_k = k$. You will need the expression for the sum $1 + 2 + \ldots + m$ that we derived previously.
+\end{exercise}
+
+From the preceding examples we may see that $B_k = k$ is a frequent choice. This is closely related to the fact that $u=x$ is a frequent choice when applying  the integration by parts formula.
+
 
 \begin{exercise}{}
 Prove the following equation using summation by parts:
 \[ \sum_{k=1}^n k^3 = \frac{n^4}{4} + \frac{n^3}{2} + \frac{n^2}{4} \]
 \end{exercise}
 
-\begin{exercise}{last} Evaluate the sum: $\displaystyle{\sum_{k=1}^n k \cdot 2^k.}$~~
-\hyperref[sec:sigma:hints]{(*Hint*)} 
-\end{exercise}
+
+
+%Example 2
+%Evaluate: 
+%\sum_{k=1}^{n}k^{2}
+%Using our formula, we need to identify A_{l}, a_{l},  b_{l}, and B_{l} from our given summation, remembering to make choices that make calculations easiest.  At first glance, this does not appear to be a summation of a product of two amounts.  Remember, though, that k^{2}=kk. Given that both elements of the product are the same, our choice is easy and we will choose B_{l}=k and a_{l}=k.  
+%By the previous example, we know that if B_{l}=k, then it follows that b_{l}=1. If a_{l}=k, then A_{l}=\sum_{l=1}^{k}a_{l}, which by substitution, A_{l}=\sum_{l=1}^{k}l which simplifies to \frac{\left ( k+1 \right )k}{2}.
+%Again summarizing what we have done:
+%B_{l}= k; a_{l}=k; b_{l}= 1; A_{l}= \frac{\left ( k+1 \right )k}{2}
+%Plugging into the formula: \sum_{l=1}^{n}a_{l}B_{l}= A_{n}B_{n}-\sum_{l=1}^{n-1}A_{l}b_{l+1}
+%\sum_{k=1}^{n}k\cdot k= \frac{n\left ( n+1 \right )n}{2}-\sum_{k=1}^{n-1}\left ( 1 \right )\frac{\left ( k+1 \right )k}{2}
+%Breaking down the summation on the right,
+%=\sum_{k=1}^{n-1}\left ( 1 \right )\frac{\left ( k+1 \right )k}{2}
+%By factoring out \frac{1}{2}, we have the right side:
+%= \frac{1}{2}\left ( \sum_{k=1}^{n-1}k^{2}+k \right )
+%Breaking the summation into two parts produces:
+%= \frac{1}{2}\sum_{k=1}^{n-1}k^{2}+\frac{1}{2}\sum_{k=1}^{n-1}k
+%Our equation now looks like this:
+%\sum_{k=1}^{n}k\cdot k= \frac{n\left ( n+1 \right )n}{2}-\frac{1}{2}\sum_{k=1}^{n-1}k^{2}-\frac{1}{2}\sum_{k=1}^{n-1}k
+%Adding the summation of k^{2} to the left produces:
+%\sum_{k=1}^{n}k^{2}+\frac{1}{2}\sum_{k=1}^{n-1}k^{2}= \frac{n^{2}\left ( n+1 \right )}{2}-\frac{1}{2}\sum_{k=1}^{n-1}k
+%Which further simplifies on the right by replacing the summation of k with its value and separating the fraction:
+%\sum_{k=1}^{n}k^{2}+\frac{1}{2}\sum_{k=1}^{n-1}k^{2}= \frac{n^{2}}{2}+\frac{n^{2}\left ( n+1 \right )}{2}-\frac{1}{2}\frac{\left ( n-1 \right )n}{2}
+%Simplifying further, we can add like terms on the left (1 summation + \frac{1}{2} = \frac{3}{2}) and factor our  \frac{n}{2} on the right:
+%\frac{3}{2}\sum_{k=1}^{n}k^{2}= \frac{n}{2}\left ( n+n\left ( n+1 \right )-\frac{n-1}{2} \right )
+%By factoring out \frac{n}{2} on the right gives us:
+%\frac{3}{2}\sum_{k=1}^{n}k^{2}= \frac{n}{2}\left ( n\left ( n+1 \right )+\frac{n+1}{2} \right )
+%And finally, adding terms in the parenthesis and factoring the quadratic it produces, you are left with:
+%\frac{3}{2}\sum_{k=1}^{n}k^{2}= \left ( \frac{n}{2} \right )\left ( n+1 \right )\left ( n+\frac{1}{2} \right )
+

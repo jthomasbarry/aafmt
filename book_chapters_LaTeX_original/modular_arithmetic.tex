@@ -18,7 +18,10 @@ Ride a painted pony, Let the spinnin' wheel spin
 (Source:  ``Spinnin' Wheel'', Blood, Sweat, and Tears)
 \bigskip
 
-Cycles are everywhere. So are integers. Modular arithmetic combines the two by wrapping the integers around a circle.\footnote{Thanks to Tom Judson for material used in this chapter.  David Weathers also contributed a section.}
+Cycles are everywhere. So are integers. Modular arithmetic combines the two by wrapping the integers around a circle.
+\medskip
+
+Thanks to Tom Judson for material used in this chapter.  David Weathers also contributed a section.
 
 \section{Introductory examples}\label{sec:Mod.1}
 Modular arithmetic was originally motivated by common, real-life situations. So we begin our introduction by describing several problems  based on practical situations for you to think about. We don't ask you to find the solutions just yet -- instead, focus on the similarities between the different problems. 
@@ -80,7 +83,7 @@ We may characterize the displacement of the car using
 % \begin{center}
 % ${\mathbb Z} = \{...,-3,-2,-1,0,1,2,3,...\}$. \\
 % \end{center} 
-a conventional number line, as shown in Figure~\ref{fig:displacement}. Moving forward around the racetrack corresponds to moving left (positive direction) on the number line; while moving backward around the racetrack corresponds to moving right (negative direction).
+a conventional number line, as shown in Figure~\ref{fig:displacement}. Moving forward around the racetrack corresponds to moving right (positive direction) on the number line; while moving backward around the racetrack corresponds to moving left (negative direction).
 \begin{figure}[h]\label{fig:displacement}
 \begin{center}
 \includegraphics[width=4.5in]{images/integer_line.png}
@@ -116,12 +119,10 @@ How are your answers in (a) related to the corresponding answers in Exercise~\re
 \end{enumerate}
 \end{exercise}
 
-You may have noticed that different displacements correspond to the same position. For example, displacements of 8, 23, and -17 all correspond to the same position (namely 3). This prompts us to ask the question,  How can you tell when two displacements correspond to the same position?
-One way to do this is make use of the answer to part (b) of Exercise~\ref{exercise:modular:racetrack_positions}. Most likely, you answered part (a) of Exercise~\ref{exercise:modular:racetrack_positions} by dividing the net displacements by 5 and taking the remainder. If two different net displacements correspond to the same position, then they have the same remainder when divided by 5.
+You may have noticed that different displacements may correspond to the same position. For example, displacements of 8, 23, and -17 all correspond to the same position (namely 3). We say that two displacements that correspond to the same position are \emph{equivalent}. The fact that displacements 8 and 23 are equivalent on a 5-mile racetrack may be expressed mathematically as: $13 \equiv 18 \pmod{5}$.
 
-We say that two displacements that correspond to the same position are \emph{equivalent}. For a 5-mile racetrack, for example, we have that 13 is equivalent to 18. We write this as: $13 \equiv 18 \pmod{5}$.
-
-In general, if we're dealing with a situation that uses modulus $m$, then we define modular equivalence
+So how can you tell when two displacements correspond to the same position?  
+In our racetrack example we may notice that 8, 23, and -17 all  have remainder 3 when divided by 5. In general, if we're dealing with a situation that uses modulus $m$, then we define modular equivalence
 as follows:
 
 \begin{defn}\label{definition:modular:equivalence}
@@ -129,7 +130,7 @@ as follows:
  \end{defn}
 
 \begin{rem}
-This definition uses the notion of \emph{remainder},\index{Remainder} which we're assuming you're familiar with from  basic algebra. To be precise, the remainder of $a$ when divided by $m$ is a number $r$ between $0$ and $m-1$ such that  $a = q \cdot m + r$ for some integer $q$ ($q$ is called the ``quotient'').  In your basic algebra class you we always able to find a remainder for any division problem, and there was always just one right answer for the remainder. In other words, you found that the remainder always exists, and is unique. This ``basic" fact is actually not so easy to prove. It may be proved using the so-called \emph{division algorithm}.\index{Division algorithm}. You may find a proof in any book on number theory.
+This definition uses the notion of \emph{remainder},\index{Remainder} which we're assuming you're familiar with from  basic algebra. To be precise, the remainder of $a$ when divided by $m$ is a number $r$ between $0$ and $m-1$ such that  $a = q \cdot m + r$ for some integer $q$ ($q$ is called the ``quotient'').  In your basic algebra class you we always able to find a remainder for any division problem, and there was always just one right answer for the remainder. In other words, you found that the remainder always exists, and is unique. This ``basic" fact is actually not so easy to prove. It may be proved using the so-called \emph{division algorithm}.\index{Division algorithm} You may find a proof in any book on number theory.
 \end{rem}
 
 \begin{rem}
@@ -276,8 +277,12 @@ Does this work in general? In fact it does! However, this requires a mathematica
 If we're doing arithmetic $\pmod{n}$, then the remainders will necessarily be between $0$ and $n-1$ (inclusive). This set of  remainders has a special name, which later on we'll use extensively.
 
 \begin{defn}\label{integers_mod_n}\index{Integers mod $n$}
-The set $\{0,1,\ldots,n-1\}$ is called the \emph{integers mod $n$}, and is denoted by the symbol ${\mathbb Z}_n$.
+The set of integers $\{0,1,\ldots,n-1\}$ is called the set of \term{integers mod $n$}, and is denoted by the symbol ${\mathbb Z}_n$.
 \end{defn}
+
+\begin{rem}
+In this chapter, we are considering ${\mathbb Z}_n$ as a subset of $\mathbb{Z}$. Later on in Chapter~\ref{EquivalenceRelationsChap} we will view ${\mathbb Z}_n$ from an entirely different perspective. (You don't really need to know this now--just file it away for future reference.)
+\end{rem}
 
 We will need the following proposition later:
 
@@ -438,7 +443,7 @@ d_{11}) + (1 \cdot d_{12}) \equiv 0 \pmod{10}.
 (d_1, d_2, \ldots, d_{10} ) \cdot (10, 9, \ldots, 1 )  \equiv 0 \pmod{11}.
 \] 
 
-Can the above equations be solved?  You may remember from college algebra that you can't uniquely solve a single equation for 10 or 12 variables.\footnote{Actually, there are many possible combinations of 10 or 12 variables which make the equations work.}  But if we supply additional information so that only variable is left to solve for, then we can use the resulting equation to find the value of the variable.  Let's try.  
+Can the above equations be solved?  You may remember from college algebra that a single equation with several variables usually has several solutions. If we want to narrow it down to a single solution we have to supply additional information, as in the following exercise.  
 
 \begin{exercise}{check_digit}
 Suppose you're given the following UPC:  1-54637-28190-?.  Write a modular equation to solve for the missing check digit, then solve it.
@@ -495,7 +500,7 @@ In order to avoid ambiguity, mathematicians and textbooks always write solutions
 In our current example, it's easy enough to obtain the standard solution ($x \equiv 9 \pmod{11}$)  directly from the equation $x = k \cdot 11 - 2$? by taking
 one of the $11$'s and adding it to the $-2$ to get
 \[
-x = (k-1) \cdot 11 + 11 - 2 = (k-1) + 9,
+x = (k-1) \cdot 11 + 11 - 2 = (k-1) \cdot 11 + 9,
 \]
 giving  $x \equiv 9 \pmod{11}$.
 
@@ -581,13 +586,14 @@ Therefore $k = 2 + 4n$, hence we may continue from the previous equation:
 \implies &x = \dfrac{ 2 + 11 \cdot (2 + 4n)}{4} &\text{(substitution)} \\
 \implies &x = 6 + 11n. &\text{(simplification)}
 \end{align*}
+Therefore $x \equiv 6 \pmod{11}$ is the general solution.
 \end{example}
 
 \begin{rem}
 Example~\ref{example:modular:mod_eq_mult2} demonstrates some good practices that you can make use of when you write up your own proofs:
 \begin{itemize}
 \item
-Instead of using a sentence to explain your reasoning for each step, place the reason to the right (like I did).  This shrinks down the size of the proof.
+Instead of using a sentence to explain your reasoning for each step, place the reason to the right in parentheses.  This shrinks down the size of the proof.
 \item  
 Another way to shrink the proof is to use mathematical equations, expressions, and symbols (such as $\implies, \forall$) whenever you can to accurately communicate your steps in the proof.  
 \end{itemize}
@@ -601,7 +607,7 @@ In summary, a general method for solving modular equations is:
 \item
 Turn the $ \equiv $ sign into an $=$ sign using the definition of modular equivalence (just as with modular addition). This introduces another constant $k$.
 \item
-Solve the resulting equation for your variable $x$. If the expression is a fraction, then
+Solve the resulting equation for your variable $x$. If the expression is not a fraction, then
  go to step $5$.
 Otherwise, go to step $3$.
 \item
@@ -1119,12 +1125,12 @@ From parts (h) and (i) of Exercise \ref{exercise:modular:modeq3} we see that eve
 %Later on (in the Equivalence Relations chapter) we'll give the ``correct'' mathematical definition of the integers mod $n$. 
 
 
-\section{The integers mod $n$ (also known as ${\mathbb Z}_n$)}
+\section{The integers mod $n$ (also known as ${\mathbb Z}_n$)}\label{sec:intMod_n}
 
-\subsection{Arithmetic with remainders}\label{ArithWithRems}
-Several times now in this chapter we've simplified our modular calculations by replacing numbers with their remainders mod $n$ (remember, we have defined these remainders as the set ${\mathbb Z}_n$).  We will now fulfill the promise we made at the end of the first section by proving that if you replace numbers with their remainders, we don't change the result of our modular calculations.  That is, we'll show that modular arithmetic can be thought of as \emph{arithmetic with remainders}.
+\subsection{Remainder arithmetic}\label{ArithWithRems}
+Several times now in this chapter we've simplified our modular calculations by replacing numbers with their remainders mod $n$ (remember, we have defined these remainders as the set ${\mathbb Z}_n$).  We will now fulfill the promise we made at the end of the first section by proving that if you replace numbers with their remainders, we don't change the result of our modular calculations.  That is, we'll show that modular arithmetic can be thought of as arithmetic on the remanders, or``remainder arithmetic'' (as opposed to ``integer arithmetic'' or ``complex arithmetic'' which we're already familiar with).
 
-Before we do this, we need to address an important issue. Consider the case of $Z_5 = \{0,1,2,3,4\}$, so 3 and 4 are in $Z_5$. However the sum $3 + 4$ is 7, which is not in $Z_5$. If we're going to do arithmetic with the remainders, we should define a ``sum'' on $Z_n$ such that the result is also in $Z_n$. This motivates the following two definitions:
+Before we do this, we need to address an important issue. Consider the case of $\mathbb{Z}_5 = \{0,1,2,3,4\}$, so 3 and 4 are in $\mathbb{Z}_5$. However the sum $3 + 4$ is 7, which is not in $\mathbb{Z}_5$. If we're going to do arithmetic with the remainders, we should define a ``sum'' on $\mathbb{Z}_n$ such that the result is also in $\mathbb{Z}_n$. This motivates the following two definitions:
 
 % We start by introducing two symbols:
 
@@ -1142,7 +1148,7 @@ Before we do this, we need to address an important issue. Consider the case of $
 \term{Modular Addition}\index{Modular addition}
 
 \noindent
-The sum mod $n$ of two integers mod $n$ is the remainder left after dividing their regular sum by $n$; that is, if $x,y \in {\mathbb Z}_n$ then
+The sum mod $n$ of two remainders mod $n$ is the remainder left after dividing their regular sum by $n$; that is, if $x,y \in {\mathbb Z}_n$ then
 
 \begin{center}
 $x \oplus y = r$ iff  $x + y = r + sn$ and 
@@ -1155,19 +1161,28 @@ Note that in Definition~\ref{definition:modular:mod_add} we write $x \oplus y = 
 \term{Modular Multiplication}
 
 \noindent
-The product mod $n$ of two integers mod $n$ is the remainder left after dividing their regular product by $n$; that is, if $x,y \in {\mathbb Z}_n$ then
+The product mod $n$ of two remainders mod $n$ is the remainder left after dividing their regular product by $n$; that is, if $x,y \in {\mathbb Z}_n$ then
 
 \begin{center}
 $x \odot y = r$ iff  $x \cdot y = r + sn$ and 
 $r \in {\mathbb Z}_n.$
 \end{center}
 \end{defn}
+Before we continue, we should take special note of the following important points.
+
+\begin{rem}
+\begin{itemize}
+\item
 It is important to note that the operations $\oplus$ and $\odot$ \emph{depend on the modulus involved}. We must always make sure that the modulus is clearly specified before talking about $\oplus$ and $\odot$.
+\item
+Although technically we could define $a \oplus b$ and $a \odot b$ for \emph{any} two integers $a,b \in \mathbb{Z}$, in the following we will restrict the operations to $a, b \in \mathbb{Z}_n$.  So for example  if we are working in $\mathbb{Z}_7$, we may write $3 \oplus 4 = 0$ and $5 \odot 6 = 2$, but we will not write expressions like $7 \oplus 6$ or $13 \odot 22$.
+\end{itemize}
+\end{rem}
 
 Our first step towards showing that ordinary arithmetic can be replaced with arithmetic with remainders is the following proposition:
 
 \begin{prop}{number_remainder}
-Given $a,c \in {\mathbb Z}$ and $b,d \in {\mathbb Z_n}$. If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then 
+Given $a,c \in {\mathbb Z}$ and $b,d \in \mathbb{Z}_n$. If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then 
 \begin{enumerate}[(a)]
 \item
 $a + c \equiv b \oplus d \pmod{n}$, 
@@ -1200,7 +1215,7 @@ Come up with a definition for modular subtraction (use the symbol $\ominus$).
 Using your definition, prove the following:
 
 \noindent
-Given $a,c \in {\mathbb Z}$ and $b,d \in {\mathbb Z_n}$. If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then  $a - c \equiv b\ominus d \pmod{n}$.
+Given $a,c \in {\mathbb Z}$ and $b,d \in \mathbb{Z}_n$. If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then  $a - c \equiv b\ominus d \pmod{n}$.
 \end{enumerate}
 \end{exercise}
 
@@ -1266,7 +1281,7 @@ $(12345 \cdot 6789) + 1357 \equiv (98765 \cdot 13579) + 9876 \pmod{10}$
 \end{exercise}
 
 
-\subsection{Cayley tables for ${\mathbb Z}_n$}
+\subsection{Cayley tables for ${\mathbb Z}_n$}\label{sec:cayleyForZn1}
 The fact that we can replace integers with their remainders mod $n$ leads us to a simpler way of  thinking about modular arithmetic.  First, recall the integer number line, pictured (again) in Figure~\ref{fig:integers}:
 %that when we talked about the car going around a racetrack, the displacements corresponded to
 %As we also saw in the racetrack example, 
@@ -1287,7 +1302,7 @@ All the numbers equivalent to 0 mod 5 are labeled 0; all the numbers equivalent 
 
 Furthermore, as we just discussed, the sum and product mod $5$ of any two numbers is exactly equivalent to the sum and product mod $5$ of their corresponding remainders.  Therefore, the sum or product of \emph{any} two numbers mod $5$ can be determined by the sum or product of the integers $0-4$.  So we only have to focus on the sums and products of these five numbers to get the result of any modular calculation mod $5$.  
 
-Let's calculate these sums and products then.  We are only using the remainders for mod $5$ (recall we have already defined this set as  ${\mathbb Z}_{5}$).
+So let's calculate these sums and products.  We are only using the remainders for mod $5$ (recall we have already defined this set as  ${\mathbb Z}_{5}$).
 The following table then gives the results of addition mod $5$ for ${\mathbb Z}_{5}$:
 
 \begin{table}[h]
@@ -1336,10 +1351,10 @@ $\odot$ & 0 & 1 & 2 & 3 & 4 \\
 Again, looking at the entry in the ''2'' row and the ''3'' column we see 1, which tells us that $2 \odot 3 = 1$.
 
 Similarly, for each set of numbers ${\mathbb Z}_n$ we can construct a table to determine the result of any possible calculation mod $n$.
-These type of tables are known as \term{Cayley tables}\index{Cayley table}.  We will see them often throughout the course.
+These type of tables are known as \term*{Cayley tables}.  We will see them often throughout the course.
 
 \begin{exercise}{49}
-Use the Cayley table to calculate each of the following using $\oplus$ and $\odot$ in ${\mathbb Z}_5$ (remember, compute the remainders \emph{before} doing the arithmetic).
+Use the above Cayley tables for $\oplus$ and $\odot$  in $\integer_5$ to calculate each of the following.  (Remember, compute the remainders \emph{before} doing the arithmetic.)
 
 \begin{enumerate}[(a)]
 \item
@@ -1365,7 +1380,7 @@ Later on (in the chapter on Equivalence Relations) we'll show another way of loo
 
 \subsection{Closure properties of ${\mathbb Z}_n$}\label{sec:ClosureZn}
 
-Recall that in Chapter 1 we introduced the complex numbers, then studied their arithmetic properties. In this section, we'll do the same thing with the numbers ${\mathbb Z}_n$ that we have just defined. 
+Let's look a little further into the arithmetic properties of the numbers ${\mathbb Z}_n$ that we've just defined. 
 
 %With ${\mathbb Z}_n$ we have the advantage that the set of numbers is \emph{finite}, so we have can represent the addition and multiplication operations in the form of tables. 
 
@@ -1884,7 +1899,7 @@ The gcd of two numbers $a$ and $b$ can be written in the form $n \cdot a + m \cd
 This proposition will be useful in the next section.
 
 \subsection{Computer stuff}
-For those that are computationally inclined, here are two examples, in c++ syntax, of functions that calculate the greatest common divisor.
+For those that are computationally inclined, here are two examples, in C++ syntax, of functions that calculate the greatest common divisor.
 
 \begin{verbatim}
 int gcdLoop (int a, int b){
@@ -1956,6 +1971,13 @@ This second example is also in c++, but uses recursion.
 \subsection{Diophantine equations}\label{sec:diophantine}
 %%% CPT start with the example.
 Let's look now at another type of  problem, which has played a key role in the history of mathematics.
+
+\begin{defn}\label{definition:modular:equivalence}
+A \term{Diophantine equation} in the variables $m, n$ is an equation of the form
+\[ a \cdot m + b \cdot n = c\]
+where $a,b,c$ are integers, and $m$ and $n$  are assumed to have integer values.
+ \end{defn}
+
 
 %Given two integers $a$ and $b$, the equation:
 %\[ a m + b n = x\]
@@ -2147,13 +2169,13 @@ Prove both the ``if''  and the ``only if'' parts of Proposition~\ref{proposition
 Which of the following equations have integer solutions? If solutions exist, find them all. If no solutions exist, prove it!
 \begin{enumerate}[(a)]
 \item
-$15x = 3 \pmod{12}$
+$15x \equiv 3 \pmod{12}$
 \item
-$4x = 17 \pmod{23}$
+$4x \equiv 17 \pmod{23}$
 \item
-$503x = 919 \pmod{1002}$
+$503x \equiv 919 \pmod{1002}$
 \item
-$504x = 919 \pmod{1002}$
+$504x \equiv 919 \pmod{1002}$
 \end{enumerate}
 
 \end{exercise}
@@ -2178,18 +2200,18 @@ Prove \term{Euclid's Lemma}:  Let $p$ be a prime number, and let $a$ and $b$ be 
 \subsection{Multiplicative inverse for modular arithmetic\label{subsec:MultInve}}
 This section is supposed to be about modular division, but so far we've been talking about all kinds of other stuff. You may be wondering, So where's the modular division? You're about to find out!
 
-Recall that the set $Z_n$ under the operation $\oplus$ forms a group:  
-it has closure, it's associative, it has an additive identity, and all elements have inverses.  On the other hand $Z_n$ does not form a group under $\odot$ for any $n \ge 2$.  
+Recall that the set $\mathbb{Z}_n$ under the operation $\oplus$ forms a group:  
+it has closure, it's associative, it has an additive identity, and all elements have inverses.  On the other hand $\mathbb{Z}_n$ does not form a group under $\odot$ for any $n \ge 2$.  
 
 
-Why is this? Because the inverse property fails for the element 0. The multiplicative identity must be 1, yet $0\cdot m \neq 1$ for all $m\in Z_n$.
+Why is this? Because the inverse property fails for the element 0. The multiplicative identity must be 1, yet $0\cdot m \neq 1$ for all $m\in \mathbb{Z}_n$.
 
-But let's not give up so easily in our quest to form multiplicative groups. Since it appears that 0 is a problem, suppose we take all the elements of $Z_n$ \emph{except} 0? We write the set of nonzero elements of $Z_n$ as $Z_n \setminus \{0\} $. Let's see whether this a group under $\odot$. We remind you that $a \odot b$  is defined by: $a \odot b = r$ where $a,b,r\in Z_n$ and $a \cdot b = kn + r$ where $k$ an integer.)
+But let's not give up so easily in our quest to form multiplicative groups. Since it appears that 0 is a problem, suppose we take all the elements of $\mathbb{Z}_n$ \emph{except} 0? We write the set of nonzero elements of $\mathbb{Z}_n$ as $\mathbb{Z}_n \setminus \{0\} $. Let's see whether this a group under $\odot$. We remind you that $a \odot b$  is defined by: $a \odot b = r$ where $a,b,r\in \mathbb{Z}_n$ and $a \cdot b = kn + r$ where $k$ an integer.)
 
 
 %look at modular chapter to avoid repetition.  Use a Cayley table for multiplication proof.
 \begin{example}{Groupornot3}
-The Cayley table for $Z_3 \setminus \{0\}$ is:
+The Cayley table for $\mathbb{Z}_3 \setminus \{0\}$ is:
 
 
 \begin{tabular}{ l | r r  }
@@ -2200,13 +2222,13 @@ The Cayley table for $Z_3 \setminus \{0\}$ is:
 \end{tabular}
 
 
-Notice that each column has 1, meaning that each element has an inverse.  It is also closed, associative and has an identity. Thus $Z_3 \setminus \{0\}$ is a group under $\odot$.  
+Notice that each column has 1, meaning that each element has an inverse.  It is also closed, associative and has an identity. Thus $\mathbb{Z}_3 \setminus \{0\}$ is a group under $\odot$.  
 \end{example}
 
-% However not all sets of $Z_n$ are a group under multiplication.
+% However not all sets of $\mathbb{Z}_n$ are a group under multiplication.
 
 \begin{example}{Groupornot4}
-The Cayley table for $Z_4 \setminus \{0\}$ is
+The Cayley table for $\mathbb{Z}_4 \setminus \{0\}$ is
 
 
 \begin{tabular}{ l | r r r }
@@ -2217,18 +2239,18 @@ The Cayley table for $Z_4 \setminus \{0\}$ is
   3 & 3 & 2 & 1\\
 \end{tabular}
 
-Notice that the 2 column does not have a 1 in it, meaning that 2 does not have an inverse in $Z_4$. Thus, $Z_4 \setminus \{0\}$ is not a group under $\odot$.
+Notice that the 2 column does not have a 1 in it, meaning that 2 does not have an inverse in $\mathbb{Z}_4$. Thus, $\mathbb{Z}_4 \setminus \{0\}$ is not a group under $\odot$.
 \end{example}
 
 The fact that 2 has no inverse is due to 2 being a divisor of 4.  This makes all integer multiples of 2 to cycle between the values 0 and 2 $\pmod 4$. 
 
-%If any of the numbers in the set $Z_n$ can evenly divide $n$, then the same problem will occur.  It follows that any $n$ that is not divisible by any integer from 1 to $n$ should form a group $Z_n\setminus \{0\}$.
+%If any of the numbers in the set $\mathbb{Z}_n$ can evenly divide $n$, then the same problem will occur.  It follows that any $n$ that is not divisible by any integer from 1 to $n$ should form a group $\mathbb{Z}_n\setminus \{0\}$.
 
 \begin{example}{Finding a larger multiplicative inverse}
 
 %Start with 3k = 1 mod 31 => 3k - 1 = 31n => 3k - 31n = 1;
 
-Finding the multiplicative inverse in $Z_n \setminus \{0\}$ for small values of $n$  is not difficult.  But what about finding the multiplicative inverse of 3 in $Z_{31}\setminus \{0\}$?  
+Finding the multiplicative inverse in $\mathbb{Z}_n \setminus \{0\}$ for small values of $n$  is not difficult.  But what about finding the multiplicative inverse of 3 in $\mathbb{Z}_{31}\setminus \{0\}$?  
 
 %%% CPT I think the following discussion has some problems.
 % 
@@ -2248,7 +2270,7 @@ Finding the multiplicative inverse in $Z_n \setminus \{0\}$ for small values of 
 % \end{example}
 
 % \begin{example}{A better way of finding larger multiplicative inverses}
-% Using modular arithmetic, we can find a solution more efficiently.  Take the same example of finding the multiplicative inverse of 3 in $Z_{31}$.  
+% Using modular arithmetic, we can find a solution more efficiently.  Take the same example of finding the multiplicative inverse of 3 in $\mathbb{Z}_{31}$.  
 
 Really all we're looking for is a number $k$ such that $3k \equiv 1 \pmod {31}$.  Since 31 is prime, it must be relatively prime to 3, meaning the gcd of 31 and 3 must be 1.  1 is a multiple of 1, so there is a solution and in fact this is just a special case of an earlier proposition.  We convert it to a Diophantine equation:
 \[3k + 31j = 1\]
@@ -2256,7 +2278,7 @@ Using the gcd algorithm, we find:
 \[31+3\cdot(-10) = 1,\]
 and applying $\pmod{31}$ gives
 \[3\cdot(-10) \equiv 1 \pmod{31}.\]
-Finally, we use the definition of modular arithmetic to convert $-10$ into a member in $Z_{31}$:
+Finally, we use the definition of modular arithmetic to convert $-10$ into a member in $\mathbb{Z}_{31}$:
 \[3\cdot(21) \equiv 1 \pmod{31}.\] 
 \end{example}
 
@@ -2265,13 +2287,13 @@ Finally, we use the definition of modular arithmetic to convert $-10$ into a mem
 Prove or disprove that the following sets form a group by either finding a multiplicative inverse for all members, or by finding a member that does not have a multiplicative inverse.
 \begin{enumerate}[(a)]
 \item
-$Z_5\setminus \{0\}$
+$\mathbb{Z}_5\setminus \{0\}$
 \item
-$Z_7\setminus \{0\}$
+$\mathbb{Z}_7\setminus \{0\}$
 \item
-$Z_9\setminus \{0\}$
+$\mathbb{Z}_9\setminus \{0\}$
 \item
-Make a conjecture for which sets $Z_n \setminus \{0\}$ form a group under multiplication.
+Make a conjecture for which sets $\mathbb{Z}_n \setminus \{0\}$ form a group under multiplication.
 \end{enumerate}
 \end{exercise}
 
@@ -2279,14 +2301,14 @@ Make a conjecture for which sets $Z_n \setminus \{0\}$ form a group under multip
 %Using earlier proposition for ax=cmodb and state this is just a special case.
 
 \begin{prop}{Groupornotp}
-All elements in $Z_p \setminus \{0\}$ have an inverse under multiplication mod $p$. 
+All elements in $\mathbb{Z}_p \setminus \{0\}$ have an inverse under multiplication mod $p$. 
 \end{prop}
 \begin{proof}
 Let $a,p$ be known integers where $a < p$ and $p$ is prime.  There exists an inverse to $a$ under multiplication $\pmod p$ when there is a solution $k$  to the equation $ak = 1 \pmod p$ where $k$ is an integer.  By Proposition~\ref{proposition:modular:mod_eq_solution}, this equation can be solved if and only if the gcd of $a$ and $p$ is equal to 1.  Since $p$ is prime and $a<p$ then the gcd of $a$ and $p$ must be 1.
 \end{proof}
 
 \begin{prop}{Units}
-An element $a$ of  $Z_p \setminus \{0\}$ have an inverse under multiplication mod $p$ if and only if gcd($a,p$)=1  (that is, $a$ is relatively prime to $p$).
+An element $a$ of  $\mathbb{Z}_p \setminus \{0\}$ have an inverse under multiplication mod $p$ if and only if gcd($a,p$)=1  (that is, $a$ is relatively prime to $p$).
 \end{prop}
 The proof of this proposition is up to you:
 
@@ -2296,7 +2318,7 @@ Prove both the ``if'' and ``only if'' parts of Proposition~\ref{proposition:modu
 \end{exercise}
 
 \begin{exercise}{94}
-Show that if $n$ is not prime, then $Z_n\setminus \{0\}$ is not a group under multiplication.
+Show that if $n$ is not prime, then $\mathbb{Z}_n\setminus \{0\}$ is not a group under multiplication.
 \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 \end{exercise}
 
@@ -2326,7 +2348,7 @@ From the Euclidean algorithm, we know there is a solution to this congruence if 
 
 
 \begin{exercise}{}
-Solve the following pairs of congruences or show that they do not have a solution:
+Solve the following pairs of congruences or show that they have no common solution:
 \begin {enumerate}[(a)]
 \item
 $x \equiv 2 \pmod{3}; \quad x \equiv 3 \pmod{4}.$
@@ -2342,7 +2364,7 @@ $x \equiv 2 \pmod{6}; \quad  x \equiv 56 \pmod{72}.$
 \begin {exercise}{congruence}
 \begin{enumerate}[(a)]
 \item
-Find a pair of congruences of the form: $x \equiv a \pmod{9};~~x \equiv b \pmod{15}$ that no common solution.
+Find a pair of congruences of the form: $x \equiv a \pmod{9};~~x \equiv b \pmod{15}$ that have no common solution.
 \item
 Show that \emph{any} pair of congruences of the form 
 \[ ax \equiv b \pmod{3}; \qquad cx \equiv d \pmod{7} \]

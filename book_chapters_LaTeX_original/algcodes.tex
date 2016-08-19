@@ -7,23 +7,21 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Algebraic Coding}{algcodes}
+\chap{Group Theory Applications (II): Error-Detecting and Correcting Codes}{algcodes}
+\chaptermark{Error-Detecting and Correcting Codes}
  
-Coding theory is an application of algebra that has become
-increasingly important over the last several decades. When we transmit
-data, we are concerned about sending a message over a channel that
-could be affected by ``noise.'' We wish to be able to encode and
-decode the information in a manner that will allow the detection, and
-possibly the correction, of errors caused by noise. This situation
-arises in many areas of communications, including radio, telephone,
-television, computer communications, and even compact disc player
-technology. Probability, combinatorics, group theory, linear algebra,
-and polynomial rings over finite fields all play important roles in
-coding theory. \footnote{Thanks to Tom Judson for material used in this chapter.} 
+In Chapter~\ref{crypt} we looked at  cryptography, which is concerned with the encoding of  information to make it secret. But coding is used for other purposes as well.  When data is transmitted, it is often subject to processes which may corrupt the data and produce transmission errors. This situation
+arises in many areas of communications, including radio, telephone, television, computer communications, and even compact disc player technology. In order to guarantee accurate communication, the data must be encoded (before transmission) and decoded (after transmission) so that transmission errors can be detected and, if possible, corrected. As you may imagine,  some of the world's leading high-tech companies are heavily involved in this area--and breakthroughs can mean big bucks for the discoverers!
+\medskip
+
+\noindent
+\underline{\bf Prerequisites}: In this chapter we will make extensive use of the group ${\Bbb Z}^{n}_{2}$, which is the direct product of $n$ copies of ${\Bbb Z}_{2}$ (direct products were introduced in Section~\ref{isomorph_section_2}.  Section~\ref{sec:MaximumLikelihood} on maximum-likelihood decoding uses some probability theory--this section is independent of the rest of the chapter, and may be omitted if desired. The discussion of linear block codes (Section~\ref{section:algcodes:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:efficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{cosets}.  
+\bigskip
+
+Thanks to Tom Judson for material used in this chapter.
+  
  
- 
- 
-\section{Error-Detecting and Correcting Codes}\label{section:algcodes:1}
+\section{Definitions and basic properties}\label{section:algcodes:1}
   
 Let us examine a simple model of a communications system for
 transmitting and receiving coded messages (Figure~\ref{encoding}).  
@@ -205,7 +203,7 @@ the number of bits by which each received 3-tuple differs from each
 original codeword. 
 \end{example}
 
-\subsection{Maximum-Likelihood Decoding}
+\subsection{Maximum-Likelihood Decoding}\label{sec:MaximumLikelihood}
  
 \begin{quote}
 \emph{This section
@@ -381,7 +379,7 @@ In Figure~\ref{encoding} we illustrated the case where $m$-digit message words
 are encoded into $n$-digit codewords. This is certainly not the only scheme possible. For instance, we could encode different message words with codewords of differing sizes. Alternatively, we could use some kind of scheme which doesn't break the message into words at all. Such coding schemes have extremely important practical uses. Nonetheless, we will focus on the simple case where message words all have equal size, and all codewords also have equal size. We shall see shortly that group
 theory  can be used in this case to design  codes with ``good'' properties. 
 
-We begin as usual with a definition.
+We begin as usual with a definition. In the following, the notation ${\Bbb Z}^{m}_{2}$ denotes the set of  binary $m$-tuples.
 
 \begin{defn}\label{definition:algcodes:BlockCode}
 a $(n, m)$ \term{block code} \index{Block code} is a code that divides information into $m$-bit message words, and encodes each message word as a $n$-bit codeword. In order to accomplish this, the specification of an $(n,
@@ -883,7 +881,7 @@ d_{\min} &= & \min \{ d({\bold x},{\bold y}) : {\bold x}
  Proposition~\ref{proposition:algcodes:GroupCodeMinDist}  \emph{only} applies to \emph{group codes}, and not to codes in general.
  \end{warn}
  
-\section{Linear Block Codes}
+\section{Linear Block Codes \label{section:algcodes:BlockCodes}}
   
 Using Proposition~\ref{proposition:algcodes:GroupCodeMinDist}, it is now a simple matter to find the error detection and correction capabilities of a group code. However, so far we don't have a good method  for creating group codes. In this section, we will use some techniques from linear algebra to give one such method. This method is widely used in digital information processing: for instance, in CD's DVD's and satellite communications.\footnote{To understand this section, readers should familiar with basic notions of linear algebra such as vectors, linear combination, matrix multiplication, and transpose. Readers may find a brief refresher on matrix multiplication in Chapter~\ref{Sigma}.}
  
@@ -1804,7 +1802,7 @@ What is the smallest possible codeword size for a single error-correcting code w
 \end{enumerate}
 \end{exercise}
 
-\section{Efficient Decoding}
+\section{Efficient Decoding}\label{sec:efficientDecoding}
  
  
 We are now at the stage where we are able to generate linear codes

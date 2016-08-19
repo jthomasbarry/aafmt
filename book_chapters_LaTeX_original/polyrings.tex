@@ -7,8 +7,14 @@
 
 \chap{Polynomials}{poly}
  
+ In this chapter we'll look at rigorous foundations of the theory of polynomials, as well as some generalizations.
+\bigskip
+
+This chapter contains contributions from David Weathers, Johnny Watts, and Semi Harrison (edited by C.T.). Thanks to Tom Judson for material used in this chapter. 
+
 \section{Polynomials of various stripes}
-In high school we learn how to do algebraic operations on polynomials.\footnote{This chapter contains contributions from David Weathers, Johnny Watts, and Semi Harrison (edited by C.T.). Thanks to Tom Judson for material used in this chapter.} For instance, if we have
+In high school we learn how to do algebraic operations on polynomials.
+For instance, if we have
 \begin{align*} 
 p(x) & = x^3 -3x +2 \\
 q(x) & = 3x^2 -6x +5,
@@ -144,9 +150,10 @@ $p(x)= 2x^4 + 3x^3 + 4x^2+1$, $q(x)=x^3 +2x^2+5$, where both polynomials are in 
 \end{enumerate}
 \end{exercise}
 
-In some sense, polynomials are more complicated than groups because they have two operations, while groups have only one. It turns out that polynomial sets are important examples of a second type of mathematical object called a \emph{ring}. Later in this chapter we will define rings in general; but for now, we will look at polynomials in particular (and generalize our results later).
+In some sense, polynomials are more complicated than groups because they have two operations, while groups have only one. It turns out that polynomials are important examples of a second type of mathematical object called a \emph{ring}.
+In this chapter we won't go beyond polynomials, but you should be aware that there's more to the story, and the study of rings forms a large part of modern abstract algebra.
 
-\section {Polynomial rings}
+\section {Polynomial rings over fields}
  We have noted above that polynomials can have different types of coefficients. 
 In this section we will  impose some properties on the coefficients that, although quite general, will enable us to prove several interesting properties. But first, let's relate polynomials to the summation notation that we discussed in the previous chapter:
 
@@ -174,8 +181,8 @@ $1-\frac{1}{3}x + \frac{1}{5}x^2 - \frac{1}{7}x^3 + \frac{1}{9}x^4 - \frac{1}{11
 \end{exercise}
 
 
-\begin{defn} \label{def:polyring}(\emph{Polynomial rings})~~
-A set of polynomials is called a \term{polynomial ring}\index{Polynomial!ring}\index{Ring!polynomial} if two operations (which we denote as $+$ and $\cdot$)  are defined on the set of coefficients and
+\begin{defn} \label{def:polyring}(\emph{Polynomial rings over fields})~~
+A set of polynomials is called a \term{polynomial ring over a field}\index{Polynomial!ring over a field}\index{Ring!polynomial, over a field} if two operations (which we denote as $+$ and $\cdot$)  are defined on the set of coefficients and
 \begin{itemize}
 \item
 The coefficients form an abelian group under +, with identity element 0;
@@ -187,25 +194,20 @@ $(b + c) \cdot a = b \cdot a + c \cdot a$.
 \end{defn}
 
 \begin{rem}
-\begin{itemize}
-\item
-Many other references define polynomial rings differently (for instance, they may not require that the nonzero coefficients form a group under multiplication). Our definition is more restrictive than most.
-\item
-In the following, whenever we refer to `polynomials'' without specifically mentioning what type of coefficients it has, we are presuming that the polynomials are elements of a polynomial ring.
-\end{itemize}
+the clause ``over a field'' is added because of the requirement that the  nonzero coefficients form a group under multiplication. In the most general definition of a polynomial ring, the set of nonzero coefficients is not required to have a multiplicative inverse.
 \end{rem}
 
 \begin{exercise}{poly5}
 \begin{enumerate}[(a)]
 \item
-According to Definition~\ref{def:polyring},is $\mathbb{Z}_6[x]$ a polynomial ring? \emph{Explain} your answer.
+According to Definition~\ref{def:polyring},is $\mathbb{Z}_6[x]$ a polynomial ring over a field? \emph{Explain} your answer.
 \item
-According to Definition~\ref{def:polyring},is $\mathbb{Z}_{11}[x]$ a polynomial ring? \emph{Explain} your answer.
+According to Definition~\ref{def:polyring},is $\mathbb{Z}_{11}[x]$ a polynomial ring over a field? \emph{Explain} your answer.
 \item
-What are the conditions on $n$ such that $\mathbb{Z}_n[x]$ is a polynomial ring?
+What are the conditions on $n$ such that $\mathbb{Z}_n[x]$ is a polynomial ring over a field?
 \end{enumerate}
 \end{exercise}
-We see from the previous exercise that $F[x]$ fails to be a polynomial ring when $F^*$ is not an abelian group. Why do we require this? It turns out that if we don't, then the polynomials have some nasty properties that we don't want.
+We see from the previous exercise that $F[x]$ fails to be a polynomial ring over a field when $F^*$ is not an abelian group. Why do we require this? It turns out that if we don't, then the polynomials have some nasty properties that we don't want.
 
 \begin{exercise}{poly6}
 \begin{enumerate}[(a)]
@@ -217,8 +219,14 @@ Is it possible to find two nonzero polynomials $\mathbb{Z}_5[x]$ whose product i
 Suppose $n=p\cdot q$, where $p$ and $q$ are positive integers. Show that there exist two nonzero polynomials in $\mathbb{Z}_n[x]$ whose product is 0.
 \end{enumerate}
 \end{exercise}
+
+\begin{rem}
+In the following, whenever we refer to `polynomials'' without specifically mentioning what type of coefficients it has, we are presuming that the polynomials are elements of a polynomial ring over a field.
+\end{rem}
+
+
 In the previous section, we showed properties of polynomials in the familiar case where the coefficients are real numbers. Now let's 
-do the same thing, but this time for arbitrary polynomial rings.
+do the same thing, but this time for arbitrary polynomial rings over fields.
  
 \begin{defn} Two polynomials are said to be \term{equal}\index{Equality!of polynomials}  if and only if their corresponding coefficients are equal. That is, if we let    
 \begin{align*}
@@ -413,7 +421,7 @@ Polynomials in general do not have multiplicative inverses \emph{that are polyno
 \item
 Consider the  polynomial $p(x)= 1x$ as an element of $\mathbb{R}[x]$. Show there is no polynomial in $\mathbb{R}[x]$ that is a multiplicative inverse of $p(x)$.
 \item
-Prove or disprove: polynomial rings are also commutative groups over multiplication.
+Prove or disprove: polynomial rings over fields are also commutative groups over multiplication.
 \end{enumerate}
 \end{exercise}
 
@@ -863,7 +871,7 @@ where the degree of $r(x)$ is less than the degree of $g(x)$.
 \end {prop}
 
 \begin {rem}
-This proposition is true for \emph{any} polynomial ring (according to our definition). You may check the following proof works for any polynomial ring, and not just real polynomials.
+This proposition is true for \emph{any} polynomial ring over a field. You may check the following proof works for any polynomial ring over a field, and not just real polynomials.
 \end{rem}
 
 
@@ -919,7 +927,7 @@ the degree of $g(x)$, so their difference can't have such a large degree.  It fo
 \end{proof}
 
 \section{Polynomial roots}
-The Fundamental Theorem of Algebra (discussed in Section~\ref{sec:FTOA}) asserts that a real polynomial of degree $n$ has at most $n$ roots. (Actually, this is just the easy part of the theorem, as we mentioned before.) You may have learned this before from previous math classes, but you've probably never seen it proved. Seek no more: the proof is at hand. Not only that--our results will apply to  \emph{any} polynomial ring, including $\RR[x]$, $\CC[x]$, $\QQ[x]$, and $\ZZ_p[x]$.  
+The Fundamental Theorem of Algebra (discussed in Section~\ref{sec:FTOA}) asserts that a real polynomial of degree $n$ has at most $n$ roots. (Actually, this is just the easy part of the theorem, as we mentioned before.) You may have learned this before from previous math classes, but you've probably never seen it proved. Seek no more: the proof is at hand. Not only that--our results will apply to  \emph{any} polynomial ring over a field, including $\RR[x]$, $\CC[x]$, $\QQ[x]$, and $\ZZ_p[x]$ (when $p$ is prime).  
 
 The following proposition gives us a way to relate polynomial values to polynomial remainders.
 
@@ -964,7 +972,7 @@ We will need one more fact in order to prove (the easy part of) the Fundamental 
 Proposition~\ref{proposition:complex:nonzero_complex_product} of Chapter~\ref{complex}).  It turns out that the same is true for polynomials, as we now show.
 
 \begin {prop}{polyremainder}
-Suppose $F[x]$ is a polynomial ring, and suppose $p(x),  q(x) \in F[x]$. Then $p(x)  q(x)=0$ iff either $p(x)=0$ or $q(x)=0$.
+Suppose $F[x]$ is a polynomial ring over a field, and suppose $p(x),  q(x) \in F[x]$. Then $p(x)  q(x)=0$ iff either $p(x)=0$ or $q(x)=0$.
 \end {prop}
 \begin {proof}
 Since this is a ``iff'' proof, we must actually prove two things:  
@@ -989,7 +997,7 @@ $c_{m+n}x^{m+n}$, so $p(x)q(x) \neq 0$.    The proof is completed.
 And here's the result we've been waiting for. Now that we've prepared the ground, it's not so difficult to prove.
 
 \begin {prop}{FTOA}
-In any polynomial ring, If $f(x)$ is a polynomial of degree $n$ then the equation $f(x)=0$ has at most $m$ solutions.
+In any polynomial ring over a field, If $f(x)$ is a polynomial of degree $n$ then the equation $f(x)=0$ has at most $m$ solutions.
 \end {prop}
 
 
@@ -1006,10 +1014,10 @@ f(x) = (x - a_1)(x - a_2)...(x - a_n)g_0,\]
  where the degree of $g_0$ is 0 (in other words, $g_0$ is a constant.). So there can't be any more solutions, $a_{n+1}$, because $(x-a_{n+1})$ doesn't divide $g_0$.
 \end {proof}
 
-A special case of this theorem tells us something very, very important about the coefficients of a polynomial ring.  Recall that we're presuming that the set of coefficients is an Abelian group under $+$, and also the nonzero coefficients form an Abelian group under $\cdot$.  (A set that satisfies these properties is called a \term{field}\index{Field!definition}. The theory of fields is an important area of abstract algebra, but we won't get into that now.)   From the previous theorem we immediately have:
+A special case of this theorem tells us something very, very important about the coefficients of a polynomial ring over a field.  Recall that we're presuming that the set of coefficients is an Abelian group under $+$, and also the nonzero coefficients form an Abelian group under $\cdot$.  (A set that satisfies these properties is called a \term{field}\index{Field!definition}. The theory of fields is an important area of abstract algebra, but we won't get into that now.)   From the previous theorem we immediately have:
 
 \begin {prop}{FTOA}
-Let $R[x]$ be a polynomial ring, and let $c$ be any element $R$.  Then $c$ has at most $n$ $n^{\text{th}}$ roots.
+Let $R[x]$ be a polynomial ring over a field, and let $c$ be any element $R$.  Then $c$ has at most $n$ $n^{\text{th}}$ roots.
 \end {prop}
 
 

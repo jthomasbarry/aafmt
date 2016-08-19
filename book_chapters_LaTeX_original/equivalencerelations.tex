@@ -9,7 +9,9 @@
 \medskip\noindent
 
 This can be thought of as a ``pivotal'' chapter. It generalizes the notion of ``function'', and relates this generalization to properties that we discussed in the Modular Arithmetic chapter. We will find that the new concepts we develop in this chapter will be foundational to the notions of \emph{coset} and \emph{conjugate}, two key group-theoretic structures which play central roles in group theory.
-\footnote{This chapter  is an adapted and expanded version of a chapter by D. and J. Morris.}
+\medskip
+
+This chapter  is an adapted and expanded version of a chapter by D. and J. Morris.
 
 \section{Binary relations} \label{sec.relation}
 
@@ -83,7 +85,7 @@ Notice that all of these sets are subsets of $A \times B$. The final example is 
 
 \begin{eg}
 Let $A = \{\text{all cities in the U.S.}\}$ and $B = \{\text{all states in the U.S.}\}$. two examples of relations from $A$ to $B$ are:
-\[ \{ \text{(Austin,Texas),(Boston,Massachusetts),(Tucson,Arizona)}\}, \]
+\[ \{ \text{(Austin,Texas),(Boston,Massachusetts),(Phoenix,Arizona)}\}, \]
 \[ \{ (x,y) \text{ such that } x \text{ is the capital of } y \}. \]
 The first of these relations  is a \emph{subset} of the second.
 \end{eg}
@@ -365,7 +367,7 @@ How can you tell from looking at a digraph whether or not the corresponding rela
 \item
 How can you tell from looking at a digraph whether or not the corresponding relation is symmetric? 
 \item
-**How can you tell from looking at a digraph whether or not the corresponding relation is transitive? (\emph{This one is harder.})
+**How can you tell from looking at a digraph whether or not the corresponding relation is transitive?
 \end{enumerate}
 \end{exercise}
 
@@ -709,7 +711,7 @@ Using  Definition  \ref{mod_eqiv_def_2}, show that equivalence mod $n$ is an equ
 
 Exercise~\ref{exercise:EquivalenceRelationsChap:ProveModEquiv} enables us to apply the concepts we've been developing to modular arithmetic. In particular, it enables us to describe modular arithmetic in terms of equivalence classes. We will do this first with a simple example: the integers mod 3.
 
-\subsection{The integers modulo 3}
+\subsection{The integers modulo 3}\label{sec:intMod3}
 
 We have proven in Exercise~\ref{exercise:EquivalenceRelationsChap:ProveModEquiv} that equivalence mod 3 is a bona fide equivalence relation. So what are the equivalence classes? And how many are there?
 \medskip
@@ -731,18 +733,22 @@ $[1]_3 = \{ \ldots, -5, -2, 1, 4, 7, \ldots \}$,
 $[2]_3 = \{ \ldots, -4, -1, 2, 5, 8, \ldots \}$
 \end{itemize}
 are three equivalence classes that partition the set of all  integers.
-In the Modular Arithmetic chapter we defined the integers mod 3\index{Integers mod $n$! as equivalence classes} as the set of remainders under division mod 3. Here we will give an alternative definition that amounts to the same thing:
+In the Modular Arithmetic chapter we defined the integers mod 3 as the set of remainders under division mod 3. Here we will give another definition that looks very different, but turns out to amount to basically the same thing.
+
+\begin{rem}
+What do we really mean by, ``basically the same thing''? Hold that thought--we'll come back to this point later(in Section~\ref{sec:theSameThing}).
+ \end{rem}
 
 \begin{defn}\label{mod_eqiv_def_3} \emph{(Integers mod 3, equivalence class definition)}
-The set of equivalence classes $\{ [0]_3, [1]_3, [2]_3 \}$ is identified as the set of \term{integers mod 3}, and is represented by the symbol~$\integer_3$.
+The set of equivalence classes $\{ [0]_3, [1]_3, [2]_3 \}$ is identified as the set of \term{integers mod 3}, and is represented by the symbol~$\integer_3$.\index{Integers mod $n$! as equivalence classes}
 
 We may also use the simpler notation $\class{k}$ to represent the equivalence class  $[k]_3$. So we may write either  
 $\integer_3 = \{ [0]_3, [1]_3, [2]_3 \}$ or $\integer_3 = \{ \class{0}, \class{1}, \class{2} \} .$
 \end{defn}
 
-Notice the subtle (but critically important) difference between this description of modular integers and our previous description. Previously we took the remainders $\{0,1,2\}$ and defined addition and multiplication operations that had the property of closure. But now we are taking a different tack. We are saying that the elements of $\integer_3$ are \emph{equivalence classes} rather than numbers. In other words, the elements of $\integer_3$ are \emph{sets}.
+Take a moment to appreciate the difference between this definition of $\mathbb{Z}_3$  and the one we gave in Section~\ref{sec:intMod_n}. Previously we took $\mathbb{Z}_3$ as the set of integers $\{0,1,2\}$ and defined new addition and multiplication operations that had the property of closure. But now we're taking a different tack. We are saying that the elements of $\integer_3$ are \emph{equivalence classes} rather than numbers. In other words, the elements of $\integer_3$ are \emph{sets}.
 
-We now define arithmetic operations on $\integer_3$, using our new definition of $\integer_3$ as a set of equivalence classes. Note the additional level of abstraction here: these arithmetic operations are defined on equivalence classes, which are \emph{sets} rather than numbers. But we've seen this before: recall that in the Sets chapter we defined operations on sets. So you're old hands at this!
+To complete the connection with our previous definition of  $\mathbb{Z}_3$, we need to define arithmetic operations on $\integer_3$, using our new characterization in terms of equivalence classes. Note the additional level of abstraction here: these arithmetic operations are defined on equivalence classes, which are \emph{sets} rather than numbers. But we've seen this before: recall that in the Sets chapter we defined operations on sets. So you're old hands at this!
 
 \begin{defn}\label{RulesOfModArith} (Rules of modular arithmetic)
 The \term{arithmetic operations modulo~$3$} are defined as follows:\index{Modular arithmetic!on equivalence classes}
@@ -753,7 +759,7 @@ The \term{arithmetic operations modulo~$3$} are defined as follows:\index{Modula
 \end{itemize}
 \end{defn}
 
-In Definition~\ref{RulesOfModArith} we are actually giving \emph{new meanings} to the symbols $+$,$-$, and $\cdot$. We could make this explicit by using different symbols. But this is not really necessary: whenever we're doing arithmetic with equivalence classes mod 3 (or mod $n$, for that matter), you should always presume that we're using the modular definitions of $+$,$-$, and $\cdot$.
+In Definition~\ref{RulesOfModArith} we're actually giving \emph{new meanings} to the symbols $+$,$-$, and $\cdot$\,. We could make this explicit by using different symbols. But this is not really necessary: whenever we're doing arithmetic with equivalence classes mod 3 (or mod $n$, for that matter), you should always presume that we're using the modular definitions of $+$,$-$, and $\cdot$\,.
 
 \begin{eg}\label{ModPlusExample}
 We have $[1]_3 + [2]_3 = [1 + 2]_3 = [3]_3$. However, since 3 and 0 are in the same equivalence class, we have $[3]_3 = [0]_3$, so the above equation can also be written as $[1]_3 + [2]_3 = [0]_3$. Equivalently, $\class{1} + \class{2} = \class{0}$.
@@ -769,7 +775,7 @@ Write down similar rules for (a) subtraction mod 3; (b) multiplication mod 3.
 \end{exercise}
 
 \begin{eg}
-Here is a table that shows the results of addition modulo~$3$:
+Here is a table that shows the results of addition modulo~$3$. (Recall that in the Modular Arithmetic chapter we referred to such tables as \term{Cayley tables}.)
 \begin{center} \begin{tabular}{c|c c c}
 $+$&$\class{0}$&$\class{1}$&$\class{2}$\\ \hline
 $\class{0}$&$\class{0}$&$\class{1}$&$\class{2}$ \\
@@ -827,7 +833,7 @@ Just as in the case of mod 3, whenever we're doing arithmetic mod $n$ you should
 \end{defn}
 
 
-Note that $\left|\integer_n \right| = n$.\footnote{Recall that for a set $S$, $|S|$ means the number of elements in $S$.} More precisely:
+Note that $\left|\integer_n \right| = n$. (Recall that for a set $S$, $|S|$ means the number of elements in $S$.) We may enumerate the elements precisely as follows:
 
 \begin{prop}{}
 For any $n \in \mathbb{N}^+$, we have 
@@ -851,6 +857,26 @@ multiplication modulo~$6$.
 \begin{exercise}{ModArithEx2}  
 Find $x,y \in \integer_{12}$ such that $x \neq \class{0}$ and $y \neq \class{0}$, but $x \cdot y = \class{0}$.
 \end{exercise}
+
+\subsection{What do we mean by ``the same thing''?}\label{sec:theSameThing}
+Now it's time to go back to our statement in Section~\ref{sec:intMod3} that the definition of $\integer_n$ and its operations in terms of equivalence classes is the ``same thing'' as the definition in terms of remainder arithmetic that we gave in the Modular Arithmetic chapter.
+
+One way to see this is to consider the Cayley tables. There is a striking similarity between the Cayley tables for $\oplus$ and $\odot$ that we computed in Section~\ref{sec:cayleyForZn1} and the tables that we just finished computing in the previous section:
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Compute Cayley tables for $\oplus$ and $\odot$ for $\integer_7$ using remainder arithmetic (as we did in Section~\ref{sec:cayleyForZn1}).
+\item
+Compute Cayley tables for $+$ and $\cdot$ for $\integer_7$ using the method we used in the previous section.
+\item
+Make profound comments about what you observe.
+\end{enumerate}
+\end{exercise}
+
+Whether we think of $\integer_n$ as a subset of $\integer$ with operations $\oplus$ and $\odot$, or whether we think of $\integer_n$ as a set of equivalence classes, as far as practical computation is concerned it really makes no difference. The operations give the same result. Any equation that holds for the one version, also hold for the other. Mathematically we describe this situation as saying that the two versions of $\integer_n$ are \term{isomorphic}. We've encountered isomorphism before (in Section~\ref{remRepComplex}), and later on we'll denote an entire chapter to this concept (Chapter~\ref{isomorph}).
+
+We should hasten to add that although the two versions work the same computationally, the conceptual differences between the two are important. Looking at the ``same thing'' in different ways can inspire new ideas that may bring deep insights and breakthroughs in understanding.  In fact, this is one of the most powerful tools in the mathematican's toolbox. 
 
 \subsection{Something we have swept under the rug} \label{EquivalenceRelationsWellDefSect}
 
@@ -925,25 +951,25 @@ Show that $\;^{\wedge}$ is not well-defined: that is, find $a, b, c, d \in \inte
 \begin{enumerate}[(a)]
 \item
 Show that there is a well-defined function 
-$f \colon \integer_4 \to \integer_{12}$, given by \\
-$ f \bigl( [a]_4 \bigr) = [a]_{12}$. 
-That is, show that if $[a]_{12} = [b]_{12}$, then $f \bigl( [a]_4 \bigr) = f \bigl( [b]_4 \bigr)$.
+$f \colon \integer_{12} \to \integer_{4}$, given by \\
+$ f \bigl( [a]_{12} \bigr) = [a]_{4}$. 
+That is, show that if $[a]_{12} = [b]_{12}$, then $ [a]_4  = [b]_4$.
 \item  \label{WellDefEx-divide}
 Generalize part (a) by showing that if $m$ divides $n$, then there is a well-defined function 
 $f \colon \integer_n \to \integer_m$, given by $f \bigl( [a]_n \bigr) = [a]_m$.
-That is, show that if $[a]_n = [b]_n$, then $f \bigl( [a]_n \bigr) = f \bigl( [b]_n \bigr)$.
+That is, show that if $[a]_n = [b]_n$, then $ [a]_m =  [b]_m$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item  \label{WellDefEx-odd2}
- Show that if we try to define a function $g \colon \integer_3 \to \integer_2$ by $g \bigl( [a]_3 \bigr) = [a]_2$, then the result is \emph{not} well-defined. That is, show that $\exists a, b \in \integer$ such that
+ Show that if we try to define a function $g \colon \integer_3 \to \integer_2$ by $g \bigl( [a]_3 \bigr) = [a]_2$, then the result is \emph{not} well-defined. That is, show that there exist $a, b \in \integer$ such that
 $[a]_3 = [b]_3$  but $[a]_2 \neq [b]_2.$
 \item
 Generalize part (a) by showing that $m, n$ are integers and $m$ does not divide $n$, then the function 
 $f: \integer_n \to \integer_m$  given by $f \bigl( [a]_n \bigr) = [a]_m$ is \emph{not} well-defined.
-That is, show that there exists integers $a$, $b$ such that $[a]_n = [b]_n$ and $f \bigl( [a]_n \bigr) \neq f \bigl( [b]_n \bigr)$.
+That is, show that there exists integers $a$, $b$ such that $[a]_n = [b]_n$ and $ [a]_m \neq   [b]_m$.
 \end{enumerate}
 \end{exercise}
 
