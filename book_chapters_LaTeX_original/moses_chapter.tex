@@ -111,7 +111,7 @@ The security of the DHKE leverages the easy computations of exponentials versus 
 Recall that the logarithm is the inverse operation of exponentiation.  For example, suppose $a = g^m$ , then the Discrete Logarithm (DL) of $a$ = $m$ and is expressed as    $\log_g a = m$.   
 
 \begin{defn} \label{def:DLP}(\emph{Discrete Logarithm Problem})~~
-The \emph{discrete logarithm problem}\index{discrete logarithm problem! in cryptogaphy} refers to the difficulty of finding logarithms modulo some integer. For example, $\bmod(2^{m},  11) = 9$ is difficult to solve without computing the results.
+The \emph{discrete logarithm problem}\index{discrete logarithm problem! in cryptogaphy} refers to the difficulty of finding logarithms modulo some integer. This is sometimes reffered to in cryptography as a \emph{one-way function}; easy to calculate but hard to invert. Let's look at an example, $\bmod(2^{4},  11) = 5$ is easy to solve, but $\bmod(2^{m},  11) = 5$ is more difficult to solve without computing the results. 
 $$ \bmod(2^{1}, 11)=2$$
 $$ \bmod(2^{2}, 11)=4$$
 $$ \bmod(2^{3}, 11)=8$$
@@ -123,29 +123,24 @@ $$ \bmod(2^{8}, 11)=3$$
 $$ \bmod(2^{9}, 11)=6$$
 $$ \bmod(2^{10}, 11)=1$$
 
-As you can see the results "jump" around, but each solution is equally likely to be any integer between 0 and 11.  Therefore, the larger the modulus the harder it is to solve the discrete logarithm problem.
+As you can see the results "jump" around, but each solution is equally likely to be any integer between 0 and 11.  This is the strength of the discrete logarithm problem, and the larger the modulus is the harder it is to solve.
 \end{defn}
 \begin{exer}
 Use the Repeated Square spreadsheet from the previous Exercise to solve the following Discrete Logarithm Problems.  
 \begin{enumerate}[(a)]
-\item Given $ \bmod(7^{x}, 41)=28$, solve for $x$.
+\item Given $ \bmod(7^{m}, 41)=28$, solve for $m$.
 %ans: 29
 
-\item Given $ \bmod(5^{x}, 73)=13$, solve for $x$.
+\item Given $ \bmod(5^{m}, 73)=13$, solve for $m$.
 %ans: 59
 
-\item Given $ \bmod(17^{x}, 211)=161$, solve for $x$.
+\item Given $ \bmod(17^{m}, 211)=161$, solve for $m$.
 %ans: 161
 \end{enumerate}
 \end{exer}
-Now that we have established that with a large enough modulus the DHKE is infeasable to crack; is there any way to successfully eavesdrop on Moses and Rachael's conversation without actually cracking the code?  Both Moses and Rachael seem confident with the security that the DHKE provides, since an eavesdropper would only be privy to $\mod (g^n , p)$ and $\mod (g^m , p)$ each of which cannot be used to decrypt the message.  An eavesdropper would have to solve the discrete log problem, but what if Fred (an eavesdropper) places himself between Moses and Rachael's messages?  Fred can now establish his own key and is able to read or change messages.  See Figure~\ref{fig:DH:DHKE_2} to see how this works.
-\begin{figure}[H]
-	   \center{\includegraphics[width=4in]
-	         {images/DHKE_2.png}}
-	  \caption{\label{fig:DH:DHKE_2} Key exchange between Moses and Rachael }
-\end{figure}
+Now that we have established that with a large enough modulus the DHKE is infeasable to crack; is there any way to successfully eavesdrop on Moses and Rachael's conversation without actually cracking the code?  Both Moses and Rachael seem confident with the security that the DHKE provides, since an Attacker would only be privy to $\mod (g^n , p)$ and $\mod (g^m , p)$ each of which cannot be used to decrypt the message since an Attacker would have to solve the discrete logarithm problem.
 
- \begin{eg} Key Exchange between a sender and receiver (Moses and Rachael) using the DHKE is shown in the following steps.
+\begin{eg} Key Exchange between a sender and receiver (Moses and Rachael) using the DHKE is shown in the following steps.
 \begin{enumerate}[Step 1.]
 \item Prior to sending data, Moses and Rachael agree $p$ = 13 and $g$= 7; 
 \item Moses chooses $n$ = 2, and sends Rachael $\bmod (7^2 , 13) = 10$;
@@ -156,12 +151,25 @@ Now that we have established that with a large enough modulus the DHKE is infeas
 \end{enumerate}
 \end{eg}
 
- Fred establishes a secret key $\bmod ( g^nf, p)$ with Moses and another secret key $\bmod ( g^mf, p)$ with Rachael.  DHKE is vulnerable to this type of Man in the Middle (MiM) attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Two possible solutions to the MiM attack are RSA encryption and elliptic curve cryptography. In the next section, we will examin the second of these alternatives. 
+What would happen if an Attacker, Fred (an eavesdropper) places himself between Moses and Rachael's messages?  If Fred is able to intercept the public key, then Fred is free to establish his own key with Moses and Rachael.  Fred is now able to read or alter messages.  See Figure~\ref{fig:DH:DHKE_2} to see how Fred is able to modify the Key Exchange.
+\begin{figure}[H]
+	   \center{\includegraphics[width=4in]
+	         {images/DHKE_2.png}}
+	  \caption{\label{fig:DH:DHKE_2} Man in the Middle Attack during Moses and Rachael's Key Exchange }
+\end{figure}
+
+Fred establishes a secret key $\bmod ( g^nf, p)$ with Moses and another secret key $\bmod ( g^mf, p)$ with Rachael.  DHKE is vulnerable to this type of Man in the Middle (MiM) attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Two possible solutions to the MiM attack are RSA encryption and elliptic curve cryptography. RSA encryption (see Chapter 5.2.1) allows for a digital signature to be sent within the message. This digital signature serves two purposes: first, it authenticates the origin of the sender and second, it ensures the integrity of the message. If you recall from Chapter 5.2.1, a message is encrypted using the private key and is decrypted using a public key (asymmetric cryptography). In the next section, we will examin the second of these alternatives. 
 
 \section{Elliptic Curve Cryptography}\label{sec:ECC:2}
 
 
-Elliptic Curve Cryptography (ECC) is one approach to the public key sharing dilemma that offers far more security than the DHKE, RSA, or DSA.  The elliptic curve protocol starts from a given known point called the generator.  A public key is a point on the elliptic curve.  A private key is the number of "hops" the generator must make to arrive at the public key point.  To use ECC we need to restrict ourselves to Finite Fields (FF) also known as Galois Fields (GF).
+Elliptic Curve Cryptography (ECC) is one approach to the public key sharing dilemma that offers a smaller security level-to-key lenth ratio (see table below for the relationship  of security and key lengths).  The strength of a cryptography security level is measured in bits (80, 128, 192, 256, etc.), and each security bit represents the number of computational steps necessary to find a solution.  Referencing the table below, we can see that ECC with a 160 bit Finite Field has a similar security level to RSA and Diffie Hellman with $2^{1024}$ bit moduli. To give you an idea of security level strength, "in 2002 it took $10^4$ computers (mainly PCs) running 24 hours a day for 549 days" to solve an EC with a 109 bit Finite Field. 
+\begin{figure} [H]
+	   \center{\includegraphics[width=5in]
+	         {images/DHKE_9.png}}
+	  \caption{\label{fig:DH:DHKE_9} Key bit lengths of Cryptosystems for different security levels }
+\end{figure}
+The elliptic curve protocol starts from a known point on the elliptic curve called the $generator$.  This point generates the next point which generates the point after that, and the point after that, and so on.  When using ECC, the public key is the point on the elliptic curve, and the private key is the number of iterations or "hops" the generator must make to arrive at the public key point.  In order to use ECC we need to restrict ourselves to Finite Fields (FF) also known as Galois Fields (GF).
 
 \subsection{Galois Field} 
 As a review, there are three types of algebraic structures: groups, rings, and fields (see Figure~\ref{fig:DH:DHKE_3}); each structure building from the previous structure.  Each structure is defined as a set of elements where: the given operation is closed, has the identity element, has the inverse element, and is associative.
@@ -223,10 +231,12 @@ Elliptic curves in $\mathbb{R}$ are not used in practice, because it is impossib
 \end{tabular}
 \end{center}
 \end{eg}
+We proved the following in Exercise~\ref{exercise:modular:71}.
 
-\begin{defn} \label{def:Bezout's Identity}(\emph{Bezout's Identity})~~ let $x$ and $t$ be two-non-zero integers, and let $d$ be their GCD, then there exists integers $p$ and $a$ such that\\
+\begin{prop}{BezoutsIdentity}(\emph{Bezout's Identity})~~ let $x$ and $t$ be two-non-zero integers, and let $d$ be their GCD, then there exists integers $p$ and $a$ such that\\
  \hspace*{\parindent} $px + at = d$
-\end{defn}
+\end{prop}
+
 \begin{corollary}
 Using Bezout's Identity we can conclude that if $p$ and $a$ are coprime then we have\\
 \hspace*{\parindent} $px + at = 1$ \\
