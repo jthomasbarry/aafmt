@@ -235,15 +235,14 @@ Given a right isosceles triangle where both legs have length 1 (see Figure~\ref{
 	         {images/isosceles_right.png}}
 	  \caption{\label{fig:complex:isosceles_right} Isosceles right triangle }
 \end{figure}
+
 \begin{proof}
 The proof is by contradiction.\index{Irrational number!existence proof}   \emph{Suppose} that $x$ is rational: that is, $x = \frac{m}{n}$ for some integers $m$ and $n$.We can always reduce a fraction to lowest terms ( as noted in Section~\ref{subsec:eqsAndIneqs}), so we can assume $m$ and $n$ have no common factors. 
 
 Since $x$ is the hypotenuse of a right triangle, the Pythagorean Theorem gives us $x^2 = 1^2 + 1^2 = 2$.
 We can plug $x=\frac{m}{n}$ into $x^2 = 2$ to get $\left(\frac{m}{n}\right) ^2 = 2$, which can be rearranged to give 
-\begin{equation}\label{m_is_even}
-m^2 = 2n^2.
-\end{equation}
-From this we see that $m^2$  is divisible by 2, which means that $m^2$ is even. Exercise~\ref{exercise:complex:m2even} part (b) then tells us that $m$ is even, so there must be an integer $j$ such that  $m = 2j$.  Plugging $m=2j$ into Equation~\ref{m_is_even} gives $4j^2 = 2n^2$, which simplifies to $2j^2 = n^2$.  Hence $ n^2$ is even, and as before we conclude that $n$ is even.  So $n = 2k$ for some integer $k$.
+\[ m^2 = 2n^2.\]
+From this we see that $m^2$  is divisible by 2, which means that $m^2$ is even. Exercise~\ref{exercise:complex:m2even} part (b) then tells us that $m$ is even, so there must be an integer $j$ such that  $m = 2j$.  Plugging $m=2j$ into $m^2=2n^2$  gives $4j^2 = 2n^2$, which simplifies to $2j^2 = n^2$.  Hence $ n^2$ is even, and as before we conclude that $n$ is even.  So $n = 2k$ for some integer $k$.
 
 At this point, we have $m = 2j$ and $n = 2k$, which means that $m$ and $n$ have a common factor of 2.  But at the beginning of the proof, we said that  $m$ and $n$ were reduced to lowest terms, so they  have no common factor.  This is a contradiction.  Therefore our \emph{supposition} must be false, so $x$ cannot be rational.
 \end{proof}
@@ -320,7 +319,7 @@ Modify the proof of Proposition~\ref{proposition:complex:irrational} to prove th
 Prove that $\sqrt{6}$ is irrational.
 \end{exercise}
 
-\begin{exercise}{6}
+\begin{exercise}{6a}
 Prove that $p^{1/n}$ is irrational, if $p$ is a prime and $n$ is any integer with $|n|>1$.
 \end{exercise}
 
@@ -430,12 +429,16 @@ Using this definition of complex subtraction, Given that  $z = a + bi$ and $w = 
 \end{exercise}
 
 Division is a little more complicated. First we consider division of a complex number by a real number.  In this case we can define division as multiplication by the reciprocal, just as with real numbers:
-\begin{equation}\label{eq:complex:1}
+\begin{equation*}\label{eq:complex:1}
 \frac{a + bi}{c} = (a + bi) \cdot \frac{1}{c} = a \cdot \frac{1}{c} + (bi) \cdot \frac{1}{c} = \frac{a}{c} + \cdot \frac{b}{c}i , 
-\end{equation}
+\end{equation*}
 where we have used the distributive, associative, and commutative properties of complex multiplication. 
 
-Now let's try to make sense of the ratio of two complex numbers: $w/z=(c+di) / (a+bi)$. This notation suggests that it should be true that  $w/z = (c+di) \cdot 1/(a+bi)$. But what is $1/(a+bi)$?
+Now let's try to make sense of the ratio of two complex numbers: 
+\[\frac{w}{z}=\frac{c+di} {a+bi}.\] 
+This notation suggests that it should be true that  
+\[\frac{w}{z}=(c+di)  \cdot \frac{1}{a+bi}. \]
+ But what is $1/(a+bi)$?
 To understand this, let's go back to arithmetic with real numbers. If we have an ordinary real number $r$, then $1/r$ is the \emph{multiplicative inverse}\index{Inverse!multiplicative} of $r$: that is, $r \cdot 1/r =1/r \cdot r = 1$. We also write $1/r$ as $r^{-1}$. By analogy, to make sense of $1/z = 1/(a+bi)$, we need to find a complex number $z^{-1}$ such that $z^{-1} \cdot z = z \cdot z^{-1} = 1$.
 
 \begin{exercise}{complex_mult_inv}  Given that $z = a+bi$ is a complex number and $z \neq 0$ (recall that $0$ is the same as $0+0i$).  Show that the complex number
@@ -669,14 +672,20 @@ The \term{complex conjugate}\index{Conjugate, complex}\index{Complex numbers!com
 of a complex number $z=a+bi$ is defined to be $\overline{z}=a-bi$.
 \end{defn}
 
-\begin{example}{complexadd} Let $z=2+3i$ and $w=1-2i$. Then \[
-z+w=(2+3i)+(1-2i)=3+i\]
- and \[
-zw=(2+3i)(1-2i)=8-i.\]
- Also, \begin{align*}
-z^{-1} & =\frac{2}{13}-\frac{3}{13}i\\
-|z| & =\sqrt{13}\\
-\overline{z} & =2-3i.\end{align*}
+\begin{example}{complexadd} Let $z=2+3i$ and $w=1-2i$. Then 
+\[ \overline{z} = \overline{2+3i} = 2 - 3i \text{   and   } \overline{w} = \overline{1 - 2i} = 1 + 2i.\]
+Notice also that 
+\[ z+w=(2+3i)+(1-2i)=3+i \text{  and  } zw=(2+3i)(1-2i)=8-i,\]
+so that 
+\[ \overline{z+w}=3-i \text{  and  } \overline{zw}=8+i.\]
+On the other hand, you may check  that 
+\[ \overline{z}+\overline{w}=(2-3i)+(1+2i)=3-i \text{  and  } \overline{z}\overline{w}=(2-3i)(1+2i)=8+i.\]
+What a ``coincidence''!
+
+Another remarkable ``coincidence'' occurs when we multiply complex numbers by their complex conjugates:
+\[ z \cdot \overline{z} = (2+3i)(2-3i) = 13 \text{  and  }  w \cdot \overline{w} = (1-2i)(1+2i) = 5, \]
+while on the other hand, we may compute the moduli of $z$ and $w$ as
+\[ |z| = \sqrt{2^2 + 3^2} = \sqrt{13} \text{  and  } |w| = \sqrt{ 1^2 + 2^2} =\sqrt{5}. \]
  \end{example}
  \medskip
 
@@ -1936,7 +1945,7 @@ The most famous result concerning complex roots of polynomials is known as the {
 \begin{prop}{FTOA} Given any equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, ... a_{n-1}$ are real numbers. Then there exists at least one and at most $n$ distinct complex numbers which solve the given equation. 
 \end{prop}
 
-The Fundamental Theorem of Algebra actually has two parts. The easy part is the ``at most $n$ distinct complex roots'' part, and the hard part is the ``at least one complex root'' part. We will eventually prove the easy part in Chapter~\ref{poly}, but sadly the hard part is beyond our scope. (For more information on this see the ``Historical note'' at the end of the chapter.
+The Fundamental Theorem of Algebra actually has two parts. The easy part is the ``at most $n$ distinct complex roots'' part, and the hard part is the ``at least one complex root'' part. We will eventually prove the easy part in Chapter~\ref{poly}, but sadly the hard part is beyond our scope. (For more information on this see the Historical Note at the end of the chapter.
 
 \begin{exercise}{70}
 \begin{enumerate}[(a)]

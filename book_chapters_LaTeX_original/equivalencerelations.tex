@@ -485,14 +485,11 @@ We wish to show that $\sim$ is reflexive, symmetric, and transitive.
 
 \noindent
 (transitive) Given $(a_1,b_1) , (a_2,b_2) , (a_3,b_3) \in \mathbb{N} \times \mathbb{N}$, such that $(a_1,b_1) \sim (a_2,b_2)$ and $(a_2,b_2) \sim (a_3,b_3)$, we have 
-\begin{equation} \label{NxNEquivRelEgEqn}
-a_1 + b_2 = a_2 + b_1 \text{  and } a_2 + b_3 = a_3 + b_2.
-\end{equation}
-Therefore 
 	\begin{align*}
 	(a_1 + b_3) + (a_2 + b_2)
 		&= (a_1 + b_2) + (a_2 + b_3) && \text{(rearrange terms)}
-		\\&= (a_2 + b_1) + (a_3 + b_2) && \text{(Equation (\ref{NxNEquivRelEgEqn}) above)}
+		\\&= (a_2 + b_1) + (a_2 + b_3) && (\,(a_1,b_1) \sim (a_2,b_2)\text{ and substitution})
+		\\&= (a_2 + b_1) + (a_3 + b_2) && (\,(a_2,b_2) \sim (a_3,b_3)\text{ and substitution})
 		\\&= (a_3 + b_1) + (a_2 + b_2) && \text{(rearrange terms)} .
 	\end{align*}
 Subtracting $a_2 + b_2$ from both sides of the equation, we conclude that $a_1 + b_3 = a_3 + b_1$,
