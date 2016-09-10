@@ -171,10 +171,91 @@ Elliptic Curve Cryptography (ECC) is one approach to the public key sharing dile
 \end{figure}
 The elliptic curve protocol starts from a known point on the elliptic curve called the $generator$.  This point generates the next point which generates the point after that, and the point after that, and so on.  When using ECC, the public key is the point on the elliptic curve, and the private key is the number of iterations or "hops" the generator must make to arrive at the public key point.  In order to use ECC we need to restrict ourselves to Finite Fields (FF) also known as Galois Fields (GF).
 
+\subsection{EC Math}
+The  ECs that we are interested in have a certain geometrical shape E: $y^2 = x^3 + ax + b (\bmod P)$.  See Figure~\ref{fig:DH:DHKE_5} below for a geometrical representation.  
+\begin{figure}[H]
+	   \center{\includegraphics[width=2.5in]
+	         {images/DHKE_5.png}}
+	  \caption{\label{fig:DH:DHKE_5}   E: $ y^2$ = $x^3+ax+b (\bmod P)$ }
+\end{figure}
+Furthermore, the EC equation must also satasify the following: $4a^3 + 27b^2 \neq 0$. If $(4a^3)+(27b^2) = 0$ then your elliptic curves have singularities or a self intersection.  See graphs in Figure~\ref{fig:DH:DHKE_10} for a geometrical representation.
+\begin{figure}[H]
+	   \center{\includegraphics[width=3in]
+	         {images/DHKE_10.png}}
+	  \caption{\label{fig:DH:DHKE_10} E: $ y^2$ = $x^3$ and E: $ y^2$ = $x^3+ax+b (\bmod P)$ }
+\end{figure}
+Given the right type of EC we can use the shape of the EC to conduct specific mathematical operations. A group operation, within the parameters of the EC, is sometimes referred to as addition and is given by two points on the EC, $P_1$, $P_2$ $\in$ E then $P_1 + P_2$ = $P_3$
+
+Geometrically if the two points are different then $P_1 + P_2$ is given by drawing a line from point $P_1$ to point $P_2$ and continue the line until it intersects the elliptic curve then reflecting that point about the $x$-axis.  See figure Figure~\ref{fig:DH:DHKE_6} below for a geometrical representation.
+\begin{figure}[H]
+	   \center{\includegraphics[width=2.5in]
+	         {images/DHKE_6.png}}
+	  \caption{\label{fig:DH:DHKE_6} }
+\end{figure}
+Geometrically if the two points are the same then a tangent line to the point is drawn and the resulting operation is then reflected about the x-axis.  This is often referred to as point doubling. See Figure~\ref{fig:DH:DHKE_7} below for a geometrical representation.
+\begin{figure}[H]
+	   \center{\includegraphics[width=2.5in]
+	         {images/DHKE_7.png}}
+	  \caption{\label{fig:DH:DHKE_7} }
+\end{figure}
+**Note, $P_3$ is the Public Key, while the number of hops, $d$, to get to $P_3$ is the Private Key.  In addition, the points on the EC form an abelian group.**
+
+\begin{corollary}
+Given E: $y^2 = x^3 + ax + b (\bmod P)$, $P_1 = (x_1, y_1)$, $P_2 = (x_2, y_2)$, and $P_3 = (x_3, y_3)$. Find $P_3$, where $ P_3 =  P_1 + P_2$
+\end{corollary}
+\begin{enumerate}[(1)] 
+	\item The slope $m =(y_2 - y_1)$ $\cdot$ $(x_2- x_1)^{-1}$ $\bmod P$, for $P_1$ $\neq$ $P_2$ \\
+		\text{ \qquad \: \:} or $m =(3x^2_1 + a)$ $\cdot$ $(2y_1)^{-1}$ $\bmod P$, for $P_1 = P_2$ 
+	\item $x_3 = m^2 - x_1 - x_2 (\bmod P)$ \\
+		$y_3 = m(x_1 - x_3) - y_1 (\bmod P)$
+	\item For $P^{-1}, m = \infty$ and $P = (x, -y)$ \\
+		and $\infty + P = P$, for all $P$
+\end {enumerate} 
+
+\begin{eg} Given E: $y^2 = x^3 + 2x + 2 (\bmod17)$, $P_1 = (5,1)$, $P_2 = (5,1)$, and $P_3 = (x_3, y_3)$
+	Find $P_3$, where $P_3 = P_1 + P_2$
+		\begin{align*}
+		\textrm{(1) The slope~} m
+		 &= ( (3 \cdot 5^2) + 2) \cdot (2 \cdot 1)^{-1} \bmod 17\\
+	          &= (77) \cdot (2)^{-1} \bmod 17\\
+                     &\equiv (9) \cdot (9) \bmod 17\\
+                     &\equiv 81 \bmod 17\\
+                    &\equiv 13
+		\end{align*}
+		\begin{align*}
+		\textrm{(2)~}x_3
+		 &= ( (13^2 - 5 - 5  (\bmod 17)) \text{\qquad \qquad \qquad \quad \: \: }\\
+	          &= 159(\bmod 17)\\
+                     &\equiv 6
+		\end{align*}
+			\begin{align*}
+		\textrm{(3)~}y_3
+		 &= ( (13(5 - 6) - 1(\bmod 17)) \text{\qquad \qquad \qquad \quad }\\
+	          &= -14(\bmod 17)\\
+                     &\equiv 3
+		\end{align*}
+Thus, $P_3 = (6,3) = 2P$
+\end{eg}
+\begin {exer}
+Using Example 10, find the following: $3P, 4P, 5P, ..., 20P.$  Recall: $3P = 2P + P;  4P = 3P +P;$ etc.  What do you notice about $18P,  19P,$ and $20P?$
+\end{exer}
+\begin{eg}
+Using Example 10 and Exercise 11, let us reconstruct the Diffie Hellman Key Exchange, but this time we'll use the strength of ECC.  Follow along with Figure~\ref{fig:DH:DHKE_8} below.
+\end{eg}
+\begin{exer}
+Using Example 10 and Exercise 11, what is the shared key exchange if Moses chooses $n = 9$ and Rachael chooses $m = 3$?
+\end{exer}
+\begin{figure}[H]
+	   \center{\includegraphics[width=5in]
+	         {images/DHKE_8.png}}
+	  \caption{\label{fig:DH:DHKE_8} Elliptic Curve Key Exchange between Moses and Rachael }
+\end{figure}
+
+
 \subsection{Galois Field} 
 As a review, there are three types of algebraic structures: groups, rings, and fields (see Figure~\ref{fig:DH:DHKE_3}); each structure building from the previous structure.  Each structure is defined as a set of elements where: the given operation is closed, has the identity element, has the inverse element, and is associative.
 \begin{figure}[H]
-	   \center{\includegraphics[width=4in]
+	   \center{\includegraphics[width=3.5in]
 	         {images/DHKE_3.png}}
 	  \caption{\label{fig:DH:DHKE_3} Algebraic structures and types of FFs }
 \end{figure}
@@ -348,78 +429,9 @@ Given GF($2^{160}$) and the reduction polynomial $X^{160} + X + 1$ , then multip
         \\ $f(X)$ = $X^{120} + X^{100} + 1 $
         \\ $g(X)$ = $X^{80} + X^{70} + X^{60}$
 \end{exer}
-Now back to Elliptic Curves, the  ECs that we are interested in have a certain geometrical shape E: $y^2 = x^3 + ax + b (\bmod P)$.  See Figure~\ref{fig:DH:DHKE_5} below for a geometrical representation.  Furthermore, in order to prevent points of singularities in the curve the EC equation must also satasify the following: $4a^3 + 27b^2 \neq 0$
-\begin{figure}[H]
-	   \center{\includegraphics[width=2.5in]
-	         {images/DHKE_5.png}}
-	  \caption{\label{fig:DH:DHKE_5}   E: $ y^2$ = $x^3+ax+b (\bmod P)$ }
-\end{figure}
-\subsection{EC Math} A group operation, within the parameters of the EC, sometimes referred to as addition is given by two points on the EC, $P_1$, $P_2$ $\in$ E then $P_1 + P_2$ = $P_3$
 
-Geometrically if the two points are different then $P_1 + P_2$ is given by drawing a line from point $P_1$ to point $P_2$ and continue the line until it intersects the elliptic curve then reflecting that point about the $x$-axis.  See figure Figure~\ref{fig:DH:DHKE_6} below for a geometrical representation.
-\begin{figure}[H]
-	   \center{\includegraphics[width=2.5in]
-	         {images/DHKE_6.png}}
-	  \caption{\label{fig:DH:DHKE_6} }
-\end{figure}
-Geometrically if the two points are the same then a tangent line to the point is drawn and the resulting operation is then reflected about the x-axis.  This is often referred to as point doubling. See Figure~\ref{fig:DH:DHKE_7} below for a geometrical representation.
-\begin{figure}[H]
-	   \center{\includegraphics[width=2.5in]
-	         {images/DHKE_7.png}}
-	  \caption{\label{fig:DH:DHKE_7} }
-\end{figure}
-**Note, $P_3$ is the Public Key, while the number of hops, $d$, to get to $P_3$ is the Private Key.  In addition, the points on the EC form an abelian group.**
+\newpage 
 
-\begin{corollary}
-Given E: $y^2 = x^3 + ax + b (\bmod P)$, $P_1 = (x_1, y_1)$, $P_2 = (x_2, y_2)$, and $P_3 = (x_3, y_3)$. Find $P_3$, where $ P_3 =  P_1 + P_2$
-\end{corollary}
-\begin{enumerate}[(1)] 
-	\item The slope $m =(y_2 - y_1)$ $\cdot$ $(x_2- x_1)^{-1}$ $\bmod P$, for $P_1$ $\neq$ $P_2$ \\
-		\text{ \qquad \: \:} or $m =(3x^2_1 + a)$ $\cdot$ $(2y_1)^{-1}$ $\bmod P$, for $P_1 = P_2$ 
-	\item $x_3 = m^2 - x_1 - x_2 (\bmod P)$ \\
-		$y_3 = m(x_1 - x_3) - y_1 (\bmod P)$
-	\item For $P^{-1}, m = \infty$ and $P = (x, -y)$ \\
-		and $\infty + P = P$, for all $P$
-\end {enumerate} 
-
-\begin{eg} Given E: $y^2 = x^3 + 2x + 2 (\bmod17)$, $P_1 = (5,1)$, $P_2 = (5,1)$, and $P_3 = (x_3, y_3)$
-	Find $P_3$, where $P_3 = P_1 + P_2$
-		\begin{align*}
-		\textrm{(1) The slope~} m
-		 &= ( (3 \cdot 5^2) + 2) \cdot (2 \cdot 1)^{-1} \bmod 17\\
-	          &= (77) \cdot (2)^{-1} \bmod 17\\
-                     &\equiv (9) \cdot (9) \bmod 17\\
-                     &\equiv 81 \bmod 17\\
-                    &\equiv 13
-		\end{align*}
-		\begin{align*}
-		\textrm{(2)~}x_3
-		 &= ( (13^2 - 5 - 5  (\bmod 17)) \text{\qquad \qquad \qquad \quad \: \: }\\
-	          &= 159(\bmod 17)\\
-                     &\equiv 6
-		\end{align*}
-			\begin{align*}
-		\textrm{(3)~}y_3
-		 &= ( (13(5 - 6) - 1(\bmod 17)) \text{\qquad \qquad \qquad \quad }\\
-	          &= -14(\bmod 17)\\
-                     &\equiv 3
-		\end{align*}
-Thus, $P_3 = (6,3) = 2P$
-\end{eg}
-\begin {exer}
-Using Example 20, find the following: $3P, 4P, 5P, ..., 20P.$  Recall: $3P = 2P + P;  4P = 3P +P;$ etc.  What do you notice about $18P,  19P,$ and $20P?$
-\end{exer}
-\begin{eg}
-Using Example 20 and Exercise 21, let us reconstruct the Diffie Hellman Key Exchange, but this time we'll use the strength of ECC.  Follow along with Figure~\ref{fig:DH:DHKE_8} below.
-\begin{figure}[H]
-	   \center{\includegraphics[width=5in]
-	         {images/DHKE_8.png}}
-	  \caption{\label{fig:DH:DHKE_8} Elliptic Curve Key Exchange between Moses and Rachael }
-\end{figure}
-\end{eg}
-\begin{exer}
-Using Example 20 and Exercise 21, what is the shared key exchange if Moses chooses $n = 9$ and Rachael chooses $m = 3$?
-\end{exer}
 \subsection{References and Suggested Reading} 
 \begin{enumerate}[(1)]
 
@@ -427,7 +439,10 @@ Using Example 20 and Exercise 21, what is the shared key exchange if Moses choos
 Azad, Saiful, and Pathan, Al-Sakib Khan. "Elliptic Curve Cryptography" in Practical Cryptography, CRC Press, January 2015.
 
 \item
-Bidgoli, Hossein. "Diffie-Hellman Key Exchange" in $Handbook of Information \newline Security: Information Warfare, Social, Legal, and International Issues and \newline Security Foundations, Volume 2$, John Wiley and Sons, January 2006.
+Bidgoli, Hossein. "Diffie-Hellman Key Exchange" in $Handbook of Information Security: Information Warfare, Social, Legal, and International Issues and Security Foundations, Volume 2$, John Wiley and Sons, January 2006.
+
+\item 
+Christensen, Chris. (2015, November 14). $Key Exchanges$. Retrieved from http://www.nku.edu/~christensen/092mat483%20DH%20key%20exchange.pdf.
 
 \item
 Franco, Pedro. "Elliptic Curve Cryptography" in $Understanding Bitcoin: Cryptography, Engineering and Economics$, John Wiley and Sons, February 2015.
@@ -435,8 +450,7 @@ Franco, Pedro. "Elliptic Curve Cryptography" in $Understanding Bitcoin: Cryptogr
 \item 
 Mandal, Surajit, Manna, Nilotpal, and Saha, Arijit. "Diffie-Hellman Key Exchange" in $Information Theory, Coding and Cryptography$, Pearson India, May 2013.
 
-\item 
-Christensen, Chris. (2015, November 14). Key Exchanges. Retrieved from http://www.nku.edu/~christensen/092mat483%20DH%20key%20exchange.pdf.
+
 
 
 
