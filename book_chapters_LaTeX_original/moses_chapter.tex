@@ -171,7 +171,7 @@ Elliptic Curve Cryptography (ECC) is one approach to the public key sharing dile
 \end{figure}
 The elliptic curve protocol starts from a known point on the elliptic curve called the $generator$.  This point generates the next point which generates the point after that, and the point after that, and so on.  When using ECC, the public key is the point on the elliptic curve, and the private key is the number of iterations or "hops" the generator must make to arrive at the public key point.  In order to use ECC we need to restrict ourselves to Finite Fields (FF) also known as Galois Fields (GF).
 
-\subsection{EC Math}
+\subsection{Elliptic Curves}
 The  ECs that we are interested in have a certain geometrical shape E: $y^2 = x^3 + ax + b (\bmod P)$.  See Figure~\ref{fig:DH:DHKE_5} below for a geometrical representation.  
 \begin{figure}[H]
 	   \center{\includegraphics[width=2.5in]
@@ -184,7 +184,17 @@ Furthermore, the EC equation must also satasify the following: $4a^3 + 27b^2 \ne
 	         {images/DHKE_10.png}}
 	  \caption{\label{fig:DH:DHKE_10} E: $ y^2$ = $x^3$ and E: $ y^2$ = $x^3+ax+b (\bmod P)$ }
 \end{figure}
-Given the right type of EC we can use the shape of the EC to conduct specific mathematical operations. A group operation, within the parameters of the EC, is sometimes referred to as addition and is given by two points on the EC, $P_1$, $P_2$ $\in$ E then $P_1 + P_2$ = $P_3$
+
+\subsection{Elliptic Curve Groups}
+Given the right type of EC we can use the shape of the EC to conduct specific mathematical operations. A group operation, within the parameters of the EC, is sometimes referred to as addition and is given by two points on the EC, $P_1$, $P_2$ $\in$ E then $P_1 + P_2$ = $P_3$ .  The elements of the group are the points on the elliptic curve.  See below for the EC Group Laws.
+
+\begin{enumerate}[1.]
+\item \textbf{Identity}: the point at infinity, we'll label this as "0"; 
+\item \textbf{Inverse}: given a point $P$, the inverse is the point symmetric about the x-axis;
+\item \textbf{closure}: if $P_1$ and $P_2$ are points on the elliptic curve the $P_1 + P_2$ is also a point on the curve;
+\item \textbf{associativity}:$(P_1 + P_2) + P_3 = P_1 + (P_2 + P_3)$;
+\end{enumerate}
+
 
 Geometrically if the two points are different then $P_1 + P_2$ is given by drawing a line from point $P_1$ to point $P_2$ and continue the line until it intersects the elliptic curve then reflecting that point about the $x$-axis.  See figure Figure~\ref{fig:DH:DHKE_6} below for a geometrical representation.
 \begin{figure}[H]
@@ -429,6 +439,9 @@ Given GF($2^{160}$) and the reduction polynomial $X^{160} + X + 1$ , then multip
         \\ $f(X)$ = $X^{120} + X^{100} + 1 $
         \\ $g(X)$ = $X^{80} + X^{70} + X^{60}$
 \end{exer}
+
+\subsection{Elliptic Curve Integrated Encryption System} 
+If Moses and Rachael would like to communicate a message using ECC, then they could use an agreed upon code table and elliptic curve.  Each character of the message would correspond to a point on the elliptic curve.
 
 \newpage 
 
