@@ -1588,21 +1588,21 @@ In many respects, $\oplus$ and $\odot$ are very similar to the ordinary arithmet
 In the following $n$ is an arbitrary positive integer and $a, b, c$ denote arbitrary elements of ${\mathbb Z}_n$.
 \begin{enumerate}
  
-\item \label{comm} \it %1
+\item \label{comm}  %1
 Modular addition and multiplication are commutative:\index{Commutative property!modular addition/multiplication}  
 \begin{align*}
 a \oplus b  & =  b \oplus a  \\
 a \odot b   & =  b \odot a .
 \end{align*}
  
-\item \label{assoc} \it %2
+\item \label{assoc}  %2
 Modular addition and multiplication are associative: \index{Associative property!modular addition/multiplication}
 \begin{align*}
 (a \oplus b) \oplus c  =  a \oplus (b \oplus c) \\
 (a \odot b) \odot c    =  a \odot (b \odot c).
 \end{align*}
  
-\item \label{distrib} \it %3
+\item \label{distrib}  %3
 Modular multiplication distributes over modular addition: \index{Distributive property!modular addition/multiplication}
 \[
 a \odot (b \oplus c)  = (a \odot b)\oplus (a \odot c).
@@ -2121,7 +2121,7 @@ A Diophantine equation of the form $an + bm = c$  has integer solutions for $n$ 
 \begin{proof}{}
 Since this is an ``if and only if'' proof, we need to prove it both ways.  We'll do ``only if''  here, and leave the other way as an exercise.
 
-Since we're doing the ``if'' part, we assume that $an + bm = c$ is solvable.
+Since we're doing the ``only if'' part, we assume that $an + bm = c$ is solvable.
 We'll represent the gcd of $a$ and $b$ by the letter $d$. Since gcd($a,b$) divides both $a$ and $b$, we may write $a = da'$ and $b = db'$ for some integers $a',b'$.  By basic algebra, we have $an+bm =d(a'n +b'm)$. If we substitute this back in the original Diophantine equation, we get:
 \[d(a'n +b'm)=c\]
 It follows that $c$ is a multiple of, $d$, which is the gcd of $a$ and $b$.
@@ -2301,7 +2301,7 @@ Make a conjecture for which sets $\mathbb{Z}_n \setminus \{0\}$ form a group und
 %Using earlier proposition for ax=cmodb and state this is just a special case.
 
 \begin{prop}{Groupornotp}
-All elements in $\mathbb{Z}_p \setminus \{0\}$ have an inverse under multiplication mod $p$. 
+If $p$ is prime, then all elements in $\mathbb{Z}_p \setminus \{0\}$ have an inverse under multiplication mod $p$. 
 \end{prop}
 \begin{proof}
 Let $a,p$ be known integers where $a < p$ and $p$ is prime.  There exists an inverse to $a$ under multiplication $\pmod p$ when there is a solution $k$  to the equation $ak = 1 \pmod p$ where $k$ is an integer.  By Proposition~\ref{proposition:modular:mod_eq_solution}, this equation can be solved if and only if the gcd of $a$ and $p$ is equal to 1.  Since $p$ is prime and $a<p$ then the gcd of $a$ and $p$ must be 1.
