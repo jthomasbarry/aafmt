@@ -441,7 +441,16 @@ Given GF($2^{160}$) and the reduction polynomial $X^{160} + X + 1$ , then multip
 \end{exer}
 
 \subsection{Elliptic Curve Integrated Encryption System} 
-If Moses and Rachael would like to communicate a message using ECC, then they could use an agreed upon code table and elliptic curve.  Each character of the message would correspond to a point on the elliptic curve.
+If Moses and Rachael would like to communicate a message using ECC, then they could use an agreed upon code table and elliptic curve.  Each character of the encrypted message would correspond to a point on the elliptic curve. Consider an elliptic curve whose equation is $y^2 = x^3 + 2x + 9$, see Figure~\ref{fig:DH:DHKE_11} below.
+
+\begin{figure}[H]
+	   \center{\includegraphics[width=2in]
+	         {images/DHKE_11.png}}
+	  \caption{\label{fig:DH:DHKE_11} Elliptic Curve, $y^2 = x^3 + 2x + 9$ }
+\end{figure}
+
+If we restrict ourselves to the Finite Field, $FF(37)$, so ($y^2 = x^3 + 2x + 9$)$\bmod37$.  Then the points on the elliptic curve are as followed:
+($\infty, (5, 25), (1, 30), (21, 32), (7, 25), \newline(25, 12), (4, 28), (0, 34), (16, 17), (15, 26), (27, 32), (9, 4), (2, 24), (26, 5), (33, 14),(11, 17), (31, 22), (13, 30), \newline(35, 21), (23, 7), (10, 17), (29, 6), (29, 31), (10, 20), (23, 30), (35, 16), (13, 7), (31, 15), (11, 20), (33, 23),\newline (26, 32), (2, 13), (9, 33), (27, 5), (15, 11), (16, 20), (0, 3), (4, 9), (25, 25), (7, 12), (21, 5), (1, 7), (5, 12)$)
 
 \newpage 
 
@@ -451,7 +460,7 @@ If Moses and Rachael would like to communicate a message using ECC, then they co
 \item
 Azad, Saiful, and Pathan, Al-Sakib Khan. "Elliptic Curve Cryptography" in Practical Cryptography, CRC Press, January 2015.
 
-\item
+\item 
 Bidgoli, Hossein. "Diffie-Hellman Key Exchange" in $Handbook of Information Security: Information Warfare, Social, Legal, and International Issues and Security Foundations, Volume 2$, John Wiley and Sons, January 2006.
 
 \item 
@@ -459,6 +468,9 @@ Christensen, Chris. (2015, November 14). $Key Exchanges$. Retrieved from http://
 
 \item
 Franco, Pedro. "Elliptic Curve Cryptography" in $Understanding Bitcoin: Cryptography, Engineering and Economics$, John Wiley and Sons, February 2015.
+
+\item 
+Kumar, Suneetha, Chandrasekhar. (2012, January). $Encryption of Data Using Elliptic Curve Over Finite Fields$. Retrieved from https://arxiv.org/ftp/arxiv/papers/1202/1202.1895.pdf.
 
 \item 
 Mandal, Surajit, Manna, Nilotpal, and Saha, Arijit. "Diffie-Hellman Key Exchange" in $Information Theory, Coding and Cryptography$, Pearson India, May 2013.
