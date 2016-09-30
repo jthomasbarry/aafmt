@@ -1148,23 +1148,23 @@ Before we do this, we need to address an important issue. Consider the case of $
 \term{Modular Addition}\index{Modular addition}
 
 \noindent
-The sum mod $n$ of two remainders mod $n$ is the remainder left after dividing their regular sum by $n$; that is, if $x,y \in {\mathbb Z}_n$ then
+The sum mod $n$ of two remainders mod $n$ is the remainder left after dividing their regular sum by $n$; that is, if $a,b \in {\mathbb Z}_n$ then
 
 \begin{center}
-$x \oplus y = r$ iff  $x + y = r + sn$ and 
+$a \oplus b = r$ iff  $a + b = r + sn$ and 
 $r \in {\mathbb Z}_n.$
 \end{center}
 \end{defn}
-Note that in Definition~\ref{definition:modular:mod_add} we write $x \oplus y = r$ rather than $x \oplus y \equiv r \pmod{n}$, since $x \oplus y$ is defined to be \emph{equal} to the remainder. The same holds for the following definition:
+Note that in Definition~\ref{definition:modular:mod_add} we write $a \oplus b = r$ rather than $a \oplus b \equiv r \pmod{n}$, since $a \oplus b$ is defined to be \emph{equal} to the remainder. The same holds for the following definition:
 
 \begin{defn}\label{definition:modular:mod_mult}
 \term{Modular Multiplication}
 
 \noindent
-The product mod $n$ of two remainders mod $n$ is the remainder left after dividing their regular product by $n$; that is, if $x,y \in {\mathbb Z}_n$ then
+The product mod $n$ of two remainders mod $n$ is the remainder left after dividing their regular product by $n$; that is, if $a,b \in {\mathbb Z}_n$ then
 
 \begin{center}
-$x \odot y = r$ iff  $x \cdot y = r + sn$ and 
+$a \odot b = r$ iff  $a \cdot b = r + sn$ and 
 $r \in {\mathbb Z}_n.$
 \end{center}
 \end{defn}
@@ -1175,34 +1175,51 @@ Before we continue, we should take special note of the following important point
 \item
 It is important to note that the operations $\oplus$ and $\odot$ \emph{depend on the modulus involved}. We must always make sure that the modulus is clearly specified before talking about $\oplus$ and $\odot$.
 \item
-Although technically we could define $a \oplus b$ and $a \odot b$ for \emph{any} two integers $a,b \in \mathbb{Z}$, in the following we will restrict the operations to $a, b \in \mathbb{Z}_n$.  So for example  if we are working in $\mathbb{Z}_7$, we may write $3 \oplus 4 = 0$ and $5 \odot 6 = 2$, but we will not write expressions like $7 \oplus 6$ or $13 \odot 22$.
+Although technically we could define $\ell \oplus m$ and $\ell \odot m$ for \emph{any} two integers $\ell,m \in \mathbb{Z}$, in the following we will restrict the operations to elements of  $ \mathbb{Z}_n$.  So for example  if we are working in $\mathbb{Z}_7$, we may write $3 \oplus 4 = 0$ and $5 \odot 6 = 2$, but we will not write expressions like $7 \oplus 6$ or $13 \odot 22$.
 \end{itemize}
 \end{rem}
 
 Our first step towards showing that ordinary arithmetic can be replaced with arithmetic with remainders is the following proposition:
 
 \begin{prop}{number_remainder}
-Given $a,c \in {\mathbb Z}$ and $b,d \in \mathbb{Z}_n$. If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then 
+Given $\ell,m \in {\mathbb Z}$. If $a =\bmod(\ell,n)$ and $b=\bmod(m,n)$, then 
 \begin{enumerate}[(a)]
 \item
-$a + c \equiv b \oplus d \pmod{n}$, 
+$\ell+ m \equiv a \oplus b \pmod{n}$, 
 \item
-$a \cdot c \equiv b \odot d \pmod{n}$.
+$\ell \cdot m \equiv a \odot b \pmod{n}$.
 \end{enumerate}
 \end{prop}
 
+Before we prove the proposition, let's give an example of how it can be applied. Suppose we know that:
+\[   8640 \equiv 2 \pmod{7} \quad \text{and} \quad 1059895 \equiv  4 \pmod{7},
+\] 
+and we want to compute the following remainders: 
+\[
+\text{mod}(8640 + 1059895,7) \quad \text{ and} \quad  \text{mod}(8640 \cdot 1059895, 7).
+\]  
+Well, let's apply the proposition. If we let $\ell=8640$ then we must let $a=2$, since $2=\text{mod}(8640,7)$. Similarly, if we let $m=1059895$ then we must let $b=4$. But then what does the proposition say? Substituting: 
+\[
+\ell \rightarrow 8640, m \rightarrow 1059895, a \rightarrow 2, \text{ and } b \rightarrow 4,
+\]
+we get:
+\[
+8640+ 1059895 \equiv 2 \oplus 4 \pmod{7}, \quad \text{and} \quad 8640l \cdot 1059895 \equiv 2 \odot 4 \pmod{7},
+\]
+which gives us 6 and 1  for the sum and product, respectively.  Isn't this  and awful lot simpler than adding and multiplying those two large numbers?
+
 \noindent
-We will furnish the proof of part (a): part (b) will be left as an exercise.
+So let's get back to the proof.  We'll do (a) here: part (b) is left as an exercise.
 
 \begin{proof}
-Since $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then
-\[ a = b + sn \mathrm{~~~and~~~} c = d + tn  \mathrm{~~~~~~(definition~of~modular~equivalence)} \]
+Since $\ell \equiv a \pmod{n}$ and $m \equiv b \pmod{n}$, then
+\[ \ell = a + sn \mathrm{~~~and~~~} m = b + tn  \mathrm{~~~~~~(definition~of~modular~equivalence)} \]
 Therefore, 
-\[ a + c = b + d + (s + t)n \mathrm{~~~~~~(subs.~and~ basic~algebra)} \]
-Now by the definition of $\oplus$ there is some $p \in {\mathbb Z}$ such that  $b + d = (b \oplus d) + pn$; therefore 
-\[ a + c = (b \oplus d) + pn + (s + t)n = (b \oplus d) + ( p + s + t)n. \mathrm{~~~~~~(subs.~and~ basic~algebra)} \]
+\[ \ell + m =a + b + (s + t)n \mathrm{~~~~~~(subs.~and~ basic~algebra)} \]
+Now by the definition of $\oplus$ there is some $p \in {\mathbb Z}$ such that  $a + b = (a \oplus b) + pn$; therefore 
+\[ \ell + m = (a \oplus b) + pn + (s + t)n = (a \oplus b) + ( p + s + t)n. \mathrm{~~~~~~(subs.~and~ basic~algebra)} \]
 Hence by the definition of modular equivalence, 
-\[ a + c \equiv b \oplus d \pmod{n}. \]
+\[ \ell + m \equiv a \oplus b \pmod{n}. \]
 \end{proof}
 
 \begin{exercise}{44}
@@ -1215,39 +1232,47 @@ Come up with a definition for modular subtraction (use the symbol $\ominus$).
 Using your definition, prove the following:
 
 \noindent
-Given $a,c \in {\mathbb Z}$ and $b,d \in \mathbb{Z}_n$. If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then  $a - c \equiv b\ominus d \pmod{n}$.
+Given $\ell,m \in {\mathbb Z}$. If $a =\bmod(\ell,n)$ and $b=\bmod(m,n)$, then  $\ell - m \equiv a\ominus b \pmod{n}$.
 \end{enumerate}
 \end{exercise}
 
-Now that we have proven Proposition~\ref{proposition:modular:number_remainder}, we can combine operations into more complicated equations and show equivalence.
+The diagram in Figure~\ref{fig:commDiagModular} gives a way to visualize  Proposition~\ref{proposition:modular:number_remainder}.  In the diagram we only show the relation between $+$ and $\oplus$: the situation with $\cdot$ and $\odot$ is almost identical. On the left side of the diagram, we show two numbers $\ell$ and $m$ being added to give $\ell + m$. The arrows from left to right show that the numbers $\ell, m,$ and $\ell + m$ can all be ``translated'' by taking remainders. If we ``translate'' $\ell$ and $m$ first and then take the modular sum; or we can take $\ell + m$ first and then ``translate'' the result. In either case, we end up with the same answer.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=4.5in]{images/CommDiagModAdd.png}
+\end{center}
+\caption{Visualization of Proposition~\ref{proposition:modular:number_remainder}.\label{fig:commDiagModular}}
+\end{figure}
+
+
+Now that we've proven Proposition~\ref{proposition:modular:number_remainder}, we can combine operations into more complicated equations and show equivalence.
 
 \begin{exercise}{ModPower}
 \begin{enumerate}[(a)]
 \item
 Using part (b) of Proposition~\ref{proposition:modular:number_remainder} above, 
-show that if $a \in {\mathbb Z}$ and $b \in {\mathbb Z_n}$ and $a \equiv b \pmod{n}$ then $a^2 \equiv b \odot b \pmod{n}$.
+show that if $\ell \in {\mathbb Z}$ and $a=\bmod(\ell,n)$ then $\ell^2 \equiv a \odot a \pmod{n}$. \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}]
 \item 
-Using part (a) prove a similar relation involving $a^3$.
+Using part (a) prove a similar relation involving $\ell^3$.
 \item 
-Using part (b) prove a similar relation involving $a^4$.
+Using part (b) prove a similar relation involving $\ell^4$.
 \item
-From parts (a),(b) and (c), what do you conclude about $a^k$ where $k$ is any natural number?
+From parts (a),(b) and (c), what do you conclude about $\ell^k$ where $k$ is any natural number?
 \end{enumerate}
 \end{exercise}
 
 
 \begin{exercise}{ops}
+Given $\ell,m,p \in {\mathbb Z}$ and $a=\bmod(\ell,n), b=\bmod(m,n),$ and $c=\bmod(p,n)$.  Show the  following equivalences using Proposition~\ref{proposition:modular:number_remainder}.
 \begin{enumerate}[(a)]
 \item
-Given $a,c,e \in {\mathbb Z}$ and $b,d ,f \in {\mathbb Z_n}$ where $a \equiv b \pmod{n}$,  $c \equiv d \pmod{n}$, and $e \equiv f \pmod{n}$. Show using Proposition~\ref{proposition:modular:number_remainder} that  
-\[ (a + c) + e \equiv (b \oplus d) \oplus f \pmod{n}. \]
-\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
+\[ (\ell +m) + p \equiv (a \oplus b) \oplus c \pmod{n}.\qquad
+\text{\hyperref[sec:modular_arithmetic:hints]{(*Hint*)} }\]
 \item
-Given $a,c,e \in {\mathbb Z}$ and $b,d ,f \in {\mathbb Z_n}$ where $a \equiv b \pmod{n}$,  $c \equiv d \pmod{n}$, and $e \equiv f \pmod{n}$. Show using Proposition~\ref{proposition:modular:number_remainder} that  
-\[ (a \cdot c) + e \equiv (b \odot d) \oplus f \pmod{n}. \]
+\[ (\ell \cdot m) + p \equiv (a \odot b) \oplus c \pmod{n}. \]
 \item
-Given $a,c,e \in {\mathbb Z}$ and $b,d ,f \in {\mathbb Z_n}$ where $a \equiv b \pmod{n}$,  $c \equiv d \pmod{n}$, and $e \equiv f \pmod{n}$. Show using Proposition~\ref{proposition:modular:number_remainder} that  
-\[ (a + c) \cdot e \equiv (b \oplus d) \odot f \pmod{n}. \]
+\[ (\ell + m) \cdot p \equiv (a \oplus b) \odot c \pmod{n}. \]
 \end{enumerate}
 \end{exercise}
 
@@ -1258,25 +1283,38 @@ This completes our discussion showing that arithmetic mod $n$ can be reduced to 
 \begin{exercise}{number_remainder}
 Prove the following proposition.
 
-\noindent {\bf Proposition}: Given $a,b,c,d \in {\mathbb Z}$ where $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then 
+\noindent {\bf Proposition}: Given $\ell,m,x,y \in {\mathbb Z}$ where $\ell \equiv x \pmod{n}$ and $m \equiv y \pmod{n}$, then 
 
 \begin{enumerate}[(a)]
 \item
-$a + c \equiv b + d \pmod{n},$ 
+$\ell + m \equiv x + y \pmod{n},$ 
 \item
-$a \cdot c \equiv b \cdot d \pmod{n}$.
+$\ell \cdot m \equiv x \cdot y \pmod{n}$.
 \end{enumerate}
 
 Note these are slightly different from (a) and (b) of  Proposition~\ref{proposition:modular:number_remainder} (in fact, to prove (a) here you need to use  part (a) of   Proposition~\ref{proposition:modular:number_remainder} twice, and similarly for (b)).
 \end{exercise}
 
+This proposition shows that we can freely replace numbers with other numbers that are equivalent mod $n$,  as long as we are only interested in the result mod $n$. For example, suppose we are interested in finding the following remainder:  
+\[
+\text{mod}(80056 \cdot 69944, 56).  
+\]
+We may notice that $80056 \equiv 80000 \pmod{56}$ and $69944 \equiv 70000 \pmod{56}$.  So we can replace 80056 with 80000 and 69944 with 70000 in the computation:
+\[
+  \text{mod}(80000 \cdot 70000, 56)= \text{mod}(5600000000, 56)=0.
+\]
+In this case, by noticing some patterns we were able to save ourselves quite a bit of work.
+
 \begin{exercise}{}
-Prove or disprove:
+Prove or disprove, using the proposition in Exercise~\ref{exercise:modular:number_remainder}:
 \begin{enumerate}[(a)]
 \item
 $833 \cdot 222 \cdot 949 \equiv 133 \cdot  922 \cdot 249 \pmod{7}$
 \item
 $(12345 \cdot 6789) + 1357 \equiv (98765 \cdot 13579) + 9876 \pmod{10}$
+\item
+$(4545 \cdot 1414) + 1357 \equiv (7878 \cdot 3614) + 4658 \pmod{11}$
+
 \end{enumerate}
 \end{exercise}
 
@@ -1615,15 +1653,17 @@ We'll do the proof that modular addition is associative, and  you will prove the
 
 
 \term{Modular addition is associative:}
-Given $a,b,c$ are elements of $\mathbb{Z}_n$, it's also true that $a,b,c$ are integers. By Proposition~\ref{proposition:modular:number_remainder}, it follows that:
-\[ a \oplus b \equiv a + b \pmod{n}. \]
-We may use Proposition~\ref{proposition:modular:number_remainder} a second time to obtain:
-\[ (a \oplus b) \oplus c  \equiv (a + b) + c \pmod{n}. \]
+Given $a,b,c$ are elements of $\mathbb{Z}_n$, it's also true that $a,b,c$ are integers. So in particular we may apply Proposition~\ref{proposition:modular:number_remainder} with $\ell = a$ and $m=b$. Since $a$ and $b$ are their own remainders, we then have $\bmod(\ell,n)=a$ and $\bmod(m,n)=b$. Substituting into the proposition gives
+\[ a + b \equiv a \oplus b \pmod{n}. \]
+We may use Proposition~\ref{proposition:modular:number_remainder} a second time with
+$ \ell = a+b$ and $m= c$.  Then $\bmod(\ell,n) = a \oplus b$ and $\bmod(m,n)=c$,
+and we find:
+\[ (a + b) + c  \equiv  (a \oplus b) \oplus c \pmod{n}. \]
 Using the same reasoning (applying Proposition~\ref{proposition:modular:number_remainder} twice), we can also show that:
-\[  a \oplus (b \oplus c)  \equiv a + (b + c) \pmod{n}.\]
+\[   a + (b + c)  \equiv a \oplus (b \oplus c)\pmod{n}.\]
 Now here's where we use regular arithmetic. The associative property of integer addition tells us that $a + (b + c) = (a+b)+c$,
 and we can substitute into the previous equivalence to obtain:
-\[a \oplus (b \oplus c)  \equiv (a + b) + c \pmod{n}. \]
+\[  (a + b) + c \equiv a \oplus (b \oplus c) \pmod{n}. \]
 We now have two different expressions (namely, $(a \oplus b) \oplus c$ and $a \oplus (b \oplus c)$ that are both equivalent to $(a + b) + c$. So we can apply
 Proposition~\ref{proposition:modular:equivalence_transitive} (the ``transitive property'') to get that
 \[ (a \oplus b) \oplus c  \equiv  a \oplus (b \oplus c) \pmod{n}. \]
@@ -2032,9 +2072,9 @@ Rearranging and dividing by common factors, we obtain:
 Now since the right-hand side is divisible by 8, then the left-hand side must also be divisible by 8.  This implies that $n+12$ must be divisible by 8, or 
 \[ n+12 = 8k~~~(\text{for some integer}~k). \]
 If we plug this in to the equation just above, we get:
-\[ 21(8k) = -8(m-32),~~\text{or}~~m-32 = 21k .\]
+\[ 21(8k) = -8(m-32),~~\text{or}~~m-32 = -21k .\]
 We may rearrange to obtain finally:
-\[ m = 32 + 21k ~~\text{and}~~ n = -12 + 8k~~~(\text{where }k \text{  is an arbitrary integer)} \]
+\[ m = 32 - 21k ~~\text{and}~~ n = -12 + 8k~~~(\text{where }k \text{  is an arbitrary integer)} \]
 as the most general solution to  $16m + 42n = 8$.
 \end {example}
 
@@ -2062,11 +2102,11 @@ To find \emph{all} integer solutions, we suppose that $(x,y)$ is an arbitrary so
 $$1053(x-92365) + 863(y+112700) = 0,$$
 or
 $$1053(x-92365) = -863(y+112700).$$
-Our computation shows that gcd(1053,863)=1, so by \emph{Euclid's Lemma} (Proposition~\ref{proposition:complex:EuclidLemma} in Chapter~\ref{complex}) and the left-hand side is divisible by 1053, so it must be the case that by $y + 112700$ is also divisible by 1053.  If we write $y + 112700 = 1053k$, it follows by algebra that $x - 92365 = -863k$. This means that 
+The left-hand side is divisible by 1053, and our computation shows that gcd(1053,863)=1, so by \emph{Euclid's Lemma} (Proposition~\ref{proposition:complex:EuclidLemma} in Chapter~\ref{complex}) it must be the case that by $y + 112700$ is also divisible by 1053.  If we write $y + 112700 = 1053k$, it follows by algebra that $x - 92365 = -863k$. This means that 
 $$ x = 92365 - 863k,~~ y = -112700 + 1053k$$
 is the most general solution.  
 
-This solution is correct, but we can simplify by shifting the value of $k$.  Note that $92365 = 107 \cdot 863 + 24$ and $112700 = 107 \cdot 1053 + 29$.  So we may replace $k$ with $(\ell + 107)$ to obtain:
+This solution is correct, but we can simplify it by shifting the value of $k$.  Note that $92365 = 107 \cdot 863 + 24$ and $112700 = 107 \cdot 1053 + 29$.  So we may replace $k$ with $(\ell + 107)$ to obtain:
 $$ x = 92365 - 863(\ell + 107), y = -112700 + 1053(\ell + 107),$$
 which after working out the algebra gives us:
 $$ x = 24 + 863 \ell, y = 29 + 1053 \ell.$$
@@ -2366,9 +2406,10 @@ $x \equiv 2 \pmod{6}; \quad  x \equiv 56 \pmod{72}.$
 \item
 Find a pair of congruences of the form: $x \equiv a \pmod{9};~~x \equiv b \pmod{15}$ that have no common solution.
 \item
-Show that \emph{any} pair of congruences of the form 
+Given congruences of the form 
 \[ ax \equiv b \pmod{3}; \qquad cx \equiv d \pmod{7} \]
- will have a common solution.
+which both have solutions.  Show that  common solutions also exist.
+ \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 \item
 *Prove the following: Given a pair of congruences
 \[ ax \equiv b \pmod{m}; \qquad cx \equiv d \pmod{n} \]
