@@ -29,7 +29,7 @@ The steps in the DHKE algorithm are as follows (see also Figure~\ref{fig:DH:DHKE
 \end{figure}
 It turns out that when $K_1$ and $K_2$ are computed by the above procedure, then $K_1$ is always equal to $K_2$.  You will show this in the following exercise.
 
-\begin{exer}\\
+\begin{exercise}{k1isk2}\\
 Fill in the blanks in the following proof that  $K_1$ is always equal to  $K_2$.\\
   	\begin{proof} 
 		\begin{align*} 
@@ -44,9 +44,20 @@ Fill in the blanks in the following proof that  $K_1$ is always equal to  $K_2$.
    	Thus, $K_1 = K_2 = K$ is the symmetric private key.\\
 
   	\end{proof}
-\end{exer}
+\end{exercise}
 
 In order to make things clearer, we give a simple example to show how key exchange works (note that this example is much too simple to be used in practice, but it does at least show the procedure):
+
+\begin{eg} Key Exchange between a sender and receiver (Moses and Rachael) using the DHKE is shown in the following steps.
+\begin{enumerate}[Step 1.]
+\item Prior to sending data, Moses and Rachael agree $p$ = 13 and $g$= 7; 
+\item Moses chooses $n$ = 2, and sends Rachael $\bmod (7^2 , 13) = 10$;
+\item Rachael chooses $m$ = 8, and sends Moses $\bmod (7^8  , 13) = 3 $;
+\item Moses computes $\bmod ((3)^2 , 13 ) = 9$;
+\item Rachael computes $\bmod ((10)^8 , 13 ) = 9$;
+\item Moses and Rachael share the number 9;
+\end{enumerate}
+\end{eg}
 
  \begin{eg} Key Exchange between a sender and receiver (Moses and Rachael) using the DHKE is shown in the following steps.
 \begin{enumerate}[Step 1.]
@@ -80,7 +91,7 @@ $$ \bmod(5^{5-1}, 5) \equiv 0$$
 \end{eg}
 Since all values of $a$ such that $1 \leq a \leq p$ are congruent to $1$, then Fermat's Little Theorem tells us that $p$ is prime, but are there numbers that exist that pass Fermat's Little Theorem but are not prime?  The answer is yes, these numbers are called \emph{Lucas-Carmichael Numbers}\index{Lucas-Carmichael Numbers! in cryptogaphy}.  (or \emph{pseudoprimes}\index{Pseudoprimes}) 
 
-Performing exponentiation over a modulus is called \emph{discrete exponentiation}\index{discrete exponentiation! in cryptogaphy} and can quickly become incalculable, however you can overcome this by creating a repeated squaring formula using an excel spreadsheet.  See \emph{Chapter 7.2.3 RSA Exercises, Exercise 36} for instructions on how to create a spreadsheet to compute the following exercises.
+Performing exponentiation over a modulus is called \emph{discrete exponentiation}\index{discrete exponentiation! in cryptogaphy} and can quickly become incalculable, however you can overcome this by creating a repeated squaring formula using an excel spreadsheet.  See Exercise \ref{exercise:Crypto:k1isk2} for instructions on how to create a spreadsheet to compute the following exercises.
  
 \begin{exer}
 Given $p$ = 32452867; $g$ = 54321; and $n$ = 876.  
@@ -110,8 +121,10 @@ Given $p$ = 86028157; $g$ = 98765; and $n$ = 123.
 The security of the DHKE leverages the easy computations of exponentials versus the difficulty of computing logarithms. 
 Recall that the logarithm is the inverse operation of exponentiation.  For example, suppose $a = g^m$ , then the Discrete Logarithm (DL) of $a$ = $m$ and is expressed as    $\log_g a = m$.   
 
-\begin{defn} \label{def:DLP}(\emph{Discrete Logarithm Problem})~~
-The \emph{discrete logarithm problem}\index{discrete logarithm problem! in cryptogaphy} refers to the difficulty of finding logarithms modulo some integer. This is sometimes reffered to in cryptography as a \emph{one-way function}; easy to calculate but hard to invert. Let's look at an example, $\bmod(2^{4},  11) = 5$ is easy to solve, but $\bmod(2^{m},  11) = 5$ is more difficult to solve without computing the results. 
+\begin{example}{one-way}(\emph{One-way function})~~
+A \term{one-way function} is a function which is easy to calculate but hard to invert.  Let's look at an example of a function that satisfies this requirement. It is easy to calculate $\bmod(2^{m},  11)$ for different values of $m$: for example, when $m =8$ then we get $\bmod(2^{8},  11) =\bmod(256,  11)  = 3$.  
+
+However, when you try to invert the process, you have: given $\bmod(2^{m},  11) = 3$, calculate $m$. There is no easy way to do this. As you can see below the results jump around, and each solution is equally likely to be an integer between 0 and 11. If you try to calculate $m$ using a brute force method, or selecting all possible solutions one at a time, you would have to calculate 8 different solutions before you find the right answer. 
 $$ \bmod(2^{1}, 11)=2$$
 $$ \bmod(2^{2}, 11)=4$$
 $$ \bmod(2^{3}, 11)=8$$
@@ -122,11 +135,12 @@ $$ \bmod(2^{7}, 11)=7$$
 $$ \bmod(2^{8}, 11)=3$$
 $$ \bmod(2^{9}, 11)=6$$
 $$ \bmod(2^{10}, 11)=1$$
+\end{example}
 
-As you can see the results "jump" around, but each solution is equally likely to be any integer between 0 and 11.  This is the strength of the discrete logarithm problem, and the larger the modulus is the harder it is to solve.
-\end{defn}
+The above listed one-way function is an example of the discrete logarithm problem. Let $G$ be a group, and let $g \in G$, and let $\langle g \rangle$ be the cyclic subgroup generated by $g$, then the discrete logarithm problem for the group $G$ is: Given $g \in G$ and $a \in \langle g \rangle$, find an integer $x$ such that $g^{x}=a$. The larger the modulus is the harder it is to solve.
+
 \begin{exer}
-Use the Repeated Square spreadsheet from the previous Exercise to solve the following Discrete Logarithm Problems.  
+Use the Repeated Square spreadsheet from Exercise \ref{exercise:crypt:power} to solve the following Discrete Logarithm Problems.  
 \begin{enumerate}[(a)]
 \item Given $ \bmod(7^{m}, 41)=28$, solve for $m$.
 %ans: 29
@@ -138,27 +152,14 @@ Use the Repeated Square spreadsheet from the previous Exercise to solve the foll
 %ans: 161
 \end{enumerate}
 \end{exer}
-Now that we have established that with a large enough modulus the DHKE is infeasable to crack; is there any way to successfully eavesdrop on Moses and Rachael's conversation without actually cracking the code?  Both Moses and Rachael seem confident with the security that the DHKE provides, since an Attacker would only be privy to $\mod (g^n , p)$ and $\mod (g^m , p)$ each of which cannot be used to decrypt the message since an Attacker would have to solve the discrete logarithm problem.
-
-\begin{eg} Key Exchange between a sender and receiver (Moses and Rachael) using the DHKE is shown in the following steps.
-\begin{enumerate}[Step 1.]
-\item Prior to sending data, Moses and Rachael agree $p$ = 13 and $g$= 7; 
-\item Moses chooses $n$ = 2, and sends Rachael $\bmod (7^2 , 13) = 10$;
-\item Rachael chooses $m$ = 8, and sends Moses $\bmod (7^8  , 13) = 3 $;
-\item Moses computes $\bmod ((3)^2 , 13 ) = 9$;
-\item Rachael computes $\bmod ((10)^8 , 13 ) = 9$;
-\item Moses and Rachael share the number 9;
-\end{enumerate}
-\end{eg}
-
-What would happen if an Attacker, Fred (an eavesdropper) places himself between Moses and Rachael's messages?  If Fred is able to intercept the public key, then Fred is free to establish his own key with Moses and Rachael.  Fred is now able to read or alter messages.  See Figure~\ref{fig:DH:DHKE_2} to see how Fred is able to modify the Key Exchange.
+Now that we have established that with a large enough modulus the DHKE is very hard to crack; is there any way to successfully eavesdrop on Moses and Rachael's conversation without actually cracking the code?  Both Moses and Rachael seem confident with the security the DHKE provides, since an attacker would only be privy to $\mod (g^n , p)$ and $\mod (g^m , p)$ each of which cannot be used to decrypt the message since an attacker would have to compute the discrete logarithm problem. Is there a way around solving the discrete logarithm problem?  What would happen if an attacker, Fred (an eavesdropper) places himself between Moses and Rachael's messages?  If Fred could do this then Rachael's message would pass through Fred first before reaching Moses, and vice-versa. Now, Fred can intercept the public key and can establish his own key with Moses and Rachael.  Fred is now able to read or alter messages.  See Figure~\ref{fig:DH:DHKE_2} to see how Fred is able to modify the Key Exchange.
 \begin{figure}[H]
 	   \center{\includegraphics[width=4in]
 	         {images/DHKE_2.png}}
 	  \caption{\label{fig:DH:DHKE_2} Man in the Middle Attack during Moses and Rachael's Key Exchange }
 \end{figure}
 
-Fred establishes a secret key $\bmod ( g^nf, p)$ with Moses and another secret key $\bmod ( g^mf, p)$ with Rachael.  DHKE is vulnerable to this type of Man in the Middle (MiM) attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Two possible solutions to the MiM attack are RSA encryption and elliptic curve cryptography. RSA encryption (see Chapter 5.2.1) allows for a digital signature to be sent within the message. This digital signature serves two purposes: first, it authenticates the origin of the sender and second, it ensures the integrity of the message. If you recall from Chapter 5.2.1, a message is encrypted using the private key and is decrypted using a public key (asymmetric cryptography). In the next section, we will examin the second of these alternatives. 
+Fred establishes a secret key $\bmod ( g^nf, p)$ with Moses and another secret key $\bmod ( g^mf, p)$ with Rachael.  DHKE is vulnerable to this type of Man in the Middle (MiM) attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Preventing a MIM is difficult, but you can improve the security of your message using RSA encryption or elliptic curve cryptography. RSA encryption (see Chapter 5.2.1) allows for a digital signature to be sent within the message. This digital signature serves two purposes: first, it authenticates the origin of the sender and second, it ensures the integrity of the message. In this way a message is encrypted using the private key and is decrypted using a public key (asymmetric cryptography). In the next section, we will examin the second of these alternatives. 
 
 \section{Elliptic Curve Cryptography}\label{sec:ECC:2}
 
@@ -172,7 +173,7 @@ Elliptic Curve Cryptography (ECC) is one approach to the public key sharing dile
 The elliptic curve protocol starts from a known point on the elliptic curve called the $generator$.  This point generates the next point which generates the point after that, and the point after that, and so on.  When using ECC, the public key is the point on the elliptic curve, and the private key is the number of iterations or "hops" the generator must make to arrive at the public key point.  In order to use ECC we need to restrict ourselves to Finite Fields (FF) also known as Galois Fields (GF).
 
 \subsection{Elliptic Curves}
-The  ECs that we are interested in have a certain geometrical shape E: $y^2 = x^3 + ax + b (\bmod P)$.  See Figure~\ref{fig:DH:DHKE_5} below for a geometrical representation.  
+The  ECs that we are interested in have a certain geometrical shape E: $y^2 = x^3 + ax + b$.  See Figure~\ref{fig:DH:DHKE_5} below for a geometrical representation.  
 \begin{figure}[H]
 	   \center{\includegraphics[width=2.5in]
 	         {images/DHKE_5.png}}
@@ -190,9 +191,29 @@ Given the right type of EC we can use the shape of the EC to conduct specific ma
 
 \begin{enumerate}[1.]
 \item \textbf{Identity}: the point at infinity, we'll label this as "0"; 
+\begin{figure}[H]
+	   \center{\includegraphics[width=2.5in]
+	         {images/DHKE_13.png}}
+	  \caption{\label{fig:DH:DHKE_13} }
+\end{figure}
 \item \textbf{Inverse}: given a point $P$, the inverse is the point symmetric about the x-axis;
+\begin{figure}[H]
+	   \center{\includegraphics[width=2.5in]
+	         {images/DHKE_14.png}}
+	  \caption{\label{fig:DH:DHKE_14} }
+\end{figure}
 \item \textbf{closure}: if $P_1$ and $P_2$ are points on the elliptic curve the $P_1 + P_2$ is also a point on the curve;
+\begin{figure}[H]
+	   \center{\includegraphics[width=2.5in]
+	         {images/DHKE_15.png}}
+	  \caption{\label{fig:DH:DHKE_15} }
+\end{figure}
 \item \textbf{associativity}:$(P_1 + P_2) + P_3 = P_1 + (P_2 + P_3)$;
+\begin{figure}[H]
+	   \center{\includegraphics[width=2.5in]
+	         {images/DHKE_12.png}}
+	  \caption{\label{fig:DH:DHKE_12} }
+\end{figure}
 \end{enumerate}
 
 
@@ -269,7 +290,7 @@ As a review, there are three types of algebraic structures: groups, rings, and f
 	         {images/DHKE_3.png}}
 	  \caption{\label{fig:DH:DHKE_3} Algebraic structures and types of FFs }
 \end{figure}
-Elliptic curves in $\mathbb{R}$ are not used in practice, because it is impossible for computers to compute decimal fractions exactly.  Instead of $\mathbb{R}$, finite fields are used (finite fields are also called Galois Fields (GF)).  These are preferred, because operations can be computed exactly using integer arithmetic. FFs only exist if they have $P^m$ elements, $GF(P^m)$. So, there is a FF with 27 elements $GF(27) = GF(3^3)$, there is a $FF$ with 256 elements $GF(256) = GF(2^8)$, etc.  In EC we are interested in Binary Fields (BFs), FFs of order $2^m$, with $m ≥ 1$.  Operations in the BF are defined in terms of an irreducible polynomial with degree $m$, this polynomial is also referred to as the reduction polynomial.  This means that the binary polynomial cannot be factored as a product of binary polynomials of degree less than $m$.  As a rule there a $2^m$ elements in $GF(2^m)$, below is an example of the elements in $GF(2^3)$.  
+Elliptic curves in $\mathbb{R}$ are not used in practice, because it is impossible for computers to compute decimal fractions exactly.  Instead of $\mathbb{R}$, finite fields are used (finite fields are also called Galois Fields (GF)).  These are preferred, because operations can be computed exactly using integer arithmetic. FFs only exist if they have $P^m$ elements, $GF(P^m)$. So, there is a FF with 27 elements $GF(27) = GF(3^3)$, there is a $FF$ with 256 elements $GF(256) = GF(2^8)$, etc.  In EC we are interested in Binary Fields (BFs), FFs of order $2^m$, with $m ≥ 1$.  Operations in the BF are defined in terms of an irreducible polynomial with degree $m$, this polynomial is also referred to as the reduction polynomial.  This means that the binary polynomial cannot be factored as a product of binary polynomials of degree less than $m$.  There are always $2^m$ elements in $GF(2^m)$, below is an example of the elements in $GF(2^3)$.  
 \newline \newline
 \begin{eg} Below are the 8 elements of $GF(2^3)$:
 \begin{align*}
@@ -441,7 +462,7 @@ Given GF($2^{160}$) and the reduction polynomial $X^{160} + X + 1$ , then multip
 \end{exer}
 
 \subsection{Elliptic Curve Integrated Encryption System} 
-If Moses and Rachael would like to communicate a message using ECC, then they could use an agreed upon code table and elliptic curve.  Each character of the encrypted message would correspond to a point on the elliptic curve. Consider an elliptic curve whose equation is $y^2 = x^3 + 2x + 9$, see Figure~\ref{fig:DH:DHKE_11} below.
+If Moses and Rachael would like to communicate a message using ECC, then they could use an agreed-upon code table and elliptic curve.  Each character of the encrypted message would correspond to a point on the elliptic curve. Consider an elliptic curve whose equation is $y^2 = x^3 + 2x + 9$, see Figure~\ref{fig:DH:DHKE_11} below.
 
 \begin{figure}[H]
 	   \center{\includegraphics[width=2in]
@@ -461,7 +482,9 @@ If we restrict ourselves to the Finite Field, $FF(37)$, so ($y^2 = x^3 + 2x + 9$
 Azad, Saiful, and Pathan, Al-Sakib Khan. "Elliptic Curve Cryptography" in Practical Cryptography, CRC Press, January 2015.
 
 \item 
-Bidgoli, Hossein. "Diffie-Hellman Key Exchange" in $Handbook of Information Security: Information Warfare, Social, Legal, and International Issues and Security Foundations, Volume 2$, John Wiley and Sons, January 2006.
+Bidgoli, Hossein. "Diffie-Hellman Key Exchange" in $Handbook of Information \newline
+Security: Information Warfare, Social, Legal, and International Issues and \newline
+Security Foundations, Volume 2$, John Wiley and Sons, January 2006.
 
 \item 
 Christensen, Chris. (2015, November 14). $Key Exchanges$. Retrieved from http://www.nku.edu/~christensen/092mat483%20DH%20key%20exchange.pdf.
@@ -470,7 +493,9 @@ Christensen, Chris. (2015, November 14). $Key Exchanges$. Retrieved from http://
 Franco, Pedro. "Elliptic Curve Cryptography" in $Understanding Bitcoin: Cryptography, Engineering and Economics$, John Wiley and Sons, February 2015.
 
 \item 
-Kumar, Suneetha, Chandrasekhar. (2012, January). $Encryption of Data Using Elliptic Curve Over Finite Fields$. Retrieved from https://arxiv.org/ftp/arxiv/papers/1202/1202.1895.pdf.
+Kumar, Suneetha, Chandrasekhar. (2012, January). $Encryption of Data  Using \newline
+Elliptic Curve Over Finite Fields$. Retrieved from https://arxiv.org/ftp/arxiv/ \newline
+papers/1202/1202.1895.pdf.
 
 \item 
 Mandal, Surajit, Manna, Nilotpal, and Saha, Arijit. "Diffie-Hellman Key Exchange" in $Information Theory, Coding and Cryptography$, Pearson India, May 2013.
