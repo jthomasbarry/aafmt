@@ -3,7 +3,7 @@
 The following exercises were taken from various exams. The list will be added to in subsequent editions of this text.  Contributions are welcome.
 
 
-\section{In the Beginning}
+\section{Preliminaries}
 \begin{enumerate}[(1)]
 \item
 Simplify:
@@ -62,7 +62,7 @@ $a < c$ \qquad
 Evaluate: $(\sqrt{6}+3\sqrt{2}i)^6/36$.
 
 \item
-Prove that  $(z + \bar{z})(z - \bar{z})$ is real for any complex number $z$
+Prove that  $i(z + \bar{z})(z - \bar{z})$ is real for any complex number $z$
 
 \item
 Suppose that $z$ is a complex number such that $z^{-1} = \bar{z}$.
@@ -254,115 +254,6 @@ Show that if $x,y, z$ are integers such that $x^4+y^4 = 16z$, then $x$ and $y$ m
 Find $x,y \in \integer_{51}$ such that $x \neq \class{0}$ and $y \neq \class{0}$, but $x \cdot y = \class{0}$.
 
 
-\end{enumerate}
-
-\section{Introduction to Cryptography}
-
-\begin{enumerate}
-
-\item
-Perform the following matrix multiplication mod 44. Simplify before multiplying
-
-$$\left(
-\begin{array}{cc}
-444 & 486 \\
-890 & 606
-\end{array}
-\right)
-\left(
-\begin{array}{cc}
-1103 & 2200 \\
-990 & 133
-\end{array}
-\right)$$
-
-\item
-Perform the following matrix multiplication mod 37. Simplify before multiplying
-
-$$\left(
-\begin{array}{cc}
-409 & 372 \\
-743 & 189
-\end{array}
-\right)
-\left(
-\begin{array}{cc}
--105 & 410 \\
- -300& -225
-\end{array}
-\right)$$
-
-\item
-\begin{enumerate}[(a)]
-\item
-Show that if $m$ is odd, then $\mod(m^2,8) = 1$.
-
-\item
-If$\mod(n,8)=1$ and $n = (x+y)(x-y)$, show that  $x$ must be odd and $y$ is divisible by 4.
-
-\item
-If$\mod(n,8)=7$ and $n = (x+y)(x-y)$, show that  $y$ must be odd.
-
-\item
-If $\mod(n,8)=5$ and $n = (x+y)(x-y)$, show that  $\mod(y,4) = 2$.
-
-\item
-If$\mod(n,8)=3$ and $n = (x+y)(x-y)$, show that  $y$ is odd.
-\end{enumerate}
-
-\item 
-Consider an affine cryptosystem working on an alphabet with 27 letters. For each of the following functions, (i) determine whether the  function is a valid encoding function; (ii) if the function is valid, find the decoding function. Express the decoding function in the form: $f^{-1}(c) = (a\odot c) \oplus b$ where $a$ and $b$ are numbers between 0 and 26.
-\begin{enumerate}[(a)]
-\item
-$f(p) = (4 \odot p) \oplus 7$
-\item	
-$f(p) = (5 \odot p) \oplus 12$ 
-\item
-$f(p) = (6 \odot p) \oplus  11$
-\end{enumerate}
-
-\item
-The general form for an affine cryptosystem encoding function is $f(p) =(a\odot p) \oplus b$.
-\begin{enumerate}[(a)]
-\item
- How many different possible values of $a$ are there, for an affine cryptosystem that works on  an alphabet of 16 letters?
-\item	
-For the same situation as (a), how many different possible values are there for $b$?
-\item	
-What is the total number of affine cryptosystems that work on an alphabet of 16 letters?
-\end{enumerate}
-
-\item
-A polyalphabetic cryptosystem on an alphabet with 7 letters uses the encoding function:
-$f(p)= Ap + b$,where $A=[3 , 5; 5, 6]$ and b =$ [4 ; 2]$. (\emph{Here we are using Matlab format for matrices.})  
-What is the decoding function? Express your answer as:  $ f^{-1}(c) = Bc + d$, where $B$  is a $2\times 2$ matrix and $d$ is a $2 \times 1$ vector.  Both $B$ and $d$ should have entries between 0 and 6.
-
-\item	
-Make a spreadsheet to compute  $\bmod(47^x, 116)$, where $x = 64$.
-
-\item
-Make a spreadsheet to compute $\bmod(91^x, 97)$, where $x = 35$.
-
-\item	
-Make a spreadsheet that uses the brute-force method to factor 1010011.
-
-\item	
-Make a spreadsheet that uses the brute-force method to factor 6666661.
-
-\item 
-Make a spreadsheet that uses the Fermat method to factor the following number: 65072743
-
-\item 	
-Make a spreadsheet that uses the Fermat method to factor the following number: 70081027
-
-\item	
-Given that 1234567 is the number $n$ for a RSA cryptosystem.  The encoding key is 113. The decoding key is one of the following three numbers: 140797, 140897, 140997. Which of these numbers is the correct decoding key? Prove your answer.
-
-\item
-Given that 145279  is the number n for a RSA cryptosystem.  The encoding key is 113. The decoding key is one of the following three numbers:
-133579, 134579, 135679.
-Which of these numbers is the correct decoding key? Prove your answer.
-	
 \end{enumerate}
 
 
@@ -636,6 +527,116 @@ Use the relations that you wrote down in part (b) to complete the Cayley table f
 
 
 \end{enumerate}
+
+\section{Introduction to Cryptography}
+
+\begin{enumerate}
+
+\item
+Perform the following matrix multiplication mod 44. Simplify before multiplying
+
+$$\left(
+\begin{array}{cc}
+444 & 486 \\
+890 & 606
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+1103 & 2200 \\
+990 & 133
+\end{array}
+\right)$$
+
+\item
+Perform the following matrix multiplication mod 37. Simplify before multiplying
+
+$$\left(
+\begin{array}{cc}
+409 & 372 \\
+743 & 189
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+-105 & 410 \\
+ -300& -225
+\end{array}
+\right)$$
+
+\item
+\begin{enumerate}[(a)]
+\item
+Show that if $m$ is odd, then $\mod(m^2,8) = 1$.
+
+\item
+If$\mod(n,8)=1$ and $n = (x+y)(x-y)$, show that  $x$ must be odd and $y$ is divisible by 4.
+
+\item
+If$\mod(n,8)=7$ and $n = (x+y)(x-y)$, show that  $y$ must be odd.
+
+\item
+If $\mod(n,8)=5$ and $n = (x+y)(x-y)$, show that  $\mod(y,4) = 2$.
+
+\item
+If$\mod(n,8)=3$ and $n = (x+y)(x-y)$, show that  $y$ is odd.
+\end{enumerate}
+
+\item 
+Consider an affine cryptosystem working on an alphabet with 27 letters. For each of the following functions, (i) determine whether the  function is a valid encoding function; (ii) if the function is valid, find the decoding function. Express the decoding function in the form: $f^{-1}(c) = (a\odot c) \oplus b$ where $a$ and $b$ are numbers between 0 and 26.
+\begin{enumerate}[(a)]
+\item
+$f(p) = (4 \odot p) \oplus 7$
+\item	
+$f(p) = (5 \odot p) \oplus 12$ 
+\item
+$f(p) = (6 \odot p) \oplus  11$
+\end{enumerate}
+
+\item
+The general form for an affine cryptosystem encoding function is $f(p) =(a\odot p) \oplus b$.
+\begin{enumerate}[(a)]
+\item
+ How many different possible values of $a$ are there, for an affine cryptosystem that works on  an alphabet of 16 letters?
+\item	
+For the same situation as (a), how many different possible values are there for $b$?
+\item	
+What is the total number of affine cryptosystems that work on an alphabet of 16 letters?
+\end{enumerate}
+
+\item
+A polyalphabetic cryptosystem on an alphabet with 7 letters uses the encoding function:
+$f(p)= Ap + b$,where $A=[3 , 5; 5, 6]$ and b =$ [4 ; 2]$. (\emph{Here we are using Matlab format for matrices.})  
+What is the decoding function? Express your answer as:  $ f^{-1}(c) = Bc + d$, where $B$  is a $2\times 2$ matrix and $d$ is a $2 \times 1$ vector.  Both $B$ and $d$ should have entries between 0 and 6.
+
+\item	
+Make a spreadsheet to compute  $\bmod(47^x, 116)$, where $x = 64$.
+
+\item
+Make a spreadsheet to compute $\bmod(91^x, 97)$, where $x = 35$.
+
+\item	
+Make a spreadsheet that uses the brute-force method to factor 1010011.
+
+\item	
+Make a spreadsheet that uses the brute-force method to factor 6666661.
+
+\item 
+Make a spreadsheet that uses the Fermat method to factor the following number: 65072743
+
+\item 	
+Make a spreadsheet that uses the Fermat method to factor the following number: 70081027
+
+\item	
+Given that 1234567 is the number $n$ for a RSA cryptosystem.  The encoding key is 113. The decoding key is one of the following three numbers: 140797, 140897, 140997. Which of these numbers is the correct decoding key? Prove your answer.
+
+\item
+Given that 145279  is the number n for a RSA cryptosystem.  The encoding key is 113. The decoding key is one of the following three numbers:
+133579, 134579, 135679.
+Which of these numbers is the correct decoding key? Prove your answer.
+	
+\end{enumerate}
+
 
 
 

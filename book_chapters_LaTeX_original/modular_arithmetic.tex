@@ -1175,7 +1175,7 @@ Before we continue, we should take special note of the following important point
 \item
 It is important to note that the operations $\oplus$ and $\odot$ \emph{depend on the modulus involved}. We must always make sure that the modulus is clearly specified before talking about $\oplus$ and $\odot$.
 \item
-Although technically we could define $\ell \oplus m$ and $\ell \odot m$ for \emph{any} two integers $\ell,m \in \mathbb{Z}$, in the following we will restrict the operations to elements of  $ \mathbb{Z}_n$.  So for example  if we are working in $\mathbb{Z}_7$, we may write $3 \oplus 4 = 0$ and $5 \odot 6 = 2$, but we will not write expressions like $7 \oplus 6$ or $13 \odot 22$.
+Although technically we could define $\ell \oplus m$ and $\ell \odot m$ for \emph{any} two integers $\ell,m \in \mathbb{Z}$, in the following we will restrict the operations to elements of  $ \mathbb{Z}_n$.  So for example  if we are working in $\mathbb{Z}_7$, we may write $3 \oplus 4 = 0$ and $5 \odot 6 = 2$, but we won't write expressions like $7 \oplus 6$ or $13 \odot 22$.
 \end{itemize}
 \end{rem}
 
@@ -1236,7 +1236,7 @@ Given $\ell,m \in {\mathbb Z}$. If $a =\bmod(\ell,n)$ and $b=\bmod(m,n)$, then  
 \end{enumerate}
 \end{exercise}
 
-The diagram in Figure~\ref{fig:commDiagModular} gives a way to visualize  Proposition~\ref{proposition:modular:number_remainder}.  In the diagram we only show the relation between $+$ and $\oplus$: the situation with $\cdot$ and $\odot$ is almost identical. On the left side of the diagram, we show two numbers $\ell$ and $m$ being added to give $\ell + m$. The arrows from left to right show that the numbers $\ell, m,$ and $\ell + m$ can all be ``translated'' by taking remainders. If we ``translate'' $\ell$ and $m$ first and then take the modular sum; or we can take $\ell + m$ first and then ``translate'' the result. In either case, we end up with the same answer.
+The diagram in Figure~\ref{fig:commDiagModular} gives a way to visualize  Proposition~\ref{proposition:modular:number_remainder}.  In the diagram we only show the relation between $+$ and $\oplus$: the situation with $\cdot$ and $\odot$ is similar. On the left side of the diagram, we show two numbers $\ell$ and $m$ being added to give $\ell + m$. The arrows from left to right show that the numbers $\ell, m,$ and $\ell + m$ can all be ``translated'' by taking remainders. If we ``translate'' $\ell$ and $m$ first and then take the modular sum; or we can take $\ell + m$ first and then ``translate'' the result. In either case, we end up with the same answer.
 
 \begin{figure}[h]
 \begin{center}
@@ -1245,8 +1245,11 @@ The diagram in Figure~\ref{fig:commDiagModular} gives a way to visualize  Propos
 \caption{Visualization of Proposition~\ref{proposition:modular:number_remainder}.\label{fig:commDiagModular}}
 \end{figure}
 
+\begin{exercise}{}
+Make a diagram similar to Figure~\ref{fig:commDiagModular} for modular multiplication instead of modular addition.
+\end{exercise}
 
-Now that we've proven Proposition~\ref{proposition:modular:number_remainder}, we can combine operations into more complicated equations and show equivalence.
+Now that we've proven Proposition~\ref{proposition:modular:number_remainder}, we can combine operations into more complicated expressions and show equivalence.
 
 \begin{exercise}{ModPower}
 \begin{enumerate}[(a)]
@@ -1270,18 +1273,20 @@ Given $\ell,m,p \in {\mathbb Z}$ and $a=\bmod(\ell,n), b=\bmod(m,n),$ and $c=\bm
 \[ (\ell +m) + p \equiv (a \oplus b) \oplus c \pmod{n}.\qquad
 \text{\hyperref[sec:modular_arithmetic:hints]{(*Hint*)} }\]
 \item
+\[ (\ell +m) + p \equiv (a \oplus b) \oplus c \pmod{n}.\]
+\item
 \[ (\ell \cdot m) + p \equiv (a \odot b) \oplus c \pmod{n}. \]
 \item
 \[ (\ell + m) \cdot p \equiv (a \oplus b) \odot c \pmod{n}. \]
 \end{enumerate}
 \end{exercise}
 
-In the same way as in Exercise~\ref{exercise:modular:ops}, it is possible to show that \emph{any} arithmetical expression involving integers with no matter how many additions, multiplications, and subtractions, can be shown to be equivalent mod $n$ to the corresponding arithmetical expression in ${\mathbb Z}_n$ using the modular operations $\oplus, \odot, \ominus$.
+We can use similar methods as in Exercise~\ref{exercise:modular:ops}, to show that \emph{any} arithmetical expression involving integers with no matter how many additions, multiplications, and subtractions, can be shown to be equivalent mod $n$ to the corresponding arithmetical expression in ${\mathbb Z}_n$ using the modular operations $\oplus, \odot, \ominus$.
 
 This completes our discussion showing that arithmetic mod $n$ can be reduced to arithmetic in ${\mathbb Z}_n$.  What we've shown can simplify other modular arithmetic arguments as well:
 
 \begin{exercise}{number_remainder}
-Prove the following proposition.
+Prove the following proposition, which is slightly different from Proposition~\ref{proposition:modular:number_remainder}.  (In fact, to prove (a) here you may use  part (a) of   Proposition~\ref{proposition:modular:number_remainder} twice, and similarly for (b).)
 
 \noindent {\bf Proposition}: Given $\ell,m,x,y \in {\mathbb Z}$ where $\ell \equiv x \pmod{n}$ and $m \equiv y \pmod{n}$, then 
 
@@ -1291,11 +1296,9 @@ $\ell + m \equiv x + y \pmod{n},$
 \item
 $\ell \cdot m \equiv x \cdot y \pmod{n}$.
 \end{enumerate}
-
-Note these are slightly different from (a) and (b) of  Proposition~\ref{proposition:modular:number_remainder} (in fact, to prove (a) here you need to use  part (a) of   Proposition~\ref{proposition:modular:number_remainder} twice, and similarly for (b)).
 \end{exercise}
 
-This proposition shows that we can freely replace numbers with other numbers that are equivalent mod $n$,  as long as we are only interested in the result mod $n$. For example, suppose we are interested in finding the following remainder:  
+This proposition shows that we can freely replace numbers with other numbers that are equivalent mod $n$,  as long as we're only interested in the result mod $n$. For example, suppose we  want to find the following remainder:  
 \[
 \text{mod}(80056 \cdot 69944, 56).  
 \]
@@ -1303,7 +1306,7 @@ We may notice that $80056 \equiv 80000 \pmod{56}$ and $69944 \equiv 70000 \pmod{
 \[
   \text{mod}(80000 \cdot 70000, 56)= \text{mod}(5600000000, 56)=0.
 \]
-In this case, by noticing some patterns we were able to save ourselves quite a bit of work.
+By noticing some patterns we were able to save ourselves quite a bit of work.
 
 \begin{exercise}{}
 Prove or disprove, using the proposition in Exercise~\ref{exercise:modular:number_remainder}:
@@ -1517,8 +1520,10 @@ Next, we want to look at some additional properties that were introduced in Chap
  identities  and inverses (both additive and multiplicative).  
 This time we'll go through these properties more quickly.
 
-Do the integers mod $n$ have an additive identity for all $n$?  In other words, is there a specific integer mod $n$ that added to $a$ leaves $a$ unchanged? For the specific case of ${\mathbb Z}_8$, we can see from the first row of Table~\ref{groups_Z8_add_table} that 
-$0 \oplus a = a $ for any $a \in {\mathbb Z}_8$. Similarly, the first column of Table~\ref{groups_Z8_add_table} show that $a \oplus 0 = a$ for any $a \in {\mathbb Z}_8$. Is this true for \emph{any} ${\mathbb Z}_n$? the following proposition shows that it is. 
+Consider first the additive identity. Remember that an additive identity is an element which, when added to any other element $a$, gives a result of $a$.  For the specific case of ${\mathbb Z}_8$, we can see from the first row of Table~\ref{groups_Z8_add_table} that 
+$0 \oplus a = a $ for any $a \in {\mathbb Z}_8$. Similarly, the first column of Table~\ref{groups_Z8_add_table} show that $a \oplus 0 = a$ for any $a \in {\mathbb Z}_8$. 
+
+Is 0 an additive identity for \emph{any} ${\mathbb Z}_n$? Not surprisingly, the answer is Yes:
 \index{Integers mod n!additive identity}
 % From our definition of modular addition (ordinary addition followed by taking the remainder), it should be clear that the same will be true for any ${\mathbb Z}_n$. It follows that plus (any number in ${\mathbb Z}_8$) Similarly, is there a specific integer mod $n$ that when you multiply it by any other integer $a \pmod{n}$, you get $a$?  From your knowledge of integers you can probably guess that the additive identity is $0$, while the multiplicative identity is $1$, which are in ${\mathbb Z}_n \forall n$.  And if you look at the addition and multiplication Tables for ${\mathbb Z}_8$ in the previous section, you can see an example of this.  In every row of the addition table, the spot under the $0$ column contains the row number; and in every row of the multiplication table, the spot under the $1$ column contains the row number.  Therefore:
 
@@ -1526,7 +1531,7 @@ $0 \oplus a = a $ for any $a \in {\mathbb Z}_8$. Similarly, the first column of 
 \begin{prop}{id_property_Zn}
 $0 \in {\mathbb Z}_n$ is the additive identity of ${\mathbb Z}_n$.
 \end{prop}
-\begin{proof} Given any $a \in {\mathbb Z}_n$, then $a \oplus 0$ is computed by (a) compute $a + 0$ using ordinary addition, then (b) taking the remainder mod $n$. Since $a + 0 = a$, and $0 \leq a < n$, it follows that the remainder is also $a$. Hence $a \oplus 0 = a $. We can show that $0 \oplus a = a $ in the same way. Thus $0$ satisfies the definition of identity for ${\mathbb Z}_n$.
+\begin{proof} Given any $a \in {\mathbb Z}_n$, then $a \oplus 0$ is computed by taking the remainder of $a + 0$  mod $n$. Since $a + 0 = a$, and $0 \leq a < n$, it follows that the remainder of $a$  is still $a$. Hence $a \oplus 0 = a $. Similarly we can show $0 \oplus a = a $. Thus $0$ satisfies the definition of identity for ${\mathbb Z}_n$.
 \end{proof}
 
 \begin{exercise}{56}
@@ -1563,7 +1568,7 @@ Give a similar proof that $1$ is the multiplicative identity for ${\mathbb Z}_n$
 
 \subsection{Inverses in ${\mathbb Z}_n$}
 
-Now let's look to see if the integers mod $n$ have additive and multiplicative inverses\index{Inverse!integers mod n}.  For each element of  ${\mathbb Z}_n$ is there a corresponding element of ${\mathbb Z}_8$ such that their modular sum is the additive identity (that is, 0)?  You may see in Table~\ref{groups_Z8_add_table} that each row of the addition table contains the additive identity, $0$ (for example, $1\oplus 7 = 0$).  It follows that in ${\mathbb Z}_8$, each element has an additive inverse.  If we shrink or expand the table to cover all moduli $n$, would we find the same thing in every table?  We should. This motivates the following:
+Now let's find out whether the integers mod $n$ have additive and multiplicative inverses\index{Inverse!integers mod n}. Additive inverse first:  for each element of  ${\mathbb Z}_n$ is there a corresponding element of ${\mathbb Z}_8$ such that their modular sum is the additive identity (that is, 0)?  You may see in Table~\ref{groups_Z8_add_table} that each row of the addition table contains a $0$ (e.g. $1\oplus 7 = 0$).  It follows that each element  of ${\mathbb Z}_8$ has an additive inverse. But will the same be true for ${\mathbb Z}_{27}$, or ${\mathbb Z}_{341}$,  or ${\mathbb Z}_{5280}$? We can't just take this for granted--we need to give a proof:
 
 \begin{prop}{addinv_property_Zn}
 Let ${\mathbb Z}_n$ be the  integers mod $n$ and $a \in {\mathbb Z}_n$. Then for every  $a$  there is an additive inverse $a' \in {\mathbb Z}_n$.  
@@ -1593,19 +1598,17 @@ Show that $a \oplus a' = a' \oplus a  = 0 \pmod{ n}$: that is, $a'$ is the addit
 \end{exercise}
 \end{prop}
 
-Now can we do the same thing for multiplication? That is, for all integers $a$ mod $n$, is there a corresponding integer mod $n$ such that their product is the multiplicative identity?  
+That takes care of additive inverse. What about multiplication? That is, no matter what $n$ is, given $a \in {\mathbb Z}_n$ is there always another element of ${\mathbb Z}_n$ which multiplies to give the multiplicative identity?  
 
-Let's see if this is true in ${\mathbb Z}_8$. Consider the multiplication table for ${\mathbb Z}_8$ in Table~\ref{groups_Z8_mult_table}.  Scanning the rows do we find the multiplicative identity $1$ in every row?   
+Before attempting to prove this, first let's see if it's true in ${\mathbb Z}_8$. Consider the multiplication table for ${\mathbb Z}_8$ in Table~\ref{groups_Z8_mult_table}.  We find that  rows 0, 2, 4, and 6 do not contain a $1$. This means that  for $a$ = 0, 2,  4, or 6, there's no $b \in {\mathbb Z}_8$ such that $a \odot b \equiv 1 \pmod{ 8}$.  So 0, 2, 4, and 6 have no multiplicative inverses  in ${\mathbb Z}_8$. 
 
-Looking at the table, we find that  rows 0, 2, 4, and 6 do not contain a $1$. We would state this formally in the following way:  for $n = 0$, 2,  4, or 6, there is no integer $k \in {\mathbb Z}_8$ such that $k \odot n \equiv 1 \pmod{ 8}$.  Hence not every integer mod 8 has a multiplicative inverse. 
-
-A little thought should convince you that 0 \emph{never} has a multiplicative inverse for any ${\mathbb Z}_n$. This means that it's not possible to prove a multiplicative version of Proposition \ref{proposition:modular:addinv_property_Zn}, since we have a \term{counterexample} that shows that not every element of ${\mathbb Z}_n$ has an inverse, no matter what $n$ is.
+Actually, it's not too hard to see that 0 \emph{never} has a multiplicative inverse for any ${\mathbb Z}_n$ (why?). This means that it's impossible to prove a multiplicative version of Proposition \ref{proposition:modular:addinv_property_Zn}, since we have a \term{counterexample} that shows that not every element of ${\mathbb Z}_n$ has an inverse, no matter what $n$ is.
 
 \begin{rem}
 This example shows that it's often easier to \emph{disprove} something than to prove it!  To disprove a general statement, you only need to find \emph{just one} counterexample, whereas an unlimited number of examples can never prove a general statement.
 \end{rem}
 
-However, all is not lost as far as multiplicative inverses are concerned. We will see later that they play a very important role when we consider arithmetic with the \emph{nonzero} elements of ${\mathbb Z}_n$:
+But all is not lost as far as multiplicative inverses are concerned. We'll see later that they play a very important role when we consider arithmetic with the \emph{nonzero} elements of ${\mathbb Z}_n$:
 
 \begin{exercise}{60}
 \begin{enumerate}[(a)]
@@ -1624,7 +1627,7 @@ In many respects, $\oplus$ and $\odot$ are very similar to the ordinary arithmet
 
 \begin{prop}{Zn_comm_assoc}
 In the following $n$ is an arbitrary positive integer and $a, b, c$ denote arbitrary elements of ${\mathbb Z}_n$.
-\begin{enumerate}
+\begin{enumerate}[(a)]
  
 \item \label{comm}  %1
 Modular addition and multiplication are commutative:\index{Commutative property!modular addition/multiplication}  
@@ -1649,28 +1652,27 @@ a \odot (b \oplus c)  = (a \odot b)\oplus (a \odot c).
 \end{prop}
 
 \begin{proof}
-We'll do the proof that modular addition is associative, and  you will prove the other statements as exercises (the proofs are pretty similar). The proof strategy is a familiar one: prove modular arithmetic properties by making use of the corresponding properties of ordinary arithmetic.
-
+We'll prove associativity, and  you'll prove the other parts as exercises (the proofs are pretty similar). The proof strategy is familiar: we'll prove modular arithmetic properties by making use of the corresponding properties of ordinary arithmetic.
 
 \term{Modular addition is associative:}
-Given $a,b,c$ are elements of $\mathbb{Z}_n$, it's also true that $a,b,c$ are integers. So in particular we may apply Proposition~\ref{proposition:modular:number_remainder} with $\ell = a$ and $m=b$. Since $a$ and $b$ are their own remainders, we then have $\bmod(\ell,n)=a$ and $\bmod(m,n)=b$. Substituting into the proposition gives
-\[ a + b \equiv a \oplus b \pmod{n}. \]
-We may use Proposition~\ref{proposition:modular:number_remainder} a second time with
-$ \ell = a+b$ and $m= c$.  Then $\bmod(\ell,n) = a \oplus b$ and $\bmod(m,n)=c$,
-and we find:
+Given $a,b,c$ are elements of $\mathbb{Z}_n$, 
+we may apply part (a) of Exercise~\ref{exercise:modular:ops} and get
 \[ (a + b) + c  \equiv  (a \oplus b) \oplus c \pmod{n}. \]
-Using the same reasoning (applying Proposition~\ref{proposition:modular:number_remainder} twice), we can also show that:
-\[   a + (b + c)  \equiv a \oplus (b \oplus c)\pmod{n}.\]
-Now here's where we use regular arithmetic. The associative property of integer addition tells us that $a + (b + c) = (a+b)+c$,
-and we can substitute into the previous equivalence to obtain:
-\[  (a + b) + c \equiv a \oplus (b \oplus c) \pmod{n}. \]
-We now have two different expressions (namely, $(a \oplus b) \oplus c$ and $a \oplus (b \oplus c)$ that are both equivalent to $(a + b) + c$. So we can apply
-Proposition~\ref{proposition:modular:equivalence_transitive} (the ``transitive property'') to get that
+Similarly, we may apply part  (b) of Exercise~\ref{exercise:modular:ops} to get
+\[ a + (b + c)  \equiv  a \oplus (b \oplus c) \pmod{n}. \]
+Now here's where we use regular arithmetic. The associative property of integer addition tells us that $(a+b)+c = a + (b + c) $, so the left-hand sides are equal. 
+By 
+Proposition~\ref{proposition:modular:equivalence_transitive} (the ``transitive property'') we get
 \[ (a \oplus b) \oplus c  \equiv  a \oplus (b \oplus c) \pmod{n}. \]
 Since  $(a \oplus b) \oplus c$  and  $a \oplus (b \oplus c)$ are both in ${\mathbb{Z}}_n$, it follows from Proposition~\ref{proposition:modular:equiv_mod_n} that  
 $(a \oplus b) \oplus c = a \oplus (b \oplus c)$, and the proof is complete. 
 \end{proof}
  
+\begin{exercise}{}
+Explain the step in the above proof where we used  part (a) of Exercise~\ref{exercise:modular:ops} to conclude that
+$(a + b) + c  \equiv  (a \oplus b) \oplus c \pmod{n}$.  What values are we using for $\ell, m, p$, and why is it OK to use these values?
+\end{exercise}
+
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
@@ -1824,7 +1826,7 @@ You may be  familiar with the notion of greatest common divisor (gcd) of two num
 
 The general question we now consider is: What's a good way to find the gcd of two integer numbers? It may be easy to find the gcd of small numbers like 12 and 20, but what if you have to find the gcd of 583768 and 260568447? 
 
-At this point, let's think back to our two-sticks problem. We saw that when we began with sticks of length 52 and 20, we ended up with a minimum measurable distance of 4--which just so happens to be the gcd of 52 and 20! So to get the gcd of 583768 and 260568447, in theory we could try creating one stick of length 583768 and another of length 260568447 and follow the same procedure. Of course this isn't practical. So instead, we'll try to duplicate the same procedure using just algebra, without actually creating the sticks.  Notice that when we subdivided a larger stick of length $a$ into sections of the length of $b$, the result was essentially the same as dividing $a$ by $b$ while leaving a remainder $r$.  See if you can complete the connection in the following example.
+At this point, let's think back to our two-sticks problem. We saw that when we began with sticks of length 52 and 20, we ended up with a minimum measurable distance of 4--which just so happens to be the gcd of 52 and 20! So to get the gcd of 583768 and 260568447, in theory we could try creating one stick of length 583768 and another of length 260568447 and follow the same procedure. Of course this isn't practical. So instead, we'll try to duplicate the same procedure mathematically, without resorting to actual sticks.  Notice that when we subdivided a larger stick of length $a$ into sections of the length of $b$, the result was essentially the same as dividing $a$ by $b$ while leaving a remainder $r$.  See if you can complete the connection in the following example.
 
 \begin {example} {Greatest Common Divisor}
 Let's use algebraic language to express the two-sticks algorithm applied to 52 and 20.
@@ -1926,7 +1928,7 @@ Show that $r_2$ can also be written in the form: $r_2 = n \cdot a + m \cdot b$, 
 \item
 Show that for $k>2$, if $r_{k-2}$ and $r_{k-1}$ can both be written in the form  $n \cdot a + m \cdot b$ where $n$ and $m$ are integers, then $r_k$ can also be written in the same form.
 \item
-Show that the gcd of two numbers $a$ and $b$ can be written in the form $n \cdot a + m \cdot b$ where $n$ and $m$ are integers.
+Show that the gcd of two numbers $a$ and $b$ can always be written in the form $n \cdot a + m \cdot b$ where $n$ and $m$ are integers.
 \end{enumerate}
 \end{exercise}
 
@@ -1939,7 +1941,7 @@ The gcd of two numbers $a$ and $b$ can be written in the form $n \cdot a + m \cd
 This proposition will be useful in the next section.
 
 \subsection{Computer stuff}
-For those that are computationally inclined, here are two examples, in C++ syntax, of functions that calculate the greatest common divisor.
+For the computationally inclined reader here are two examples, in C++ syntax, of functions that calculate the greatest common divisor.
 
 \begin{verbatim}
 int gcdLoop (int a, int b){
@@ -1970,7 +1972,7 @@ int gcdLoop (int a, int b){
 }
 \end{verbatim}
 
-This second example is also in c++, but uses recursion.
+This second example is also in C++, but uses recursion.
 
 \begin{verbatim}
  int gcdRecurse (int a, int b){ 
@@ -1998,7 +2000,7 @@ This second example is also in c++, but uses recursion.
 } 
 \end{verbatim}
 
-\begin {exercise}{Computer_exercise} Create a spreadsheet (with  Excel, LibreOffice, or OpenOffice) that calculates the gcd of two integers that uses the procedure above. (Excel has a built-in gcd function, but you're not allowed to use it for this exercise.) However, you may  use the MOD function: ``=MOD(A2,B2)'' will compute the remainder when A2 is divided by B2.  You may refer to the spreadsheet in Figure~\ref{fig:gcd_spreadsheet} for ideas.
+\begin {exercise}{Computer_exercise} Create a spreadsheet (with  Excel, LibreOffice, or OpenOffice) that calculates the gcd of two integers that uses the procedure above. Excel has a built-in gcd function, but you're not allowed to use it for this exercise.But you may  use the MOD function: ``=MOD(A2,B2)'' will compute the remainder when A2 is divided by B2.  You may refer to the spreadsheet in Figure~\ref{fig:gcd_spreadsheet} for ideas.
 \end {exercise}
 \begin{figure}[h]
 \begin{center}
@@ -2152,11 +2154,11 @@ $2m + 4n = 1$
 $3m + 27n = 2$
 \end {enumerate}
 \end {exercise}
-The previous exercise shows that apparently not all Diophantine equations can be solved.  The following proposition shows which can and cannot be solved.
+The previous exercise shows that not all Diophantine equations can be solved.  The following proposition shows which can and cannot be solved.
 
 %We have shown that the gcd 
 \begin{prop}{74}
-A Diophantine equation of the form $an + bm = c$  has integer solutions for $n$ and $m$  if and only if $c$ is a multiple of the gcd of $a$ and $b$.
+Given the Diophantine equation $an + bm = c$, where $a,b,c$ are integers. Then the equation  has integer solutions for $n$ and $m$  if and only if $c$ is a multiple of the gcd of $a$ and $b$.
 \end{prop}
 \begin{proof}{}
 Since this is an ``if and only if'' proof, we need to prove it both ways.  We'll do ``only if''  here, and leave the other way as an exercise.
@@ -2189,14 +2191,14 @@ Use your solution to solve the modular equation:  $119y \equiv 53 \pmod{242}$.
 This example shows that Diophantine equations are just modular equations in a disguised form!  Furthermore, each Diophantine equation is associated with \emph{two} modular equations:
 
 \begin{exercise}{}
-Given that $(m,n)$ is a solution to $a \cdot m + b \cdot n  = c$, give (a) a modular equation involving $a,b,c$ that $m$ satisfies; and (b) a modular equation involving $a,b,c$ that $n$ satisfies.
+Given that $(m,n)$ is a solution to $a \cdot m + b \cdot n  = c$, give (a) a modular equation with base $n$  involving $a,c$ that has $m$ as a solution; and (b) a modular equation with base $m$ involving $b,c$ that has $n$ as a solution.
 \end{exercise}
 
 
 In Example~\ref{example:modular:speed_up2}, we saw that not all equations of the form $ax \equiv c \pmod b$ have an answer.  We  now have the means to determine which modular arithmetic equations have an answer:
 
 \begin{prop}{mod_eq_solution} 
-Given the equation $ax \equiv c\pmod{b}$, where $a,b,c$ are all given integers and $x$ is the variable we're solving for, one can find an integer answer for $x$ if and only if $c$ is an integer multiple of the greatest common divisor of $a$ and $b$.  
+Given a modular equation $ax \equiv c\pmod{b}$, where $a,b,c$ are  integers. Then the equation has an integer solution for $x$ if and only if $c$ is an integer multiple of the greatest common divisor of $a$ and $b$.  
 \end{prop}
 
 \begin {exercise}{propiff}
@@ -2220,7 +2222,7 @@ $504x \equiv 919 \pmod{1002}$
 
 \end{exercise}
 
-To close off this section, we take care of some unfinished business. Way back when we were showing the existence of irrational numbers, we made use of \emph{Euclid's Lemma} (Proposition~\ref{proposition:complex:EuclidLemma} in Chapter~\ref{complex}). We weren't able to give a real proof then--but we're able to now, thanks to Proposition~\ref{proposition:modular:74}:\index{Euclid's lemma!proof}
+To close off this section, we take care of some unfinished business. Way back when we were showing the existence of irrational numbers, we made use of \emph{Euclid's Lemma} (Proposition~\ref{proposition:complex:EuclidLemma} in Chapter~\ref{complex}). We weren't able to give a real proof then--but now we can, thanks to Proposition~\ref{proposition:modular:74}:\index{Euclid's lemma!proof}
 
 \begin{exercise}{EuclidLemmaProof}
 \begin{enumerate}[(a)]
@@ -2341,20 +2343,27 @@ Make a conjecture for which sets $\mathbb{Z}_n \setminus \{0\}$ form a group und
 %Using earlier proposition for ax=cmodb and state this is just a special case.
 
 \begin{prop}{Groupornotp}
-If $p$ is prime, then all elements in $\mathbb{Z}_p \setminus \{0\}$ have an inverse under multiplication mod $p$. 
+If  $p$ is a prime number, then all elements in $\mathbb{Z}_p \setminus \{0\}$ have an inverse under multiplication mod $p$. 
 \end{prop}
 \begin{proof}
 Let $a,p$ be known integers where $a < p$ and $p$ is prime.  There exists an inverse to $a$ under multiplication $\pmod p$ when there is a solution $k$  to the equation $ak = 1 \pmod p$ where $k$ is an integer.  By Proposition~\ref{proposition:modular:mod_eq_solution}, this equation can be solved if and only if the gcd of $a$ and $p$ is equal to 1.  Since $p$ is prime and $a<p$ then the gcd of $a$ and $p$ must be 1.
 \end{proof}
 
+The previous proposition is actually a special case of the following:
+
 \begin{prop}{Units}
-An element $a$ of  $\mathbb{Z}_p \setminus \{0\}$ have an inverse under multiplication mod $p$ if and only if gcd($a,p$)=1  (that is, $a$ is relatively prime to $p$).
+Let $n>1$ be an integer, and let  $a$ be an element of  $\mathbb{Z}_n \setminus \{0\}$. Then $a$ has an inverse in $\mathbb{Z}_n$  if and only if gcd($a,n$)=1  (that is, $a$ is relatively prime to $n$).
 \end{prop}
 The proof of this proposition is up to you:
 
 \begin{exercise}{93}
-Prove both the ``if'' and ``only if'' parts of Proposition~\ref{proposition:modular:Units}.
+Let $n>1$ be an integer, and let  $a$ be an element of  $\mathbb{Z}_n \setminus \{0\}$.
+\begin{enumerate}[(a)]
+\item  Prove  the ``only if'' part  of Proposition~\ref{proposition:modular:Units}. That is, prove that if $a$ has an inverse in $\mathbb{Z}_n \setminus \{0\} $ then gcd($a,n$)=1.
 \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
+\item Prove the ``if'' part   of Proposition~\ref{proposition:modular:Units}. That is, prove that if gcd($a,n$)=1 then $a$ has an inverse in $\mathbb{Z}_n \setminus \{0\}$ .
+\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}{94}
@@ -2419,6 +2428,7 @@ which both have solutions.  Show that  common solutions also exist.
 *Prove the following: Given a pair of congruences
 \[ x \equiv b \pmod{m}; \qquad x \equiv d \pmod{n}. \]
  such that gcd($m,n$)=1. Then there exist common solutions to both congruences; and all common solutions are congruent mod $mn$.
+ \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
 

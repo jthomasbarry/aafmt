@@ -13,13 +13,13 @@ You've probably seen sets, set relations, and set operations in previous classes
 
 This chapter is an adapted and expanded version of a chapter by D. and J. Morris.
  
-\subsection{What's a set? (mathematically speaking, that is)}
+\subsection{Definition and examples}
 
-First of all, we provide a precise mathematical definition for ``set'':
+First of all, let's give a precise mathematical definition for ``set'':
 
 \begin{defn} A \term{set}\index{Set!definition of} is a well-defined collection of objects: that is, it is defined in such a manner that we can determine for any given object $x$ whether or not $x$ belongs to the set.  The objects that belong to a set are called its \term{elements}\index{Element!of a set}\index{Set!elements} or \term{members}. We will denote sets by capital letters, such as $A$ or $X$; if $a$ is an element of the set $A$, we write $a \in A$\label{sets_membership}.
 \end{defn}
-\subsection{How to specify sets}
+% \subsection{How to specify sets}
 Two common ways of specifying sets are:
 \begin{itemize}
 \item
@@ -27,25 +27,28 @@ by listing all of its elements inside a pair of braces; or
 \item
 by stating the property that determines whether or not an object $x$ belongs to the set. 
 \end{itemize}
-For example, we might write
+For example, we could define a particular set $E$ by listing its elements: 
 \[
-X = \{ x_1, x_2, \ldots, x_n \}
+E = \{2, 4, 6, \ldots \}, \]
+or by specifying properties which characterize its elements:
+\[ E = \{ x :  x > 0  \textrm{ and } x \textrm{ is divisible by 2}\}.
 \]
-for a set containing elements $x_1, x_2, \ldots, x_n$ or
-\[
-X = \{ x :x \text{ satisfies }{\mathcal P}\}
-\]
-if each $x$ in $X$ satisfies a certain property ${\mathcal P}$. (Here the ``:'' signifies ``such that''.)  
+(here the ``:'' signifies ``such that'').  
+We can also describe $E$  in a less mathy way by simply calling it ``the set of positive even numbers''.
 
-Specifically: if $E$ is the set of even positive integers, we can describe $E$ by writing either 
-\[
-E = \{2, 4, 6, \ldots \}
-\quad \text{or} \quad
-E = \{ x : x \text{ is an even integer and } x > 0 \}.
-\]
 We write $2 \in E$ when we want to say that 2 is in the set $E$, and $-3 \notin E$ to say that $-3$ is not in the set $E$.
 
-Realize also that a set does not have to involve numbers.  The next exercise provides some examples of this.
+Sets don't have to involve numbers. For example, we could define a certain set $X$ by listing:
+\[
+X = \{\textrm{Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday} \},
+\]
+or by property:
+\[
+X = \{ x :x \text{ is the name of a weekday (in English)}\}.
+\]
+For the purposes of this book, it would be good enough to say, ``$X$ is the set of weekday names (in English)'' (we're not so snobby about set brackets).
+
+
 
 %%% CPT More exercises here might be good
 \begin{exercise}{}
@@ -56,7 +59,9 @@ Realize also that a set does not have to involve numbers.  The next exercise pro
 \item
 What elements are in the following set:  $S$ = \{$x : x$ is the name of a U.S. state and $x$ begins with `W'\}?  Write the set as a list of objects.
 \item
-Rewrite the following set by using a property:  $T = $\{Jan. 4th  2011, Jan. 11th  2011, Jan. 18  2011, Jan. 25  2011,$ \ldots$, Dec. 27 2011 \} (Note: January 1 2011 was on a Saturday).
+Rewrite the following as a list = \{$x : x$ is a type of polygon with less than 6 sides. \}
+\item
+Rewrite the following set of dates by using a property:  $T = $\{Jan. 4th  2011, Jan. 11th  2011, Jan. 18  2011, Jan. 25  2011,$ \ldots$, Dec. 27 2011 \} (Note: January 1 2011 was on a Saturday).
 \item
 Write the set of odd integers $O$: (i) as a list, and (ii) by using a property.
 %% CPT the following is also not well-specified
@@ -80,13 +85,22 @@ whle the National League $N$ also consists of a set of teams:
 \[N = \{ \text{Cubs, Phillies,} \ldots \}. \]
 Each of these teams consists of a set of players: so altogether the set $L$ is a set of sets of sets!
 
-\begin{exercise}{}
-Give an example of a set which is set of sets of sets of sets (have fun!)
+\begin{exercise}{SetSet}
+\begin{enumerate}[(a)]
+\item
+Describe the $21^{st}$ century as a set of sets of set of sets of sets of sets of sets.
+\hyperref[sec:set_chapter:hints]{(*Hint*)}
+\item
+(For you biologists out there)  Describe the animal kingdom as a set of sets of sets of sets of sets of sets of sets of sets
+\item
+Voters (in the U.S.) can be described as Democrat, Republican, or Independent.  Each voter in these groups can be described as liberal or conservative. Why does this division \emph{not} provide a description of  the set of American voters as a set of sets of sets? 
+\hyperref[sec:set_chapter:hints]{(*Hint*)}
+\end{enumerate}
 \end{exercise}
 
 This notion of ``sets of sets'' can bring us into dangerous territory. For example, consider the set 
 \[S = \{ x : x \mathrm{~is~a~set~which~is~not~an~element~of~itself} \}. \]
-Then the question arises: is $S$ an element of itself? 
+We may then pose the question: is $S$ an element of itself?\footnote{This question is called \term{Russell's paradox}, and plays an important role in the history of set theory.} 
 
 Let us consider the possibilities:
 \begin{itemize}
@@ -151,7 +165,7 @@ A set $A$ is a \term{subset}\index{Subset!definition of} of $B$, written $A \sub
 
 For example, using this notation we may write:
 \[
-\{\text{sons of parents John and Jane Doe}\} \subset \{\text{children of John and Jane Doe\}}
+\{\text{sons of John and Jane Doe}\} \subset \{\text{children of John and Jane Doe\}}
 \]
 and 
 \[
@@ -162,7 +176,7 @@ and
 {\mathbb N} \subset {\mathbb Z} \subset {\mathbb Q} \subset {\mathbb R} \subset {\mathbb C}.
 \]
 According to Definition~\ref{definition:sets:subset}, every set is a subset of itself.  That is, for any set $A$, $A \subset A$, since every element in $A$ is (of course) in $A$.  Sometimes though we may want to take about subsets of $A$ that really are strictly contained in $A$, without being all of $A$. Such subsets are called \term*{proper subsets}\index{Subset!proper}. Formally, a set $B$ is a \term{proper subset} of a set $A$ if $B \subset A$ and $B \neq A$. For instance, if John and Jane Doe had only sons, then
-$\{\textrm{sons of John and Jane Doe}\}$ is not a proper subset of $\{\textrm{children of John and Jane Doe}\}$ (because in this case it's actually the same set).
+$\{\textrm{sons of John \& Jane Doe}\}$ is not a proper subset of $\{\textrm{children of John \& Jane Doe}\}$.
 
 \begin{rem} 
 In this book, we use `$\subset$' for subset, and we have no special symbol to distinguish ``proper subset'' from ``subset''.
@@ -198,7 +212,7 @@ How many nonempty proper subsets does it have?
 \item
 Can you give an example of a set with exactly three subsets? How about exactly three proper subsets?
 \item
-What is the smallest number of elements a set must have in order to have eight proper subsets?
+What is the smallest number of elements a set must have in order to have at least eight proper subsets?
 \end{enumerate}
 \end{exercise}
 
