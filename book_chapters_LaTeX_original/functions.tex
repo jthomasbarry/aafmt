@@ -98,7 +98,7 @@ We have been trying to emphasize that $A \times B$ is a very different set from 
 \begin{prop}{}
 Given any sets $A$ and $B$, then:
 
-\[  \|A \times B|= |A| \cdot |B|. \]
+\[  |A \times B|= |A| \cdot |B|. \]
 
 Here the notation ''$|S|$" means the number of elements in $S$.
 \end{prop}
@@ -332,7 +332,7 @@ Suppose  on the other hand we start with  the set of ordered pairs from Example~
  (\var{cherry}, 7),
   (\var{eggs}, 155) \,\bigr\} .$$
 
-In Example~\ref{example:functions:InformalFuncPriceList} the domain was $A:=\{  \var{apple} , \var{banana} , \var{cherry} , \var{donut} , \var{eggs} \}$. However, the set $C$ no longer tells us the price of a donut, which is one of the items in $A$. .  Therefore $C$ doesn't specify a function on the domain $A$  because it doesn't define an output for all possible inputs in $A$. This is similar to the case of $g(x) = 1/x$, which we previously saw was not a function from~$\mathbb{R}$ to~$\mathbb{R}$ because the input 0 had no output in $\mathbb{R}$.  (However, you should note that $g(x)$ is a function if we change  the domain to $\mathbb{R} \setminus \{0\}).$ 
+In Example~\ref{example:functions:InformalFuncPriceList} the domain was $A:=\{  \var{apple} , \var{banana} , \var{cherry} , \var{donut} , \var{eggs} \}$. However, the set $C$ no longer tells us the price of a donut, which is one of the items in $A$.   Therefore $C$ doesn't specify a function on the domain $A$  because it doesn't define an output for all possible inputs in $A$. This is similar to the case of $g(x) = 1/x$, which we previously saw was not a function from~$\mathbb{R}$ to~$\mathbb{R}$ because the input 0 had no output in $\mathbb{R}$.  (However, you should note that $g(x)$ is a function if we change  the domain to $\mathbb{R} \setminus \{0\}.)$ 
 %CPT I took out the next sentence.
 %In other words, if $B = \{ \mbox{ price (in cents) } \}$ is the codomain, then $C$ is not a function because $ \mbox{ price(donut) } \notin B$. 
 
@@ -803,7 +803,7 @@ $q(x) = 1/ \bigl( |x| + 1 \bigr)$.
 \end{exercise}
 
 
-There is an equivalent way to show functions are one-to-one that is also useful.  To see it, recall the $\var{wife}$ function from the beginning of the section.  The $\var{wife}$ function is one-to-one because one woman can't be (legally) married to two different husbands. We can express the same thing in a different way by saying that two different husbands must be married to two different wives. These two statements are \term{contrapositives}\index{Contrapositive} of each other, and are in fact equivalent.  (``contrapositive'' is a logical term--you may have run across it before in a Discrete Math class.)
+There is an equivalent way to show functions are one-to-one that is also useful.  To see it, recall the $\var{wife}$ function from the beginning of the section.  The $\var{wife}$ function is one-to-one because one woman can't be (legally) married to two different husbands. We can express the same thing in a different way by saying that two different husbands must be married to two different wives. These two statements are \term{contrapositives}\index{Contrapositive} of each other, and are in fact equivalent.  (``contrapositive'' is a logical term--you may have run across it before in other math classes.)
  
 If we generalize this reasoning to arbitrary one-to-one functions, we have the following two equivalent statements:
 \begin{itemize}
@@ -818,6 +818,26 @@ We formalize this equivalence in the following alternative definition of one-to-
 \begin{defn} \label{121defn2}\emph{(Alternate)}
 Suppose $f \colon A \to B$. We say $f$ is a \term{one-to-one function}\index{One-to-one!alternate definition} iff for all $a_1,a_2 \in A$, such that $a_1 \neq a_2$, we have $f(a_1) \neq f(a_2)$. 
 \end{defn}
+
+\begin{example}{}  We know from calculus that the function $e^x: \mathbb{R} \rightarrow \mathbb{R}$ is a \term*{strictly increasing} function\index{Function!strictly increasing} since its derivative is always positive.  In mathematical terms, we can say
+\[ x > y \text{ implies  } e^x > e^y.\]
+We can use this fact and Definition~\ref{121defn2} to prove that $e^x$  is a one-to-one function as follows:
+
+Take any two real numbers $x_1$ and $x_2$ where $x_1 \neq x_2$. If $x_1 > x_2$, then by the above equation it follows that $e^{x_1} > e^{x_2}$. On the other hand, 
+if $x_1 < x_2$, then by the above equation it follows that $e^{x_1} < e^{x_2}$.  In either case, we have  $e^{x_1} \neq e^{x_2}$. By Definition~\ref{121defn2}, it follows that $e^x$ must be one-to-one.
+\end{example}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+ Show that any strictly increasing function  from $\mathbb{R}$ to $\mathbb{R}$ is one-to-one.
+\item
+ Show that any strictly decreasing function  from $\mathbb{R}$ to $\mathbb{R}$ is one-to-one.
+\item
+Does the answer to (a) or (b) change if we change the domain and codomain to $[0,1]$?  \emph{Explain} your answer.
+\end{enumerate}
+\end{exercise}
+
 
 % \begin{prop}{alternate121defn} \emph{(Alternate characterization of one-to-one functions)} 
 
@@ -872,13 +892,15 @@ When you don't know whether or not a particular function is one-to-one, a good s
 Let $f\colon \mathbb{N} \to \mathbb{N}$ be defined by $f(n)=(n-2)^2 + 1$.  Is $f$ one-to-one?
 \medskip
 
+(Aside: Please take note of the domain in this problem. It is possible for a function to be one-to-one on one domain, and not one-to-one on a different domain.)
+
 First let's try to prove that $f$ is one-to-one.   
 Start with arbitrary elements $m, n \in \mathbb{N}$, and suppose that $f(m)=f(n)$.  By the definition of $f$, this means that $(m-2)^2 + 1=(n-2)^2 + 1$, or $(m-2)^2 =(n-2)^2 $.  Two numbers have the same square, if and only if they are equal in absolute value, so it follows that $m-2 = \pm (n-2)$.  There are now two cases:
 \begin{itemize}
 \item
-If $m-2=+(n-2)$ then adding 1 to each side, we get $m=n$.  
+If $m-2=+(n-2)$ then adding 2 to each side, we get $m=n$.  
 \item
-If $m-2 = -(n-2) = -n+2$, then adding 1 to each side, we get $m=-n+4$.  
+If $m-2 = -(n-2) = -n+2$, then adding 2 to each side, we get $m=-n+4$.  
 \end{itemize}
 Since $m,n \in \mathbb{N},$ it's not hard to see that if $n \ge 4$, then $-n+4$ is not a natural number.  But if $n$ is 1,2,3 then $-n+4 \in \mathbb{N}$. For example $n=1$ gives $m = 3$, which suggests that $f(1) = f(3)$. We may indeed check that  $f(1) = f(3)$. 
 
@@ -910,8 +932,15 @@ For each function, either prove that it is one-to-one, or prove that it is not.
 \begin{enumerate}[(a)]
 \item \label{IsIt11?-linear}
  $f \colon \rational \to \rational$ defined by $f(x)=3x/5 - 2$.
+\item \label{IsIt11?-square0}
+ $f \colon {\mathbb R} \to {\mathbb R}$ defined by $f(x)=(x+2)^2$.
 \item \label{IsIt11?-square}
- $f \colon {\mathbb N} \to {\mathbb N}$ defined by $f(x)=x^2$.
+ $f \colon {\mathbb N} \to {\mathbb N}$ defined by $f(x)=(x+2)^2$.
+\item
+ $f \colon {\mathbb N} \to {\mathbb N}$ defined by $f(x)=(x-1)(x(x+1)$.
+\item
+ $f \colon A \to A$ defined by $f(x)=(x-1)(x(x+1)$ ,where \\
+ $A =\{x \in \mathbb{R} \text{ and }x >1 \}$~~(requires calculus).
 \item \label{IsIt11?-abs}
  $g \colon \real \to \real$ defined by $g(x)= \left|(x+1)/2 \right|$.
 \item \label{modular_g}
