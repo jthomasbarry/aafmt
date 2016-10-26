@@ -98,7 +98,7 @@ We have been trying to emphasize that $A \times B$ is a very different set from 
 \begin{prop}{}
 Given any sets $A$ and $B$, then:
 
-\[  \|A \times B|= |A| \cdot |B|. \]
+\[  |A \times B|= |A| \cdot |B|. \]
 
 Here the notation ''$|S|$" means the number of elements in $S$.
 \end{prop}
@@ -332,7 +332,7 @@ Suppose  on the other hand we start with  the set of ordered pairs from Example~
  (\var{cherry}, 7),
   (\var{eggs}, 155) \,\bigr\} .$$
 
-In Example~\ref{example:functions:InformalFuncPriceList} the domain was $A:=\{  \var{apple} , \var{banana} , \var{cherry} , \var{donut} , \var{eggs} \}$. However, the set $C$ no longer tells us the price of a donut, which is one of the items in $A$. .  Therefore $C$ doesn't specify a function on the domain $A$  because it doesn't define an output for all possible inputs in $A$. This is similar to the case of $g(x) = 1/x$, which we previously saw was not a function from~$\mathbb{R}$ to~$\mathbb{R}$ because the input 0 had no output in $\mathbb{R}$.  (However, you should note that $g(x)$ is a function if we change  the domain to $\mathbb{R} \setminus \{0\}).$ 
+In Example~\ref{example:functions:InformalFuncPriceList} the domain was $A:=\{  \var{apple} , \var{banana} , \var{cherry} , \var{donut} , \var{eggs} \}$. However, the set $C$ no longer tells us the price of a donut, which is one of the items in $A$.   Therefore $C$ doesn't specify a function on the domain $A$  because it doesn't define an output for all possible inputs in $A$. This is similar to the case of $g(x) = 1/x$, which we previously saw was not a function from~$\mathbb{R}$ to~$\mathbb{R}$ because the input 0 had no output in $\mathbb{R}$.  (However, you should note that $g(x)$ is a function if we change  the domain to $\mathbb{R} \setminus \{0\}.)$ 
 %CPT I took out the next sentence.
 %In other words, if $B = \{ \mbox{ price (in cents) } \}$ is the codomain, then $C$ is not a function because $ \mbox{ price(donut) } \notin B$. 
 
@@ -612,7 +612,6 @@ $A = \{\var{a},\var{b}\}$, $B = \{\var{c},\var{d},\var{e}\}$
 \item $\{\, f(a) \mid a \in A \,\}$
 \end{itemize}
 \end{itemize}
-%\item well-defined???
 
 
 \section{One-to-one functions}
@@ -682,7 +681,7 @@ If you have an arrow diagram of a function, then it is easy to tell whether or n
 Is function~$h$ of Figure \ref{arrow11} one-to-one?  Explain why or why not.
 \end{exercise}
 
-This concept of one-to-one is very useful.  If we know $A$ is a function, we know that every input of $A$ has exactly one output.  But if we know that $A$ is a one-to-one function, then we also know that every output in the range of $A$ is caused by \emph{exactly} one input.  
+This concept of one-to-one is very useful.  If we know $A$ is a function, we know that every input of $A$ has exactly one output.  But if we know that $A$ is a one-to-one function, then we also know that every output in the range of $A$ is caused by \emph{exactly} one input.  Alternatively, we can say that every potential output in the codomain has \emph{at most one} input.
 
 We have given an informal idea of the meaning of one-to-one--now it's time for a formal definition.
 
@@ -690,7 +689,8 @@ We have given an informal idea of the meaning of one-to-one--now it's time for a
 Suppose $f \colon A \to B$. We say $f$ is a \term{one-to-one function} iff for all $a_1,a_2 \in A$, such that
 $f(a_1) = f(a_2)$, we have $a_1 = a_2$. \index{One-to-one!definition}
 \end{defn}
-Some mathematics books use the term \term{injective}\index{Injective (one-to-one)}, which means exactly the same as one-to-one.
+Some higher math books use the impressive-sounding term \term{injective}\index{Injective (one-to-one)} instead of one-to-one. It means the same thing.
+
 
 \begin{exercise}{11Exers-pairs}
  
@@ -713,47 +713,75 @@ $k = \{ (1,\var{a}), (2,\var{c}), (3,\var{e}), (4,\var{d})\}$
 \end{multicols}
 \end{exercise}
 
+\begin{exercise}{11Exers-pairs2}
+Notice that in part (a) of the previous problem, it's not true that every element in the codomain is the image of an element of the domain. Explain why this doesn't prevent the function $f$ from being one-to-one.
+\end{exercise}
+
 \subsection{Proving that a function is one-to-one}
 
 The concept of one-to-one will be very important in this course, and one of the tools we will need is the ability to prove that a function is one-to-one.  Though many of the functions we will encounter throughout this book are not algebraic, we will learn this style of proof using algebraic functions, as they are a bit easier to deal with.  Here are some examples of this type of proof. 
 
 \begin{example}{1_to_1_or_not}
 Determine which of the following functions are one-to-one.  If so, give a proof.  If not, give a counterexample.
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item $f\colon \mathbb{R} \to \mathbb{R}$, defined by $f(x)=x +1$.
 
-This is one-to-one.  The arc of this proof comes directly from the definition of a one-to-one function.  I need to pick two different general numbers $x$ and $y$, set their images equal to each other, and show that in actuality $x = y$.  
+Let's go back to the definition of one-to-one. Suppose we know that $f(x) = f(y)$, where $x,y$ are real numbers. Can we conclude that $x=y$? If so, then that means that $f$ is one-to-one.
 
-\noindent
-So, for any real numbers $x$ and $y$, $f(x)=f(y)$ means that $x+1=y+1$.  Subtracting 1 from both sides of the equation, we conclude that $x=y$ whenever $f(x)=f(y)$.  Hence, $f$ is one-to-one.
+So let's follow through on this.  $f(x)=f(y)$ means that $x+1=y+1$.  Subtracting 1 from both sides of the equation, we find that indeed, $x=y$.  Hence, $f$ is one-to-one, according to the definition.
+
+\item  $f\colon \mathbb{C} \to \mathbb{R}$ by $f(z) = \text{Re}[z]$. 
+
+Let's start the same way as the previous example.  Suppose we know that $f(z) = f(w)$, where $w,z$ are complex numbers. Can we conclude that $w=z$?  In this case, $f(z) = f(w)$ simply means that the real parts of $z$ and $w$ are equal. But there are many complex numbers in $\mathbb{C}$ which have the same real part:  for example, $2 + i$ and $2 + 2i$.  Since $f(2+i) = f(2+2i)$, it's not always true that $f(z) = f(w)$ implies $z=w$. This single counterexample is enough to prove that $f$ is not one-to-one.
+
+\item  $f\colon \mathbb{A} \to \mathbb{R}$, where $f(z) = \text{Re}[z]$ and $A = \{z \in \mathbb{C}: \text{Im}[z] = 4$ \}.
+
+Notice that the function is the same as in the previous example, but the domain is different. This makes a big difference, and we don't get the same answer with this new domain.  How can that be? Well, let's try to do the same as before, and see what goes haywire. Once again, suppose we know that $f(z) = f(w)$, where $w,z \in A$. As before, this means that $\text{Re}[z]=\text{Re}[w]$. But since $z,w \in A$, we also know that 
+$\text{Im}[z]=\text{Im}[w]=4$. Since $z$ and $w$ have the same real and imaginary parts, they are equal. So $f$ is one-to-one.
 
 \item $g\colon \mathbb{R} \to \mathbb{R}$, defined by $g(x)= |x|$.
 
-This is not one-to-one.  We demonstrate this by finding two distinct real numbers whose image is the same: 
+We demonstrate this by finding two distinct real numbers whose image is the same: 
 $$g(1)=|1|=1=|-1|=g(-1) ,$$
  but $1\neq -1$.  This shows that $g$ is \emph{not} one-to-one.
 
-\item $f\colon \{1,2,3\} \to \{\var{a}, \var{b},\var{c}\}$ defined by $f=\{(1,b),(2,a),(3,a)\}$.
-
-This is not one-to-one.  We demonstrate this by finding two distinct values in $\{1,2,3\}$ whose image is the same: 
-$$f(2)=a=f(3),$$
-but $2 \neq 3$.  This shows that $f$ is \emph{not} one-to-one. 
-
 \item $h\colon \mathbb{N} \to \mathbb{N}$, defined by $h(x)=|x|$.
 
-This is one-to-one.  Since all natural numbers are nonnegative, we have $|x|=x$ for every natural number~$x$.  So if $h(x)=h(y)$, then 
-$$x = |x| = h(x)=h(y) = |y|=y,$$
-making $x=y$.  Hence $h$ is one-to-one.
+ Since all natural numbers are nonnegative, we have $|x|=x$ for every natural number~$x$.  So given that $h(x)=h(y)$, we can argue as follows:
+\[h(x)=h(y) \implies |x| = |y| \implies x=y.\] 
+ Hence $h$ is one-to-one. (Note that the function $h$ agrees with $g$ in the previous example, but the result is different because the domains are different.)
+
+
+\item $h\colon \mathbb{R} \to \mathbb{R}$, defined by $h(x)= -x^2 + 7x  - 4$.
+
+If we try to apply the definition directly as above, we run into complications. So we try an indirect approach.  We know how to solve $h(x)=y$ using the quadratic formula:
+
+\[h(x)=y \implies -x^2 + 7x  - 4 = y  \implies x = \frac{7 \pm \sqrt{33 - 4y}}{2}. \]
+
+The $\pm$ is a tipoff that in some cases there may be two values of $x$ that give the same $y$.  We're free to choose $y$, so let's choose a value that gives a simple result. Take $y=8$ for instance, which gives us:
+\[ x = \frac{7 \pm 1}{2} \text{ or } x=3,4. \]
+We can verify that in fact $h(3) = 8$ and $h(4)=8$. Since in this case two different $x$'s give the same $y$, it follows that $h$ is not one-to-one.
+\medskip
+
+This example gives us a chance to point out a common mistake. Suppose we chose $y = 33/4$ instead of $y=8$.  Then we would get $x = 7/2$ as the unique value $x$ such that $f(x) = 33/4$. But this is \emph{not} enough to prove that $h$ is one-to-one.  In order to be one-to-one, each $y$ be the image of at most one  $x$ for \emph{all} possible values of $y$ in the codomain. 
+
+
+%\item $f\colon \{1,2,3\} \to \{\var{a}, \var{b},\var{c}\}$ defined by $f=\{(1,b),(2,a),(3,a)\}$.
+%
+%This is not one-to-one.  We demonstrate this by finding two distinct values in $\{1,2,3\}$ whose image is the same: 
+%$$f(2)=a=f(3),$$
+%but $2 \neq 3$.  This shows that $f$ is \emph{not} one-to-one. 
+
 
 
 \end{enumerate}
 \end{example}
 
 \begin{rem}\label{rem:onetoone}
-In your previous classes you may have used the \term*{horizontal line test}\index{Horizontal line test!for one-to-one functions}\index{One-to-one!horizontal line test}  to show whether or not a function $f: \mathbb{R} \rightarrow \mathbb{R}$ was one-to-one.  We may show how this works using the function $f(x)=x +1$ (which we already know is one-to-one from Example~\ref{example:functions:1_to_1_or_not} above.  Figure~\ref{fig:xplus1} is the graph of $f$, together with the graph of a  horizontal line (dotted line).
+In your previous classes you may have used the \term*{horizontal line test}\index{Horizontal line test!for one-to-one functions}\index{One-to-one!horizontal line test}  to show whether or not a function $f: \mathbb{R} \rightarrow \mathbb{R}$ was one-to-one.  We may show how this works using the function $f(x)=x +1$ (which we already know is one-to-one from Example~\ref{example:functions:1_to_1_or_not} above).  Figure~\ref{fig:xplus1} is the graph of $f$, together with the graph of a  horizontal line (dotted line).
 \begin{figure}[h]
 \includegraphics[width=3.5in]{images/xplus1.png}
-\caption{Graph of function $f(x)=x +1$.}
+\caption{Graph of function $f(x)=x +1$ (with horizontal line used for horizontal line test).}
 \label{fig:xplus1}
 \end{figure}
 
@@ -761,23 +789,24 @@ Now, the  the horizontal line has an equation of the form $y=c$ (Why is this?). 
 \bigskip
 
 \noindent 
-The function $f:\mathbb{R} \rightarrow \mathbb{R}$ is one-to-one if and only if the graph of $f(x)$ intersects every horizontal line \emph{at most once}.
+(\emph{Horizontal line test for one-to-oneness})~~The function $f:\mathbb{R} \rightarrow \mathbb{R}$ is one-to-one if and only if the graph of $f(x)$ intersects every horizontal line \emph{at most once}.
 \bigskip
 
-Based on the horizontal line test, would $f$ be a one-to-one function?  It sure looks like it, because as we move the horizontal line up and down it always passes through at most one point.  But how do we know somewhere outside the range of the graph we don't have a $y$-value in which the horizontal line intersects the graph at more than one point?  To prove there isn't such a $y$-value, we would need either an infinite graph, or an infinite number of graphs to view our infinite domain and range--neither of which is possible.  (You may remember that in the Modular Arithmetic chapter we had with using addition and multiplication tables to prove that ${\mathbb Z}_n$ is closed for all $n \in {\mathbb N}$.)   
-
-So while the horizontal line test \emph{suggests} that $f$ is one-to-one, we would still need the proof in Part 1 of Example~\ref{example:functions:1_to_1_or_not} to \emph{prove} that it is.
+So the horizontal line test proves that $f$ is a one-to-one function, right? Alas,  pictures are not proofs--although they can be pretty convincing. 
+%It sure looks like it, because as we move the horizontal line up and down it always passes through at most one point.  But how do we know somewhere outside the range of the graph we don't have a $y$-value in which the horizontal line intersects the graph at more than one point?  To prove there isn't such a $y$-value, we would need an infinite graph to view our infinite domain and range.  (You may remember that in the Modular Arithmetic chapter we had with using addition and multiplication tables to prove that ${\mathbb Z}_n$ is closed for all $n \in {\mathbb N}$.)   
+Typically, a mathematician will use pictures to convince herself of what's true before attempting a real proof. (It's a lot easier to prove something when you're confident that it must be true.)
+%So while the horizontal line test \emph{suggests} that $f$ is one-to-one, we would still need the proof in Part 1 of Example~\ref{example:functions:1_to_1_or_not} to \emph{prove} that it is.
 
 On the other hand, to disprove a function is one-to-one, you only need a single counterexample.  Consider the function $g(x)= |x|$ from Part 2 of Example~\ref{example:functions:1_to_1_or_not}, which is graphed in Figure~\ref{fig:absx}.
 Using the graph we can easily identify two values in the domain that produce the same value in the codomain.  However, while the horizontal line test here suggests our counterexample, we still need to verify that the counterexample works.  So again we need the disproof in Part 2 of Example~\ref{example:functions:1_to_1_or_not}, not just a picture.
 
 \begin{figure}[h]
 \includegraphics[width=3.5in]{images/absx.png}
-\caption{Graph of function $f(x)=|x|$.}
+\caption{Graph of function $f(x)=|x|$  (with horizontal lines used for horizontal line test).}
 \label{fig:absx}
 \end{figure}
 
-In summary, the horizontal line test can only \emph{suggest} whether or not a function is one-to-one. In the end, you still need to prove or disprove.\footnote{Although `a picture is worth a thousand words', unfortunately it still falls short of mathematical proof!}  Furthermore, the horizontal line test is usually only a good tool for functions whose domain and codomain are ${\mathbb R}$ (or subsets of ${\mathbb R}$).
+In summary, the horizontal line test can only \emph{suggest} whether or not a function is one-to-one. In the end, you still need to prove or disprove.  Furthermore, the horizontal line test is usually only a good tool for functions whose domain and codomain are ${\mathbb R}$ (or subsets of ${\mathbb R}$).
 \end{rem}    
 
 % CPT I took out the following sentence, it seems repetitive.
@@ -798,12 +827,54 @@ $h(x) = x^2$.
 $p(x) = 3x + 2$.
 \item \label{11Exers-formula-j}
 $q(x) = 1/ \bigl( |x| + 1 \bigr)$.
+\item \label{11Exers-formula-k}
+$r(x) = (x-1)(x-2)(x-3)$.
 \end{enumerate}
 \end{multicols}
 \end{exercise}
 
+When you don't know whether or not a particular function is one-to-one, a good strategy is to try to prove that it's one-to-one.  If the proof works, then great you're done.  If the proof fails, the manner in which it fails may indicate an example to show that the function is not one-to-one.  Here's an example of this technique.
 
-There is an equivalent way to show functions are one-to-one that is also useful.  To see it, recall the $\var{wife}$ function from the beginning of the section.  The $\var{wife}$ function is one-to-one because one woman can't be (legally) married to two different husbands. We can express the same thing in a different way by saying that two different husbands must be married to two different wives. These two statements are \term{contrapositives}\index{Contrapositive} of each other, and are in fact equivalent.  (``contrapositive'' is a logical term--you may have run across it before in a Discrete Math class.)
+\begin{example}{}
+Let $f\colon \mathbb{N} \to \mathbb{N}$ be defined by $f(n)=(n-2)^2 + 1$.  Is $f$ one-to-one?
+
+\noindent(Aside: Please take note of the domain in this problem. As we've noted previously,  a function may be one-to-one on one domain, and not on a different domain.)
+
+First let's try to prove that $f$ is one-to-one.   
+Start with arbitrary elements $m, n \in \mathbb{N}$, and suppose that $f(m)=f(n)$.  By the definition of $f$, this means that $(m-2)^2 + 1=(n-2)^2 + 1$, or $(m-2)^2 =(n-2)^2 $.  Two numbers have the same square, if and only if they are equal in absolute value, so it follows that $m-2 = \pm (n-2)$.  There are now two cases:
+\begin{itemize}
+\item
+If $m-2=+(n-2)$ then adding 2 to each side, we get $m=n$.  
+\item
+If $m-2 = -(n-2) = -n+2$, then adding 2 to each side, we get $m=-n+4$.  
+\end{itemize}
+Since $m,n \in \mathbb{N},$ it's not hard to see that if $n \ge 4$, then $-n+4$ is not a natural number.  But if $n$ is 1,2,3 then $-n+4 \in \mathbb{N}$. For example $n=1$ gives $m = 3$, which suggests that $f(1) = f(3)$. We may indeed check that  $f(1) = f(3)$. 
+
+Now the great thing about cases where $f$ is not one-to-one is that  the writeup of the solution is very simple. All you have to do is give one example of two different values that return the same function value. In the current example we have: 
+% So we look at these three cases:
+% \begin{itemize}
+% \item
+% If $n=1$ then $m=-n+2=1=n$, so this case is not a problem.  
+% \item
+% But if $m=2$ and $n=0$, then $(m-1)^2=1^2=(-1)^2=(n-1)^2$, so $f(m)=f(n)$ even though $m \neq n$.  (We could also choose $m=0$ and $n=2$.)  This is the example that shows that $f$ is not one-to-one.
+% \end{itemize}
+% \end{scratchwork}
+\medskip
+
+{\bf Solution:} $f$ is \emph{not} one-to-one because $f(1) = 2$ and $f(3) = 2$. 
+% To prove this, let $m = 0$ and $n = 2$. Then 
+	% $$ f(m) = f(0) = (0-1)^2 = 1$$
+% and
+	% $$ f(n) = f(2) = (2-1)^2 = 1 ,$$
+% so $f(m) = f(n)$. On the other hand, we also have $m = 0 \neq 2 = n$, so $m \neq n$. Since $f(m) = f(n)$ and $m \neq n$, we know that $f$ is not one-to-one.
+\medskip
+
+\noindent  
+So the writeup is easy: two values is all it takes. The hard thing is finding the two values!
+\end{example}
+
+
+There is an equivalent way to show functions are one-to-one that is also useful.  To see it, recall the $\var{wife}$ function from the beginning of the section.  The $\var{wife}$ function is one-to-one because one woman can't be (legally) married to two different husbands. We can express the same thing in a different way by saying that two different husbands must be married to two different wives. These two statements are \term{contrapositives}\index{Contrapositive} of each other, and are in fact equivalent.  (``contrapositive'' is a logical term--you may have run across it before in other math classes.)
  
 If we generalize this reasoning to arbitrary one-to-one functions, we have the following two equivalent statements:
 \begin{itemize}
@@ -818,6 +889,32 @@ We formalize this equivalence in the following alternative definition of one-to-
 \begin{defn} \label{121defn2}\emph{(Alternate)}
 Suppose $f \colon A \to B$. We say $f$ is a \term{one-to-one function}\index{One-to-one!alternate definition} iff for all $a_1,a_2 \in A$, such that $a_1 \neq a_2$, we have $f(a_1) \neq f(a_2)$. 
 \end{defn}
+
+\begin{example}{}  We know from calculus that the function $e^x: \mathbb{R} \rightarrow \mathbb{R}$ is a \term*{strictly increasing} function\index{Function!strictly increasing} since its derivative is always positive.  In mathematical terms, we can say
+\[ x > y \text{ implies  } e^x > e^y.\]
+We can use this fact and Definition~\ref{121defn2} to prove that $e^x$  is a one-to-one function as follows:
+
+Take any two real numbers $x_1$ and $x_2$ where $x_1 \neq x_2$. If $x_1 > x_2$, then by the above equation it follows that $e^{x_1} > e^{x_2}$. On the other hand, 
+if $x_1 < x_2$, then by the above equation it follows that $e^{x_1} < e^{x_2}$.  In either case, we have  $e^{x_1} \neq e^{x_2}$. By Definition~\ref{121defn2}, it follows that $e^x$ must be one-to-one.
+\end{example}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+ Show that any strictly increasing function  from $\mathbb{R}$ to $\mathbb{R}$ is one-to-one.
+\item
+ Show that any strictly decreasing function  from $\mathbb{R}$ to $\mathbb{R}$ is one-to-one.
+\item
+Does the answer to (a) or (b) change if we change the domain and codomain to $[0,1]$?  \emph{Explain} your answer.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+Suppose  $f:\mathbb{Q}$ to $\mathbb{R}$ is a function such that $f(q_1) + f(q_2)$ is irrational whenever $q_1 \neq q_2$.
+Show that this implies that $f$ is one-to-one.
+\end{exercise}
+
+
 
 % \begin{prop}{alternate121defn} \emph{(Alternate characterization of one-to-one functions)} 
 
@@ -866,68 +963,46 @@ Suppose $f \colon A \to B$. We say $f$ is a \term{one-to-one function}\index{One
 %\end{prop}
 
 %In some cases, when a function is not one-to-one, it is easy to find examples of distinct elements whose images are equal.  In other cases, such examples may be hard to find.
-When you don't know whether or not a particular function is one-to-one, a good strategy is to try to prove that it's one-to-one.  If the proof works, great! -- we are done.  If the proof fails, the manner in which it fails may indicate an example to show that the function is not one-to-one.  Here is an example of this technique.
 
-\begin{example}{}
-Let $f\colon \mathbb{N} \to \mathbb{N}$ be defined by $f(n)=(n-2)^2 + 1$.  Is $f$ one-to-one?
-\medskip
-
-First let's try to prove that $f$ is one-to-one.   
-Start with arbitrary elements $m, n \in \mathbb{N}$, and suppose that $f(m)=f(n)$.  By the definition of $f$, this means that $(m-2)^2 + 1=(n-2)^2 + 1$, or $(m-2)^2 =(n-2)^2 $.  Two numbers have the same square, if and only if they are equal in absolute value, so it follows that $m-2 = \pm (n-2)$.  There are now two cases:
-\begin{itemize}
-\item
-If $m-2=+(n-2)$ then adding 1 to each side, we get $m=n$.  
-\item
-If $m-2 = -(n-2) = -n+2$, then adding 1 to each side, we get $m=-n+4$.  
-\end{itemize}
-Since $m,n \in \mathbb{N},$ it's not hard to see that if $n \ge 4$, then $-n+4$ is not a natural number.  But if $n$ is 1,2,3 then $-n+4 \in \mathbb{N}$. For example $n=1$ gives $m = 3$, which suggests that $f(1) = f(3)$. We may indeed check that  $f(1) = f(3)$. 
-
-Now the great thing about cases where $f$ is not one-to-one is that  the writeup of the solution is very simple. All you have to do is give one example of two different values that return the same function value. In the current example we have: 
-% So we look at these three cases:
-% \begin{itemize}
-% \item
-% If $n=1$ then $m=-n+2=1=n$, so this case is not a problem.  
-% \item
-% But if $m=2$ and $n=0$, then $(m-1)^2=1^2=(-1)^2=(n-1)^2$, so $f(m)=f(n)$ even though $m \neq n$.  (We could also choose $m=0$ and $n=2$.)  This is the example that shows that $f$ is not one-to-one.
-% \end{itemize}
-% \end{scratchwork}
-\medskip
-
-{\bf Solution:} $f$ is \emph{not} one-to-one because $f(1) = 2$ and $f(3) = 2$. 
-% To prove this, let $m = 0$ and $n = 2$. Then 
-	% $$ f(m) = f(0) = (0-1)^2 = 1$$
-% and
-	% $$ f(n) = f(2) = (2-1)^2 = 1 ,$$
-% so $f(m) = f(n)$. On the other hand, we also have $m = 0 \neq 2 = n$, so $m \neq n$. Since $f(m) = f(n)$ and $m \neq n$, we know that $f$ is not one-to-one.
-\medskip
-
-\noindent  
-So the writeup is easy: two values is all it takes. The hard thing is finding the two values!
-\end{example}
+We close this section with a bevy of exercises. Use whatever method you like, but make sure they're solid proofs.
 
 \begin{exercise}{40} 
 For each function, either prove that it is one-to-one, or prove that it is not.
 \begin{enumerate}[(a)]
 \item \label{IsIt11?-linear}
- $f \colon \rational \to \rational$ defined by $f(x)=3x/5 - 2$.
+ $f \colon \rational \to \rational$ defined by $f(r)=3r/5 - 2$.
+\item \label{IsIt11?-square0}
+ $f \colon {\mathbb R} \to {\mathbb R}$ defined by $f(x)=(x+2)^2$.
 \item \label{IsIt11?-square}
- $f \colon {\mathbb N} \to {\mathbb N}$ defined by $f(x)=x^2$.
+ $f \colon {\mathbb N} \to {\mathbb N}$ defined by $f(n)=(n+2)^2$.
+\item
+ $f \colon {\mathbb Z} \to {\mathbb Z}$ defined by $f(n)=(n-1)n(n+1)+1$.
+\item
+ $f \colon {\mathbb N} \to {\mathbb N}$ defined by $f(n)=(n-1)n(n+1)+1$.
+\item
+ $f \colon A \to A$ defined by $f(x)=(x-1)(x(x+1)$ ,where \\
+ $A =\{x \in \mathbb{R} \text{ and }x >1 \}$~~(requires calculus).
 \item \label{IsIt11?-abs}
  $g \colon \real \to \real$ defined by $g(x)= \left|(x+1)/2 \right|$.
 \item \label{modular_g}
- $g \colon {\mathbb Z}_6 \to {\mathbb Z}_6$ defined by $g(x)= x \oplus 2$ .
+ $g \colon {\mathbb Z}_6 \to {\mathbb Z}_6$ defined by $g(n)= n \oplus 2$ .
 \item \label{modular_m}
- $g \colon {\mathbb Z}_8 \to {\mathbb Z}_8$ defined by $g(x) = x \odot 2 $ .
+ $g \colon {\mathbb Z}_8 \to {\mathbb Z}_8$ defined by $g(n) = n \odot 2 $ .
 \item \label{modular_m2}
- $g \colon {\mathbb Z}_{11} \to {\mathbb Z}_{11}$ defined by $g(x) =  x \odot 2$ .
+ $g \colon {\mathbb Z}_{11} \to {\mathbb Z}_{11}$ defined by $g(n) =  n \odot 2$ .
 \item 
- $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(x)= x \odot x$ .
+ $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(n)= n \odot x$ .
 \item 
- $g \colon {\mathbb Z}_8 \to {\mathbb Z}_8$ defined by $g(x)= x \odot x \odot x$ .
+ $g \colon {\mathbb Z}_8 \to {\mathbb Z}_8$ defined by $g(x)= n \odot n \odot n$ .
 \item 
- $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(x)= x \odot x \odot x$ .
+ $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(x)= n \odot n \odot n$ .
 \item
  $g \colon {\mathbb C}\setminus \{0\}  \to {\mathbb C}\setminus \{0\} $ defined by $g(z) =  z^{-1}$ .
+\item
+ $r \colon A  \to {\mathbb R} $ defined by  
+$r(z) = \text{Re}[z] + \text{Im}[z]$, where \\
+ $A = \{ z \in  \mathbb{C}: \text{Im}[z] > 0 \}$. 
+
  \end{enumerate}
 \end{exercise}
 
@@ -950,8 +1025,7 @@ For each function, either prove that it is one-to-one, or prove that it is not.
 
 \subsection{Concept and definition}
 In an arrow diagram of a function $f \colon A \to B$, the definition of a function requires that there is exactly one arrow out of each element of~$A$,  but it says nothing about the number of arrows into each element of~$B$. There may be elements of~$B$ with lots of arrows into them (unless the function is one-to-one), and there may be other elements of~$B$ that have no arrows into them. 
-The function is called ``onto"\index{Onto}\index{Surjective!also see onto}\index{Function!onto}
-\footnote{Some math terms use the word ``surjective" instead of ``onto": the two are synonymous.}
+The function is called \emph{onto}"\index{Onto}\index{Surjective!also see onto}\index{Function!onto}
  if all of the elements of~$B$ are hit by arrows; none are missed.
 
 \begin{example}{}
@@ -997,12 +1071,36 @@ Suppose $f \colon A \to B$. We say $f$ is \term{onto} if for all $b \in B$, \ind
 there is some $a \in A$, such that $f(a) = b$. 
 \end{defn}
 
-In words: if I pick any value in the codomain of $f$, there is some value in the domain that produces it.
+Some higher math books use the highfalutin term \term{surjective}, which means the same as onto.
+
+You may think of onto functions as follows. If a function is onto, then no matter what element I pick in the codomain, there is always some value in the domain that produces it. 
+Alternatively, I could say that every possible output in the codomain has \emph{at least one} input.  (Contrast this to the definition of one-to-one, which says that every possible output has \emph{at most one} input.
 
 \begin{exercise}{45}
 If the function $f$ is onto, then what is the relation between the range of $f$ and the codomain of $f$?
 \hyperref[sec:functions:hints]{(*Hint*)}
 \end{exercise}
+
+
+\begin{exercise}{OntoExers-pairs}
+Each of the following sets of ordered pairs is a function from $\{1,2,3,4,5\}$ to $\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$. Either prove that the function is onto, or prove that it is not.
+\begin{enumerate}[(a)]
+\item \label{OntoExers-pairs-a}
+$a = \{ (1,\clubsuit), (2,\diamondsuit), (3,\heartsuit), (4,\spadesuit), (5,\clubsuit) \}$
+\item \label{OntoExers-pairs-b}
+$b = \{ (1,\clubsuit), (2,\heartsuit), (3,\clubsuit), (4,\heartsuit), (5,\clubsuit) \}$
+\item \label{OntoExers-pairs-c}
+$c = \{ (1,\heartsuit), (2,\heartsuit), (3, \heartsuit), (4,\heartsuit), (5, \heartsuit) \}$
+\item \label{OntoExers-pairs-d}
+$d = \{ (1,\diamondsuit), (2,\spadesuit), (3, \heartsuit), (4,\spadesuit), (5, \clubsuit) \}$
+\item \label{OntoExers-pairs-e}
+$e = \{ (1,\clubsuit), (2,\spadesuit), (3, \heartsuit), (4,\spadesuit), (5, \clubsuit) \}$
+%\item \label{OntoExers-colour}
+% If $f$ is a vertex-colouring of the complete graph on $n$ vertices that uses $n$ colours, is $f$ onto?
+%\emph{Justify your answer.}
+\end{enumerate}
+\end{exercise}
+
 
 
 \subsection{Proving that a function is onto}
@@ -1028,7 +1126,7 @@ Since all natural numbers are nonnegative, we have $h(x)=|x|=x$ for every natura
 
 \end{example}
 
-It is typically easier to prove that a function is \emph{not} onto. All you have to do is provide a counterexample:
+Just as with one-to-one, it is typically easier to prove that a function is \emph{not} onto. All you have to do is provide a counterexample:
 
 \begin{example}{not_onto} 
 \begin{itemize}
@@ -1054,7 +1152,7 @@ Consider the function $h\colon \mathbb{Z}_5 \to \mathbb{Z}_5$ defined by $h(x)= 
 Since ``onto'' proofs require working backwards, sometimes some preliminary scratchwork is required before writing out the actual proof.
 
 \begin{example}{}
-Define $g \colon \mathbb{R} \to \mathbb{R}$ by $g(x) = 5x - 2$. Show $g$ is onto.
+Define $g \colon \mathbb{R} \to \mathbb{R}$ by $g(x) = 5x - 2$. Determine whether $g$ is onto.
 
 
 \begin{scratchwork}
@@ -1078,6 +1176,31 @@ Therefore $g$ is onto.
 Although you need the scratchwork to come up with the formula for $x$, you don't need to include the scratchwork in your proof. It's actually much cleaner without it.
 \end{example}
 
+\begin{example}{}
+Define $f \colon \mathbb{C} \to \mathbb{C}$ by $f(z) = z^2$. Determine whether $f$ is onto.
+
+
+\begin{scratchwork}
+Just as in the previous examples, given any $z \in \mathbb{C}$  we need to find a value of~$w$ that makes $f(w) = z$. So as before we solve for $w$. This time it's helpful to use polar form, so we write $z = r \cis \theta$
+and $w = s \cis \phi$:
+\begin{align*}
+f(w) = z  &\implies (s \cis \phi)^2 = r \cis \theta \qquad \qquad \text{[by substitution]}\\
+ & \implies s^2 \cis 2\phi = r \cis \theta\qquad \qquad \text{[De Moivre's Theorem]}\\
+& \implies s = \sqrt{r} \text{ and } \phi = \theta/2 \text{ is a solution} \quad \text{[substitution]}
+\end{align*}
+
+\noindent
+Now that we have $z$, we can proceed as before.
+\end{scratchwork}
+
+\begin{proof} 
+Given $z= r \cis \theta  \in \mathbb{C}$, let $w = \sqrt{r} \cis (\theta/2)$. By the definition of polar form, $w \in  \mathbb{C}$ and we have
+\[ f(w) =  (\sqrt{r} \cis (\theta/2) )^2  = (\sqrt{r})^2 \cis (2\theta/2) = r \cis \theta = z, \]
+where we have used De Moivre's Theorem. It follows that $f$ is onto.
+\end{proof}
+\end{example}
+
+
 %\begin{rem}
 %Some ``onto'' proofs are a bit more complicated than what is described above, because it may not be possible to go directly from ``Given $b \in B$'' to ``let $a = \raise 3pt \hbox{\boxit{\phantom{M}}}$.'' Sometimes it is necessary to insert calculations (or other explanations) between ``given~$b$'' and ``let~$a$.'' Some good examples of this will be seen in \cref{CompositionTheoryExers}.
 %\end{rem}
@@ -1089,15 +1212,15 @@ Although you need the scratchwork to come up with the formula for $x$, you don't
 %\section*{Proof exercises}
 
 \begin{rem}
-We may use a variant of the horizontal line test\index{Onto!horizontal line test for}\index{Horizontal line test!for onto functions} to show whether a function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto.  
-For instance, recall the function $f(x)=x +1$ shown in Figure~\ref{fig:xplus1}. In the case of an onto function, the equation $f(x)=c$ has \emph{at least one} solution for any real vaule $c \in \mathbb{R}$.  (Recall that for one-to-one it was \emph{at most one}, so there's a slight difference here.) By tweaking the argument we used for the original horizontal line test, we arrive at the following general rule:
+We may use a variant of the horizontal line test\index{Onto!horizontal line test for}\index{Horizontal line test!for onto functions} to indicate whether a function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto.  
+For instance, recall the function $f(x)=x +1$ shown in Figure~\ref{fig:xplus1}. In the case of an onto function, the equation $f(x)=c$ has \emph{at least one} solution for any real value $c \in \mathbb{R}$.  (Recall that for one-to-one it was \emph{at most one}, so there's a slight difference here.) By tweaking the argument we used for the original horizontal line test, we arrive at the following general rule:
 \bigskip
 
 \noindent 
-The function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto if and only if the graph of $f(x)$ intersects every horizontal line at least once.
+(\emph{Horizontal line test for onto-ness})~~The function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto if and only if the graph of $f(x)$ intersects every horizontal line at least once.
 \bigskip
 
-From Figure~\ref{fig:xplus1}, it \emph{appears} that $f(x)=x+1$ s onto. Just as before, this observation falls short of being a mathematical proof. Nonetheless, it strongly hints that we should try to prove onto-ness rather than non--onto-ness. Indeed, we may obtain a proof by following Part 1 of Example~\ref{example:functions:onto}.
+From Figure~\ref{fig:xplus1}, it \emph{appears} that $f(x)=x+1$ is onto. Just as before, this observation doesn't qualify as a mathematical proof. Nonetheless, it strongly hints that we should try to prove onto-ness rather than non--onto-ness. Indeed, we may obtain a proof by following Part 1 of Example~\ref{example:functions:onto}.
 
 On the other hand, to disprove a function is onto, you only need a counterexample.  Consider the function $g(x)= |x|$ shown in Figure~\ref{fig:absx}. Using the graph, we can easily find a horizontal line that doesn't intersect the graph: this corresponds to a value in $\mathbb{R}$ that is not in the range of $g$.  But while the horizontal line test here suggests a counterexample to show $g$ is not onto, we still need to verify that it works.
 \end{rem}    
@@ -1125,22 +1248,20 @@ Each formula defines a function from~$\mathbb{R}$ to~$\mathbb{R}$. Either prove 
 \end{multicols}
 \end{exercise}
 
-\begin{exercise}{OntoExers-pairs}
-Each of the following sets of ordered pairs is a function from $\{1,2,3,4,5\}$ to $\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$. Either prove that the function is onto, or prove that it is not.
+
+\begin{exercise}{}
+For each of the following  functions, either prove that it is onto, or prove that it is not.
 \begin{enumerate}[(a)]
-\item \label{OntoExers-pairs-a}
-$a = \{ (1,\clubsuit), (2,\diamondsuit), (3,\heartsuit), (4,\spadesuit), (5,\clubsuit) \}$
-\item \label{OntoExers-pairs-b}
-$b = \{ (1,\clubsuit), (2,\heartsuit), (3,\clubsuit), (4,\heartsuit), (5,\clubsuit) \}$
-\item \label{OntoExers-pairs-c}
-$c = \{ (1,\heartsuit), (2,\heartsuit), (3, \heartsuit), (4,\heartsuit), (5, \heartsuit) \}$
-\item \label{OntoExers-pairs-d}
-$d = \{ (1,\diamondsuit), (2,\spadesuit), (3, \heartsuit), (4,\spadesuit), (5, \clubsuit) \}$
-\item \label{OntoExers-pairs-e}
-$e = \{ (1,\clubsuit), (2,\spadesuit), (3, \heartsuit), (4,\spadesuit), (5, \clubsuit) \}$
-%\item \label{OntoExers-colour}
-% If $f$ is a vertex-colouring of the complete graph on $n$ vertices that uses $n$ colours, is $f$ onto?
-%\emph{Justify your answer.}
+\item
+ $g \colon {\mathbb C}  \to {\mathbb C} $ defined by $g(z) =  z^2+1$.
+\item
+ $g \colon {\mathbb C}\setminus \{0\}  \to {\mathbb C} $ defined by $g(z) =  z^{-1}$ .
+\item
+ $g \colon {\mathbb C}\setminus \{1\}  \to {\mathbb C}\setminus \{0\} $ defined by $g(z) =  (z-1)^{-1}$ .
+\item
+ $g \colon {\mathbb R} \times [0,1]  \to {\mathbb C} $ defined by $g(\,(x,y)\,) =  |x| \cis ( 2\pi y)$.
+\item
+ $g \colon {\mathbb R} \times [0,1]  \to {\mathbb C} $ defined by $g(\,(x,y)\,) =  |x| \cis ( 2\pi y)$.
 \end{enumerate}
 \end{exercise}
 
@@ -1156,97 +1277,8 @@ For each of the following  functions, either prove that it is onto, or prove tha
  $g \colon {\mathbb Z}_9 \to {\mathbb Z}_9$ defined by $g(x)= x \odot x \odot x$ .
 \item 
  $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(x)= x \odot x \odot x$ .
-\item
- $g \colon {\mathbb C}\setminus \{1\}  \to {\mathbb C}\setminus \{0\} $ defined by $g(z) =  \frac{1}{z-1}$ .
 \end{enumerate}
 \end{exercise}
-
-When a function is defined \emph{piecewise}, the one-to-one and  onto proofs are a little harder:
-
-\begin{example}{piecewise}
-
-  For instance, consider the function $f$ from~$\mathbb{R}$ to~$\mathbb{R}$ defined by:
-$$ f(x) = 
-\begin{cases}
-e^x & \mbox{if $x > 0$} \\
-1 - x^2 & \mbox{if $x \le 0$}
-\end{cases} $$
-If you graph this function, you wil find that the horizontal line tests suggest that  $f(x)$ is indeed one-to-one and onto. To complete the actual proof, we need to prove four separate statements:
-\begin{enumerate}[(a)] 
-\item[(a)]
-If $y > 1$, there exists a unique $x>0$ such that $e^x = y$.
-\item[(b)]
-If $y \le 1$, there exists a unique $x \le 0$ such that $1-x^2 = y$.
-\end{enumerate}
-From these two facts, it follows that $f(x)$ is onto, because for any $y$ (whether $>1$ or $\le 1$) there exists an $x$ such that $f(x)=y$. 
-\bigskip
-
-
-To show that $f(x)$ is one-to-one, we will need two additional statements:
-\begin{enumerate}[(a)]
-\setcounter{enumi}{2} 
-\item[(c)]
-If $y > 1$, there exists no $x\le0$ such that $1 - x^2 = y$.
-\item[(d)]
-If $y \le 1$, there exists no $x > 0$ such that $e^x = y$
-\end{enumerate}
-From these two facts (together with (a) and (b)) we find that for any $y$ (whether $>1$ or $\le 1$) there is \emph{exactly} one $x$ such that $f(x)=y$.
-\end{example}
- 
-\begin{exercise}{}
-Prove statements (a)$-$(d) in Example~\ref{example:functions:piecewise}.  For example, you can prove (a)  as follows. Given $y>1$, setting $x = \ln(y)$ gives $e^x = y$; furthermore if $x > \ln(y)$ (respectively  $x < \ln(y)$) then $e^x > y$ (respectively $e^x < y$).
-\end{exercise}
-
-
-
-\begin{exercise}{} \label{OntoCasesExer}
- Define function $f$  from~$\mathbb{R}$ to~$\mathbb{R}$ by:
-$$ f(x) = 
-\begin{cases}
-1/x & \mbox{if $x > 0$} \\
-x + 1 & \mbox{if $x \le 0$.}
-\end{cases} $$
-Prove or disprove:
-\begin{multicols}{2}
- \begin{enumerate}[(a)]
- \item \label{OntoCasesExer-fOnto}
- $f$ is onto;
- \item \label{OntoCasesExer-fNot11}
- $f$ is one-to-one;
-\end{enumerate}
-\end{multicols}
-\end{exercise}
-
-\begin{exercise}{} \label{OntoCasesExer2}
- Define function~$g$ from~$\mathbb{R}$ to~$\mathbb{R}$ by:
-$$ g(x) = 
-\begin{cases}
-1/x & \mbox{if $x > 0$} \\
-x - 1 & \mbox{if $x \le 0$}
- . \end{cases} $$
-Prove or disprove:
-\begin{multicols}{2}
- \begin{enumerate}[(a)]
- \item \label{OntoCasesExer-gNotOnto}
- $g$ is onto;
- \item \label{OntoCasesExer-g11} 
- $g$ is one-to-one.
-\end{enumerate}
-\end{multicols}
-\end{exercise}
-
-\begin{exercise}{} \label{OntoCasesExer2}
- Define function~$h$ from~$\mathbb{R}$ to~$\mathbb{R}$ by:
-$$ h(x) = 
-\begin{cases}
-x^{3} & \mbox{if $|x| > 1$} \\
-x^{1/3} & \mbox{if $|x| \le 1$}
- . \end{cases} $$
-Prove or disprove:
-
-(a) \qquad  $h$ is onto; \qquad \qquad (b)  $h$ is one-to-one.
-\end{exercise}
-
 
 
 %\begin{exers} \label{OntoTheoreticalExers} \ 
@@ -1527,13 +1559,120 @@ Show that if $a = 0$, then $f$ is \emph{not} a bijection.
 \end{exercise}
 
 
+When a function is defined \emph{piecewise}, the one-to-one and  onto proofs are a little harder:
+
+\begin{example}{piecewise}
+
+  For instance, consider the function $f$ from~$\mathbb{R}$ to~$\mathbb{R}$ defined by:
+$$ f(x) = 
+\begin{cases}
+e^x & \mbox{if $x > 0$} \\
+1 - x^2 & \mbox{if $x \le 0$}
+\end{cases} $$
+By graphing this function you can see that the horizontal line tests suggest that  $f(x)$ is indeed one-to-one and onto. To complete the actual proof, we need to prove four separate statements:
+\begin{enumerate}[(a)] 
+\item[(a)]
+If $y > 1$, there exists a unique $x>0$ such that $e^x = y$.
+\item[(b)]
+If $y \le 1$, there exists a unique $x \le 0$ such that $1-x^2 = y$.
+\end{enumerate}
+From these two facts, it follows that $f(x)$ is onto, because for any $y$ (whether $>1$ or $\le 1$) there exists an $x$ such that $f(x)=y$. 
+\bigskip
+
+
+To show that $f(x)$ is one-to-one, we will need two additional statements:
+\begin{enumerate}[(a)]
+\setcounter{enumi}{2} 
+\item[(c)]
+If $y > 1$, there exists no $x\le0$ such that $1 - x^2 = y$.
+\item[(d)]
+If $y \le 1$, there exists no $x > 0$ such that $e^x = y$
+\end{enumerate}
+From these two facts (together with (a) and (b)) we find that for any $y$ (whether $>1$ or $\le 1$) there is \emph{exactly} one $x$ such that $f(x)=y$.
+\end{example}
  
+\begin{exercise}{}
+Prove statements (a)$-$(d) in Example~\ref{example:functions:piecewise}.  For example, you can prove (a)  as follows. Given $y>1$, setting $x = \ln(y)$ gives $e^x = y$; furthermore if $x > \ln(y)$ (respectively  $x < \ln(y)$) then $e^x > y$ (respectively $e^x < y$).
+\end{exercise}
+
+
+
+\begin{exercise}{} \label{OntoCasesExer}
+ Define function $f$  from~$\mathbb{R}$ to~$\mathbb{R}$ by:
+$$ f(x) = 
+\begin{cases}
+1/x & \mbox{if $x > 0$} \\
+x + 1 & \mbox{if $x \le 0$.}
+\end{cases} $$
+Prove or disprove:
+\begin{multicols}{2}
+ \begin{enumerate}[(a)]
+ \item \label{OntoCasesExer-fOnto}
+ $f$ is onto;
+ \item \label{OntoCasesExer-fNot11}
+ $f$ is one-to-one;
+\end{enumerate}
+\end{multicols}
+\end{exercise}
+
+\begin{exercise}{} \label{OntoCasesExer2}
+ Define function~$g$ from~$\mathbb{R}$ to~$\mathbb{R}$ by:
+$$ g(x) = 
+\begin{cases}
+1/x & \mbox{if $x > 0$} \\
+x - 1 & \mbox{if $x \le 0$}
+ . \end{cases} $$
+Prove or disprove:
+\begin{multicols}{2}
+ \begin{enumerate}[(a)]
+ \item \label{OntoCasesExer-gNotOnto}
+ $g$ is onto;
+ \item \label{OntoCasesExer-g11} 
+ $g$ is one-to-one.
+\end{enumerate}
+\end{multicols}
+\end{exercise}
+
+\begin{exercise}{} \label{OntoCasesExer2}
+ Define function~$h$ from~$\mathbb{R}$ to~$\mathbb{R}$ by:
+$$ h(x) = 
+\begin{cases}
+x^{3} & \mbox{if $|x| > 1$} \\
+x^{1/3} & \mbox{if $|x| \le 1$}
+ . \end{cases} $$
+Prove or disprove:
+
+(a) \qquad  $h$ is onto; \qquad \qquad (b)  $h$ is one-to-one.
+\end{exercise}
+
+
 %%% CPT I took out the following exercise
 %\begin{exercise}{BijectionIffExistsUniqueExer}
 %Suppose $f \colon A \to B$. Show $f$ is a bijection if and only if, for each $b \in B$, there is a \emph{unique} $a \in A$, such that $f(a) = b$. In other words, $f$ is a bijection if and only if
 % $$ \forall b \in B, \exists!\, a \in A, \bigl( f(a) = b \bigr) .$$
  %\end{exercise}
  
+So far we have only looked at functions from $\mathbb{R}$ to $\mathbb{R}$.  Of course, bijections can have different domains and ranges. We close this section with several exercises which examine bijections on 
+various domains and  codomains.
+
+\begin{exercise}{} 
+For each function, either prove that it is a bijection, or prove that it is not.
+\begin{enumerate}[(a)]
+\item
+ $h \colon {\mathbb C}\setminus \{-3\}  \to {\mathbb C}\setminus \{0\} $ defined by $h(z) =  \dfrac{1}{z+3}$ .
+\item
+ $g \colon A   \to B $ defined by $g(z) =  \dfrac{1}{z}$, where $A =  \{z \in \mathbb{C}: 0<|z|<1\}$ and $B =  \{z \in \mathbb{C}: |z|>1\}$.
+\item
+ $f \colon A   \to B $ defined by $f(z) =  z^2$, where $A =  \{ r \cis \theta \in \mathbb{C}: r \ge 0 \text{ and } 0 \le \theta \le \pi/2 \}$ and 
+$B =  \{ r \cis \theta \in \mathbb{C}: r \ge 0 \text{ and } 0 \le \theta \le \pi \}$.
+\item
+ $f \colon A   \to \mathbb{C} $ defined by $f(z) =  z^4$, where $A =  \{ r \cis \theta \in \mathbb{C}: r \ge 0 \text{ and } 0 \le \theta < \pi/2 \}$.
+\item
+ $p \colon [0,1]   \to \mathbb{T} $ defined by $f(\theta) =  \cis \theta$, where $\mathbb{T} =  \{ z \in \mathbb{C}: |z|=1 \}$.
+ \end{enumerate}
+\end{exercise}
+
+
 \begin{exercise}{} 
 For each function, either prove that it is a bijection, or prove that it is not.
 \begin{enumerate}[(a)]
@@ -1549,8 +1688,6 @@ For each function, either prove that it is a bijection, or prove that it is not.
  $g \colon {\mathbb Z}_8 \to {\mathbb Z}_8$ defined by $g(x)= x \odot x \odot x$ .
 \item 
  $h \colon {\mathbb Z}_5 \to {\mathbb Z}_5$ defined by $h(x)= (3 \odot x \odot x \odot x) \oplus 2$ .
-\item
- $h \colon {\mathbb C}\setminus \{-3\}  \to {\mathbb C}\setminus \{0\} $ defined by $h(z) =  \dfrac{1}{z+3}$ .
  \end{enumerate}
 \end{exercise}
 
