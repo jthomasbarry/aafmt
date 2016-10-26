@@ -686,7 +686,7 @@ This concept of one-to-one is very useful.  If we know $A$ is a function, we kno
 We have given an informal idea of the meaning of one-to-one--now it's time for a formal definition.
 
 \begin{defn} \label{121defn}
-Suppose $f \colon A \to B$. We say $f$ is a \term{one-to-one function} iff for all $a_1,a_2 \in A$, such that
+Suppose $f$ is a function with domain $A$ and codomain $B$. We say $f$ is  \term{one-to-one} iff for all $a_1,a_2 \in A$, such that
 $f(a_1) = f(a_2)$, we have $a_1 = a_2$. \index{One-to-one!definition}
 \end{defn}
 Some higher math books use the impressive-sounding term \term{injective}\index{Injective (one-to-one)} instead of one-to-one. It means the same thing.
@@ -1940,7 +1940,7 @@ Is it possible to define $g \compose f$? \emph{Explain} your answer.
 The properties of $f \compose g$ depend on the properties of $f$ and $g$, and vice versa. Usually these properties are proven by using the definition of composition, along with the definitions of other functional properties.  Here is one example.
 
 \begin{example}{ComposeExers-11}
-Suppose $f\colon A \to B$ and $g \colon B \to C$. Show that if 
+Suppose $f\colon A \to B$ and $g \colon B \to C$, where $A \subset C$. Show that if 
 $$\mbox{$(g \compose f)(a) = a$, for every $a \in A$,} $$
  then $f$ is one-to-one.
  
@@ -1974,7 +1974,7 @@ Suppose $f \colon A \to B$ and $g \colon B \to C$. Show that if $g \compose f$ i
  \begin{proof}
 Suppose $b_1$ and $b_2$ are distinct elements of $B$.  Since the range of $f$ is $B$, it follows that there exist $a_1 \neq a_2$ such that $f(a_1) = b_1$ and $f(a_2) = b_2$.  Since $g \compose f$ is one-to-one, it follows that $g \compose f(a_1) \neq g \compose f(a_2)$. But by definition of $\compose$, $g \compose f(a_1) = g(f(a_1)) = g(b_1)$; and similarly $g \compose f(a_2) =  g(b_2)$. By substitution, it follows that  $g(b_1) \neq g(b_2)$. Thus distinct elements of $B$ always map to distinct elements of $C$ under the function $g$: which is the same as saying that $g$ is one-to-one. 
 
-An alternative proof runs as follows. Let $c \in C$ be such that $c =g(b_1)$  and $c= g(b_2)$. Then since the range of $f$ is B, there exist $a_1$ and  $a_2$ such that $f(a_1) = b_1$ and $f(a_2) = b_2$. It follows  by substitution that  $g(f(a_1)) = g(f(a_2))$. But this is the same as saying that $g \compose f(a_1) = g \compose f(a_2)$. Since  $g \compose f$ is one-to-one, it follows that $a_1 = a_2$. Applying $f$ to both sides of this equation gives $f(a_1) = f(a_2)$, or $b_1 = b_2$. We have shown that  for any $c \in  C$, there is at most one $b \in B$ such that $g(b) = c$. This means that $g$ is one-to-one.
+An alternative proof runs as follows. Let $c \in C$ be such that $c =g(b_1)$  and $c= g(b_2)$. Then since the range of $f$ is $B$, there exist $a_1$ and  $a_2$ such that $f(a_1) = b_1$ and $f(a_2) = b_2$. It follows  by substitution that  $g(f(a_1)) = g(f(a_2))$. But this is the same as saying that $g \compose f(a_1) = g \compose f(a_2)$. Since  $g \compose f$ is one-to-one, it follows that $a_1 = a_2$. Applying $f$ to both sides of this equation gives $f(a_1) = f(a_2)$, or $b_1 = b_2$. We have shown that  for any $c \in  C$, there is at most one $b \in B$ such that $g(b) = c$. This means that $g$ is one-to-one.
 \end{proof}    
  \end{example}
 

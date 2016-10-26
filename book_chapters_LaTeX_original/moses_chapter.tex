@@ -7,23 +7,27 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Further topics in Cryptography}{Crypto}
-\section{Diffie Hellman Key Exchange}\label{sec:DHKE:1}
+\chap{Further topics in Cryptography: Diffie-Hellman Key Exchange and Elliptic Curve Cryptography}{Crypto}
 
-In order to share a private message over a public domain a sender must  "lock" or encrypt their message using a \emph{key}\index{key! in cryptogaphy}.  In cryptography a  key is a special piece of information (usually a number)  that is required to encrypted and decrypt data that is shared between the sender and receiver.  The Diffie Hellman Key Exchange (DHKE) focuses on three types of keys: public, private and symmetric.  A \emph{Public Key}\index{Public Key! in cryptography} can be widely distributed, and is used for encrypting messages.  A\emph{Private Key}\index{Private Key! in cryptography} is only known to the sender, and is used for decrypting messages.  Finally, a \emph{Symmetric Key}\index{Symmetric Key! in cryptography} is known by the sender and receiver, and is used to encypt and decrypt messages.  The security that a key exchange offers is so profound that it is embedded into almost every technology we use today.  Some examples of key exchange can be seen in media applications, cellular phones, banking, and emails. 
 
-So, how do you establish a key?  Looking at this problem from the most fundamental level you would simply tell the other parties what the private key is, but this method is inefficient and is susceptible to eavesdroppers.  So, how do you establish a key over an unsecure network without compromising your data to potential eavesdroppers?  The Diffie-Hellman Key Exchange (DHKE) is one possible solution.  The DHKE is a public key algorithm that is used to establish a key between two parties over an unsecure network.  Note that the DHKE is not used for encryption/decryption of messages, but only to establish a key that can be used to encrypt/decrypt subsequent messages.  
+In Chapter~\ref{crypt} we introduced basic notions of cryptography. We also discussed a few examples of cryptosystems, beginning with simple shift codes (pretty easy to crack) and progressing up to RSA (not crackable with current technology).  But what we've seen so far is just the beginning of the subject. In this chapter we'll explore two more topics. First we'll look at Diffie-Hellman key exchange, which is used to set up cryptosystems for further communication. then, we'll look at elliptic curve cryptography, which is a new class of cryptosystems first discovered in 1985@@@Write a 'historical note' to put at the end of the chapter@@@. 
 
-The steps in the DHKE algorithm are as follows (see also Figure~\ref{fig:DH:DHKE_1}):
+\section{Diffie-Hellman Key Exchange}\label{sec:DHKE:1}
+
+In order to share a private message over a public domain a sender must  "lock" or encrypt their message using a \emph{key}\index{key! in cryptogaphy}.  Recall from Section~\ref{sec:crypt:overview}, in cryptography a  key is a special piece of information (usually a number)  that is required to encrypted and decrypt data that is shared between the sender and receiver. There are generally three types of keys used: public, private and symmetric. A \term*{Public Key}\index{Public Key! in cryptography} can be widely distributed, and is used for encrypting messages.  A\term*{Private Key}\index{Private Key! in cryptography} is only known to the sender, and is usually used for decrypting messages (but can also be used for encrypting messages in some cryptosystems, such as RSA).  Finally, a \term*{Symmetric Key}\index{Symmetric Key! in cryptography} is known by the sender and receiver, and is used to encypt and decrypt messages.   
+
+Symmetric keys are convenient to use for two-way communication. But before communicating, the two users must find a way to secretly decide on a common key. This is not always so easy. Suppose the only way the users have to communicate is via a public network, where eavesdroppers can listen in to whatever information they're sending to each other. Would it even be possible to establish a common, secret key in such a situation?  Amazingly, it is-- and that's what Diffie-Hellman Key Exchange (DHKE) is all about.  As we shall see, tDHKE is a public key algorithm that is used to establish a secret symmetric key between two parties over an unsecure network.  Note that the DHKE is not used for sending messages, but only to establish a key that can be used to encrypt/decrypt subsequent messages.  
+
+How does DHKE work? Let's suppose Moses and Rachael want to establish a symmetric key over a public communication channel. They may follow the  steps in the DHKE algorithm  as follows (see also Figure~\ref{fig:DH:DHKE_1}):
  \begin{enumerate}[Step 1.]
- \item Prior to sending data, Moses and Rachael agree upon a prime number $p$ and a base number $g$ where $g$ is a primitive root of $p$; 
-\item Moses chooses a secret integer $n$, and sends Rachael $ \bmod (g^n , p)$;
-\item Rachael chooses a secret integer $m$, and sends Moses  $ \bmod (g^m , p)$;
-\item Moses computes $ \bmod ( \bmod (g^m , p)^n , p ) = K_1$;
-\item Rachael computes $ \bmod (\bmod (g^n , p)^m , p ) = K_2$;
+ \item First, Moses and Rachael agree upon a pair of numbers $p$ and $g$. $p$ is called the \term{modulus},while $g$ is called the \term{base}. These numbers are not secret, and Moses and Rachael don't care if eveasdroppers find out what $p$ and $g$ are. In practice $p$ and $g$ are required to have certain properties (as explained below) to maximize secrecy.  However, the DHKE procedure still works for any values of $p$ and $g$.; 
+\item Moses chooses a secret integer $n$, known only to himself.  He then computes $q$ where $q =\mod(g^n,p)$, and sends Rachael the value of $q$;
+\item Rachael similiarly chooses her own secret integer $m$, computes $r$ where $r =\mod(g^m,p)$ and sends Moses the value of $r$;
+\item Moses computes $ \bmod (r^n , p ) = K_1$;
+\item Rachael computes $ \bmod (q^m , p ) = K_2$;
 \end{enumerate} 
 \begin{figure}[htb]
-	   \center{\includegraphics[width=5in]
+	   \center{\includegraphics[width=5.5in]
 	         {images/DHKE_1.png}}
 	  \caption{\label{fig:DH:DHKE_1} Key exchange between Moses and Rachael }
 \end{figure}
@@ -33,20 +37,19 @@ It turns out that when $K_1$ and $K_2$ are computed by the above procedure, then
 Fill in the blanks in the following proof that  $K_1$ is always equal to  $K_2$.\\
   	\begin{proof} 
 		\begin{align*} 
-		K_1 &=   \bmod ( \bmod (g^m , p)^n , p ) 
-           	\\&=  \bmod ( \bmod ((g^m)^{\underline{~~~~}} , p) , p )&& \text{(modular arithmetic)}	%ans: \bmod ( \bmod ((g^m)^n , p) , p )&& \text{(modular arithmetic)}
-		\\&= \bmod ( \bmod ((g^{mn}) , p) , p )&&  \text{(rules of exponents)}	%ans: \bmod ( \bmod ((g^{mn}) , p) , p )&&  \text{(rules of exponents)}	
-           	\\&= \bmod ( \bmod (\underline{~~~~~~}) , p) , p ) &&\text{(rules of exponents)}	%ans: \bmod ( \bmod ((g^{nm}) , p) , p ) &&\text{(rules of exponents)}
-           	\\&= \bmod ( \bmod ((\underline{~~~~~~})^m , p) , p )  &&\text{(rules of exponents)}	%ans:  \bmod ( \bmod ((g^n)^m , p) , p )  &&\text{(rules of exponents)}
-           	\\&= \bmod ( \bmod ((\underline{~~~~~~} , \underline{~~~~~~})^m , p )&&\text{(modular arithmetic)}   	%ans: \bmod ( \bmod ((g^n , p)^m , p )&&\text{(modular arithmetic)}
+		K_1 &=   \bmod (r^n , \underline{~~~~~~}) 
+           	\\&=  \bmod ( \underline{@@@change here@@@}^{\underline{~~~~~~}} , p) , p )&& \text{(substitution)}	%ans: \bmod ( \bmod (g^m , p)^n , p )&& \text{(substitution)}
+		\\&= \bmod ( \bmod ((g^{\underline{~~~~~~}}) , p) , p )&&  \text{(rules of exponents)}	%ans: \bmod ( \bmod ((g^{mn}) , p) , p )&&  \text{(rules of exponents)}	
+           	\\&= \bmod ( \bmod ((\underline{~~~~~~})^{\underline{~~~~~~}} , p) , p )  &&\text{(rules of exponents)}	%ans:  \bmod ( \bmod ((g^n)^m , p) , p )  &&\text{(rules of exponents)}
+           	\\&= \bmod (\underline{~~~~~~}^m , p )&&\text{(substitution)}   	%ans: \bmod ( \bmod ((g^n , p)^m , p )&&\text{(substitution)}
 		\\&= K_2
 		\end{align*} 
-   	Thus, $K_1 = K_2 = K$ is the symmetric private key.\\
+   	Thus, $K_1 = K_2 = K$ is the symmetric key.\\
 
   	\end{proof}
 \end{exercise}
 
-In order to make things clearer, we give a simple example to show how key exchange works (note that this example is much too simple to be used in practice, but it does at least show the procedure):
+In order to make things clearer, we give a simple example with actual numbers. This example is much too simple to be used in practice, but it does at least show the procedure.
 
 \begin{eg} Key Exchange between a sender and receiver (Moses and Rachael) using the DHKE is shown in the following steps.
 \begin{enumerate}[Step 1.]
@@ -69,27 +72,27 @@ In order to make things clearer, we give a simple example to show how key exchan
 \item Moses and Rachael share the number 9;
 \end{enumerate}
 \end{eg}
-It is important to choose a large prime number $p$, in order to decrease the chances of an eavesdropper cracking your code.  For example, internet protocols usually use a minimum of a 1024-bit prime number for $p$.  There are $2^{1023}$ different possibilities for 1024 bits (where the highest bit is a `1`), but how can you guarantee that the number is prime?
+It is important to choose a large prime number $p$, in order to make it difficult for an eavesdropper to crack your code (we will explain why this is true a little later).  Computers use a base-2 number system known as the binary number system.  Internet protocols usually use a minimum of a 1024-bit prime number for $p$, so that $2^{1023} < p < 2^{1024}$  (to get an idea of how big this is, to write $p$ out in decimal would take about 300 digits).  So, there are $2^{1023}$ different possibilities for 1024 bits (where the highest bit is a `1'), but how can you guarantee that the number is prime?
 
-  \emph{Fermat's Little Theorem}\index{Fermat's Little Theorem! in cryptography} states that if $p$ is a prime number such that $p \nmid a$, and $a$ is an integer, then $1 \equiv \bmod(a^{p-1}, p)$.
+%  \emph{Fermat's Little Theorem}\index{Fermat's Little Theorem! in cryptography} states that if $p$ is a prime number such that $p \nmid a$, and $a$ is an integer, then $1 \equiv \bmod(a^{p-1}, p)$.
 
-\begin{eg} Let $p = 5$ and $a = 1, 2, 3, 4 \text{ and } 5$
-$$ 5 \nmid 1 \implies \bmod(1^{5-1}, 5) \equiv 1$$
-$$ \bmod(1^{4}, 5) \equiv 1$$
-$$ \bmod(1, 5) \equiv 1$$
-$$ 5 \nmid 2 \implies \bmod(2^{5-1}, 5) \equiv 1$$
-$$ \bmod(2^{4}, 5) \equiv 1$$
-$$ \bmod(16, 5) \equiv 1$$
-$$ 5 \nmid 3 \implies \bmod(3^{5-1}, 5) \equiv 1$$
-$$ \bmod(3^{4}, 5) \equiv 1$$
-$$ \bmod(18	, 5) \equiv 1$$
-$$ 5 \nmid 4 \implies \bmod(4^{5-1}, 5) \equiv 1$$
-$$ \bmod(4^{4}, 5) \equiv 1$$
-$$ \bmod(256, 5) \equiv 1$$
-$$ 5 | 5 \text { (so the theorem does not apply)}$$
-$$ \bmod(5^{5-1}, 5) \equiv 0$$
-\end{eg}
-Since all values of $a$ such that $1 \leq a \leq p$ are congruent to $1$, then Fermat's Little Theorem tells us that $p$ is prime, but are there numbers that exist that pass Fermat's Little Theorem but are not prime?  The answer is yes, these numbers are called \emph{Lucas-Carmichael Numbers}\index{Lucas-Carmichael Numbers! in cryptogaphy}.  (or \emph{pseudoprimes}\index{Pseudoprimes}) 
+%\begin{eg} Let $p = 5$ and $a = 1, 2, 3, 4 \text{ and } 5$
+%$$ 5 \nmid 1 \implies \bmod(1^{5-1}, 5) \equiv 1$$
+%$$ \bmod(1^{4}, 5) \equiv 1$$
+%$$ \bmod(1, 5) \equiv 1$$
+%$$ 5 \nmid 2 \implies \bmod(2^{5-1}, 5) \equiv 1$$
+%$$ \bmod(2^{4}, 5) \equiv 1$$
+%$$ \bmod(16, 5) \equiv 1$$
+%$$ 5 \nmid 3 \implies \bmod(3^{5-1}, 5) \equiv 1$$
+%$$ \bmod(3^{4}, 5) \equiv 1$$
+%$$ \bmod(18	, 5) \equiv 1$$
+%$$ 5 \nmid 4 \implies \bmod(4^{5-1}, 5) \equiv 1$$
+%$$ \bmod(4^{4}, 5) \equiv 1$$
+%$$ \bmod(256, 5) \equiv 1$$
+%$$ 5 | 5 \text { (so the theorem does not apply)}$$
+%$$ \bmod(5^{5-1}, 5) \equiv 0$$
+
+%Since all values of $a$ such that $1 \leq a \leq p$ are congruent to $1$, then Fermat's Little Theorem tells us that $p$ is prime, but are there numbers that exist that pass Fermat's Little Theorem but are not prime?  The answer is yes, these numbers are called \emph{Lucas-Carmichael Numbers}\index{Lucas-Carmichael Numbers! in cryptogaphy}.  (or \emph{pseudoprimes}\index{Pseudoprimes}) 
 
 Performing exponentiation over a modulus is called \emph{discrete exponentiation}\index{discrete exponentiation! in cryptogaphy} and can quickly become incalculable, however you can overcome this by creating a repeated squaring formula using an excel spreadsheet.  See Exercise \ref{exercise:Crypto:k1isk2} for instructions on how to create a spreadsheet to compute the following exercises.
  
@@ -105,7 +108,9 @@ Given $p$ = 32452867; $g$ = 54321; and $n$ = 876.
 \item If $m$ = 123 what number does the other party calculate?
 %ans: K = mod((19,439,625)123, 32,452,867) = 16,045,878
 \end{enumerate}
-\end{exer}\begin{exer}
+\end{exer}
+
+\begin{exer}
 Given $p$ = 86028157; $g$ = 98765; and $n$ = 123.  
 \begin{enumerate}[(a)]
 \item	What number do you send?  
@@ -118,8 +123,7 @@ Given $p$ = 86028157; $g$ = 98765; and $n$ = 123.
 %ans: K = mod((7,262,961)87, 86,028,157) = 35,164,864
 \end{enumerate}
 \end{exer}
-The security of the DHKE leverages the easy computations of exponentials versus the difficulty of computing logarithms. 
-Recall that the logarithm is the inverse operation of exponentiation.  For example, suppose $a = g^m$ , then the Discrete Logarithm (DL) of $a$ = $m$ and is expressed as    $\log_g a = m$.   
+Recall that the logarithm is the inverse operation of exponentiation.  For example, suppose $a = g^m$ , then the Discrete Logarithm (DL) of $a$ = $m$ and is expressed as    $\log_g a = m$.  The security of the DHKE leverages the easy computations of exponentials versus the difficulty of computing logarithms. 
 
 \begin{example}{one-way}(\emph{One-way function})~~
 A \term{one-way function} is a function which is easy to calculate but hard to invert.  Let's look at an example of a function that satisfies this requirement. It is easy to calculate $\bmod(2^{m},  11)$ for different values of $m$: for example, when $m =8$ then we get $\bmod(2^{8},  11) =\bmod(256,  11)  = 3$.  
@@ -490,7 +494,7 @@ Given GF($2^{160}$) and the reduction polynomial $X^{160} + X + 1$ , then multip
 \end{exer}
 
 \subsection{Elliptic Curve Integrated Encryption System} 
-If Moses and Rachael would like to communicate a message using ECC, then they could use an agreed-upon code table and elliptic curve.  Each character of the encrypted message would correspond to a point on the elliptic curve $E_p(a,b)$ where $p$ is a prime number, and a random point $C$ on the EC. Rachael selects a random number $\alpha$ which is less than the order of $E_p(a,b)$ and a point $A$ on the EC. She computes $A_1 = $$\alpha$ $(C + A)$ and $A_2= $$\alpha$$A$. Rachael's private keys are $\alpha$ and the point $A$; her public keys are $A_1$ and $A_2$. Moses does the same thing but using $\beta$ and a point $B$. Now lets consider an elliptic curve whose equation is $y^2 = x^3 + 2x + 9$ to see how this works, see Figure~\ref{fig:DH:DHKE_11} below.
+If Moses and Rachael would like to communicate a message using ECC, then they could use an agreed-upon code table and elliptic curve.  Each character of the encrypted message would correspond to a point on the elliptic curve $E_p(a,b)$ where $p$ is a prime number, and Rachael and Moses will have to choose a random point $C$ and $B$ respectively on the EC. Additionally, Rachael selects a random number $\alpha$ which is less than the order of $E_p(a,b)$ and a point $A$ on the EC. She computes $A_1 = $$\alpha$ $(C + A)$ and $A_2= $$\alpha$$A$. Rachael's private keys are $\alpha$ and the point $A$; her public keys are $A_1$ and $A_2$. Moses does the same thing but using $\beta$ and a point $B$. Rachael's public key for Moses is $A_B = $$\alpha$$B_2$, and Moses' public key for Rachael is $B_A = $$\beta$$A_2$. Now lets consider an elliptic curve whose equation is $y^2 = x^3 + 2x + 9$ to see how this works, see Figure~\ref{fig:DH:DHKE_11} below.
 
 \begin{figure}[H]
 	   \center{\includegraphics[width=1.5in]
@@ -498,22 +502,75 @@ If Moses and Rachael would like to communicate a message using ECC, then they co
 	  \caption{\label{fig:DH:DHKE_11} Elliptic Curve, $y^2 = x^3 + 2x + 9$ }
 \end{figure}
 
-If we restrict ourselves to the Finite Field, $FF(37)$, so ($y^2 = x^3 + 2x + 9$)$\bmod37$ and use $E_{37}(2,9)$.  Then the points on the elliptic curve are as followed:
+If we choose $37$ as our prime number $p$ then we will restrict ourselves to the Finite Field, $FF(37)$, so ($y^2 = x^3 + 2x + 9$)$\bmod37$ and use $E_{37}(2,9)$.  Then the points on the elliptic curve are as followed:
 ($\infty, (5, 25), (1, 30), (21, 32), (7, 25), (25, 12), (4, 28), (0, 34), (16, 17), (15, 26), (27, 32), \newline(9, 4), (2, 24), (26, 5), (33, 14),(11, 17), (31, 22), (13, 30), (35, 21), (23, 7), (10, 17), (29, 6), \newline(29, 31), (10, 20), (23, 30), (35, 16), (13, 7), (31, 15), (11, 20), (33, 23), (26, 32), (2, 13), (9, 33), \newline(27, 5), (15, 11), (16, 20), (0, 3), (4, 9), (25, 25), (7, 12), (21, 5), (1, 7), (5, 12)$)
 
-Using the table seen in Figure~\ref{fig:DH:DHKE_17} below, Moses and Rachael can now communicate any message to each other.  Moses will send the message, ``attack".
+We can now assign each point on the EC to a character of our choosing and create a code table that will be known to the sender and receiver. Using the table seen in Figure~\ref{fig:DH:DHKE_17} below, Moses and Rachael can now communicate any message to each other.  
 
 \begin{figure}[H]
 	   \center{\includegraphics[width=6in]
 	         {images/DHKE_17.png}}
 	  \caption{\label{fig:DH:DHKE_17} Code table using the EC agreed upon by Moses and Rachael }
 \end{figure}
-Rachael lets $C = (9,4)$ and $\alpha$ $= 5$ and $A = (10, 20)$ on the EC.\\
-	$A_1 = 5[(9, 4) + (10, 20)] = (1, 7)$\\
-	$A_2 = (32, 33)$\\
-Moses lets $B = (11, 20)$ and $\beta$ $= 7$ \\
-	$B_1 = (11, 17)$\\
-	$B_2 = (23, 30)$
+
+In order for Moses to Encrypt a mesage "M" all of the characters must correspond to points on the EC using the agreed upon table.  The result is a pair of cipher points $(E_1, E_2)$.  Moses chooses a random number, $\gamma$ which changes for each point. So,
+$E_1 =$$\gamma$$C$, and $E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B$. After encrypting all characters Moses then converts the pair of points into the text characters using the code table and communicates this message to Rachael.\\
+
+After receiving the cipher text Rachael will decrypt the message using:\\
+$M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A)$\\
+
+\begin{eg} Moses will send the message, ``attack" using the code table above.\\
+First, Rachael and Moses must establish their private and public keys.\\
+Rachael lets $C = (9,4)$ and $\alpha$ $= 5$ and $A = (10, 20)$ on the EC. These are her private keys.\\
+	$A_1 = 5[(9, 4) + (10, 20)] = (1, 7)$, public key\\
+	$A_2 = (32, 23)$, public key\\ \\
+Moses lets $B = (11, 20)$ and $\beta$ $= 7$. These are his private keys. \\
+	$B_1 = (11, 17)$, public key\\
+	$B_2 = (23, 30)$, public key
+
+\begin{flushleft}
+Now Moses must encrypt his message one character at a time.
+\end{flushleft}
+\begin{enumerate}[(1)] 
+\item Moses chooses $\gamma$$ = 8$ and encrypts the letter ``a" \newline
+	So, the point $(5, 25)$ is encrypted as\newline
+	$E_1 = $$\gamma$$C = (1, 30)$ which corresponds to the letter ``b" since $C$ is in the 11th position in the generated table and $8(11)\mod 43 = 2$ and the second position is the character ``b". \newline
+	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B$ \newline
+	$= (5, 25) + 15(1, 7) - 8(32, 23) + (15, 11)$ \newline
+	$= 1 + 13 - 17 + 34 = 31\mod43 = 31 = (2, 13)$ which corresponds to ``5" in the code table.  So, ``a" is encrypted as $(b, 5)$
+\item Moses chooses $\gamma$$ = 12$ and encrypts the letter ``t" \newline
+	So, the point $(10, 17)$ is encrypted as\newline
+	$E_1 = $$\gamma$$C = (21, 32)$ which corresponds to the letter ``c"\newline
+	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (2, 24)$ which corresponds to ``l" in the code table.  So, ``t" is encrypted as $(c, l)$
+\item Moses chooses $\gamma$$ = 19$ and encrypts the letter ``t" \newline
+	So, the point $(10, 17)$ is encrypted as\newline
+	$E_1 = $$\gamma$$C = (4, 9)$ which corresponds to the ``$\#$"\newline
+	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (27, 32)$ which corresponds to ``j" in the code table.  So, ``t" is encrypted as $($$\#$$, j)$
+\item Moses chooses $\gamma$$ = 2$ and encrypts the letter ``a" \newline
+	So, the point $(5, 25)$ is encrypted as\newline
+	$E_1 = $$\gamma$$C = (29, 31)$ which corresponds to the letter ``v"\newline
+	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (1, 30)$ which corresponds to ``b" in the code table.  So, ``a" is encrypted as $(v, b)$
+\item Moses chooses $\gamma$$ = 3$ and encrypts the letter ``c" \newline
+	So, the point $(5, 25)$ is encrypted as\newline
+	$E_1 = $$\gamma$$C = (1, 30)$ which corresponds to the letter ``b"\newline
+	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (31, 22)$ which corresponds to ``p" in the code table.  So, ``c" is encrypted as $(b, p)$
+\item Moses chooses $\gamma$$ = 23$ and encrypts the letter ``k" \newline
+	So, the point $(9, 4)$ is encrypted as\newline
+	$E_1 = $$\gamma$$C = (25, 25)$ which corresponds to ``@"\newline
+	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (4, 28)$ which corresponds to ``f" in the code table.  So, ``a" is encrypted as $(@, f)$
+\end{enumerate}
+\begin{flushleft}
+"attack" is communicated to Rachael as the cypher $(b,5; c,l; $$\#$$,j; v,b; b,p; @,f)$. Rachael is now able to decrypt the cypher text by first converting the characters to their corresponding points, and then uses them to decrypt $M$.
+\end{flushleft}
+\begin{enumerate}[(1)]
+\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (5, 25)$ which corresponds to the character ``a" in the code table.\newline
+\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (10, 17)$ which corresponds to the character ``t" in the code table.\newline
+\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (10, 17)$ which corresponds to the character ``t" in the code table.\newline
+\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (5, 25)$ which corresponds to the character ``a" in the code table.\newline
+\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (21, 32)$ which corresponds to the character ``c" in the code table.\newline
+\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (9, 4)$ which corresponds to the character ``k" in the code table.\newline
+\end{enumerate}
+\end{eg} 
 \newpage  
 
 \subsection{References and Suggested Reading} 
