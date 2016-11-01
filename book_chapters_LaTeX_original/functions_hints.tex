@@ -10,6 +10,12 @@
 
 \noindent Exercise \ref{exercise:functions:NxN}(b): Suppose that $g(m,n) = g(p,q)$. It follows that $(m + n, m + 2n) = (p + q, p + 2q)$. %This gives two separate equations:  $m+n=p+q$ and $m+2n = p+2q$.
 
-\noindent Exercise \ref{exercise:functions:BijectionComposeExer}(a): You just need to show that $g \compose f$ is both one-to-one and onto. Use the previous exercises.
+\noindent Exercise \ref{exercise:functions:BijectionComposeExer}: (a) You just need to show that $g \compose f$ is both one-to-one and onto. Use the previous exercises.  (b)  Prove by contradiction. Suppose that there exists a $y$ such that $g_1(y) \neq g_2(y)$.  Then what can you say about $f \compose g_1(y)$ and  $f \compose  g_2(y)$?
 
-\noindent Exercise \ref{InverseUniqueExers-unique}: Prove by contradiction. Suppose that there exists a $y$ such that $g_1(y) \neq g_2(y)$.  Then what can you say about $f \compose g_1(y)$ and  $f \compose  g_2(y)$?
+\noindent Exercise \ref{exercise:functions:IdAInverse}: (a) Notice that $f(x)=x$ is the identify function when the set $A$ is equal to $\mathbb{R}$.  Think about how you would show that $f(x)$ is invertible in this case.  Then apply the same proof, replacing $x$ with $a$ and $f$ with
+$Id_A$.  (b) Again, think of the case $f(x)=x$.  What is the inverse of this function? 
+
+\noindent Exercise \ref{exercise:functions:InverseIdentityExers}: (a) Apply Definition  \ref{def:invfna} directly, replacing $f$ with
+$g \circ f$ and $g$ with $g^{-1} \circ f^{-1}$. (b) Apply Definition  \ref{def:invfna} again, this time replacing $f$ with
+$f^{-1}$. What should $g$ be replaced with?
+

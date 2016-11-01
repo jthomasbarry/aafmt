@@ -686,7 +686,7 @@ This concept of one-to-one is very useful.  If we know $A$ is a function, we kno
 We have given an informal idea of the meaning of one-to-one--now it's time for a formal definition.
 
 \begin{defn} \label{121defn}
-Suppose $f$ is a function with domain $A$ and codomain $B$. We say $f$ is  \term{one-to-one} iff for all $a_1,a_2 \in A$, such that
+Suppose $f$ is a function with domain $A$ and codomain $B$. We say $f$ is  \term{one-to-one} iff for all $a_1,a_2 \in A$  such that
 $f(a_1) = f(a_2)$, we have $a_1 = a_2$. \index{One-to-one!definition}
 \end{defn}
 Some higher math books use the impressive-sounding term \term{injective}\index{Injective (one-to-one)} instead of one-to-one. It means the same thing.
@@ -887,7 +887,7 @@ A function is one-to-one iff two different elements of the domain always map to 
 We formalize this equivalence in the following alternative definition of one-to-one:
 
 \begin{defn} \label{121defn2}\emph{(Alternate)}
-Suppose $f \colon A \to B$. We say $f$ is a \term{one-to-one function}\index{One-to-one!alternate definition} iff for all $a_1,a_2 \in A$, such that $a_1 \neq a_2$, we have $f(a_1) \neq f(a_2)$. 
+Suppose $f \colon A \to B$. We say $f$ is a \term{one-to-one function}\index{One-to-one!alternate definition} iff for all $a_1,a_2 \in A$  such that $a_1 \neq a_2$, we have $f(a_1) \neq f(a_2)$. 
 \end{defn}
 
 \begin{example}{}  We know from calculus that the function $e^x: \mathbb{R} \rightarrow \mathbb{R}$ is a \term*{strictly increasing} function\index{Function!strictly increasing} since its derivative is always positive.  In mathematical terms, we can say
@@ -1066,9 +1066,9 @@ Is the function $\var{Atomic Number} \colon \{ \mbox{ Chemical Elements } \} \to
 
 The following is the "official" definition  of onto.
 
-\begin{defn}
+\begin{defn}\label{oneToOneDef}
 Suppose $f \colon A \to B$. We say $f$ is \term{onto} if for all $b \in B$, \index{Onto!formal definition}
-there is some $a \in A$, such that $f(a) = b$. 
+there is some $a \in A$  such that $f(a) = b$. 
 \end{defn}
 
 Some higher math books use the highfalutin term \term{surjective}, which means the same as onto.
@@ -1820,7 +1820,7 @@ $\var{child} \compose \var{brother} \compose \var{parent}$
 
 \begin{defn}\label{defn:composition}
 Suppose $f \colon A \to B$ and $g \colon B \to C$. The \term{composition} of $g$ and $f$ (denoted $g \compose f$) is the function from~$A$ to~$C$ defined by
-$$ \mbox{$(g \compose f)(a) = g \bigl( f(a) \bigr)$ for all $a \in A$.} $$\index{Composition!definition of}
+$$ \mbox{$g \compose f(a) = g \bigl( f(a) \bigr)$ for all $a \in A$.} $$\index{Composition!definition of}
 \end{defn}
  
 The notation $g \compose f$ is read as ``$g$ compose $f$" or ``$g$ composed with $f$." Since $g \compose f(a) = g \bigl( f(a) \bigr)$, the notation $g \compose f(a)$ is sometimes read as "$g$ of $f$ of $a$."
@@ -1828,9 +1828,9 @@ The notation $g \compose f$ is read as ``$g$ compose $f$" or ``$g$ composed with
 \begin{example}{}
 Define $f \colon \mathbb{R} \to \mathbb{R}$ and $g \colon \mathbb{R} \to \mathbb{R}$ by
 $f(x) = 3x$ and $g(x) = x^2$. Then $g \compose f$ and $f \compose g$ are functions from~$\mathbb{R}$ to~$\mathbb{R}$. For all $x \in \mathbb{R}$, we have
-$$(g \compose f)(x) = g \bigl( f(x) \bigr) = g(3x) =(3x)^2 =  9x^2 $$
+\[ g \compose f(x) = g \bigl( f(x) \bigr) = g(3x) =(3x)^2 =  9x^2 \]
 and
-$$(f \compose g)(x) = f \bigl( g(x) \bigr) = f(x^2) = 3(x^2) = 3x^2 .$$
+\[f \compose g(x) = f \bigl( g(x) \bigr) = f(x^2) = 3(x^2) = 3x^2 .\]
 Notice that (in this example) $f \compose g \neq g \compose f$, so \emph{composition is not commutative}.\index{Commutative property!for compositions}
 \end{example}
 
@@ -1845,14 +1845,14 @@ Fill in the blanks of the following proof to show that function composition is a
 Suppose $f: X \to Y$, $g: Y \to W$, and $h: W \to Z$. 
 Then 
 \[
-(h \compose (g \compose f))(x) = h((g \compose f)(x)) =\underline{~<1>~},\]
+h \compose (g \compose f)(x) = h((g \compose f)(x)) =\underline{~<1>~},\]
 
 \noindent
 and
-\[ ((h \compose g) \compose f)(x) = (h \compose g)(\underline{~<2>~}) =  \underline{~<3>~}. \]
+\[ (h \compose g) \compose f(x) = (h \compose g)(\underline{~<2>~}) =  \underline{~<3>~}. \]
 
 \noindent
-Since the two right-hand sides are equal, it follows that $(h \compose (g \compose f))(x) = ((h \compose g) \compose f)(x)$; in other words function composition is associative.
+Since the two right-hand sides are equal, it follows that $h \compose (g \compose f)(x) = (h \compose g) \compose f(x)$; in other words function composition is associative.
 \end{proof}
 \end{exercise}
 
@@ -1862,14 +1862,14 @@ Figure \ref{arrowcomposefig} provides an arrow diagram to illustrate the composi
 \item Starting from any point of~$A$, follow the arrow (for the function~$f$ that starts there to arrive at some point of~$B$.
 \item Then follow the arrow (for the function~$g$) that starts there to arrive at a point of~$C$.
 \end{itemize}
-For example, the $f$-arrow from~$a$ leads to~$m$ and the $g$-arrow from~$m$ leads to~$u$. So $(g \compose f)(a) = u$.
-%\begin{center}
+For example, the $f$-arrow from~$a$ leads to~$m$ and the $g$-arrow from~$m$ leads to~$u$. So $g \compose f(a) = u$.
 \begin{figure}[h]
+\begin{center}
 \includegraphics[scale=0.55]{images/arrowcompose.pdf}
 \caption{Arrows for the composition $g \circ f$ are dotted.}
 \label{arrowcomposefig}
+\end{center}
 \end{figure}
-%\end{center}
 Notice how we write the result as $g \compose f$ with $g$ on the left and $f$ on the right even though $f$ appears on the left in Figure~\ref{arrowcomposefig}. This is an unfortunate consequence of the fact that when we calculate $g \bigl(f(x) \bigr)$ we work right to left, computing $f(x)$ first and applying $g$ to the result.
 \end{example}
 
@@ -1891,7 +1891,7 @@ Is it possible to define $g \compose f$? \emph{Explain} your answer.
 \end{exercise}
 
 \begin{exercise}{ComposeExers-form} 
- The formulas define functions $f$ and~$g$ from~$\mathbb{R}$ to~$\mathbb{R}$. Find formulas for $(f \compose g)(x)$ and $(g \compose f)(x)$.
+ The formulas define functions $f$ and~$g$ from~$\mathbb{R}$ to~$\mathbb{R}$. Find formulas for $f \compose g(x)$ and $g \compose f(x)$.
 \begin{enumerate}[(a)]
 \item \label{ComposeExers-form-(3x+1)(x2+2)}
  $f(x) = 3x + 1$ and $g(x) = x^2 + 2$ 
@@ -1941,15 +1941,15 @@ The properties of $f \compose g$ depend on the properties of $f$ and $g$, and vi
 
 \begin{example}{ComposeExers-11}
 Suppose $f\colon A \to B$ and $g \colon B \to C$, where $A \subset C$. Show that if 
-$$\mbox{$(g \compose f)(a) = a$, for every $a \in A$,} $$
+$$\mbox{$g \compose f(a) = a$, for every $a \in A$,} $$
  then $f$ is one-to-one.
  
  \begin{scratchwork}
- We want to show that $f$ is one-to-one; that is if $f(a_1) = f(a_2)$, then $a_1 = a_2$.  We are given that $(g \compose f)(a) = a$, for every $a \in A$.  Therefore for our proof we should assume $f(a_1) = f(a_2)$, and use the given statement to somehow get to $a_1 = a_2$. 
+ We want to show that $f$ is one-to-one; that is if $f(a_1) = f(a_2)$, then $a_1 = a_2$.  We are given that $g \compose f(a) = a$, for every $a \in A$.  Therefore for our proof we should assume $f(a_1) = f(a_2)$, and use the given statement to somehow get to $a_1 = a_2$. 
  \end{scratchwork}
  
  \begin{proof}
-Given that $(g \compose f)(a) = a$, for every $a \in A$, by the definition of composition, this means
+Given that $g \compose f(a) = a$, for every $a \in A$, by the definition of composition, this means
 that, for any $a_1, a_2 \in A$ we have
 $$ g \bigl( f(a_1) \bigr) = a_1 \mbox{ and }  g \bigl( f(a_2) \bigr) = a_2.$$
 Now suppose $f(a_1) = f(a_2)$. Then by the definition of a function, 
@@ -2023,9 +2023,9 @@ Show that if $g$ and~$g \compose f$ are bijections, then $f$ is a bijection.
  \begin{itemize}
  \item $f \colon A \to B$,
  \item  $g \colon B \to A$,
- \item $(g \compose f)(a) = a$, for every $a \in A$,
+ \item $g \compose f(a) = a$, for every $a \in A$,
  and
- \item $(f \compose g)(b) = b$, for every $b \in B$.
+ \item $f \compose g(b) = b$, for every $b \in B$.
  \end{itemize}
  Show that $f$ is a bijection.
  \end{exercise}
@@ -2064,7 +2064,7 @@ Then the following statements are also true:
  $f \bigl( g(y) \bigr) = y$ for all $y \in Y$,
  and
  \item  \label{x=g(y)->InverseExer-g(f(x))}
- $g \bigl( f(x) \bigr) = x$ for all $x \in X$.
+ $g \bigl( f(x) \bigr) = x$  for all $x \in X$.
  \end{enumerate}
 
  
@@ -2096,9 +2096,9 @@ Finally, we can give the definition of an inverse function:
 \end{itemize}
 We say that $g$ is an \term{inverse function }\index{Inverse!function}\index{Function!inverse of} for the function~$f$ if and only if:
  \begin{enumerate} \renewcommand{\theenumi}{\alph{enumi}}
- \item $f \bigl( g(y) \bigr) = y$ for all $y \in Y$,
+ \item $f \bigl( g(y) \bigr) = y$  (in other words, $f \compose g(y) = y$) for all $y \in Y$,
  and
- \item $g \bigl( f(x) \bigr) = x$ for all $x \in X$.
+ \item $g \bigl( f(x) \bigr) = x$ (in other words, $g \compose f(y) = y$) for all $x \in X$.
  \end{enumerate}
  \end{defn}
  
@@ -2159,8 +2159,8 @@ $$g \bigl( f(x_1) \bigr) = g \bigl( f(x_2) \bigr)$$
 Therefore by (b), $x_1 = x_2$. Hence $f$ is one-to-one.
 
 \noindent
-Now suppose $y_1 \in Y$.  Then since $g$ is a function, there exists a unique  $x_1 \in X$ such that $g(y_1) = x_1$.  Substituting into (a) we get
-\[f \bigl(x_1) \bigr) = y_1.\]
+Now suppose $y \in Y$.  Then since $g$ is a function, there exists a unique  $x \in X$ such that $g(y) = x$.  Substituting into (a) we get
+\[f (x) = y.\]
 Therefore $\forall y \in Y, \exists x \in X \mbox{ s.t. } f(x) = y$.  Hence $f$ is onto.
 So $f$ is both one-to-one and onto: thus $f$ is a bijection.
  \end{proof}
@@ -2195,12 +2195,12 @@ This is simply a restatement of the fact that
 For any set~$A$, define the \terminology{identity map} $\Id_A \colon A \to A$ by $\Id_A(a) = a$ for every $a \in A$.
 \end{defn}\index{Identity map} 
 
-\begin{exercise}{98}
+\begin{exercise}{IdAInverse}
 \begin{enumerate}[(a)]
 \item
-Show that $\Id_A$ is invertible
+Show that $\Id_A$ is invertible.\hyperref[sec:functions:hints]{(*Hint*)}
 \item
-Find the inverse of $\Id_A$
+Find the inverse of $\Id_A$.\hyperref[sec:functions:hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
 
@@ -2208,9 +2208,11 @@ Find the inverse of $\Id_A$
 \begin{enumerate}[(a)]
 \item \label{InverseIdentityExers-InvOfComp}
 Suppose $f \colon A \to B$ and $g \colon B \to C$ are bijections. Show that $(g \compose f)^{-1} = f^{-1} \compose g^{-1}$.
+\hyperref[sec:functions:hints]{(*Hint*)}
 \item \label{InverseIdentityExers-Comp=Id}
 Suppose $f \colon X \to Y$ and $g \colon Y \to X$. Show that $g$ is the inverse of~$f$ if and only if
 \[ f \compose g = \Id_Y \text{  and  }g \compose f = \Id_X .\]
+\hyperref[sec:functions:hints]{(*Hint*)}
 \item \label{InverseIdentityExers-InvOfInv}
 Suppose $f \colon X \to Y$ is a bijection. Show that the inverse of~$f^{-1}$ is~$f$. That is, $(f^{-1})^{-1} = f$.
 \end{enumerate}
