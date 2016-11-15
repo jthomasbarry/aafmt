@@ -48,7 +48,7 @@
 
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex} % Added to put spaces between paragraphs.
 
-\newcommand{\sectionvideohref}[2][6mm]{\href{https://www.youtube.com/watch?v=#2}{\raisebox{-0.5mm}[0pt]{\includegraphics[height=#1]{images/video_camera}}}}
+\newcommand{\sectionvideohref}[2][4mm]{\href{https://www.youtube.com/watch?v=#2}{\raisebox{0.1mm}[0pt]{\includegraphics[height=#1]{images/video_camera}}}}
 
 \input{macros}
 
@@ -125,7 +125,7 @@
   {\hspace\fill$\lozenge$\par\medskip}
 
 \newenvironment{warn}
-  {\bigskip \noindent{\bf Warning} \medskip}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Warning~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
   {\hspace\fill$\lozenge$\par\medskip}
 
 {\newcommand{\chapterletter}[1]{#1}}

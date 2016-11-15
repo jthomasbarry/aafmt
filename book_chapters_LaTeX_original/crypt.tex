@@ -27,8 +27,7 @@ To understand this chapter, the reader should be familiar with the material in  
 
 Thanks to Tom Judson for material used in this chapter.
 
-\section{Overview and basic terminology\quad
-\sectionvideohref{SJstRseE0V4&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=34}}
+\section{Overview and basic terminology}
 \label{sec:crypt:overview}
 The message to be sent is called the \term{
 plaintext}\index{Plaintext} message. The disguised message is called
@@ -85,8 +84,8 @@ which was only discovered in the last century and has had an enormous impact on 
 \begin{example}{ex1}
 One of the first and most famous private key cryptosystems was the
 shift code used by Julius Caesar\index{Caesar, Julius}.  We first represent the alphabet numerically by
-letting $\mbox{A}  = 0, \mbox{B}  = 1, \ldots, \mbox{Y} = 25, \mbox{Z} = 25$. This means for example that the word BAY would be represented numerically as:
-$$ 1,0,25.$$
+letting $\mbox{A}  = 0, \mbox{B}  = 1, \ldots, \mbox{Y} = 24, \mbox{Z} = 25$. This means for example that the word BAY would be represented numerically as:
+$$ 1,0,24.$$
 An example of a shift encoding function is
 $$
 f(p) =\bmod( p + 3,  26).
@@ -118,7 +117,6 @@ $$
 which is the numerical representation of ALGEBRA. Notice here that there is nothing special about either of
 the numbers 3 or 26. We could have used a larger alphabet or a
 different shift.
-\mbox{\hspace{1in}}
 \end{example}
 
 \begin{exercise}{}
@@ -251,11 +249,11 @@ For the numbers in (a) which have inverses mod 26, compute the inverses.
 Find the decoding function for the following  affine encoding functions (used on the English alphabet).
 \begin{enumerate}[(a)]
 \item
-$f(p)=3 \odot p + 14$
+$f(p)=(3 \odot p) \oplus 14$
 \item
-$f(p)=5 \odot p + 15$
+$f(p)=5 \odot p \oplus 15$
 \item
-$f(p)=7 \odot p + 23$
+$f(p)=7 \odot p \oplus 23$
 \end{enumerate}
 \end{exercise}
 
@@ -577,7 +575,8 @@ a third party, we must use a larger matrix than the one we used in
 Example~\ref{example:crypt:4}. 
   
 \subsection{Spreadsheet exercises\quad
-\sectionvideohref{6tgBvDI1Tiw&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=35}}
+\sectionvideohref{6tgBvDI1Tiw&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=35}\quad
+\sectionvideohref{SJstRseE0V4&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=34}}
 Spreadsheets can be used to automate many of the calculations that we have looked at in the previous sections.
 
 \begin{exercise}{EngShift}
@@ -908,33 +907,17 @@ Encrypt each of the following RSA messages $x$ so that $x$ is divided
 into blocks of integers of length 2;  that is, if $x = 142528$, encode 
 14, 25, and 28 separately.
  
-\vspace{3pt}        %two column exercise list
- \hspace{-7pt}
-\begin{minipage}[t]{4.6in}
-\noindent
-\begin{minipage}[t]{2.25in}
-\begin{itemize}
- 
- \item[{\bf (a)}]
+\begin{enumerate}[(a)]
+  \item
 $n = 3551, E = 629, x = 31$
- 
- \item[{\bf (c)}]
-$n = 120979, E = 13251,\\ x = 142371$
- 
-\end{itemize}
-\end{minipage} \hfill
-\begin{minipage}[t]{2.25in}
-\begin{itemize}
- 
- \item[{\bf (b)}]
+ \item
 $n = 2257, E = 47, x = 23$
+ \item
+$n = 120979, E = 13251, x = 142371$
+\item
+$n = 45629, E = 781, x = 231561$
  
- \item[{\bf (d)}]
-$n = 45629, E = 781,\\ x = 231561$
- 
-\end{itemize}
-\end{minipage}
-\end{minipage}
+\end{enumerate}
 \end{exercise}
  
 \begin{exercise}{}
