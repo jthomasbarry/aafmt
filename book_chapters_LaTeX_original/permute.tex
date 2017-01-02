@@ -43,7 +43,7 @@
 \noindent (Source: Walter Lippmann, Pulitzer prize-winning journalist)
 \end{quote}
 
-We mentioned at the beginning of  the ``Functions'' chapter that we would be interested in functions on finite sets. In this chapter we will investigate the gory details of bijections (functions that are one-to-one and onto) whose domain and range are the same finite set. Until now we have looked at functions as  mappings that take set elements to other set elements. In this chapter, we will begin to consider functions as elements in their own right. This new point of view will culminate in the realization that \emph{all} finite groups are in some sense groups of functions. You may not understand this yet, but don't worry--you will by the end of the chapter!
+We mentioned at the beginning of  the ``Functions'' chapter that we would be interested in functions on finite sets. In this chapter we will investigate the gory details of bijections (functions that are one-to-one and onto) whose domain and range are the same finite set. Until now we have looked at functions as a process, a machine; mappings that take set elements to other set elements. In this chapter, we will begin to consider functions as things, objects; as set elements \emph{in their own right}.This new point of view will culminate in the realization that \emph{all} finite groups are in some sense just groups of functions. You may not understand this yet, but don't worry--you will by the end of the chapter!
 \bigskip
 
 
@@ -135,7 +135,8 @@ What additional elements in $S_X$ are not symmetries of the rectangle?
 \end{enumerate}
 \end{exercise}
 
-actually, \emph{any} symmetry is a permutation, since a symmetry is by definition a bijection from a finite set of points to itself.  But as we've seen in Exercises~\ref{exercise:permute:isos_tri_sym}, ~\ref{exercise:permute:tri_sym}, ~\ref{exercise:permute:S_4} (as well as Exercise~\ref{exercise:symmetries:bijectnotsym} from the Symmetries chapter), \emph{not} all permutations (bijections) are symmetries.  We may conclude that for any set $X$ that represents a figure, the set of symmetries of  $X$ is a subset of $S_X$.
+actually, \emph{any} symmetry is a permutation, since a symmetry is by definition a bijection from a finite set of points to itself.  But as we've seen in Exercises~\ref{exercise:permute:isos_tri_sym}, ~\ref{exercise:permute:tri_sym}, ~\ref{exercise:permute:S_4} (as well as Exercise~\ref{exercise:symmetries:bijectnotsym} from the Symmetries chapter), \emph{not} all permutations (bijections) are symmetries.  Given a set $X$ that represents a figure, the set of symmetries from $X \to X$ is therefore a subset of $S_X$.
+
 
 
 \section{Permutation groups and other generalizations}
@@ -164,7 +165,7 @@ Finally, composition of functions is associative, which makes the group operatio
 Hence $S_X$ is a group under function composition.
 \end{proof}
 
-\subsection{The symmetric group of $n$ letters}
+\subsection{The symmetric group on $n$ numbers}
 
 We can label the vertices of a triangle as $A, B, C$ or $1, 2, 3$ or $\var{apple, pear, cherry}$ or whatever, without changing the triangle. No matter how we label the triangle, the symmetries of the triangle will be the "same" in some sense (although we write them down differently). 
 
@@ -172,14 +173,14 @@ Since symmetries are special cases of permutations, this motivates us to investi
 
 For starters, we'll look at a simple example. Let $X = \{A, B, C, D\}$ and $Y = \{1, 2, 3, 4\}$.  Suppose 
 
-\begin{center}
-$\mu = \begin{pmatrix} A & B & C & D\\ D & C & B & A \end{pmatrix}$, $\sigma = \begin{pmatrix} A & B & C & D\\ C & D & A & B \end{pmatrix}$ 
+\[ \mu = \begin{pmatrix} A & B & C & D\\ D & C & B & A \end{pmatrix}; \qquad \sigma = \begin{pmatrix} A & B & C & D\\ C & D & A & B \end{pmatrix}
+\]
 
-\medskip
 and 
 
-$\tau = \begin{pmatrix} 1 & 2 & 3 & 4\\ 4 & 3 & 2 & 1 \end{pmatrix}$, $\rho = \begin{pmatrix} 1 & 2 & 3 & 4\\ 3 & 4 & 1 & 2 \end{pmatrix}$ \\ 
-\end{center}
+\[
+\tau = \begin{pmatrix} 1 & 2 & 3 & 4\\ 4 & 3 & 2 & 1 \end{pmatrix}; \qquad \rho = \begin{pmatrix} 1 & 2 & 3 & 4\\ 3 & 4 & 1 & 2 \end{pmatrix} \\ 
+\]
 
 \noindent
 Is $\mu = \tau$?  Technically no,  because they their domain/codomains are different, yet we can clearly see that they are somehow equivalent.  But how do we express this equivalence?
@@ -205,7 +206,8 @@ Let's summarize our findings so far:
 The \emph{sets} $S_X$ and $S_Y$ are equivalent in the following sense: for each element of $S_X$ we can find an equivalent element of $S_Y$ by replacing $A, B, C, D$ with $1, 2, 3, 4$.  
 
 \item
-Further, as we saw in the exercises,  the composition of two elements in $S_X$ is equivalent to the composition of the two equivalent elements in $S_Y$.  So we can say that composition acts the ``same'' on both sets.
+Further, in the exercises we saw that  the composition of two particular elements in $S_X$ is equivalent to the composition of the two equivalent elements in $S_Y$. 
+Although we've only shown this for two particular examples, it makes sense that the same thing would work no matter which two elements in $S_X$ that we choose (after all, all we're doing is replacing letters with numbers--and we're always replacing the same letter with the same number).   So we can say that composition acts the ``same'' on both sets.
 \end{itemize}
 
 
@@ -216,17 +218,17 @@ The \term{order of a set} $Y$ is the number of elements of $Y$, and is written a
 \footnote{ You're probably used to seeing $|\ldots|$ as representing absolute value. Of course a set is not a number, so it has no absolute value. We use $|Y|$ to denote order because it's a measure of the \emph{size} of set $Y$, just as the absolute value of a number is the ``size'' of the number.}
 \end{notation}
 
-Now let $X = \{1,2,\ldots, n\}$, and  consider any set $Y$ with $|Y| = n$. We could do a similar ``face-lifting'' as above to show that  $S_X \equiv S_Y$.  So the group $S_X$ is equivalent to the permutations of \emph{any} set of $n$ elements.
+Now let $X = \{1,2,\ldots, n\}$, and  consider any set $Y$ with $|Y| = n$. We could do a similar ``face-lifting'' as above to show that  $S_X$ is equivalent to $S_Y$.  So the group $S_X$ is equivalent to the permutations of \emph{any} set of $n$ elements.
 
-\begin{notation}{sym_group_n_letters}
-Let $X=\{ 1, 2, \ldots, n\}$. Instead of writing $S_X$, we write $S_n$\label{symmetricgroup}.  $S_n$ is called the \term{symmetric group}\index{Group!symmetric} on $n$ letters.
+\begin{notation}{sym_group_n_numbers}
+Let $X=\{ 1, 2, \ldots, n\}$. Instead of writing $S_X$, we write $S_n$\label{symmetricgroup}.  $S_n$ is called the \term{symmetric group}\index{Group!symmetric} on $n$ numbers.
 \end{notation}
 
 \subsection{Isomorphic groups}
 
-At the end of the Symmetries chapter, we compared the groups $\mathbb{Z}_n$, the $n$ rotations of a regular n-gon, and the $n^{th}$ roots of unity.  We saw that, as long as you made a suitable pairing (bijection) between the elements of any two of these sets, then their Cayley tables were exactly the same. 
+In Section~\ref{sec:miracle} we compared the groups $\mathbb{Z}_n$, the $n$ rotations of a regular n-gon, and the $n^{th}$ roots of unity.  We saw that, as long as you made a suitable pairing (bijection) between the elements of any two of these sets, then their Cayley tables were exactly the same. 
 
-We've just seen the very same thing for $S_n$. The above statement that ``the composition of two elements in $S_X$ is equivalent to the composition of the two equivalent elements in $S_Y$''  is the same thing as saying that  the Cayley table entries are equivalent between the two groups.
+We've just seen the very same thing for $S_n$. If  $|X| = |Y| = n$ and we replace each of the elements in $X$ with a corresponding element in $Y$, we concluded that the composition of \emph{any} two elements in $S_X$ is equivalent to the composition of the two equivalent elements in $S_Y$.  That's exactly the same thing as saying that  the Cayley table entries are equivalent between the two groups.
 
 This "equivalence of groups" is one of the premier concepts in abstract algebra, almost as important as the concept of a group  itself.  When two groups are equivalent like this, we say that they are \term{isomorphic groups}; we also say that the bijection that causes the groups to be equivalent is an \term{isomorphism}\index{Isomorphic groups}\index{Group!isomorphic}\index{Isomorphism!definition of}.  We will see in a later chapter how to show in general that two groups are isomorphic; but for now, forming the groups' Cayley Tables and seeing if you can match elements to make the tables the same is a very good strategy.
 
@@ -373,7 +375,7 @@ In the Symmetries chapter, we introduced tableau notation to deal with bijection
 \begin{example}{permute_to_cycle_1}
 Suppose $\rho \in S_6$ and $\rho = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 \\ 2 & 3 & 4 & 5 & 6 & 1 \end{pmatrix}$.  Then
 \[
-\rho(1) = 2, \rho(2) = 3, \rho(3) = 4, \rho(4) = 5, \rho(5) = 6, \mbox{ and } \rho(6) = 1
+\rho(1) = 2,\  \rho(2) = 3,\  \rho(3) = 4,\  \rho(4) = 5,\  \rho(5) = 6,\  \text{ and } \rho(6) = 1.
 \]
 A shorter way to represent this is
 \[
@@ -390,7 +392,7 @@ We can visualize this as a ``wheel'', as shown in Figure~\ref{fig:cycle}
 \end{center}
 \end{figure}
 
-We shall write this trail of inputs and outputs as $(123456)$;\index{Cycle notation} and rather than ``wheel'', we call this a \term{cycle}\index{Permutation!cycle}  Reading the cycle from left to right indicates that 1 goes to 2, 2 goes to 3, $\ldots$, and the 6 at the end goes back to 1.  %Note that according to this interpretation $(234561)$, or $(345612)$ are alternative ways of writing the same permutation..
+We shall write this trail of inputs and outputs as $(123456)$;\index{Cycle notation} and rather than ``wheel'', we call this a \term{cycle}\index{Permutation!cycle}.  Reading the cycle from left to right indicates that 1 goes to 2, 2 goes to 3, $\ldots$, and the 6 at the end goes back to 1.  %Note that according to this interpretation $(234561)$, or $(345612)$ are alternative ways of writing the same permutation..
 
 \begin{exercise}{equal_cycles2}
 Show that $(123456) = (345612)$ by drawing a figure similar to Figure~\ref{fig:cycle}  for each cycle.
@@ -400,9 +402,9 @@ Show that $(123456) = (345612)$ by drawing a figure similar to Figure~\ref{fig:c
 Show that $(123456)$  and $(234561)$ both have the same tableau (so they are in fact the same permutation).
 \end{exercise}
 
-From the previous two exercises, it is clear that there are many ways to write the same cycle: we can begin with any element we ant, and work our way around until we get back to the same element. To avoid possible confusion, from now on we will follow the convention of starting the cycle with the ``smallest"  or ``first" element of the domain.
+From the previous two exercises, it is clear that there are many ways to write the same cycle: we can begin with any element we want, and work our way around until we get back to the same element. To avoid possible confusion, from now on we will follow the convention of starting the cycle with the ``smallest"  or ``first" element of the domain.
 
-For this particular permutation, since our cycle contains all the inputs in the domain of $\rho$ it represents the whole function, because it gives us the outputs for every input.  Therefore in cycle notation, 
+For this particular permutation, since our cycle contains all the inputs in the domain of $\rho$, it represents the whole function (because it gives us the outputs for every input).  Therefore in cycle notation, 
 \[
 \rho = (123456) \]
 \end{example}
@@ -437,7 +439,7 @@ Compare your answer to (b) with Figure~\ref{fig:cycle} of $\rho = (123456)$.  Ex
 \begin{defn} \label{cycle_length}
 The \term{length} of a cycle is how many elements the cycle contains; i.e. how many elements are in the parentheses\index{Cycle!length of}.  Formally, 
 \begin{center}
-if $(a_1, a_2, \ldots, a_n)$ is a cycle, then the length of $(a_1, a_2, \ldots, a_n) = n$.
+if $(a_1, a_2, \ldots, a_n)$ is a cycle, then the length of $(a_1, a_2, \ldots, a_n)$ is $n$.
 \end{center}
 \end{defn}
 For example, the permutation $\rho$ in Example~\ref{example:permute:permute_to_cycle_1} above is represented by a cycle of length six.
@@ -495,7 +497,7 @@ $\sigma = (1342)$
 \end{enumerate}
 \end{exercise}
 \noindent
-A final question that may come to mind is,  Do all permutation correspond to some cycle?  Certainly, as we've seen, all cycles correspond to some permutation in $S_n$.  However, can all permutations in $S_n$ be represented as a cycle?  We will take the next several parts of this section to explore this question. 
+A final question that may come to mind is:  do all permutations correspond to some cycle?  Certainly, as we've seen, all cycles correspond to some permutation in $S_n$.  However, can all permutations in $S_n$ be represented as a cycle?  We will take the next several parts of this section to explore this question. 
 
 \subsection{Composition (a.k.a. product) of cycles}
 
@@ -503,7 +505,7 @@ Since cycles represent permutations, they can be composed together.  If we chang
 
 \begin{notation}{}
 Given permutations $\sigma$ and $\tau$, instead of writing $\sigma \compose \tau$ we write the shorthand notation: $\sigma \tau$. Furthermore, instead of calling this the composition of $\sigma$ and $\tau$, we refer to it as the \term{product} of $\sigma$ and $\tau$.
-\footnote{Once again we see mathematicians'  annoying habit of  reusing familiar terms to mean something new  in a different contexts. In this case,  the ``product'' of permutations has nothing at all to do with multiplication.}
+\footnote{Once again we see mathematicians'  annoying habit of  reusing familiar terms to mean something new  in a different contexts. In this case,  the ``product'' of permutations means something quite different from ordinary multiplication.}
 \end{notation}
 
 \begin{example}{cycle_comp_1}
@@ -614,11 +616,11 @@ For example, the  cycles $(135)$ and $(27 )$ are disjoint, whereas the cycles
 $(135)$ and $(347 )$ are not.  
 
 \begin{example}{cycles_disjoint_comp}
-Given $\sigma = (135)$, $\tau = (27)$, and $\sigma , \tau \in S_7$. Let us compute $\sigma \tau$. 
-We may  do this using the following diagram:
-\[ \text{home}~\leftarrow~\underbrace{\sigma}_{(1 3 5)} \leftarrow \underbrace{\tau}_{(27)} ~\leftarrow~\text{home} \]
-Take each number in $\{1,2,3,4,5,6,7\}$, start from ``home'' on the right, and pass through the two ``coatrooms''  
-$\tau$ and $\sigma$ one by one.  If the number agrees with one of the numbers in the first ``coatroom'', then the number ``changes its coat'' and turns into the next number in the list.  Then, it passes to the next ``coatroom'' where it does the same thing. Once it reaches ``home'' on the left, we have the result of $\sigma \tau$ acting on the original number.
+Given $\sigma = (135)$, $\tau = (27)$, $\sigma , \tau \in S_7$; let us compute $\sigma \tau$. 
+%We may  do this using the following diagram:
+%\[ \text{home}~\leftarrow~\underbrace{\sigma}_{(1 3 5)} \leftarrow \underbrace{\tau}_{(27)} ~\leftarrow~\text{home} \]
+%Take each number in $\{1,2,3,4,5,6,7\}$, start from ``home'' on the right, and pass through the two ``coatrooms''  
+%$\tau$ and $\sigma$ one by one.  If the number agrees with one of the numbers in the first ``coatroom'', then the number ``changes its coat'' and turns into the next number in the list.  Then, it passes to the next ``coatroom'' where it does the same thing. Once it reaches ``home'' on the left, we have the result of $\sigma \tau$ acting on the original number.
 %
 %
 %\begin{figure}[ht]
@@ -649,10 +651,10 @@ $\tau$ and $\sigma$ one by one.  If the number agrees with one of the numbers in
 %\noindent
 %So we have another cycle, $(27)$.  Finally, %both $\tau$ and $\sigma$ keep 4 and 6 put; therefore $4 \to 4$ and $6 \to 6$.
 
-Notice that every number affected by $\tau$ is unaffected by $\sigma$; and vice versa. Since the two cycles always  remain separate, it is appropriate to represent $\sigma \tau$ as $(135)(27)$, because the cycles don't reduce any farther.
+Notice right away that every number affected by $\tau$ is unaffected by $\sigma$; and vice versa. Since the two cycles always  remain separate, it is appropriate to represent $\sigma \tau$ as $(135)(27)$, because the cycles don't reduce any farther.
 \end{example}
 
-This example also illustrates another point.  Since $S_7$ is closed under function composition, it follows that $\sigma \tau$ must be a permutation in $S_7$.
+Now since $S_7$ is closed under function composition, it follows that $\sigma \tau = (135)(27)$ must be a permutation in $S_7$.
 
 \begin{exercise}{}
 Write the permutation $\sigma \tau$ from Example~\ref{example:permute:cycles_disjoint_comp} in tableau form.
@@ -702,36 +704,36 @@ Write the following permutations in cycle notation.
 \begin{enumerate}[(a)]
  
 \item
-\[ \rho =
+$ \rho =
 \begin{pmatrix}
 1 & 2 & 3 & 4 & 5 & 6  \\
 2 & 1 & 5 & 6 & 3 & 4 
 \end{pmatrix}
-\]
+$
 
 \item
-\[ \sigma =
+$ \sigma =
 \begin{pmatrix}
 1 & 2 & 3 & 4 & 5 & 6\\
 2 & 5 & 6 & 4 & 1 & 3
 \end{pmatrix}
-\]
+$
 
 \item
-\[ \omega =
+$ \omega =
 \begin{pmatrix}
 1 & 2 & 3 & 4 & 5 & 6 \\
 4 & 5 & 1 & 6 & 2 & 3
 \end{pmatrix}
-\]
+$
 
 \item
-\[ \tau =
+$ \tau =
 \begin{pmatrix}
 1 & 2 & 3 & 4 & 5 & 6 \\
 5 & 3 & 4 & 1 & 2 & 6
 \end{pmatrix}
-\]
+$
 
 \end{enumerate}
 \end{multicols}
@@ -846,15 +848,15 @@ $(14359)(28)(67)$
 
 
 \subsection{Products of permutations using cycle notation}
-Finally, now that we know how to deal with permutation compositions that simplify to disjoint cycles, we can now compose any set of permutations we want.  Let us begin with a relatively small example.
+Finally, now that we know how to deal with permutation compositions that simplify to disjoint cycles, we can now compose any set of permutations we want.  We will start with a couple examples.
 
 \begin{example}{cycle_comp_3}
 Given the permutations $\mu = (257)(134)$ and $\rho = (265)(137)$ in $S_7$, write $\mu \rho$ in cycle notation.
 
-This is actually not that much different from what we've done already. Using our ``coatroom'' representation, we have:
+%This is actually not that much different from what we've done already. Using our ``coatroom'' representation, we have:
 
-\[ \text{home}~\leftarrow~\underbrace{(257)\leftarrow (134)}_{\mu} \leftarrow \underbrace{(265)\leftarrow (137)}_{\rho} ~\leftarrow~\text{home} \]
-We have written arrows between the cycles in $\mu$ and $\rho$ to emphasize that in this case we essentially have four coatrooms, one after the other. So starting from the right with 1, we have
+%\[ \text{home}~\leftarrow~\underbrace{(257)\leftarrow (134)}_{\mu} \leftarrow \underbrace{(265)\leftarrow (137)}_{\rho} ~\leftarrow~\text{home} \]
+%We have written arrows between the cycles in $\mu$ and $\rho$ to emphasize that in this case we essentially have four coatrooms, one after the other. So starting from the right with 1, we have
 %
 %
 %In Figure~\ref{fig:cycle_comp3}, we have represented $\mu \rho$ by placing the cycle representations side-by-side.   . Starting from the right:
@@ -932,7 +934,7 @@ Given the following permutations in $S_8$,
 \[  \sigma = (1257)(34) , \tau = (265)(137), \text { and } \rho = (135)(246)(78) \]
 
 \noindent
-write the following in cycle notation:
+find the products:
 \begin{enumerate}[(a)]
 \begin{multicols}{2}
 \item
@@ -950,7 +952,7 @@ $\sigma \rho$
 
 
 \begin{exercise}{cycle_comp_2}
-Compute each of the following.
+Compute each of the following. Note that e.g. $(123)^2$ means the same as $(123)(123)$.
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
  \item
@@ -960,11 +962,11 @@ $(12)(1253)$
 \item
 $(143)(23)(24)$
 \item
-$(1423)(34)(56)(1324)$
+$(1423)(34)(56)(132)$
 \item
-$(1254)(13)(25)$
-\item
-$(1254) (13)(25)^2$
+$(1254)(13)(25)^2$
+%\item
+%$(1254) (13)(25)^2$
 \item
 $(1254)^2 (123)(45)$
 \end{enumerate}
@@ -1002,7 +1004,7 @@ $(1254)^2 (123)(45)$
 
 \subsection{Cycle structure of permutations}
 
-Over the last several subsections, we've seen permutations represented as no cycles (${\var id}$), one cycle, or the product of any number of disjoint cycles.  This worked because both a single cycle and a product of disjoint cycles can't be reduced to a simpler form in cycle notation.  Are there any other possibilities?   Are there permutations that can't be represented as either a single cycle or a product of disjoint cycles?  The answer to this compelling question is given in the following proposition. 
+Over the last several subsections, we've seen permutations represented as no cycles (${\var id}$), a single cycle, or the product of any number of disjoint cycles.  This worked because both a single cycle and a product of disjoint cycles can't be reduced to a simpler form in cycle notation.  Are there any other possibilities?   Are there permutations that can't be represented as either a single cycle or a product of disjoint cycles?  The answer to this compelling question is given in the following proposition. 
 
 %%% I don't think it's necessary to include the following
 % For instance, suppose there was a permutation that couldn't be represented by either a one-cycle or $n$ disjoint cycles.  Then it would have to be represented by more than one cycle, say $k$ cycles, in which $m$ (at least two) of the cycles are disjoint.  But if this was the case, then by our work so far, we know we could take the $m$ disjoint cycles and simplify them, two at a time, to either one-cycle or say $p$ disjoint cycles.  Either way, our permutation would then be represented by either a one-cycle or $(k - m + p)$ disjoint cycles.  This then is an informal, not fully generalized explanation (short of a proof) for the following fact:
@@ -1017,7 +1019,7 @@ Admittedly, it looks intimidating. However, we include it for your ``cultural en
 
 \medskip
 \noindent
-Also, recall  that the notation $\sigma = (a_1, a_2, \ldots, a_n)$ means:
+Also, recall  that the notation $\sigma = (a_1 \, a_2 \, \ldots \, a_n)$ means:
 \begin{align*}
 \sigma( a_1 )  = a_2  & &
 \sigma( a_2 )  = a_3 & 
@@ -1257,7 +1259,7 @@ The proof for (A) follows the same lines as our investigations in Exercise~\ref{
 \begin{exercise}{length_equals_order} Prove part (A) by filling in the blanks.
 
 \noindent
-Let $\sigma \in S_X$ be an arbitrary cycle of length $k$.  Then $\sigma$ can be written as $ (a_1, a_2, \ldots a_k)$, for some set of elements $a_1, a_2, \ldots a_k$ in $X$.  In order to show that $\sigma^k = {\var id} $, it is sufficient to show that 
+Let $\sigma \in S_X$ be an arbitrary cycle of length $k$.  Then $\sigma$ can be written as $ (a_1 \, a_2 \, \ldots \, a_k)$, for some set of elements $a_1, a_2, \ldots a_k$ in $X$.  In order to show that $\sigma^k = {\var id} $, it is sufficient to show that 
 $\sigma^k(x) = \underline{~<1>~}  \forall x \in X$. 
 Let $A$ be the set  $\{a_1, a_2, \ldots a_k\}$.  Now for any $x \in X$, there are two possibilities:  
 \begin{enumerate}[(i)]
@@ -1274,7 +1276,7 @@ We'll deal with these two cases separately (as we did  in Exercise~\ref{exercise
 \item
 In this case, $\sigma(x) = \underline{~<2>~} $  It follows that $\sigma^2(x) = \sigma( \sigma(x)) = \sigma( \underline{~<3>~}) = \underline{~<4>~}$. We can use the same argument to show that $\sigma^3(x) = \underline{~<5>~}$, and that $\sigma^k(x) = \underline{~<6>~}$ for any natural number $\underline{~<7>~}$.
 \item
-In this case, then $x = a_j$ for some integer $j, 1 \le j \le \underline{~<8>~}$.  It follows from the definition of cycle that $\sigma(x) = \sigma(a_j) = \bmod(a_{j+1},k)$. Furthermore, $\sigma^2(x) = \sigma(a_{j+1}) = \underline{~<9>~}$. Similarly it follows that $\sigma^{k}(x) = a_{\bmod(j+ \underline{~<10>~},k)} = a_{\underline{~<11>~}} = x$.
+In this case, then $x = a_j$ for some integer $j, 1 \le j \le \underline{~<8>~}$.  It follows from the definition of cycle that $\sigma(x) = \sigma(a_j) = a_{\bmod(j+1,k)}$. Furthermore, $\sigma^2(x) = \sigma(a_{j+1}) = \underline{~<9>~}$. Similarly it follows that $\sigma^{k}(x) = a_{\bmod(j+ \underline{~<10>~},k)} = a_{\underline{~<11>~}} = x$.
 \end{enumerate}
 
 \noindent
@@ -1285,7 +1287,7 @@ Cases (i) and (ii) establish that  $\forall x \in X, \underline{~<12>~} = x$.  I
 \noindent
 The proof of (B) is also structured as an exercise.
 
-\begin{exercise}{length_equals_order2}. In this exercise we use the same notation as part (A), that is: $\sigma \in S_X$ has length $k$ and is represented as: $\sigma = (a_1, a_2, \ldots a_k)$. 
+\begin{exercise}{length_equals_order2}. In this exercise we use the same notation as part (A), that is: $\sigma \in S_X$ has length $k$ and is represented as: $\sigma = (a_1 \, a_2 \, \ldots \, a_k)$. 
 \begin{enumerate}[(a)]
 \item
 What is $\sigma(a_1)$? What is $\sigma^2(a_1)$? What is $\sigma^3(a_1)$? What is $\sigma^{k-1}(a_1)$?
@@ -1381,7 +1383,7 @@ Associativity and commutativity are powerful tools for rearranging products of d
 \item
 Let $\sigma$ and $\tau$ be \emph{any} disjoint cycles. By following the format of Example~\ref{example:permute:disjoint_squared}, show that $(\sigma \tau)^2 = \sigma^2 \tau^2$ (write out each step, and cite the property used).
 \item
-If $\sigma$ and $\tau$ are disjoint cycles and $k$ is a natural number, what may you conclude about $(\sigma \tau)^k$? (You don't need to give a proof).
+If $\sigma$ and $\tau$ are disjoint cycles and $k$ is a natural number, what may you conclude about $(\sigma \tau)^k$ in terms of powers of $\sigma$ and $\tau$? (You don't need to give a proof).
 \end{enumerate}
 \end{exercise}
 
@@ -1391,11 +1393,7 @@ If $\sigma$ and $\tau$ are disjoint cycles and $k$ is a natural number, what may
 % \end{example}
 
 %%Work in progress
-\begin{figure}[htb]
-	   \center{\includegraphics[width=3.5in]
-	         {images/wheels1.png}}
-	  \caption{\label{fig:wheels:2} How many times does the small gear(at left)  need to turn to return all gears to their original position? (Each turn rotates all  gears clockwise by 1 position.)}
-\end{figure}
+
 %Need text and example
 \begin{exercise}{disjoint_order_1}
 Suppose then $\tau = (1 2 3)( 4 5)$. Compute each of the following
@@ -1418,9 +1416,19 @@ $\tau^7$
 \end{exercise}
 
 \noindent
-Notice what happened to the disjoint cycles in the previous exercise.  For instance $|(1 2 3)| = 3$, and in parts (a)-(e) of the exercise you had the repeating pattern $\{(1 3 2), {\var id}, (1 2 3), (1 3 2), {\var id}, \ldots\}$.  Similarly, the 2-cycle $(4 5)$ yielded the repeating pattern  $\{{\var id}, (4 5), {\var id}, (4 5) \ldots \}$.  
+Notice what happened to the disjoint cycles in the previous exercise.  For instance $|(1 2 3)| = 3$, and in parts (a)-(f) of the exercise you had the repeating pattern $\{(1 3 2), {\var id}, (1 2 3), (1 3 2), {\var id}, \ldots\}$.  Similarly, the 2-cycle $(4 5)$ yielded the repeating pattern  $\{{\var id}, (4 5), {\var id}, (4 5) \ldots \}$.  
 
-In $\tau^3, \tau^6, \tau^9, \ldots$  the $(1 2 3)^k$ part of $\tau^k$ becomes ${\var id} $,while in  $\tau^2, \tau^4, \tau^6, \ldots$ the $(4 5)^k$ part  becomes ${\var id} $.  In order for $\tau^k = {\var id} $, we must have both $(1 2 3)^k = {\var id} $ and $(4 5)^k = {\var id} $, which first happens when $k = 6$. It is no accident that $|(1 2 3)|$ and $|(4 5)|$ both divide 6. In fact,  we can prove  the following proposition.
+In $\tau^3, \tau^6, \tau^9, \ldots$  the $(1 2 3)^k$ part of $\tau^k$ becomes ${\var id} $,while in  $\tau^2, \tau^4, \tau^6, \ldots$ the $(4 5)^k$ part  becomes ${\var id} $.  In order for $\tau^k = {\var id} $, we must have both $(1 2 3)^k = {\var id} $ and $(4 5)^k = {\var id} $, which first happens when $k = 6$. Which is the least common multiple of 2 and 3.  Which makes sense.  To visualize this idea, think about the question posed in the following figure:
+
+\begin{figure}[htb]
+	   \center{\includegraphics[width=3.5in]
+	         {images/wheels1.png}}
+	  \caption{\label{fig:wheels:2} How many times does the small gear (at left) need to turn to return all gears to their original position? (Each turn rotates all  gears clockwise by 1 position.)}
+\end{figure}
+
+Disjoint cycles are like gears, so they should first align back at ``1", or $id$, when they've been ``turned" a number of times that is precisely the least common multiple of the number of teeth on the gears.  The order of a permutation of disjoint cycles should just be the least common multiple of the orders of it's respective cycles.  
+
+In fact,  we can prove it.  We will start with two disjoint cycles:
 
 \begin{prop}{order_of_2disjoint_cycles}
 If $\sigma$ and $\tau$ are disjoint cycles, then 
@@ -1721,13 +1729,10 @@ $( 7 4 2 )^{-7} ( 2 8 6)^{-13}$
 %(3 5) (1 6) (1 3) (1 6) (1 3) (3 5) (5 6).
 %\]
 
-<<<<<<< HEAD
-\section{``Switchyard" and generators of the permutation group \sectionvideohref{IvNQQuG2ngY&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=25}}
-=======
 \section{``Switchyard" and generators of the permutation group\quad
 \sectionvideohref{CriXivlnEfA&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=23}}
->>>>>>> 0e6e5be31e669c5083219595050d0ae8fa7445bb
-Switchyards are used by railroads to rearrange the order of train cars in a train (see Figure~\ref{fig:grandview}. In this section we will study a ``switchyard'' of sorts. The design of our mathematical ``switchyard'' is not realistic, but the example will help us understand some important fundamental properties of permutations.
+
+Switchyards are used by railroads to rearrange the order of train cars in a train (see Figure~\ref{fig:grandview}). In this section we will study a ``switchyard'' of sorts. The design of our mathematical ``switchyard'' is not realistic, but the example will help us understand some important fundamental properties of permutations.
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=4in]{images/GrandviewYard.jpg}
@@ -1757,11 +1762,11 @@ These two types of motions can be represented as permutations. In tableau notati
 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 1
  \end{array} \right)\] 
-In cycle notation,  the same permutation would be $(1, 2, 3, 4, \ldots, 12)$, where we have put commas between cycle entries to distinguish the number 12 from consecutive 1 and 2.  We will denote this permutation by $r$. On the other hand, if cars 1 and 2 are switched, then this corresponds to the permutation $(1 2)$. We will denote this permutation by $t$.  In summary:
-\[ r = (1,2,\ldots,12);\qquad  t = (1, 2).\]
+In cycle notation,  the same permutation would be $(1 \; 2 \; 3 \; 4 \; \ldots \; 12)$, where we have put commas between cycle entries to distinguish the number 12 from consecutive 1 and 2.  We will denote this permutation by $r$. On the other hand, if cars 1 and 2 are switched, then this corresponds to the permutation $(1 2)$. We will denote this permutation by $t$.  In summary:
+\[ r = (1 \; 2 \; \ldots \; 12);\qquad  t = (1 \, 2).\]
 Let's look at some other motions of the train. Suppose for example we shift the train counterclockwise by two positions. This corresponds to performing the permutation $r$ twice in succession, which is $r \compose r$ or $r^2$.   If we think about the process of composition, what's going on is the first $r$ moves car \#1 (which occupies slot \#1) to position \#2; while the second $r$ moves whatever's in slot 2 (which happens to be car \#1) to slot 3. The resulting composition can be interpreted as showing where each of the cars end up after both moves.  The same thing will be true  if we compose any number of permutations. 
 
-It follows that all rearrangements of the cars that can be accomplished by the switchyard may be obtained as compositions of the permutations $r$ and $t$. So what rearrangements are possible? I'm glad you asked that question! The following exercises are designed to help you figure this out. But first, let's consider at one type of rearrangement that's particularly important. Suppose we want to switch two consecutive cars that are not 1 and 2: say for example we want to switch cars 5 and 6, and leave the rest of the cars unchanged.  Can we do this? 
+It follows that all rearrangements of the cars that can be accomplished by the switchyard may be obtained as compositions of the permutations $r$ and $t$. So what rearrangements are possible? I'm glad you asked that question! The following exercises are designed to help you figure this out. But first, let's consider one type of rearrangement that's particularly important. Suppose we want to switch two consecutive cars that are not 1 and 2: say for example we want to switch cars 5 and 6, and leave the rest of the cars unchanged.  Can we do this? 
 
 At this point, in order to follow along the reader may find it helpful to make his/her own model of a switchyard.\footnote{The models in this section (and photos) were made by Holly Webb.} Figure~\ref{fig:switchyardHome} shows a simple model made out of a jar lid with numbers stuck on with putty.
 \begin{figure}[ht]
@@ -1774,7 +1779,7 @@ We'll illustrate the motions necessary to switch cars  5 and 6  using the model.
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=2.5in]{images/switchyardCl4.jpg}
-\caption{First stage in switching cars 5 and 6: clockwise rotation ($r^{-4}$.}\label{fig:switchyardCl4}
+\caption{First stage in switching cars 5 and 6: clockwise rotation $r^{-4}$.}\label{fig:switchyardCl4}
 \end{center}
 \end{figure} 
 
@@ -1782,7 +1787,7 @@ Next, we exchange the two cars (which we can do since they're in the first two p
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=2.5in]{images/switchyard_t.jpg}
-\caption{Second stage in switching cars 5 and 6: switch ($t$).}\label{fig:switchyard_t}
+\caption{Second stage in switching cars 5 and 6: switch $t$.}\label{fig:switchyard_t}
 \end{center}
 \end{figure} 
 
@@ -1790,24 +1795,24 @@ Finally, all we need to do is rotate counterclockwise 4 slots ($r^4$), as shown 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=2.5in]{images/switchyardCCL4.jpg}
-\caption{Third stage in switching cars 5 and 6: counterclockwise rotation ($r^{4}$).}\label{fig:switchyardCCL4}
+\caption{Third stage in switching cars 5 and 6: counterclockwise rotation $r^{4}$.}\label{fig:switchyardCCL4}
 \end{center}
 \end{figure} 
 
 Altogether, these three steps give the composition $r^4 \compose t \compose r^{-4}$ (remember that permutations are applied right to left, just like functions).  Note also that in the case of a 12-slot switchyard, $r^{-4}$ could also be written $r^8$, since a clockwise rotation of 4 slots is the same as a counterclockwise rotation of 8 slots.  (If the switchyard has $n$ positions, the general rule is that $r^{-m} = r^{n-m}$, as we saw in the Symmetries chapter.)
 
 \begin{exercise}{switchyard1}
-First we'll look at a switchyard with 4 positions.  As above, $r$ = counterclockwise rotation by 1 position = $(1, 2, 3, 4)$; while $t$  exchanges two cars: $t = (1,2)$. 
+First we'll look at a switchyard with 4 positions.  As above, $r$ = counterclockwise rotation by 1 position = $(1 \, 2 \, 3 \, 4)$; while $t$  exchanges two cars: $t = (1 \, 2)$. 
 \begin{enumerate}[(a)]
 \item
-Write $(2,3)$, $(3,4)$, and $(4,1)$ as products of powers of $r$ and $t$. (Together with (12), these are all the  consecutive 2-cycles.)
+Write $(2 \, 3)$, $(3 \, 4)$, and $(4 \, 1)$ as products of powers of $r$ and $t$. (Together with $(1 \, 2)$, these are all the  consecutive 2-cycles.)
 \item
-Write $(1,2,3)$, $(2,3,4)$, $(3,4,1)$, $(4,1,2)$ as products of powers of $r$ and $t$. (These are all the counterclockwise consecutive  3-cycles.)
+Write $(1 \, 2 \, 3)$, $(2 \, 3 \, 4)$, $(3 \, 4 \, 1)$, $(4 \, 1 \, 2)$ as products of powers of $r$ and $t$. (These are all the counterclockwise consecutive  3-cycles.)
 \item
-Write $(1,3,2)$, $(2,4,3)$, $(3,1,4)$, $(4,2,1)$ as products of powers of $r$ and $t$. (These are all the clockwise consecutive 3-cycles.)
+Write $(1 \, 3 \, 2)$, $(2 \, 4 \, 3)$, $(3 \, 1 \, 4)$, $(4 \, 2 \, 1)$ as products of powers of $r$ and $t$. (These are all the clockwise consecutive 3-cycles.)
 \hyperref[sec:permute:hints]{(*Hint*)}
 \item
-Write $(1,3)$ as products of powers of $r$ and $t$.
+Write $(1 \, 3)$ as products of powers of $r$ and $t$.
 \item
 Show that any transposition can be written as products of powers of $r$ and $t$.
 \item
@@ -1816,28 +1821,28 @@ Show that any permutation  on 4 elements (that is, any permutation in $S_4$) can
 \end{exercise}
 
 \begin{exercise}{switchyard2}
-Now we'll look at a general switchyard with $n$ positions. In this case, rotation by 1 position is given by  $r= (1,2,\ldots,n)$. We  use the same transposition, $t = (1,2)$.
+Now we'll look at a general switchyard with $n$ positions. In this case, rotation by 1 position is given by  $r= (1 \; 2 \; \ldots \; n)$. We  use the same switch transposition, $t = (1 \; 2)$.
 \begin{enumerate}[(a)]
 \item
-Write the transposition $(k,k\oplus 1)$ as a product of powers of $r$ and $t$. Here $\oplus$ denotes addition mod $n$.
+Write the transposition $(k \enspace k\oplus 1)$ as a product of powers of $r$ and $t$. Here $\oplus$ denotes addition mod $n$.
 \item
-Show that any consecutive cycle $(m,m\oplus 1,\ldots,m \oplus  p )$ can be written as a product of powers of $r$ and $t$ by filling in the blanks:
+Show that any consecutive cycle $(m \enspace m\oplus 1 \enspace \ldots \enspace m \oplus  p )$ can be written as a product of powers of $r$ and $t$ by filling in the blanks:
 
 \begin{itemize}
 \item
-First, $(m,m \oplus 1,\ldots,m \oplus  p )$ can be written as a product of consecutive transpositions as \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+First, $(m \enspace m \oplus 1 \enspace \ldots \enspace m \oplus  p )$ can be written as a product of consecutive transpositions as \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
 \item
 Then, by replacing each transposition in this expression with its expression in terms of  products of \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, then we obtain an expression for \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ as a product of \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
 \end{itemize}
 
 \item
-Write the transposition $(1,k)$ as a product of a cycle of length $k$ and a cycle of length $k-1$. 
+Write the transposition $(1 \, k)$ as a product of a cycle of length $k$ and a cycle of length $k-1$. 
 \item
-Prove that any transposition $(1,k)$ can be written as a product of consecutive transpositions.
+Prove that any transposition $(1 \, k)$ can be written as a product of consecutive transpositions.
 \item
-Prove that any transposition $(1,k)$ can be written as a product of powers of $r$ and $t$.
+Prove that any transposition $(1 \, k)$ can be written as a product of powers of $r$ and $t$.
 \item
-Prove that any transposition $(p,q)$ can be written as a product of powers of $r$ and $t$.
+Prove that any transposition $(p \, q)$ can be written as a product of powers of $r$ and $t$.
 \item
 Prove that any permutation in $S_n$ can be obtained as a product of powers of $r$ and $t$.
 \end{enumerate}
@@ -1905,18 +1910,34 @@ Figure~\ref{fig:abC} shows how we may represent the multiplication $(ab)C$ of tr
 \end{center}
 \end{figure}
 
-Using this representation, we can now investigate what happens when we multiply a transposition $(ab)$ times an \emph{arbitrary} permutation $P$. We already know that $P$ can be thought of as a collection of disjoint cycles (plus stationary  elements, that are unaffected by $P$). There are several possibilities for how $a$ and $b$ can fit within the cycles of $P$, as shown in Figure~\ref{fig:abC2}.  Each possibility may or may not change the number of cycles, as well as the sum of the lengths of all cycles.   
+Using this representation, we can now investigate what happens when we multiply a transposition $(ab)$ times an \emph{arbitrary} permutation  $\sigma$. We already know that $\sigma$ can be thought of as a collection of disjoint cycles (plus stationary  elements, that are unaffected by $\sigma$). There are several possibilities for how $a$ and $b$ can fit within the cycles of $\sigma$, as shown in Figure~\ref{fig:abC2}.  Each possibility may or may not change the number of cycles, as well as the sum of the lengths of all cycles.   
 
-\begin{figure}[ht]
+\begin{figure}[!h]
 \begin{center}
 \includegraphics[width=5in]{images/abC2.png}
-\caption{Multiplication of $(ab)$ times a permutation $P$, showing the different ways that $a$ and $b$ can fit within the cycles (and stationary elements)  of $P$. Note that  case (a) corresponds to the situation described in Figure~\ref{fig:abC}.) }\label{fig:abC2}
+\caption{Multiplication of $(ab)$ times a permutation $\sigma$, showing the different ways that $a$ and $b$ can be situated within the cycles and stationary elements of  $\sigma$. Note that  case (a) corresponds to the situation described in Figure~\ref{fig:abC}. }\label{fig:abC2}
 \end{center}
 \end{figure}
 
+\begin{exercise}{}
+In each of the following situations, we are considering the multiplication of a transposition $(ab)$ with a permutation $\sigma$. Match each situations to the  correct case (a)--(f) in Figure~\ref{fig:abC2}. For example, $(ab)=12$ and $\sigma = (1234)(567)$ corresponds to case (d), because $a$ and $b$ are consecuitve elements in one of the cycles of $\sigma$.  
+\begin{enumerate}[(a)]
+\item
+$(ab) = (36), \sigma = (123)(456)(78)$
+\item
+$(ab) = (45), \sigma = (123)(678)$
+\item
+$(ab) = (34), \sigma = (123) (567)$
+\item
+$(ab) = (45), \sigma = (23)(45)(67)$
+\item
+$(ab) = (34), \sigma = (278)(13546)$
+\end{enumerate}
+\end{exercise}
+
 
 \begin{exercise}{}
-Draw a picture (similar to Figure~\ref{fig:abC}(c)) for each of the possibilities (a)--(f) in Figure~\ref{fig:abC2} showing the effect of the transposition $(ab)$ on the cycles.   Keep in mind that the transposition merely redirects the arrows into $a$ and $b$ so that they point into $b$ and $a$, respectively.
+Draw  a set of pictures (similar to Figure~\ref{fig:abC}(c)) for each of the possibilities (a)--(f) in Figure~\ref{fig:abC2} showing the effect of the transposition $(ab)$ on the cycles.   Keep in mind that the transposition merely redirects the arrows into $a$ and $b$ so that they point into $b$ and $a$, respectively.
 \end{exercise}
 
 \begin{exercise}{}
@@ -1925,12 +1946,12 @@ Using your results from the previous exercise, complete Table~\ref{transposition
 
 \begin{table}[!htb]
 \caption{Multiplication of permutation by transpositions}\label{transposition_table}
-\begin{tabular}{|p{1.9cm}|p{2.9cm}|p{2.9cm}|p{3.5cm}|}
+\begin{tabular}{|p{1.6cm}|p{2.7cm}|p{2.7cm}|p{3.5cm}|}
 \hline 
-\rule{0pt}{2.6ex} Diagram in Figure~\ref{fig:abC2}&  Change in number of cycles ($\Delta_{\text{cyc}}$)   & Change in sum of cycle lengths ($\Delta_{\text{sum}}$) & $(\Delta_{\text{cyc}}-\Delta_{\text{sum}}) (\bmod{2})$  \rule[-1.2ex]{0pt}{0pt} \tabularnewline
+\rule{0pt}{2.6ex} Diagram in Fig.~\ref{fig:abC2}&  Change in number of cycles   & Change in sum of cycle lengths & Is column 3 minus column 2 even or odd?  \rule[-1.2ex]{0pt}{0pt} \tabularnewline
 \hline
 \hline 
-\rule{0pt}{2.6ex} (a)  &  +1  & 0  & 1 \rule[-1.2ex]{0pt}{0pt} \tabularnewline
+\rule{0pt}{2.6ex} (a)  &  +1  & 0  & odd \rule[-1.2ex]{0pt}{0pt} \tabularnewline
 \hline 
 \rule{0pt}{2.6ex} (b)  &  \_\_\_\_\_ & \_\_\_\_\_ & \_\_\_\_\_ \rule[-1.2ex]{0pt}{0pt} \tabularnewline
 \hline 
@@ -1945,23 +1966,36 @@ Using your results from the previous exercise, complete Table~\ref{transposition
 \end{tabular}
 \end{table}
 
+If you did the previous exercise correctly, you will find that no matter where the transposition falls,  the entry in the last column   is always `odd'. Consider what this means. Suppose I have a permutation  $\sigma$ whose sum of cycle lengths minus number of cycles is equal to $N$. I then multiply $\sigma$ by a transposition to obtain another permutation $\tau$, whose sum of cycle lengths minus number of cycles is equal to $M$. The last column of Table~\ref{transposition_table}shows that it must be true that $M-N$ is \emph{always} odd. In other words, if $M$ is even then $N$ is odd: and vice versa. We may express this concisely using the following definition:
 
-If you did the previous exercise correctly, you will find that no matter where the transposition falls,  the column entry under ``$(\Delta_{\text{cyc}}-\Delta_{\text{sum}}) \bmod{2}$"  is always 1. This motivates the following definition:
 
-\begin{defn} for any permutation $P$, the number (sum of cycle lengths -- number of cycles) mod 2 is called the \term{parity} of $P$.\index{Permutation!parity} A permutation with parity 0 is called an \term{even permutation}, while a  permutation with parity 1 is called an \term{odd permutation}. \index{Permutation!odd and even}.  Often books will use the terms ``even parity'' and ``odd parity''  instead of parity 0 and 1, respectively.
-\end{defn}
+\begin{defn} for any permutation $\sigma$, the number 
+
+\begin{center}
+mod(sum of cycle lengths minus number of cycles,2)
+\end{center}
+
 \noindent
-Note that the disjoint sets of even and odd permutations of $n$ objects form a \emph{partition} of the set $S_n$. As we saw in the equivalence relations chapter, this means that we can define an equivalence relation such that all permutations with the same parity are equivalent.
+is called the \term{parity} of $\sigma$.\index{Permutation!parity} A permutation with parity 0 is called an \term{even permutation}, while a  permutation with parity 1 is called an \term{odd permutation}. \index{Permutation!odd and even}.  Often books will use the terms ``even parity'' and ``odd parity''  instead of parity 0 and 1, respectively.
+\end{defn}
 
-Using this new terminology  we may summarize our findings from Table~\ref{transposition_table} as follows. Every time I multiply a permutation by a transposition, I change the parity. So if I multiply together an even number of transpositions, the parity is 0; while if I multiply together an odd number of transpoitions, the parity is 1. 
+We may  summarize our argument so far as follows:
+
+\begin{prop}{multByTrans}
+Multiplication of permutations by transpositions changes their parity. In other words, given a permutation $\sigma$ and a transposition $(ab)$, then the parity of $(ab)\sigma$ is different from the parity of $\sigma$.
+\end{prop}
+
+\begin{exercise}
+How does the conclusion of Proposition~\ref{proposition:permute:multByTrans} change if the permutation $\sigma$ is multiplied on the \emph{right} by $(ab)$ instead of on the left?  \emph{Explain} your answer.
+\end{exercise}
 
 Now here's the punch line. We know that \emph{every} permutation can be written as a product of transpositions. 
 From what we have just shown, an odd permutation must be the product of an odd number of transpositions; while an even permutation must be the product of an even number of transpositions. It is \emph{impossible} to write an even permutation as the product of an odd number of transpositions; and vice versa. 
-We summarize our conclusions in the following theorem.
+We summarize our conclusions in the following proposition.
 
 \begin{prop}{even_and_odd}
-A permutation $P$ can be written as the product of an even number of transpositions if and only if $P$ is an even permutation. 
-Also,  $P$ can be written as the product of an odd number of transpositions if and only if $P$ is an odd permutation. 
+A permutation $\sigma$ can be written as the product of an even number of transpositions if and only if $\sigma$ is an even permutation. 
+Also, $\sigma$ can be written as the product of an odd number of transpositions if and only if $\sigma$ is an odd permutation. 
 \end{prop}
 
 
@@ -2144,7 +2178,7 @@ Prove that it is impossible to write the identity permutation as the product of 
 %\end{defn}
 
 \begin{exercise}{}
-Suppose $P$ is an $n$-cycle.  How can you tell  whether $P$ is an even or odd permutation?
+Suppose $\sigma$ is an $n$-cycle.  How can you tell  whether $\sigma$ is an even or odd permutation?
 \end{exercise}
 
 
@@ -2280,7 +2314,7 @@ Use the sets $A_n$ and $B_n$ to define an equivalence relation on $S_n$, and ver
 \hyperref[sec:permute:hints]{(*Hint*)}
 \end{exercise}
 
-We are particularly interested in the set $A_n$, because it has nice properties with respect to permutation product:
+We are particularly interested in the set $A_n$, because it has nice properties with respect to product of permutations:
 
 \begin{exercise}{A_nGroupProps}
 \begin{enumerate}[(a)]
@@ -2313,7 +2347,7 @@ The set $A_n$ is a group.
 
 \begin{defn} \label{Alternating_Group}
 The group $A_n$\label{alternatinggroup} of even permutations is called the \term{
-alternating group on $n$ letters}\index{Group!alternating}. 
+alternating group on $n$ numbers}\index{Group!alternating}. 
 \end{defn}
 
 \begin{exercise}{}

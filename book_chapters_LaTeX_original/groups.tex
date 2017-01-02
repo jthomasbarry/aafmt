@@ -15,7 +15,7 @@ You may have noticed that we have been voyaging deeper and deeper into unfamilia
 
 Please rest assured that these elaborations have a practical purpose\footnote{(that is, besides tormenting math students)}. We live in a complicated world, and complicated mathematical structures are needed to describe it well. However, underlying this confusing tangle of complicated structures are some deep commonalities. The purpose of abstraction is to identify and characterize these commonalities. In this way we can make connections between very different fields of mathematics, and gain a much more wholistic view of how things work together.
  
-One of the commonalities that we have been (more or less) subtly emphasizing in the previous chapters is the ubiquity of \emph{groups}, together with related notions such as isomorphisms and subgroups. Now that you've studies several specific groups (such as ${\mathbb C}, {\mathbb Z}_n, D_n, S_n, A_n$ and so on) our hope is that from these examples you've begun to get a feel for how groups work, and how one should think about groups in general. In this chapter, we will study groups \emph{in the abstract}: that is, we will describe properties that are common to \emph{all} groups, whether finite or infinite, abelian or non-abelian, and so on.
+One of the commonalities that we have been (more or less) subtly emphasizing in the previous chapters is the ubiquity of \emph{groups}, together with related notions such as isomorphisms and subgroups. Now that you've studies several specific groups (such as ${\mathbb C}, {\mathbb Z}_n, D_n, S_n, A_n$ and so on) our hope is that from these examples you've begun to get a feel for how groups work, and how one should think about groups in general. In this chapter, we will study groups \emph{in the abstract}: that is, we will describe properties that are common to \emph{all} groups, whether finite or infinite, commutative (abelian) or non-abelian, and so on.
 \medskip
 
 Thanks to Tom Judson for material used in this chapter.
@@ -111,7 +111,7 @@ order}\index{Group!infinite}.
 \end{defn} 
 
 The group ${\mathbb Z}_5$ is a finite group of order
-5, so $|{\mathbb Z}_5=5$; while the integers ${\mathbb Z}$ form an infinite group under addition, and
+5, so $|{\mathbb Z}|_5=5$; while the integers ${\mathbb Z}$ form an infinite group under addition, and
 we sometimes write $|{\mathbb Z}| = \infty$.
 
 \begin{defn} \label{trivial_group}
@@ -124,7 +124,7 @@ Prove that the trivial group is in fact a group according to Definition~\ref{gro
 
 \section{Examples}
 
-There are multitudes upon multitudes of groups besides those we've seen so far.  Some are modification of groups we are very familiar with.  
+There are multitudes upon multitudes of groups besides those we've seen so far.  Some are modifications of groups we are very familiar with.  
 
 \begin{example}{Rstar_group}
 The set ${\mathbb R} \setminus \{0 \}$ of non-zero real numbers is written as ${\mathbb R}^{\ast}$.  Let's prove that $({\mathbb R}^{\ast}, \cdot)$ is a group.
@@ -142,7 +142,7 @@ $ab \in {\mathbb R}$ and (ii) $ab \neq 0$:
 
 \medskip{}
 \noindent
-(ii):  Suppose $ab = 0$.  Then by basic arithmetic, we know either $a = 0$ or $b = 0$.  But $a, b \in {\mathbb R}^{\ast}$; i.e. $a, b \neq 0$.  So we have a contradiction.  Hence $ab \neq 0$.
+(ii):  Suppose $ab = 0$.  Then as we  noted in Section~\ref{OpsAndRels}, we know either $a = 0$ or $b = 0$.  But $a, b \in {\mathbb R}^{\ast}$; i.e. $a, b \neq 0$.  So we have a contradiction.  Hence $ab \neq 0$.
 
 \medskip{}
 \noindent
@@ -299,7 +299,7 @@ Show that if $G$ is a group, then for every row of the Cayley table for $G$ no t
 
 
 \begin{exercise}{Cayley_groups}
-For each of the following multiplication tables defined on the set $G = \{ a, b, c, d \}$ tell whether $(G, \circ)$ represents a group, and if so,  whether it is abelian.  Support your answer in each case.  Assume that the associative property holds in each case. \emph{Note} the identity element is not necessarily in the first row!
+For each of the following multiplication tables defined on the set $G = \{ a, b, c, d \}$ tell whether $(G, \circ)$ represents a group, and if so,  whether it is abelian.  Support your answer in each case.  Assume that the associative property holds in each case. \emph{Note} the identity is not always the first element listed!
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
 
@@ -807,7 +807,7 @@ Prove now the existence and uniqueness of the solution of $xa = b$ (similar to p
 \end{exercise} 
  
 The key method used in these proofs, the composition of both sides of the equation by $a^{-1}$, is something you've seen many times before.
-For instance in high school algebra, to solve the equation $5x = 6$ above, we teach our kids to divide each side by 5.  Remember that dividing by 5 is the same as multiplying by its reciprocal $1/5$.  And $1/5$ is the multiplicative inverse of 5.  So in fact we are composing each side of the equation by $5^{-1}$ in order to solve for $x$.
+For instance in high school algebra, to solve the equation $5x = 6$ above, we teach our kids to divide each side by 5.  Remember that dividing by 5 is the same as multiplying by its reciprocal $1/5$.  And $1/5$ is the multiplicative inverse of 5.  So in fact we are composing (multiplying) each side of the equation by $5^{-1}$ in order to solve for $x$.
 
 As in our example then, composing both sides of the equation by $a^{-1}$ is not only useful for the proofs, but in actually solving for $x$.  Therefore, no matter what crazy elements and strange binary operation make up our group, we can still solve for $x$ using the same algebra we learned in high school.  In other words, given a group $G$ and $a,b \in G$,  if $ax =b$, then $x = a^{-1}b$; if $xa =b$, then $x = ba^{-1}$; and so on.  Use this methodology in the following exercises.    
  
@@ -963,7 +963,7 @@ g^m g^n = \underbrace{g^{-1} \cdot g^{-1} \cdots g^{-1}}_{-(m+n) \; {\rm times}}
 \]
 In either of these subcases, the right-hand side agrees with the definition of $g^{m+n}$, so the equality is proved.
 
-Case (d) is just like (c), except we exchange the signs  on the$g$'s,  $m$'s and $n$'s on the right-hand sides. This completes the proof of part (1).
+Case (d) is just like (c), except we exchange the signs  on the $g$'s,  $m$'s and $n$'s on the right-hand sides. This completes the proof of part (1).
 
 
 \begin{exercise}{59}
@@ -1099,22 +1099,24 @@ This completes the proof that  $2{\mathbb Z}$ is a subgroup of ${\mathbb Z}$ und
 \end{example}
 
 \begin{exercise}{}
-Given any fixed integer $m$ Prove that  $m{\mathbb Z} = \{ \ldots, -2m, -m,  0, m, 2m, \ldots \}$, is a subgroup of ${\mathbb Z}$ under the operation of addition.
+Given any fixed integer $m$,  prove that
+ \[m{\mathbb Z} = \{ \ldots, -2m, -m,  0, m, 2m, \ldots \}\] 
+is a subgroup of ${\mathbb Z}$ under the operation of addition.
 \end{exercise}
 
 %%%%%%%% CPT I think the following discussion is too long. When you revise, you should shorten it (or eliminate it)
 %As mentioned above, this is a long proof, but if we look at how a subset can fail to be a subgroup, we can see how to shorten it.  To start, from our chapter already we can drum up some counterexamples.   In fact you might have been raising your hand saying, "ooh, ooh, aren't ${\mathbb R}^{\ast}$, ${\mathbb C}^{\ast}$, $GL_2({\mathbb R})$ and $U(n)$ subgroups?"  But in fact they aren't.  Why aren't they? 
-It's also good to look at some examples that are \emph{not} subgroups:
+%It's also good to look at some examples that are \emph{not} subgroups:
 
-\begin{exercise}{}
-\begin{enumerate}[(a)]
-\item
-Explain why $({\mathbb R}, \cdot)$ is \emph{not} a group.
-\item
-Explain why ${\mathbb C}$ is not a group under complex multiplication.
-\end{enumerate}
-\end{exercise}
-Notice that the operation used in the subgroup must be the \emph{same} operation that's used in the group it's contained in. For example,
+%\begin{exercise}{}
+%\begin{enumerate}[(a)]
+%\item
+%Explain why $({\mathbb R}, \cdot)$ is \emph{not} a group.
+%\item
+%Explain why ${\mathbb C}$ is not a group under complex multiplication.
+%\end{enumerate}
+%$\end{exercise}
+Notice that by definition, the operation used in the subgroup must be the \emph{same} operation that's used in the group it's contained in. For example,
 ${\mathbb R}^{\ast}$ is not a subgroup of ${\mathbb R}$, because  $({\mathbb R}^{\ast}, +)$ is not a group.
 
 
@@ -1402,8 +1404,7 @@ In Example ~\ref{example:groups:construct_Z} we also saw that $P$ was in fact $\
 
 Let us extend this concept to groups in general:
 
-\begin{defn} Given a group $G$ and an element $a \in G$, then \term{the set  generated by the element} $a$\index{Set!generated by group element} is denoted by $\langle a \rangle$, and is defined as the set obtained by repeated 
-operation on the identity $e$ by the group elements $a$ and $a^{-1}$.  Using the notation we introduced right before Proposition ~\ref{proposition:groups:exponent_laws}, we can write this as
+\begin{defn} Given a group $G$ and an element $a \in G$, then \term{the set  generated by the element} $a$\index{Set!generated by group element} is denoted by $\langle a \rangle$, and is defined as the set obtained by repeated multiplication of the identity $e$ by the group elements $a$ and $a^{-1}$.  Using the notation we introduced right before Proposition ~\ref{proposition:groups:exponent_laws}, we can write this as
 \[ \langle a \rangle = \{ \ldots, a^{-3}, a^{-2}, a^{-1}, e, a, a^2, a^3, \ldots \} \]
 \noindent
 or
@@ -1482,7 +1483,7 @@ So $\langle 2 \rangle = \{ 2^n \pmod{9} : n \in \mathbb Z \} = U(9)$
 \end{example}
 
 \begin{exercise}{U9_construct}
-Find any other generators of $U(9)$ if they exist (say so if none others exist).
+Find any other generators of $U(9)$ if they exist (say so if no others exist).
 \end{exercise}
 
 \subsection{Cyclic subgroups}\label{CyclicSubgrups}
@@ -1680,16 +1681,16 @@ Every subgroup of a cyclic group is cyclic.
  
  
 \begin{proof}
-The main tools used in this proof are the division algorithm and the
-Principle of Well-Ordering. Let $G$ be a cyclic group generated by $a$
+The main tools used in this proof are the division algorithm, which we mentioned in Remark~\ref{DivAlg},  and the
+Principle of Well-Ordering, which we mentioned in Section~\ref{subsec:orderprop}.
+ 
+Let $G$ be a cyclic group generated by $a$
 and suppose that $H$ is a subgroup of $G$. If $H = \{ e \}$, then
 trivially $H$ is cyclic. Suppose that $H$ contains some other element
 $g$ distinct from the identity. Then $g$ can be written as
-$a^n$ for some integer $n$. We can assume that $n > 0$. Let $m$ be the
-smallest natural number such that $a^m \in H$. Such an $m$ exists by
-the Principle of Well-Ordering.\index{Principle of Well-Ordering}
- 
- 
+$a^n$ for some integer $n$. We can assume that $n > 0$.  
+ Define the set $S$ by:  $S = \{j \in \mathbb{N} \text{ such that } a^j=g\}$. We have just shown that $S$ is nonempty. The Principle of Well-Ordering tells us that any nonempty subset of the natural numbers has  a smallest element.  Let $m$ be the smallest element of $S$.
+
 We claim that $h = a^m$ is a generator for $H$.  We must show that
 every $h' \in H$ can be written as a power of $h$. Since $h' \in H$
 and $H$ is a subgroup of $G$, $h' = a^k$ for some positive integer

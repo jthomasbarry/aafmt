@@ -51,7 +51,7 @@ $f : {\mathbb C} \longrightarrow {\mathbb R} \times {\mathbb R}$ such that $f(a 
 Let $f$ be  the function used in Example \ref{example:isomorph:chap1_ex} to rename complex numbers as ordered pairs. Recall that $r \cis \theta$ is the polar form of a complex number. How would you write $f(r \cis \theta$)?
 \end{exercise}
 
-Previously when we talked informally about two groups being isomorphic, we emphasized that  the two groups are "equivalent"  in some sense.  So for instance, in the case of Example 1 it should be possiible to exchange the roles of  ${\mathbb C}$ and ${\mathbb R} \times {\mathbb R}$ and get the same result.  For this to work, there should  be a function from ${\mathbb R} \times {\mathbb R}$ to ${\mathbb C}$  that shows how to replace ordered pairs with complex numbers without ``changing anything".  What would that function be?  A prime suspect is the inverse of $f$:
+Previously when we talked informally about two groups being isomorphic, we emphasized that  the two groups are "equivalent"  in some sense.  So for instance, in the case of Example 1 it should be possible to exchange the roles of  ${\mathbb C}$ and ${\mathbb R} \times {\mathbb R}$ and get the same result.  For this to work, there should  be a function from ${\mathbb R} \times {\mathbb R}$ to ${\mathbb C}$  that shows how to replace ordered pairs with complex numbers without ``changing anything".  What would that function be?  A prime suspect is the inverse of $f$:
 
 \begin{center}
 $f^{-1} : {\mathbb R} \times {\mathbb R} \longrightarrow {\mathbb C}$ such that $f^{-1}(a,b) = (a + bi)$
@@ -952,7 +952,7 @@ This  is a direct result of Proposition~\ref{cosets_theorem_7} in the Cosets cha
 \end{proof}
  
 
-\subsection{Characterizing all finite groups: Cayley's theorem}
+\subsection{Characterizing all groups: Cayley's theorem}
  
 In the previous section, we saw that any cyclic group is ``equivalent'' (in the sense of isomorphism) to one of the groups $\mathbb{Z}_n$.  This enables us to easily conceptualize any cyclic group in terms of a standardized set of  groups that we're very familiar with. 
 
@@ -1129,7 +1129,7 @@ Consider
 \[
 {\mathbb Z}_2 \times {\mathbb Z}_2 = \{ (0, 0), (0, 1), (1, 0),(1, 1) \}.
 \]
-Although ${\mathbb Z}_2 \times {\mathbb Z}_2$ and ${\mathbb Z}_4$ both contain four elements,  they are not isomorphic. We can prove this by noting that ${\mathbb Z}_4$ is cyclic, while  every element $(a,b)$ in ${\mathbb Z}_2 \times {\mathbb Z}$ has order 2 (verify this).	
+Although ${\mathbb Z}_2 \times {\mathbb Z}_2$ and ${\mathbb Z}_4$ both contain four elements,  they are not isomorphic. We can prove this by noting that ${\mathbb Z}_4$ is cyclic, while  every element $(a,b)$ in ${\mathbb Z}_2 \times {\mathbb Z}_2$ has order 2 (verify this).	
 \end{example}
 
 The group $G \times H$ is called the \term{external direct product}\index{Direct product of groups!external}\index{External direct product} of  $G$ and $H$. Notice the difference between `Cartesian product' and 'external direct product': the external direct product is a group whose underlying set is a Cartesian product; but in addition, the external direct product has a group operation, which generic off-the-shelf Cartesian products don't ordinarily have. 
@@ -1188,9 +1188,9 @@ We won't give the full proof, but you can get the idea of how it goes by doing t
 Prove Proposition~\ref{isomorph:dp_isom} for the case where $n=2$. (Remember that the default method for proving that groups are isomorphic is to define a suitable function and prove that it's an isomorphism.)
 \end{exercise}
 
-\subsection{Classifying abelian groups by factorization}
+\subsection{Classifying finite abelian groups by factorization}
 
-We have used isomorphisms to classify cyclic groups (Proposition~\ref{isomorph_theorem_2}) and general groups (Cayley's theorem, Proposition~\ref{isomorph_theorem_6}). In this section, we will make use of direct products to prove a classification of abelian groups up to isomorphism. The bottom line is that every abelian group is isomorphic to a direct product of cyclic groups. To get to the bottom line, we'll have to establish some more properties of direct products, especially in relation to cyclic groups.  The following  proposition characterizes the order of the elements in a direct product.
+We have used isomorphisms to classify cyclic groups (Proposition~\ref{isomorph_theorem_2}) and general groups (Cayley's theorem, Proposition~\ref{isomorph_theorem_6}). In this section, we will make use of direct products to prove a classification of finite abelian groups up to isomorphism. The bottom line is that every finite abelian group is isomorphic to a direct product of cyclic groups. To get to the bottom line, we'll have to establish some more properties of direct products, especially in relation to cyclic groups.  The following  proposition characterizes the order of the elements in a direct product.
 
 \begin{thm}\label{isomorph:lcm_theorem}
 Let $(g, h) \in G \times H$. If $g$ and $h$ have finite orders $r$ and
@@ -1348,10 +1348,10 @@ Find three non-isomorphic abelian groups of order 8, and show that they are not 
 \end{exercise}
 
 
-Remember that in the Permutations chapter we showed that every permutation can be ``factored''  as the product of disjoint cycles. (At that time, we compared this to the factorization of integers into prime factors).  It turns out that abelian groups can also be ``factored''.  This beautiful and general result is summarized in the following proposition. We will not give a complete proof of the proposition (which uses induction), but we hope that it makes sense to you in light of the foregoing discussion.\footnote{Many proofs can be found on the web: search for ``structure of finite abelian groups''.}
+Remember that in the Permutations chapter we showed that every permutation can be ``factored''  as the product of disjoint cycles. (At that time, we compared this to the factorization of integers into prime factors).  It turns out that finite abelian groups can also be ``factored''.  This beautiful and general result is summarized in the following proposition. We will not give a complete proof of the proposition (which uses induction), but we hope that it makes sense to you in light of the foregoing discussion.\footnote{Many proofs can be found on the web: search for ``structure of finite abelian groups''.}
 
-\begin{thm}\label{FactorabelianGroup} \term{(Factorization of abelian groups)}~~
-If $G$ is an abelian group, then there exist prime numbers $p_1 \ldots p_k$ and exponents $e_1 \ldots e_k$ such that
+\begin{thm}\label{FactorabelianGroup} \term{(Factorization of finite abelian groups)}~~
+If $G$ is a finite abelian group, then there exist prime numbers $p_1 \ldots p_k$ and exponents $e_1 \ldots e_k$ such that
 \[
 G \cong {\mathbb Z}_{p_1^{e_1}} \times \cdots \times {\mathbb
 Z}_{p_k^{e_k}}

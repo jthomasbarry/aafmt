@@ -13,7 +13,7 @@ When you sing you begin with Do Re Me
 (Oscar Hammerstein, \emph{The Sound of Music})
 \bigskip
 
-If Maria had been the Trapp children's math tutor, she might have continued:  ``When you count, you begin with 1 2 3''. Ordinarily we think of the ``counting numbers''  (which mathematicians call the \emph{natural numbers} or \emph{positive integers}) as the ``very beginning'' of math.\footnote{A famous mathematician once said, ``God made the integers; all else is the work of man.'' (Leopold Kronecker, German mathematician, 1886)}
+If Maria had been the Trapp children's math tutor, she might have continued:  ``When you count, you begin with 1 2 3''. Ordinarily we think of the ``counting numbers''  (which mathematicians call the \term{natural numbers} or \term{positive integers}) as the ``very beginning'' of math.\footnote{ ``God made the integers; all else is the work of man.'' (Leopold Kronecker, German mathematician, 1886)}
 \medskip
 
 It's true that when we learn math in school, we begin with the counting numbers. But do we really start at the ``very beginning''?   How do we know that $1 + 1 = 2$? How do we know that the methods we learned to add,  multiply, divide, and subtract will always work? We've been taught how to factor integers into prime factors. But how do we know this always works?
@@ -40,49 +40,35 @@ We assume that you have already been introduced to the following number systems:
 There are number systems for which the following properties do NOT hold (as we shall see later). So they may be safely assumed ONLY for integers, rational numbers, and real numbers.
 \end{warn}
 
-\subsection{Operations and relations }\label{OpsAndRels}
+\subsection{Arithmetic operations:properties }\label{OpsAndRels}
 
-We assume the following properties of these arithmetic operations:
+We assume the following properties of arithmetic operations on the integers, rational numbers, and real numbers.
 
 \begin{enumerate}[(a)]
 \item
-\term{Commutative}\index{Commutative!in ordinary arithmetic}: When two numbers are added together, the two numbers can be exchanged without changing the value of the result. The same thing is true for two numbers being mulitiplied together.
+\term*{Identity}\index{Identity!in ordinary arithmetic}:   Addition by 0 or multiplication by 1 result in no change of original number.
 \item
-\term{Associative}\index{Associative!in ordinary arithmetic}: When three or more numbers are added together, changing the grouping of the numbers being added does not change the value of the result.   The same goes for three or more numbers multiplied together. (Note that in arithmetic expressions, the ``grouping'' of numbers is indicated by parentheses.)
+\term*{Associative}\index{Associative!in ordinary arithmetic}: When three or more numbers are added together, changing the grouping of the numbers being added does not change the value of the result.   The same goes for three or more numbers multiplied together. (Note that in arithmetic expressions, the ``grouping'' of numbers is indicated by parentheses.)
 \item
-\term{Distributive}\index{Distributive!in ordinary arithmetic}:   Multiplying a number by a sum gives the same result as taking the sum of the products.
+\term*{Commutative}\index{Commutative!in ordinary arithmetic}: When two numbers are added together, the two numbers can be exchanged without changing the value of the result. The same thing is true for two numbers being mulitiplied together.
 \item
-\term{Order}:   Given two numbers, exactly one of these three are true: either the first number is greater than the second, or the second number is greater than the first, or the two numbers are equal.
-\item
-\term{Identity}\index{Identity!in ordinary arithmetic}:   Addition by 0 or multiplication by 1 result in no change of original number.
-\item
-The sum of two  positive numbers  is positive. The sum of two negative numbers is negative.
-\item
-The product of two  nonzero numbers with the same sign is positive. The product of two numbers with different signs is negative.
-\item
+\term*{Distributive}\index{Distributive!in ordinary arithmetic}:   Multiplying a number by a sum gives the same result as taking the sum of the products.
+\item \term*{Zero divisor property}\index{Zero divisors!in ordinary arithmetic}
 If  the product of two numbers is zero, then one or the other number must be zero.
 \end {enumerate}
 
 \begin{exercise}{1}
 \begin{enumerate}[(a)]
 \item
-For the properties a,b,c,e  above, give (i) a specific example for addition, using numbers, and (ii) a general statement for multiplication, using variables.  
+For the properties (a),(b),(c)  above, give (i) a specific example for addition, using numbers, and (ii) a general statement for multiplication, using variables.  
 For example, for property (a) (the commutative property) a specific example would be  $3+5 = 5+3$, and a general statement would be $x \cdot y=y \cdot x$. 
-\item 
-For properties d,f,g,h above, give a specific example which illustrates the property using numbers.
-\end{enumerate}
- \end{exercise}
-\begin{exercise}{2}
-\begin{enumerate}[(a)]
 \item
 Give an example (using numbers)  that shows that subtraction is \emph{not} commutative 
 .\item
 Give an example (using numbers)  that shows that division is \emph{not} associative. 
 \end{enumerate}
 \end{exercise}
-\begin{exercise}{3}
-Suppose $a > b$,  $b \ge 0$ and $ab = 0$.  What can you conclude about $a$ and $b$? Use one (or more)  of the properties we have mentioned to justify your answer.
-\end{exercise}
+
 \begin{exercise}{}
 Which of the above properties must be used to prove each of the following statements?
 \begin{enumerate}[(a)]
@@ -126,6 +112,32 @@ $3 + 4 \cdot 5 \cdot 6 + 2$
 $1 + 2 \cdot 3 + 3 \cdot 4 \cdot 5 + 5 \cdot 6 \cdot 7 \cdot 2$
 \end{enumerate}
 \end{exercise}
+
+
+\subsection{Order relations: properties}\label{subsec:orderprop}
+We also have \term*{order relations}\index{Order relation!in ordinary arithmetic} on the real, rational, and integer number systems, which are expressed by the terms `greater than'  and 'less than' with corresponding symbols $>$ and $<$. Positive numbers are greater than 0, and negative numbers are less than zero. We assume the following properties of the order relation on the integers, rational numbers, and real numbers:
+
+\begin{enumerate}[(a)] 
+\item
+Given two numbers, exactly one of these three are true: either the first number is greater than the second, or the second number is greater than the first, or the two numbers are equal.
+\item
+The sum of two  positive numbers  is positive. The sum of two negative numbers is negative.
+\item
+The product of two  nonzero numbers with the same sign is positive. The product of two numbers with different signs is negative.
+\end{enumerate}
+
+\begin{exercise}{3}
+Suppose $a > b$,  $b \ge 0$ and $ab = 0$.  What can you conclude about $a$ and $b$? Use one (or more)  of the properties we have mentioned to justify your answer.
+\end{exercise}
+
+Besides these order properties, there is a special order property that applies only to integers. This property is called the \term{Principle of Well-Ordering}, and may be stated as follows:
+
+\begin{center}
+Any set of positive numbers has a smallest element.
+\end{center}
+
+\noindent
+This may seem ``obvious'', but in mathematics we have to do our best not to take anything for granted.
 
 \subsection {Manipulating equations and inequalities}\label{subsec:eqsAndIneqs}
 

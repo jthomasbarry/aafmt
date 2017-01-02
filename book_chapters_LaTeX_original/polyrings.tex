@@ -936,26 +936,26 @@ The Fundamental Theorem of Algebra (discussed in Section~\ref{sec:FTOA}) asserts
 The following proposition gives us a way to relate polynomial values to polynomial remainders.
 
 \begin {prop}{polyremainder}
-When dividing $f(x)$ by $x-a$, the remainder is $f(a)$.
+Let $f(x)$ be any polynomial in any polynomial ring over a field. When $f(x)$ is divided by $x-a$, the remainder is $f(a)$.
 \end {prop}
 
 \begin {proof}
-By the division algorithm above, if we divide $f(x)$ by $x-a$, it will produce two unique polynomials $q(x)$ and $r(x)$ such that $f(x) = (x-a)q(x) + r(x)$.  Since the degree of $x-a$ is 1, then according to the division algorithm, the degree of $r(x)$ must be less than 1.  Therefore $r(x)$ has to be a constant.  We will show this replacing $r(x)$ with $r$ where $r$ is an real number.  This yields:
+According to Proposition~\ref{proposition:poly:Division for Polynomials}, if we divide $f(x)$ by $x-a$, it will produce two unique polynomials $q(x)$ and $r(x)$ such that $f(x) = (x-a)q(x) + r(x)$.  Since the degree of $x-a$ is 1, then according to the division algorithm, the degree of $r(x)$ must be less than 1.  Therefore $r(x)$ has to be a constant.  We will show this replacing $r(x)$ with $r$ where $r$ is an real number.  This yields:
 \[f(x) = (x-a)q(x) + r.\]
 If we set $x=a$ then we get:
 \[f(a) = (a-a)q(x) + r \implies f(a) = 0 \cdot q(x) + r \implies f(a) = r.\]
 \end {proof}
 
-This proposition can save us a lot of time when finding remainders under division by monomials.
+This proposition can save lots of time when finding remainders under division by monomials.
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
-Find the remainder when $\sum_{k=1}^{100} k x^{k-1}$ is divided by $x-1$ and  $x+1$.
+Find the remainders when $\sum_{k=1}^{100} k x^{k-1}$ is divided by $x-1$ and  $x+1$, respectively.
 \item
-Find the remainders when $\sum_{k=0}^{100} \left( \frac{1}{2} \right)^k x^k$ is divided by $x-1/2$ and $x+1/2$.
+Find the remainders when $\sum_{k=0}^{100} \left( \frac{1}{2} \right)^k x^k$ is divided by $x-1/2$ and $x+1/2$, respectively.
 \item
-Find the remainders when $\sum_{k=0}^{100} 3^k x^{k}$ is divided by $x+1/9$ and $x - 1/9$.
+Find the remainders when $\sum_{k=0}^{100} 3^k x^{k}$ is divided by $x+1/9$ and $x - 1/9$, respectively.
 \end{enumerate}
 \end{exercise}
 
@@ -1037,7 +1037,7 @@ By the previous proposition, the equation $x^n-c=0$ has at most $n$ solutions.  
 Mathematics has many mysterious and wonderful connections. Surprisingly, we can use Proposition~\ref{proposition:poly:FTOA} to prove something about group theory.  
 Recall that $U(n)$ is the group of units in $\ZZ_n$, where a ``unit'' is an element with a multiplicative inverse. If $p$ is a prime, then $U(p)$ is the set of all nonzero elements of $\ZZ_p$. 
 
-\begin {prop}{}
+\begin {prop}{Up_cyclic}
 $U(p)$ is cyclic for every prime $p$.
 \end {prop}
 \begin {proof}

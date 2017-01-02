@@ -411,7 +411,7 @@ Notice that:
 
 The preceding section provided some intuition about how and why functions are represented as sets of ordered pairs, and since ordered pairs are elements created by a Cartesian product, we learned how to view a function from $A$ to $B$ as a particular subset of $A \times B$.  This view leads to our official definition of a function:\index{Function!formal definition}
 
-\begin{defn}{}
+\begin{defn}\label{functionDef}
  Suppose $A$ and~$B$ are sets.
 
 A set~$f$ is a 
@@ -436,7 +436,7 @@ If the pair $(a, b) \in f$, then we say that $b$ is the \terminology{image}\inde
 
 \end{defn}
 
-\begin{notation}{} \label{FunctionNotation}
+\begin{notation}{FunctionNotation} 
  Suppose $f \colon A \to B$. 
 \begin{enumerate}
 \item For $a \in A$, it is convenient to have a name for the element~$b$ of~$B$, such that $(a,b) \in f$. The name we use is $f(a)$:
@@ -690,7 +690,7 @@ We have given an informal idea of the meaning of one-to-one--now it's time for a
 Suppose $f$ is a function with domain $A$ and codomain $B$. We say $f$ is  \term{one-to-one} iff for all $a_1,a_2 \in A$  such that
 $f(a_1) = f(a_2)$, we have $a_1 = a_2$. \index{One-to-one!definition}
 \end{defn}
-Some higher math books use the impressive-sounding term \term{injective}\index{Injective (one-to-one)} instead of one-to-one. It means the same thing.
+Some higher math books use the fancy term \term{injective}\index{Injective (one-to-one)} instead of one-to-one. It means the same thing.
 
 
 \begin{exercise}{11Exers-pairs}
@@ -779,7 +779,7 @@ This example gives us a chance to point out a common mistake. Suppose we chose $
 \end{example}
 
 \begin{rem}\label{rem:onetoone}
-In your previous classes you may have used the \term*{horizontal line test}\index{Horizontal line test!for one-to-one functions}\index{One-to-one!horizontal line test}  to show whether or not a function $f: \mathbb{R} \rightarrow \mathbb{R}$ was one-to-one.  We may show how this works using the function $f(x)=x +1$ (which we already know is one-to-one from Example~\ref{example:functions:1_to_1_or_not} above).  Figure~\ref{fig:xplus1} is the graph of $f$, together with the graph of a  horizontal line (dotted line).
+In previous classes you may have seen the \term*{horizontal line test}\index{Horizontal line test!for one-to-one functions}\index{One-to-one!horizontal line test}  to show whether or not a function $f: \mathbb{R} \rightarrow \mathbb{R}$ was one-to-one.  We may show how this works using the function $f(x)=x +1$ (which we already know is one-to-one from Example~\ref{example:functions:1_to_1_or_not} above).  Figure~\ref{fig:xplus1} is the graph of $f$, together with the graph of a  horizontal line (dotted line).
 \begin{figure}[h]
 \includegraphics[width=3.5in]{images/xplus1.png}
 \caption{Graph of function $f(x)=x +1$ (with horizontal line used for horizontal line test).}
@@ -808,31 +808,44 @@ Using the graph we can easily identify two values in the domain that produce the
 \end{figure}
 
 In summary, the horizontal line test can only \emph{suggest} whether or not a function is one-to-one. In the end, you still need to prove or disprove.  Furthermore, the horizontal line test is usually only a good tool for functions whose domain and codomain are ${\mathbb R}$ (or subsets of ${\mathbb R}$).
-\end{rem}    
+\end{rem}  
+
+\begin{exercise}{}
+Suppose that the function $f$ has domain $[a,b]$ and codomain $[c,d]$ (where for example $[a,b]$ signifies the interval $\{ a \le x \le b, x \in \mathbb{R} \}$). Restate the horizontal line test for one-to-one functions in this case. What changes need to be made in the statement?
+\end{exercise}
+
+\begin{exercise}{}
+Graph each function and use the horizontal line test to determine whether or not the following functions are one-to-one.
+\begin{enumerate}[(a)]
+\item
+$f:[0,\pi] \rightarrow \mathbb{R}$, $f(x) = \cos(x)$.
+\item
+$f:[0,\pi] \rightarrow [-1,1]$, $f(x) = \sin(x)$.
+\item
+$f:[-\pi,\pi] \rightarrow [-1,1]$, $f(x) =\cos(x/2)$.
+\item
+$f:[-\pi,\pi] \rightarrow [-10,10]$, $f(x) = \sin(x/2)$.
+\item
+$f:[1,3] \rightarrow [0,5]$, $f(x) = 6 - 2x$.
+\item
+$f:[1,4] \rightarrow [0,5]$, $f(x) = 6 - 2x$ (be careful!)
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Sketch the function $f:\mathbb{R} \rightarrow \mathbb{R}$, where $f(x) = x(x-2)(x+2)$.
+\item
+Using the horizontal line test, determine whether $f$ is a one-to-one function.
+\item
+Now consider the same function $f$, but restricted to the domain $[-1,1]$  (that is, the interval $-1 \le x \le 1$). Is the function still one-to-one? \emph{Explain} your answer.
+\end{enumerate}
+\end{exercise}
 
 % CPT I took out the following sentence, it seems repetitive.
 %These examples demonstrate the general pattern of how we prove whether or not a function is one-to-one.  To prove that a function $f\colon A \to B$ \emph{is} one-to-one, we need to demonstrate that for \emph{every} $a_1, a_2 \in A$, if $f(a_1)=f(a_2)$ then we must have $a_1=a_2$.  To prove that a function $f\colon A \to B$ is \emph{not} one-to-one, we need only find a single pair of values $a_1, a_2 \in A$, for which $f(a_1)=f(a_2)$ but $a_1 \neq a_2$.  
 
-\begin{exercise}{11Exers}
-
- Each formula defines a function from~$\mathbb{R}$ to~$\mathbb{R}$. Either prove the function is one-to-one, or prove that it is not.
-\begin{multicols}{2}
- \begin{enumerate}[(a)]
-\item \label{11Exers-formula-f}
-$f(x) = 1$.
-\item \label{11Exers-formula-g}
-$g(x) = x$.
-\item \label{11Exers-formula-h}
-$h(x) = x^2$.
-\item \label{11Exers-formula-i}
-$p(x) = 3x + 2$.
-\item \label{11Exers-formula-j}
-$q(x) = 1/ \bigl( |x| + 1 \bigr)$.
-\item \label{11Exers-formula-k}
-$r(x) = (x-1)(x-2)(x-3)$.
-\end{enumerate}
-\end{multicols}
-\end{exercise}
 
 When you don't know whether or not a particular function is one-to-one, a good strategy is to try to prove that it's one-to-one.  If the proof works, then great you're done.  If the proof fails, the manner in which it fails may indicate an example to show that the function is not one-to-one.  Here's an example of this technique.
 
@@ -967,6 +980,33 @@ Show that this implies that $f$ is one-to-one.
 
 We close this section with a bevy of exercises. Use whatever method you like, but make sure they're solid proofs.
 
+\begin{exercise}{11Exers}
+
+For each of the following functions, either prove the function is one-to-one, or prove that it is not.
+\begin{multicols}{2}
+ \begin{enumerate}[(a)]
+\item \label{11Exers-formula-f}
+$f:[0,1] \rightarrow  [0,1], f(x) = 1$.
+\item \label{11Exers-formula-g}
+$g:\mathbb{R}^+ \rightarrow  \mathbb{R}, g(x) = x$.
+\item \label{11Exers-formula-h}
+$h:\mathbb{R} \rightarrow  \mathbb{R},h(x) = x^2$.
+\item \label{11Exers-formula-j}
+$h:\mathbb{R}^+ \rightarrow  \mathbb{R}, h(x) = x^2$.
+\item \label{11Exers-formula-p}
+$p:[a,b] \rightarrow  [3a,3b+10], \\p(x) = 3x + 2$.
+\item \label{11Exers-formula-q}
+$q:\mathbb{R} \rightarrow  \mathbb{R}, q(x) = 1/ \bigl( |x+1| + 1 \bigr)$.
+\item \label{11Exers-formula-r}
+$q:[-5,1] \rightarrow  [0,1], \\ q(x) = 1/ \bigl( |x+1| + 1 \bigr)$.
+\item \label{11Exers-formula-s}
+$s:\mathbb{R} \rightarrow  \mathbb{R}, \\s(x) = (x+1)(x+2)(x+3)$.
+\item \label{11Exers-formula-t}
+$s:\mathbb{R}^+ \rightarrow  \mathbb{R}^+, \\s(x) = (x+1)(x+2)(x+3)$.
+\end{enumerate}
+\end{multicols}
+\end{exercise}
+
 \begin{exercise}{40} 
 For each function, either prove that it is one-to-one, or prove that it is not.
 \begin{enumerate}[(a)]
@@ -1067,12 +1107,12 @@ Is the function $\var{Atomic Number} \colon \{ \mbox{ Chemical Elements } \} \to
 
 The following is the "official" definition  of onto.
 
-\begin{defn}\label{oneToOneDef}
+\begin{defn}\label{ontoDef}
 Suppose $f \colon A \to B$. We say $f$ is \term{onto} if for all $b \in B$, \index{Onto!formal definition}
 there is some $a \in A$  such that $f(a) = b$. 
 \end{defn}
 
-Some higher math books use the highfalutin term \term{surjective}, which means the same as onto.
+Some higher math books use the fancy term \term{surjective}, which means exactly the same as onto.
 
 You may think of onto functions as follows. If a function is onto, then no matter what element I pick in the codomain, there is always some value in the domain that produces it. 
 Alternatively, I could say that every possible output in the codomain has \emph{at least one} input.  (Contrast this to the definition of one-to-one, which says that every possible output has \emph{at most one} input.
@@ -1081,7 +1121,6 @@ Alternatively, I could say that every possible output in the codomain has \emph{
 If the function $f$ is onto, then what is the relation between the range of $f$ and the codomain of $f$?
 \hyperref[sec:functions:hints]{(*Hint*)}
 \end{exercise}
-
 
 \begin{exercise}{OntoExers-pairs}
 Each of the following sets of ordered pairs is a function from $\{1,2,3,4,5\}$ to $\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$. Either prove that the function is onto, or prove that it is not.
@@ -1102,70 +1141,94 @@ $e = \{ (1,\clubsuit), (2,\spadesuit), (3, \heartsuit), (4,\spadesuit), (5, \clu
 \end{enumerate}
 \end{exercise}
 
-
-
 \subsection{Proving that a function is onto}
 
-The following examples show how to prove that a function is onto.
+First we give some simple examples of onto proofs. Later we will show a more systematic approach.
 
 \begin{example}{onto}
 \begin{itemize}
 \item
- Consider the  function:
+ Consider the  function: $f\colon \mathbb{R} \to \mathbb{R}$ defined by $f(x)=x +1$.
 
-$f\colon \mathbb{R} \to \mathbb{R}$ defined by $f(x)=x +1$.
-
-Recall that a function is onto if for every value in the codomain, there is a value in the domain that produces it.  
-So pick an arbitrary value in the codomain $\mathbb{R}$ and call it $y$.  By the definition of our function $f$, $f(x)=y$ means that $x+1=y$.  Solving for $x$ gives $x = y - 1$.  Now $x$ is also a real number (by  closure of $\mathbb{R}$ under $-$): so we have found an $x$ in the domain of $f$ such that  $f(x) = y$.  Therefore $f$ is onto.
+Let $y$ be an arbitrary value in the codomain $\mathbb{R}$. To show that $f$ is onto, we just need to show that for any such $y$, there is an $x$ in the domain such that $f(x)=y$. Now if we set $x=y-1$, then $f(x) = (y-1)+1 = y$. It's also true that $x$ is in the domain of $f$, since $x$ is a real number. This completes the proof that $f$ is onto.
 
 \item 
 Consider the function 
 $h\colon \mathbb{N} \to \mathbb{N}$, defined by $h(x)=|x|$.
 
-Since all natural numbers are nonnegative, we have $h(x)=|x|=x$ for every natural number $x$.  So for an arbitrary value $y$ in the codomain $\mathbb{N}$, we have $h(y) = y$ (note $y$ is also in the domain of $h$). Therefore $h$ is onto.
+Let $y$ be an arbitrary value in the codomain $\mathbb{N}$. Since all natural numbers are nonnegative, we have $|y|=y$.  So we may take $x = y$, and obtain $h(x) = y$ (note $x$ is also in the domain of $h$). Therefore $h$ is onto.
 \end{itemize}
-
 \end{example}
 
-Just as with one-to-one, it is typically easier to prove that a function is \emph{not} onto. All you have to do is provide a counterexample:
+Just as with one-to-one, it is typically easier to prove that a function is \emph{not} onto. All you have to do is provide a counterexample, as the following examples show.
 
 \begin{example}{not_onto} 
 \begin{itemize}
 \item
-Consider the function $f\colon \{1,2,3\} \to \{\var{a}, \var{b},\var{c}\}$ defined by $f=\{(1,\var{b}),(2,\var{a}),(3,\var{a})\}$.
-Notice that $c$ never appears as an image in this function.  This shows that $f$ is not onto. 
+Consider the function $f\colon \{1,2,3\} \to \{\var{a}, \var{b},\var{c}\}$ defined by $f=\{(1,\var{b}),$ $(2,\var{a}), (3,\var{a})\}$.
+Notice that $c$ never appears as an output in this function.  This shows that $f$ is not onto. 
 \item
-Consider the function $g\colon \mathbb{R} \to \mathbb{R}$ defined by $g(x)= |x|$. To show that $g$ is not onto, we only need to find a single number $y$ in the codomain that  is not mapped onto.  $y=-1$ is one example: we can never have $|x|=-1$ for any real number $x$.  This shows that $g$ is not onto.
+Consider the function $g\colon \mathbb{R} \to \mathbb{R}$ defined by $g(x)= |x|$. To show that $g$ is not onto, we only need to find a single number $y$ in the codomain that  is not mapped onto.  $y=-1$ is one example, since we can never have $|x|=-1$ for any real number $x$.  This shows that $g$ is not onto.
 \item
-Consider the function $h\colon \mathbb{Z}_5 \to \mathbb{Z}_5$ defined by $h(x)= x \odot x $. We may list the values of $h(x)$ for $x = 0,1,2,3,4$: they are $0,1,4,4,1$ respectively. There is no $x$ such that $h(x) = 3$, so $h$ is not onto.
+Consider the function $h\colon [0,5] \to [0,12]$ defined by $h(x)= 2x+2$. Notice that $h(0)=2$ and $h(x)\ge 2$ as long as $x > 0$. It follows that there is no $x$ in the domain which is mapped to 0, which is in the codomain. This shows that $g$ is not onto.
+\item
+Consider the function $q\colon \mathbb{Z}_5 \to \mathbb{Z}_5$ defined by $q(x)= x \odot x $. We may list the values of $q(x)$ for $x = 0,1,2,3,4$: they are $0,1,4,4,1$ respectively. There is no $x$ such that $q(x) = 3$, so $q$ is not onto.
 \end{itemize}
 \end{example}
 
+\begin{rem}
+We may use a variant of the horizontal line test\index{Onto!horizontal line test for}\index{Horizontal line test!for onto functions} to indicate whether a function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto.  
+For instance, recall the function $f(x)=x +1$ shown in Figure~\ref{fig:xplus1}. In the case of an onto function, the equation $f(x)=c$ has \emph{at least one} solution for any real value $c \in \mathbb{R}$.  (Recall that for one-to-one it was \emph{at most one}, so there's a slight difference here.) By tweaking the argument we used for the original horizontal line test, we arrive at the following general rule:
+\bigskip
 
-% CPT I think this is redundant
-% In summary then, to prove that a function $f \colon A \to B$ is onto, we wish to show:
- %$$\forall b \in B, \exists a \in A \mbox{ s.t. } f(a) = b$$
-% 
-%So first we choose a general element $b$ of the codomain, and then we use the definition of the function to determine a way to define a general element $a$ in the domain such that $f(a) = b$.  Since $b$ is general , this defining of $a$ works for all $b$.  And therefore the function is onto.
-%
-%As always, if the function is not onto, you only need to show a counterexample that shows this.
+\noindent 
+(\emph{Horizontal line test for onto-ness})~~The function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto if and only if the graph of $f(x)$ intersects every horizontal line at least once.
+\bigskip
 
-Since ``onto'' proofs require working backwards, sometimes some preliminary scratchwork is required before writing out the actual proof.
+From Figure~\ref{fig:xplus1}, it \emph{appears} that $f(x)=x+1$ is onto. Just as before, this observation doesn't qualify as a mathematical proof. Nonetheless, it strongly hints that we should try to prove onto-ness rather than looking for a counterexample.
+
+On the other hand, the line $y=-1$ in Figure~\ref{fig:absx} does not intersect the graph of $f(x) = |x|$ defined on the set of all real numbers.  This indicates that $-1$ is not in the range of the function.  Once we've verified this mathematically, we have sufficient proof that $f(x)$ is not onto.
+\end{rem}    
+
+\begin{exercise}{}
+Suppose that the function $f$ has domain $[a,b]$ and codomain $[c,d]$, where $[a,b]$ and $[c,d]$ are intervals of real numbers. Restate the horizontal line test for onto functions in this case. What changes need to be made in the statement?
+\end{exercise}
+
+\begin{exercise}{}
+Use the horizontal line test to determine whether the following functions are onto.  For those functions that are not onto, give a $y$ in the codomain which is not in the range of the function.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item
+$g \colon \mathbb{R} \to \mathbb{R}$, $g(x) = 5x - 2$
+\item
+$f:[0,\pi] \rightarrow [-1,1]$, $f(x) = \cos(x)$.
+\item
+$f:[0,\pi] \rightarrow [-1,1]$, $f(x) = \sin(x)$.
+\item
+$f:[0,\pi/6] \rightarrow [0,1/2]$, $f(x) = \sin(x)$.
+\item
+$f:[0,\pi/4] \rightarrow [0,\sqrt{2}/2]$, $f(x) = 1-\cos(x)$.
+\item
+$f:[1,3] \rightarrow [0,5]$, $f(x) = 6 - 2x$.
+\end{enumerate}
+\end{multicols}
+\end{exercise}
+ 
+
+We now give some examples of rigorous ``onto'' proofs. These proofs typically require working backwards, so some preliminary scratchwork may be helpful before writing out the actual proof.
 
 \begin{example}{}
 Define $g \colon \mathbb{R} \to \mathbb{R}$ by $g(x) = 5x - 2$. Determine whether $g$ is onto.
 
-
-\begin{scratchwork}
-Just as in the previous examples, given any $y \in \mathbb{R}$  we need to find a value of~$x$ that makes $g(x) = y$. So we start with the equation $g(x) = y$ and solve for $x$:
+\begin{scratchwork} Just as in the previous examples, given any $y \in \mathbb{R}$  we need to find a value of~$x$ that makes $g(x) = y$. So we start with the equation $g(x) = y$ and solve for $x$:
 \begin{align*}
 g(x) = y  &\implies 5x-2 = y \qquad \text{[by substitution]}\\
  & \implies x = \frac{y+2}{5}\qquad \text{[solve for $x$ using basic algebra]}
-\end{align*}
+\end{align*} 
+\end{scratchwork}
 
 \noindent
-Now that we have $x$, let's do our proof.
-\end{scratchwork}
+Now that we have a formula for $x$, let's do our proof. (Although you need the scratchwork to come up with the formula for $x$, you don't actually need to include the scratchwork in your proof.)
 
 \begin{proof} 
 Given $y \in \mathbb{R}$, let $x = (y+2)/5$.  Since the reals are closed under addition and non-zero division, it follows that $x \in \mathbb{R}$. Then
@@ -1173,26 +1236,52 @@ Given $y \in \mathbb{R}$, let $x = (y+2)/5$.  Since the reals are closed under a
 Therefore $g$ is onto.
 \end{proof}
 
-\medskip
-Although you need the scratchwork to come up with the formula for $x$, you don't need to include the scratchwork in your proof. It's actually much cleaner without it.
+\end{example}
+
+
+\begin{example}{}
+Define $h \colon [0,2] \to [-7,-1]$ by $h(x) = -3x - 1$. Determine whether $h$ is onto.
+
+\begin{scratchwork} Starting with the equation $h(x) = y$ and solving for $x$, we find 
+$x = (y+1)/(-3).$ We need to verify that $x$ is in the domain of $h$ whenever $y$ is in the codomain.  Notice that
+\begin{align*}
+y \ge -7  &\implies y+1 \ge -6 \qquad \text{[basic algebra]}\\
+ & \implies \frac{y+1}{-3} \le 2 \qquad \text{[ basic algebra]}
+\end{align*} 
+We also have
+\begin{align*}
+y \le -1  &\implies y+1 \le 0 \qquad \text{[basic algebra]}\\
+ & \implies \frac{y+1}{-3} \ge 0 \qquad \text{[ basic algebra]}
+\end{align*} 
+We conclude that $0 \le  x \le 2$, so $x$ is in the domain of $h$. Thus $h$ is onto.
+\end{scratchwork}
+
+\noindent
+Now that we have a formula for $x$, let's do our proof. (Although you need the scratchwork to come up with the formula for $x$, you don't actually need to include the scratchwork in your proof.)
+
+\begin{proof} 
+Given $y \in \mathbb{R}$, let $x = \frac{y+1}{-3}$. By  basic algebra, $-7 \le y \le -1 \implies 0 \le  \frac{y+1}{-3} \le 2$, so $x$ is in the domain of $h$. Also,
+\[ h(x) = -3 \left(\frac{y+1}{-3} \right) - 1  = y . \]
+Therefore $h$ is onto.
+\end{proof}
+
 \end{example}
 
 \begin{example}{}
 Define $f \colon \mathbb{C} \to \mathbb{C}$ by $f(z) = z^2$. Determine whether $f$ is onto.
 
-
 \begin{scratchwork}
-Just as in the previous examples, given any $z \in \mathbb{C}$  we need to find a value of~$w$ that makes $f(w) = z$. So as before we solve for $w$. This time it's helpful to use polar form, so we write $z = r \cis \theta$
+As in the previous examples, given any $z \in \mathbb{C}$  we need to find a value of~$w$ that makes $f(w) = z$. So as before we solve for $w$. This time it's helpful to use polar form, so we write $z = r \cis \theta$
 and $w = s \cis \phi$:
 \begin{align*}
 f(w) = z  &\implies (s \cis \phi)^2 = r \cis \theta \qquad \qquad \text{[by substitution]}\\
  & \implies s^2 \cis 2\phi = r \cis \theta\qquad \qquad \text{[De Moivre's Theorem]}\\
 & \implies s = \sqrt{r} \text{ and } \phi = \theta/2 \text{ is a solution} \quad \text{[substitution]}
 \end{align*}
+\end{scratchwork}
 
 \noindent
 Now that we have $z$, we can proceed as before.
-\end{scratchwork}
 
 \begin{proof} 
 Given $z= r \cis \theta  \in \mathbb{C}$, let $w = \sqrt{r} \cis (\theta/2)$. By the definition of polar form, $w \in  \mathbb{C}$ and we have
@@ -1200,7 +1289,6 @@ Given $z= r \cis \theta  \in \mathbb{C}$, let $w = \sqrt{r} \cis (\theta/2)$. By
 where we have used De Moivre's Theorem. It follows that $f$ is onto.
 \end{proof}
 \end{example}
-
 
 %\begin{rem}
 %Some ``onto'' proofs are a bit more complicated than what is described above, because it may not be possible to go directly from ``Given $b \in B$'' to ``let $a = \raise 3pt \hbox{\boxit{\phantom{M}}}$.'' Sometimes it is necessary to insert calculations (or other explanations) between ``given~$b$'' and ``let~$a$.'' Some good examples of this will be seen in \cref{CompositionTheoryExers}.
@@ -1212,39 +1300,32 @@ where we have used De Moivre's Theorem. It follows that $f$ is onto.
 % 
 %\section*{Proof exercises}
 
-\begin{rem}
-We may use a variant of the horizontal line test\index{Onto!horizontal line test for}\index{Horizontal line test!for onto functions} to indicate whether a function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto.  
-For instance, recall the function $f(x)=x +1$ shown in Figure~\ref{fig:xplus1}. In the case of an onto function, the equation $f(x)=c$ has \emph{at least one} solution for any real value $c \in \mathbb{R}$.  (Recall that for one-to-one it was \emph{at most one}, so there's a slight difference here.) By tweaking the argument we used for the original horizontal line test, we arrive at the following general rule:
-\bigskip
-
-\noindent 
-(\emph{Horizontal line test for onto-ness})~~The function $f:\mathbb{R} \rightarrow \mathbb{R}$ is onto if and only if the graph of $f(x)$ intersects every horizontal line at least once.
-\bigskip
-
-From Figure~\ref{fig:xplus1}, it \emph{appears} that $f(x)=x+1$ is onto. Just as before, this observation doesn't qualify as a mathematical proof. Nonetheless, it strongly hints that we should try to prove onto-ness rather than non--onto-ness. Indeed, we may obtain a proof by following Part 1 of Example~\ref{example:functions:onto}.
-
-On the other hand, to disprove a function is onto, you only need a counterexample.  Consider the function $g(x)= |x|$ shown in Figure~\ref{fig:absx}. Using the graph, we can easily find a horizontal line that doesn't intersect the graph: this corresponds to a value in $\mathbb{R}$ that is not in the range of $g$.  But while the horizontal line test here suggests a counterexample to show $g$ is not onto, we still need to verify that it works.
-\end{rem}    
-
-  
 \begin{exercise}{OntoExers} 
-Each formula defines a function from~$\mathbb{R}$ to~$\mathbb{R}$. Either prove that the function is onto, or prove that it is not.
+For each function, either prove that it is onto, or prove that it is not.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
 \item \label{OntoExers-formula-a(x)}
- $a(x) = 1$.
+ $f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = 1$.
 \item \label{OntoExers-formula-b(x)}
- $b(x) = x$.
+ $g: \mathbb{R} \rightarrow \mathbb{R}, g(x) = x$.
+\item \label{OntoExers-formula-b(x)2}
+ $g: [-1,1] \rightarrow [-2,2], g(x) = x$.
 \item \label{OntoExers-formula-c(x)}
- $c(x) = x^2$.
-\item \label{OntoExers-formula-d(x)}
- $d(x) = 3x + 2$.
-\item \label{OntoExers-formula-e(x)}
- $e(x) = 1/ \bigl( |x| + 1 \bigr)$.
-\item \label{OntoExers-formula-f(x)}
- $f(x) = 4x - 6$.
-\item \label{OntoExers-formula-g(x)}
- $g(x) = \root 3 \of {x+5} - 5$.
+ $h: \mathbb{R} \rightarrow \mathbb{R}, h(x) = x^2$.
+\item \label{OntoExers-formula-c(x)2}
+ $h: [-2,2] \rightarrow [0,4], h(x) = x^2$.
+\item \label{OntoExers-formula-p(x)}
+ $p: \mathbb{R} \rightarrow \mathbb{R}, p(x) = 3x + 2$.
+\item \label{OntoExers-formula-q(x)}
+ $q: \mathbb{R} \rightarrow [0,1], q(x) = 1/ \bigl( |x| + 1 \bigr)$.
+\item \label{OntoExers-formula-q(x)2}
+ $q: \mathbb{R}^+ \rightarrow [0,1], \\q(x) = 1/ \bigl( |x| + 1 \bigr)$.
+\item \label{OntoExers-formula-r(x)}
+ $[2,4] \rightarrow [2,10], r(x) = 4x - 6$.
+\item \label{OntoExers-formula-r(x)2}
+ $[3,4] \rightarrow [3,10], r(x) = 4x - 6$.
+\item \label{OntoExers-formula-s(x)}
+ $s: \mathbb{R} \rightarrow \mathbb{R}, s(x) = \root 3 \of {x+5} - 5$.
 \end{enumerate}
 \end{multicols}
 \end{exercise}
@@ -1472,7 +1553,7 @@ The two parts can come in either order: it is perfectly acceptable to first prov
 How would you show that function is not a bijection?  You guessed it, by counterexample.  You only need a counterexample that shows either the function is not onto, or is not one-to-one, because a bijection requires both.
 
 \begin{example}{5x-7BijectionEg}
-Define $f \colon \mathbb{R} \to \mathbb{R}$ by $f(x) = 5x-7$. Then $f$ is a bijection.
+Define $f \colon [1,3] \to [-2,8]$ by $f(x) = 5x-7$. Then $f$ is a bijection.
 
 \begin{proof}
 It suffices to show that $f$ is both one-to-one and onto:
@@ -1487,7 +1568,14 @@ $$ \frac{(5x_1-7)+7}{5} =  \frac{(5x_2-7)+7}{5},$$
 Which implies $x_1=x_2$. So $f$ is one-to-one.
 \item
 \emph{(onto)}  Given $y \in \mathbb{R}$, let $x = (y+7)/5$. Then
-$$ f(x) = 5x-7 = 5 \left( \frac{y+7}{5} \right) - 7 = (y+7) - 7 = y,$$
+\[ f(x) = 5x-7 = 5 \left( \frac{y+7}{5} \right) - 7 = (y+7) - 7 = y.\]
+We need to verify that $x$ is in the domain:
+\begin{align*}
+-2 \le y \le 8  &\implies 5 \le y+7 \le 15 \qquad \text{[basic algebra]}\\
+ & \implies  1 \le \frac{y+7}{5} \le 3 \qquad \text{[basic algebra]}\\
+& \implies x \in [1,3] \qquad \text{[substitution]}
+\end{align*}
+
 So $f$ is onto.
 
 Since $f$ is both one-to-one and onto, we conclude that $f$ is a bijection.
@@ -1496,39 +1584,29 @@ Since $f$ is both one-to-one and onto, we conclude that $f$ is a bijection.
 \end{example} 
 
 \begin{exercise}{BijectRtoRExer}
-Each formula defines a function from~$\mathbb{R}$ to~$\mathbb{R}$.  Either prove the function is a bijection, or prove that it is not.
-\begin{multicols}{2}
+For each function below, either prove that it's a bijection, or prove that it is not.
 \begin{enumerate}[(a)]
 \item \label{BijectRtoRExer-(5x+2)}
-$a(x) = 5x+2$
+$a:[-3,3] \rightarrow [-20,20], a(x) = 5x+2$
 \item \label{BijectRtoRExer-(2x-5)}
-$b(x) = 2x - 5$
+$b:[3,5] \rightarrow [1,5],b(x) = 2x - 5$
 \item \label{BijectRtoRExer-(12x-15)}
- $c(x) = 12x-15$
+ $c:[0,1] \rightarrow [-30,-15], c(x) = -12x-15$
 \item \label{BijectRtoRExer-(-15x-12)}
-$d(x) = -15x - 12$
+$d:[-1,1] \rightarrow [-27,3], d(x) = -15x - 12$
 \item \label{BijectRtoRExer-(x^3)}
-$e(x) = x^3$
+$e:[-1,1] \rightarrow [-1,1], e(x) = x^3$
 \item \label{BijectRtoRExer-(root3of(x-4))}
-$f(x) = \root 3 \of {x-4} $
-\item \label{WhichBijRExer-(1)}
-$a(x) = 1$.
-\item \label{WhichBijRExer-(x)}
-$b(x) = x$.
-\item \label{WhichBijRExer-(x^2)}
-$c(x) = x^2$.
-\item \label{WhichBijRExer-(3x+2)}
-$d(x) = 3x + 2$.
+$f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = \root 3 \of {x-4} $
 \item \label{WhichBijRExer-(1/(|x|+1))}
-$e(x) = 1/ \bigl( |x| + 1 \bigr)$.
+$e:\mathbb{R}^+ \rightarrow [0,1], e(x) = 1/ \bigl( |x| + 1 \bigr)$.
 \item \label{WhichBijRExer-(4x-6)}
-$f(x) = 4x - 6$.
+$f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = 4x - 6$.
 \item \label{WhichBijRExer-(root3ofx-5)}
-$g(x) = \root 3 \of {x} - 5$.
+$g: [0,27] \rightarrow [-5,-2], g(x) = \root 3 \of {x} - 5$.
 \item \label{WhichBijRExer-(sqrt(x^2+1))}
-$h(x) = \sqrt{x^2 + 1}$
+$h:[-1,2] \rightarrow [0,10], h(x) = \sqrt{(x+1)^2 + 1}$
 \end{enumerate}
-\end{multicols}
 \end{exercise}
 %
 %\begin{exers} \label{BijectLinFracExer} \ 
@@ -1547,8 +1625,6 @@ $h(x) = \sqrt{x^2 + 1}$
 %\end{enumerate}
 %\end{exers}
 
-
-
 \begin{exercise}{LinearWhenBijectionExer}
 Let $a,b \in \mathbb{R}$, and define $f \colon \mathbb{R} \to \mathbb{R}$ by $f(x) = a x + b$. 
 \begin{enumerate}[(a)]
@@ -1557,6 +1633,11 @@ Show that if $a \neq 0$, then $f$ is a bijection.
 \item \label{LinearWhenBijectionExer-0}
 Show that if $a = 0$, then $f$ is \emph{not} a bijection.
 \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{LinearWhenBijectionExer}
+Let $a,b \in \mathbb{R}$, and define $f \colon [1,2] \to [4,7]$ by $f(x) = a x + b$. 
+Find all values of $a$ and $b$ such that $f$ is a bijection.
 \end{exercise}
 
 
@@ -1570,33 +1651,33 @@ $$ f(x) =
 e^x & \mbox{if $x > 0$} \\
 1 - x^2 & \mbox{if $x \le 0$}
 \end{cases} $$
-By graphing this function you can see that the horizontal line tests suggest that  $f(x)$ is indeed one-to-one and onto. To complete the actual proof, we need to prove four separate statements:
+By graphing this function you can see that the horizontal line tests suggest that  $f(x)$ is indeed one-to-one and onto. To complete the actual proof, we may prove onto and one-to-one separately. We may prove the function is onto by proving:
 \begin{enumerate}[(a)] 
 \item[(a)]
-If $y > 1$, there exists a unique $x>0$ such that $e^x = y$.
+If $y > 1$, there exists an $x>0$ such that $f(x) = y$.
 \item[(b)]
-If $y \le 1$, there exists a unique $x \le 0$ such that $1-x^2 = y$.
+If $y \le 1$, there exists an $x \le 0$ such that $f(x) = y$.
 \end{enumerate}
-From these two facts, it follows that $f(x)$ is onto, because for any $y$ (whether $>1$ or $\le 1$) there exists an $x$ such that $f(x)=y$. 
+From these two facts, it follows that $f(x)$ is onto, because no matter whether $y>1$ or $y \le 1$) there exists an $x$ such that $f(x)=y$. 
 \bigskip
 
 
-To show that $f(x)$ is one-to-one, we will need two additional statements:
+To show that $f(x)$ is one-to-one, we will need to show:
 \begin{enumerate}[(a)]
 \setcounter{enumi}{2} 
 \item[(c)]
-If $y > 1$, there exists no $x\le0$ such that $1 - x^2 = y$.
+If $x_1 > 0$ and $x_2>0$, then $f(x_1) = f(x_2)$ implies $x_1=x_2$.
 \item[(d)]
-If $y \le 1$, there exists no $x > 0$ such that $e^x = y$
+If $x_1 > 0$ and $x_2 \le 0$, then $f(x_1) \neq f(x_2)$.
+\item[(e)]
+If $x_1 \le 0$ and $x_2 \le 0$, then $f(x_1)=f(x_2)$ implies $x_1=x_2$.
 \end{enumerate}
-From these two facts (together with (a) and (b)) we find that for any $y$ (whether $>1$ or $\le 1$) there is \emph{exactly} one $x$ such that $f(x)=y$.
+From these facts it follows that $f(x)$ is one-to-one, because no matter whether $x>0$ or $x \le 0$) it is always true that $f(x) = f(x') \implies x=x'$. 
 \end{example}
  
 \begin{exercise}{}
-Prove statements (a)$-$(d) in Example~\ref{example:functions:piecewise}.  For example, you can prove (a)  as follows. Given $y>1$, setting $x = \ln(y)$ gives $e^x = y$; furthermore if $x > \ln(y)$ (respectively  $x < \ln(y)$) then $e^x > y$ (respectively $e^x < y$).
+Prove statements (a)$-$(e) in Example~\ref{example:functions:piecewise}.  For example, you can prove (a)  as follows. Given $y>1$, setting $x = \ln(y)$ gives $f(x) = y$ since $f(x) = e^x$ in this case. 
 \end{exercise}
-
-
 
 \begin{exercise}{} \label{OntoCasesExer}
  Define function $f$  from~$\mathbb{R}$ to~$\mathbb{R}$ by:
@@ -1946,10 +2027,17 @@ Suppose $f\colon A \to B$ and $g \colon B \to C$, where $A \subset C$. Show that
 $$\mbox{$g \compose f(a) = a$, for every $a \in A$,} $$
  then $f$ is one-to-one.
  
- \begin{scratchwork}
- We want to show that $f$ is one-to-one; that is if $f(a_1) = f(a_2)$, then $a_1 = a_2$.  We are given that $g \compose f(a) = a$, for every $a \in A$.  Therefore for our proof we should assume $f(a_1) = f(a_2)$, and use the given statement to somehow get to $a_1 = a_2$. 
- \end{scratchwork}
- 
+\begin{scratchwork}
+In proving such statements, it is often helpful to draw a picture (see Figure~\ref{compose1}) showing the sets involved, and arrows joining the the different values. 
+To show that $f$ is one-to-one; we may show that $f(a_1) = f(a_2)$ implies $a_1 = a_2$.  In the picture, we have drawn $f(a_1) = f(a_2)$. Now we are also given that $g \compose f(a) = a$, for every $a \in A$. So as the picture shows, $g(f(a_1)) = a_1$. But what about $g(f(a_2))$?  On the one hand, we know $g \compose f(a_2) = a_2$ from the problem's givens.  But on the other hand, since $f(a_2)=f(a_1)$ we have $g(f(a_2)) = g(f(a_1))$, or $g(f(a_2)) = a_1$. By substitution, it follows that $a_1=a_2$.
+\end{scratchwork}
+
+ \begin{figure}[h]
+\includegraphics[width=4.5in]{images/compose1.PNG}
+\caption{Scratchwork picture for Example~\ref{example:functions:ComposeExers-11}.}
+\label{compose1}
+\end{figure}
+
  \begin{proof}
 Given that $g \compose f(a) = a$, for every $a \in A$, by the definition of composition, this means
 that, for any $a_1, a_2 \in A$ we have
@@ -1962,6 +2050,17 @@ By our original hypothesis we then get $a_1 = a_2$, and thus $f$ is one-to-one.
 
 \begin{example}{CompositionTheoryExers-gofonto} 
  Suppose $f \colon A \to B$ and $g \colon B \to C$. Show that if $f$ and~$g$ are onto, then $g \compose f$ is onto.
+
+\begin{scratchwork}
+ To show that $g \compose f$ is onto, we need to show that for any $c \in C$, there exists a $a \in A$ such that $g \compose f(a)=c$.  As Figure~\ref{compose2} shows, we can work our way backwards. Given any $c$, since $g$ is onto we can find a $b$ such that $g(b)=c$.  Furthermore, since $f$ is onto we can find a $a$ such that $f(a)=b$.
+By substitution, this gives $g(f(a))=c$, or $g \compose f (a) = c$.
+\end{scratchwork}
+
+ \begin{figure}[h]
+\includegraphics[width=5in]{images/compose2.PNG}
+\caption{Scratchwork picture for Example~\ref{example:functions:CompositionTheoryExers-gofonto}.}
+\label{compose2}
+\end{figure}
 
  \begin{proof}
 Let $c$ be an arbitrary  element of $C$. Since $g$ is onto, there exists a $b$ in  $B$ such that $g(b) = c$.  Since $f$ is onto, there exists a $a$ in  $A$ such that $f(a) = b$. It follows that  $g \compose f(a) = g(f(a)) = g(b) = c$. Since $c$ is an arbitrary element of $C$, this implies that $g \compose f$ is onto.
@@ -2043,62 +2142,66 @@ You have actually seen inverse functions many times before, perhaps without real
 %All students of mathematics have experience with solving an equation for~$x$, and in doing so you might have seen an example of inverse functions.
 
 \begin{example}{}
-In Example~\ref{example:functions:5x-7BijectionEg}, it was shown that $f(x) = 5x - 7$ is a bijection. A quick look at the proof reveals that the formula
+In Example~\ref{example:functions:5x-7BijectionEg}, we showed that $f(x) = 5x - 7$ is a bijection. A quick look at the proof reveals that the formula
 $$x =  \frac{y+7}{5} $$
 plays a key role.  This formula is obtained by replacing $f(x)$ in $f(x) = 5x - 7$ with $y$, and solving for $x$.
 
 In order to see $x = \frac{y+7}{5}$ as an ``inverse function," we translate into the language of functions, by defining $g \colon \mathbb{R} \to \mathbb{R}$  by $g(y) = (y+7)/5$. Then the above assertion can be restated as:
 \begin{align*} \label{y=f(x)<>x=g(y)}
- y = f(x) \qquad \eiff \qquad x = g(y) .
+ y = f(x) \eiff x = g(y) .
  \end{align*}
 This tells us that $g$ does exactly the opposite of what~$f$ does: if $f$ takes $x$ to~$y$, then $g$ takes $y$ to~$x$. We will say that $g$ is an ``inverse" of~$f$.
 \end{example}
 
+\begin{example}{}
+Let $f \colon \mathbb{R}^+ \rightarrow \mathbb{R}^+$ be defined by: $f(x) = x^2$. We may define $g \colon \mathbb{R}^+ \to \mathbb{R}^+$ by: $g(y) = \sqrt{y}$.  Note that in this case the domains and ranges are restricted to \emph{positive} real numbers. Given this restriction,  by the definition of square root we have
+\[ y = x^2 \eiff  x = \sqrt{y}. \] 
+In view of the definitions of $f$ and $g$, we may see that this is the same formula as in the previous example: $ y = f(x) \eiff  x = g(y)$.
+\end{example}
 
-The following proof provides a restatement of this result that will be used in the official definition of inverse functions. I will prove part (a); you will prove part (b).
+\begin{example}{}
+In the previous examples, the domain and codomain were the same--but this doesn't always have to be the case. Let $f \colon \mathbb{R} \rightarrow \mathbb{R}^+$ be defined by $f(x) = e^x$. We may define $g \colon \mathbb{R}^+ \to \mathbb{R}$ by $g(y) = \ln (y)$, where 'ln' denotes the natural logarithm function.  Here we also obtain $ y = f(x) \eiff  x = g(y)$ as before, as long as $x$ is in the domain of $f$ and $y$ is in the domain of $y$.
+\end{example}
 
- \begin{example}{xgyInverseExer}
+The $\eiff$ statement which has popped up in the last three examples can be re-expressed as a pair of equations involving $f$ and $g$, as the following proposition shows:
+
+ \begin{prop}{xgyInverseExer}
  Suppose  that $f \colon X \to Y$
  and $g \colon Y \to X$ are functions such that
- $$ \forall x \in X, \forall y \in Y, \bigl(y = f(x) \eiff x = g(y) \bigr). $$
+ \[ \forall x \in X, \forall y \in Y, \bigl(y = f(x) \eiff x = g(y) \bigr). \]
 Then the following statements are also true:
   \begin{enumerate}[(a)]
- \item  \label{x=g(y)->InverseExer-f(g(y))}
- $f \bigl( g(y) \bigr) = y$ for all $y \in Y$,
- and
  \item  \label{x=g(y)->InverseExer-g(f(x))}
  $g \bigl( f(x) \bigr) = x$  for all $x \in X$.
- \end{enumerate}
+ and
+ \item  \label{x=g(y)->InverseExer-f(g(y))}
+ $f \bigl( g(y) \bigr) = y$ for all $y \in Y$,
 
- 
+ \end{enumerate}
+We will furnish the proof of (a), while the proof of (b) is left as an exercise.
+
  \begin{proof}
- \begin{enumerate}[(a)]
- \item
-For any $y \in Y$, from the above statement we know two things:  
-$$\exists x \in X \mbox{ s.t. } g(y) = x$$ 
-and
-$$\mbox{ for that particular } x, f(x) = y$$
-Therefore, 
-$$f \bigl( g(y) \bigr) = f(x) = y, \forall y \in Y$$
-\end{enumerate}
+The proof of (a) runs as follows. Suppose that $y = f(x) \eiff x = g(y) $ for all $x,y$ in the respective domains of $f$ and $g$. 
+Then for any $x \in X$, we may define $z$ as $z = f(x)$. By the $\eiff$ statement it follows that   $x = g(z)$. But then we may substitute the first equation into the second and obtain $ g(f(x)) = x$.  Since $x$ was an arbitrary element of $X$, it follows that  $ g(f(x)) = x$ for all $x \in X$.
 \end{proof}
 
 \begin{exercise}{88}
-Prove part (b) of Example~\ref{example:functions:xgyInverseExer}.
+Prove part (b) of Proposition~\ref{proposition:functions:xgyInverseExer}.
 \end{exercise}
- \end{example}
+ \end{prop}
+
+\begin{exercise}{conv88}  Prove the converse of Proposition~\ref{proposition:functions:xgyInverseExer}. That is, given that 
+\[g \bigl( f(x) \bigr) = x \text{ for all } x \in X \quad \text{and} \quad f \bigl( g(y) \bigr) = y \text{ for all }y \in Y,\]
+it follows that 
+\[ \forall x \in X, \forall y \in Y, \bigl(y = f(x) \eiff x = g(y) \bigr). \]
+\end{exercise}
 
 Finally, we can give the definition of an inverse function:
 
  \begin{defn}\label{def:invfna}
- Suppose 
- \begin{itemize}
- \item $f \colon X \to Y$,
- and
- \item $g \colon Y \to X$,
-\end{itemize}
+ Suppose  $f \colon X \to Y$  and $g \colon Y \to X$ are functions.
 We say that $g$ is an \term{inverse function }\index{Inverse!function}\index{Function!inverse of} for the function~$f$ if and only if:
- \begin{enumerate} \renewcommand{\theenumi}{\alph{enumi}}
+ \begin{enumerate}[(a)]
  \item $f \bigl( g(y) \bigr) = y$  (in other words, $f \compose g(y) = y$) for all $y \in Y$,
  and
  \item $g \bigl( f(x) \bigr) = x$ (in other words, $g \compose f(y) = y$) for all $x \in X$.
@@ -2134,7 +2237,7 @@ $f \colon \real^+ \to \real^+$ is defined by $f(x) = \sqrt{x+1} - 1$ and
  \end{enumerate}
  \end{exercise}
    
-\subsection{Which functions have inverses?}
+\subsection{Which functions have inverses?}\label{subsec:fun:inv}
 
 It turns out that most functions do \emph{not} have inverses.  
 
@@ -2168,14 +2271,16 @@ Therefore $\forall y \in Y, \exists x \in X \mbox{ s.t. } f(x) = y$.  Hence $f$ 
 So $f$ is both one-to-one and onto: thus $f$ is a bijection.
  \end{proof}
 
-\begin{exercise}{}
+\begin{exercise}{InverseBijection2}
 Prove the reverse direction of Proposition~\ref{InverseBijection}.
+\hyperref[sec:functions:hints]{(*Hint*)} 
 \end{exercise}
 
  \begin{exercise}{InverseUniqueExers} 
  \begin{enumerate}[(a)]
  \item \label{InverseUniqueExers-bij}
  Prove that any inverse of a bijection is a bijection.
+
  \item \label{InverseUniqueExers-unique}
  Show that the inverse of a function is \emph{unique}: if $g_1$ and~$g_2$ are inverses of~$f$, then $g_1 = g_2$.
 \hyperref[sec:functions:hints]{(*Hint*)} 
@@ -2185,9 +2290,9 @@ Prove the reverse direction of Proposition~\ref{InverseBijection}.
 \begin{rem}
 \begin{enumerate}[(a)]
 \item
-Exercise~\ref{exercise:functions:InverseUniqueExers} is key because it enables us to talk about \emph{the} inverse of a function, since there is at most one. We will use the special notation $f^{-1}$\index{Inverse function!notation} to denote the inverse of the function $f$.
+Exercise~\ref{exercise:functions:InverseUniqueExers} is key because it enables us to talk about \emph{the} inverse of a function, since there is never more than one inverse. We will use the special notation $f^{-1}$\index{Inverse function!notation} to denote the inverse of the function $f$.
 \item
-If $f$ is a function that has an inverse, then it is easy to find~$f^{-1}$ as a set of ordered pairs. Namely, 
+According to Definition~\ref{functionDef}, any function can be specified by a set of ordered pairs. That is, if $f:X \rightarrow Y$, we can also write $f \subset X \times Y$, where for all $x \in X$ there is a unique $y \in Y$ such that $(x,y) \in f$. If $f$ is a function that has an inverse, $f^{-1}$ can also be expressed as a subset of $Y \times X$: 
 $$ f^{-1} = \{\, (y,x) \mid (x,y) \in f \,\} .$$
 This is simply a restatement of the fact that
  $$y = f(x) \text{ iff } x = f^{-1}(y) .$$
@@ -2267,11 +2372,11 @@ In the following exercise we look at some particular sets of functions, and inve
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
-Let $G_1$ be the set of all nonzero functions from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax$, where $a$ is a nonzero real number.  (For example, the functions $g(x) = -7x$ and $h(x) = \sqrt{2}x$ are both elements of $G_1$.)\footnote{ $G_1$ is the set of nonzero \term*{linear functions}\index{Linear functions! from $\mathbb{R}$ to $\mathbb{R}$}.}
- Prove or disprove: $G_1$ is a group under composition.
+Let $G_1$ be the set of all nonzero functions from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax$, where $a$ is a nonzero real number.  (For example, the functions $g(x) = -7x$ and $h(x) = \sqrt{2}x$ are both elements of $G_1$.) Prove or disprove: $G_1$ is a group under composition.
+(Note: $G_1$ is the set of nonzero \term{linear functions} from $\mathbb{R}$ to $\mathbb{R}$.)
 \item
-Let $G_2$ be the set of all nonzero functions  from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax+b$ where $a$ and $b$ are real numbers which are not both zero.  (For example, the functions $p(x) = 29.4x + 42.3$, $q(x) = 15$ and  $r(x) = -\pi x$ are all elements of $G_2$.)\footnote{$G_2$ is the set of all  nonzero \term*{affine functions}\index{Affine functions! from $\mathbb{R}$ to $\mathbb{R}$}.}
- Prove or disprove: $G_2$ is a group under composition.
+Let $G_2$ be the set of all nonzero functions  from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax+b$ where $a$ and $b$ are real numbers which are not both zero.  (For example, the functions $p(x) = 29.4x + 42.3$, $q(x) = 15$ and  $r(x) = -\pi x$ are all elements of $G_2$.)  Prove or disprove: $G_2$ is a group under composition. (Note: $G_2$ is called the set of all  nonzero \term{affine functions} from $\mathbb{R}$ to $\mathbb{R}$.)
+
 \item
 Let $G_3$ be the set of all  nonconstant  functions from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax+b$ where $a$ is a nonzero real number and $b$ can be any real number.  Prove or disprove: $G_3$ is a group under composition.
 \item
@@ -2285,10 +2390,10 @@ where $a$ and $b$ are nonzero \emph{rational} numbers.  Prove or disprove: $G_5$
 \end{enumerate}
 \end{exercise}
 
-Finally, recall that some groups are commutative (or ``abelian''). Are groups under composition always abelian? Let's find out:
+Finally, recall that some groups are commutative (commutative groups are also called \term{abelian} groups). Are groups under composition always abelian? Let's find out:
 
 \begin{exercise}{}
-Is the group $G$ defined in Proposition~\ref{proposition:functions:functionGroup} always an \term{abelian} group? (That is, is it always commutative?)  If so, then prove it; and if not, give an example of a set $A$ for which the corresponding group $G$ is non-abelian (not commutative). 
+Is the group $G$ defined in Proposition~\ref{proposition:functions:functionGroup} always an abelian group? (That is, is it always commutative?)  If so, then prove it; and if not, give an example of a set $A$ for which the corresponding group $G$ is non-abelian (not commutative). 
 \end{exercise}
   
 % CPT put this back in if we put in pre-image section

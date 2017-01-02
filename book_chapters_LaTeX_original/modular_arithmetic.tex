@@ -60,7 +60,7 @@ Give the number of possible answers for Examples~\ref{example:modular:crockpot} 
 \end{exercise}
 
 Each example above requires arithmetic to solve, but it's arithmetic with a twist. For example, in
-Example~\ref{example:modular:racetrack} if the car is at the 3-mile mark and travels another 3 miles, then it arrives at the 1-mile marker. This is a strange equation: $3 + 3 = 1$. The reason of course is that the location ``cycles'' back to 0 instead of increasing to $5,6,7, \ldots$ This  ``arithmetic with cycles''  is actually called \term{modular arithmetic}\index{Modular arithmetic}.  The size of one cycle (which is equal to the number of possible answers described in Exercise~\ref{exercise:modular:modulus0} is called the \term{modulus}\index{Modulus}\index{Modulus}.  
+Example~\ref{example:modular:racetrack} if the car is at the 3-mile mark and travels another 3 miles, then it arrives at the 1-mile marker. This is a strange equation: $3 + 3 = 1$. The reason of course is that the location ``cycles'' back to 0 instead of increasing to $5,6,7, \ldots$ This  ``arithmetic with cycles''  is actually called \term{modular arithmetic}\index{Arithmetic!modular}.  The size of one cycle (which is equal to the number of possible answers described in Exercise~\ref{exercise:modular:modulus0} is called the \term{modulus}\index{Modulus}\index{Modulus}.  
 
 \begin{exercise}{modulus1}
 Give the modulus for the seven examples at the beginning of this chapter.
@@ -127,11 +127,11 @@ In our racetrack example we may notice that 8, 23, and -17 all  have remainder 3
 as follows:
 
 \begin{defn}\label{definition:modular:equivalence}
- Two integers $a$ and $b$ are \term{equivalent} mod $m$\index{Modular equivalence}  if both $a$ and $b$ have the same remainder when divided by $m$. To denote that $a$ and $b$ are \term{equivalent} mod $m$, we write: $a \equiv b \pmod{m}$.
+ Two integers $a$ and $b$ are \term*{equivalent} mod $m$\index{Modular equivalence!first definition}  if both $a$ and $b$ have the same remainder when divided by $m$. To denote that $a$ and $b$ are \term{equivalent} mod $m$, we write: $a \equiv b \pmod{m}$.
  \end{defn}
 
-\begin{rem}
-This definition uses the notion of \emph{remainder},\index{Remainder} which we're assuming you're familiar with from  basic algebra. To be precise, the remainder of $a$ when divided by $m$ is a number $r$ between $0$ and $m-1$ such that  $a = q \cdot m + r$ for some integer $q$ ($q$ is called the ``quotient'').  In your basic algebra class you we always able to find a remainder for any division problem, and there was always just one right answer for the remainder. In other words, you found that the remainder always exists, and is unique. This ``basic" fact is actually not so easy to prove. It may be proved using the so-called \emph{division algorithm}.\index{Division algorithm} You may find a proof in any book on number theory.
+\begin{rem}\label{DivAlg}
+This definition uses the notion of \emph{remainder},\index{Remainder} which we're assuming you're familiar with from  basic algebra. To be precise, the remainder of $a$ when divided by $m$ is a number $r$ between $0$ and $m-1$ such that  $a = q \cdot m + r$ for some integer $q$ ($q$ is called the ``quotient'').  In your basic algebra class you we always able to find a remainder for any division problem, and there was always just one right answer for the remainder. In other words, you found that the remainder always exists, and is unique. This ``basic" fact is actually not so easy to prove. It may be proved using the so-called \term{division algorithm}. You may find a proof in any book on number theory.
 \end{rem}
 
 \begin{rem}
@@ -179,7 +179,7 @@ a \equiv b \pmod{m} \mathrm{~if~and~only~if~} a - b = k \cdot m,
 where $k$ is an integer.
 \end{prop}
 \noindent
-We may rewrite Proposition~\ref{proposition:modular:equivalence_alt} more elegantly using mathematical shorthand as follows: Given $a,b,m \in {\mathbb Z}$, then 
+We may rewrite Proposition~\ref{proposition:modular:equivalence_alt} more elegantly using mathematical shorthand as follows: Given $a,b,m \in {\mathbb Z}$, then\index{Modular equivalence!alternative definition} 
 \[
 a \equiv b \pmod{m} \mathrm{~iff~} m | (a - b).
 \]

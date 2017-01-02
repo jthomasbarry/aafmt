@@ -17,7 +17,7 @@ for proofs of similar sum/product formulas. \footnote{This entire section was ri
 
 \noindent
 \textbf{Base case:} When $n=1$, the left side of $P(n)$ is $1$, and the
-right side is $1(1+1)/2=1$, so both sides are equal and ($*$) holds  
+right side is $1(1+1)/2=1$, so both sides are equal and $P(n)$ holds  
 for $n=1$.
 
 \noindent
@@ -101,8 +101,8 @@ the same pattern.
 
 \noindent
 \term{Examples:}
-\begin{enumerate}
-
+\begin{enumerate}[(a)]
+	
 \item
 $\sum_{i=0}^n r^i=\frac{1-r^{n+1}}{1-r}$ ($r\not=1$)
 (sum of finite geometric series)
@@ -147,7 +147,7 @@ $P(k)$ is true. Then
 \\
 &=\frac{(k+1)(k+2)(k+3)}{3}.
 \end{align*}
-Thus, $P(\underline{~~~}$ holds, and the proof of the induction step is complete. 
+Thus, $P(\underline{~~~})$ holds, and the proof of the induction step is complete. 
 
 \textbf{Conclusion:} By the principle of induction,  it follows that
 \underline{~~~~} is true for all $n\in\NN$.  
@@ -262,7 +262,7 @@ holds for all $n\ge4$.
 (k+1)!&=k! \cdot (k+1)
 \\
 &>2^k \cdot \underline{~~~~~}
-\quad \text{(by \underline{~~~~~~~~~~~~})}
+\quad (\text{by } \underline{~~~~~~~~~~~~})
 \\
 &\ge 2^k\cdot 2
 \quad \text{(since $k\ge4$ and so $k+1\ge2$))}
@@ -288,7 +288,7 @@ and any $n\in\NN$?  Call this statement ``$P(n)$''.
 \textbf{Induction step:} Let $k\in\NN$ be given and suppose $P(k)$ is true
 for any real number $0<x<1$.   What do we seek to show?
 \item
-Rewrite $(1-x)^{k+1}$ as $(1-x)^k \cdot (1-x)$. Then use ($*$) for $n=k$ to obtain an inequality. Using basic algebra, simplify the right-hand side until you obtain a quantity that is greater than $1-(k+1)x$.
+Rewrite $(1-x)^{k+1}$ as $(1-x)^k \cdot (1-x)$. Then use $P(n)$  for $n=k$ to obtain an inequality. Using basic algebra, simplify the right-hand side until you obtain a quantity that is greater than $1-(k+1)x$.
 \item
 What may you conclude about $P(k+1)$?
 \end{enumerate}
@@ -346,7 +346,7 @@ case $n=2$ to the next case $n=3$.
 
 \noindent
 \term{Examples:}
-\begin{enumerate}
+\begin{enumerate}[(a)]
 
 \item{} 
 % [Problem 3.15]
@@ -361,7 +361,7 @@ $a_i\le b_i$ for all $i$, then
 \[
 \sum_{i=1}^na_i\le \sum_{i=1}^nb_i. 
 \]
-(Use the fact (from Chapter 1) that $a\le b$ and $c\le d$ implies
+(Use the fact from Chapter \ref{BeforeWeBegin} that $a\le b$ and $c\le d$ implies
 $a+c\le b+d$.)
 
 
@@ -393,7 +393,7 @@ We'll give outlines of the proofs of (a) and (b):
 \textbf{Proof of (a):} We will prove by induction on $n$ the following statement: 
 \[
 \tag{$P(n)$}
-\text{\slshape If $x_1,\dots,x_n$ are odd numbers, then 
+\text{ If $x_1,\dots,x_n$ are odd numbers, then 
 $x_1x_2\dots x_n$ is odd.}
 \]
 

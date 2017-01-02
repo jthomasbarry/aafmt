@@ -331,7 +331,7 @@ This may look a little confusing at first, but once you do a few examples it wil
 \end{align}
 Sure enough, when we look at the long version we wrote earlier for the product ${AB}$ our result matches the entry on the second row, third column.
 
-\begin{exercise}{}
+\begin{exercise}{sigmaAssoc}
 Given three matrices $A, B, C$ with sizes $m \times n, n \times p, p \times q$ respectively.
 \begin{enumerate}[(a)]
 \item
@@ -341,7 +341,9 @@ Let $G = AD$.  Write a formula for the entries $g_{\ell,j}$ of $G$ in terms of t
 \item
 Let $H$ =  $(AB)$, and let $M = HC$. Write a formula for the entries $m_{\ell,j}$ of $M$ in terms of the entries of $A$, $B$ and $C$.
 \item
-Show that matrix multiplication is \emph{associative}.
+Using parts (b) and (c), show that matrix multiplication is \emph{associative}. 
+\hyperref[sec:sigma:hints]{(*Hint*)} 
+
 \end{enumerate}
 \end{exercise}
 
@@ -378,14 +380,23 @@ Show that: $\displaystyle{ \sum_{k=1}^n  \delta_{ik}\delta_{kj}=\delta_{ij}}.$
 
 
 \subsubsection*{Matrix transpose}
-Transpose is another operation on matrices that lends itself to summation notation.  Recall that the transpose of a matrix changes the rows to columns,so that the first row becomes the first column, the second row becomes the second column, and so on.   Using indices and recalling that first index is the row and the second is the column, we can state this as:
+Transpose is another operation on matrices that lends itself to summation notation.  Recall that the transpose of a matrix changes the rows to columns,so that the first row becomes the first column, the second row becomes the second column, and so on.  The transpose of matrix $A$ is denoted as $A^T$. Using indices and recalling that first index is the row and the second is the column, we can express this as:
 
-\[ \left[ {A}^{\text{T}} \right]_{i,j} = {a}_{j,i}. \]
+\[ \left[ {A}^{\text{T}} \right]_{i,j} = \left[ A \right]_{j,i}, \]
+that is, the $(i,j)$ entry of $A^T$ is equal to the $(j,i)$ entry of $A$.  Since we typically write the $(j,i)$ entry of $A$ as $a_{j,i}$, we may also write:
+\[ \left[ {A}^{\text{T}} \right]_{i,j} = a_{j,i}. \]
+Don't get caught up with the particular indices $i$ and $j$--the important thing is that the indices are switched when you take the transpose.  For example, we can also write $\left[ {A}^{\text{T}} \right]_{j,i} = a_{i,j}$ or 
+$\left[ {A}^{\text{T}} \right]_{k,m} = a_{m,k}$.
 
-Now let's demonstrate the power of our new notation to prove one of the properties of transpose:
+Now let's demonstrate the power of our new notation to prove an important property of transpose:
 
+\begin{prop}{prodTrans}
+If $A$ and $B$ are matrices such that the matrix product is defined, then 
 \[ \left( {A}{B} \right)^{\text{T}} = {B}^{\text{T}} {A}^{\text{T}}. \]
+\end{prop}
 
+
+\begin{proof}
 We'll prove this by expressing the $(i,j)$ entry of the left-hand side in summation notation,  doing some algebraic hocus-pocus, and showing that it agrees with the $(i,j)$ entry of the right side.  First we make things clear by specifying that ${A}$ has $n$ columns and $B$ has $n$ rows (these dimensions have to agree, or the product is not defined). This gives us
 \[ \left[ AB \right]_{i,j}= \sum_{k=1}^n a_{i,k} b_{k,j}. \]
 so the $(i,j)$ entry of the left-hand side is:
@@ -400,7 +411,7 @@ Since the terms of ${A}$ and ${B}$ are being expressed as a summation, they comm
 \[ \sum_{k=1}^n \left[A^{\text{T}}\right]_{k,j} \left[B^{\text{T}}\right]_{i,k} = \sum_{k=1}^n \left[B^{\text{T}}\right]_{i,k}\left[A^{\text{T}}\right]_{k,j} = \left[ {B}^{\text{T}}{A}^{\text{T}} \right]_{i,j}, \]
 
 Voila, we have the $(i,j)$ entry of the right-hand side, and the proof is complete.
-
+\end{proof}
 
 
 \begin{exercise}{}

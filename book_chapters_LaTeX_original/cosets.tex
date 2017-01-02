@@ -39,7 +39,7 @@ Thanks to Tom Judson for material used in this chapter.
 
 The concept of ``coset'' brings together two ideas that we've seen before, namely \emph{subgroups} and \emph{equivalence classes}. We'll see how cosets arise from this mix by using a familiar example.
 
-\begin{example}{ModArith}\emph{(Modular addition d\'ej\`a vu All Over Again)}  
+\begin{example}{ModArith}\emph{(Modular addition d\'ej\`a vu all over again)}  
 
 Back in Chapter~\ref{modular} we defined modular equivalence (Definition~\ref{definition:modular:equivalence}), and in Proposition~\ref{proposition:modular:equivalence_alt} we gave an alternative characterization:
 \medskip
@@ -80,11 +80,11 @@ $[2]_3  = 2 + 3{\mathbb Z}.$
 Notice the pattern here. Recall that $3{\mathbb Z}$ is a \emph{subgroup} of ${\mathbb Z}$. In order to ``create" the equivalence class $1 + 3{\mathbb Z}$, we added a specific group element (namely, 1) to \emph{every} element of the subgroup $3{\mathbb Z}$. The same holds true for $2 +  3{\mathbb Z}$. In both cases, the notation follows the pattern: 
 \medskip
 
-(selected group element) (group operation) (Subgroup). 
+(selected group element) (group operation) (subgroup). 
 \medskip
 
 \noindent
-An alternative notation that also makes sense is:
+And, since every element of  $[1]_3$ can also be viewed as an element of $3{\mathbb Z}$~+~1 (and similarly for $[2]_3$), an alternative notation that makes sense is:
 \medskip
 
 $[1]_3  =  3{\mathbb Z} + 1$
@@ -96,13 +96,13 @@ $[2]_3  = 3{\mathbb Z} + 2,$
 which follows the pattern:
 \medskip
 
-(Subgroup) (group operation) (selected group element).
+(subgroup) (group operation) (selected group element).
 \end{example}
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
-Write the 5 equivalence classes (subsets of ${\mathbb Z}$)  which make up ${\mathbb Z}_5$ in using our new notation.
+Write the 5 equivalence classes (subsets of ${\mathbb Z}$)  which make up ${\mathbb Z}_5$ using our new notation.
 \item
 Write all elements of ${\mathbb Z}_7$ using our new notation.
 \end{enumerate}
@@ -122,9 +122,9 @@ Hg = \{ hg : h \in H \}.
 (Note that in the preceding equations, ``$gh$'' denotes $g \compose h$ where $\compose$ is the group operation. This is similar to our writing $xy$ to denote $x \cdot y$ in conventional algebra).
 \end{defn}
 
-Definition \ref{def_coset} looks a little different from Example~\ref{example:cosets:ModArith}, e.g. we have $gH$ instead of  $3 + {\mathbb Z}$.  But in fact the pattern is the same:  (group element) (group operation) (Subgroup).  If the group operation is +, we will typically write left cosets as $g + H$ and right cosets as $H + g$. For all other group operations, we'll use the more compact notation $gH$ and $Hg$.
+Definition \ref{def_coset} looks a little different from Example~\ref{example:cosets:ModArith}, e.g. we have $gH$ instead of  $3 + {\mathbb Z}$.  But in fact the pattern is the same:  (group element) (group operation) (subgroup).  If the group operation is +, we will typically write left cosets as $g + H$ and right cosets as $H + g$. For all other group operations, we'll use the more compact notation $gH$ and $Hg$.
 
-Now Definition \ref{def_coset} distinguishes between  \emph{left} and \emph{right} cosets.   In Example~\ref{example:cosets:ModArith},the left coset $1 + 3{\mathbb Z}$ and the right coset $ 3{\mathbb Z} + 1$ were in fact the same set, as were $2 + 3{\mathbb Z}$ and the right coset $ 3{\mathbb Z} + 2$.  But left and right cosets are not always equal, as the following example shows.  
+Now Definition \ref{def_coset} distinguishes between  \emph{left} and \emph{right} cosets.   In our earlier discussion,the left coset $1 + 3{\mathbb Z}$ and the right coset $ 3{\mathbb Z} + 1$ were in fact the same set, as were $2 + 3{\mathbb Z}$ and the right coset $ 3{\mathbb Z} + 2$.  But left and right cosets are not always equal, as the following example shows.  
 
 \begin{example}{S3_Cosets}
 Let $H$ be the subgroup of $S_3$ defined by the permutations $\{(1), (123), (132) \}$.  (Here we are using $(1)$ to denote the identity permutation ${\var id}$.) The left cosets of $H$ are 
@@ -257,7 +257,7 @@ $g_1^{-1} g_2 \in H$.
 $g_2 \in g_1 H$; 
 
 \item
-$g_2 H \subset g_1 H$; \qquad (\emph{Note:} ``$\subset$'' means that equality is also possible)
+$g_2 H \subseteq g_1 H$; \qquad (\emph{Note:} ``$\subseteq$'' means that equality is also possible)
 
 \item
 $H g_1^{-1}  = H g_2^{-1}$; 
@@ -308,7 +308,14 @@ Let $H$ be a subgroup of a group $G$.  Then the left cosets of $H$ in $G$ partit
 \end{thm}
 
 \begin{proof}
+\begin{enumerate}[(1)]
+\item
 Let $g_1 H$ and $g_2 H$ be two cosets of $H$ in $G$.  We must show that either $g_1 H \cap g_2 H = \emptyset$ or $g_1 H = g_2 H$.  Suppose that $g_1 H \cap g_2 H \neq \emptyset$ and $a \in g_1 H \cap g_2 H$.  Then by the definition of a left coset, $a = g_1 h_1 = g_2 h_2$ for some elements $h_1$ and $h_2$ in $H$.  Hence, $g_1 = g_2 h_2 h_1^{-1}$ or $g_1 \in g_2 H$.  By Proposition~\ref{cosets_theorem_1}, $g_1 H = g_2 H$. 
+\item
+\begin{exercise}{}
+Prove that $\bigcup_{g \in G} g_i H = G$.
+\end{exercise}
+\end{enumerate}
 \end{proof}
 
 \begin{rem}\label{right_is_left}
@@ -425,7 +432,7 @@ Applying this same reasoning to groups and their subgroups leads to a very gener
 In the following discussion, for specificity's sake we will use  left coset notation. However, just lke we saw in the last section (Remark~\ref{right_is_left}), everything we say about left cosets is also true for right cosets. Indeed, to prove the cases for the right cosets, you simply need to take the left coset proofs given below and switch around each coset expression and group operation.
 \end{rem}
 
-As we mentioned in our raisin bread analogy, to prove  Lagrange's theorem we first need to prove that every left coset of a subgroup has the exactly the same size:
+As mentioned above, to prove  Lagrange's theorem we first need to prove that every left coset of a subgroup has the exactly the same size:
 
 \begin{thm}\label{cosets_theorem_4}
 Let $H$ be a subgroup of $G$ with $g \in G$ and define a map $\phi:H \rightarrow gH$ by $\phi(h) = gh$.  The map $\phi$ is a bijection; hence, the number of elements in $H$ is the same as the number of elements in $gH$. 
@@ -434,6 +441,7 @@ Let $H$ be a subgroup of $G$ with $g \in G$ and define a map $\phi:H \rightarrow
 \begin{proof}
 We first show that the map $\phi$ is one-to-one.  Suppose that $\phi(h_1)  = \phi(h_2)$ for elements $h_1, h_2 \in H$.  We must show that $h_1 =  h_2$, but $\phi(h_1) = gh_1$ and $\phi(h_2) = gh_2$.  So $gh_1 = gh_2$,  and by left cancellation $h_1= h_2$.  To show that $\phi$ is onto is easy.  By definition every element of $gH$ is of the form $gh$ for some $h \in H$ and $\phi(h) = gh$. 
 \end{proof}
+
 Given this proposition Lagrange's theorem falls right out:
 
 \begin{thm}[Lagrange's theorem]\index{Lagrange's theorem}\label{LagrangeTheorem}
@@ -486,7 +494,7 @@ Joseph-Louis Lagrange\index{Lagrange, Joseph-Louis} (1736--1813), born in Turin,
 
 \subsection{Orders of elements, Euler's theorem, Fermat's little theorem, and prime order}\label{sec:Fermat}
 
-Now let's really put Lagrange's theorem to work. Note that Lagrange's theorem is an extremely general result--it applies to \emph{any} subgroup of \emph{any} group. So let's consider one particular type of subgroup, namely the cyclic subgroups $\langle g \rangle$ generated by the elements $g$ of a given group $G$ (see Proposition~\ref{OrbitIsSubgroup} in Section~\ref{CyclicSubgrups} of the Groups chapter  for the definition of $\langle g \rangle$, and the proof that it is indeed a group).
+Now let's really put Lagrange's theorem to work. Note that Lagrange's theorem is an extremely general result--it applies to \emph{any} subgroup of \emph{any} finite group. So let's consider one particular type of subgroup, namely the cyclic subgroups $\langle g \rangle$ generated by the elements $g$ of a given group $G$ (see Proposition~\ref{OrbitIsSubgroup} in Section~\ref{CyclicSubgrups} of the Groups chapter  for the definition of $\langle g \rangle$, and the proof that it is indeed a group).
 
 \begin{thm}\label{cosets_theorem_6}
 Suppose that $G$ is a finite group and $g \in G$.  Then the order of $g$ must divide the number of elements in $G$. 
@@ -900,7 +908,7 @@ and the proof is complete.
 %
 %\[ (\text{\emph{1}} + 3 {\mathbb Z}) + (\text{\emph{2}} + 3 {\mathbb Z}) = (\text{\emph{$1$}} + \text{\emph{$2$}}) +  3 {\mathbb Z} = 0 + 3 {\mathbb Z} \pmod{3} \]
 
-Let's step back and see what we've done. We've taken one coset of $ 3 {\mathbb Z}$ (i.e. $0 + 3\ZZ$), and ``added" a second coset (i.e. $1 + 3\ZZ$) to it, to get a third coset of $ 3 {\mathbb Z}$ . This sounds like closure.  We can do the same thing with all pairs of cosets, and obtain the following ``addition'' table: 
+Let's step back and see what we've done. We've taken one coset of $ 3 {\mathbb Z}$ (i.e. $0 + 3\ZZ$), and ``added" a second coset (i.e. $1 + 3\ZZ$) to it, to get a third coset of $ 3 {\mathbb Z}$. This sounds like closure.  So let's check that we have it.  Doing the same thing with all pairs of cosets, we obtain the following ``addition'' table: 
 
 %Notice also that 
 %The group   ${\mathbb Z}/ 3 {\mathbb Z}$ then is given by the multiplication
@@ -914,7 +922,7 @@ $2 + 3{\mathbb Z}$ & $2 + 3{\mathbb Z}$ & $0 + 3{\mathbb Z}$ & $1 + 3{\mathbb Z}
 \end{tabular}
 \end{center}
 
-Indeed we have closure.  It's beginning to look like we have a group here. Actually,  we can see an identity ( $0 + 3 {\mathbb Z}$) and an inverse for every coset (for example $[1 + 3 {\mathbb Z}]^{-1}=2 + 3 {\mathbb Z}$). It turns that the associative property also holds: this follows from the associativity of ordinary addition. So we got it: the cosets of $3 {\mathbb Z}$ \emph{themselves} form a group!  (Note the Cayley table for this group looks suspiciously the same as the Cayley table for ${\mathbb Z}_3$; we'll pick up on this in the Isomorphisms chapter.)  
+So indeed we have closure.  It's beginning to look like we have a group here. Actually,  we can see an identity ( $0 + 3 {\mathbb Z}$) and an inverse for every coset (for example $[1 + 3 {\mathbb Z}]^{-1}=2 + 3 {\mathbb Z}$). It turns that the associative property also holds: this follows from the associativity of ordinary addition. So we got it: the cosets of $3 {\mathbb Z}$ \emph{themselves} form a group!  (Note the Cayley table for this group looks suspiciously the same as the Cayley table for ${\mathbb Z}_3$; we'll pick up on this in the Isomorphisms chapter.)  
 \end{example}
 
  So \emph{this} is the grand revelation about normal subgroups: \emph{the cosets of a normal subgroup form a group}. But we shouldn't jump the gun: we've only shown it's true for a special case. Now we have to get down to the hard work of proving it in general. First we have to generalize Definition~\ref{setplus} to other group operations.
@@ -1052,16 +1060,14 @@ Construct the multiplication table for  $D_n / R_n$.
  
 \section{The simplicity of the alternating group}\label{normal:section:simplealternating}
  
- 
-
-In the previous section we talked about how a normal subgroup enables us to ``factor'' a group to obtain a group with fewer elements (i.e. the group of cosets.)  In some way this is similar to the idea of factoring positive integers as a product of smaller numbers.  A natural question then is whether there are groups that can't be ``factored'': in other words, Are there groups which have no normal subgroups? 
+ In the previous section we talked about how a normal subgroup enables us to ``factor'' a group to obtain a group with fewer elements (i.e. the group of cosets.)  In some way this is similar to the idea of factoring positive integers as a product of smaller numbers.  A natural question then is whether there are groups that can't be ``factored'': in other words, are there groups which have no normal subgroups? 
 
 Actually, in Exercise~\ref{exercise:cosets:e_normal} you've already answered that question: for any group, the identity $\{e\}$ is a normal subgroup.  But factoring by $\{e\}$ doesn't give a group with fewer elements, because the number of cosets of the identity in any group $G$ is (by Lagrange's theorem)
 
 \[ \frac{|G|}{|\{e\}|} = \frac{|G|}{1} = |G|. \]
 
 \noindent
-Thus factoring a group by $\{e\}$ is kind of like dividing an integer by 1: it doesn't change anything. So let's change our question to:  Are there groups which have no \emph{nontrivial} subgroups? Such groups would be like prime numbers: they can't be factored any further.
+Thus factoring a group by $\{e\}$ is kind of like dividing an integer by 1: it doesn't change anything. So let's change our question to:  are there groups which have no \emph{nontrivial} subgroups? Such groups would be like prime numbers: they can't be factored any further.
 
 A group with no nontrivial normal subgroups is called a \term{simple group}\index{Group!simple}\index{Simple group}. In a way, simple groups are the ``prime  numbers'' in group theory. Just like any positive integer uniquely factors into a product of prime numbers,  it turns out that any group can be uniquely factored into a series of simple groups.  (Unfortunately, proving this is beyond the scope of this course.) 
 
@@ -1076,28 +1082,41 @@ The only  normal subgroup of $A_n (n \geq 3)$ that contains a 3-cycle is $A_n$ i
 \item
 Any nontrivial normal subgroup of $A_n (n \geq 5)$ contains a 3-cycle.
 \end{enumerate}
-Logically, (1) and (2)  imply that the only nontrivial normal subgroup of $A_n (n \geq 5)$ is $A_n$ itself.
+Facts (1) and (2) then imply that the only nontrivial normal subgroup of $A_n (n \geq 5)$ is $A_n$ itself.
 
-Before we can prove facts (1) and (2), we need a preliminarly result: 
+Before we can prove facts (1) and (2), we need first a preliminarly result: 
 
 \begin{thm}\label{normal:3cycle_lemma1}
 The alternating group $A_n$ is generated by $3$-cycles for $n \geq 3$.
 \end{thm}
  
 \begin{proof}
-To show that the 3-cycles generate $A_n$, we need only show that any
-pair of transpositions can be written as the product of 3-cycles.
-Since $(a b) = (b a)$, every pair of transpositions must be one of the
-following: 
+We know that any element $\sigma$ of $A_n$ is an even permutation, so $\sigma$ can be expressed as the product of an even number of transpositions. In this  expression for $\sigma$ we may pair up the transpositions two by two, and thus obtain an expression for $\sigma$ as a product of \emph{pairs} of transpositions. Now consider any pair of transpositions. Either the pair has both elements in common; or the pair has one element in common; or the pair has no elements in common. In other words, the three possibilities for any pair of transpositions are:
+\[ (ab)(ab) \text{ or } (ab)(bc)  \text{ or } (ab)(cd) \quad \text{(where } a,b,c,d \text{ are all different elements of } A_n).\]
+We may write all of these pairs of transpositions as follows:
 \begin{align*}
-(ab)(ab) & = id \\
-(ab)(cd) & = (acb)(acd) \\
-(ab)(ac) & = (acb).
+(ab)(ab) & = {\var id} \\
+(ab)(bc) & = (abc) \\
+(ab)(cd) & = (abc)(bcd).
 \end{align*}
+By substituting pairs of transpositions in the product expression for $\sigma$ with equivalent 3-cycle expressions, we may express the arbitrary element $\sigma \in A_n$ as a product of 3-cycles.
 \end{proof}
- 
-\noindent
-Now we're able to prove fact (1).
+
+Before continuing onward, let's take a moment to see how this works in practice.
+ \begin{exercise}{ex3cycle}
+ Express the following permutations as products of 3-cycles.
+\begin{enumerate}[(a)]
+\item 
+(12)(34)(56)(78)
+\item 
+(13)(35)(57)(79)(24)(68)
+\item 
+(1357)(2468)
+\item 
+(428)(1628)
+\end{enumerate}
+ \end{exercise}
+Armed with Proposition~\ref{normal:3cycle_lemma1} we're now able to prove fact (1).
 
 \begin{thm}\label{normal:3cycle_lemma2}
 Let $N$ be a  normal subgroup of $A_n$, where $n \geq 3$. If $N$ 
