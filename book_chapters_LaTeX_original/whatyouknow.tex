@@ -13,7 +13,7 @@ When you sing you begin with Do Re Me
 (Oscar Hammerstein, \emph{The Sound of Music})
 \bigskip
 
-If Maria had been the Trapp children's math tutor, she might have continued:  ``When you count, you begin with 1 2 3''. Ordinarily we think of the ``counting numbers''  (which mathematicians call the \term{natural numbers} or \term{positive integers}) as the ``very beginning'' of math.\footnote{ ``God made the integers; all else is the work of man.'' (Leopold Kronecker, German mathematician, 1886)}
+If Maria had been more mathematically inclined, she might have continued:  ``When you count, you begin with 1 2 3''. Ordinarily we think of the ``counting numbers''  (which mathematicians call the \term{natural numbers} or \term{positive integers}) as the ``very beginning'' of math.\footnote{ ``God made the integers; all else is the work of man.'' (Leopold Kronecker, German mathematician, 1886)}
 \medskip
 
 It's true that when we learn math in school, we begin with the counting numbers. But do we really start at the ``very beginning''?   How do we know that $1 + 1 = 2$? How do we know that the methods we learned to add,  multiply, divide, and subtract will always work? We've been taught how to factor integers into prime factors. But how do we know this always works?
@@ -26,7 +26,7 @@ and axioms later after the examples are well-understood.}
 
 This text is loaded with proofs, which are as unavoidable in abstract mathematics as they are intimidating to many students. We try to ``tone things down'' as much as possible. For example, we will take as ``fact'' many of the things that you learned in high school and  college algebra--even though you've never seen proofs of these ``facts''.  In the next section  we remind you of some of these ``facts''.  When writing proofs or doing exercise feel free to use any of these facts.  If you have to give a reason, you can just say  ``basic algebra''.\index{Algebra!high school and college}
 
-We close this prologue with the assurance that abstract algebra is a beautiful subject that brings amazing insights into the nature of numbers, and the nature of Nature itself. Furthermore, engineers and technologists are finding more and more practical applications, as we shall see in the coming chapters.
+We close this prologue with the assurance that abstract algebra is a beautiful subject that brings amazing insights into the nature of numbers, and the nature of Nature itself. Furthermore, engineers and technologists are finding more and more practical applications, as we shall see in some of the later chapters.
 
 
 
@@ -40,13 +40,17 @@ We assume that you have already been introduced to the following number systems:
 There are number systems for which the following properties do NOT hold (as we shall see later). So they may be safely assumed ONLY for integers, rational numbers, and real numbers.
 \end{warn}
 
-\subsection{Arithmetic operations:properties }\label{OpsAndRels}
+\subsection{Properties of arithmetic operations}\label{OpsAndRels}
 
 We assume the following properties of arithmetic operations on the integers, rational numbers, and real numbers.
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[(A)]
 \item
 \term*{Identity}\index{Identity!in ordinary arithmetic}:   Addition by 0 or multiplication by 1 result in no change of original number.
+\item
+\term*{Additive inverse}\index{Inverse!in ordinary arithmetic}. For every number $a$ there is a unique number $-a$ such that the sum of $a$ and $-a$ is 0.   Note that we write $a + (-b)$ as $a-b$.
+\item
+\term*{Multiplicative inverse} (**\emph{real and rational numbers only}**)   For every nonzero real or rational number $a$ there is a unique number $1/a$ such that the product of $a$ and $1/a$ is 1.  
 \item
 \term*{Associative}\index{Associative!in ordinary arithmetic}: When three or more numbers are added together, changing the grouping of the numbers being added does not change the value of the result.   The same goes for three or more numbers multiplied together. (Note that in arithmetic expressions, the ``grouping'' of numbers is indicated by parentheses.)
 \item
@@ -57,15 +61,16 @@ We assume the following properties of arithmetic operations on the integers, rat
 If  the product of two numbers is zero, then one or the other number must be zero.
 \end {enumerate}
 
+
 \begin{exercise}{1}
 \begin{enumerate}[(a)]
 \item
-For the properties (a),(b),(c)  above, give (i) a specific example for addition, using numbers, and (ii) a general statement for multiplication, using variables.  
-For example, for property (a) (the commutative property) a specific example would be  $3+5 = 5+3$, and a general statement would be $x \cdot y=y \cdot x$. 
+For each of the properties (D),(E),(F)  above, give (i) a specific example for addition, using numbers, and (ii) a general statement for multiplication, using variables.  
+For example, for property (E) (the commutative property) a specific example would be  $3+5 = 5+3$, and a general statement would be $x \cdot y=y \cdot x$. 
 \item
-Give an example (using numbers)  that shows that subtraction is \emph{not} commutative 
+Give a specific example  that shows that subtraction is \emph{not} commutative 
 .\item
-Give an example (using numbers)  that shows that division is \emph{not} associative. 
+Give a specific example  that shows that division is \emph{not} associative. 
 \end{enumerate}
 \end{exercise}
 
@@ -117,7 +122,7 @@ $1 + 2 \cdot 3 + 3 \cdot 4 \cdot 5 + 5 \cdot 6 \cdot 7 \cdot 2$
 \subsection{Order relations: properties}\label{subsec:orderprop}
 We also have \term*{order relations}\index{Order relation!in ordinary arithmetic} on the real, rational, and integer number systems, which are expressed by the terms `greater than'  and 'less than' with corresponding symbols $>$ and $<$. Positive numbers are greater than 0, and negative numbers are less than zero. We assume the following properties of the order relation on the integers, rational numbers, and real numbers:
 
-\begin{enumerate}[(a)] 
+\begin{enumerate}[(A)] 
 \item
 Given two numbers, exactly one of these three are true: either the first number is greater than the second, or the second number is greater than the first, or the two numbers are equal.
 \item
@@ -127,7 +132,7 @@ The product of two  nonzero numbers with the same sign is positive. The product 
 \end{enumerate}
 
 \begin{exercise}{3}
-Suppose $a > b$,  $b \ge 0$ and $ab = 0$.  What can you conclude about $a$ and $b$? Use one (or more)  of the properties we have mentioned to justify your answer.
+Suppose $a > b$,  $b \ge 0$ and $ab = 0$.  What can you conclude about the values of $a$ and $b$? Use one (or more)  of the properties we have mentioned to justify your answer.
 \end{exercise}
 
 Besides these order properties, there is a special order property that applies only to integers. This property is called the \term{Principle of Well-Ordering}, and may be stated as follows:
@@ -145,12 +150,14 @@ Following are some common rules for manipulating equations and inequalities. Not
 
 \begin {enumerate}[(A)]
 \item
-\emph{Substitution}: If two quantities are equal then one can be substituted for the other in any true equation or inequality and the result will still be true. 
+\term*{Substitution}\index{Substitution!in ordinary arithmetic}: If two quantities are equal then one can be substituted for the other in any true equation or inequality and the result will still be true. 
 \item
-\emph{Balanced operations}: Given an equation, one can perform the same operation to both sides of the equation and maintain equality.  The same is true for inequalities for the operation of addition, and for multiplication or division by a \emph{positive} number.
+\term*{Balanced operations}\index{Balanced operations!in ordinary arithmetic}: Given an equation, one can perform the same operation to both sides of the equation and maintain equality.  The same is true for inequalities for the operation of addition, and for multiplication or division by a \emph{positive} number.
 \item
+\term*{Inequality reversal:}\index{Inequality reversal!in ordinary arithmetic}
 Multiplying or dividing an inequality by a negative value will reverse the inequality symbol.
 \item
+\term*{Fractions in lowest terms:}\index{Fractions!in ordinary arithmetic}
 The ratio of two integers can always be reduced to lowest terms, so that the numerator and denominator have no common factors.
 \end {enumerate}
 
@@ -158,6 +165,65 @@ The ratio of two integers can always be reduced to lowest terms, so that the num
 Give specific examples for statements (A--D)   given above. You may use either numbers or variables (or both) in your examples.. For (A) and (B), give one example for each of the following cases: (i) equality, (ii) strict inequality, (iii) nonstrict inequality.
 \end{exercise}
 
+\begin{exercise}{}
+For each of the following steps, give either an arithmetic operation property (from Section~\ref{OpsAndRels}) or an equation manipulation rule (from Section~\ref{subsec:eqsAndIneqs}) which justifies the step.
+\begin{enumerate}[(a)]
+\item
+$1 -1 = 0$
+\item
+$(1-1)\cdot a = 0 \cdot a$
+\item
+$(1-1)\cdot a = 0$
+\item
+$1 \cdot a + (-1) \cdot a = 0$
+\item
+$a + (-1) \cdot a = 0$
+\item
+$(-1) \cdot a$ is the additive inverse of $a$.
+\end{enumerate}
+\end{exercise}
+
+As a result of the previous exercise, we have a proof of the following proposition:
+
+\begin{prop}{minusOne}
+For any integer, rational, or real number $a$ the following equation holds: $ -1 \cdot a = -a$. 
+\end{prop}
+Admittedly, this probably seems obvious to you. But think back to the time when you first learned this stuff. At that time, it probably wasn't as obvious as it seems now. The exercise shows that it follows from even more basic facts about arithmetic.
+
+
+The following exercise walks you through a proof of an important fact.
+
+\begin{exercise}{}
+Suppose that $a>b$ and $c>d$. For each of the following steps, give either an arithmetic operation property (from Section~\ref{OpsAndRels}) or an equation manipulation rule (from Section~\ref{subsec:eqsAndIneqs}) which justifies the step.
+\begin{enumerate}[(a)]
+\item
+$a-b>0$ and $c-d>0$
+\item
+$(a-b) + (c-d) > 0$
+\item
+$a + (-b+c) - d > 0$
+\item
+$a + (c-b) - d > 0$
+\item
+$(a+c) + (-b + -d) > 0$
+\item
+$(a+c) + (-b + -d) + (b+d) > b+d$
+\item
+$(a+c) + (-b + (-d + b)+d > b+d$
+\item
+$(a+c) + (-b + b) + (-d+d) > b+d$
+\item
+$(a+c) + 0 + 0 > b+d$
+\item
+$a+c > b+d$
+\end{enumerate}
+\end{exercise}
+
+The preceding exercise gives us a proof of the following proposition, which we will need later in the book.
+
+\begin{prop}{sumIneq}
+Let $a,b,c,d$ be integer, rational, or real numbers such that $a>b$ and $c>d$.  It follows that  $a+c > b+d$.
+\end{prop}
 
 %\section {Number Theory Rules}
 %

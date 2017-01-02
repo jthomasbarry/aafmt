@@ -95,67 +95,68 @@ doing something wrong.
 \subsection*{Induction proofs, type I: Sum/product formulas}
  
 The most common, and the easiest, application of induction is to prove
-formulas for sums or products of $n$ terms.  All of these proofs follow
-the same pattern.
-\medskip
+formulas for sums or products of $n$ terms. Many of these  proofs follow
+the same pattern. Here are  some examples of formulas that can be proved by induction:
 
-\noindent
-\term{Examples:}
-\begin{enumerate}[(a)]
-	
+\begin{enumerate}[(i)]
+\item 
+$\sum_{i=1}^n i(i+1)=\frac{n(n+1)(n+2)}{3}$ 
+\item
+$\sum_{i=0}^n i! i = (n+1)!-1$. 
 \item
 $\sum_{i=0}^n r^i=\frac{1-r^{n+1}}{1-r}$ ($r\not=1$)
 (sum of finite geometric series)
-
-\item 
-$\sum_{i=1}^n i(i+1)=\frac{n(n+1)(n+2)}{3}$ 
-
 \item 
 $\sum_{i=0}^n 2^i=2^{n+1}-1$ (sum of powers of $2$)
-
-
-\item
-$\sum_{i=0}^n i! i = (n+1)!-1$. 
-
 \end{enumerate}
 
-We will give outlines for parts (a) and (d). Fill in the blanks for (a), and supply the items for (d). Parts (b) and (c) are up to you!
+In the following exercises, we will guide you through the proofs of (i) and (ii). For parts (iii) and (iv), you're on your own!
 
-\textbf{Proof of (a):}
+\begin{exercise}{}
+Fill in the blanks for the following induction proof of formula (i) above.
+
+\begin{proof}
 We seek to show that, for all $n\in\NN$,  
 \[
 \sum_{i=1}^n i(i+1)=\frac{n(n+1)(n+2)}{3}. 
 \tag{ 	$P(n)$}
 \]
 
-\textbf{Base case:} When $n=1$, the left side of $P(1)$ is equal to \underline{~~~~~},
+\noindent
+\textbf{Base case:} When $n=1$, the left side of $P(1)$ is equal to $\underline{~<1>~}$ ,
 and the
-right side is equal to \underline{~~~~~~~}, so both sides are equal and $P(1)$ is
+right side is equal to $\underline{~<2>~}$ , so both sides are equal and $P(1)$ is
 true.
 
+\noindent
 \textbf{Induction step:} Let $k\in\NN$ be given and suppose 
 $P(k)$ is true. Then
 \begin{align*}
 \sum_{i=1}^{k+1}i(i+1)
 &=
 \sum_{i=1}^{k}i(i+1)
-+\underline{~~~~~~~}
++\underline{~<3>~}
 \\
 &=\frac{k(k+1)(k+2)}{3} 
-+\underline{~~~~~~~}
++\underline{~<4>~} 
 \quad \text{(by induction hypothesis)}
 \\
 &=\frac{(k+1)(k+2)(k+3)}{3}.
 \end{align*}
-Thus, $P(\underline{~~~})$ holds, and the proof of the induction step is complete. 
+Thus, $P(\underline{~<5>~})$ holds, and the proof of the induction step is complete, 
 
-\textbf{Conclusion:} By the principle of induction,  it follows that
-\underline{~~~~} is true for all $n\in\NN$.  
-  {\hspace\fill$\square$\par\medskip}
-\medskip
+\noindent
+\textbf{Conclusion:}
+By the principle of induction,  it follows that
+$\underline{~<6>~}$  is true for all $n\in\NN$.  
+\end{proof}
 
-\textbf{Proof of (d):}
-\begin{enumerate}[(i)]
+\end{exercise}
+
+\begin{exercise}{}
+Provide an outline for the proof of formula (ii) by responding to each of the parts below.
+
+\begin{enumerate}[(a)]
 \item
 What is the equation that must be shown  for all $n\in\NN$?  (Call this equation ``$P(n)$'').
 \item
@@ -168,10 +169,20 @@ Separate off the last term in the sum, so that you have a sum from 1 to $k$ plus
 Use the induction hypothesis to replace the sum from 1 to $k$ with a simpler expression.
 \item
 Use algebra to obtain $P(k+1)$, which completes the proof of the induction step. 
+\item 
+What is the final conclusion which can be drawn from the above argument?
 \end{enumerate}
 
-\textbf{Conclusion:} By the principle of induction, 
-$P(n)$ is true for all $n\in\NN$.  
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Prove formula (iii) above using induction.
+\item
+Prove formula (iv) above using induction.
+\end{enumerate}
+\end{exercise}
 
 
 %We seek to show that, for all $n\in\NN$,
@@ -204,10 +215,10 @@ $P(n)$ is true for all $n\in\NN$.
 %
 %\textbf{Conclusion:} By the principle of induction, 
 %($*$) is true for all $n\in\NN$.  
-  {\hspace\fill$\square$\par\medskip}
+% {\hspace\fill$\square$\par\medskip}
 
 
-\subsection*{Induction proofs, type II: Inequalities} 
+\subsection*{Induction proofs, type II: inequalities} 
 A second general type of application of induction is to prove inequalities
 involving a  natural number $n$.   These proofs also tend to be on the
 routine side; in fact, the algebra required is usually very minimal, in
@@ -216,69 +227,74 @@ contrast to some of the summation formulas.
 In some cases the inequalities don't ``kick in'' until $n$ is 
 large enough. By checking the first few values of $n$ one can
 usually quickly determine the first  $n$-value, say $n_0$,
-for which the inequality holds.  Induction with $n=n_0$ as base case
-\medskip
+for which the inequality holds.  
+Then one may use $n=n_0$ as the base case, instead of $n=0$.
+
+Here are some examples of integer inequalities that can be proved using induction:
 
 \noindent
-\term{Examples:}
-\begin{enumerate}
+\begin{enumerate}[(i)]
 
 \item $2^n>n$ 
-
 \item $2^n\ge n^2$ ($n\ge4$)
-
 \item $n!> 2^n$ ($n\ge4$)
-
 \item $(1-x)^n\ge 1-nx$ ($0<x<1$)
-
 \item $(1+x)^n\ge 1+nx$ ($x>0$)
 
 \end{enumerate}
 
+In the following exercises, we will guide you through the proofs of (iii) and (iv). For the others, you'll have to wing it.
 
+\begin{exercise}{}
+Fill in the blanks in the following proof of (iii).
 
-We will give outlines for (c) and (d). The other inequalities can
-be proved similarly.
-
-\medskip
-
-\textbf{Proof of (c):}
-A direct check of the inequality for the first few values of $n$ shows
-that the  inequality fails for $n=1,2,3$. But this doesn't matter, because we only have to show that it works for for all $n$ from $4$ onwards. 
+\begin{proof}
 
 We are trying to show that 
+\smallskip
+
 \[
 n!>2^n
 \tag{$P(n)$}
 \]
+\smallskip
+
 holds for all $n\ge4$.
+(Note that  the  inequality fails for $n=1,2,3$. But this doesn't matter, because we only have to show that it works for for all $n$ from $4$ onwards.) 
 
+
+\noindent
 \textbf{Base case:} For $n=4$, the left and right sides of $P(4)$ are equal to
-\underline{~~~}  and \underline{~~~~}, respectively, so $P(4)$ is true. 
+$\underline{~<1>~}$   and $\underline{~<2>~}$ , respectively, so $P(4)$ is true. 
 
+\noindent
 \textbf{Induction step:} Let $k\ge4$ be given and suppose 
-\underline{~~~~~~} is true. Then
+$\underline{~<3>~}$  is true. Then
 \begin{align*}
 (k+1)!&=k! \cdot (k+1)
 \\
-&>2^k \cdot \underline{~~~~~}
-\quad (\text{by } \underline{~~~~~~~~~~~~})
+&>2^k \cdot \underline{~<4>~}
+\qquad (\text{by } \underline{~<5>~} )
 \\
 &\ge 2^k\cdot 2
-\quad \text{(since $k\ge4$ and so $k+1\ge2$))}
+\qquad \qquad \text{(since $k\ge4$ and so $k+1\ge2$))}
 \\
-&=\underline{~~~~~~}.
+&=\underline{~<6>~}.
 \end{align*}
-Thus, $\underline{~~~~~}$ holds, and the proof of the induction step is complete. 
+Thus, $\underline{~<7>~}$  holds, and the proof of the induction step is complete. 
 
+\noindent
 \textbf{Conclusion:} By the principle of induction, 
 it follows that  $P(n)$ is true for all $n\ge4$.  
-  {\hspace\fill$\square$\par\medskip}
+\end{proof}
 
-\bigskip
+\end{exercise}
 
-\textbf{Proof of (d):}
-\begin{enumerate}[(i)]
+\begin{exercise}{}
+Provide an outline for the proof of the inequality (iv) by giving answers for each of the parts below.
+
+\begin{proof}
+\begin{enumerate}[(a)]
 \item
 What statement do you need to prove for every  real number $0<x<1$  
 and any $n\in\NN$?  Call this statement ``$P(n)$''.
@@ -288,14 +304,25 @@ and any $n\in\NN$?  Call this statement ``$P(n)$''.
 \textbf{Induction step:} Let $k\in\NN$ be given and suppose $P(k)$ is true
 for any real number $0<x<1$.   What do we seek to show?
 \item
-Rewrite $(1-x)^{k+1}$ as $(1-x)^k \cdot (1-x)$. Then use $P(n)$  for $n=k$ to obtain an inequality. Using basic algebra, simplify the right-hand side until you obtain a quantity that is greater than $1-(k+1)x$.
+Rewrite $(1-x)^{k+1}$ as $(1-x)^k \cdot (1-x)$. Then use $P(k)$ to obtain an inequality. Using basic algebra, simplify the right-hand side until you obtain a quantity that is greater than $1-(k+1)x$.
 \item
 What may you conclude about $P(k+1)$?
+\item
+\textbf{Conclusion:} What is the ultimate conclusion of the argument?
 \end{enumerate}
-\textbf{Conclusion:} By the principle of induction, it follows that $P(n)$
-holds for all $n\in\NN$.
-  {\hspace\fill$\square$\par\medskip}
+\end{proof}
+\end{exercise}
 
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Prove inequality (i) above using induction.
+\item
+Prove inequality (ii) above using induction.
+\item
+Prove inequality (v) above using induction.
+\end{enumerate}
+\end{exercise}
 
 %We will prove that for any real number $0<x<1$  
 %\[
@@ -345,15 +372,12 @@ case $n=2$ to the next case $n=3$.
 \medskip
 
 \noindent
-\term{Examples:}
-\begin{enumerate}[(a)]
+Here are some examples of mulitple-variable theorems that can be proved using induction:
+\begin{enumerate}[(i)]
 
 \item{} 
 % [Problem 3.15]
 Show that if $x_1,\dots,x_n$ are odd, then $x_1x_2\dots x_n$ is odd.
-(Use the fact (proved earlier) that the product of two odd numbers is
-odd, as starting point, and use induction to 
-extend this result to the product of $n$ odd numbers.)
 
 \item{}
 Show that if $a_i$ and $b_i$ ($i=1,2,\dots,n$) are real numbers such that 
@@ -361,8 +385,7 @@ $a_i\le b_i$ for all $i$, then
 \[
 \sum_{i=1}^na_i\le \sum_{i=1}^nb_i. 
 \]
-(Use the fact from Chapter \ref{BeforeWeBegin} that $a\le b$ and $c\le d$ implies
-$a+c\le b+d$.)
+
 
 
 \item
@@ -382,61 +405,67 @@ Show that if $A_1,\dots, A_n$ are sets, then
 (This is a generalization of De Morgan's Law to unions of $n$ sets.
 Use De Morgan's Law for two sets ($(A\cup B)^c=A^c\cap B^c$) and induction
 to prove this result.)
-
-
 \end{enumerate}
 
+We'll give outlines of the proofs of (i) and (ii).
 
-We'll give outlines of the proofs of (a) and (b):
-\bigskip
+\begin{exercise}{}
+This exercise will provide a proof of (i).
+\begin{enumerate}[(a)]
+\item
+We will need the following assertion in the proof:
 
-\textbf{Proof of (a):} We will prove by induction on $n$ the following statement: 
+\[ \text{If }x \text{ and } y \text{ are odd, then } xy \text{ is also odd.}\]
+
+We know that $x$ is odd if and only if mod($x$,2)=1.  Use this and facts from modular arithmetic to prove the needed assertion.
+\item
+Fill in the blanks in the following proof of (i).
+
+\begin{proof}
+We will prove by induction on $n$ the following statement: 
 \[
 \tag{$P(n)$}
 \text{ If $x_1,\dots,x_n$ are odd numbers, then 
 $x_1x_2\dots x_n$ is odd.}
 \]
 
-We will use the following fact (proved earlier): 
-\[
-\tag{$**$}
-\text{If $x$ and $y$ are odd, then $xy$ is odd.}
-\]
-
+\noindent
 \textbf{Base case:} For $n=1$, the product $x_1\dots x_n$ reduces to 
-\underline{~~~~}, which  is odd whenever $x_1$ is odd. 
+$\underline{~<1>~}$, which  is odd whenever $x_1$ is odd. 
 Hence $P(n)$ is true for $n=1$.
 
+\noindent
 \textbf{Induction step.}
 \begin{itemize}
 \item Let $k\ge 1$, and suppose ($*$) is true for $n=k$, i.e.,
-suppose that any product of \underline{~~~}  odd numbers is again odd.
+suppose that any product of $\underline{~<2>~}$  odd numbers is again odd.
 \item
-We seek to show that \underline{~~~~} is true, i.e., that any product of \underline{~~~}
+We seek to show that $\underline{~<3>~}$ is true, i.e., that any product of $\underline{~<4>~}$
 odd numbers is odd. 
 \item
 Let $x_1,\dots,x_{k+1}$ be odd numbers. 
 \item
 Applying the induction hypothesis to $x_1,\dots,x_k$, we obtain that the
-product \underline{~~~~~~} is odd. 
+product $\underline{~<5>~}$ is odd. 
 \item
-Since $x_{k+1}$ is \underline{~~~}  and, by ($**$), the product of two odd numbers is
+Since $x_{k+1}$ is $\underline{~<6>~}$  and, by part (a) the product of two odd numbers is
 again odd, it follows that $x_1x_2\dots x_{k+1} = (x_1\dots x_k)x_{k+1}$
 is odd.
 \item
 As $x_1,\dots,x_{k+1}$ were arbitrary odd numbers, we have proved
-\underline{~~~~~}, so the induction step is complete.
+$\underline{~<7>~}$, so the induction step is complete.
 \end{itemize}
 
+\noindent
 \textbf{Conclusion:} By the principle of induction, it follows that 
-($*$) is true for all $n\in\NN$.
-  {\hspace\fill$\square$\par\medskip}
+$P(n)$ is true for all $n\in\NN$.
+\end{proof}
+\end{enumerate}
+\end{exercise}
 
-\bigskip
-
-\textbf{Proof of (b):} 
-
-\begin{enumerate}[(i)]
+\begin{exercise}{}
+Complete an outline of a proof of (ii) by responding to the following items.
+\begin{enumerate}[(a)]
 \item
 What statement do we want to prove  for all natural numbers $n$ and for all real numbers $a_i$ and $b_i$ ($i=1,\dots,n$)
 such that $a_i\le b_i$? Call this statement ``P(n)''.
@@ -447,27 +476,20 @@ must be part of the induction statement we seek to prove.)
 \item
 \textbf{Induction step:}  Let $k\ge 1$. Write $P(k)$.
 \item
-What do you seek to prove?
-\item
-(Fill in the blanks) 
+We seek to prove that $P(k)$ implies $P(k+1)$.  We may rewrite $P(k+1)$ as follows (fill in the blanks):
 Let $a_1,\dots,a_{k+1}$ and $b_1,\dots,b_{k+1}$ be given real numbers
 such that \underline{~~~~~} for each $i$.
-\item Then
+Then
 \begin{align*}
 \sum_{i=1}^{k+1}a_i
 &=\underline{~~~~~} + a_{k+1}.
 \end{align*}
 \item
-Use basic algebra to show that  $P(k+1)$ and the given numbers $a_1,\dots,a_{k+1}$ 
-and $b_1,\dots,b_{k+1}$.
+Assuming that $P(k)$ is true, use  Proposition~\ref{proposition:BeforeWeBegin:sumIneq} to show that $P(k+1)$ is also true.  This is equivalent to showing that $P(k)$ implies $P(k+1)$.
 \item 
-What may we conclude?
+\textbf{Conclusion:} What is the final conclusion?
 \end{enumerate}
-
-
-\textbf{Conclusion:} By the principle of induction, 
-it follows that $P(n)$ is true for all $n\in\NN$.  
-  {\hspace\fill$\square$\par\medskip}
+\end{exercise}
 
 
 %We will prove by induction on $n$ the following statement: 
@@ -723,7 +745,7 @@ and assume $P(n)$ holds for $n=k$ and $n=k-1$.
 \medskip
 
 \noindent
-Therefore $P(n)$ holds for $n=k+1$.
+Therefore $P(k+1)$ holds.
 \smallskip
 
 \noindent
@@ -830,11 +852,12 @@ holds for all integers $n\ge2$.
 \tag{$P(n)$}
 \]
 
+\noindent
 \textbf{Base case:} The integer $n=2$ is a prime since it cannot be
 written as a product $ab$, with integers $a,b\ge 2$,  so $P(n)$ holds
 for $n=2$.
 
-
+\noindent
 \textbf{Induction step:} 
 \begin{itemize}
 
@@ -864,6 +887,7 @@ for $n=k+1$, and the induction step is
 complete.
 \end{itemize}
 
+\noindent
 \textbf{Conclusion:} By the strong induction principle, 
 it follows that $P(n)$  is true for all $n\ge2$, i.e., every integer
 $n\ge2$ is either a prime or can be represented as a product of primes.
@@ -940,7 +964,7 @@ some common mistakes in setting up base case(s) and the induction step.
 \begin{itemize}
 \item \textbf{Base step:} $n=3$.
 \item \textbf{Induction step:} Let $k\in \NN$ with $k\ge 3$ be given and
-assume $(*)$ is true for $n=k$ and $n=k-1$. 
+assume $P(n)$ is true for $n=k$ and $n=k-1$. 
 \item \textbf{Comment:}
 \textbf{BAD:} When $k=3$ (the first case of the induction step), the induction 
 step requires the cases $3$ and $2$, but only $2$ is covered in the base
@@ -1796,7 +1820,7 @@ subtle and hard to spot. Try to find them!
 
 \textbf{Induction step:} 
 Let $k\in\NN$ and 
-suppose $(*)$ holds for $n=k$. Then
+suppose $P(k)$ holds. Then
 \begin{align*}
 \sum_{i=1}^{k+1} i &=\sum_{i=1}^k i + (k+1)
 \\
@@ -1812,7 +1836,7 @@ suppose $(*)$ holds for $n=k$. Then
 &=\frac12\left((k+1)+\frac12\right)^2
 \quad\text{(simplifying).}
 \end{align*}
-Thus, $P(n)$ holds for $n=k+1$,  so the induction
+Thus, $P(k+1)$ holds,  so the induction
 step is complete.
 
 \textbf{Conclusion:} By the principle of induction, $P(n)$ holds for all
@@ -1886,7 +1910,7 @@ Here is a ``proof'' that for every nonnegative integer $n$,
 \textbf{Proof:} We prove that $P(n)$ holds for all $n=0,1,2,\dots$, using
 strong induction with the case $n=0$ as base case.
 
-\textbf{Base step:} When $n=0$, $5n=5\cdot0=0$, so $(*)$ holds in this case.
+\textbf{Base step:} When $n=0$, $5n=5\cdot0=0$, so $P(n)$ holds in this case.
 
 \textbf{Induction step:} 
 Suppose $P(n)$ is true for all integers $n$ in the range $0\le n\le k$, i.e.,
@@ -1920,7 +1944,7 @@ nonnegative integers $n$.
 \[
 \tag{$P(n)$} 2^n=1
 \]
-\textbf{Proof:} We prove that $(*)$ holds for all $n=0,1,2,\dots$, using
+\textbf{Proof:} We prove that $P(n)$ holds for all $n=0,1,2,\dots$, using
 strong induction with the case $n=0$ as base case.
 
 \textbf{Base step:} When $n=0$, $2^0=1$, so $P(0)$ holds. (Note: it is perfectly OK to begin with a base case of $n=0$.)
