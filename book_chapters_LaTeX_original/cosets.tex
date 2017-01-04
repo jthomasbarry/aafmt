@@ -765,23 +765,49 @@ Is $SL_2( {\mathbb R} )$ a normal subgroup of $GL_2( {\mathbb R})?$  Prove or di
 \end{exercise}
 
 \begin{exercise}{i_normal}
-Is  $\{ 1, -1, i, -i \}$ a normal subgroup of $Q_8$?
+Prove or disprove:  $\{ 1, -1, i, -i \}$ is a normal subgroup of $Q_8$.\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+Now let's see if you can prove some general facts about normal subgroups.  We'll start with a warm-up:
+
+
+\begin{exercise}{e_normal}
+Prove that for \emph{any} group $G$, the set $\{e\}$ is a normal subgroup of $G$ (in other words the identity of group is always a normal subgoup).
+\end{exercise} 
+
+This next one often comes in handy.
+
+\begin{prop}{index2_normal} Let $G$ be a group, and let $H$ be a subgroup of $G$ with index 2. Then $H$ is a normal subgroup of $G$.
+\end{prop}
+\begin{exercise}{}
+Prove Proposition~\ref{proposition:cosets:index2_normal} by proving each of the following steps.
+\begin{enumerate}[(a)]
+\item
+Prove that $G \setminus H$ is a left coset of $H$ in $G$.
+\item
+Prove that $G \setminus H$ is a right coset of $H$ in $G$.
+\item 
+Prove that $H$ is normal in $G$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}{abelian_normal} Prove that any subgroup of an abelian group is normal.
 \hyperref[sec:cosets:hints]{(*Hint*)}
 \end{exercise}
 
-Now let's see if you can prove some general facts about normal subgroups.  Here's an interesting one that's not too hard to prove:
-
-\begin{exercise}{e_normal}
-Prove that for \emph{any} group $G$, the set $\{e\}$ is a normal subgroup of $G$ (in other words the identity of group is always a normal subgoup).
-\end{exercise} 
-
-And here's an alternative way to characterize normal subgroups:
-
 \begin{exercise}{}
-Show that a subgroup $H \subset G$ is normal iff every left coset of $H$ is also a right coset of $H$.
+Show that the intersection of two normal subgroups is a normal
+subgroup. 
+\end{exercise}
+
+
+
+Here's an alternative way to characterize normal subgroups:
+
+\begin{prop}{cosetNormal} Let $H$ be a subgroup of $G$. Then $H$ is normal iff every left coset of $H$ is also a right coset of $H$.
+\end{prop}
+\begin{exercise}{}
+Prove Proposition~{proposition:cosets:cosetNormal}.
 \end{exercise}
 
 The following proposition can be useful when trying to prove that a certain subgroup is normal.  It gives several different characterizations of normal subgroups.
@@ -1044,8 +1070,10 @@ r^n & = id \\
 s^2 & = id \\
 srs & = r^{-1}.
 \end{align*}
+Any element of $D_n$ can be written as $sr^k$ for some integer $0 \le k < n$.
+
 The element $r$ generates the cyclic subgroup of rotations,
-$R_n$, of $D_n$.  Since $srs^{-1} = srs = r^{-1} \in R_n$, then by Definition~\ref{normal_alt} the group
+$R_n$, of $D_n$.  Since $(sr^k)r(sr^k)^{-1} = sr^krr^{-k}s = r^{-1} \in R_n$, then by Definition~\ref{normal_alt} the group
 of rotations is a normal subgroup of $D_n$; therefore, $D_n / R_n$ is
 a group.  Now there are $2n$ symmetries in $D_n$ and $n$ rotations in $R_n$; so Lagrange's theorem tells us the number of cosets, $[D_n : R_n] =  \frac{|D_n|}{|R_n|} = \frac{2n}{n} =2$.  
 
@@ -1058,23 +1086,49 @@ Construct the multiplication table for  $D_n / R_n$.
 
 
  
-\section{The simplicity of the alternating group}\label{normal:section:simplealternating}
+\section{Factoring of groups and simple groups}\label{normal:section:simplealternating}
  
- In the previous section we talked about how a normal subgroup enables us to ``factor'' a group to obtain a group with fewer elements (i.e. the group of cosets.)  In some way this is similar to the idea of factoring positive integers as a product of smaller numbers.  A natural question then is whether there are groups that can't be ``factored'': in other words, are there groups which have no normal subgroups? 
-
-Actually, in Exercise~\ref{exercise:cosets:e_normal} you've already answered that question: for any group, the identity $\{e\}$ is a normal subgroup.  But factoring by $\{e\}$ doesn't give a group with fewer elements, because the number of cosets of the identity in any group $G$ is (by Lagrange's theorem)
+\subsection{Concepts, definitions, and examples}
+ In the previous section we talked about how a normal subgroup enables us to ``factor'' a group to obtain two groups with fewer elements (i.e. the group of cosets, and the normal subgroup). This seems quite similar to the idea of factoring positive integers as a product of smaller numbers. In fact, just as with positive integers, the process can be continued. To be precise: suppose that $G$ is a group, and $N_1$ is a normal subgroup. Suppose further that $N_2$ is a normal subgroup of $N_1$.  Then we can ``factor'' $G$ into three groups, namely $G/N_1$, $N_1/N_2$, and $N_2$. Evidently the process can be continued: if $N_2$ has a normal subgroup $N_3$, then we can ``factor'' $G$ into four groups: $G/N_1$, $N_1/N_2$, $N_2/N_3$, and $N_3$.  When does this process end? Eventually, we will reach a group in which the only normal subgroup is the trivial subgroup  $\{e\}$.  But factoring by $\{e\}$ doesn't give a group with fewer elements, because the number of cosets of the identity in any group $G$ is (by Lagrange's theorem)
 
 \[ \frac{|G|}{|\{e\}|} = \frac{|G|}{1} = |G|. \]
 
 \noindent
-Thus factoring a group by $\{e\}$ is kind of like dividing an integer by 1: it doesn't change anything. So let's change our question to:  are there groups which have no \emph{nontrivial} subgroups? Such groups would be like prime numbers: they can't be factored any further.
+Thus factoring a group by $\{e\}$ is kind of like dividing an integer by 1: it doesn't change anything. So a group with no nontrivial groups is like a prime number: it can't be factored any further. A group with no nontrivial normal subgroups is called a \term{simple group}\index{Group!simple}\index{Simple group}.  Just like any positive integer uniquely factors into a product of prime numbers,  it turns out that any group can be factored into a series of simple groups, and the factorization is (in some sense) unique.  There's a beautiful theorem, called the \term{ Jordan-H{\"o}lder Theorem}, which characterizes this factorization. Unfortunately, the precise statement of the theorem is somewhat involved, so we leave to the interested reader to research this topic further.\footnote{See for example \url{http://turnbull.mcs.st-andrews.ac.uk/~colva/topics/ch4.pdf}.} 
 
-A group with no nontrivial normal subgroups is called a \term{simple group}\index{Group!simple}\index{Simple group}. In a way, simple groups are the ``prime  numbers'' in group theory. Just like any positive integer uniquely factors into a product of prime numbers,  it turns out that any group can be uniquely factored into a series of simple groups.  (Unfortunately, proving this is beyond the scope of this course.) 
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+For the dihedral group $D_5$, find a subgroup $N$ such that $D_5 / N$ and $N$ are both simple.
+\item
+For the dihedral group $D_4$, find subgroups $N, P$ such that $P \subset N_1$ and  $D_4/N$, $N/M$, and $M$ are all  simple groups.
+\item
+For the  group $\mathbb{Z}_6$, find a subgroup $N$  such that $\mathbb{Z}_6 / N$ and $N$ are both simple. Find also a \emph{different} subgroup $M$  such that $\mathbb{Z}_6 / M$ and $M$ are both simple. Show that $\mathbb{Z}_6 / N$ is isomorphic to $M$ and $\mathbb{Z}_6 / M$ is isomorphic to $N$.  (Recall our discussion of ``isomorphic'' in Section~\ref{sec:IsoGps}.)
+\end{enumerate}
+\end{exercise}
 
-On the other hand, simple groups are somewhat more complicated than prime numbers. There are several infinite classes of simple groups (as well as a few simple groups which defy classification--see the Historical Note at the end of this section.) We've already seen one such  class: the groups of prime order. As we noted following Exercise~\ref{exercise:cosets:prime_simple}, these groups are simple since they have
+We've been comparing simple groups to prime numbers, but actually they are somewhat more complicated than prime numbers. There are several infinite classes of simple groups (as well as a few simple groups which defy classification--see the Historical Note at the end of this section.) We've already seen one such  class: the groups of prime order. As we noted at the end of Section~\ref{sec:LagThm}, these groups are simple since they have
 no nontrivial proper subgroups. 
 
-We'll take the rest of this section to demonstrate another class of simple groups: we'll show that the alternating groups, $A_n$, are simple for
+\subsection{Simplicity of the alternating groups $A_n$ for $n \ge 5$}
+Let's consider the simplicity question for some other groups. We'll start with the symmetric groups $S_n$ (permutations on $n$ numbers).
+
+\begin{exercise}{Sn_NotSimple}
+Show that $S_n$ is not simple for $n \geq 3$.\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+So the $S_n$'s aren't simple in general.  How about the $A_n$'s?
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Show that $A_2$ and $A_3$ are simple.
+\item
+Let $H$ be the subset of $A_4$ consisting of elements which are products of two disjoint  transpositions (that is, the cycle structure is two 2-cycles). Show that $H$ is a subgroup of $A_4$, and in fact is a normal subgroup of $A_4$.
+\end{enumerate}
+\end{exercise}
+
+Although $A_4$ is not simple, it turns out that the alternating groups $A_n$ are simple for
 $n \geq 5$. We will prove this result by looking at properties of 3-cycles. The strategy is to establish the following two facts:
 \begin{enumerate}[(1)]
 \item
@@ -1084,7 +1138,7 @@ Any nontrivial normal subgroup of $A_n (n \geq 5)$ contains a 3-cycle.
 \end{enumerate}
 Facts (1) and (2) then imply that the only nontrivial normal subgroup of $A_n (n \geq 5)$ is $A_n$ itself.
 
-Before we can prove facts (1) and (2), we need first a preliminarly result: 
+Before we can prove facts (1) and (2), we need first a preliminary result: 
 
 \begin{thm}\label{normal:3cycle_lemma1}
 The alternating group $A_n$ is generated by $3$-cycles for $n \geq 3$.
@@ -1095,14 +1149,15 @@ We know that any element $\sigma$ of $A_n$ is an even permutation, so $\sigma$ c
 \[ (ab)(ab) \text{ or } (ab)(bc)  \text{ or } (ab)(cd) \quad \text{(where } a,b,c,d \text{ are all different elements of } A_n).\]
 We may write all of these pairs of transpositions as follows:
 \begin{align*}
-(ab)(ab) & = {\var id} \\
+(ab)(ab) & = e \\
 (ab)(bc) & = (abc) \\
 (ab)(cd) & = (abc)(bcd).
 \end{align*}
 By substituting pairs of transpositions in the product expression for $\sigma$ with equivalent 3-cycle expressions, we may express the arbitrary element $\sigma \in A_n$ as a product of 3-cycles.
 \end{proof}
 
-Before continuing onward, let's take a moment to see how this works in practice.
+Before continuing onward with our proof, let's do a few examples to see how this works.
+
  \begin{exercise}{ex3cycle}
  Express the following permutations as products of 3-cycles.
 \begin{enumerate}[(a)]
@@ -1160,47 +1215,40 @@ $3$-cycle.
  
  
 \begin{proof}
-Let $\sigma$ be an arbitrary element in a normal subgroup $N$. There
-are several possible cycle structures for $\sigma$.
-\begin{itemize}
- 
-\item
+Let $\sigma$ be an arbitrary element in a normal subgroup $N$. The possible cycle structures for $\sigma$ are as follows:
+
+\begin{enumerate}[(i)]
+ \item
 $\sigma$ is a 3-cycle.
- 
+ \item
+The cycle structure of $\sigma$ includes an $r$-cycle where $r>3$.
 \item
-$\sigma$ is the product of disjoint cycles, $\sigma = \tau(a_1 a_2
-\cdots a_r) \in N$, where $r >3$.
- 
- 
+The cycle structure of $\sigma$ includes at least two 3-cycles.
 \item
-$\sigma$ is the product of disjoint cycles, $\sigma = \tau(a_1 a_2
-a_3)(a_4 a_5 a_6)$.
- 
- 
+The cycle structure of $\sigma$ includes just one 3-cycle and an even number of 2-cycles. 
 \item
-$\sigma = \tau(a_1 a_2 a_3)$, where $\tau$ is the product of disjoint
-2-cycles. 
- 
- 
+the cycle structure of $\sigma$ includes an even
+number of 2-cycles. 
+\end{enumerate}
+
+\noindent
+We may treat these cases one by one.
+
+\begin{enumerate}[(i)]
+ \item
+If $\sigma$ is a $3$-cycle, then we are done. 
 \item
-$\sigma =
-\tau (a_1 a_2) (a_3 a_4) $, where $\tau$ is the product of an even
-number of disjoint 2-cycles. 
- 
- 
-\end{itemize}
-If $\sigma$ is a $3$-cycle, then we are done. If $N$ contains a
-product of disjoint cycles, $\sigma$, and at least one of these cycles
-has length greater than 3, say $\sigma = \tau(a_1 a_2 \cdots a_r)$,
-then   
+In this case we can write $\sigma = \tau(a_1 a_2 \cdots a_r)$, where $r>3$ 
+and $\tau$ includes cycles that are disjoint from $(a_1 a_2 \cdots a_r)$.
+Then   
 \[
 (a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1}
 \]
-is in $N$ since $N$ is normal; hence,
+is in $N$ since $N$ is normal. It follows that
 \[
 \sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1}
 \]
-is also in $N$. Since
+is also in $N$ since $N$ is closed. Now since
 \begin{align*}
 \lefteqn{\sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1} } \\
 & = \sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_3 a_2) \\
@@ -1212,22 +1260,17 @@ is also in $N$. Since
 \end{align*}
 $N$ must contain a 3-cycle; hence, $N = A_n$.
  
- 
- 
- 
-Now suppose that $N$ contains a disjoint product of the form
+\item  
+In this case we may write
 \[
-\sigma = \tau(a_1 a_2 a_3)(a_4 a_5 a_6).
+\sigma = \tau(a_1 a_2 a_3)(a_4 a_5 a_6),
 \]
-Then
+where the permutation $\tau$ consists of cycles that are disjoint from $\{a_1,a_2,a_3,a_4,a_5,a_6\}$.
+We may argue as in case (ii) that
 \[
-\sigma^{-1}(a_1 a_2 a_4)\sigma(a_1 a_2 a_4)^{-1} \in N
+\sigma^{-1}(a_1 a_2 a_4)\sigma(a_1 a_2 a_4)^{-1} \in N,
 \]
-since
-\[
-(a_1 a_2 a_4)\sigma(a_1 a_2 a_4)^{-1} \in N.
-\]
-So
+and may compute
 \begin{align*}
 \lefteqn{\sigma^{-1}(a_1 a_2 a_4)\sigma(a_1 a_2 a_4)^{-1} } \\
 & = [ \tau (a_1 a_2 a_3) (a_4 a_5 a_6) ]^{-1}  (a_1 a_2 a_4) 
@@ -1239,12 +1282,11 @@ So
 & = (a_1 a_4 a_2 a_6 a_3).
 \end{align*}
 So $N$ contains a disjoint cycle of length greater than 3, and we can
-apply the previous case. 
+apply case (ii) to conclude that $N$ must also contain a 3-cycle. 
  
- 
-Suppose $N$ contains a disjoint product of the form $\sigma = \tau(a_1
-a_2 a_3)$, where $\tau$ is the product of disjoint 2-cycles. Since
-$\sigma \in N$, $\sigma^2 \in N$, and
+\item
+In this case we may write $\sigma = \tau(a_1
+a_2 a_3)$, where $\tau$ is the product of disjoint 2-cycles.Then $\sigma^2 \in N$ since $N$ is closed, and
 \begin{align*}
 \sigma^2
 & = \tau(a_1 a_2 a_3)\tau(a_1 a_2 a_3) \\
@@ -1252,18 +1294,17 @@ $\sigma \in N$, $\sigma^2 \in N$, and
 \end{align*}
 So $N$ contains a 3-cycle.
  
- 
-The only remaining possible case is a disjoint product of the form
+\item 
+In this case we may write
 \[
 \sigma = \tau (a_1 a_2) (a_3 a_4),
 \]
 where $\tau$ is the product of an even number of disjoint 2-cycles.
-But 
+We may argue as in case (ii) above that
 \[
-\sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1}
+\sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1} \in N
 \]
-is in $N$ since $(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1}$ is in $N$; and
-so 
+and we compute
 \begin{align*}
 \lefteqn{\sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1} } \\
 & = \tau^{-1} (a_1 a_2) (a_3 a_4) (a_1 a_2 a_3) 
@@ -1282,8 +1323,10 @@ and
       (a_1 a_3 b)(a_1 a_3)(a_2 a_4) \\
 & = (a_1 a_3 b ).
 \end{align*}
-Therefore, $N$ contains a 3-cycle. This completes the proof of the
-proposition.  
+Therefore, $N$ contains a 3-cycle. 
+\end{enumerate}
+We have thus shown that in all possible cases $N$ contains a 3-cycle, and the  proof of the
+proposition is complete.  
 \end{proof}
  
 So finally we may summarize the proof that $A_n$ is simple $(n \geq 5)$.
@@ -1299,13 +1342,45 @@ nontrivial normal subgroups for $n \geq 5$.
 \end{proof} 
  
 And there we have it, $A_n$ is a simple group for $n \geq 5$.  Simple, right? :)
- 
+
+\subsection{The simplicity of $A_n$ and polynomial root formulas}
+ We've just spent several pages proving that $A_n$ is simple for $n \ge 5$.  What's the big deal? It turns out that it was a key part of a VERY big deal in the history of mathematics.
+
+Consider any second-degree polynomial, $a_2x^2 + a_1x + a_0$.  We may find the roots of the polynomial using the quadratic formula.  But what if the polynomial is of degree three ($a_3x^3 + a_2x^2 + a_1x + a_0$) or higher?  It turns out there's a formula  for finding the roots of an arbitrary cubic (degree 3) polynomial. There's even a formula for finding the roots of  quartic equations.  All of these formulas involve arithmetic operations ($+.,-,\cdot,/$) and radicals (square roots, cube roots, etc.)  But how about quintic (fifth order) and higher order polynomials?  It turns out there is no such formula for the polynomial roots, that only involves arithmetic operations and radicals.  It's not just that we haven't found one--it's \emph{100\% certain} that none exists. Proving this was one of the all-time great discoveries of mathematics, in which Abel, Ruffini, and Galois all played important roles.  
+
+An outline of the proof strategy is as follows. Each of the following steps requires extensive proof (which we won't supply), but at least you can see how the argument goes:
+\begin{enumerate}[(i)]
+\item
+An $n$th order polynomial has up to $n$ distinct roots, which may be real or complex and are irrational in general. (This follows from the Fundamental Theorem of Algebra.)
+\item 
+Associated with the roots of a given polynomial  is a certain type of symmetry group called the \term{Galois group}. For an $n$th order polynomial, the Galois group is a subgroup of $S_n$. 
+\item
+In order for an (arithmetical/radical) formula to exist for a given polynomial's roots, the Galois group of the polynomial must be factorable in such a way that the factors are all abelian simple groups.  (This is the hardest step.) 
+\item
+There are $n$th order polynomials that have $S_n$ as their Galois groups. 
+\item
+It isn't possible to factor $S_n$ into simple abelian factors, since $S_n$ factors into $\mathbb{Z}_2$ and $A_n$, and $A_n$ is simple and nonabelian.  
+\item
+It follows that there can be no (arithmetical/radical) formula for the roots of such polynomials, so there can't be a root formula that works in general.
+\end{enumerate}
+
+\begin{exercise}{}
+In this exercise, we give the Galois group for quadratic polynomials, and explore some of its properties.  Let ${\var id}:\mathbb{C} \rightarrow \mathbb{C}$ be the identity function:  ${\var id}(z) = z$.  Let $f:\mathbb{C} \rightarrow \mathbb{C}$ be the conjugation function:  $f(z) = \bar{z}$. 
+\begin{enumerate}[(a)]
+\item
+Show that $H=\{ {\var id}, f \}$ is a subgroup of the group of all bijections from $\mathbb{C} \rightarrow \mathbb{C}$
+\item
+Let $S$ be the set of roots of  $a_2x^2 + a_1x + a_0$.  Show that $H$ is a group of symmetries for $S$: that is, $h(S)=S$ for any $h \in H$.
+\item
+Show that if $r$ is a root of $a_2x^2 + a_1x + a_0$ , then ${\var id}(r) + f(r)$ and ${\var id}(r) \cdot f(r)$ are always real.
+\end{enumerate}
+\end{exercise}
 \histhead
  
  
 \noindent{\small \histf
 It is impossible to overstate the importance of simple groups in mathematics and physics. 
-Groups are the fundamental mathematical tools used to describe the symmetries and regularities which we observe in the physical world--and finite groups, as mentioned in the text, are the building blocks from which all finite groups may be built.
+Groups are the fundamental mathematical tools used to describe the symmetries and regularities which we observe in the physical world--and simple groups, as mentioned in the text, are the building blocks from which all finite groups may be built.
 
 The earliest work on the classification problem dates back over 200 years.  The first nonabelian simple groups to be discovered were the alternating groups, and Galois was the first to prove that $A_5$ was
 simple. Later mathematicians, such as C.~Jordan\index{Jordan, C.} and
@@ -1371,13 +1446,6 @@ Is $T$ normal in $GL_2( {\mathbb R})$?
 
 %***************************THEORY******************
 
-\item
-Show that the intersection of two normal subgroups is a normal
-subgroup. 
-
-\item
-If a group $G$ has exactly one subgroup $H$ of order $k$, prove that
-$H$ is normal in $G$. 
 
 \item
 If $G$ is abelian, prove that $G/H$ must also be abelian.
@@ -1396,11 +1464,6 @@ If $G$ is cyclic, prove that $G/H$ must also be cyclic.
 Prove or disprove: If $H$ and $G/H$ are cyclic, then $G$ is cyclic.
  
  
-\item
-Let $H$ be a subgroup of index 2 of a group $G$. Prove that $H$ must
-be a normal subgroup of $G$. Conclude that $S_n$ is not simple for $n \geq 3$.
-
-
 
 \item
 Define the \term{centralizer}\index{Element!centralizer
