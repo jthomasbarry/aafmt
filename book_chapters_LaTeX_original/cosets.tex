@@ -1349,18 +1349,18 @@ And there we have it, $A_n$ is a simple group for $n \geq 5$.  Simple, right? :)
 \subsection{The simplicity of $A_n$ and nonsolvability of polynomial roots}
  We've just spent several pages proving that $A_n$ is simple for $n \ge 5$.  What's the big deal? It turns out that this fact was a key part of a VERY big deal in the history of mathematics.
 
-Consider any second-degree polynomial, $a_2x^2 + a_1x + a_0$.  We may find the roots of the polynomial using the quadratic formula.  But what if the polynomial is of degree three ($a_3x^3 + a_2x^2 + a_1x + a_0$) or higher?  It turns out there's a formula  for finding the roots of an arbitrary cubic (degree 3) polynomial. There's even a formula for finding the roots of  quartic equations.  All of these formulas involve arithmetic operations ($+.,-,\cdot,/$) and radicals (square roots, cube roots, etc.)  But how about quintic (fifth order) and higher order polynomials?  It turns out that for fifth or higher order polynomials there's no such formula for finding polynomial roots using arithmetic operations and radicals.  It's not just that we haven't found one--it's \emph{100\% certain that none exists}. Proving this was one of the all-time great discoveries of mathematics, in which Abel, Ruffini, and Galois all played important roles.  
+Consider any second-degree real polynomial $a_2x^2 + a_1x + a_0$.  We may find the roots of the polynomial using the quadratic formula.  But what if the polynomial is of degree three ($a_3x^3 + a_2x^2 + a_1x + a_0$) or higher?  It turns out there's a formula  for finding the roots of an arbitrary real cubic (degree 3) polynomial. There's even a formula for finding the roots of  quartic equations.  All of these formulas involve arithmetic operations ($+.,-,\cdot,/$) and radicals (square roots, cube roots, etc.)  But how about quintic (fifth order) and higher order polynomials?  It turns out that for fifth or higher order polynomials there's no such formula for finding polynomial roots using arithmetic operations and radicals.  It's not just that we haven't found one--it's \emph{100\% certain that none exists}. Proving this was one of the all-time great discoveries of mathematics, in which Abel, Ruffini, and Galois all played important roles.  
 
 An outline of the proof strategy is as follows. Each of the following steps requires extensive proof (which we won't supply), but at least you can see how the argument goes:
 \begin{enumerate}[(i)]
 \item
-An $n$th order polynomial has up to $n$ distinct roots, which may be real or complex and are irrational in general. (This follows from the Fundamental Theorem of Algebra.)
+An $n$th order real polynomial has up to $n$ distinct roots, which may be real or complex and are irrational in general. (This follows from the Fundamental Theorem of Algebra.)
 \item 
-Associated with the roots of a given polynomial  is a certain type of symmetry group called the \term{Galois group}. For an $n$th order polynomial, the Galois group is a subgroup of $S_n$. 
+Associated with the roots of a given real polynomial  is a certain type of symmetry group called the \term{Galois group}. For an $n$th order polynomial, the Galois group is a subgroup of $S_n$. 
 \item
-In order for an (arithmetical/radical) formula to exist for a given polynomial's roots, the Galois group of the polynomial must be factorable in such a way that the factors are all abelian groups.  (This is the hardest step.) 
+In order for an (arithmetical/radical) formula to exist for a given real polynomial's roots, the Galois group of the polynomial must be factorable in such a way that the factors are all abelian groups.  (This is the hardest step.) 
 \item
-There are $n$th order polynomials that have $S_n$ as their Galois group. 
+There are $n$th order real polynomials that have $S_n$ as their Galois group. 
 \item
 It isn't possible to factor $S_n$ into abelian factors, since $S_n$ factors into $\mathbb{Z}_2$ and $A_n$, and $A_n$ is simple and nonabelian.  
 \item
@@ -1373,7 +1373,7 @@ In this exercise, we give the Galois group for quadratic polynomials, and explor
 \item
 Show that $H=\{ {\var id}, f \}$ is a subgroup of the group of all bijections from $\mathbb{C} \rightarrow \mathbb{C}$
 \item
-Let $S$ be the set of roots of  $a_2x^2 + a_1x + a_0$.  Show that $H$ is a group of symmetries for $S$: that is, $h(S)=S$ for any $h \in H$.
+Let $S$ be the set of roots of the real polynomial  $a_2x^2 + a_1x + a_0$.  Show that $H$ is a group of symmetries for $S$: that is, $h(S)=S$ for any $h \in H$.
 \item
 Show that if $r$ is a root of $a_2x^2 + a_1x + a_0$ , then ${\var id}(r) + f(r)$ and ${\var id}(r) \cdot f(r)$ are always real.
 \end{enumerate}
