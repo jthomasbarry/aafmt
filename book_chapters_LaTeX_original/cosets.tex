@@ -1094,21 +1094,24 @@ Construct the multiplication table for  $D_n / R_n$.
 \[ \frac{|G|}{|\{e\}|} = \frac{|G|}{1} = |G|. \]
 
 \noindent
-Thus factoring a group by $\{e\}$ is kind of like dividing an integer by 1: it doesn't change anything. So a group with no nontrivial groups is like a prime number: it can't be factored any further. A group with no nontrivial normal subgroups is called a \term{simple group}\index{Group!simple}\index{Simple group}.  Just like any positive integer uniquely factors into a product of prime numbers,  it turns out that any group can be factored into a series of simple groups, and the factorization is (in some sense) unique.  There's a beautiful theorem, called the \term{ Jordan-H{\"o}lder Theorem}, which characterizes this factorization. Unfortunately, the precise statement of the theorem is somewhat involved, so we leave to the interested reader to research this topic further.\footnote{See for example \url{http://turnbull.mcs.st-andrews.ac.uk/~colva/topics/ch4.pdf}.} 
+Thus factoring a group by $\{e\}$ is kind of like dividing an integer by 1: it doesn't change anything. So a group with no nontrivial groups is like a prime number: it can't be factored any further. A group with no nontrivial normal subgroups is called a \term{simple group}\index{Group!simple}\index{Simple group}.  Just like any positive integer uniquely factors into a product of prime numbers,  it turns out that any group can be factored into a series of simple groups, and the factors are (in some sense) unique.  There's a beautiful theorem, called the \term{ Jordan-H{\"o}lder Theorem}, which characterizes these factors. Unfortunately, the precise statement of the theorem is somewhat involved, so we leave to the interested reader to research this topic further.\footnote{See for example \url{http://turnbull.mcs.st-andrews.ac.uk/~colva/topics/ch4.pdf}.} 
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
-For the dihedral group $D_5$, find a subgroup $N$ such that $D_5 / N$ and $N$ are both simple.
+For the dihedral group $D_5$, find a normal subgroup $N$ such that $D_5 / N$ and $N$ are both simple.
 \item
 For the dihedral group $D_4$, find subgroups $N, P$ such that $P \subset N_1$ and  $D_4/N$, $N/M$, and $M$ are all  simple groups.
 \item
-For the  group $\mathbb{Z}_6$, find a subgroup $N$  such that $\mathbb{Z}_6 / N$ and $N$ are both simple. Find also a \emph{different} subgroup $M$  such that $\mathbb{Z}_6 / M$ and $M$ are both simple. Show that $\mathbb{Z}_6 / N$ is isomorphic to $M$ and $\mathbb{Z}_6 / M$ is isomorphic to $N$.  (Recall our discussion of ``isomorphic'' in Section~\ref{sec:IsoGps}.)
+For the  group $\mathbb{Z}_6$, find a normal subgroup $N$  such that $\mathbb{Z}_6 / N$ and $N$ are both simple. Find also a \emph{different} subgroup $M$  such that $\mathbb{Z}_6 / M$ and $M$ are both simple. Show that $\mathbb{Z}_6 / N$ is isomorphic to $M$ and $\mathbb{Z}_6 / M$ is isomorphic to $N$.  (Recall our discussion of ``isomorphic'' in Section~\ref{sec:IsoGps}.) This exercise shows that although the factors of a group are unique (up to isomorphism), the group may be ``broken down'' in different ways to obtain the factors.
+\item
+For the  group $S_3$, find a subgroup $N$  such that $S_3 / N$ and $N$ are both simple. Show that these groups are isomorphic to the two groups in each factorization in part (c).  This shows that although the factors of any group are unique, it's possible to have two different groups with the same factors.
 \end{enumerate}
 \end{exercise}
 
 We've been comparing simple groups to prime numbers, but actually they are somewhat more complicated than prime numbers. There are several infinite classes of simple groups (as well as a few simple groups which defy classification--see the Historical Note at the end of this section.) We've already seen one such  class: the groups of prime order. As we noted at the end of Section~\ref{sec:LagThm}, these groups are simple since they have
 no nontrivial proper subgroups. 
+
 
 \subsection{Simplicity of the alternating groups $A_n$ for $n \ge 5$}
 Let's consider the simplicity question for some other groups. We'll start with the symmetric groups $S_n$ (permutations on $n$ numbers).
@@ -1343,10 +1346,10 @@ nontrivial normal subgroups for $n \geq 5$.
  
 And there we have it, $A_n$ is a simple group for $n \geq 5$.  Simple, right? :)
 
-\subsection{The simplicity of $A_n$ and polynomial root formulas}
- We've just spent several pages proving that $A_n$ is simple for $n \ge 5$.  What's the big deal? It turns out that it was a key part of a VERY big deal in the history of mathematics.
+\subsection{The simplicity of $A_n$ and nonsolvability of polynomial roots}
+ We've just spent several pages proving that $A_n$ is simple for $n \ge 5$.  What's the big deal? It turns out that this fact was a key part of a VERY big deal in the history of mathematics.
 
-Consider any second-degree polynomial, $a_2x^2 + a_1x + a_0$.  We may find the roots of the polynomial using the quadratic formula.  But what if the polynomial is of degree three ($a_3x^3 + a_2x^2 + a_1x + a_0$) or higher?  It turns out there's a formula  for finding the roots of an arbitrary cubic (degree 3) polynomial. There's even a formula for finding the roots of  quartic equations.  All of these formulas involve arithmetic operations ($+.,-,\cdot,/$) and radicals (square roots, cube roots, etc.)  But how about quintic (fifth order) and higher order polynomials?  It turns out there is no such formula for the polynomial roots, that only involves arithmetic operations and radicals.  It's not just that we haven't found one--it's \emph{100\% certain} that none exists. Proving this was one of the all-time great discoveries of mathematics, in which Abel, Ruffini, and Galois all played important roles.  
+Consider any second-degree polynomial, $a_2x^2 + a_1x + a_0$.  We may find the roots of the polynomial using the quadratic formula.  But what if the polynomial is of degree three ($a_3x^3 + a_2x^2 + a_1x + a_0$) or higher?  It turns out there's a formula  for finding the roots of an arbitrary cubic (degree 3) polynomial. There's even a formula for finding the roots of  quartic equations.  All of these formulas involve arithmetic operations ($+.,-,\cdot,/$) and radicals (square roots, cube roots, etc.)  But how about quintic (fifth order) and higher order polynomials?  It turns out that for fifth or higher order polynomials there's no such formula for finding polynomial roots using arithmetic operations and radicals.  It's not just that we haven't found one--it's \emph{100\% certain that none exists}. Proving this was one of the all-time great discoveries of mathematics, in which Abel, Ruffini, and Galois all played important roles.  
 
 An outline of the proof strategy is as follows. Each of the following steps requires extensive proof (which we won't supply), but at least you can see how the argument goes:
 \begin{enumerate}[(i)]
@@ -1355,11 +1358,11 @@ An $n$th order polynomial has up to $n$ distinct roots, which may be real or com
 \item 
 Associated with the roots of a given polynomial  is a certain type of symmetry group called the \term{Galois group}. For an $n$th order polynomial, the Galois group is a subgroup of $S_n$. 
 \item
-In order for an (arithmetical/radical) formula to exist for a given polynomial's roots, the Galois group of the polynomial must be factorable in such a way that the factors are all abelian simple groups.  (This is the hardest step.) 
+In order for an (arithmetical/radical) formula to exist for a given polynomial's roots, the Galois group of the polynomial must be factorable in such a way that the factors are all abelian groups.  (This is the hardest step.) 
 \item
-There are $n$th order polynomials that have $S_n$ as their Galois groups. 
+There are $n$th order polynomials that have $S_n$ as their Galois group. 
 \item
-It isn't possible to factor $S_n$ into simple abelian factors, since $S_n$ factors into $\mathbb{Z}_2$ and $A_n$, and $A_n$ is simple and nonabelian.  
+It isn't possible to factor $S_n$ into abelian factors, since $S_n$ factors into $\mathbb{Z}_2$ and $A_n$, and $A_n$ is simple and nonabelian.  
 \item
 It follows that there can be no (arithmetical/radical) formula for the roots of such polynomials, so there can't be a root formula that works in general.
 \end{enumerate}
