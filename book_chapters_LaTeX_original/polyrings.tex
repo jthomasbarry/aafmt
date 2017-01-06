@@ -14,7 +14,7 @@ This chapter contains contributions from David Weathers, Johnny Watts, and Semi 
 
 \section{Polynomials of various stripes\quad
 \sectionvideohref{2FuGOJ3kHTU&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=47}}
-In high school we learn how to do algebraic operations on polynomials.
+Way back in our days of youth we learned how to add, subtract, multiply, and divide polynomials.
 For instance, if we have
 \begin{align*} 
 p(x) & = x^3 -3x +2 \\
@@ -67,7 +67,7 @@ p(x)  q(x)
 & = ( 5x^3 +2x)  (3x^2 - 6x) \\
 & = 5x^3 (3x^2 - 6x) +2x(3x^2 - 6x) 
 \end{align*}
-At this point we just have the sum of two monomials times a two term polynomial, which we now know can be calculated using the distributive property,
+At this point we just have the sum of two terms, each involving a monomials times a two-term polynomial, which we now know can be calculated using the distributive property,
 \begin{align*}
 & = 5x^3 (3x^2 - 6x) +2x(3x^2 - 6x) \\
 & = (15x^5 -30x^4) + (6x^3-12x^2)\\
@@ -89,7 +89,7 @@ p(x) q(x)
 \end{align*}
 Again notice that we are grouping like terms by exponent.  Later, when we give a more general way of multiplying polynomials, this method of distributing is what you need to have in mind.
 
-Similar rules apply if we perform algebraic operations on polynomials with integer, rational, real, or complex coefficents. We may identify different sets of polynomials according to the type of coefficient used. For instance we may define:
+Similar rules apply if we perform algebraic operations on polynomials with integer, rational, real, or complex coefficients. We may identify different sets of polynomials according to the type of coefficient used. For instance we may define:
 \begin{itemize}
 \item
 $\mathbb{Z}[x]$ is the set of polynomials in the variable $x$ with integer coefficients;
@@ -282,7 +282,7 @@ and
 \[
 p(x) + q(x) =  \sum_{i=0}^{\max(m,n)} (b_i + a_i) x^i.
 \]
-Since the coefficients are abelian under +, we have $a_i + b_i = b_i + a_i$ for all $i$. It follows that all coefficents of $p(x) + q(x)$ are equal to the corresponding coefficients of $q(x) + p(x)$. By the definition of polynomial equality, this means that 
+Since the coefficients are abelian under +, we have $a_i + b_i = b_i + a_i$ for all $i$. It follows that all coefficients of $p(x) + q(x)$ are equal to the corresponding coefficients of $q(x) + p(x)$. By the definition of polynomial equality, this means that 
 $p(x) + q(x) = q(x) + p(x)$.  Note that the condition that the coefficients be commutative is satisfied for all of the polynomials we have been considering so far, including $\mathbb{Z}[x]$, $\mathbb{R}[x]$, $\mathbb{C}[x]$, and so on.
 
 \end {proof}
@@ -333,7 +333,7 @@ p(x) q(x) =\sum_{i=0}^{m}\sum_{j=0}^{n}a_i b_j x^{i+j}
 \]
 %%% Distribute all terms and write in summation notation. (Explain that this will be useful when we try to prove associative)
 %%% We know this is a polynomial since it's a sum of polynomial terms, but it's not written in a very simple form. To really see what the polynomial is, we need to collect all constant terms, all terms with $x$, all terms with $x^2$, and so on.
-Let us get back to finding a formula for those coefficients.  Given the expanded form of the product $p(x)q(x)$, we can collect some common terms, we will call them $R_t$ (the index $t$ tells us what exponent is associated with the variable $x$), and see what we come up with, where we define common terms as the sum of all values of $x$ that share the same exponent.  Let us start with the terms associated with $x^0$, in our case the term labeled $R_0$, where there is only one possible combination that results in $x^0$:
+Let's get back to finding a formula for those coefficients.  Given the expanded form of the product $p(x)q(x)$, we can collect some common terms, we will call them $R_t$ (the index $t$ tells us what exponent is associated with the variable $x$), and see what we come up with, where we define common terms as the sum of all values of $x$ that share the same exponent.  Let us start with the terms associated with $x^0$, in our case the term labeled $R_0$, where there is only one possible combination that results in $x^0$:
 \[ R_0=a_0x^0b_0x^0 = a_0b_0(x^0\cdot x^0)=a_0b_0(x^0) \]
 Thus the coefficient $c_0$ is:
 \[ c_0= a_0b_0. \]
@@ -344,7 +344,7 @@ Looking at the indices of the coefficients, especially once we get to the third 
 \[
 c_k  = a_0  b_k + a_1 b_{k -1} + \cdots + a_{k -1} b _1 + a_k b_0 = \sum_{i = 0}^k a_i b_{k - i},
 \]
-which we can combine with what we already know about the exponents to give a general formua:
+which we can combine with what we already know about the exponents to give a general formula:
 
 \begin{defn}\label{Product of polynomials}
 
@@ -359,7 +359,7 @@ c_k=  \sum_{i = 0}^k a_i b_{k - i}
 for each $i$.  Notice that in each case some of the coefficients may be zero.
 \end {defn}
 
-If you are still not convinced the formula given in the definion works, look at the fourth coefficient.  The formula in the definition gives:
+If you are still not convinced the formula given in the definition works, look at the fourth coefficient.  The formula in the definition gives:
 \[ c_3 = \sum_{i = 0}^3 a_i b_{3 - i} =  a_0b_3 + a_1b_2 +a_2b_1 + a_3b_0.  \]
 If you go about it the long way, that is to write out the polynomial and then pick out and add together every single combination that results in $x^3$, you will get the exact same thing.  Having established that the definition works, we can actually use it with confidence.  Suppose we have two polynomials, $p(x)$ and $q(x)$ we want to multiply, and let us call the result $f(x)$:
 \[ f(x)=(1+x^2-2x^3)(x+4x^3) \]
@@ -381,7 +381,7 @@ Doing the same for the other coefficients gives us:
 Getting rid of the zero terms and dealing with the negatives gives us the simplified version:
 \[x+5x^3-2x^4+4x^5-8x^6. \]
 \begin {exercise}{mult2way}
-Perform the following polynomial multiplications in two ways: first, by distributing and collecting terms; and second, by using the coefficent formula in Definition \ref{Product of polynomials} directly.  Verify that the two methods agree.
+Perform the following polynomial multiplications in two ways: first, by distributing and collecting terms; and second, by using the coefficient formula in Definition \ref{Product of polynomials} directly.  Verify that the two methods agree.
 \begin {enumerate}[(a)]
 \item
 $(x-5)(x^2+3x)$
@@ -395,7 +395,7 @@ $(8x^5 + 4x^3 - 7x^2)(10x^2 - 5x + 3)$
 \end {exercise}
 
 \begin {exercise}{multform}
-Use the coefficent formula in Definition \ref{Product of polynomials} to evaluate the following products.
+Use the coefficient formula in Definition \ref{Product of polynomials} to evaluate the following products.
 \begin {enumerate}[(a)]
 \item
 $p(x)^2$, where $p(x) = \sum_{i=0}^{3} x^i$
@@ -662,7 +662,7 @@ $p(x) (q(x) + r(x)) =p(x)q(x) + p(x)r(x)$.
 %\begin {exercise}{matrixcommute}
 %\begin {enumerate}[(a)]
 %\item
-%Matrices are known for not being commutative over matrix multiplication.  Mutiply the above matrices in opposite order to show the result is the same.
+%Matrices are known for not being commutative over matrix multiplication.  Multiply the above matrices in opposite order to show the result is the same.
 %\end {enumerate}
 %\end {exercise}
 %
@@ -863,9 +863,9 @@ Find $q(x)$ and $r(x)$ in the following equations.
 \end {exercise}
 
 
-And now for the proof.
+And now, for the proof:
 
-\begin {prop} {Division for Polynomials}
+\begin {prop} {Division for Polynomials} \emph{(Division algorithm for polynomials)}
 Let $f(x)$ and $g(x)$ be nonzero polynomials where the degree of $g(x)$ is greater than 0.  Then there exists unique polynomials $q(x)$ and $r(x)$ such that 
 \[
 f(x) = g(x)q(x) + r(x)
@@ -1035,7 +1035,15 @@ By the previous proposition, the equation $x^n-c=0$ has at most $n$ solutions.  
 \section{Proof that $U(p)$ is cyclic}
 
 Mathematics has many mysterious and wonderful connections. Surprisingly, we can use Proposition~\ref{proposition:poly:FTOA} to prove something about group theory.  
-Recall that $U(n)$ is the group of units in $\ZZ_n$, where a ``unit'' is an element with a multiplicative inverse. If $p$ is a prime, then $U(p)$ is the set of all nonzero elements of $\ZZ_p$. 
+Recall that $U(n)$ is the group of units in $\ZZ_n$, where a ``unit'' is an element with a multiplicative inverse. If $p$ is a prime, then $U(p)$ is the set of all nonzero elements of $\ZZ_p$. In some coding theory applications, it's important to find elements of $U(p)$ which have a very larger order (recall that the \term*{order} of a group element $g \in G$ (denoted by $|g|$ is the smallest positive integer $n$ such that $g^n = {\var id}$). We know from Lagrange's theorem that $|g|$ divides $|G|$.  The largest possible value for $|g|$ is $|G|$: but this is \emph{only} possible when $G$ is cyclic. (Why?)  We are thus interested in primes $p$ such that $U(p)$ is cyclic. 
+
+One might say to oneself, ``Oh, if $p$ is prime then $U(p)$ must be cyclic since it's of prime order.'' Alas, this is not true:
+
+\begin{exercise}{}
+Show that if $p$ is a prime greater than 3, then $|U(p)|$ is \emph{not} a prime.
+\end{exercise}
+
+But all is not lost! Even though  $|U(p)|$ is not prime, we can still prove that $U(p)$ is cyclic using some of our results from the previous section. 
 
 \begin {prop}{Up_cyclic}
 $U(p)$ is cyclic for every prime $p$.
@@ -1067,6 +1075,17 @@ Since $p_i = p_j$, we have at least $2(p_i-1)$ elements in ${\mathbb{Z}_{{p_1}^{
 Proposition~\ref{isomorph_theorem_1} of the Isomorphisms chapter, this means there are  $2(p_i-1)$ elements of $U(p)$ which have order $p_i$, and all of these elements are solutions of the equation $x^{p_i}-1=0$ (Why?). 
 But at the beginning of this proof, we demonstrated that there can only be at most $p_i$ solutions. This contradiction shows us our supposition is false, so all of the $p_i$'s in the direct product must be unequal.
 \end{proof}
+
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Give an example of a positive integer $n$ for which $U(n)$ is \emph{not} cyclic.
+\item
+Is it possible to specify exactly the positive integers $n$ for which $U(n)$ is cyclic?  (You may do some internet research to answer this one.  Hint: the answer has something to do with the name ``Gauss''.)
+\end{enumerate}
+\end{exercise}
+
 %
 %\begin{defn}
 %A vector spaae over $\mathbb{R}$ consists of a set \emph{V} along with two operations '+' and  ' $\cdot$ ' subject to the conditions that for all vectors $ \vec {v},\vec{w},\vec{u} \in$ \emph{V} and all scalars r, s $\in \mathbb{R}$:

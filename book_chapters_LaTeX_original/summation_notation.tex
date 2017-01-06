@@ -14,7 +14,7 @@
 
 \chap{Sigma Notation\quad
 \sectionvideohref{W9vTsHE5SJE&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=43}}{Sigma}
-We're about to start looking at polynomials, which means we'ill be working with sums of terms--sometimes many terms. Such sums are often written using a special notation known as ``sigma notation''.  It's possible that you are already a master of sigma notation. If not, you can brush up with the material in this section. (At very least, you should try some of the exercises to make sure that you haven't gotten rusty.)
+We're about to start looking at polynomials, which means we'll be working with sums of terms--sometimes many terms. Such sums are often written using a special notation known as ``sigma notation''.  It's possible that you are already a master of sigma notation. If not, you can brush up with the material in this section. (At very least, you should try some of the exercises to make sure that you haven't gotten rusty.)
 \bigskip
 
 The original version of this chapter was written by David Weathers. Johnny Watts also contributed several sections, and Rachel McCoy worked on the summation by parts section.
@@ -204,7 +204,7 @@ $\displaystyle{\sum_{i=1}^{10}\sum_{j=i}^{10} ij }$
 \item
 $\displaystyle{\sum_{i=m}^{n}\sum_{j=i}^{2n}jx^i }$~~(Write as the sum of two summations.)
 \item
-$\displaystyle{\sum_{i=m}^{n}\sum_{j=0}^{i}(i-j)^2 }$~~(You may assume $m>0$.  Write as the sume of two summations.)
+$\displaystyle{\sum_{i=m}^{n}\sum_{j=0}^{i}(i-j)^2 }$~~(You may assume $m>0$.  Write as the sum of two summations.)
 \end {enumerate}
 \end{exercise}
 Another useful fact: in a nested sum, the outer summation index can be treated as a constant in the inner summation.  So for example:
@@ -325,10 +325,10 @@ How great would it be if we shorten that mess?  Fortunately we can!  Let the mat
 
 This may look a little confusing at first, but once you do a few examples it will start to make sense.  Suppose ${A}$ is a $3 \times 3$ matrix and ${B}$ is a $3 \times 2$ matrix as in our previous example, then the result of the product ${A} {B}$ is a $3 \times 2 $ matrix we can call ${C}$.  Now suppose we want to find the entry on the third row in the second column of ${C}$, then we would compute:
 
-\begin{align}
-{c}_{3,2} =& \sum_{k=1}^3 a_{3,k} b_{k,2} \notag\\
-=& a_{3,1} b_{1,2} + a_{3,2} b_{2,2} + a_{3,3} b_{3,2}.  \notag
-\end{align}
+\begin{align*}
+{c}_{3,2} =& \sum_{k=1}^3 a_{3,k} b_{k,2} \\
+=& a_{3,1} b_{1,2} + a_{3,2} b_{2,2} + a_{3,3} b_{3,2}.  
+\end{align*}
 Sure enough, when we look at the long version we wrote earlier for the product ${AB}$ our result matches the entry on the second row, third column.
 
 \begin{exercise}{sigmaAssoc}
@@ -410,7 +410,7 @@ Since the terms of ${A}$ and ${B}$ are being expressed as a summation, they comm
 
 \[ \sum_{k=1}^n \left[A^{\text{T}}\right]_{k,j} \left[B^{\text{T}}\right]_{i,k} = \sum_{k=1}^n \left[B^{\text{T}}\right]_{i,k}\left[A^{\text{T}}\right]_{k,j} = \left[ {B}^{\text{T}}{A}^{\text{T}} \right]_{i,j}, \]
 
-Voila, we have the $(i,j)$ entry of the right-hand side, and the proof is complete.
+Voil\`{a}, we have the $(i,j)$ entry of the right-hand side, and the proof is complete.
 \end{proof}
 
 
@@ -445,9 +445,9 @@ Prove that if $A $is a square matrix with real entries and $k$ is a real number,
 \item
 Prove or disprove: trace defines an isomorphism between $\mathbb{M}_2$ (the additive group of $2 \times 2$ matrices with real entries) and $\mathbb{R}$ .
 \item
-Prove or disprove: trace defines a homomorphsim from $\mathbb{M}_2$ to $\mathbb{R}$ .
+Prove or disprove: trace defines a homomorphism from $\mathbb{M}_2$ to $\mathbb{R}$ .
 \item
-Prove or disprove: trace defines a homomorphsim from $GL_2(\mathbb{R})$ (invertible $2 \times 2$ matrices under multiplication)  to $\mathbb{R}$ .
+Prove or disprove: trace defines a homomorphism from $GL_2(\mathbb{R})$ (invertible $2 \times 2$ matrices under multiplication)  to $\mathbb{R}$ .
 \end{enumerate}
 \end{exercise}
 
@@ -460,7 +460,7 @@ All we've done here is take the matrix product formula, and set the second index
 
 \[ \text{Tr} \left({B} {A}\right) = \sum_{i=1}^n [BA]_{i,i} = \sum_{i=1}^n \sum_{k=1}^n b_{i,k}a_{k,i}. \]
 
-Let's play with this last equation a bit. Since the matrix entries commute, and also  we can change the order of the summations without changing the result, it follows that we can do the following rearrangment:
+Let's play with this last equation a bit. Since the matrix entries commute, and also  we can change the order of the summations without changing the result, it follows that we can do the following rearrangement:
 
 \[ \text{Tr} \left({B} {A}\right) =\sum_{i=1}^n \sum_{k=1}^n b_{i,k}a_{k,i} = \sum_{i=1}^n \sum_{k=1}^n a_{k,i}b_{i,k} = \sum_{k=1}^n \sum_{i=1}^n a_{k,i}b_{i,k}. \]
 
@@ -591,11 +591,11 @@ We can write this using the Levi-Civita symbol as:
 \[ \text{det} A = \sum_{i=1}^2 \sum_{j=1}^2 \epsilon_{ij} a_{1i} a_{2j} \]
 
 Let's check this by evaluating the nested sum:
-\begin{align}
+\begin{align*}
 \text{det} A =& \sum_{i=1}^2 \sum_{j=1}^2 \epsilon_{ij} a_{1i} a_{2j} \\
 =& \sum_{i=1}^2 \left( \epsilon_{i1} a_{1i} a_{21} + \epsilon_{i2} a_{1i} a_{22} \right) \\
 =& \epsilon_{11} a_{11} a_{21} + \epsilon_{12} a_{11} a_{22} + \epsilon_{21} a_{12} a_{21} + \epsilon_{22} a_{12} a_{22}
-\end{align}
+\end{align*}
 Looking at the definition, we know that $\epsilon_{11}$ and $\epsilon_{22}$ equals zero, so the leftmost and rightmost terms go to zero.   For the remaining terms we have $\epsilon_{12}$ which equals 1, and $\epsilon_{21}$ which equals -1.  Therefore, we are left with:
 \[ \text{det} A = a_{11}a_{22} - a_{12}a_{21}, \]
 which is exactly the definition you learned in linear algebra.   
@@ -604,7 +604,7 @@ The natural generalization to a $3 \times 3$ matrix as:
 
 \[ \text{det} A = \sum_{i=1}^3 \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} a_{1i} a_{2j} a_{3k} \]
 
-\begin{exercise}{}
+\begin{exercise}{rowExp}
 Show that the above formula using $\epsilon_{ijk}$ does agree with the determinant formula that you obtain from row expansion.
 \end{exercise}
 
@@ -641,11 +641,11 @@ We want to show what happens when any two rows are equal, so lets do one case wh
 \[
 \text{det} A =  \sum_{i,j,k} \epsilon_{ijk} a_{1i} a_{1j} a_{3k}
 \]
-Notice what happens when we switch $a_{1i}$ and $a_{1j}$; it also means that we must change $\epsilon_{ijk}$ to $\epsilon_{jik}$ because it is the position of the indicies that count (i.e. if we change the order of two indicies we must change the order for the rest).  Switching $a_{1i}$ and $a_{1j}$ doesn't change our final product since they are communatative, so we end up with the expression:
+Notice what happens when we switch $a_{1i}$ and $a_{1j}$; it also means that we must change $\epsilon_{ijk}$ to $\epsilon_{jik}$ because it is the position of the indices that count (i.e. if we change the order of two indices we must change the order for the rest).  Switching $a_{1i}$ and $a_{1j}$ doesn't change our final product since they are commutative, so we end up with the expression:
 \[
 \text{det} A =   \sum_{j,i,k} \epsilon_{jik} a_{1j} a_{1i} a_{3k} 
 \]
-Now remember what we discused earlier, if you interchange two indices (that is, an odd permutation) of $\epsilon_{ijk}$, you get its negative, so $\epsilon_{jik}=-\epsilon_{ijk}$.  This gives us the equality:
+Now remember what we discussed earlier, if you interchange two indices (that is, an odd permutation) of $\epsilon_{ijk}$, you get its negative, so $\epsilon_{jik}=-\epsilon_{ijk}$.  This gives us the equality:
 \[
 \sum_{j,i,k} \epsilon_{jik} a_{1j} a_{1i} a_{3k}=\sum_{j,i,k} - \epsilon_{ijk} a_{1i} a_{1j} a_{3k}
 \]
@@ -655,7 +655,7 @@ First of all, lets not lose sight that both the left hand side and the right han
 We showed that if the first and second row of a $3\times 3$ matrix is the same, the determinant is zero.  Now finish the proof that the determinant of a $3\times 3$ matrix is always zero if \emph{any} two rows are the same; that is, prove it for the remaining cases.
 \end{exercise}{} 
 
-We can take the notion of equal and unequal indices as step farther by proving that the determinant of a product of two matricies is equal to the product of their determinants.  Let's start with a simple $2 \times 2$ matrix.  If matrices $A$ and $B$ are both 2x2, we want to prove that $\text{det}(AB)=\text{det}A \,\text{det}B$.  We can write $\text{det}(AB)$ as:
+We can take the notion of equal and unequal indices as step farther by proving that the determinant of a product of two matrices is equal to the product of their determinants.  Let's start with a simple $2 \times 2$ matrix.  If matrices $A$ and $B$ are both 2x2, we want to prove that $\text{det}(AB)=\text{det}A \,\text{det}B$.  We can write $\text{det}(AB)$ as:
 \[
 \text{det}(AB)= \sum_{x,y} \epsilon_{xy} [AB]_{1x} [AB]_{2y}
 \]
@@ -733,7 +733,7 @@ and therefore:
 \subsubsection*{Levi-Civita symbols and cross products}
 Since we can define determinants using the Levi-Civita symbol, we can also define cross products of vectors, but before going any further it is important to know that in this section we are writing vectors in a very particular way.  For vectors, we are labeling the components using numbered subscripts.  For example, the vector $\textbf{a}$ is written out as $\textbf{a}=(a_1, a_2, a_3)$, and intuitively you can think of $a_1$ as the $x-$component of vector $\textbf{a}$, $a_2$ as the $y-$component, and $a_3$ as the $z-$component.  The reason for doing it this way is that having indices refer to natural numbers (such as the indices of the Levi-Civita symbol) makes the rest of the notation much easier to work with, especially if we want to make it more general.   
 
-You may hav seen the formula for the cross product of two vectors in vector calculus, or college physics. Given two three-dimensional vectors $\textbf{a}=(a_1, a_2, a_3)$ and $\textbf{b}=(b_1, b_2, b_3$, the \term{cross product} of $\textbf{a}$ and $\textbf(b)$ can be expressed as  (note that the absolute value brackets in the formula  indicate that it'is a determinant and not a matrix.)
+You may have seen the formula for the cross product of two vectors in vector calculus, or college physics. Given two three-dimensional vectors $\textbf{a}=(a_1, a_2, a_3)$ and $\textbf{b}=(b_1, b_2, b_3)$, the \term{cross product} of $\textbf{a}$ and $\textbf{b}$ can be expressed as  (note that the absolute value brackets in the formula  indicate that it's a determinant and not a matrix.)
 
 \[ \textbf{a} \times \textbf{b}=
  \left| \begin{array}{ccc}
@@ -741,6 +741,8 @@ You may hav seen the formula for the cross product of two vectors in vector calc
 a_1 & a_2 & a_3 \\
 b_1 & b_2 & b_3 \end{array} \right|,\]
 where $\textbf{e}_1,  \textbf{e}_2 , \textbf{e}_3$ are the vectors along the $x$, $y$, and $z$ directions  in $\mathbb{R}^3$ (sometimes they're written as $\textbf{i}, \textbf{j}, \textbf{k}$ instead).
+
+It may seem strange that the matrix we're taking the determinant of has some entries that are vectors, and some entries that are numbers. But since we can still do addition and scalar multiplication with vectors, we can plug the vectors into the determinant formula and still get a result--which happens to be a vector. (Hey, if it works, don't knock it!)
 
 For example, suppose we have the vectors:
 
@@ -752,7 +754,7 @@ Then the cross product $\textbf{a} \times \textbf{b}$ is given by the determinan
 2 & 2 & 4\\
 -1 & 2 & -3 \end{array} \right|.\] 
 Therefore:
-\begin{align}
+\begin{align*}
 \textbf{a} \times \textbf{b} =& \textbf{e}_1 \,
  \left| \begin{array}{cc}
 2 & 4 \\
@@ -762,14 +764,14 @@ Therefore:
 -1 & -3  \end{array} \right| + \textbf{e}_3 \,
  \left| \begin{array}{cc}
 2 & 2 \\
-1 & 2  \end{array} \right| \notag\\
+1 & 2  \end{array} \right| \\
 =& -14 \textbf{e}_1 + 2 \textbf{e}_2 + 6 \textbf{e}_3.
-\end{align}
+\end{align*}
 Or we can write the last line in a more familiar fashion:
 \[ [-14, ~ 2, ~ 6]. \] 
 So all we have to do to define a cross product using the Levi-Civita symbol is to simply plug these terms into the formula for the $3 \times 3$ determinant from earlier:
 \[\textbf{a} \times \textbf{b} = \,\text{det} A = \sum_{i=1}^3 \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} \textbf{e}_i  a_j b_k. \]
-Notice that we have dropped the first index on each term.  The reason is that the $\textbf{e}$ terms will always be on the first row, $a$ on the second, and $b$ on the third.  
+If you compare this formula with our original definition of $3 \times 3$ determinant (just before Exercise~\ref{exercise:Sigma:rowExp}), you'll see  that we have dropped the first index on each term.  The reason is that the $\textbf{e}$ terms will always be on the first row, $a$ on the second, and $b$ on the third.  
 We can actually shorten this up a little bit more, by rewriting the formula to find the $i^{\text{th}}$ component of $\textbf{a} \times \textbf{b}$.  In other words, we don't want the summation of all three $\textbf{e}_i$ terms, just one particular $\textbf{e}_i$ term.  That means we remove the summation over $i$, which leaves us with:
 \[ (\textbf{a} \times \textbf{b})_i = \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} a_j b_k. \]
 So for example, the first component (intuitively the $x$ component, or as we would say, the $\textbf{e}_1$ component) is:
@@ -795,65 +797,79 @@ Note that we do not bother to indicate that the indices $i,j,k$ run from 1 to 3:
 \subsubsection*{BAC-CAB Rule}
 As a final example, suppose we want to prove what is known as the $BAC-CAB$ rule\index{BAC-CAB@$BAC-CAB$ rule}, which states:
 \[ \textbf{a} \times \left( \textbf{b} \times \textbf{c} \right) = \textbf{b} \left( \textbf{a} \cdot \textbf{c} \right) - \textbf{c} \left( \textbf{a} \cdot \textbf{b} \right). \]
-To prove this we can go two different routes: the brute-force method or the symmetry method.  Let's start with the brute force method.
+We'll arrive at this formula this by two different routes: the brute-force method or the symmetry method.  Let's start with the brute force method.
 
+\begin{proof}(1) \emph(brute force method)
 We can rewrite this using Levi-Civita symbols by using our definition of cross product.  First we find the cross product of $\textbf{b}$ and $\textbf{c}$:
 \[ (\textbf{b} \times \textbf{c})_i = \sum_{j,k} \epsilon_{ijk} b_j c_k. \]
-The tricky part is taking the cross product of that result with $\textbf{a}$.  Let us call the resulting vector of $\textbf{b} \times \textbf{c}$, $\textbf{d}$.  Then the first component of the resulting vector $\textbf{d}$ is:
+The tricky part is taking the cross product of that result with $\textbf{a}$.  Let's use $\textbf{d}$ to represent $\textbf{b} \times \textbf{c}$, .  Then the first component of $\textbf{d}$ is:
 \[d_1 = \left(\textbf{b} \times \textbf{c} \right)_1 = b_2 c_3 - b_3 c_2. \]
-We can find the other components by noting that the indices are cyclic permutations.  Recal that $\epsilon_{123}$ is equivalent to $\epsilon_{231}$ because the cycles $(123)$ and $(231)$ are equivalent.  So to go from $d_1$ to $d_2$, we need an equivalent cycle that replaces the $1$ in the $i$ position (the first position) with a $2$.  Now the $j$ position, the second position, would have to be $3$, because in this cycle $2$ goes to $3$, and similarly for the last position it will become a $1$.  So 1 becomes 2, 2 becomes 3, and 3 becomes 1.  Using this replacement we get $d_2$:
+We can find the other components by noting that the indices are cyclic permutations.  Recall that $\epsilon_{123}$ is equivalent to $\epsilon_{231}$ because the cycles $(123)$ and $(231)$ are equivalent.  So to go from $d_1$ to $d_2$, we need an equivalent cycle that replaces the $1$ in the $i$ position (the first position) with a $2$.  Now the $j$ position, the second position, would have to be $3$, because in this cycle $2$ goes to $3$, and similarly for the last position it will become a $1$.  So 1 becomes 2, 2 becomes 3, and 3 becomes 1.  Using this replacement we get $d_2$:
 \[d_2 = \left(\textbf{b} \times \textbf{c} \right)_2 = b_3 c_1 - b_1 c_3. \]
-Tthe same strategy gives us $d_3$:
+The same strategy gives us $d_3$:
 \[d_3 = \left(\textbf{b} \times \textbf{c} \right)_3 = b_1 c_2 - b_2 c_1. \]
 By substitution (and some algebraic rearranging) we can find $\textbf{a} \times \textbf{d}$, which is the same as $\textbf{a} \times \left(\textbf{b} \times \textbf{c}\right)$:
-\begin{align}
- \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_1 =  \left(\textbf{a} \times \textbf{d} \right)_1 =  a_2 d_3 - a_3 d_2 =& a_2 \left(b_1 c_2 - b_2 c_1 \right) - a_3 \left(b_3 c_1 - b_1 c_3 \right) \notag\\
-=& b_1 \left(a_2 c_2 + a_3 c_3\right) - c_1 \left(a_2 b_2 + a_3 b_3 \right). \notag
-\end{align}
+\begin{align*}
+ \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_1 =  \left(\textbf{a} \times \textbf{d} \right)_1 =  a_2 d_3 - a_3 d_2 =& a_2 \left(b_1 c_2 - b_2 c_1 \right) - a_3 \left(b_3 c_1 - b_1 c_3 \right) \\
+=& b_1 \left(a_2 c_2 + a_3 c_3\right) - c_1 \left(a_2 b_2 + a_3 b_3 \right). 
+\end{align*}
 Again, we can use the strategy of cyclically permuting the indices to easily find $b_2$ and $b_3$:
-\begin{align}
- \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_2 =  \left(\textbf{a} \times \textbf{d} \right)_2 =  a_3 d_1 - a_1 d_3 =& a_3 \left(b_2 c_3 - b_3 c_2 \right) - a_1 \left(b_1 c_2 - b_2 c_1 \right) \notag\\
-=& b_2 \left(a_3 c_3 + a_1 c_1\right) - c_2 \left(a_1 b_1 + a_3 b_3 \right), \notag
-\end{align}
-\begin{align}
- \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_3 =  \left(\textbf{a} \times \textbf{d} \right)_3 =  a_1 d_2 - a_2 d_1 =& a_1 \left(b_3 c_1 - b_1 c_3 \right) - a_2 \left(b_2 c_3 - b_3 c_2 \right) \notag\\
-=& b_3 \left(a_1 c_1 + a_2 c_2\right) - c_3 \left(a_1 b_1 + a_2 b_2 \right). \notag
-\end{align}
+\begin{align*}
+ \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_2 =  \left(\textbf{a} \times \textbf{d} \right)_2 =  a_3 d_1 - a_1 d_3 =& a_3 \left(b_2 c_3 - b_3 c_2 \right) - a_1 \left(b_1 c_2 - b_2 c_1 \right) \\
+=& b_2 \left(a_3 c_3 + a_1 c_1\right) - c_2 \left(a_1 b_1 + a_3 b_3 \right), 
+\end{align*}
+\begin{align*}
+ \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_3 =  \left(\textbf{a} \times \textbf{d} \right)_3 =  a_1 d_2 - a_2 d_1 =& a_1 \left(b_3 c_1 - b_1 c_3 \right) - a_2 \left(b_2 c_3 - b_3 c_2 \right) \\
+=& b_3 \left(a_1 c_1 + a_2 c_2\right) - c_3 \left(a_1 b_1 + a_2 b_2 \right). 
+\end{align*}
 Recall the definition of dot product in three dimensions:
 \[ \textbf{a} \cdot \textbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3. \]
-This means we're very close; we're just missing a few terms.  It turns out that we can add them in without changing anything.  For example, let us see what happens when we add the terms $a_1 c_1$ and $a_1 b_1$ to the first component of $\textbf{a} \times (\textbf{b} \times \textbf{c} )$ we found earlier:
-\begin{align}
-b_1 &\left(a_1 c_1 + a_2 c_2 + a_3 c_3\right) - c_1 \left(a_1 b_1 + a_2 b_2 + a_3 b_3 \right) \notag\\
-&= b_1 a_1 c_1 + b_1 a_2 c_2 + b_1 a_3 c_3 - c_1 a_1 b_1 - c_1 a_2 b_2 - c_1 a_3 b_3 \notag\\
-&= \left(b_1 a_1 c_1 - c_1 a_1 b_1 \right) + b_1 \left(a_2 c_2 + a_3 c_3\right) - c_1 \left( a_2 b_2 + a_3 b_3 \right) \notag\\
-&=b_1 \left(a_2 c_2 + a_3 c_3\right) - c_1 \left(a_2 b_2 + a_3 b_3 \right). \notag
-\end{align}
-The same steps can be used to justify adding missing terms in the other two components as well.  So now we can say that:
-\[ \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_1 = b_1 \left(\textbf{a} \cdot \textbf{c}\right) - c_1 \left(\textbf{a} \cdot \textbf{b}\right), \]
-\[ \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_2 = b_2 \left(\textbf{a} \cdot \textbf{c}\right) - c_2 \left(\textbf{a} \cdot \textbf{b}\right), \]
+Look closely at the first component of our resulting vector:
+\[ \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_1 =  b_1 \left(a_2 c_2 + a_3 c_3\right) - c_1 \left(a_2 b_2 + a_3 b_3 \right).\]
+The right hand side is the difference of two terms:  $b_1 \left(a_2 c_2 + a_3 c_3\right)$ and   
+$c_1 \left(a_2 b_2 + a_3 b_3 \right)$.  The first term can be seen as $b_1$ times something that is ``almost'' a dot product: it's just missing the term $a_1c_1$.  Similarly, the second term is $c_1$ times an ``almost'' dot product that's just missing a $a_1b_1$. What are we going to do about the missing terms?  Why, just add them in!  In fact, we can simply add and subtract $a_1b_1c_1$ and rearrange to get:
+\begin{align*}
+b_1 \left(a_2 c_2 + a_3 c_3\right) - c_1 \left(a_2 b_2 + a_3 b_3 \right) &=
+b_1 \left(a_2 c_2 + a_3 c_3\right) - c_1 \left(a_2 b_2 + a_3 b_3 \right) + a_1b_1c_1 -  a_1b_1c_1 \\
+& = (b_1 \left(a_2 c_2 + a_3 c_3\right)+ a_1b_1c_1) - (c_1 \left(a_2 b_2 + a_3 b_3 \right)  + a_1b_1c_1)\\
+& = b_1 \left(a_2 c_2 + a_3 c_3+ a_1c_1\right) - c_1 \left(a_2 b_2 + a_3 b_3  + a_1b_1 \right) \\
+&= b_1(\textbf{a} \cdot \textbf{c}) - c_1(\textbf{a} \cdot \textbf{b}).
+\end{align*}
+It's magic! So we have shown
+\[ \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_1 = b_1 \left(\textbf{a} \cdot \textbf{c}\right) - c_1 \left(\textbf{a} \cdot \textbf{b}\right) \]
+The same steps can be used to justify adding missing terms in the other two components as well:
+\[ \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_2 = b_2 \left(\textbf{a} \cdot \textbf{c}\right) - c_2 \left(\textbf{a} \cdot \textbf{b}\right). \]
 \[ \left(\textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_3 = b_3 \left(\textbf{a} \cdot \textbf{c}\right) - c_3 \left(\textbf{a} \cdot \textbf{b}\right). \]
 Since we have all three components of the vectors represented and multiplied by the same thing we can shorten this to:
 \[ \textbf{a} \times \left( \textbf{b} \times \textbf{c} \right) = \textbf{b} \left( \textbf{a} \cdot \textbf{c} \right) - \textbf{c} \left( \textbf{a} \cdot \textbf{b} \right). \]
 Done!
+\end{proof}
+\medskip
 
 %{\bf @@@ new section: multiplication of $\epsilon$'s.  First, show that $\epsilon_{ijk} \epsilon_{jkl} = \delta_{ij} (1 - \delta_{jk})$, then show that $\epsilon_{ijk} \epsilon_{klm} = %\delta_{il}\delta_{jm} - \delta_{im}\delta_{jl}$. @@@}
 The other way of proving the BAC-CAB rule requires a bit more finesse than our previous brute force approach.  This time around we are going make more use of the symmetries of 
-$\epsilon$, so that we do not have to write out every single term.  First let us write the BAC-CAB rule in a way that allows us to more easily ask what happens for every 
+$\epsilon$, so that we do not have to write out every single term.  
+
+\begin{proof}(2) \emph{(Symmetry method)}
+First let us write the BAC-CAB rule in a way that allows us to more easily ask what happens for every 
 possible value our indices can take, so that we may organize them and get rid of any zero terms.
 
-We begin by writing the i'th component of $A \times (B \times C)$ using Levi-Civita symbols as %{\bf @@@ use \\left[ and \\right] for the brackets @@@}%:
+We begin by writing the $i$th component of $\textbf{a} \times (\textbf{b} \times \textbf{c})$ using Levi-Civita symbols as %{\bf @@@ use \\left[ and \\right] for the brackets @@@}%:
 
-\[ \left( A \times (B \times C) \right)_i =\sum_{j,k,m,n} \left[ \epsilon_{ijk} A_j( \epsilon_{kmn} B_m C_n )\right]. \]
+\begin{align*}
+ \left( \textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_i &=\sum_{j,k} \left[ \epsilon_{ijk} a_j \left( \sum_{m,n}\epsilon_{kmn} b_m c_n \right)\right] \\
+&=\sum_{j,k,m,n} \left[ \epsilon_{ijk} a_j \left( \epsilon_{kmn} b_m c_n \right)\right].
+\end{align*}
 
-You can rewrite this as: 
+By separating out the sum over $k$, we can rewrite this as: 
 
-\[ \left( A \times (B \times C) \right)_i =  \sum_{j,m,n} \left[ \sum_k \epsilon_{ijk} \epsilon_{kmn} \right] A_j B_m C_n. \]
+\[ \left( \textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_i =  \sum_{j,m,n} \left[ \sum_k \epsilon_{ijk} \epsilon_{kmn} \right] a_j b_m c_n. \]
 
 Let's define the quantity inside the $[ \dots ]$ as $S_{ijmn}$:
 
 	\[ S_{ijmn} :=  \left[ \sum_k \epsilon_{ijk} \epsilon_{kmn} \right]. \]
 
-Then we will be able to simplify our expression for $\left( A \times (B \times C) \right)_i$ if we can find a simpler expression for $S_{ijmn}$.  This quantity will have a different value for each choice of $i,j,m,n$.  
+Then we will be able to simplify our expression for $\left( \textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_i$ if we can find a simpler expression for $S_{ijmn}$.  This quantity will have a different value for each choice of $i,j,m,n$.  
 
 Let's focus on the indices $i$ and $j$. First, if $i=j$
 then  $\epsilon_{ijk} =  \epsilon_{iik} = 0$, so $S_{iimn} = 0$.  On the other hand, if $i \neq j$, there is only one value of $k$ that makes $\epsilon_{ijk}$ nonzero (because we must have $k \neq i,j$). We must also have $m,n \neq k$ in 
@@ -878,23 +894,26 @@ S_{ijmn}& = -1 ~ \text{if}~ n=i,~ m=j, ~ \text{and}~ i\neq j; \\
 S_{ijmn}& = 0~\text{otherwise}.
 \end{align*}
 
-Let's plug this back into our expression for $ \left( A \times (B \times C) \right)_i$. We can then separate the terms where $m=i$, $n=j$ from the terms where $n=i$, $m=j$. Notice that there is no longer a sum over 3 indices but 
+Let's plug this back into our expression for $ \left( \textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_i$. We can then separate the terms where $m=i$, $n=j$ from the terms where $n=i$, $m=j$. Notice that there is no longer a sum over 3 indices but 
 only one index, since $m$ and $n$ are determined by $i$ and $j$:
 
-\[ \underbrace{\sum_{j, j \neq i}  A_j B_i C_j}_{\text{(terms for $m=i$, $n=j$) }}    -  \underbrace{ \sum_{j, j \neq i}   A_j B_j C_i}_{\text{(terms for $m=j$, $n=i$)}} \] 
+\[ \underbrace{\sum_{j, j \neq i}  a_j b_i c_j}_{\text{(terms for $m=i$, $n=j$) }}    -  \underbrace{ \sum_{j, j \neq i}   a_j b_j c_i}_{\text{(terms for $m=j$, $n=i$)}} \] 
 	                         	  
 
 
-Now if we add $A_i B_i C_i$ to the first set of terms, and subtract $A_i B_i C_i$ to the second set of terms, then the overall sum doesn't change but the two 
+Now if we add $a_i b_i c_i$ to the first set of terms, and subtract $a_i b_i c_i$ to the second set of terms, then the overall sum doesn't change but the two 
 expressions simplify:
 
-\[ \sum_{j}  A_j B_i C_j    -  \sum_{j}   A_j B_j C_i  \]
+\[ \sum_{j}  a_j b_i c_j    -  \sum_{j}   a_j b_j c_i  \]
 
 This is the same as:
 
-\[ B_i  (A \cdot C) - C_i (A \cdot B), \]
+\[ a_i  (\textbf{b} \cdot \textbf{c}) - c_i (\textbf{a} \cdot \textbf{b}), \]
 
-which is the $BAC-CAB$ rule.  In this example the brute force method wasn't much harder than the symmetry method, but for more complicated expressions it is far easier to use the symmetries of $\epsilon$ to prove a statement rather than do it term by term.
+which is the $BAC-CAB$ rule.  
+\end{proof}
+
+In this case the brute force method wasn't much harder than the symmetry method, but for more complicated expressions it is far easier to use the symmetries of $\epsilon$ to prove a statement rather than do it term by term.
 
 \begin{exercise}{}
 Using some facts from the discussion above, show that  $S_{ijmn}$ can also be written in terms of Kronecker deltas as follows:

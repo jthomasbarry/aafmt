@@ -28,7 +28,7 @@ Thanks to Tom Judson for material used in this chapter.
 In the previous chapter we talked about isomorphisms, which are bijections between two groups that also preserve
 the group operation. We've seen that isomorphic groups are essentially the ``same'' group (thinking groupwise). 
 
-For instance, we saw that the integers mod 4 and the $4^{th}$ roots of unity were isomporphic (${\mathbb Z_4} \cong \langle i \rangle$)  by the following bijection (isomorphism):
+For instance, we saw that the integers mod 4 and the $4^{th}$ roots of unity were isomorphic (${\mathbb Z_4} \cong \langle i \rangle$)  by the following bijection (isomorphism):
 
 % $f: {\mathbb Z_4} \longrightarrow \langle i \rangle$  that takes 
 \begin{align*}
@@ -91,7 +91,7 @@ So although we can't create a bijection, could we possibly create another functi
 \begin{example}{Z_8_i homomorph}
 Let's try to create a function from ${\mathbb Z_8}$ to $\langle i \rangle$ which preserves group operations.  Since there are twice as many elements  in ${\mathbb Z_8}$ as in $\langle i \rangle$,  it seems natural that 2 elements from  ${\mathbb Z_8}$ should each go to one element in $\langle i \rangle$.  The question then is, Which two?  
 %For instance what in ${\mathbb Z_8}$ will be a $1$?  What in ${\mathbb Z_8}$ will be an $i$?
- Because of the nature of modular addition, it makes some sense to pick elements of ${\mathbb Z_8}$ that are spaced evenly thoughout ${\mathbb Z_8}$ if we want them to correspond to the same action in $\langle i \rangle$.  So let's look at the function  $g: {\mathbb Z}_8 \rightarrow \langle i \rangle$  that takes 
+ Because of the nature of modular addition, it makes some sense to pick elements of ${\mathbb Z_8}$ that are spaced evenly throughout ${\mathbb Z_8}$ if we want them to correspond to the same action in $\langle i \rangle$.  So let's look at the function  $g: {\mathbb Z}_8 \rightarrow \langle i \rangle$  that takes 
 \begin{align*}
     0,4 \overset{g}{\longrightarrow} 1 ,~~     1,5 \overset{g}{\longrightarrow} i,~~    2,6 \overset{g}{\longrightarrow} -1,~~   3,7 \overset{g}{\longrightarrow} -i,  
 \end{align*}
@@ -126,7 +126,7 @@ $-i$       & $-i$ & 1 & $i$ & -1 & $-i$ & 1 & $i$ & -1\\
 }
 \end{table}
 
-Then we remove redundant rows/columns and change the group operation, and voila:
+Then we remove redundant rows/columns and change the group operation, and voil\`{a}:
 
 \begin{table}[H]
 \caption{\label{groups_Z8_transfom2}Second Transformation of ${\mathbb Z}_8$ into $\langle i \rangle$.}{\small
@@ -293,7 +293,7 @@ $\cdot$ & 1 & -1  \\
 }
 \end{table}
 
-Now this isn't the \emph{whole} Cayley table for $\langle i \rangle$ (Table~\ref{4_roots_table3}), but it \emph{is} the part of the Cayley table that corresponds to the elements 1 and -1 (remove rows 2 and 4 as well as columns 2 and 4).  So $q$  preserves the operations between $\ZZ_8$ and $\langle i \rangle$, since for all $a,b \in {\mathbb Z}_8$ whe have
+Now this isn't the \emph{whole} Cayley table for $\langle i \rangle$ (Table~\ref{4_roots_table3}), but it \emph{is} the part of the Cayley table that corresponds to the elements 1 and -1 (remove rows 2 and 4 as well as columns 2 and 4).  So $q$  preserves the operations between $\ZZ_8$ and $\langle i \rangle$, since for all $a,b \in {\mathbb Z}_8$ we have
 \[
 q(a \oplus b) = q(a) \cdot q(b).
 \]
@@ -345,7 +345,7 @@ f( g_1 \cdot g_2 ) = f( g_1 ) \circ f( g_2 )
 \]
 for all $g_1, g_2 \in G$. The range of $f$ in $H$ is called the \term{
 homomorphic image}\index{Homomorphic image}~of~$f$.
-\footnote{You may have noticed that in the Isomorphisms chapter we used greek letters ($\phi$ etc.) for isomorphisms, whereas here we typically use the  letter $f$ to denote a homomorphism. There is no special reason for this--both notations are used in math books, and you should be comfortable either way.}
+\footnote{You may have noticed that in the Isomorphisms chapter we used Greek letters ($\phi$ etc.) for isomorphisms, whereas here we typically use the  letter $f$ to denote a homomorphism. There is no special reason for this--both notations are used in math books, and you should be comfortable either way.}
  \end{defn}
 
 \begin{exercise}{homo_image_kernel_1}
@@ -376,7 +376,7 @@ For the homomorphism $q$ from ${\mathbb Z}_8$ to $\langle i \rangle$ in Example~
  All of our examples so far have been with finite groups; let's look at infinite groups instead.  As we saw in the Isomorphisms chapter, with finite groups we can use Cayley tables to verify the equality of the group operations, but with infinite groups we don't have  Cayley tables, so we need to use  the definition of a homomorphism.
 
 \begin{example}{homo_T}
-Recall that the circle group ${ \mathbb T}$ consists of all complex numbers $z$ such that $|z|=1$. So geometrically, the circle group consists of the complex numbers that trace out a circle of radius 1 about the orgin in the complex plane (hence the name), as shown in the figure below:
+Recall that the circle group ${ \mathbb T}$ consists of all complex numbers $z$ such that $|z|=1$. So geometrically, the circle group consists of the complex numbers that trace out a circle of radius 1 about the origin in the complex plane (hence the name), as shown in the figure below:
 
 \begin{figure}[hbt]
 \begin{center}
