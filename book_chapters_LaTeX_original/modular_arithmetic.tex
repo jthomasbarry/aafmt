@@ -259,10 +259,10 @@ Can we do the same thing with multiplication?
 
 \begin{example}{mod_mult_new}
 Suppose I travel on my racetrack at a 113 miles per hour in the positive direction  for 17 hours. We may compute:
-\begin{align}
-&\text{Net displacement}: 113 \cdot 17 = 1921 \text{ miles} \notag\\
-&\text{Final position}: 1921 = 384\cdot 5 + 1 \implies \text{final position} = 1. \notag
-\end{align}
+\begin{align*}
+\text{Net displacement}&: 113 \cdot 17 = 1921 \text{ miles}\\
+\text{Final position}&: 1921 = 384\cdot 5 + 1 \implies \text{final position} = 1. 
+\end{align*}
 On the other hand, we may reach the same conclusion by a somewhat easier route:
 \begin{align*}
 113 &\equiv 3 \pmod{5},\\
@@ -314,7 +314,7 @@ Now you're ready! Give answers for the seven examples at the beginning of this c
 
 \subsection{More uses of modular arithmetic  }
  
-Supermarkets and retail stores have a dirty little secret. Every time you scan your purchases, they're using modular arithmetic on you! In fact, modular arithmetic is the basis for UPC and ISBN bar codes. We will use these practical examples to introduce \emph{modular equations}\index{Modular equations}. 
+Supermarkets and retail stores have a nasty  little secret. Every time you scan your purchases, they're using modular arithmetic on you! In fact, modular arithmetic is the basis for \term{UPC} and \term{ISBN} bar codes. We will use these practical examples to introduce \emph{modular equations}\index{Modular equations}. 
 
 \begin{figure}
 \begin{center}
@@ -328,7 +328,7 @@ Supermarkets and retail stores have a dirty little secret. Every time you scan y
 
 
 \begin{exercise}{UPCSymbols} \emph{Universal Product Code}
-\index{Code!UPC} (UPC) symbols are now found on most \index{UPC code}
+\index{Code!UPC} (UPC) symbols are now found on most
 products in grocery and retail stores. The UPC symbol (see Figure~\ref{groups_figure_3}) is a 12-digit
 code which identifies the manufacturer of a product and the product itself. The first 11 digits contain the information, while the twelfth digit is used to check for errors that may occur while scanning. If $d_1 d_2
 \cdots d_{12}$ is a valid UPC code, then  
@@ -1273,14 +1273,14 @@ From parts (a),(b) and (c), what do you conclude about $\ell^k$ where $k$ is any
 Given $\ell,m,p \in {\mathbb Z}$ and $a=\bmod(\ell,n), b=\bmod(m,n),$ and $c=\bmod(p,n)$.  Show the  following equivalences using Proposition~\ref{proposition:modular:number_remainder}.
 \begin{enumerate}[(a)]
 \item
-\[ (\ell +m) + p \equiv (a \oplus b) \oplus c \pmod{n}.\qquad
-\text{\hyperref[sec:modular_arithmetic:hints]{(*Hint*)} }\]
+$ (\ell +m) + p \equiv (a \oplus b) \oplus c \pmod{n}$.\qquad
+\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 \item
-\[ (\ell +m) + p \equiv (a \oplus b) \oplus c \pmod{n}.\]
+$ (\ell \cdot m) \cdot p \equiv (a \odot b) \odot c \pmod{n}.$
 \item
-\[ (\ell \cdot m) + p \equiv (a \odot b) \oplus c \pmod{n}. \]
+$ (\ell \cdot m) + p \equiv (a \odot b) \oplus c \pmod{n}. $
 \item
-\[ (\ell + m) \cdot p \equiv (a \oplus b) \odot c \pmod{n}. \]
+$ (\ell + m) \cdot p \equiv (a \oplus b) \odot c \pmod{n}. $
 \end{enumerate}
 \end{exercise}
 
@@ -1315,11 +1315,11 @@ By noticing some patterns we were able to save ourselves quite a bit of work.
 Prove or disprove, using the proposition in Exercise~\ref{exercise:modular:number_remainder}:
 \begin{enumerate}[(a)]
 \item
-$833 \cdot 222 \cdot 949 \equiv 133 \cdot  922 \cdot 249 \pmod{7}$
+$7787 \cdot 21005 \cdot 495 \equiv 56002 \cdot  492 \cdot 213 \pmod{7}$
 \item
 $(12345 \cdot 6789) + 1357 \equiv (98765 \cdot 13579) + 9876 \pmod{10}$
 \item
-$(4545 \cdot 1414) + 1357 \equiv (7878 \cdot 3614) + 4658 \pmod{11}$
+$(4545 \cdot 5239) + 1314 \equiv (7878 \cdot 3614) + 4647 \pmod{101}$
 
 \end{enumerate}
 \end{exercise}

@@ -79,7 +79,9 @@ Now that you understand the process for DHKE, follow the example below.  (Note t
 
 %Since all values of $a$ such that $1 \leq a \leq p$ are congruent to $1$, then Fermat's Little Theorem tells us that $p$ is prime, but are there numbers that exist that pass Fermat's Little Theorem but are not prime?  The answer is yes, these numbers are called \emph{Lucas-Carmichael Numbers}\index{Lucas-Carmichael Numbers! in cryptogaphy}.  (or \emph{pseudoprimes}\index{Pseudoprimes}) 
 
-Following the example above you can see that the DHKE requires that you raise a given number $g$ to a natural number (either $m$ or $n$) and take the result mod $p$. This operation is called \term{discrete exponentiation}. Calculating discrete exponentials with small values of $m$ or $n$ is manageable, but in practice the exponent $m$ or $n$ can be enormous, with hundreds of digits. It would seem that in this case discrete exponentiation would take a long, long time to compute.  But we can use the repeated squaring formula described in Section \ref{exercise:crypt:power} to speed up the process.  Create a spreadsheet using the repeated squaring formula to compute the following exercises.
+Following the example above you can see that the DHKE requires that you raise a given number $g$ to a natural number (either $m$ or $n$) and take the result mod $p$. This operation is called \term{discrete exponentiation}. Calculating discrete exponentials with small values of $m$ or $n$ is manageable, but in practice the exponent $m$ or $n$ can be enormous, with hundreds of digits. It would seem that in this case discrete exponentiation would take a long, long time to compute.  But we can use the repeated squaring formula described in Section \ref{exercise:crypt:power} to speed up the process.  
+
+You may create a spreadsheet using the repeated squaring formula (or use \url{www.wolframalpha.com}) to find answers to the following exercises.
  
 \begin{exer}
 Given $p$ = 32452867; $g$ = 54321; and $n$ = 876.  
@@ -87,11 +89,14 @@ Given $p$ = 32452867; $g$ = 54321; and $n$ = 876.
 \item What number do you send?  
 %ans: mod((54321)876, 32,452,867) = 19,439,625
 
-\item You are then sent 31975948, what is the key? 
+\item Alice sends back 31975948.  What is your shared key with Alice? 
 %ans: K = mod((31,975,948)876, 32,452,867) = 16,045,878
 
-\item If $m$ = 123 what number does the other party calculate?
-%ans: K = mod((19,439,625)123, 32,452,867) = 16,045,878
+\item  Bob receives your number from (a) and chooses $m$ = 127. What number does he send back to you? And what is your shared key with Bob?
+%ans: K = mod((19,439,625)124, 32,452,867) = 22721372
+
+\item
+By an amazingly lucky chance, Alice's choice of $m$ just happens to be very close to Bob's choice.  What is Alice's choice of $m$?
 \end{enumerate}
 \end{exer}
 
@@ -101,10 +106,16 @@ Given $p$ = 86028157; $g$ = 98765; and $n$ = 123.
 \item	What number do you send?  
 %ans: mod((98765)123, 86,028,157) = 7,262,961
 
-\item You are then sent 53161396, what is the key? 
+\item Carol sends back 53161396. What is your shared key? 
 %ans: K = mod((53,161,396)123, 86,028,157) = 35,164,864
 
-\item If $m$ = 87 what number does the other party calculate?
+\item Deborah receives your number from (a) and chooses $m$ = 81. what number does she send to you? And what is your shared key with Deborah?
+% K = 5998268
+
+\item
+By an extraordinarily lucky chance, Deborah's choice of $m$ just happens to be not too far from Carol's choice.  What is Carol's choice of $m$?
+% 87
+
 %ans: K = mod((7,262,961)87, 86,028,157) = 35,164,864
 \end{enumerate}
 \end{exer}
@@ -140,13 +151,20 @@ With the same $g$ as in part (b), prove or disprove: $g$ is onto.
 \end{enumerate}
 \end{exercise}
 
-This exercise suggests the following question:  Under what conditions can we guarantee that the discrete exponentiation function is onto and/or one-to-one? (This turns out to be more than an idle question, as we shall see shortly.)  To gain some leverage against this problem, we'll make use of   Proposition~\ref{proposition:poly:Up_cyclic} from Chapter~\ref{poly}, which tells us that the multiplicative group $\mathbb{Z}_p\setminus \{0\}$ is \emph{cyclic}, whenever $p$ is a prime. (In Chapter~\ref{poly} we also used the notation $U(p)$ instead of $\mathbb{Z}_p\setminus \{0\}$, and we'll use this same notation in the following.) This means that for any prime $p$, there is a $g \in U(p)$  such that $g$ is a \emph{generator} of  $U(p)$: that is, $U(p) = \langle g \rangle$ (recall from Chapter~\ref{groups} that for a finite group, $\langle g \rangle = \{g, g^2, g^3, \ldots \}$).\footnote{A generator of $U(p)$ is also referred to as a \term{primitive element} of $\mathbb{Z}_p$.} 
+This exercise suggests the following question:  Under what conditions can we guarantee that the discrete exponentiation function is onto and/or one-to-one? (This turns out to be more than an idle question, as we shall see shortly.)  To gain some leverage against this problem, we'll make use of   Proposition~\ref{proposition:poly:Up_cyclic} from Chapter~\ref{poly}, which tells us that the multiplicative group $\mathbb{Z}_p\setminus \{0\}$ is \emph{cyclic}, whenever $p$ is a prime. (In Chapter~\ref{poly} we also used the notation $U(p)$ instead of $\mathbb{Z}_p\setminus \{0\}$, and we'll use this same notation in the following.) This means that for any prime $p$, there is a $g \in U(p)$  such that $g$ is a \emph{generator}\footnote{A generator of $U(p)$ is also referred to as a \term{primitive element} of $\mathbb{Z}_p$.} of  $U(p)$: that is, $U(p) = \langle g \rangle$ (recall from Chapter~\ref{groups} that for a finite group, $\langle g \rangle = \{g, g^2, g^3, \ldots \}$). 
 Thus any element of $U(p)$ may be expressed as a power of $g$ (under mod $p$ multiplication).  In other words, the discrete exponentiation function $f: \mathbb{N} \rightarrow U(p)$ given by $f(n) = \bmod(g^n,p)$ is an onto function!  
 
 It turns out that onto-ness also gives use one-to-oneness, when we restrict $f$ to the appropriate domain:
 
 \begin{exercise}{} 
-Suppose that $p$ is a prime, and $g$ is a generator of $p$.  Consider the function $h: \{1,\ldots,p\} \rightarrow U(p)$ given by $h(n) = \bmod(g^n,p)$.  (Note that $h$ is the same as $f$ defined above, only the domain has been restricted.)  Show that $h$ is a bijection.
+\begin{enumerate}[(a)]
+\item
+Define $h: U(13) \rightarrow U(13)$ by: $h(n) = \bmod(2^n,13)$.  (Note that the domain of $h$ is restricted to $U(13)$.)  Show that $h$ is a bijection.
+\item
+Find another number $k \in U(13)$ such that $h: U(13) \rightarrow U(13)$ given by $h(n) = \bmod(k^n,13)$ is also a bijection.
+\item
+Suppose that $p$ is a prime, and $g$ is a generator of $p$.  Consider the function $f: U(p) \rightarrow U(p)$ given by $f(n) = \bmod(g^n,p)$.  (Note that $f$ is the same as the discrete exponentiation function defined above, except the domain has been restricted.)  Show that $f$ is a bijection.
+\end{enumerate}
 \end{exercise}
 
 It's about time we got back to the main point. Why do we even care about DL anyway? Well, suppose an eavesdropper who's listening in on Moses and Rachael's conversation wants to figure out the secret key. 
