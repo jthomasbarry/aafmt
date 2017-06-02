@@ -1,11 +1,20 @@
 \section{Hints for ``Sigma Notation'' exercises}\label{sec:sigma:hints} 
 
+\noindent Exercise \ref{exercise:Sigma:detId}: Both sides are 0 if any of the two indices $i,j,k$ are equal (show this). Then you only need to consider the three possible cases where $i,j,k$ are all unequal.
+
+\noindent Exercise \ref{exercise:Sigma:nonzeroVec}(a): You will need to change around the indices in the formula from Exercise~\ref{exercise:Sigma:2epsIdent}. Make the following replacements: $k \rightarrow i, i \rightarrow j, j \rightarrow k$.  Then use the fact that $\epsilon_{ijk}= \epsilon_{jki}$ (see Exercise~\ref{exercise:Sigma:KLC}.  to obtain
+\[\sum_i \epsilon_{ijk} \epsilon_{imn} = \delta_{jm} \delta_{kn} - \delta_{jn} \delta_{km}. \]
+You may plug this form into the expression on the left-hand side. You then obtain 2 terms, which you can evaluate separately. Summing over a delta function eliminates one of its two indices: for example:
+\[ \sum_{j,k,m,n} \delta_{jm} \delta_{kn}  y_j y_m z_k z_n  = \sum_{j,k} y_j y_j z_k z_k, \]
+since the only $m$ term that contributes is $m=j$, and the only $n$ term that contributes is $n=k$. From there, it's a short hop to the expression with inner products.
+
+In order to get the expression with $\sin \theta$, you will need the cosine formula for inner products (see Section~\ref{subsec:rotMx3}).
 
 \noindent Exercise \ref{exercise:Sigma:sigmaAssoc}: Write matrices $G$ and $H$ from parts (b) and (c) in terms of $A,B$, and $C$.
 
-\noindent Exercise \ref{exercise:Sigma:trace3}: Notice that the product ${AB}$ is in both terms.
+\noindent Exercise \ref{exercise:Sigma:trace3}: Notice that the product ${AB}$ is in both terms. So for simplicity you can define $M := AB$, and use a previous result.
 
-\noindent Exercise \ref{exercise:Sigma:linalg}(b): Use one of the previous exercises.
+\noindent Exercise \ref{exercise:Sigma:linalg}(a) You don't need summation notation here, just use basic properties of inverses. (b): Use one of the previous exercises.
 
 \noindent Exercise \ref{exercise:Sigma:KLC}: There are two possibilities to consider, $i=j$ and $i \neq j$.
 
@@ -14,10 +23,8 @@
 \noindent Exercise \ref{exercise:Sigma:split}(b): Multiply the equation you found in (a) by $a_{ijk}$ and sum over all $i,j,k$.
 
 
-\noindent Exercise \ref{exercise:Sigma:detTrans}: $\epsilon_{ijk}$ is the sign of the permutation $\left( \begin{smallmatrix}  1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right)$. Note that the inverse of this permutation is $ \left( \begin{smallmatrix}  i & j & k  \\ 1 & 2 & 3  \end{smallmatrix} \right)$.  (It doesn't matter what order the indices are written in the top row.) How are the signs of the two permutations related? 
-
+\noindent Exercise \ref{exercise:Sigma:detTrans}: Notice that $a_{1, \phi(1)} a_{2, \phi(2)} a_{3, \phi(3)}$ is equal to $a_{\phi^{-1}(1), 1} a_{\phi^{-1}(2), 2} a_{\phi^{-1}(3), 3}$, and that sign($\phi$) is equal to sign($\phi^{-1}$). 
 
 \noindent Exercise \ref{exercise:Sigma:EqualZero}: Replace $\epsilon_{xy}$ with $-\epsilon_{yx}$, and show that the expression is equal to the negative of itself. (Alternatively, you can just verify the two cases:  $i=j=1$ and $i=j=2$.)
 
 
-\noindent Exercise \ref{exercise:Sigma:last}: First show that:  $\sum_{k=1}^n 2^k = 2^{n+1} - 2$.

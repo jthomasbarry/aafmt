@@ -47,7 +47,7 @@ You also learned how to solve them either by hand, or using the \texttt{SQRT} bu
 \begin{itemize}
 \item $x = \pm 2$
 \item $x = \pm 6$
-\item $x = \pm 2.64575131106459...$
+\item $x = \pm 2.64575131106459\ldots$
 \end{itemize}
  But what about equations like:
 \[x^2 = -1 \]
@@ -737,8 +737,10 @@ We may write $z$ as $a + bi$ and $w$ as $c + di$. Then
 Prove each of the following statements (follow the style of Proposition~\ref{proposition:complex:conj_add}).
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
+\item
+$\overline{(\bar{z})} = z$
 \item 
-$(\overline{z}) (\overline{w}) = \overline{(zw)}$
+$\overline{z} \cdot \overline{w} = \overline{zw}$
 \item
 If $a$ is real, then $a \overline{z} = \overline{az}$
 \item
@@ -759,7 +761,7 @@ $|z^{-1}| = \dfrac{1}{|z|}$
 \hyperref[sec:complex:hints]{(*Hint*)}
 
 \item
-$(\overline{z})^{-1} = \overline {\left( z^{-1} \right )}$
+$(\overline{z})^{-1} = \overline { z^{-1} }$
 \end{enumerate}
 \end{multicols}
 \end{exercise}
@@ -776,17 +778,17 @@ In view of part (a), complete the following statement:  ``The complex number $z=
 Now that we have proved properties of complex numbers in the previous two exercises, we may make use of these properties to prove facts about complex numbers  without having to write everything out as $a + bi$.  
 
 \begin{exercise}{abs2}
-* If $|z| = 1$ and $z \neq 1$, show that $\frac{z - 1}{z+1}$ is a pure imaginary number. 
+* Use appropriate properties from Exercise~\ref{exercise:complex:cxprops} to prove the following:  If $|z| = 1$ and $z \neq 1$, then $\frac{z - 1}{z+1}$ is a pure imaginary number. 
 \hyperref[sec:complex:hints]{(*Hint*)}
 \end{exercise}
 
 \begin{exercise}{abs3}
 \begin{enumerate}[(a)]
-\item *Show that for any nonzero complex number $z$, the absolute value of $z + \bar{z}^{-1}$ is greater than $\sqrt{3}$. 
+\item *Use appropriate properties from Exercise~\ref{exercise:complex:cxprops} to prove the following: for any nonzero complex number $z$, the absolute value of $z + \bar{z}^{-1}$ is greater than $\sqrt{3}$. 
 \hyperref[sec:complex:hints]{(*Hint*)}
 
 \item Give an example of $z$ such that $|z + \bar{z}^{-1}| = 2$. 
-\item Give three additional examples of $z$ such that $|z + \bar{z}^{-1}| = 2$. 
+\item Give four additional examples of $z$ such that $|z + \bar{z}^{-1}| = 2$. 
 \item **Show that for any nonzero complex number $z$, $|z + \bar{z}^{-1}| \ge 2$. 
 \hyperref[sec:complex:hints]{(*Hint*)}
 \item Show by example that part (d) is \emph{not} true if $z + \bar{z}^{-1}$ is replaced with $z + z^{-1}$.  Find the smallest possible 
@@ -794,50 +796,6 @@ value for $|z + z^{-1}|$.
 \end{enumerate}
 \end{exercise}
 
-
-\begin{exercise}{mandelbrot}
-The intricate \emph{Mandelbrot set}\index{Mandelbrot set} (see Figure~\ref{mandelbrot}) is a beautiful application of complex numbers.
-The Mandelbrot set is defined by means of \emph{iteration} of the function $f(z) = z^2 + c$. The definition is a little complicated: we show how it works using a couple of examples.
-
-First consider $c=1$, so $f(z) = z^2 + 1$. We start with $z=0$, which gives $f(0) = 1$; and we iterate by evaluating the function on the result of the previous evaluation. So we compute $f(1) = 2, f(2) = 5, f(5) = 26, ...$. It is clear that $|f(z)|$ is getting larger and larger after repeated iterations. 
-
-On the other hand, if we use $c=i$ and start with $z=0$, we get $f(0) = i$ at first, and repeated iteration gives $f(i) = -1+i, f(-1+i) =- i, f(i) = -1 + i, \ldots$ so that this time $|f(z)|$ doesn't continue to grow indefinitely after repeated iterations. 
-
-The Mandelbrot set is defined to be the set of values $c$ for which the iterations do \emph{not} grow indefinitely upon iteration. Thus $i$ is in the Mandelbrot set, while $1$ is not. 
-
-Which of the following numbers is in the Mandelbrot set? \emph{Demonstrate} your answer.
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-\item
-$c = 0$
-\item
-$c = -1$
-\item
-$c = -i$
-\item
-$c = 1+i$
-\end{enumerate}
-\end{multicols}
-\end{exercise}
-
-\begin{figure}[hbt]  
-\center{\includegraphics[width=2.5in]
-	         {images/mandelbrot.png}}
-\caption{Mandelbrot set (from Wikipedia): the set corresponds to the black region. The actual set has additional filaments that extend from the different bulb-shaped areas, which are not visible in this representation. (The reader may search the web for beautiful colored representations of this set.) \label{mandelbrot}}
-\end{figure}
-
-\begin{exercise}{excel} (\emph{for geeks})
-\begin{enumerate}[(a)]
-\item
-Write an Excel spreadsheet that can multiply two complex numbers. Put the real and imaginary parts of the first number in cells A1 and B1; Put the real and imaginary parts of the second number in cells C1 and D1; Put the real and imaginary parts of the result in cells E1 and F1. Use your sheet to compute $(3 + 4i)(7 - 8i)$.
-\item
-Modify your Excel sheet to compute the square of a complex number. Put the real and imaginary parts of the first number in cells A1 and B1; Put the real and imaginary parts of the result in cells C1 and D1. Use your sheet to compute $(12 - 5i)^2$.
-\item 
-(\emph{for ubergeeks}) Modify your Excel sheet to compute $z^2, (z^2)^2,((z^2)^2)^2, \ldots$ (10 number altogether) for a given complex number $z$. Put the real and imaginary parts of $z$ in cells A1 and B1; Put the real and imaginary parts of the results in columns C and D. Use your sheet with $z = 1 + 0.25 i$. Plot the results as 10 points in the plane (use Scatter Plot).
-\item
-(\emph{for super-ubergeeks}) Modify your Excel sheet to compute the first 100 iterates of the function $f(z) = z^2 + c$ for given complex numbers $z,c$ (see Exercise~\ref{exercise:complex:mandelbrot}). Put the real and imaginary parts of $z$ in cells A1 and B1; Put the real and imaginary parts of $c$ in cells A2 and B2; put the results in columns C and D. Using your sheet, determine which of the following numbers is in the Mandelbrot set: (i) $z = -1.04039 + 0.2509294i$; (ii) $z=-0.1155989 + 0.7639405$.
-\end{enumerate}
-\end{exercise} 
 
 \section{Alternative representations of complex numbers\quad
 \sectionvideohref{J7M1jjjkyEM&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=5}}\label{complex_graphical}
@@ -955,16 +913,17 @@ The distance  $r$ is the absolute value or modulus defined previously, while the
 \subsection{Converting between rectangular and polar form}
 
 We can see from the figure that \[
-z=a+bi=r(\cos\theta+i\sin\theta).\]
- Hence, \[
-r=|z|=\sqrt{a^{2}+b^{2}}\]
- and \begin{align*}
+z=a+bi=r\cos\theta+( r\sin\theta) i,\]
+where
+\begin{align*}
+r&=|z|=\sqrt{a^{2}+b^{2}} \\
 a & =r\cos\theta\\
 b & =r\sin\theta.\end{align*}
- We will frequently use the abbreviation\index{Cis!definition}
-\[ \cis\theta := \cos\theta+i\sin\theta \]
-(note the symbol ``:='' means ``is defined as''), so that
-\[ r\cis\theta := r(\cos\theta+i\sin\theta).\]
+ We will frequently use the abbreviation `cis', which stands for ``cosine plus $i$ sine'':\index{Cis!definition}
+\[ \cis\theta := \cos\theta+i\sin\theta. \]
+(In this expression, the notation ``:='' means ``is defined as''. Note that we're writing `$i\sin\theta$' instead of $(\sin \theta) i$, because then we don't need a parenthesis.) 
+Multiplying both sides by $r$ gives
+\[ r\cis\theta = r(\cos\theta+i\sin\theta)\]
 We know from trigonometry that adding $2 \pi$ to $\theta$ does not change $\cos \theta$ or $\sin \theta$. This means for example that the following complex numbers are equal: $2.6 \cis\left(\frac{\pi}{9}\right), 2.6 \cis\left(2\pi + \frac{\pi}{9}\right), 2.6 \cis\left(-2\pi + \frac{\pi}{9}\right), \ldots $.  However, we can always find a $\theta$ between $0$ and $2\pi$ such that $z = r \cis \theta$;  so the standard representation of $z = r \cis \theta$ has $0 \leq \theta < 2\pi$.
 
 \begin{example}{1} Let $z=2\cis \frac{\pi}{3}$. Then
@@ -1057,15 +1016,15 @@ There is a very close relationship between plane geometry and complex numbers.
 \item
 Consider the following set of complex numbers:
 \[ \{z \text{ such that } |z| < 2. \} \]
-In the complex plane, what does this set look like?
+In the complex plane, what does this set look like? Draw a picture, and describe verbally.
 \item
 Use complex numbers to specify the set of all points on a circle of radius 5 with center at the origin (your answer should look like the set specification given in part (a)).
 \item
 Consider the following set of complex numbers:
 \[ \{z \text{ such that } |z-i| = 2. \} \]
-In the complex plane, what does this set look like?
+In the complex plane, what does this set look like? Draw a picture, and describe verbally.
 \item
-Use complex numbers to specify the set of all points on a circle of radius 3 that passes through the origin and has center on the positive $x$-axis.
+Describe the following as a set of complex numbers:  the set of all points on a circle of radius 3 that passes through the origin and has center on the positive $x$-axis.
 \end{enumerate}
 \end{exercise}
 
@@ -1372,7 +1331,7 @@ The importance of isomorphism in mathematics cannot be overstated.\footnote{Ther
 \begin{exercise}{cos form}
 \begin{enumerate}[(a)]
  \item
-Using de Moivre's formula for $z^3$ where $z = r \cis \theta$, find formulas for $\cos 3 \theta$ and $\sin 3 \theta$ in terms of $\cos \theta$ and $\sin \theta$.  
+Using de Moivre's formula for $z^3$ where $z =  \cis \theta$, find formulas for $\cos 3 \theta$ and $\sin 3 \theta$ in terms of $\cos \theta$ and $\sin \theta$.  
 \item
 Using part (a), find a formula for $\cos 3 \theta$ in terms of $\cos \theta$.  
 \hyperref[sec:complex:hints]{(*Hint*)}
@@ -1577,11 +1536,11 @@ What is the phase shift of the sum of the three signals?
 
 We hope that from the examples in this section, you may get some idea of how important complex numbers are in the study of signals. In fact, for many electrical engineers complex numbers are their ``bread and butter''. 
 
-\subsection{Roots of unity and regular polygons}\label {sec:RootsOfUnity}
+\subsection{Roots of unity and regular polygons}\label{sec:RootsOfUnity}
 As we mentioned before, complex numbers got their start when mathematicians started considering the solutions to algebraic  equations. One particularly important equation is
 \[z^{n}=1.\]
 For example, when $n=4$ the complex numbers which solve $z^4=1$ are $z=1$, $-1$, $i$, and $-i$. In general, the complex numbers that satisfy the
-equation $z^{n}=1$ are called the \term{$n$th roots of unity}\index{Roots of unity}. (In other words, ``$n$th root of unity'' means the same thing as ''$n$th root of 1''.)
+equation $z^{n}=1$ are called the \term*{$n$th roots of unity}\index{Roots! of unity}. (In other words, ``$n$th root of unity'' means the same thing as ''$n$th root of 1''.)
 
 \begin{exercise}{48}
 \begin{enumerate}[(a)]
@@ -1718,6 +1677,7 @@ Incredibly as it seems, apparently complex numbers are closely related to geomet
 Draw a picture of the  6th roots of unity in the complex plane. Label them $A,B,C,D,E,F$ with $A=1, B= \cis\left(\frac{2\pi}{6}\right),$ and $C,D,E,F$ going counterclockwise around the circle.
 \item
 Fill in each of the following blanks with the letter corresponding to the product of the two complex numbers. For example,  $B \cdot B = \cis\left(\frac{2\pi}{6}\right) \cdot \cis\left(\frac{2\pi}{6}\right) = \cis\left(\frac{2\pi}{3}\right) = C$.
+
 \begin{multicols}{3}
 $B \cdot A = \underline{~<1>~}$
 
@@ -1901,9 +1861,9 @@ Find all fourth roots of $ \sqrt{1/2 + \sqrt{2}/4} + i\sqrt{1/2 - \sqrt{2}/4}$.
 
 
 \section{Complex roots of polynomial equations\quad
-\sectionvideohref{kf-LAFy3vhg&index=7&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{sec:FTOA}
+\sectionvideohref{kf-LAFy3vhg}}\label{sec:FTOA}
 
-Next we consider more general algebraic equations than the basic $n$th root equations we've been looking at so far. As a first example, consider the equation $z^2 + pz = q$, where $p$ and  $q$ are real numbers. Using  the quadratic formula, it is not too hard to show that if $a + bi$ is a solution of $z^2 + pz = q$ then the complex conjugate $a - bi$ is also a solution. This is because  $z^2 + pz = q$ can also be written as  $z^2 + pz - q = 0$, and the quadratic formula tells us that there are two solutions, given by:
+Next we consider more general algebraic equations than the basic $n$th root equations we've been looking at so far.\index{Roots! of polynomial equations}  As a first example, consider the equation $z^2 + pz = q$, where $p$ and  $q$ are real numbers. Using  the quadratic formula, it is not too hard to show that if $a + bi$ is a solution of $z^2 + pz = q$ then the complex conjugate $a - bi$ is also a solution. This is because  $z^2 + pz = q$ can also be written as  $z^2 + pz - q = 0$, and the quadratic formula tells us that there are two solutions, given by:
 $$ z = \frac{-p \pm \sqrt{p^2 - (4)(1)(-q)}}{2} = \frac{-p}{2}  \pm \frac{\sqrt{p^2 + 4q}}{2}.$$
 The $-p/2$ term is always real, but the square root term is either real or imaginary depending on the sign of $p^2 + 4q$  (since $q$ could be negative).  If the square root term is real, then both roots are real, and each root is its own complex conjugate.  If the square root term is imaginary, then the $\pm$ means that the imaginary parts of the two roots are negatives of each other, so that the two roots are complex conjugates.
 
@@ -1911,7 +1871,7 @@ The $-p/2$ term is always real, but the square root term is either real or imagi
 Consider the cubic equation $z^3 + pz^2 + qz = r$, where $p, q$ and  $r$ are all real numbers.
 \begin{enumerate}[(a)]
 \item
-Using a previous exercise (which?), show that $\overline{z^3} = \overline{z}^3$.
+Using an appropriate identity from Exercise \ref{}, show that $\overline{z^3} = \overline{z}^3$.
 \item
 Similarly, show  $\overline{pz^2} = p\overline{z}^2$ and $\overline{qz} = q\overline{z}$, and $\overline{r} = r$.
 \item 
@@ -1924,7 +1884,7 @@ Using (d), show that if $z$ is a solution to $z^3 + pz^2 + qz = r$ then $\overli
 \end{exercise}
 
 \begin{exercise}{conjugate_root}
-Based on the result of the previous exercise, fill in the blank: Given that the complex number $z$ is a solution of $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $a_0, a_1, ... a_{n-1}$ are real numbers. Then $\_\_\_\_\_$ is also a solution to the same equation.
+Based on the result of the previous exercise, fill in the blank: Given that the complex number $z$ is a solution of $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $a_0, a_1, \ldots a_{n-1}$ are real numbers. Then $\_\_\_\_\_$ is also a solution to the same equation.
 \end{exercise}
 
 \begin{exercise}{62} 
@@ -1939,13 +1899,13 @@ Given that $3 - 7i$ and $-2+i$ are solutions to an equation of the form $z^4 + a
 
 \begin{exercise}{conjugate_root2}
 Using the statement in Exercise~\ref{exercise:complex:conjugate_root}, prove the following proposition:
-Given the equation  $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $a_0, a_1, ... a_{n-1}$ are real numbers. Let $N$ be the number of solutions of the equation that are \emph{not} real. Then either $N=0$ or $N$ is divisible by 2. 
+Given the equation  $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $a_0, a_1, \ldots a_{n-1}$ are real numbers. Let $N$ be the number of solutions of the equation that are \emph{not} real. Then either $N=0$ or $N$ is divisible by 2. 
 \hyperref[sec:complex:hints]{(*Hint*)}
 \end{exercise}
 
 The most famous result concerning complex roots of polynomials is known as the {\bf \emph{Fundamental Theorem of Algebra}}:
 
-\begin{prop}{FTOA} Given any equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, ... a_{n-1}$ are real numbers. Then there exists at least one and at most $n$ distinct complex numbers which solve the given equation. 
+\begin{prop}{FTOA} Given any equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, \ldots a_{n-1}$ are real numbers. Then there exists at least one and at most $n$ distinct complex numbers which solve the given equation. 
 \end{prop}
 
 The Fundamental Theorem of Algebra actually has two parts. The easy part is the ``at most $n$ distinct complex roots'' part, and the hard part is the ``at least one complex root'' part. We will eventually prove the easy part in Chapter~\ref{poly}, but sadly the hard part is beyond our scope. (For more information on this see the Historical Note at the end of the chapter.
@@ -1967,7 +1927,7 @@ Using the Fundamental Theorem of Algebra and our previous results on roots of un
 
 \begin{exercise}{72}
 Using the Fundamental Theorem of Algebra and Exercise~\ref{exercise:complex:conjugate_root2}, prove the following proposition: 
-Given an equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, ... a_{n-1}$ are real numbers. Suppose the equation has no real solutions. Then the equation has at least two distinct solutions.
+Given an equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, \ldots. a_{n-1}$ are real numbers. Suppose the equation has no real solutions. Then the equation has at least two distinct solutions.
 \end{exercise}
 
 
@@ -1984,4 +1944,49 @@ The Fundamental Theorem of Algebra is a famous ``hard problem'' in the history o
 \histbox 
 }
 
+
+\section{The Mandelbrot set} \label{sec:mandelbrot}
+The intricate \emph{Mandelbrot set}\index{Mandelbrot set} (see Figure~\ref{mandelbrot}) is a beautiful application of complex numbers.
+The Mandelbrot set is defined by means of \emph{iteration} of the function $f(z) = z^2 + c$. The definition is a little complicated: we show how it works using a couple of examples.
+
+First consider $c=1$, so $f(z) = z^2 + 1$. We start with $z=0$, which gives $f(0) = 1$; and we iterate by evaluating the function on the result of the previous evaluation. So we compute $f(1) = 2, f(2) = 5, f(5) = 26, \ldots.$. It is clear that $|f(z)|$ is getting larger and larger after repeated iterations. 
+
+On the other hand, if we use $c=i$ and start with $z=0$, we get $f(0) = i$ at first, and repeated iteration gives $f(i) = -1+i, f(-1+i) =- i, f(i) = -1 + i, \ldots$ so that this time $|f(z)|$ doesn't continue to grow indefinitely after repeated iterations. 
+
+The Mandelbrot set is defined to be the set of values $c$ for which the iterations do \emph{not} grow indefinitely upon iteration. Thus $i$ is in the Mandelbrot set, while $1$ is not. 
+
+\begin{exercise}{mandelbrot}
+Which of the following numbers is in the Mandelbrot set? \emph{Demonstrate} your answer.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item
+$c = 0$
+\item
+$c = -1$
+\item
+$c = -i$
+\item
+$c = 1+i$
+\end{enumerate}
+\end{multicols}
+\end{exercise}
+
+\begin{figure}[hbt]  
+\center{\includegraphics[width=5.in]
+	         {images/mandelbrot.png}}
+\caption{(\emph{Left}) The Mandelbrot set: the set itself is colored in maroon. The  set has delicate filaments that extend from the different bulb-shaped areas, which are outlined in lighter color.(\emph{Right}) Detail of the Mandelbrot set, along the top edge of the heart-shaped region shown in the figure at left. \label{mandelbrot}}
+\end{figure}
+
+\begin{exercise}{excel} (\emph{for geeks})
+\begin{enumerate}[(a)]
+\item
+Write an Excel spreadsheet that can multiply two complex numbers. Put the real and imaginary parts of the first number in cells A1 and B1; Put the real and imaginary parts of the second number in cells C1 and D1; Put the real and imaginary parts of the result in cells E1 and F1. Use your sheet to compute $(3 + 4i)(7 - 8i)$.
+\item
+Modify your Excel sheet to compute the square of a complex number. Put the real and imaginary parts of the first number in cells A1 and B1; Put the real and imaginary parts of the result in cells C1 and D1. Use your sheet to compute $(12 - 5i)^2$.
+\item 
+(\emph{for ubergeeks}) Modify your Excel sheet to compute $z^2, (z^2)^2,((z^2)^2)^2, \ldots$ (10 number altogether) for a given complex number $z$. Put the real and imaginary parts of $z$ in cells A1 and B1; Put the real and imaginary parts of the results in columns C and D. Use your sheet with $z = 1 + 0.25 i$. Plot the results as 10 points in the plane (use Scatter Plot).
+\item
+(\emph{for super-ubergeeks}) Modify your Excel sheet to compute the first 100 iterates of the function $f(z) = z^2 + c$ for given complex numbers $z,c$ (see Exercise~\ref{exercise:complex:mandelbrot}). Put the real and imaginary parts of $z$ in cells A1 and B1; Put the real and imaginary parts of $c$ in cells A2 and B2; put the results in columns C and D. Using your sheet, determine which of the following numbers is in the Mandelbrot set: (i) $z = -1.04039 + 0.2509294i$; (ii) $z=-0.1155989 + 0.7639405$.
+\end{enumerate}
+\end{exercise} 
 

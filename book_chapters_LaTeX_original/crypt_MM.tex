@@ -7,7 +7,7 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Further topics in Cryptography}{Crypto}
+\chap{Group Theory Applications (II): Further topics in Cryptography}{further_crypt}
 \section{Diffie-Hellman Key Exchange}\label{sec:DHKE:1}
 
 In order to share a private message over a public domain a sender must  "lock" or encrypt their message using a \emph{key}\index{key! in cryptogaphy}.  Recall from Section \ref{sec:crypt:overview}, that in cryptography a  key is a special piece of information (usually a number)  that is required to encrypt and decrypt data which is shared between the sender and receiver. There are generally three types of keys used: public, private and symmetric keys. A \emph{public key}\index{Public Key! in cryptography} can be widely distributed, and is typically used for encrypting messages.  For a public key to be effective, there must be a matching \emph{private key}\index{Private Key! in cryptography} which is known only to the receiver. The privat key can be used to decrypt the messages created using the public key.  Finally, a \emph{symmetric key}\index{Symmetric Key! in cryptography} is known by the sender and receiver, and is used to both encypt and decrypt messages.  Not all cryptosystems require all three kinds of keys, but every cryptosystem must have either a private key or a symmetric key.
@@ -744,9 +744,7 @@ Given GF($2^{160}$) and the reduction polynomial $X^{160} + X + 1$ , then multip
         \\ $g(X)$ = $X^{80} + X^{70} + X^{60}$
 \end{exer}
 
-\newpage  
-
-\subsection{References and Suggested Reading} 
+\section{References and Suggested Reading} 
 \begin{enumerate}[(1)]
 
 \item\label{Azad}

@@ -1567,7 +1567,7 @@ Which implies $x_1=x_2$. So $f$ is one-to-one.
 \item
 \emph{(onto)}  Given $y \in \mathbb{R}$, let $x = (y+7)/5$. Then
 \[ f(x) = 5x-7 = 5 \left( \frac{y+7}{5} \right) - 7 = (y+7) - 7 = y.\]
-We need to verify that $x$ is in the domain:
+We need to verify that $x$ is in the domain of $f$ for every $y$ is in the codomain:
 \begin{align*}
 -2 \le y \le 8  &\implies 5 \le y+7 \le 15 \qquad \text{[basic algebra]}\\
  & \implies  1 \le \frac{y+7}{5} \le 3 \qquad \text{[basic algebra]}\\
@@ -1597,6 +1597,8 @@ $e:[-1,1] \rightarrow [-1,1], e(x) = x^3$
 \item \label{BijectRtoRExer-(root3of(x-4))}
 $f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = \root 3 \of {x-4} $
 \item \label{WhichBijRExer-(1/(|x|+1))}
+$e:\mathbb{R}^+ \rightarrow (0,1), e(x) = 1/ \bigl( |x| + 1 \bigr)$.
+\item \label{WhichBijRExer-(1/(|x|+1))2}
 $e:\mathbb{R}^+ \rightarrow [0,1], e(x) = 1/ \bigl( |x| + 1 \bigr)$.
 \item \label{WhichBijRExer-(4x-6)}
 $f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = 4x - 6$.
@@ -2202,7 +2204,7 @@ We say that $g$ is an \term{inverse function }\index{Inverse!function}\index{Fun
  \begin{enumerate}[(a)]
  \item $f \bigl( g(y) \bigr) = y$  (in other words, $f \compose g(y) = y$) for all $y \in Y$,
  and
- \item $g \bigl( f(x) \bigr) = x$ (in other words, $g \compose f(y) = y$) for all $x \in X$.
+ \item $g \bigl( f(x) \bigr) = x$ (in other words, $g \compose f(x) = x$) for all $x \in X$.
  \end{enumerate}
  \end{defn}
  

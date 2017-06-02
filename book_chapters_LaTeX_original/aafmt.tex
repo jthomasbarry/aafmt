@@ -128,6 +128,11 @@
   {\refstepcounter{equation}{\bigskip\noindent\bf Warning~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
   {\hspace\fill$\lozenge$\par\medskip}
 
+\newenvironment{thmprop}
+  {\refstepcounter{equation}{\bigskip\noindent\bf Proposition~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
+  {\par\medskip}
+
+
 {\newcommand{\chapterletter}[1]{#1}}
 
 \renewenvironment{corollary}
@@ -320,11 +325,12 @@ ISBN:  978-1-312-85635-6
 \include{homomorph}
 \include{actions}
 \include{crypt}
+\include{crypt_MM}
 \include{algcodes} 
 \include{summation_notation}
 \include{polyrings}
-%\include{PolyVec}
-%\include{poly_codes}
+\include{PolyVec}
+\include{poly_codes}
 \include{induction_appendix}
 \chap{Hints}{Hints}
 \input{complex_hints}
@@ -343,7 +349,7 @@ ISBN:  978-1-312-85635-6
 \input{algcodes_hints}
 \input{summation_notation_hints}
 \input{polyrings_hints}
-%\input{polyvec_hints}
+\input{polyvec_hints}
 
 
 %% RAB, 2009/01/28

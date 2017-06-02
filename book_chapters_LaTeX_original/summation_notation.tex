@@ -17,16 +17,16 @@
 We're about to start looking at polynomials, which means we'll be working with sums of terms--sometimes many terms. Such sums are often written using a special notation known as ``sigma notation''.  It's possible that you are already a master of sigma notation. If not, you can brush up with the material in this section. (At very least, you should try some of the exercises to make sure that you haven't gotten rusty.)
 \bigskip
 
-The original version of this chapter was written by David Weathers. Johnny Watts also contributed several sections, and Rachel McCoy worked on the summation by parts section.
+David Weathers wrote the original version of Sections~\ref{sec:sigmaExamples}-\ref{sec:CommonSums}. Johnny Watts started Sections~\ref{sec:sigmaLinAlg}-\ref{sec:sumByParts}, while  Rachel McCoy made significant improvements to Section~\ref{sec:sumByParts}.
 
-\section{Lots of examples}
+\section{Lots of examples}\label{sec:sigmaExamples}
 
 It's unavoidable that in mathematics, one often encounters sums.  Sometimes these sums have very few terms, but occasionally the sums can reach hundreds, thousands or even an infinite number of terms.  In these cases, rather than listing each and every term or listing the first several terms and assuming the pattern is obvious, one can represent a sum using \term{summation notation}, often referred to as \term{sigma notation}. 
 
  Sigma notation has four main parts:  the \emph{index variable}, the \emph{starting value}, the \emph{final value} and the \emph{formula}.
 These parts are illustrated in the following example.
 
-\begin {example}{Sigma1}
+\begin{example}{Sigma1}
 Consider:
 \[\sum _{i=1}^{10}(i+2)\]
 In this case, the $\Sigma$ symbol lets us know that this is a sum.  The $i=1$ serves two functions.  It tells us that the index variable is $i$, and that $i$ has a starting value of 1. The $10$ is the final value, and the $(i+2)$ to the right of the $\Sigma$ is the formula. The $i$ in the formula, takes each integer value from the starting value (1) to the final value (10).  
@@ -64,7 +64,7 @@ Likewise, if we were to also change the 10 to 6, it would lose the terms 10,9,8 
 %Calculate the following sums and combine like terms.
 Evaluate the following:
 %%% Change so that sums are in display format. The summation indices are too cramped, and the fraction is too small.
-\begin {enumerate}[(a)]
+\begin{enumerate}[(a)]
 \item
 $\displaystyle{\sum _{i=0}^{400} \,2}$
 \item
@@ -130,9 +130,9 @@ When removing a term from the middle, it may be necessary to split the sum into 
 %\[2 + \sum_{i=0}^{25}(2i+1)  \]
 
 %insert exercises for sigma notation modification
-\begin {exercise}{}
+\begin{exercise}{}
 Take the following sigma notation examples and change the formula and final value so that the starting value becomes 0 and the sum maintains the same value.  Calculate the value of both the listed sum and the resulting sum to show that the value is the same.
-\begin {enumerate} [(a)]
+\begin{enumerate} [(a)]
  \item
 $\displaystyle{\sum_{i=3}^{46}2i}$
 \item
@@ -142,7 +142,7 @@ $\displaystyle{\sum_{j=20}^{40}(j-20)}$
 \end {enumerate}
 \end{exercise}
 
-\begin {exercise}{}
+\begin{exercise}{}
 We have shown that a ``sum rule'' holds for sigma notation.  Is there a corresponding ``product rule''? That is: is it true that
 \[ \sum_{i=0}^n x_i y_i \stackrel{?}{=} \left(\sum_{i=0}^n x_i \right) \cdot  \left(  \sum_{i=0}^n y_i \right). \]
 If true then prove it; if not, give a counterexample.
@@ -188,9 +188,9 @@ So far our examples have only two sigmas, but it's quite possible to have an unl
 
 %Another handy identity for more than one index:JW
 %\sum_{i=n}^s \sum_{j=m}^t a_{i,j} = \sum_{j=m}^t sum_{i=n}^s a_{i,j} 
-\begin {exercise}{}
+\begin{exercise}{}
 Rewrite each of the following nested sums, exchanging the order of sums and changing the start values and end conditions as needed so that the nested sum maintains the same value. (In some cases, drawing a grid point diagram similar to Figure~\ref{fig:summation1} may be helpful.)
-\begin {enumerate}[(a)]
+\begin{enumerate}[(a)]
 \item
 $\displaystyle{\sum_{i=0}^{4}\sum_{j=0}^{8}i}$
 \item
@@ -232,7 +232,7 @@ $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i (j+i)}$
 \end{exercise}
 
 \section{Common Sums\quad
-\sectionvideohref{i5RI-Ssnwps&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=46}}
+\sectionvideohref{i5RI-Ssnwps&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=46}}\label{sec:CommonSums}
 There are several sums, even a few infinite sums, for which the total value is known. One very basic example is:
 \[\sum_{i=1}^{k}1\]
 The answer is NOT 1. (What is it?) Make sure you don't get tripped up by this one.
@@ -251,8 +251,8 @@ We can use the same reasoning to arrive at the following formula.
 where $a$ and $k$ are integers and $a<k$.
 
 %%% Need a better example before these exercises. Students don't know how to represent an odd number.  You can also do exercises where you skip 3 numbers instead of 2
-\begin {exercise}{}
-\begin {enumerate}[(a)]
+\begin{exercise}{}
+\begin{enumerate}[(a)]
 \item 
 Write the sum of odd integers from $2a+1$ to $2k+1$ in sigma notation.
 \item
@@ -293,13 +293,11 @@ There are also sums which \emph{diverge}\index{Sum!divergent}, that is, they can
 \[\text{The geometric series when~} |x| \ge 1: ~~\sum_{i=0}^{\infty} x^i. \]
 
 \section{Sigma notation in linear algebra\quad
-\sectionvideohref{M0jHrubtHBA&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=45}}
-
-\subsection{Applications to matrices}
+\sectionvideohref{M0jHrubtHBA&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=45}}\label{sec:sigmaLinAlg}
 
 In the following discussions, we will assume that all matrices have real entries.  However, all of the results that we will prove also apply (in some cases, with slight modifications)  for matrices with \emph{complex} entries, or even matrices with entries in $\mathbb{Z}_p$.
 
-\subsubsection*{Matrix multiplication}
+\subsection{Matrix multiplication}
 It should come as no surprise that summation notation commonly shows up when working with matrices. In the following discussion, we will follow the common practice of denoting a matrix with a capital letter in italics, and the entries of the matrix with the same letter in lowercase. Thus for example, $a_{2,4}$ denotes the entry of matrix $A$ in row 2, column 4.
    
  Consider the example of multiplying the $3 \times 3$ matrix $A$ and the $3 \times 2$ matrix $B$. 
@@ -378,12 +376,56 @@ We know that if a matrix $B$ is the inverse of the $n \times n$ matrix $A$ then 
 Show that: $\displaystyle{ \sum_{k=1}^n  \delta_{ik}\delta_{kj}=\delta_{ij}}.$
 \end{exercise}
 
+\subsection{Abbreviated matrix notations}
+In the following discussion, we will be seeing lots of sums involving matrices. This being the case, it's worth our while to try to simplify our notation. In our expression for $C=AB$, we had:
+\[ {c}_{i,j}= \sum_{k=1}^n a_{i,k} b_{k,j} \]
+Now, notice that the index $k$ runs over all columns of $A$ and all rows of $B$  (recall that matrix multiplication is only defined if the number of columns of $A$ is equal to the number of rows of $B$). This being the case, we don't really need to mention that $k$ runs from 1 to $n$--we should simply understand that the index $k$ runs over all possible values. We can therefore convey the same information by simply writing:
+\[ {c}_{i,j}= \sum_{k} a_{i,k} b_{k,j}. \]
+This makes more complicated matrix multiplications much simpler. For example, if $D = (AB)C$ where $A$ is $n \times p$, $B$ is $p \times q$, and $C$ is $q \times r$ instead of
+\[ {d}_{i,m}= \sum_{j=1}^q \left( \sum_{k=1}^p a_{i,k} b_{k,j} \right) c_{j,m}, \]
+ we may write
+\[ {d}_{i,m}= \sum_{j} \left( \sum_{k} a_{i,k} b_{k,j} \right) c_{j,m}, \]
+which further simplifies to
+\[ {d}_{i,m}= \sum_{j,k}  a_{i,k} b_{k,j} c_{j,m}. \]
+We could write either $\sum_{j,k}$ or $\sum_{k,j}$:  all possible values of $k$ and $j$ are summed over, so it doesn't matter which order we mention the indices.
+
+There is an even more abbreviated notation that is commonly used in physics, called \term{Einstein notation}  (yes, it's that Einstein!) Notice that in our expression for ${c}_{i,j}$, the subscript $k$ is \emph{repeated}: that is, it appears as a subscript on $a_{i,k}$ and on  $b_{k,j}$. Similarly, in our expression for ${d}_{i,m}$  the summed subscripts ($j$ and $k$) are also repeated: both appear as subscripts in two terms. The Einstein rule may be summarized as:
+\[ \text{Repeated indices are assumed to be summed.} \] 
+So for example, the expression
+\[ {d}_{i,m}= \sum_{j} \left( \sum_{k} a_{i,k} b_{k,j} \right) c_{j,m} \]
+in  Einstein notation simplifies to:
+\[ {d}_{i,m}=  a_{i,k} b_{k,j} c_{j,m}. \]
+
+\begin{exercise}{}
+Write the following expressions in both abbreviated notations. Note that all indices are summed over the full range of possible values.
+\begin{enumerate}[(a)]
+\item
+$\sum_{i=1}^m \left( \sum_{j=1}^n \left( \sum_{k=1}^p  a_{i,j} b_{j,i} \right) c_{k,k}\right)$
+\item
+$\sum_{\ell=1}^L \left( \sum_{m=1}^M \left( \sum_{n=1}^N  a_{\ell,m} b_{n,\ell} \right) c_{m,n} \right)$
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+Suppose $A,B,C,D$ are $n \times n$ matrices.  Write the complete (unabbreviated) expression corresponding to the following sums in Einstein notation:
+\begin{enumerate}[(a)]
+\item
+$a_{i,j}a_{k,\ell}b_{p,k}b_{i,\ell}$
+\item
+$d_{i,j}a_{k,\ell}b_{j,k}b_{i,\ell}$
+\end{enumerate}
+\end{exercise}
+
+In the following sections we will use the first type of abbreviated notation (not Einstein notation).
+
+
+\subsection{Matrix transpose and matrix inverse}
 
 \subsubsection*{Matrix transpose}
-Transpose is another operation on matrices that lends itself to summation notation.  Recall that the transpose of a matrix changes the rows to columns,so that the first row becomes the first column, the second row becomes the second column, and so on.  The transpose of matrix $A$ is denoted as $A^T$. Using indices and recalling that first index is the row and the second is the column, we can express this as:
+Transpose is another operation on matrices that lends itself to summation notation.  Recall that the transpose of a matrix changes the rows to columns,so that the first row becomes the first column, the second row becomes the second column, and so on.  The transpose of matrix $A$ is denoted as $A^{\text{T}}$. Using indices and recalling that first index is the row and the second is the column, we can express this as:
 
 \[ \left[ {A}^{\text{T}} \right]_{i,j} = \left[ A \right]_{j,i}, \]
-that is, the $(i,j)$ entry of $A^T$ is equal to the $(j,i)$ entry of $A$.  Since we typically write the $(j,i)$ entry of $A$ as $a_{j,i}$, we may also write:
+that is, the $(i,j)$ entry of $A^{\text{T}}$ is equal to the $(j,i)$ entry of $A$.  Since we typically write the $(j,i)$ entry of $A$ as $a_{j,i}$, we may also write:
 \[ \left[ {A}^{\text{T}} \right]_{i,j} = a_{j,i}. \]
 Don't get caught up with the particular indices $i$ and $j$--the important thing is that the indices are switched when you take the transpose.  For example, we can also write $\left[ {A}^{\text{T}} \right]_{j,i} = a_{i,j}$ or 
 $\left[ {A}^{\text{T}} \right]_{k,m} = a_{m,k}$.
@@ -398,17 +440,17 @@ If $A$ and $B$ are matrices such that the matrix product is defined, then
 
 \begin{proof}
 We'll prove this by expressing the $(i,j)$ entry of the left-hand side in summation notation,  doing some algebraic hocus-pocus, and showing that it agrees with the $(i,j)$ entry of the right side.  First we make things clear by specifying that ${A}$ has $n$ columns and $B$ has $n$ rows (these dimensions have to agree, or the product is not defined). This gives us
-\[ \left[ AB \right]_{i,j}= \sum_{k=1}^n a_{i,k} b_{k,j}. \]
-so the $(i,j)$ entry of the left-hand side is:
- \[ \left[ (AB)^T \right]_{i,j} = \left[ AB \right]_{j,i} = \sum_{k=1}^n a_{j,k} b_{k,i}. \]
+\[ \left[ AB \right]_{i,j}= \sum_{k} a_{i,k} b_{k,j}. \]
+(remember that we decided to use abbreviated notation, so we leave off the summation limits) so the $(i,j)$ entry of the left-hand side is:
+ \[ \left[ (AB)^T \right]_{i,j} = \left[ AB \right]_{j,i} = \sum_{k} a_{j,k} b_{k,i}. \]
 
 At this point we can introduce ${A}$ and ${B}$ transpose  because the $j,k$ entry of any matrix is the $k,j$ entry of its transpose:
 
-\[  \sum_{k=1}^n a_{j,k} b_{k,i} =  \sum_{k=1}^n \left[A^{\text{T}}\right]_{k,j} \left[B^{\text{T}}\right]_{i,k.} \]
+\[  \sum_{k} a_{j,k} b_{k,i} =  \sum_{k} \left[A^{\text{T}}\right]_{k,j} \left[B^{\text{T}}\right]_{i,k.} \]
 
 Since the terms of ${A}$ and ${B}$ are being expressed as a summation, they commute (i.e. order doesn't matter), which allows us to say (using our definition of matrix product):
 
-\[ \sum_{k=1}^n \left[A^{\text{T}}\right]_{k,j} \left[B^{\text{T}}\right]_{i,k} = \sum_{k=1}^n \left[B^{\text{T}}\right]_{i,k}\left[A^{\text{T}}\right]_{k,j} = \left[ {B}^{\text{T}}{A}^{\text{T}} \right]_{i,j}, \]
+\[ \sum_{k} \left[A^{\text{T}}\right]_{k,j} \left[B^{\text{T}}\right]_{i,k} = \sum_{k} \left[B^{\text{T}}\right]_{i,k}\left[A^{\text{T}}\right]_{k,j} = \left[ {B}^{\text{T}}{A}^{\text{T}} \right]_{i,j}, \]
 
 Voil\`{a}, we have the $(i,j)$ entry of the right-hand side, and the proof is complete.
 \end{proof}
@@ -428,10 +470,97 @@ Transpose defines an isomorphism from $GL_n(\mathbb{R})$ to $GL_n(\mathbb{R})$.
 \end{enumerate}
 \end{exercise}
 
-\subsubsection*{Matrix traces}
-Another cool application of summation notation with matrices is to prove things about the \term{trace}\index{Trace!of a matrix} of a matrix.  The trace only applies to square matrices (equal number of rows and columns) and is the sum of all the entries on the diagonal -- that is,  the sum of all entries with the same column and row number.  In summation notation, the trace of an $n \times n$ matrix as:
+\subsubsection*{Matrix inverse}
 
-\[ \text{Tr} \left( A \right)= a_{1,1} + a_{2,2} + \ldots + a_{n,n} = \sum_{i=1}^n a_{i,i} \] 
+We can also express matrix inverse equations in summation notation.  Recall that the inverse of a matrix $A$ is a matrix $A^{-1}$ such that $AA^{-1}=I$ and $A^{-1}A=I$.
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Express the equations $AA^{-1}=I$ and $A^{-1}A=I$ using summation notation.  You may use the notation $[A]_{i,j}$ and $[A^{-1}]_{i,j}$ to express the entries of the two matrices.
+\item
+Suppose that $A$ and $B$ are invertible square matrices of the same size (so that $A^{-1}$ and $B^{-1}$ exist and are also of the same size). Prove that $(AB)^{-1} = B^{-1}A^{-1}$.
+\end{enumerate}
+\end{exercise}
+
+\subsection{Rotation matrices (in 3 dimensions)}\label{subsec:rotMx3}
+In three-dimensional space, the \term{dot product} (or \term{scalar product}) of two vectors $v:=[v_1,v_2,v_3]^{\text{T}}$ and $w:=[w_1,w_2,w_3]^{\text{T}}$ is defined as
+\[ v \cdot w :=  v_1w_1 + v_2w_2 + v_3w_3 = \sum_j v_j w_j ,\]
+where we have made use of summation notation to shorten the expression. If we also define the \term*{length}\index{Length!of a vector} of the vector $v$ (denoted by $||v||$) as
+\[ \lVert v\rVert := (v \cdot v)^{1/2}, \]
+then we may then write the \term{cosine formula} as
+\[ \cos(\theta) = \frac{v \cdot w}{\lVert v \rVert \lVert w \rVert}, \]
+where $\theta$ is the angle between the two vectors $v$ and $w$. (You may have encountered this formula in physics class or precalculus.)
+
+Any $3 \times 3$ matrix $A$  produces a function from three-dimensional space to itself as follows: given any vector $v:=[v_1,v_2,v_3]^{\text{T}}$, then the image vector is $Av$. Using summation notation, we may write:
+\[ [Av]_i = \sum_j A_{ij} v_j.\]
+A matrix is called a \term{rotation matrix} if it satisfies the following properties:
+\begin{itemize}
+\item
+A rotation matrix $R$ must  \emph{preserve  lengths and angles}. In other words, if $v$ and $w$ are any two 3-d vectors , then  $\lVert Rv \rVert = \lVert v \rVert$,  $\lVert Rw \rVert = \lVert v \rVert$, and furthermore the angle between $Rv$ and $Rw$ must be the same as the angle between $v$ and $w$.  In view of the cosine formula, this means that the dot product must be preserved:  $Rv \cdot Rw = v \cdot w$. In fact, since vector length is the square root of a dot product, all of these conditions will be satisfied as long as 
+\[ Rv \cdot Rw = v \cdot w \] 
+for any two 3-d vectors $v$ and $w$.
+\item
+A rotation matrix must \emph{preserve handedness}. This means that if the vectors $\{ [1,0,0]^{\text{T}}, [0,1,0]^{\text{T}}, [0,0,1]^{\text{T}} \}$ form a right-handed coordinate system, then the image vectors 
+$\{ R[1,0,0]^{\text{T}}, R[0,1,0]^{\text{T}}, R[0,0,1]^{\text{T}} \}$ must also form a right-handed coordinate system.  
+\end{itemize}
+
+It turns out that this second condition implies that $\det(R)\ge 0$. We won't prove this, but we can give a few examples to show that it is reasonable. Consider  the $3 \times 3$ matrix $-I$, which has determinant equal to $-1$. This matrix will map the $x$, $y$, and $z$ axes to the $-x$, $-y$, and $-z$ axes respectively. By using the right-hand rule, you may verify that if the $x$, $y$, and $z$ axes form a right-handed coordinate system, then the $-x$, $-y$, and $-z$ axes form a left-handed coordinate system.
+
+The following exercise gives some other examples of matrices $R$ with $\det(R)< 0$ which do not preserve handedness.
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Find a matrix which  maps the $x$, $y$, and $z$ axes to the $-x$, $y$, and $z$ axes respectively.  What's its determinant?
+\item  show that the function defined in (a) maps a right-handed coordinate system to a left-handed coordinate system.
+\item Repeat parts (a) and (b) for the case where the $x$, $y$, and $z$ axes to the $x$, $-y$, and $z$ axes respectively.
+\end{enumerate}
+\end{exercise}
+
+So let's go back to the first condition for rotation matrices, namely that they preserve inner products: $Rv \cdot Rw = v \cdot w$. Let's rewrite this in coordinate notation. First, note that $[Rv]_k$  and $[Rw]_k$ can be written as $\sum_i r_{ki}v_i$ and $\sum_j r_{kj} w_j$ respectively, where $r_{kj}$ is  the $(k,j)$ entry of $R$. Therefore we have:
+\begin{align*}
+ Rv \cdot Rw &= \sum_k  [Rv]_k[Rw]_k \\
+&= \sum_k \left(\sum_i r_{ki}v_i \right)\left(\sum_j r_{kj}w_j \right)] \\
+&= \sum_{i,j,k} (r_{ki}v_i)(r_{kj}w_j) \\
+&= \sum_{i,j,k} r_{ki}r_{kj} v_i w_j. 
+\end{align*}
+Recall our rotation condition:  $ Rv \cdot Rw = v\cdot w$, which must be true for any two vectors $v$ and $w$. In summation notation, this becomes:
+\[\sum_{i,j,k} r_{ki}r_{kj} v_i w_j =  \sum_m  v_m w_m \]
+Now let's consider different possibilities for $v$ and $w$. For example we may let $ v=w=[1,0,0]^{\text{T}}$. this means that $v_i = \delta_{i1}$ and $w_j = \delta_{j1}$, where $\delta$ is our old friend the Kronecker delta.  Plugging this into our summation notation expression gives:
+\[\sum_{i,j,k} r_{ki}r_{kj} \delta_{i1}\delta_{j1} =  \sum_m  \delta_{m1}\delta_{m1}. \]
+Because of the $\delta$'s, when we sum over $i,j$, and $m$ the only terms that contribute will be $i=j=m=1$.  In summary, we obtain:
+\[\sum_{k} r_{k1}r_{k1}  = 1. \]
+Using this strategy, we can obtain a whole bunch of identities:
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+By plugging in different possibilities for $v$ and $w$, show that if
+\[\sum_{i,j,k} r_{ki}r_{kj} v_i w_j =  \sum_m  v_m w_m \]
+holds for all $v, w$ then 
+\[\sum_{k} r_{ki}r_{kj}  = \delta_{ij}. \]
+\item
+Show the converse of (a), namely:  given that
+\[\sum_{k} r_{ki}r_{kj}  = \delta_{ij}, \]
+show that
+\[\sum_{i,j,k} r_{ki}r_{kj} v_i w_j =  \sum_m  v_m w_m \]
+for all $v, w$.
+\item
+Show that the expression $\sum_{k} r_{ki}r_{kj}  = \delta_{ij}$ can be rewritten in matrix form as:
+\[R^{\text{T}}R = I.\]
+\end{enumerate}
+\end{exercise}
+We summarize these results in a proposition:
+
+\begin{prop}{rotTrans} A $3 \times 3$ matrix $R$ is a rotation matrix if and only if $\det(R)>0$ and $R^{\text{T}}R = I$.
+\end{prop}
+We will pick up on rotation matrices in Section~\ref{subsec:LeviCivitaDet} when we talk about determinants, and again in Section~\ref{subsec:EulerRot} when we prove Euler's rotation theorem.
+
+\subsection{Matrix traces}
+Another cool application of summation notation with matrices is to prove things about the \term{trace}\index{Trace!of a matrix} of a matrix.  The trace only applies to square matrices (equal number of rows and columns) and is the sum of all the entries on the diagonal--that is,  the sum of all entries with the same column and row number.  In summation notation, the trace of an $n \times n$ matrix as:
+
+\[ \text{Tr} \left( A \right)= a_{1,1} + a_{2,2} + \ldots + a_{n,n} = \sum_{i} a_{i,i} \] 
 This time we are using the index $i$ for both the row position and the column position, so its the position of the index that denotes row and column.  The formula for the product used two different letters for the indices because they were not always equal, but for trace the row and column number will always be equal, so we only need one letter.
 
 The next exercise covers some basic properties of traces:
@@ -441,7 +570,7 @@ The next exercise covers some basic properties of traces:
 \item
 Prove that if $A$ and $B$ are square matrices of the same size, then $\text{Tr} \left( A + B \right) = \text{Tr} \left( A \right) + \text{Tr} \left( B \right)$.
 \item
-Prove that if $A $is a square matrix with real entries and $k$ is a real number, then $\text{Tr} \left(k A  \right) = k\text{Tr} \left( A \right)$.
+Prove that if $A$ is a square matrix with real entries and $k$ is a real number, then $\text{Tr} \left(k A  \right) = k\text{Tr} \left( A \right)$.
 \item
 Prove or disprove: trace defines an isomorphism between $\mathbb{M}_2$ (the additive group of $2 \times 2$ matrices with real entries) and $\mathbb{R}$ .
 \item
@@ -454,71 +583,90 @@ Prove or disprove: trace defines a homomorphism from $GL_2(\mathbb{R})$ (inverti
 
 In the above exercise, we have considered the trace of the sum of two matrices. Now we consider the trace of the \emph{product} of two matrices.  To this end, let ${A}$ and  ${B}$ be a $n \times n$ matrices.  So first we have:
 
-\[ \text{Tr} \left({A} {B}\right) = \sum_{i=1}^n [AB]_{i,i} = \sum_{i=1}^n \sum_{k=1}^n a_{i,k}b_{k,i}. \]
+\[ \text{Tr} \left({A} {B}\right) = \sum_{i} [AB]_{i,i} = \sum_{i}\left( \sum_k a_{i,k}b_{k,i}\right) = \sum_{i,k}a_{i,k}b_{k,i}. \]
 
 All we've done here is take the matrix product formula, and set the second index of the second  matrix entry equal to first index of the first matrix entry.  Now to make things interesting, let's find the trace for the reverse order:
 
-\[ \text{Tr} \left({B} {A}\right) = \sum_{i=1}^n [BA]_{i,i} = \sum_{i=1}^n \sum_{k=1}^n b_{i,k}a_{k,i}. \]
+\[ \text{Tr} \left({B} {A}\right) = \sum_{i} [BA]_{i,i} = \sum_{i} \left( \sum_{k} b_{i,k}a_{k,i} \right) = \sum_{i,k}a_{k,i}. \]
 
-Let's play with this last equation a bit. Since the matrix entries commute, and also  we can change the order of the summations without changing the result, it follows that we can do the following rearrangement:
+Let's play with this last equation a bit. As we mentioned before, we can change the sum over $i,k$ to a sum over $i,k$ without changing anything. Furthermore, since $b_{i,k}$ and $a_{k,i}$ are numbers, they commute under multiplication:
 
-\[ \text{Tr} \left({B} {A}\right) =\sum_{i=1}^n \sum_{k=1}^n b_{i,k}a_{k,i} = \sum_{i=1}^n \sum_{k=1}^n a_{k,i}b_{i,k} = \sum_{k=1}^n \sum_{i=1}^n a_{k,i}b_{i,k}. \]
+\[ \text{Tr} \left({B} {A}\right) =\sum_{i,k} b_{i,k}a_{k,i} =  \sum_{k,i} a_{k,i}b_{i,k}. \]
 
 Finally, we rename the indices by changing $k$ to $i$ and $i$ to $k$.  (Remember, it's the positions of the indices that are important, not the letters we call them by!)  After renaming, we get:
 
-\[ \sum_{i=1}^n \sum_{k=1}^n a_{i,k}b_{k,i} \]
+\[ \text{Tr} \left({B} {A}\right) =\sum_{i,k} a_{i,k}b_{k,i}, \]
 
-Which is exactly the same as the trace of ${A}{B}$.
+which agrees with our original expression for  $\text{Tr} ({A}{B})$.
 
-\begin {exercise}{}
+\begin{exercise}{}
 In the above proof that $\text{Tr} ({AB}) = \text{Tr}({BA})$, we assumed that both $A$ and $B$ were square matrices. Show that the formula is still true when $A$ is a $m \times n$ matrix and $B$ is a $n \times m$ matrix.  (Notice that $AB$ and $BA$ are both square matrices, so that $\text{Tr} \left({A} {B}\right)$ and $\text{Tr} \left({B} {A}\right)$ are both well-defined.)
 \end{exercise}
 
-\begin {exercise}{trace3}
+\begin{exercise}{trace3}
 Show that $\text{Tr} ({ABC}) = \text{Tr}({CAB})$, as long as the dimensions of $A, B, C$ are such that the products are well-defined.
 \hyperref[sec:sigma:hints]{(*Hint*)} 
 \end{exercise}
 
 
-\begin {exercise}{}
+\begin{exercise}{}
 Show that 
 \[ \text{Tr} ({ABCD}) = \text{Tr}({DABC})= \text{Tr}({CDAB}) = \text{Tr}({BCDA}),\] 
 as long as the matrices have dimensions so that all of these products are defined.  Notice that all of these arrangements of the matrices $A, B, C, D$ are \emph{cyclic permutations} of each other.
 \end{exercise}
 
-\begin {exercise}{linalg}
+\begin{exercise}{linalg}
 In linear algebra, given two $n \times n$ matrices $A$ and $B$ we say that $A$ is \term{similar}\index{Matrices!similar} to $B$ if there exists an invertible matrix $S$ such that $B = S^{-1}AS$. 
 \begin{enumerate}[(a)]
 \item
 Prove that if $A$ is similar to $B$, then $B$ is similar to $A$.
+\hyperref[sec:sigma:hints]{(*Hint*)} 
 \item
 Prove that if $A$ is similar to $B$, then $\text{Tr} ({A}) = \text{Tr} ({B})$. 
 \hyperref[sec:sigma:hints]{(*Hint*)} 
 \end{enumerate}
 \end{exercise}
 
-\begin {exercise}{}
+\begin{exercise}{}
 Let $A$ be a $n \times n$ diagonal matrix with positive entries, so that the entries of $A$ are given by:  $ [A]_{i,j} = a_{i} \delta_{ij}$ where $a_i > 0, i = 1, \ldots, n$.  Define the matrix $\log A$ as follows:  $ [\log A]_{i,j} = \log(a_{i}) \delta_{ij}$, where $\log$ refers to natural logarithm.  Show that:
 
 \[ \text{Tr}(\log A) = \log (\det A). \]
-(This formula is actually quite general, and applies to many non-diagonal matrices as well, as long as $\log A$ is properly defined.)\footnote{In some cases, the formula can be used to estimate the determinants of very large matrices: see \url{http://arxiv.org/pdf/hep-lat/9707001}.} 
-
-
+(Remember that the determinant of a diagonal matrix is the product of the entries on the diagonal.)
+This formula is actually quite general, and applies to many non-diagonal matrices as well, as long as $\log A$ is properly defined. \footnote{In some cases, the formula can be used to estimate the determinants of very large matrices: see \url{http://arxiv.org/pdf/hep-lat/9707001}.} 
 \end{exercise}
 
+%%% This problem is an orphan that needs a good home.
+%\begin{exercise}{}
+%Suppose $\sigma$ is a permutation in $S_4$. We can define a $4 \times 4$ matrix $P_{\sigma}$ using index notation as follows\index{Permutation!matrix}:  
+%\[ [P_{\sigma}]_{ij} = \begin{cases} 1 &\text{if } j = \sigma(i), \\ 
+% 0 &\text{if } j \neq  \sigma(i).  \end{cases} \]
+%(Here $i$ and $j$ can take any values from 1 to 4.)  The matrix $P_{\sigma}$ is in fact known as the \term{permuation matrix} associated with the permutation $\sigma$.
+%\begin{enumerate}[(a)]
+%\item
+%Write down the matrix $P_{\sigma}$ when: (i) $\sigma = (13)$; (ii) $\sigma = (132)$; (iii) $\sigma = (12)(34)$; (iv)  $\sigma = (1234)$.
+%\item
+%Using the formula that you guessed in the previous problem, evaluate $\det P_{\sigma}$ when: (i) $\sigma = (24)$; (ii) $\sigma = (143)$; (iii) $\sigma = (14)(23)$; (iv)  $\sigma = (1423)$. Check your answer using the row (or column) expansion method for computing determinants.
+%\item
+%How is the value of $\det P_{\sigma}$  related to the ``evenness'' or ``oddness'' of the permutation $\sigma$\index{Permutation matrix!determinant}?
+%\item
+%For the 4 permutations in part (a), show that when you multiply the $4 \times 1$ column vector $[1,2,3,4]^T$ times the matrix $P_{\sigma}$, you obtain the second row of the tableau for $\sigma$.  In other words, the matrix $P_{\sigma}$ ``performs'' the permutation $\sigma$ on column vector entries.
+%\item
+%Show that the result in (b) is true in general: namely, that  $P_{\sigma}[1,2,3,4]^T = [\sigma(1),\sigma(2),\sigma(3),\sigma(4)]^T.$ 	
+%\end{enumerate}
+%\end{exercise}
 
 
-\subsection{Levi-Civita symbols}
-\subsubsection*{Definition}
+\section{Levi-Civita symbols}\label{sec:LeviCivita}
+\subsection{Levi-Civita symbols: definitions and examples}\label{subsec:LeviCivita}
 When dealing with vectors and matrices in physics, one often finds lurking  the Levi-Civita symbol,\footnote{Levi-Civita actually refers to one person, not two: the Italian mathematician Tullio Levi-Civita, (1873-1941), who worked on mathematical physics (including relativity).} which is written as an epsilon (the Greek letter $\epsilon$) with various numbers of subscripts.  The possible values it can take are 1, -1, or 0, depending on the values of the subscripts (we refer to these subscripts as ``indices'').  This might not seem too useful since it can only take three different values, but you will see that it does a great job of simplifying expressions that ordinarily would be much more complicated.  
 
 For an epsilon with two indices (written as $\epsilon_{ij}$), each index can be either 1 or 2. The different values that $\epsilon_{ij}$ can take are:
 
 \[ \epsilon_{ij}=
 \begin{cases}
-1 ~ \text{if} ~ i=1, j=2,  \\
+\,\,1 ~ \text{if} ~ i=1, j=2,  \\
 -1 ~ \text{if} ~ i=2, j=1,  \\
-0 ~ \text{if} ~ i=j.
+\,\, 0 ~ \text{if} ~ i=j.
 \end{cases} \]
 
 For an epsilon with three indices, each index can be either 1,2,or 3. The values of $\epsilon_{ijk}$ are:
@@ -530,26 +678,37 @@ For an epsilon with three indices, each index can be either 1,2,or 3. The values
 0 ~ \text{where} ~  i=j, i=k, ~ \text{or} ~ j=k, ~ \text{i.e., if any index is repeated.}
 \end{cases} \]
 
-What is the rule behind this definition?  Every \emph{permutation} of $(1,2,3)$.  corresponds to one possible rearrangement of the indices. For instance the permutation 
+What is the rule behind this definition?  Every permutation of $(1,2,3)$.  corresponds to one possible rearrangement of the indices. For instance the permutation 
 $ \left( \begin{smallmatrix}  1 & 2 & 3  \\ 2 & 3 & 1  \end{smallmatrix} \right)$ (in tableau notation) corresponds to the rearrangement $(2,3,1)$.  Whenever this permutation $\left( \begin{smallmatrix} 1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right) $ is \emph{even} (that is, it can be written as the product of an even number of transpositions), then the corresponding value of $\epsilon_{ijk}$ is 1. Whenever this permutation $\left( \begin{smallmatrix} 1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right)$ is \emph{odd} , then the corresponding value of $\epsilon_{ijk}$ is -1. Whenever any of the indices $i,j,k$  are repeated, then  $\left( \begin{smallmatrix} 1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right) $ does not correspond to a permutation, and the value of $\epsilon_{ijk}$ is 0.
 
-This observation motivates the following general definition  of the \term{Levi-Civita symbol} with $n$ indices\index{Levi-Civita symbol!definition} as:
+We may simplify the notation somewhat if we define the \term*{sign} of a permutation as follows:
+
+\[ \text{sign}(\sigma)=
+\begin{cases}
+1 \quad \text{if } \sigma \text{ is an even permutation,}\\
+-1 \quad \text{if } \sigma \text{ is an even permutation.}
+\end{cases} \]
+
+We may then concisely express the general definition  of the \term{Levi-Civita symbol} with $n$ indices as:
 
 \[ \epsilon_{i_1 i_2 i_3 \ldots i_n}=
 \begin{cases}
-1 ~ \text{if $(i_1,i_2,i_3 \ldots,i_n)$ is an even permutation of $(1,2,3, \ldots n)$}\\
--1 ~ \text{if $(i_1,i_2,i_3 \ldots,i_n)$ is an odd permutation of $(1,2,3, \ldots n)$}\\
-0 ~ \text{for any repeated index}
+\text{sign} \left( \begin{smallmatrix} 1&2&3&\ldots&n \\ i_1&i_2&i_3 &\ldots&i_n \end{smallmatrix} \right) \text{if no indices are repeated,}\\
+0 ~ \text{if any  index is repeated.}
 \end{cases} \]
 
 The symbol with $n$ indices is sometimes called an $n$-dimensional Levi-Civita symbol: for instance, $\epsilon_{ijk}$ is a 3-dimensional Levi-Civita symbol.  The reason for this is that most often they are used with vector spaces that have the same dimension as the number of indices in the symbol.  So   the Levi-Civita symbol with three indices, $\epsilon_{ijk}$ is most useful in three dimensions, as we'll see shortly.
 
 \begin{exercise}{KLC}
-Using what you now know about the Kronecker delta and the Levi-Civita symbol, show that:
-\[
-\sum_{i,j} \epsilon_{ij} \delta_{ij}=0
-\]
-\hyperref[sec:sigma:hints]{(*Hint*)} 
+Using  the general definition of the Levi-Civita symbol, show that:
+\begin{enumerate}[(a)]
+\item
+$\displaystyle \sum_{i,j} \epsilon_{ij} \delta_{ij}=0$
+\item
+$ \epsilon_{i_1i_2\ldots i_n} \delta_{i_ji_k}=0$ for any $j,k$ such that $1 \le j < k \le n$,
+\item
+$\epsilon_{ijk} = \epsilon_{jki} = \epsilon_{kij}.$
+\end{enumerate}
 \end{exercise}
 
 In the Set Theory chapter you saw the formula:
@@ -572,12 +731,14 @@ Show that
 \end{exercise}
 
 
-\subsubsection*{Levi-Civita symbols and determinants} 
-Now that we've defined Levi-Civita symbols, we can actually use them for something!  The first application we'll look at is determinants.  Suppose you have a $2 \times 2 $ matrix $A$:\footnote{Previously we wrote our matrix subscripts with a comma between, e.g. $a_{i,j}$. But from now on we'll leave out the comma (e.g. $a_{ij}$), which is the way most math books do it.}
+\subsection{Levi-Civita symbols and determinants}\label{subsec:LeviCivitaDet} 
+Now that we've defined Levi-Civita symbols, we can actually use them for something!  The first application we'll look at is determinants.  Suppose you have a $2 \times 2 $ matrix $A$:
 
 \[ A = \left( \begin{array}{cc}
 a_{11} & a_{12} \\
 a_{21} & a_{22} \end{array} \right) \]
+\noindent
+(Note that previously we separated multiple subscripts with a comma, e.g. $a_{i,j}$: but from now on we'll leave out the comma (e.g. $a_{ij}$), which is the way most math books do it.)
 
 Then the determinant is:
 
@@ -588,103 +749,104 @@ a_{21} & a_{22} \end{array} \right|
 
 We can write this using the Levi-Civita symbol as:
 
-\[ \text{det} A = \sum_{i=1}^2 \sum_{j=1}^2 \epsilon_{ij} a_{1i} a_{2j} \]
+\[ \text{det} A = \sum_{i,j} \epsilon_{ij} a_{1i} a_{2j} \]
 
-Let's check this by evaluating the nested sum:
+Let's check this by evaluating the double sum. Remember that in this case, both $i$ and $j$ run from 1 to 2
 \begin{align*}
-\text{det} A =& \sum_{i=1}^2 \sum_{j=1}^2 \epsilon_{ij} a_{1i} a_{2j} \\
-=& \sum_{i=1}^2 \left( \epsilon_{i1} a_{1i} a_{21} + \epsilon_{i2} a_{1i} a_{22} \right) \\
+\text{det} A =& \sum_{i,j} \epsilon_{ij} a_{1i} a_{2j} \\
+=& \sum_{i} \left( \sum_{j} \epsilon_{ij} a_{1i} a_{2j}\right) \\
+=& \sum_{i} \left( \epsilon_{i1} a_{1i} a_{21} + \epsilon_{i2} a_{1i} a_{22} \right) \\
 =& \epsilon_{11} a_{11} a_{21} + \epsilon_{12} a_{11} a_{22} + \epsilon_{21} a_{12} a_{21} + \epsilon_{22} a_{12} a_{22}
 \end{align*}
-Looking at the definition, we know that $\epsilon_{11}$ and $\epsilon_{22}$ equals zero, so the leftmost and rightmost terms go to zero.   For the remaining terms we have $\epsilon_{12}$ which equals 1, and $\epsilon_{21}$ which equals -1.  Therefore, we are left with:
+Looking at the definition, we know that $\epsilon_{11}$ and $\epsilon_{22}$ equals zero, so the leftmost and rightmost terms go to zero.   For the remaining terms we have $\epsilon_{12}$ which equals 1, and $\epsilon_{21}$ which equals -1.  So we're left with:
 \[ \text{det} A = a_{11}a_{22} - a_{12}a_{21}, \]
 which is exactly the definition you learned in linear algebra.   
 
 The natural generalization to a $3 \times 3$ matrix as:
 
-\[ \text{det} A = \sum_{i=1}^3 \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} a_{1i} a_{2j} a_{3k} \]
+\[ \text{det} A = \sum_{i,j,k} \epsilon_{ijk} a_{1i} a_{2j} a_{3k}. \]
+
+\noindent
 
 \begin{exercise}{rowExp}
-Show that the above formula using $\epsilon_{ijk}$ does agree with the determinant formula that you obtain from row expansion.
+Show that the above formula using $\epsilon_{ijk}$ does agree with the determinant that you obtain from row (or column)  expansion.
 \end{exercise}
 
 \begin{exercise}{}
-There is a formula for the determinant of a $n \times n$  matrix in terms of a n-index Levi-Civita symbol. Write down what you think the formula is? (You don't need to prove the formula.)
+There is a formula for the determinant of a $n \times n$  matrix in terms of an $n$-index Levi-Civita symbol. Guess what the formula should be (you don't need to prove it).
 \end{exercise}
 
-\begin{exercise}{}
-Suppose $\sigma$ is a permutation in $S_4$. We can define a $4 \times 4$ matrix $P_{\sigma}$ using index notation as follows\index{Permutation!matrix}:  
-\[ [P_{\sigma}]_{ij} = \begin{cases} 1 &\mbox{if } j = \sigma(i), \\ 
- 0 &\mbox{if } j \neq  \sigma(i).  \end{cases} \]
-(Here $i$ and $j$ can take any values from 1 to 4.)  
-\begin{enumerate}[(a)]
-\item
-Write down the matrix $P_{\sigma}$ when: (i) $\sigma = (13)$; (ii) $\sigma = (132)$; (iii) $\sigma = (12)(34)$; (iv)  $\sigma = (1234)$.
-\item
-Show that when you multiply the $4 \times 1$ row vector $[1~2~3~4]$ times the matrix $P_{\sigma}$, you obtain the second row of the tableau for $\sigma$.  In other words, the matrix $P_{\sigma}$ ``performs'' the permutation $\sigma$ on row vector entries.
-\item
-Using the formula that you guessed in the previous problem, evaluate $\det P_{\sigma}$ when: (i) $\sigma = (24)$; (ii) $\sigma = (143)$; (iii) $\sigma = (14)(23)$; (iv)  $\sigma = (1423)$.
-\item
-How is the value of $\det P_{\sigma}$  related to the ``evenness'' or ``oddness'' of the permutation $\sigma$\index{Permutation matrix!determinant}?
-\end{enumerate}
-\end{exercise}
+
+Based on our definition of the Levi-Civita symbol $\epsilon_{ijk}$ in terms of the sign of the permutation $ \left( \begin{smallmatrix}  1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right)$, we can also write the formula for a $3 \times 3$ determinant as:
+
+\[ \text{det} A = \sum_{\text{permutations } \phi} \text{sign}(\phi) \cdot a_{1\phi(1)} a_{2\phi(2)} a_{3\phi(3)}. \]
 
 \begin{exercise}{detTrans}
-Use the Levi-Civita formula for the determinant to prove that the determinant of any square matrix $A$ is equal to the determinant of its transpose.  That is, $\text{det} A = \text{det}A^{T}$.~~\hyperref[sec:sigma:hints]{(*Hint*)} 
+Use this formula to prove that the determinant of any $3 \times 3$ square matrix $A$ is equal to the determinant of its transpose.  That is, 
+\[ \text{det} A = \text{det}A^{T} \]
+\hyperref[sec:sigma:hints]{(*Hint*)} 
 \end{exercise}
 
 An important concept to keep in mind when dealing with these Levi-Civita symbols is what they mean based on when indices are equal or unequal, and how that relates to permutations.  To see how this works, let's look at a proof to show that if any two rows in a $3 \times 3$ matrix are equal, the determinant is 0.  Based on our definition we start out with:
 \[
 \text{det} A = \sum_{i,j,k} \epsilon_{ijk} a_{1i} a_{2j} a_{3k}
 \]
-We want to show what happens when any two rows are equal, so lets do one case where row 1 equals row 2.  In that case $a_{2j}=a_{1j}$.  That means we can rewrite our determinant as:
+We want to show what happens when any two rows are equal, so let's do one case where row 1 equals row 2.  In that case $a_{2j}=a_{1j}$.  That means we can rewrite our determinant as:
 \[
 \text{det} A =  \sum_{i,j,k} \epsilon_{ijk} a_{1i} a_{1j} a_{3k}
 \]
-Notice what happens when we switch $a_{1i}$ and $a_{1j}$; it also means that we must change $\epsilon_{ijk}$ to $\epsilon_{jik}$ because it is the position of the indices that count (i.e. if we change the order of two indices we must change the order for the rest).  Switching $a_{1i}$ and $a_{1j}$ doesn't change our final product since they are commutative, so we end up with the expression:
+Now the letters $i,j,k$ are just ``dummy indices'' or placeholders, so we can replace them with any letters we want. So we can replace $i$ with $j$ and vice-versa without changing the value:
 \[
-\text{det} A =   \sum_{j,i,k} \epsilon_{jik} a_{1j} a_{1i} a_{3k} 
+\text{det} A =  \sum_{j,i,k} \epsilon_{jik} a_{1j} a_{1i} a_{3k}
 \]
-Now remember what we discussed earlier, if you interchange two indices (that is, an odd permutation) of $\epsilon_{ijk}$, you get its negative, so $\epsilon_{jik}=-\epsilon_{ijk}$.  This gives us the equality:
+Now remember what we discussed earlier, if you interchange two indices (that is, an odd permutation) of $\epsilon_{ijk}$, you get its negative, so $\epsilon_{jik}=-\epsilon_{ijk}$.  Furthermore, We can replace $\sum_{j,i,k}$ with $\sum_{i,j,k}$ because the order of summation doesn't matter. This gives us
 \[
-\sum_{j,i,k} \epsilon_{jik} a_{1j} a_{1i} a_{3k}=\sum_{j,i,k} - \epsilon_{ijk} a_{1i} a_{1j} a_{3k}
+\text{det} A =  \sum_{i,j,k} -\epsilon_{ijk} a_{1j} a_{1i} a_{3k},
 \]
-First of all, lets not lose sight that both the left hand side and the right hand side represent the same determinant.  So what we see is that the determinant (a real number value) is equal to its negative.  There is only one real number that is equal to its negative and that is zero!  So to recap, if the first row is the same as the second row in a $3\times 3$ matrix, the determinant is always zero.
+Hey, whaddya know: this is exactly equal to the negative of our original expression for $\text{det} A$!  There's only one way that a number can be its own negative--the number \emph{must} be zero. We conclude that  if the first row is the same as the second row in a $3\times 3$ matrix, the determinant is always zero.
 
 \begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
 We showed that if the first and second row of a $3\times 3$ matrix is the same, the determinant is zero.  Now finish the proof that the determinant of a $3\times 3$ matrix is always zero if \emph{any} two rows are the same; that is, prove it for the remaining cases.
+\item
+Show that any $3 \times 3$ matrix which has two columns equal also has determinant equal to 0.
+\end{enumerate}
 \end{exercise}{} 
 
-We can take the notion of equal and unequal indices as step farther by proving that the determinant of a product of two matrices is equal to the product of their determinants.  Let's start with a simple $2 \times 2$ matrix.  If matrices $A$ and $B$ are both 2x2, we want to prove that $\text{det}(AB)=\text{det}A \,\text{det}B$.  We can write $\text{det}(AB)$ as:
+We can take the notion of equal and unequal indices as step farther by proving that the determinant of a product of two matrices is equal to the product of their determinants.  Let's start with a simple $2 \times 2$ matrix.  If matrices $A$ and $B$ are both $2 \times 2$, we want to prove that $\text{det}(AB)=\text{det}A \,\text{det}B$.  We can write $\text{det}(AB)$ as:
 \[
 \text{det}(AB)= \sum_{x,y} \epsilon_{xy} [AB]_{1x} [AB]_{2y}
 \]
 Based on what we learned on how to represent products in terms of summation symbols, we can expand this as:
 \begin{align*}
 \text{det}(AB)=& \sum_{x,y} \epsilon_{xy} \left[ \sum_i a_{1i}b_{ix} \sum_j a_{2j}b_{jy}\right]\\
-=&  \sum_{x,y} \epsilon_{xy} \left[ \sum_{i,j}  a_{1i}a_{2j} b_{ix}b_{jy}\right]
+=&  \sum_{x,y} \epsilon_{xy} \left[ \sum_{i,j}  a_{1i}a_{2j} b_{ix}b_{jy}\right] \\
+=&    \sum_{i,j}  a_{1i}a_{2j} \left[\sum_{x,y} \epsilon_{xy} b_{ix}b_{jy}\right],
 \end{align*}
+where in the last equality we have exchanged the order of summation.
+
 At this point we can now consider the product of two possibilities for our indices, one where $i=j$ and another where $i \neq j$:
 \[
- \sum_{x,y} \epsilon_{xy} \left[ \sum_{i=j}(\ldots)+\sum_{i \neq j} (\ldots) \right].
+\text{det}(AB) = \sum_{i=j}(\ldots)+\sum_{i \neq j} (\ldots) .
 \]
-Of the two sums in the square brackets, the first makes zero contribution:
+Of the two sums on the right-hand side, the first makes zero contribution:
 
 \begin{exercise}{EqualZero}
-Given that $i=j$ show that $\sum_{x,y} \epsilon_{xy}  b_{ix}b_{jy}$  is equal to 0. Use this to show that the first summation in the square brackets makes zero contribution. \hyperref[sec:sigma:hints]{(*Hint*)} 
+Given that $i=j$, show that $\sum_{x,y} \epsilon_{xy}  b_{ix}b_{jy}$  is equal to 0. Use this to show that the first summation in the square brackets makes zero contribution. \hyperref[sec:sigma:hints]{(*Hint*)} 
 \end{exercise}
 Since we can ignore the case where $i=j$, let us look at the case where $i \neq j$.  There are actually two cases: $i=1, j=2$ and $i=2, j=1$.  Notice that:
 \begin{align*}
- \epsilon_{xy} b_{ix}b_{jy}&=\epsilon_{xy} b_{1x}b_{2y}~\text{when}~i=1,j=2;\\
- \epsilon_{xy} b_{ix}b_{jy}&= -\epsilon_{xy} b_{1x}b_{2y}~\text{when}~i=2,j=1.
+ \sum_{x,y}\epsilon_{xy} b_{ix}b_{jy}&= \sum_{x,y} \epsilon_{xy} b_{1x}b_{2y}~\text{when}~i=1,j=2;\\
+\sum_{x,y} \epsilon_{xy} b_{ix}b_{jy}&= - \sum_{x,y}\epsilon_{xy} b_{1x}b_{2y}~\text{when}~i=2,j=1.
 \end{align*}
 These two cases can be summarized as:
 \begin{align*}
- \epsilon_{xy} b_{ix}b_{jy}&=\epsilon_{xy}\epsilon_{ij} b_{1x}b_{2y}.\\
+\sum_{x,y} \epsilon_{xy} b_{ix}b_{jy}&=\sum_{x,y}\epsilon_{xy}\epsilon_{ij} b_{1x}b_{2y}.\\
 \end{align*}
 This gives us:
 \begin{align*}
-\sum_{x,y} \epsilon_{xy} \left[ \sum_{i,j}  a_{1i}a_{2j} b_{ix}b_{jy}\right]&= \sum_{x,y}  \sum_{i,j} \epsilon_{xy}\epsilon_{ij}   a_{1i}a_{2j} b_{1x}b_{2y}\\
+ \sum_{i,j}  a_{1i}a_{2j} \left[\sum_{x,y} \epsilon_{xy} b_{ix}b_{jy}\right]&=  \sum_{i,j}  a_{1i}a_{2j} \left[\sum_{x,y} \epsilon_{xy} \epsilon_{ij} b_{1x}b_{2y}\right]\\
 &=  \left(\sum_{i,j}\epsilon_{ij}   a_{1i}a_{2j}\right)\left(\sum_{x,y}  \epsilon_{xy} b_{1x}b_{2y}\right),
 \end{align*}
 %You are probably thinking this is just pulled this out of thin air, but if we look at how permutations work you can see this is valid.  Let us consider two permutations in tableau notation:
@@ -711,27 +873,53 @@ This gives us:
 %\]
 %allowing us to rewrite $b_{ix}b_{jy}$ as $ b_{1x'}b_{2y'}$.  
 where in the second line we have noticed that the terms with $x,y$ in the RHS of the first line can be separated from the terms with $i,j$.
-At this point we are just about done, since:
+At this point we are just about done, since we may recognize the two terms in this final expression as $\text{det} A$ and $\text{det} B$, respectively.
+Since the original expression we started with was $\text{det}(AB)$, we have:
 \[
-\text{det}A=\sum_{i,j} \epsilon_{ij} a_{1i}a_{2j},
+\text{det}(AB)= \text{det}A \,\text{det}B.
 \]
-\[
-\text{det}B=\sum_{x,y} \epsilon_{xy} b_{1x}b_{2y},
-\]
-and therefore:
+
+This proof as it stands only works for $2 \times 2$ matrices, but it turns out that a similar proof works for $n \times n$ matrices.  A key step in the proof was the identity:
 \begin{align*}
-\text{det}(AB)=& \sum_{x,y} \epsilon_{xy} \left[ \sum_i a_{1i}b_{ix} \sum_j a_{2j}b_{jy}\right]\\
-=&  \left(\sum_{i,j}\epsilon_{ij}   a_{1i}a_{2j}\right)\left(\sum_{x,y}  \epsilon_{xy} b_{1x}b_{2y}\right)\\
-=& \text{det}A \,\text{det}B.
+\sum_{x,y} \epsilon_{xy} b_{ix}b_{jy}&= \sum_{x,y} \epsilon_{xy}\epsilon_{ij} b_{1x}b_{2y},
 \end{align*}
+which held whenever $i,j \in \{1,2\}$ and $i \neq j$. A similar equality holds in the $3 \times 3$ case (and indeed in the $n \times n$ case).
 
+\begin{exercise}{detId}
+\begin{enumerate}[(a)]
+\item
+Show that
+\begin{align*}
+\sum_{x,y,z}  \epsilon_{xyz} b_{ix}b_{jy}b_{kz}&=\sum_{x,y,z} \epsilon_{xyz}\epsilon_{ijk} b_{1x}b_{2y}b_{3z},
+\end{align*}
+whenever $i,j,k \in \{1,2,3\}$.
+\hyperref[sec:sigma:hints]{(*Hint*)} 
+\item
+Give a complete proof of $\text{det}(AB)= \text{det}A \,\text{det}B$ for the case where $A$ and $B$ are $3 \times 3$ matrices.
+\end{enumerate}
+\end{exercise}
 
-%%% Prove that determinant of product equals product of determinants.
+We may use some of the facts which we've established in this section to prove some important properties of rotation matrices. 
+
+\begin{exercise}{}
+Recall from Section~\ref{subsec:rotMx3} that a rotation matrix $R$ must satisfy $R^{\text{T}} R = I$ and $\det R \ge 0$.
+\begin{enumerate}[(a)]
+\item
+Using Exercise~\ref{exercise:Sigma:detTrans} and the determinant product formula $\det A \det B = \det(AB)$, show that $\det R = 1$ and $\det R^{\text{T}}=1$. 
+\item
+Since $\det R = 1$ it follows that $R \in SL_3(\mathbb{R})$ and hence $R$ is invertible. Use this fact to show that $R^{\text{T}} = R^{-1}$.
+\end{enumerate}
+\end{exercise}
+
+The results of the previous exercise are important, so we'll restate them as a proposition.
+
+\begin{prop}{detRotMx} For any rotation matrix $R$, $\det R = 1$ and $R^{\text{T}} = R^{-1}$.
+\end{prop}
+
 %%% Relate determinant to volume
 
 
-\subsubsection*{Levi-Civita symbols and cross products}
-Since we can define determinants using the Levi-Civita symbol, we can also define cross products of vectors, but before going any further it is important to know that in this section we are writing vectors in a very particular way.  For vectors, we are labeling the components using numbered subscripts.  For example, the vector $\textbf{a}$ is written out as $\textbf{a}=(a_1, a_2, a_3)$, and intuitively you can think of $a_1$ as the $x-$component of vector $\textbf{a}$, $a_2$ as the $y-$component, and $a_3$ as the $z-$component.  The reason for doing it this way is that having indices refer to natural numbers (such as the indices of the Levi-Civita symbol) makes the rest of the notation much easier to work with, especially if we want to make it more general.   
+\subsection{Levi-Civita symbols and cross products}
 
 You may have seen the formula for the cross product of two vectors in vector calculus, or college physics. Given two three-dimensional vectors $\textbf{a}=(a_1, a_2, a_3)$ and $\textbf{b}=(b_1, b_2, b_3)$, the \term{cross product} of $\textbf{a}$ and $\textbf{b}$ can be expressed as  (note that the absolute value brackets in the formula  indicate that it's a determinant and not a matrix.)
 
@@ -772,11 +960,16 @@ Or we can write the last line in a more familiar fashion:
 So all we have to do to define a cross product using the Levi-Civita symbol is to simply plug these terms into the formula for the $3 \times 3$ determinant from earlier:
 \[\textbf{a} \times \textbf{b} = \,\text{det} A = \sum_{i=1}^3 \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} \textbf{e}_i  a_j b_k. \]
 If you compare this formula with our original definition of $3 \times 3$ determinant (just before Exercise~\ref{exercise:Sigma:rowExp}), you'll see  that we have dropped the first index on each term.  The reason is that the $\textbf{e}$ terms will always be on the first row, $a$ on the second, and $b$ on the third.  
+
 We can actually shorten this up a little bit more, by rewriting the formula to find the $i^{\text{th}}$ component of $\textbf{a} \times \textbf{b}$.  In other words, we don't want the summation of all three $\textbf{e}_i$ terms, just one particular $\textbf{e}_i$ term.  That means we remove the summation over $i$, which leaves us with:
 \[ (\textbf{a} \times \textbf{b})_i = \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} a_j b_k. \]
 So for example, the first component (intuitively the $x$ component, or as we would say, the $\textbf{e}_1$ component) is:
 \[ (\textbf{a} \times \textbf{b})_1 = a_2 b_3 - a_3 b_2. \]
-Now see if you can find the equations for the second and third components.  For those of you who are familiar enough with cyclic permutations, this is a relatively easy exercise.  
+
+\begin{exercise}{}
+Find the formulas for
+$(\textbf{a} \times \textbf{b})_2$ and $(\textbf{a} \times \textbf{b})_3$.  (There's an easy solution if you apply cyclic permutations to the indices in the formula for $(\textbf{a} \times \textbf{b})_1$.
+\end{exercise}
 
 \begin{exercise}{}
 Use the Levi-Civita symbol to find the cross product of the vectors $\textbf{a}=[2,~-3,~2]$ and $\textbf{b}=[1,~4,~-3]$.
@@ -794,8 +987,8 @@ $(\textbf{a} \times \textbf{b})_i$ as
 \[ (\textbf{a} \times \textbf{b})_i = \sum_{j,k} \epsilon_{ijk} a_j b_k. \]
 Note that we do not bother to indicate that the indices $i,j,k$ run from 1 to 3: this is understood by the nature of $\epsilon_{ijk}$.
 
-\subsubsection*{BAC-CAB Rule}
-As a final example, suppose we want to prove what is known as the $BAC-CAB$ rule\index{BAC-CAB@$BAC-CAB$ rule}, which states:
+\subsection{Proof of the BAC-CAB Rule}
+As another example, suppose we want to prove what is known as the $BAC-CAB$ rule\index{BAC-CAB@$BAC-CAB$ rule}, which states:
 \[ \textbf{a} \times \left( \textbf{b} \times \textbf{c} \right) = \textbf{b} \left( \textbf{a} \cdot \textbf{c} \right) - \textbf{c} \left( \textbf{a} \cdot \textbf{b} \right). \]
 We'll arrive at this formula this by two different routes: the brute-force method or the symmetry method.  Let's start with the brute force method.
 
@@ -867,7 +1060,7 @@ By separating out the sum over $k$, we can rewrite this as:
 
 Let's define the quantity inside the $[ \dots ]$ as $S_{ijmn}$:
 
-	\[ S_{ijmn} :=  \left[ \sum_k \epsilon_{ijk} \epsilon_{kmn} \right]. \]
+	\[ S_{ijmn} :=  \sum_k \epsilon_{ijk} \epsilon_{kmn}. \]
 
 Then we will be able to simplify our expression for $\left( \textbf{a} \times (\textbf{b} \times \textbf{c}) \right)_i$ if we can find a simpler expression for $S_{ijmn}$.  This quantity will have a different value for each choice of $i,j,m,n$.  
 
@@ -901,7 +1094,7 @@ only one index, since $m$ and $n$ are determined by $i$ and $j$:
 	                         	  
 
 
-Now if we add $a_i b_i c_i$ to the first set of terms, and subtract $a_i b_i c_i$ to the second set of terms, then the overall sum doesn't change but the two 
+Now if we add $a_i b_i c_i$ to the first set of terms, and add $-a_i b_i c_i$ to the second set of terms, then the overall sum doesn't change but the two 
 expressions simplify:
 
 \[ \sum_{j}  a_j b_i c_j    -  \sum_{j}   a_j b_j c_i  \]
@@ -915,12 +1108,153 @@ which is the $BAC-CAB$ rule.
 
 In this case the brute force method wasn't much harder than the symmetry method, but for more complicated expressions it is far easier to use the symmetries of $\epsilon$ to prove a statement rather than do it term by term.
 
-\begin{exercise}{}
-Using some facts from the discussion above, show that  $S_{ijmn}$ can also be written in terms of Kronecker deltas as follows:
+The symmetry method gives an added windfall, namely a general identity that will prove useful later:
+
+\begin{exercise}{2epsIdent}
+Using some facts from the discussion above, show that  $S_{ijmn} :=  \sum_k \epsilon_{ijk} \epsilon_{kmn}$ can also be written in terms of Kronecker deltas as follows:
 \[S_{ijmn} = \delta_{im} \delta_{jn} - \delta_{in} \delta_{jm}. \]
 \end{exercise}
 
-\section{Summation by parts}
+
+\subsection{Proof of Euler's Rotation Theorem}\label{subsec:EulerRot}
+
+In Section~\ref{sec:actions:Euler} we proved Euler's formula for regular polyhedra. Our proof was not complete, because we assumed the following proposition:
+
+\begin{prop}{EulerRotThm}(\term{Euler's Rotation Theorem}): Any rotation (besides the identity) in three dimensions has exactly one axis which is fixed by the rotation.
+\end{prop}
+
+In this section, we'll prove this beautiful theorem!
+
+First, we need to establish a general identity involving three-dimensional Levi-Civita symbols.
+
+\begin{prop}{crazyEq} Given any $3 \times 3$ matrix $A$, then 
+\[ \sum_{j,k,\ell}\epsilon_{jk\ell} a_{ij}a_{k\ell} =  \sum_{j,k,\ell}\epsilon_{jk\ell} a_{ji}a_{k\ell}. \]
+(Observe the minute difference between the two sides:  there's an $a_{ij}$ on the left-hand side which becomes an $a_{ji}$ on the right. Minute differences matter!)
+\end{prop}
+\begin{proof}
+Let us consider the case $i=1$:
+\[ \sum_{j,k,\ell}\epsilon_{jk\ell} a_{1j}a_{k\ell} =  \sum_{j,k,\ell}\epsilon_{jk\ell} a_{j1}a_{k\ell}. \]
+ and we'll leave the cases $i=2,3$ as exercises.
+
+On both right and left sides there are terms with $j=1$, $j=2$, and $j=3$.  We'll consider these cases one by one.
+\begin{itemize}
+\item
+$j=1$: these terms are equal on both sides, since in this case $a_{1j}=a_{j1}=a_{11}$.
+\item
+$j=2$: in view of the $\epsilon_{jk\ell}$ on both sides, since $j=2$ the only nonzero terms are $k=3, \ell=1$  or $k=1, \ell = 3$.  On the left-hand side this gives $a_{12}a_{31} - a_{12}a_{13}$, while on the right-hand side we get $a_{21}a_{31} - a_{21}a_{13}$
+\item
+$j=3$: once again, in view of the $\epsilon_{jk\ell}$ on both sides, since $j=3$ the only nonzero terms are $k=1, \ell=2$  or $k=2, \ell = 1$.  On the left-hand side this gives $a_{13}a_{12} - a_{13}a_{21}$, while on the right-hand side we get $a_{31}a_{12} - a_{31}a_{21}$.
+\end{itemize}
+Adding all left-hand side terms gives
+\[ a_{12}a_{31} - a_{12}a_{13} + a_{13}a_{12} - a_{13}a_{21} = a_{12}a_{31}  - a_{13}a_{21},\]
+while adding all right-hand side terms gives
+\[a_{21}a_{31} - a_{21}a_{13} + a_{31}a_{12} - a_{31}a_{21} = - a_{21}a_{13} + a_{31}a_{12}.\]
+Miraculously, these turn out to be equal.
+
+\begin{exercise}{} Complete the proof of Proposition~\ref{proposition:Sigma:crazyEq} by showing equality for the cases $i=2,3$.
+\end{exercise}
+\end{proof}
+
+No doubt this formula seems entirely unmotivated and somewhat useless (although you have to admit it's kind of cute.)  However, it becomes incredibly useful when we apply it to the case where $A$ is a rotation matrix. To this end, suppose $R$ is a rotation entry whose $(j,k)$ entry is denoted by $r_{j,k}$. We may define a vector $z$ by the following expression:
+\[ z_j :=  \sum_{k,\ell}\epsilon_{jk\ell} r_{k\ell}. \]
+Then the equality in Proposition~\ref{proposition:Sigma:crazyEq} becomes:
+\[ \sum_{j,k,\ell}\epsilon_{jk\ell} r_{ij}r_{k\ell} =  \sum_{j,k,\ell}\epsilon_{jk\ell} r_{ji}r_{k\ell}, \]
+which implies (by rearranging terms)
+\[ \sum_{j}r_{ij} \left( \sum_{k,\ell} \epsilon_{jk\ell} r_{k\ell} \right) 
+=  \sum_{j}r_{ji} \left( \sum_{k,\ell} \epsilon_{jk\ell} r_{k\ell} \right). \]
+This can be  greatly simplified by using our definition of $z_j$:
+\[ \sum_{j}r_{ij} z_j=  \sum_{j}r_{ji} z_j. \]
+Rewriting this in matrix notation gives $Rz = R^{\text{T}}z$. Using the fact that $R^{\text{T}} = R^{-1}$ (see Proposition~\ref{proposition:Sigma:detRotMx}) and a series of algebraic manipulations,  we find:
+\begin{align*}
+ Rz = R^{-1}z &\implies  Rz - R^{-1}z = 0 \\
+&\implies R^2z - Iz = 0\\
+& \implies  (R + I)(R-I)z = 0.
+\end{align*}
+Now, there are two cases to consider:
+\begin{itemize}
+\item
+In the case where $(R-I)z \neq 0$, then it must be true that $y := (R-I)z$ is a nonzero vector which satisfies $(R+I)y=0$. This implies that $y$ is an eigenvector of $R$ with eigenvalue $-1$. Now since $R$ is $3 \times 3$, it must have 3 eigenvalues in total. Let $\lambda_1$ and $\lambda_2$ be the 2 remaining eigenvalues.  We know from linear algebra that the product of the eigenvalues is equal to the determinant of $R$, which is equal to 1 by Proposition~\ref{proposition:Sigma:detRotMx}.  This imples that $-1 \cdot \lambda_1 \cdot \lambda_2 = 1$ or 
+$ \lambda_1 \cdot \lambda_2 = -1$. 
+
+Now, the $\lambda$'s could be complex, or they could be real. If complex, then they must be complex conjugates of each other (since $R$ is a real matrix), but then their product would be positive. Since their product is negative, this is not possible. 
+
+We may conclude that the $\lambda$'s are real. Now let $w$ be an eigenvector for the eigenvalue $\lambda_1$. Then $Rw = \lambda_1 w$, so that $ \lVert Rw \rVert = |\lambda_1| \lVert w \rVert$. But we know from the properties of rotations (see Section~\ref{subsec:rotMx3} that 
+$ \lVert Rw \rVert =  \lVert w \rVert$. This implies $|\lambda_1|=1$. The same argument shows $|\lambda_2|=1$. 
+
+So what've we got?  We know that $\lambda_1$ and $\lambda_2$ are real.  We also know that  $|\lambda_1|=|\lambda_2|=1$, so each $\lambda$ is either $+1$ or $-1$.  Finally, we know that $\lambda_1 \cdot \lambda_2 = -1$.  This means that one of the $\lambda$'s must be $-1$, and one must be 1. Since the remaining eigenvalue is $-1$, It follows that there is a unique eigenvector with eigenvalue 1, which is the unique fixed axis of the rotation.
+
+\item
+In the case where $(R-I)z = 0$, then the vector $z$ is fixed by the rotation $R$. But is it the only fixed vector?  We'll show that if there is another fixed vector, then $R$ must be the identity.  Suppose that there's another vector $y$ which is not parallel to $z$ and is also fixed by the rotation, so that $Ry=y$. since $R^{\text{T}}=R^{-1}$, we may multiply both sides by $R^{\text{T}}$ and obtain $y = R^{\text{T}}y$, or
+\[ y_j = \sum_m r_{mj} y_m .\]
+By the same token, we have $z = R^{\text{T}}z$, or
+\[ z_k = \sum_n r_{nk} z_n .\]
+Consider now the vector $w$ defined by:  
+\[ w_i := \sum_{j,k}\epsilon_{ijk}y_jz_k. \]  
+Since $y$ and $z$ are both fixed under the rotation $R$ we may replace $y_m$ and $z_k$ with $ \sum_m r_{mj} y_m$ and $\sum_n r_{nk} z_n$ respectively, so that:
+\[ w_i := \sum_{j,k,m,n}\epsilon_{ijk}(r_{mj} y_m) (r_{nk} z_n) = \sum_{j,k,m,n}\epsilon_{ijk}r_{mj}r_{nk} y_m  z_n. \]  
+Now we may compute $Rw$  using summation notation as:
+\begin{align*}
+[Rw]_{\ell} &= \sum_i r_{\ell i} w_i  \\
+&= \sum_{i,j,k,m,n}\epsilon_{ijk}r_{\ell i}r_{mj}r_{nk} y_m  z_n \\
+&= \sum_{m,n} \left( \sum_{i,j,k}\epsilon_{ijk}r_{\ell i}r_{mj}r_{nk} \right) y_m  z_n.
+\end{align*}
+It looks like we're venturing deeper and deeper into mathematical muck. But lo! The expression in parentheses is something that we've seen  before, in Exercise~\ref{exercise:Sigma:detId}:
+\[ \sum_{i,j,k}\epsilon_{ijk}r_{\ell i}r_{mj}r_{nk}= \sum_{i,j,k} \epsilon_{\ell m n} \epsilon_{ijk}r_{1 i}r_{2j}r_{3k},\]
+and we may further simplify using other facts we've picked up here and there:
+\begin{align*}
+ \sum_{i,j,k} \epsilon_{\ell m n} \epsilon_{ijk}r_{1 i}r_{2j}r_{3k}
+&= \epsilon_{\ell m n} \sum_{i,j,k}  \epsilon_{ijk}r_{1 i}r_{2j}r_{3k}\\
+&= \epsilon_{\ell m n} \det{R}\\
+&= \epsilon_{\ell m n}.
+\end{align*}
+So, breathing a huge sigh of relief, we may replace what's in the parentheses with  $\epsilon_{\ell m n}$ and 
+obtain
+\[
+[Rw]_{\ell} = \sum_{m,n} \epsilon_{\ell mn} y_m  z_n = w_{\ell}.
+\]
+So we have three vectors fixed by $R$:  $z,y,$ and $w$.  If we can show that these are linearly independent, then \emph{all} vectors must be fixed by $R$, and $R$ must be the identity. 
+
+To show that the vectors are linearly independent, it's enough to show that $\det [w \,\,\, y\,\,\, z] \neq 0$, where $[w \,\,\, y\,\,\, z]$ is the $3 \times 3$ matrix with columns $w, y,z$. We know that the transpose has the same determinant, so we may find the determinant using the Levi-Civita formula as:
+\begin{align*}
+\det [w \,\,\, y\,\,\, z] &= \det [w \,\,\, y\,\,\, z]^{\text{T}}\\
+&= \sum_{i,j,k} \epsilon_{ijk} w_i y_j z_k \\
+&= \sum_{i,j,k} \epsilon_{ijk} \left( \sum_{m,n}\epsilon_{imn}y_mz_n \right) y_j z_k \\
+&= \sum_{i,j,k,m,n} \epsilon_{ijk} \epsilon_{imn}  y_j z_ky_mz_n \\
+&=  \sum_{j,k,m,n} \left( \sum_{i} \epsilon_{ijk} \epsilon_{imn}\right)  y_j y_m z_k z_n
+\end{align*}
+(note that in the third line when we substituted in the expression for $w_i$, we had to change the summation indices from $j,k$ to $m,n$ to avoid conflict with the $j,k$ indices that we were already using for a different summation.) In the final line, we've separated out the summation over $i$ for a reason.  Exercise~\ref{exercise:Sigma:2epsIdent} tells us that:
+\[\sum_k \epsilon_{ijk} \epsilon_{kmn} = \delta_{im} \delta_{jn} - \delta_{in} \delta_{jm}. \]
+Assuming this is true (you really should try to prove it, if you haven't already), this enables us to evaluate our expression quite nicely.
+
+\begin{exercise}{nonzeroVec}
+Using the previous identity, show that 
+\begin{align*}
+ \sum_{j,k,m,n} \left( \sum_{i} \epsilon_{ijk} \epsilon_{imn}\right)  y_j y_m z_k z_n &= (y \cdot y)(z \cdot z)-(y \cdot z)^2 \\
+&= ||y||^2 ||z||^2 \sin(\theta),
+\end{align*}
+where $\theta$ is the angle between the vectors $y$ and $z$.
+(Recall the inner product of two vectors $a \cdot b$ is given by $\sum_i a_i b_i$, while $||a||^2 = a \cdot a$.)
+\end{exercise}
+On the basis of the previous exercise, we may conclude that $w,y,z$ are linearly independent vectors (and thus a basis of $\mathbb{R}^3$), so long as $y$ and $z$ are nonzero, nonparallel vectors. 
+
+Now let's recap.  We showed that in the case where $(R-I)z = 0$, then $z$ gives the direction of a fixed axis. We also showed, that if there is a different fixed axis, then the rotation must be the identity.  So as long as $R$ is not the identity, then $R$ must have a unique fixed axis. We're done ... almost.
+\end{itemize}
+
+\begin{exercise}{}
+Actually we're not \emph{quite} done. We never showed that the vector $z$ defined by $z_i := \sum_{j,k} \epsilon_{ijk} r_{jk}$ is a nonzero vector. We'll take care of this case in this exercise.
+\begin{enumerate}[(a)]
+\item
+Show that if $z=0$, then it must be true that $r_{ij}=r_{ji}$ for all $i,j \in \{1,2,3\}$: in other words, $R$ is symmetric.
+\item
+Show that if $R$ is a symmetric rotation matrix, then $(R^2 - I) v = 0$ for \emph{any} vector $v$.
+\end{enumerate}
+Once we've shown (b), we have that $(R+I)(R-I)v=0$ and we're back to the two cases that we've proved already.
+\end{exercise}
+
+Now we're \emph{really} done!
+
+
+\section{Summation by parts}\label{sec:sumByParts}
 
 Those who have studied integrals in calculus may be familiar with the process of integration by parts.  This is used when you need to find the integral of the product of two terms.  While this process is used for continuous situations, there is a version of this process for discrete situations called \term{summation by parts}.  
 
@@ -969,9 +1303,9 @@ The sum for the first oval(bottom row above line) is: $a_{1}b_{2}= A_{1}b_{2}$;
 \item
 The sum for the second oval( second row from bottom) is: $\left ( a_{1}+a_{2} \right)b_{3}= A_{2}b_{3}$;
 \item
-The sum for the third oval(third row from bottom) is: $\left ( a_{1}+a_{2}+a_{3} \right )b_{4}= A_{3}b_{4}$;
+The sum for the third oval(second row from the top) is: $\left ( a_{1}+a_{2}+a_{3} \right )b_{4}= A_{3}b_{4}$;
 \item
-The sum for the fourth oval(top row above line) is: $\left ( a_{1}+a_{2}+a_{3}+a_{4} \right)b_{5}= A_{4}b_{5}$.
+The sum for the fourth oval(top row) is: $\left ( a_{1}+a_{2}+a_{3}+a_{4} \right)b_{5}= A_{4}b_{5}$.
 \end{itemize}
 Adding these five sums together accounts for all the terms below the diagonal line:
 \[ A_1b_2 +  \ldots + A_4b_5 = \sum_{k=1}^{5-1}A_kb_{k+1}.\]
@@ -985,7 +1319,7 @@ this was a relatively simple case that we could illustrate. To get the general f
 \[\sum_{k=1}^{n}a_{k}B_{k}= A_{n}B_{n}-\sum_{k=1}^{n-1}A_{k}b_{k+1}. \]
 Notice the striking similarity between this formula and the formula for integration by parts:
 \[ \int_a^b u dv =\left. uv\right|_a^b - \int_a^b v du. \] 
-The resemblance is brought out especially if we consider that integration is essentially a kind of summation (more precisely,
+The resemblance makes a lot of sense, since integration is essentially a kind of summation (more precisely,
 a summation taken to a limit.)
 
 Now let’s look at some examples to see how we can make use of this formula.
@@ -1028,7 +1362,14 @@ Prove the following equation using summation by parts:
 \[ \sum_{k=1}^n k^3 = \frac{n^4}{4} + \frac{n^3}{2} + \frac{n^2}{4} \]
 \end{exercise}
 
-
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+ Evaluate $\sum_{k=1}^{n}3^{k}k$.
+\item
+ Evaluate $\sum_{k=1}^{n}3^{k}k^2$.
+\end{enumerate}
+\end{exercise}
 
 %Example 2
 %Evaluate: 

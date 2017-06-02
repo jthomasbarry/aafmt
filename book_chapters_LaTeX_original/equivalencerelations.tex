@@ -266,7 +266,7 @@ For each of the following, explain your answers.
 \item Is $\leq$ defined on the set $\mathbb{R}$ transitive? Is it reflexive? Is it symmetric?
 \hyperref[secEqRelChapHints]{(*Hint*)}
 \item Is $\subset$ defined on the set $P(\mathbb{N})$ transitive? Is it reflexive? Is it symmetric? (Recall that $P(\mathbb{N})$ is the set of subsets of $\mathbb{N}$).
-\item Define the relation $\rel$ on $\mathbb{C}$ as follows: $ z_1 \rel z_2$ iff $z_1 = |z_2|$. Is $\rel$ transitive? Is it reflexive? Is it symmetric?
+\item Define the relation $\rel$ on $\mathbb{C}$ as follows: $ z_1 \rel z_2$ iff $z_1 = |z_2|$. Is $\rel$ transitive? Is it reflexive? Is it symmetric? \hyperref[secEqRelChapHints]{(*Hint*)} 
 \item Define the relation $\rel$ on $\mathbb{Z}$ as follows: $ a \rel b$ iff $|a - b|< 4$. Is $\rel$ transitive? Is it reflexive? Is it symmetric?
 \end{enumerate}
 \end{exercise}
@@ -292,11 +292,19 @@ For each of the following, explain your answers.
 %\end{exers}
 
 
-\begin{eg}
+\begin{eg}\label{ex:Relation}
 Given the set $B = \{1,2,3\}$, consider the relation $\rel$ on $B$ defined by 
-$$B_\rel = \{(1,1), (2,2), (3,3), (1,2), (2,1), (2,3), (3,2) \}$$
- The relation is shown in the picture below.
- $$ \includegraphics[scale=0.25]{images/GraphRel.pdf} $$
+\[
+B_\rel = \{(1,1), (2,2), (3,3), (1,2), (2,1), (2,3), (3,2) \}
+\]
+ The relation is shown in Figure~\ref{relfig}.
+\begin{figure}[ht]
+\begin{center}
+ \includegraphics[scale=0.25]{images/GraphRel.pdf}
+\caption{Diagram of the relation in Example~\ref{ex:Relation}\label{relfig}}
+\end{center}
+\end{figure}
+
 \begin{itemize}
 \item $\rel$ is reflexive, because $1 \rel 1$, $2 \rel 2$, and $3 \rel 3$  (Note we had to check \emph{all} elements of the set $B$),
 \item $\rel$ is symmetric, because, for each $(a,b) \in \mathord{\rel}$, the reversal $(b,a)$ is also in~$\rel$.
@@ -391,7 +399,7 @@ People often need to sort through a collection of objects, putting similar objec
 
 \begin{eg} \label{EquivRelZooEg}
 When making an inventory of the animals in a zoo, we may wish to count the number of antelopes, the number of baboons, the number of cheetahs, and so forth. In this case, all of the animals of the same species might be grouped together. Mathematically speaking, we would define a binary relation $S$ on the set of animals in the zoo by 
-\[x \rel_S y \quad \text{iff} \quad x \text{ and } y \text{ are in the same species} .\]
+\[x \rel_S y  \text{   iff   }  x \text{ and } y \text{ are in the same species} .\]
 \end{eg}
 
 %When $x$ and~$y$ are placed in the same group (that is, when $x \rel_S y$ in the above example), we may say that $x$ is ``equivalent" to~$y$. This means that $x$ and~$y$ are exactly the same in all respects that are of interest to us. (In the above example, we are interested only in the species of an animal, not its weight, or its age, or anything else.) We call the corresponding binary relation an ``equivalence relation.'' Thus, the binary relation~$\rel_S$ in the above example is an equivalence relation.
@@ -542,7 +550,7 @@ then $\sim$ is an equivalence relation.
 \end{prop}
 
 \begin{exercise}{EquivRelFromFuncPfEx}
-Prove Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}. (That is, prove that the relation defined in the proposition is (a) reflexive, (b) symmetric, and (c) transitive.
+Prove Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}. (That is, prove that the relation defined in the proposition is (a) reflexive, (b) symmetric, and (c) transitive.)
 \end{exercise}
 
 
@@ -609,7 +617,7 @@ Draw the arrow diagrams for $\rel_A, \rel_B,$ and $\rel_C$.
 
 The following proposition presents some very important properties of equivalence classes:
 
-\begin{thm} \label{EquivRelProps}
+\begin{thmprop} \label{EquivRelProps}
 Suppose $\sim$ is an equivalence relation on a set~$S$. Then:
 \begin{enumerate}[(a)]
 \item \label{EquivRelProps-aIn[a]}
@@ -625,7 +633,7 @@ Suppose $\sim$ is an equivalence relation on a set~$S$. Then:
 \item \label{EquivRelProps-disjoint}
  For any $a_1,a_2 \in S$, such that $a_1 \not\sim a_2$, we have $[a_1] \cap [a_2] = \emptyset$.
 \end{enumerate}
-\end{thm}
+\end{thmprop}
 
 \begin{exercise}{EquivRelPropsPfEx}
 Prove the assertions in Proposition~\ref{EquivRelProps}. You may use the following hints:
@@ -642,7 +650,7 @@ $\bigcup_{a \in S} [a] \subset S$
 \item
 $S \subset \bigcup_{a \in S} [a]$
 \end{enumerate}
-In (i), use the fact that $[a] \subset S$.  In (ii), use (a) above to show that every element of $S$ is in at least one equivalence class.
+In (i), use the fact that $[a] \subset S$.  In (ii), use (a) above to show that every element of $S$ is in at least one equivalence class. (Recall also that `$\subset$' means ``contained in'', and  includes the case where the two sets are equal.)
 \item
 Remember that two sets are equal if they have all their elements in common. So you want to show that given $a_1 \rel a_2$, then every element of $[a_1]$ is also an element of [$a_2]$, and vice versa. Do this as follows: 
 \begin{itemize}
@@ -1061,10 +1069,10 @@ Suppose we define an equivalence relation~$\sim$ on~$\integer$ by $a \sim b$ iff
 \end{eg}
 
 \begin{exercise}{66}
-Let $f\colon \{-3,-2,-1,0,1,2,3\} \to \mathbb{N}$ be defined by $f(x) =  x^2$. Define a relation $\sim$ on $\{-3,-2,-1,0,1,2,3\}$ by: $n \sim m$ iff $f(n) = f(m)$.
+Let $f\colon \{-3,-2,-1,0,1,2,3\} \to \mathbb{Z}$ be defined by $f(x) =  x^2$. Define a relation $\sim$ on $\{-3,-2,-1,0,1,2,3\}$ by: $n \sim m$ iff $f(n) = f(m)$.
 \begin{enumerate}[(a)]
 \item
-Show that $\sim$ is an equivalence relation: that is, show that $\sim$ is reflexive, symmetric, and transitive.
+Show that $\sim$ is an equivalence relation.
 \item
 According to Proposition~\ref{EquivRel->Part}, this equivalence relation produces a partition on  $\{-3,-2,-1,0,1,2,3\}$. List the sets in the partition.
 \end{enumerate}

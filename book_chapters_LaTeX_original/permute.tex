@@ -114,7 +114,7 @@ Suppose that the two congruent sides of triangle $ABC$ are $\overline{AB}$ and $
 Suppose $T$ is used to represent any three-sided figure.  
 %\begin{enumerate}[(a)]
 %\item
-Which permutation(s) does the set of symmetries of $T$ always contain?
+Which permutation(s) do(es) the set of symmetries of $T$ always contain?
 %% CPT I don't understand the following item
 %\item
 %Because of (a), for all figures that can be represented by $T$, what can we conclude about the set of symmetries of those %figures (compared to $S_T$)?
@@ -135,7 +135,7 @@ What additional elements in $S_X$ are not symmetries of the rectangle?
 \end{enumerate}
 \end{exercise}
 
-actually, \emph{any} symmetry is a permutation, since a symmetry is by definition a bijection from a finite set of points to itself.  But as we've seen in Exercises~\ref{exercise:permute:isos_tri_sym}, ~\ref{exercise:permute:tri_sym}, ~\ref{exercise:permute:S_4} (as well as Exercise~\ref{exercise:symmetries:bijectnotsym} from the Symmetries chapter), \emph{not} all permutations (bijections) are symmetries.  Given a set $X$ that represents a figure, the set of symmetries from $X \to X$ is therefore a subset of $S_X$.
+Actually, \emph{any} symmetry is a permutation, since a symmetry is by definition a bijection from a finite set of points to itself.  But as we've seen in Exercises~\ref{exercise:permute:isos_tri_sym}, ~\ref{exercise:permute:tri_sym}, ~\ref{exercise:permute:S_4} (as well as Exercise~\ref{exercise:symmetries:bijectnotsym} from the Symmetries chapter), \emph{not} all permutations (bijections) are symmetries.  Given a set $X$ that represents a figure, the set of symmetries from $X \to X$ is therefore a subset of $S_X$.
 
 
 
@@ -792,10 +792,10 @@ Disjoint cycles commute: that is, given two disjoint cycles $\sigma = (a_1, a_2,
 
 \begin{proof} We present this proof as a fill-in-the-blanks exercise:
 
-\begin{exercise}{disjoint_commutative} Fill in the $\underline{<\#>}$  to complete the proof:
+\begin{exercise}{disjoint_commutative} Fill in the blanks  to complete the proof:
 
 Recall that permutations are defined as bijections on a set $X$. In order to show that the two permutations 
-$\sigma \tau$ and $\tau \sigma$ are equal, it's enough to show that they are the same function. In other words, we just need to show that $\sigma \tau (x)$ =\underline{ $~<1>~$} for all $x \in X$.
+$\sigma \tau$ and $\tau \sigma$ are equal, it's enough to show that they are the same function. In other words, we just need to show that $\sigma \tau (x)$ =$\underline{ ~<1>~}$ for all $x \in X$.
 
 We'll define $A = \{a_1, a_2, \ldots, a_j\}$ and $B = \{b_1, b_2, \ldots, b_k\}$. By hypothesis $A$ and $B$ are disjoint, so $A \underline{ ~<2>~} B = \underline{ ~<3>~}$. Given an arbitrary $x \in X$, there are three possibilities: (i) $x \in A$ and $x \notin B$; (ii) $x \in \underline{ ~<4>~}$ and $x \notin \underline{ ~<6>~}$; (iii) $x \notin \underline{ ~<7>~}$ and $x \notin \underline{ ~<8>~}$. 
 
@@ -833,7 +833,7 @@ Which of the above permutations are the same? Which are different? \emph{Explain
 \end{exercise}
 
 \begin{exercise}{}
-Write each of the following permutations 3 different ways using cycle notation.
+Write each of the following permutations 2 different ways using cycle notation.
 \begin{enumerate}[(a)]
 \begin{multicols}{3}
 \item
@@ -1334,7 +1334,7 @@ The \term{order} of a permutation $\tau$ is the smallest positive integer $k$ su
 \medskip
 
 \begin{exercise}{64}
-Fill in the $\underline{~<\#>~}$ with the appropriate variables in the following proof of the proposition.
+Fill in the blanks with the appropriate variables in the following proof of the proposition.
 \hyperref[sec:permute:hints]{(*Hint*)}
 \medskip
 
@@ -1672,7 +1672,7 @@ If we apply similar reasoning to the last three transpositions in the expression
  Applying this result inductively, we obtain finally: 
 \[
 \mu^{-1} = (a_1 a_2) ( a_1 a_3) \cdots (a_1 a_{n-1} ) (a_1 a_n ), \]
-from this epression we may see that $a_1 \rightarrow a_n$, $a_n \rightarrow a_{n-1}, a_{n-1} \rightarrow a_{n-2}, \ldots, a_{2} \rightarrow a_{1}$, which 
+from this expression we may see that $a_1 \rightarrow a_n$, $a_n \rightarrow a_{n-1}, a_{n-1} \rightarrow a_{n-2}, \ldots, a_{2} \rightarrow a_{1}$, which 
 corresponds to the cycle we want.
 \end{proof}
 
@@ -1762,9 +1762,9 @@ These two types of motions can be represented as permutations. In tableau notati
 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 1
  \end{array} \right)\] 
-In cycle notation,  the same permutation would be $(1 \; 2 \; 3 \; 4 \; \ldots \; 12)$, where we have put commas between cycle entries to distinguish the number 12 from consecutive 1 and 2.  We will denote this permutation by $r$. On the other hand, if cars 1 and 2 are switched, then this corresponds to the permutation $(1 2)$. We will denote this permutation by $t$.  In summary:
+In cycle notation,  the same permutation would be $(1 \; 2 \; 3 \; 4 \; \ldots \; 12)$.  We will denote this permutation by $r$. On the other hand, if cars 1 and 2 are switched, then this corresponds to the permutation $(1 2)$. We will denote this permutation by $t$.  In summary:
 \[ r = (1 \; 2 \; \ldots \; 12);\qquad  t = (1 \, 2).\]
-Let's look at some other motions of the train. Suppose for example we shift the train counterclockwise by two positions. This corresponds to performing the permutation $r$ twice in succession, which is $r \compose r$ or $r^2$.   If we think about the process of composition, what's going on is the first $r$ moves car \#1 (which occupies slot \#1) to position \#2; while the second $r$ moves whatever's in slot 2 (which happens to be car \#1) to slot 3. The resulting composition can be interpreted as showing where each of the cars end up after both moves.  The same thing will be true  if we compose any number of permutations. 
+Let's look at some other motions of the train. Suppose for example we shift the train counterclockwise by two positions. This corresponds to performing the permutation $r$ twice in succession, which is $r \compose r$ or $r^2$.   If we think about the process of composition, what's going on is the first $r$ moves car 1 (which occupies slot 1) to slot 2; while the second $r$ moves whatever's in slot 2 (which happens to be car 1) to slot 3. The resulting composition can be interpreted as showing where each of the cars end up after both moves.  The same thing will be true  if we compose any number of permutations. 
 
 It follows that all rearrangements of the cars that can be accomplished by the switchyard may be obtained as compositions of the permutations $r$ and $t$. So what rearrangements are possible? I'm glad you asked that question! The following exercises are designed to help you figure this out. But first, let's consider one type of rearrangement that's particularly important. Suppose we want to switch two consecutive cars that are not 1 and 2: say for example we want to switch cars 5 and 6, and leave the rest of the cars unchanged.  Can we do this? 
 
@@ -1824,19 +1824,19 @@ Show that any permutation  on 4 elements (that is, any permutation in $S_4$) can
 Now we'll look at a general switchyard with $n$ positions. In this case, rotation by 1 position is given by  $r= (1 \; 2 \; \ldots \; n)$. We  use the same switch transposition, $t = (1 \; 2)$.
 \begin{enumerate}[(a)]
 \item
-Write the transposition $(k \enspace k\oplus 1)$ as a product of powers of $r$ and $t$. Here $\oplus$ denotes addition mod $n$.
+Write the transposition $(k \enspace k\oplus 1)$ as a product of powers of $r$ and $t$. Here $\oplus$ denotes addition mod $n$. (Note that we use $(k \enspace k\oplus 1)$ instead of $(k \enspace k+ 1)$ because we want to count $(n \enspace 1)$ as a consecutive transposition.)
 \item
-Show that any consecutive cycle $(m \enspace m\oplus 1 \enspace \ldots \enspace m \oplus  p )$ can be written as a product of powers of $r$ and $t$ by filling in the blanks:
+Show that any consecutive cycle of the form $(m \enspace m\oplus 1 \enspace \ldots \enspace m \oplus  p )$ can be written as a product of powers of $r$ and $t$ by filling in the blanks:
 
 \begin{itemize}
 \item
-First, $(m \enspace m \oplus 1 \enspace \ldots \enspace m \oplus  p )$ can be written as a product of consecutive transpositions as \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+First, $(m \enspace m \oplus 1 \enspace \ldots \enspace m \oplus  p )$ can be written as a product of consecutive transpositions as \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_. \hyperref[sec:permute:hints]{(*Hint*)}
 \item
 Then, by replacing each transposition in this expression with its expression in terms of  products of \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_, then we obtain an expression for \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ as a product of \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
 \end{itemize}
 
 \item
-Write the transposition $(1 \, k)$ as a product of a cycle of length $k$ and a cycle of length $k-1$. 
+Write the transposition $(1 \, k)$ as a product of a consecutive cycle of length $k$ and the inverse of a consecutive cycle of length $k-1$.  \hyperref[sec:permute:hints]{(*Hint*)}
 \item
 Prove that any transposition $(1 \, k)$ can be written as a product of consecutive transpositions.
 \item
@@ -1971,9 +1971,7 @@ If you did the previous exercise correctly, you will find that no matter where t
 
 \begin{defn} for any permutation $\sigma$, the number 
 
-\begin{center}
-mod(sum of cycle lengths minus number of cycles,2)
-\end{center}
+\[ \text{mod(sum of cycle lengths minus number of cycles,2)} \]
 
 \noindent
 is called the \term{parity} of $\sigma$.\index{Permutation!parity} A permutation with parity 0 is called an \term{even permutation}, while a  permutation with parity 1 is called an \term{odd permutation}. \index{Permutation!odd and even}.  Often books will use the terms ``even parity'' and ``odd parity''  instead of parity 0 and 1, respectively.
@@ -1985,7 +1983,7 @@ We may  summarize our argument so far as follows:
 Multiplication of permutations by transpositions changes their parity. In other words, given a permutation $\sigma$ and a transposition $(ab)$, then the parity of $(ab)\sigma$ is different from the parity of $\sigma$.
 \end{prop}
 
-\begin{exercise}
+\begin{exercise}{}
 How does the conclusion of Proposition~\ref{proposition:permute:multByTrans} change if the permutation $\sigma$ is multiplied on the \emph{right} by $(ab)$ instead of on the left?  \emph{Explain} your answer.
 \end{exercise}
 
@@ -2488,11 +2486,11 @@ Find an element of largest order in $S_n$ for $n = 3, \ldots, 10$.
 In Chapter \ref{complex} we used the term `non-abelian' to describe groups in which not all elements commute. To show that a group is non-abelian, it's enough to find a single pair of elements $a, b \in S_n$ which do not commute (that is, $ab \neq ba$).
 \begin{enumerate}[(a)]
 \item
-Prove that $S_n$ is non-abelian for $n \geq 3$. 
+Prove that $S_n$ is non-abelian for every $n \geq 3$. 
 \item
-Show that $A_n$ is non-abelian for $n \geq 4$.
+Show that $A_n$ is non-abelian for every $n \geq 4$.
 \item
-Prove that $D_n$ is non-abelian for $n \geq 3$.
+Prove that $D_n$ is non-abelian for every $n \geq 3$.
  \end{enumerate} 
 
 \item
@@ -2573,20 +2571,23 @@ $\sigma$ such that $\sigma \tau \sigma^{-1 } = \mu$.
 \item
 For $\alpha$ and $\beta$ in $S_n$, define $\alpha \sim \beta$ if there
 exists an $\sigma \in S_n$ such that $\sigma \alpha \sigma^{-1} =
-\beta$.  Show that $\sim$ is an equivalence relation on $S_n$.
+\beta$.  
+\begin{enumerate}
+\item
+Show that $\sim$ is an equivalence relation on $S_n$.
+ \item
+Show that if $\alpha \sim \beta$ and $\alpha \in A_n$, then also $\beta \in A_n$.
+ \end{enumerate}
+
  
  
 \item
-Let $\sigma \in S_X$. If $\sigma^n(x) = y$, we will say that $x \sim
-y$. 
+Let $\sigma \in S_X$. If $\sigma^n(x) = y$ for some integer $n$, we will say that $x \sim
+y$. Note that the equivalence relation depends on the permutation $\sigma$.
 \begin{enumerate}
  
  \item
 Show that $\sim$ is an equivalence relation on $X$.
- 
- \item
-If $\sigma \in A_n$ and $\tau \in S_n$, show that $\tau^{-1} \sigma
-\tau \in A_n$. 
  
 \item
 Define the \term{orbit}\index{Orbit} of $x \in X$ under the permutation $\sigma \in
@@ -2608,19 +2609,19 @@ under a permutation $\sigma$ are the equivalence classes corresponding
 to the equivalence relation $\sim$.
  
  
-\item
-A subgroup $H$ of $S_X$ is \term{
-transitive}\index{Subgroup!transitive} if for every $x, y \in X$, 
-there exists a $\sigma \in H$ such that $\sigma(x) =y$. Prove that
-$\langle \sigma \rangle$ is transitive if and only if ${\cal O}_{x,
-\sigma} = X$ for some $x \in X$. 
+%\item
+%A subgroup $H$ of $S_X$ is \term{
+%transitive}\index{Subgroup!transitive} if for every $x, y \in X$, 
+%there exists a $\sigma \in H$ such that $\sigma(x) =y$. Prove that
+%$\langle \sigma \rangle$ is transitive if and only if ${\cal O}_{x,
+%\sigma} = X$ for some $x \in X$. 
  
  
 \end{enumerate}
  
  
 \item
-Show that  $\alpha^{-1} \beta^{-1} \alpha \beta$ is even for all $\alpha,
+Show that  $\alpha^{-1} \beta^{-1} \alpha \beta$ is an even permutation for all $\alpha,
 \beta \in S_n$. 
  
 \end{enumerate}

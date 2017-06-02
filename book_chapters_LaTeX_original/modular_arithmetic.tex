@@ -122,25 +122,64 @@ How are your answers in (a) related to the corresponding answers in Exercise~\re
 
 You may have noticed that different displacements may correspond to the same position. For example, displacements of 8, 23, and -17 all correspond to the same position (namely 3). We say that two displacements that correspond to the same position are \emph{equivalent}. The fact that displacements 8 and 23 are equivalent on a 5-mile racetrack may be expressed mathematically as: $13 \equiv 18 \pmod{5}$.
 
-So how can you tell when two displacements correspond to the same position?  
-In our racetrack example we may notice that 8, 23, and -17 all  have remainder 3 when divided by 5. In general, if we're dealing with a situation that uses modulus $m$, then we define modular equivalence
-as follows:
+How can you tell when two displacements correspond to the same position?  
+In our racetrack example we may notice that 8, 23, and -17 all  have remainder 3 when divided by 5. 
+So in this example at least, we can see that the position  on the racetrack corresponds to the remainder when the displacement is divided by the length of the racetrack (which serves as the modulus).
+You may verify that this is true for any displacement: the position is what's left after all whole multiples of 5 are taken out.
+
+This seems to indicate that we can define a notion of equivalence in terms of remainders. But let's be careful here. You've probably been finding remainders since elementary school--but have you really thought about what you're doing?
+How do you know there will always be a remainder? And how do you know there's only one?  Why couldn't some numbers have two different remainders, and some have none at all? It appears that before we can define modular equivalence in terms of remainders, 
+first we're going to have to establish some solid facts about remainders:
+
+\begin{prop}{DivAlg}(\emph{The }\term{division algorithm})  
+Given any integer $a$ and any positive integer $m$, then there exists  a unique number $r$ between $0$ and $m-1$ such that  $a = q \cdot m + r$ for some integer $q$. In this expression, $q$  is called the  \term*{quotient}\index{Quotient! under integer division}, and $r$ is called the \term*{remainder}\index{Remainder!under integer division}.  
+\end{prop}
+
+\begin{proof}
+It turns out that proving this ``simple'' fact is not so simple! Although this fact has been used for millennia (it's sometimes called \term{Euclidean division}, because Euclid used it ca. 300 B.C.), the first rigorous proof was found relatively recently.  There are actually two things to prove: first, that the remainder $r$  exists, and second, that it's unique. We're going to punt on the `existence' part: you can find the proof in a book on number theory.\footnote{Or check the internet, e.g.:  \url{www.oxfordmathcenter.com/drupal7/node/479}.}
+The `unique' part is proved by the following fill-in-the-blanks exercise:
+
+\begin{exercise}{27} 
+Fill in the blanks in the following proof that the remainder is always unique.
+
+\noindent
+We'll give a proof by contradiction. Suppose that $a$ has two different remainders when divided by $m$.  Let's call these two different remainders $r$ and $s$, where $r$ and $s$ are both between 0 and $\underline{~<1>~}$ and $r \neq s$.
+
+It follows that $a = q \cdot m + r$ and $a = p \cdot m + \underline{~<2>~}$, where $q$ and  $p$ are $\underline{~<3>~}$. Setting these two expressions equal and rearranging enables us to obtain an expression for $r-s$, namely:
+$r - s = (\underline{~<4>~})\cdot m$. Thus $r-s$ is an integer multiple of $\underline{~<5>~}$.
+
+On the other hand, we  know that $r \ge 0$ and $s \le \underline{~<6>~}$, so by arithmetic we obtain $r - s \ge \underline{~<7>~}$.
+Furthermore, $r \le \underline{~<8>~}$ and $s \ge \underline{~<9>~}$, so $r - s \le \underline{~<10>~}$. Combining these two results, we find
+that $r-s$ is an integer between $\underline{~<11>~}$ and $\underline{~<12>~}$.
+
+Now, the only integer multiple of $m$ between $\underline{~<13>~}$ and $\underline{~<14>~}$ is  $\underline{~<15>~}$.  It follows that $r - s = \underline{~<16>~}$,
+or $r = \underline{~<17>~}$. But this contradicts our supposition that $\underline{~<18>~}$. So our supposition cannot be true: and $a$ cannot have $\underline{~<19>~}$.
+Thus the remainder when $a$ is divided by $m$ is unique, and the proof is complete.
+\end{exercise}
+\end{proof}
+
+Now that we know that unique remainders really do always exist, we're in a position to use them in our definition of modular equivalence: 
 
 \begin{defn}\label{definition:modular:equivalence}
  Two integers $a$ and $b$ are \term*{equivalent} mod $m$\index{Modular equivalence!first definition}  if both $a$ and $b$ have the same remainder when divided by $m$. To denote that $a$ and $b$ are \term{equivalent} mod $m$, we write: $a \equiv b \pmod{m}$.
  \end{defn}
-
-\begin{rem}\label{DivAlg}
-This definition uses the notion of \emph{remainder},\index{Remainder} which we're assuming you're familiar with from  basic algebra. To be precise, the remainder of $a$ when divided by $m$ is a number $r$ between $0$ and $m-1$ such that  $a = q \cdot m + r$ for some integer $q$ ($q$ is called the ``quotient'').  In your basic algebra class you we always able to find a remainder for any division problem, and there was always just one right answer for the remainder. In other words, you found that the remainder always exists, and is unique. This ``basic" fact is actually not so easy to prove. It may be proved using the so-called \term{division algorithm}. You may find a proof in any book on number theory.
-\end{rem}
 
 \begin{rem}
 Notice that Definition~\ref{definition:modular:equivalence} uses the 3-lined ``$\equiv$'' here instead of the usual $=$ sign. This notation is used  to emphasize the fact that modular equivalence resembles equality, but is not quite the same thing.  For example, we have already seen that 8 and 23 are equivalent mod 5, even though they are not equal.  In a later chapter we'll discuss equivalence relations, and we'll see that equivalence is in some sense a generalization of equality. For now,  be alerted to the fact that ``$\equiv$'' and ``$=$'' do not necessarily have the same properties. It's tempting for instance to make statements such as, ``$a \equiv b \pmod{m}$ implies $a-b \equiv 0 \pmod{m}$''. But just because this is true for $=$ doesn't mean it's also true for $\equiv$!  In this case the statement turns out to be true, but it requires proof -- and in this class you are not allowed to make assertions that have not been proven.\footnote{This may be one reason why not many mathematicians are politicians, and vice-versa.}  
 \end{rem}
 
 \begin{rem}
-**(\emph{Important}) Many references use the expression ``$a \bmod m$'' to denote the remainder when $a$ is divided by $m$.  We prefer not to use this notation, since it can sometimes be confusing.  For example, according to this notation it is not true that $12 = 17 \bmod 5$, even though it is true that $12 \equiv 17 \pmod{5}$.   We will use instead the expression `` mod($a,m$)'' to indicate the remainder of $a$ when divided by $m$.  This is the notation used in most mathematical software (such as Excel and Matlab), and it reflects the fact that the remainder is a function of $a$ and $m$. 
+**(\emph{Important})** Many references use the expression ``$a \bmod m$'' to denote the remainder when $a$ is divided by $m$.  We prefer not to use this notation, since it can sometimes be confusing.  For example, according to this notation it is not true that $12 = 17 \bmod 5$, even though it is true that $12 \equiv 17 \pmod{5}$.   We will use instead the expression ``mod($a,m$)'' to indicate the remainder of $a$ when divided by $m$.  This is the notation used in most mathematical software (such as Excel and Matlab), and it reflects the fact that the remainder is a function of $a$ and $m$. 
 \end{rem}
+
+The following result enables us to verify when we've indeed found a remainder.
+
+\begin{prop}{remThm} If $a \equiv r \pmod{m}$ and $0 \le r \le m-1$, then $r = \bmod(a,m)$.
+\end{prop}
+
+\begin{proof}
+Given that $a \equiv r \pmod{m}$, by the definition of modular equivalence it follows that $a$ and $r$ have the same remainder mod $m$.  But since $0 \le r \le m-1$, the remainder of $r$ is $r$ itself. It follows that the remainder of $a$ is also $r$: so $r = \bmod(a,m)$.
+\end{proof}
 
 There is an alternative (and very useful) way to determine modular equivalence.
 Suppose that $a \equiv b \pmod{m}$, so that $a$ and $b$ have the same remainder when divided by $m$. Let's call this remainder $r$. Then we can write  $a = p \cdot m + r$ and $b = q \cdot m + r$ for some integers $p,q$ It follows from basic algebra that $a - p \cdot m =b - q \cdot m$. We then proceed step-by-step using basic algebra as follows:
@@ -148,7 +187,7 @@ Suppose that $a \equiv b \pmod{m}$, so that $a$ and $b$ have the same remainder 
 &a - p \cdot m = b - q \cdot m \\
 \implies &\quad a - b = p \cdot m - q \cdot m \\
 \implies &\quad a - b = (p - q) \cdot m. \\
-\implies &\mbox{ $a - b$ is divisible by $m$}.
+\implies &\quad a - b  \text{ is divisible by } m.
 \end{align*}
 In summary, we have shown that
 \[\text{If } a \equiv b \pmod{m}  \text{ then } a - b \text{ is divisible by } m.\]
@@ -183,14 +222,19 @@ We may rewrite Proposition~\ref{proposition:modular:equivalence_alt} more elegan
 \[
 a \equiv b \pmod{m} \mathrm{~iff~} m | (a - b).
 \]
-Note the two shorthand expressions we have used here:  the symbol  `$\in$'  means `contained in' or `elements of', while the single vertical line `|' means ``divides'.
+Note the two shorthand expressions we have used here:  the symbol  `$\in$'  means `contained in' or `elements of', while the single vertical line `$|$' means ``divides'.
 
 
-The following proposition establishes important facts about modular equivalence that we'll need later.\footnote{This proposition actually establishes that modular equivalence is  both \emph{transitive} and \emph{symmetric}. We'll talk more about transitive, symmetric relations in the Equivalence Relations chapter.}
+The following proposition establishes important facts about modular equivalence that we'll need later.
 
 \begin{prop}{equivalence_transitive}
 Given any integers $a, b, c$ and a positive integer $n$ such that $a \equiv b \pmod{n}$ and $c \equiv b \pmod{n}$. Then it is also true that $a \equiv c, c \equiv a, b \equiv a,$ and $ b \equiv c$ (all these equivalences are $\pmod{n}$) .
 \end{prop}
+
+\begin{rem}
+This proposition actually establishes that modular equivalence is  both \emph{transitive} and \emph{symmetric}. If you haven't seen this terminology before don't worry--we'll talk about transitive and symmetric relations in the Equivalence Relations chapter.
+\end{rem}
+
 \begin{exercise}{eqproof}
 Prove Proposition~\ref{proposition:modular:equivalence_transitive}. 
 \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}\footnote{All *Hints* can be found at the end of the book (or by clicking on the *Hints* link.)}
@@ -245,9 +289,9 @@ However, our new concept of modular equivalence gives us another way of solving 
 \begin{example}{mod_add_new}
 Suppose  Dusty drives around the 5-mile track 112 miles in a positive direction, then 49 miles in a negative direction, then 322 miles in a positive direction.  To find Dusty's net displacement we may take $112 - 49 + 322 = 385$ and then take the remainder mod $5$ (which turns out to be 0). But notice that:
 \begin{align*}
-112 &\equiv 2 \pmod{5},\\
--49 &\equiv 1 \pmod{5},\\
-322 &\equiv 2 \pmod{5},\\
+\bmod(112,5) &= 2,\\
+\bmod(-49,5) &= 1,\\
+\bmod(322,5) &= 2,\\
 \end{align*}
 and we compute
 \[2 + 1 + 2 = 5 \equiv 0 \pmod{5}. \]
@@ -265,8 +309,8 @@ Suppose I travel on my racetrack at a 113 miles per hour in the positive directi
 \end{align*}
 On the other hand, we may reach the same conclusion by a somewhat easier route:
 \begin{align*}
-113 &\equiv 3 \pmod{5},\\
-17 &\equiv 2 \pmod{5},
+\bmod(113,5) &= 3,\\
+\bmod(17,5) &= 2,
 \end{align*}
 and we compute
 \[3 \cdot 2 = 6 \equiv 1\pmod{5}. \]
@@ -275,7 +319,7 @@ Again, we have obtained the correct answer by \emph{replacing each number with i
 
 Does this work in general? In fact it does! However, this requires a mathematical proof.  We will discuss the proof in a later section -- but at least our discussion shows that \emph{arithmetic with remainders} is meaningful and useful.
 
-If we're doing arithmetic $\pmod{n}$, then the remainders will necessarily be between $0$ and $n-1$ (inclusive). This set of  remainders has a special name, which later on we'll use extensively.
+If we're doing arithmetic $\pmod{n}$, then the remainders will necessarily be between $0$ and $n-1$ (inclusive). This set of  remainders has a special name, which later on we'll use extensively:
 
 \begin{defn}\label{integers_mod_n}\index{Integers mod $n$}
 The set of integers $\{0,1,\ldots,n-1\}$ is called the set of \term{integers mod $n$}, and is denoted by the symbol ${\mathbb Z}_n$.
@@ -284,26 +328,6 @@ The set of integers $\{0,1,\ldots,n-1\}$ is called the set of \term{integers mod
 \begin{rem}
 In this chapter, we are considering ${\mathbb Z}_n$ as a subset of $\mathbb{Z}$. Later on in Chapter~\ref{EquivalenceRelationsChap} we will view ${\mathbb Z}_n$ from an entirely different perspective. (You don't really need to know this now--just file it away for future reference.)
 \end{rem}
-
-We will need the following proposition later:
-
-\begin{prop}{equiv_mod_n}
-Suppose $a,b \in  {\mathbb Z}_n$ and $a \equiv b \pmod{n}$. Then $a = b$.
-\end{prop}
-
-\begin{exercise}{27} 
-Fill in the blanks in the following proof of Proposition~\ref{proposition:modular:equiv_mod_n}.
-
-\noindent
-We are given that $a,b \in  {\mathbb Z}_n$, which implies that $a \geq 0$ and $b \leq  \underline{~<1>~}$, so that $-b \geq  \underline{~<2>~}$.
-It follows by adding these inequalities that $a - b \geq   \underline{~<3>~}$. 
-Furthermore, since $a,b \in  {\mathbb Z}_n$, we have $a \leq \underline{~<4>~}$ and $b \geq  \underline{~<5>~}$, so that $-b \leq  \underline{~<6>~}$.
-It follows by adding these two results that $a - b \leq  \underline{~<7>~}$. In other words,  $a - b$ is between $\underline{~<8>~}$ and $\underline{~<9>~}$. 
-
-Furthermore, we were given that $a \equiv b \pmod{n}$. It follows from Proposition~\ref{proposition:modular:equivalence_alt} that $\underline{~<10>~}$ is  a multiple of $\underline{~<11>~}$. 
-The only multiple of $\underline{~<12>~}$ between $\underline{~<13>~}$ and $\underline{~<14>~}$ is $\underline{~<15>~}$, so that $a - b = \underline{~<16>~}$. It follows by algebra that $a = \underline{~<17>~}$, and the proof is complete.
-\end{exercise}
-
 
 \begin{exercise}{28}
 Now you're ready! Give answers for the seven examples at the beginning of this chapter.
@@ -1188,28 +1212,28 @@ Our first step towards showing that ordinary arithmetic can be replaced with ari
 Given $\ell,m \in {\mathbb Z}$. If $a =\bmod(\ell,n)$ and $b=\bmod(m,n)$, then 
 \begin{enumerate}[(a)]
 \item
-$\ell+ m \equiv a \oplus b \pmod{n}$, 
+$\bmod(\ell+ m,n) = a \oplus b$, 
 \item
-$\ell \cdot m \equiv a \odot b \pmod{n}$.
+$\bmod(\ell \cdot m,n) = a \odot b$.
 \end{enumerate}
 \end{prop}
 
 Before we prove the proposition, let's give an example of how it can be applied. Suppose we know that:
-\[   8640 \equiv 2 \pmod{7} \quad \text{and} \quad 1059895 \equiv  4 \pmod{7},
+\[   \bmod(8640,7)= 2 \quad \text{and} \quad \bmod(1059895,7)=  4,
 \] 
 and we want to compute the following remainders: 
 \[
 \text{mod}(8640 + 1059895,7) \quad \text{ and} \quad  \text{mod}(8640 \cdot 1059895, 7).
 \]  
-Well, let's apply the proposition. If we let $\ell=8640$ then we must let $a=2$, since $2=\text{mod}(8640,7)$. Similarly, if we let $m=1059895$ then we must let $b=4$. But then what does the proposition say? Substituting: 
+Well, let's apply the proposition. If we let $\ell=8640$ then we must let $a=2$, since $2=\text{mod}(8640,7)$. Similarly, if we let $m=1059895$ then  $b$ must be 4. But then what does the proposition say? Substituting: 
 \[
 \ell \rightarrow 8640, m \rightarrow 1059895, a \rightarrow 2, \text{ and } b \rightarrow 4,
 \]
 we get:
 \[
-8640+ 1059895 \equiv 2 \oplus 4 \pmod{7}, \quad \text{and} \quad 8640l \cdot 1059895 \equiv 2 \odot 4 \pmod{7},
+\bmod(8640+ 1059895,7) = 2 \oplus 4 , \quad \text{and} \quad \bmod(8640 \cdot 1059895,7) = 2 \odot 4,
 \]
-which gives us 6 and 1  for the sum and product, respectively.  Isn't this  and awful lot simpler than adding and multiplying those two large numbers?
+which gives us 6 and 1  for the sum and product, respectively.  Isn't this  an awful lot simpler than adding and multiplying those two large numbers?
 
 \noindent
 So let's get back to the proof.  We'll do (a) here: part (b) is left as an exercise.
@@ -1223,6 +1247,8 @@ Now by the definition of $\oplus$ there is some $p \in {\mathbb Z}$ such that  $
 \[ \ell + m = (a \oplus b) + pn + (s + t)n = (a \oplus b) + ( p + s + t)n. \mathrm{~~~~~~(subs.~and~ basic~algebra)} \]
 Hence by the definition of modular equivalence, 
 \[ \ell + m \equiv a \oplus b \pmod{n}. \]
+Now since $a \oplus b$ is between $0$ and $n-1$ by definition, it follows from Proposition~\ref{proposition:modular:remThm} that
+\[ \bmod(\ell + m,n)= a \oplus b. \]
 \end{proof}
 
 \begin{exercise}{44}
@@ -1235,7 +1261,7 @@ Come up with a definition for modular subtraction (use the symbol $\ominus$).
 Using your definition, prove the following:
 
 \noindent
-Given $\ell,m \in {\mathbb Z}$. If $a =\bmod(\ell,n)$ and $b=\bmod(m,n)$, then  $\ell - m \equiv a\ominus b \pmod{n}$.
+Given $\ell,m \in {\mathbb Z}$. If $a =\bmod(\ell,n)$ and $b=\bmod(m,n)$, then  $\bmod(\ell - m,n) = a\ominus b $.
 \end{enumerate}
 \end{exercise}
 
@@ -1258,13 +1284,13 @@ Now that we've proven Proposition~\ref{proposition:modular:number_remainder}, we
 \begin{enumerate}[(a)]
 \item
 Using part (b) of Proposition~\ref{proposition:modular:number_remainder} above, 
-show that if $\ell \in {\mathbb Z}$ and $a=\bmod(\ell,n)$ then $\ell^2 \equiv a \odot a \pmod{n}$. \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}]
+show that if $\ell \in {\mathbb Z}$ and $a=\bmod(\ell,n)$ then $\bmod(\ell^2,n) = a \odot a $. \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}]
 \item 
 Using part (a) prove a similar relation involving $\ell^3$.
 \item 
 Using part (b) prove a similar relation involving $\ell^4$.
 \item
-From parts (a),(b) and (c), what do you conclude about $\ell^k$ where $k$ is any natural number?
+From parts (a),(b) and (c), what do you infer about $\ell^k$ where $k$ is any natural number? (Note that to actually \emph{prove} this fact requires the use of induction.)
 \end{enumerate}
 \end{exercise}
 
@@ -1273,14 +1299,16 @@ From parts (a),(b) and (c), what do you conclude about $\ell^k$ where $k$ is any
 Given $\ell,m,p \in {\mathbb Z}$ and $a=\bmod(\ell,n), b=\bmod(m,n),$ and $c=\bmod(p,n)$.  Show the  following equivalences using Proposition~\ref{proposition:modular:number_remainder}.
 \begin{enumerate}[(a)]
 \item
-$ (\ell +m) + p \equiv (a \oplus b) \oplus c \pmod{n}$.\qquad
+$\bmod( (\ell +m) + p,n) = (a \oplus b) \oplus c$.\qquad
 \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 \item
-$ (\ell \cdot m) \cdot p \equiv (a \odot b) \odot c \pmod{n}.$
+$\bmod( (\ell + (m + p),n) = a \oplus (b \oplus c)$.
 \item
-$ (\ell \cdot m) + p \equiv (a \odot b) \oplus c \pmod{n}. $
+$\bmod( (\ell \cdot m) \cdot p) = (a \odot b) \odot c .$
 \item
-$ (\ell + m) \cdot p \equiv (a \oplus b) \odot c \pmod{n}. $
+$ \bmod((\ell \cdot m) + p) = (a \odot b) \oplus c . $
+\item
+$ \bmod((\ell + m) \cdot p) = (a \oplus b) \odot c \pmod{n}. $
 \end{enumerate}
 \end{exercise}
 
@@ -1289,7 +1317,7 @@ We can use similar methods as in Exercise~\ref{exercise:modular:ops}, to show th
 This completes our discussion showing that arithmetic mod $n$ can be reduced to arithmetic in ${\mathbb Z}_n$.  What we've shown can simplify other modular arithmetic arguments as well:
 
 \begin{exercise}{number_remainder}
-Prove the following proposition, which is slightly different from Proposition~\ref{proposition:modular:number_remainder}.  (In fact, to prove (a) here you may use  part (a) of   Proposition~\ref{proposition:modular:number_remainder} twice, and similarly for (b).)
+Prove the following proposition, which relies on Proposition~\ref{proposition:modular:number_remainder}.  (In fact, to prove (a) here you may use  part (a) of   Proposition~\ref{proposition:modular:number_remainder} twice, and similarly for (b).)
 
 \noindent {\bf Proposition}: Given $\ell,m,x,y \in {\mathbb Z}$ where $\ell \equiv x \pmod{n}$ and $m \equiv y \pmod{n}$, then 
 
@@ -1402,13 +1430,13 @@ Use the above Cayley tables for $\oplus$ and $\odot$  in $\integer_5$ to calcula
 
 \begin{enumerate}[(a)]
 \item
-$ \mod(456 \cdot (252 + 54),5) $
+$ \bmod(456 \cdot (252 + 54),5) $
 \item
-$ \mod(523 + \left( 4568 \cdot (43 + 20525) \right),5)$
+$ \bmod(523 + \left( 4568 \cdot (43 + 20525) \right),5)$
 \item
-$\mod((456 \cdot 252) + (456 \cdot 54),5) $
+$\bmod((456 \cdot 252) + (456 \cdot 54),5) $
 \item
-$ \mod(523 + \left( (4568 \cdot 43) + (4568 \cdot 20525) \right) ,5)$
+$ \bmod(523 + \left( (4568 \cdot 43) + (4568 \cdot 20525) \right) ,5)$
 \end{enumerate}
 \end{exercise}
 
@@ -1452,7 +1480,7 @@ $\oplus$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 
 \begin{table}[h]
 \caption{\label{groups_Z8_mult_table} Multiplication table for ${\mathbb Z}_8$}
-{ \small
+{\small
 \begin{center}
 \index{Table!multiplication} 
 \begin{tabular}{c|cccccccc}
@@ -1660,20 +1688,16 @@ We'll prove associativity, and  you'll prove the other parts as exercises (the p
 \term{Modular addition is associative:}
 Given $a,b,c$ are elements of $\mathbb{Z}_n$, 
 we may apply part (a) of Exercise~\ref{exercise:modular:ops} and get
-\[ (a + b) + c  \equiv  (a \oplus b) \oplus c \pmod{n}. \]
+\[ \bmod((a + b) + c),n) =  (a \oplus b) \oplus c. \]
 Similarly, we may apply part  (b) of Exercise~\ref{exercise:modular:ops} to get
-\[ a + (b + c)  \equiv  a \oplus (b \oplus c) \pmod{n}. \]
+\[ \bmod(a + (b + c),n) =  a \oplus (b \oplus c). \]
 Now here's where we use regular arithmetic. The associative property of integer addition tells us that $(a+b)+c = a + (b + c) $, so the left-hand sides are equal. 
-By 
-Proposition~\ref{proposition:modular:equivalence_transitive} (the ``transitive property'') we get
-\[ (a \oplus b) \oplus c  \equiv  a \oplus (b \oplus c) \pmod{n}. \]
-Since  $(a \oplus b) \oplus c$  and  $a \oplus (b \oplus c)$ are both in ${\mathbb{Z}}_n$, it follows from Proposition~\ref{proposition:modular:equiv_mod_n} that  
-$(a \oplus b) \oplus c = a \oplus (b \oplus c)$, and the proof is complete. 
+So $(a \oplus b) \oplus c = a \oplus (b \oplus c)$, and the proof is complete. 
 \end{proof}
  
 \begin{exercise}{}
 Explain the step in the above proof where we used  part (a) of Exercise~\ref{exercise:modular:ops} to conclude that
-$(a + b) + c  \equiv  (a \oplus b) \oplus c \pmod{n}$.  What values are we using for $\ell, m, p$, and why is it OK to use these values?
+$\bmod((a + b) + c,n) =  (a \oplus b) \oplus c$.  What values are we using for $\ell, m, p$, and why is it OK to use these values?
 \end{exercise}
 
 \begin{exercise}{}
@@ -1714,6 +1738,7 @@ We have shown that  ${\mathbb Z}_n$ is a group under the operation $\oplus$ for 
 \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 \item
 Show that the nonzero elements of ${\mathbb Z}_3$ (that is, ${\mathbb Z}_3 \setminus \{0\}$)  is a group under $\odot$.
+\item
 Is ${\mathbb Z}_n \setminus \{0\}$ a group under $\odot$ for \emph{every} integer $n \ge 2$?  \emph{Justify} your answer.
 \end{enumerate}
 \end{exercise}
@@ -1730,7 +1755,7 @@ The following problem may not seem to have anything to do with modular arithmeti
 
 \begin{example}{2sticks} Someone gives us a pencil and two unmarked sticks of lengths 52 cm and  20 cm respectively (see Figure~\ref{fig:1euclidean}). We are told to make measuring sticks by using the pencil to make markings on the sticks. Question: what is the smallest length that we can accurately measure? 
 \begin{figure}
-\begin {center} 
+\begin{center} 
 \includegraphics[width=1.00\textwidth]{images/2_sticks_step1.png}
 \end {center}
 \caption{Two sticks\label{fig:1euclidean}}
@@ -1739,7 +1764,7 @@ Clearly we can measure 20 cm lengths with the shorter rod, but is it possible to
 
 Here's one way to look at the situation. Imagine for a moment that we lay the 20 cm measuring stick next to the 52 cm stick such that the ends line up.  At that point we could make a 20 cm mark on the 52 cm stick (see Figure~\ref{fig:2}).
 \begin{figure}
-\begin {center} 
+\begin{center} 
 \includegraphics[width=1.00\textwidth]{images/2_sticks_step2.png}
 \end {center}
 \caption{First mark\label{fig:2}}
@@ -1832,7 +1857,7 @@ The general question we now consider is: What's a good way to find the gcd of tw
 
 At this point, let's think back to our two-sticks problem. We saw that when we began with sticks of length 52 and 20, we ended up with a minimum measurable distance of 4--which just so happens to be the gcd of 52 and 20! So to get the gcd of 583768 and 260568447, in theory we could try creating one stick of length 583768 and another of length 260568447 and follow the same procedure. Of course this isn't practical. So instead, we'll try to duplicate the same procedure mathematically, without resorting to actual sticks.  Notice that when we subdivided a larger stick of length $a$ into sections of the length of $b$, the result was essentially the same as dividing $a$ by $b$ while leaving a remainder $r$.  See if you can complete the connection in the following example.
 
-\begin {example} {Greatest Common Divisor}
+\begin{example} {Greatest Common Divisor}
 Let's use algebraic language to express the two-sticks algorithm applied to 52 and 20.
 Let's start by setting this up as a division problem with a remainder, again since this is effectively what is being done in the stick example above.
 \[ 52 = 20\cdot x + b\]
@@ -1868,7 +1893,7 @@ The Euclidean algorithm applied to two integers will give the gcd of those two i
 \begin{proof}
 This proof is broken up into two parts, (A) and (B).  Part (A) shows that the algorithm always produces a divisor of the two given integers.  Part (B) shows that the produced divisor is indeed the gcd.
 
-\begin {enumerate}[(A)]
+\begin{enumerate}[(A)]
 \item
 Given integers $a$ and $b$ and $a>b$ if we were to plug them into the Euclidean Algorithm we get:
 \[a = b\cdot q_1 + r_1\]
@@ -2004,7 +2029,7 @@ This second example is also in C++, but uses recursion.
 } 
 \end{verbatim}
 
-\begin {exercise}{Computer_exercise} Create a spreadsheet (with  Excel, LibreOffice, or OpenOffice) that calculates the gcd of two integers that uses the procedure above. Excel has a built-in gcd function, but you're not allowed to use it for this exercise.But you may  use the MOD function: ``=MOD(A2,B2)'' will compute the remainder when A2 is divided by B2.  You may refer to the spreadsheet in Figure~\ref{fig:gcd_spreadsheet} for ideas.
+\begin{exercise}{Computer_exercise} Create a spreadsheet (with  Excel, LibreOffice, or OpenOffice) that calculates the gcd of two integers that uses the procedure above. Excel has a built-in gcd function, but you're not allowed to use it for this exercise.But you may  use the MOD function: ``=MOD(A2,B2)'' will compute the remainder when A2 is divided by B2.  You may refer to the spreadsheet in Figure~\ref{fig:gcd_spreadsheet} for ideas.
 \end {exercise}
 \begin{figure}[h]
 \begin{center}
@@ -2118,9 +2143,9 @@ which after working out the algebra gives us:
 $$ x = 24 + 863 \ell, y = 29 + 1053 \ell.$$
 \end{example}
  
-\begin {exercise}{}
+\begin{exercise}{}
 Using the process above, find all integer solutions to the following equations.
-\begin {enumerate} [(a)]
+\begin{enumerate} [(a)]
 \item
 $45m + 16n = 27$
 \item
@@ -2148,9 +2173,9 @@ Modify the spreadsheet from Exercise~\ref{exercise:modular:Computer_exercise} to
 
 Do all  Diophantine equation have solutions? Let's investigate.
 
-\begin {exercise}{diophant}
+\begin{exercise}{diophant}
 Explain why the following Diophantine equations have no integer solutions.
-\begin {enumerate} [(a)]
+\begin{enumerate} [(a)]
 \item
 $2m + 4n = 1$
 \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
@@ -2173,7 +2198,7 @@ We'll represent the gcd of $a$ and $b$ by the letter $d$. Since gcd($a,b$) divid
 It follows that $c$ is a multiple of, $d$, which is the gcd of $a$ and $b$.
 \end{proof}
 
-\begin {exercise}{prop74}
+\begin{exercise}{prop74}
 Prove the ``if'' part of Proposition~\ref{proposition:modular:74}. 
 \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 \end{exercise}
@@ -2195,7 +2220,7 @@ Use your solution to solve the modular equation:  $119y \equiv 53 \pmod{242}$.
 This example shows that Diophantine equations are just modular equations in a disguised form!  Furthermore, each Diophantine equation is associated with \emph{two} modular equations:
 
 \begin{exercise}{}
-Given that $(m,n)$ is a solution to $a \cdot m + b \cdot n  = c$, give (a) a modular equation with base $n$  involving $a,c$ that has $m$ as a solution; and (b) a modular equation with base $m$ involving $b,c$ that has $n$ as a solution.
+Given that $(m,n)$ is a solution to $a \cdot m + b \cdot n  = c$, give (a) a modular equation with base $b$  involving $a,c$ that has $m$ as a solution; and (b) a modular equation with base $a$ involving $b,c$ that has $n$ as a solution.
 \end{exercise}
 
 
@@ -2205,7 +2230,7 @@ In Example~\ref{example:modular:speed_up2}, we saw that not all equations of the
 Given a modular equation $ax \equiv c\pmod{b}$, where $a,b,c$ are  integers. Then the equation has an integer solution for $x$ if and only if $c$ is an integer multiple of the greatest common divisor of $a$ and $b$.  
 \end{prop}
 
-\begin {exercise}{propiff}
+\begin{exercise}{propiff}
 Prove both the ``if''  and the ``only if'' parts of Proposition~\ref{proposition:modular:mod_eq_solution}.
 \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 \end{exercise}
@@ -2402,7 +2427,7 @@ From the Euclidean algorithm, we know there is a solution to this congruence if 
 
 \begin{exercise}{}
 Solve the following pairs of congruences or show that they have no common solution:
-\begin {enumerate}[(a)]
+\begin{enumerate}[(a)]
 \item
 $x \equiv 2 \pmod{3}; \quad x \equiv 3 \pmod{4}.$
 \item
@@ -2414,7 +2439,7 @@ $x \equiv 2 \pmod{6}; \quad  x \equiv 56 \pmod{72}.$
 \end {enumerate}
 \end {exercise}
 
-\begin {exercise}{congruence}
+\begin{exercise}{congruence}
 \begin{enumerate}[(a)]
 \item
 Find a pair of congruences of the form: $x \equiv a \pmod{9};~~x \equiv b \pmod{15}$ that have no common solution.
@@ -2455,7 +2480,7 @@ Substitute to obtain $x = 1 + 2(47+ 63j) = 95 + 126j \equiv 95 \pmod{126}.$.
 
 \begin{exercise}{}
 Solve the following sets of congruences or show that they do not have a solution:
-\begin {enumerate}[(a)]
+\begin{enumerate}[(a)]
 \item
 $x \equiv 2 \pmod{3}; \quad x \equiv 3 \pmod{4}; \quad x \equiv 4 \pmod{5}.$
 \item

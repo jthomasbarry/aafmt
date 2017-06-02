@@ -1,3 +1,6 @@
+%%%% Search for '%%%%' and address issues
+%%%% make sure the following is taken care of
+
 % Important results -- Gauss lemma, solution by radicals
 % make sure definition of multiplication props is correct
 % multiplication -- usual definition (term by term). Then show rearrangement. Make sure the same result is not duplicated elsewhere.
@@ -13,8 +16,8 @@
 This chapter contains contributions from David Weathers, Johnny Watts, and Semi Harrison (edited by C.T.). Thanks to Tom Judson for material used in this chapter. 
 
 \section{Polynomials of various stripes\quad
-\sectionvideohref{2FuGOJ3kHTU&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=47}}
-Way back in our days of youth we learned how to add, subtract, multiply, and divide polynomials.
+\sectionvideohref{2FuGOJ3kHTU&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=47}}\label{sec:polyStripe}
+At some point during our halcyon days of youth we learned how to add, subtract, multiply, and divide polynomials.
 For instance, if we have
 \begin{align*} 
 p(x) & = x^3 -3x +2 \\
@@ -29,7 +32,7 @@ p(x) + q(x)
 \end{align*}
 Notice that we have grouped together terms which have the same power of our variable $x$, which is not only pretty but also very useful later on.  
 
-Multiplication of polynomials is a bit more involved, so let us start with polynomials of single terms (monomials) and then move up from there.  Suppose we have,
+Multiplication of polynomials is a bit more involved, so we'll start with polynomials of single terms (monomials) and work our way up from there.  Suppose we have:
 \begin{align*} 
 p(x)  = 5x^3\text{ and }  
 q(x)  = 3x^2.
@@ -43,7 +46,7 @@ p(x)  q(x)
 \end{align*}
 where we combined the coefficients and the exponents (remember your exponent rules!).  
 
-Let's extend ourselves and multiply a polynomial of two terms by a monomial:
+Let's extend ourselves a bit and multiply a polynomial of two terms by a monomial:
 \begin{align*} 
 p(x)  = 5x^3 + 2x \text{ and }
 q(x)  = 3x^2.
@@ -141,6 +144,8 @@ Which of the following are groups under multiplication: $\mathbb{N}[x]$, $\mathb
 \end{enumerate}
 \end{exercise}
 
+%%%%% Add 2 more exercises here
+%%%%% Check answer key
 \begin{exercise}{poly3}
 Compute the sum and product of $p(x)$ and $q(x)$.
 \begin{enumerate}[(a)]
@@ -154,17 +159,22 @@ $p(x)= 2x^4 + 3x^3 + 4x^2+1$, $q(x)=x^3 +2x^2+5$, where both polynomials are in 
 In some sense, polynomials are more complicated than groups because they have two operations, while groups have only one. It turns out that polynomials are important examples of a second type of mathematical object called a \emph{ring}.
 In this chapter we won't go beyond polynomials, but you should be aware that there's more to the story, and the study of rings forms a large part of modern abstract algebra.
 
-\section {Polynomial rings over fields\quad
+\section{Polynomial rings over fields\quad
 \sectionvideohref{Q5q-LL4QW4o&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=48}}
  We have noted above that polynomials can have different types of coefficients. 
 In this section we will  impose some properties on the coefficients that, although quite general, will enable us to prove several interesting properties. But first, let's relate polynomials to the summation notation that we discussed in the previous chapter:
 
-\begin{defn} (\emph{Summation notation}) A polynomial may be written as
+\begin{defn}\label{def:sumPoly} (\emph{Summation notation}) A polynomial may be written as
 
 \[f(x) = a_0 + a_1 x +a_2 x^2 + \cdots + a_n x^n = \sum^{n}_{i=0} a_i x^i, \]
 
-Where $\{ a_i ,  i=1,2,\ldots n\}$ are called the \term{coefficients} \index{Polynomial!coefficients} of $\{x^i\}$. It is possible for $a_i = 0$, in which case we usually omit the corresponding $x^i$ term (for instance, we write $x^2 -7$ rather than $x^2 + 0x -7$). When we write a polynomial as a sum in this way we will \emph{assume} that $a_n \neq 0$ (here $a_n$ is called the \term{leading coefficient}\index{Polynomial! leading coefficient}.  Thus the largest power of $x$ that appears in the polynomial is $x^n$: this largest power is called the \term{degree}\index{Degree!of a polynomial} of the polynomial.
+Where $\{ a_i ,  i=1,2,\ldots n\}$ are called the \term{coefficients} \index{Polynomial!coefficients} of $\{x^i\}$. It is possible for $a_i = 0$, in which case we usually omit the corresponding $x^i$ term (for instance, we write $-7 + x^2 $ rather than $-7 + 0x +  x^2  $). When we write a polynomial as a sum in this way we will \emph{assume} that $a_n \neq 0$ (here $a_n$ is called the \term{leading coefficient}\index{Polynomial! leading coefficient}.  Thus the largest power of $x$ that appears in the polynomial is $x^n$: this largest power is called the \term{degree}\index{Degree!of a polynomial} of the polynomial.
 \end{defn}
+
+\begin{rem}
+According to  Definition~\ref{def:sumPoly}, we write polynomials with the lowest-order term first, and the highest-order term last. This differs from Section~\ref{sec:polyStripe}, where we put the highest-order term first as we did in secondary school. Since the operation `+'  is commutative, the two ways are equivalent: but we will increasingly use this new way, which turns out to be useful for a number of reasons. 
+\end{rem}
+
 \begin{exercise}{poly4}
 Re-express the following polynomials in summation notation,  and give the degree of each polynomial.
 \begin{enumerate}[(a)]
@@ -199,6 +209,7 @@ $(b + c) \cdot a = b \cdot a + c \cdot a$.
 the clause ``over a field'' is added because of the requirement that the  nonzero coefficients form a group under multiplication. In the most general definition of a polynomial ring, the set of nonzero coefficients is not required to have a multiplicative inverse.
 \end{rem}
 
+%%%% Add 
 \begin{exercise}{poly5}
 \begin{enumerate}[(a)]
 \item
@@ -238,7 +249,7 @@ q(x)  = \sum^{m}_{i=0} b_i x^i,
 then $p(x) = q(x)$ if and only if $n=m$ and $a_i = b_i$ for all $0 \leq i \leq n$.
 \end {defn}
 
-\begin {defn}
+\begin{defn}
 We define the \term{sum of two polynomials}\index{Sum! of polynomials} as follows.  Let
 \begin{align*}
 p(x)  = \sum^{n}_{i=0} a_i x^i ; \qquad
@@ -262,12 +273,12 @@ Throughout this book, we have encountered various mathematical structures and sh
 
 First let us take a look at the commutativity and associativity of addition.  While commutativity is not a necessary property for groups, we include the following proof because it uses techniques that are useful in many polynomial proofs.
 
-\begin {prop}{polysumcommuteassociate} Polynomial addition is both commutative: 
+\begin{prop}{polysumcommuteassociate} Polynomial addition is both commutative: 
 	\[p(x)+q(x) = q(x) + p(x),\]	
 and associative:	
 	\[(p(x) + q(x)) + r(x)  = p(x) + (q(x) + r(x)).\]	
 \end {prop}
-\begin {proof}{}
+\begin{proof}{}
 First, we show commutativity:	
 Given polynomials,
 \begin{align*}
@@ -286,14 +297,14 @@ Since the coefficients are abelian under +, we have $a_i + b_i = b_i + a_i$ for 
 $p(x) + q(x) = q(x) + p(x)$.  Note that the condition that the coefficients be commutative is satisfied for all of the polynomials we have been considering so far, including $\mathbb{Z}[x]$, $\mathbb{R}[x]$, $\mathbb{C}[x]$, and so on.
 
 \end {proof}
-
-\begin {exercise}{}
+%%%% Provide solution
+\begin{exercise}{}
 Using the definition of polynomial equality and polynomial addition, complete Proposition \ref{proposition:poly:polysumcommuteassociate} by proving the associativity of polynomial addition.
 \end {exercise}
 
 It is also true that polynomials under addition have an identity and an inverse.
 
-\begin {prop}{polyadditiveidentity} Polynomials have an additive identity.
+\begin{prop}{polyadditiveidentity} Polynomials have an additive identity.
 \end{prop}
 \begin{exercise}{}
 Show that polynomials have an additive identity by specifying the identity polynomial, and showing that it satisfies the identity property.
@@ -305,14 +316,15 @@ Show that polynomials have an additive identity by specifying the identity polyn
 Given any polynomial $f(x) = \sum_{i=0}^{n} a_i x^i$, show that an additive inverse to that polynomial exists by (a) specifying the inverse and (b) showing that it satisfies the inverse property.
 \end{exercise}
 
-\begin {prop}{polyadditivegroup} Polynomials under addition form a group. The group is abelian if the additive group of coefficients is abelian.
+\begin{prop}{polyadditivegroup} Polynomials under addition form a group. The group is abelian if the additive group of coefficients is abelian.
 \end{prop}
 
 \begin{exercise}{}
 Prove Proposition \ref{proposition:poly:polyadditivegroup}.
 \end{exercise}
 
-If we have a formula for adding polynomials, we must surely have a formula for multiplying polynomials, and sure enough we do.  The easy part is knowing what degree (the value of the highest exponent) of polynomial the result will be, because that is just the sum of the degrees of polynomials being multiplied. For example, a first degree polynomial like $2x+1$ times a second degree polynomial like $4x^2$ gives us $8x^3+4x^2$, which is a third degree polynomial.  By looking at similar examples, you may convince yourself that for \emph{any} two polynomials, if $p(x)$ is a polynomial of degree $m$ and $q(x)$ is a polynomial of degree $n$, then their product will produce a polynomial with a degree of $m+n$:
+If we have a formula for adding polynomials, we must surely have a formula for multiplying polynomials, and sure enough we do.  The easy part is knowing what degree (the value of the highest exponent) of polynomial the result will be, because that is just the sum of the degrees of polynomials being multiplied. For example, a first degree polynomial like $2x+1$ %%%% change the order to the new way -- make sure all others examples are also changed
+ times a second degree polynomial like $4x^2$ gives us $8x^3+4x^2$, which is a third degree polynomial.  By looking at similar examples, you may convince yourself that for \emph{any} two polynomials, if $p(x)$ is a polynomial of degree $m$ and $q(x)$ is a polynomial of degree $n$, then their product will produce a polynomial with a degree of $m+n$:
 \[
 p(x) q(x) = \sum_{k=0}^{m+n} c_k x^k.
 \]
@@ -380,9 +392,10 @@ Doing the same for the other coefficients gives us:
 \[ 0x^0+ 1x^1 + 0x^2 + 5x^3 + (-2)x^4 + 4x^5 + (-8)x^6 \]
 Getting rid of the zero terms and dealing with the negatives gives us the simplified version:
 \[x+5x^3-2x^4+4x^5-8x^6. \]
-\begin {exercise}{mult2way}
+\begin{exercise}{mult2way}
+%%%% Change order of terms. Make it clear that polynomials are in R[x]
 Perform the following polynomial multiplications in two ways: first, by distributing and collecting terms; and second, by using the coefficient formula in Definition \ref{Product of polynomials} directly.  Verify that the two methods agree.
-\begin {enumerate}[(a)]
+\begin{enumerate}[(a)]
 \item
 $(x-5)(x^2+3x)$
 \item
@@ -394,9 +407,9 @@ $(8x^5 + 4x^3 - 7x^2)(10x^2 - 5x + 3)$
 \end{enumerate}
 \end {exercise}
 
-\begin {exercise}{multform}
+\begin{exercise}{multform}
 Use the coefficient formula in Definition \ref{Product of polynomials} to evaluate the following products.
-\begin {enumerate}[(a)]
+\begin{enumerate}[(a)]
 \item
 $p(x)^2$, where $p(x) = \sum_{i=0}^{3} x^i$
 \item
@@ -562,10 +575,10 @@ This  is indeed the exact same expression as before, so it is true that $(p(x)q(
 %& = p(x) [ q(x) r(x) ]
 %\end{align*}
 %This proof seems very involved: we will show a much easier proof shortly. The commutativity and distribution properties of polynomial multiplication are proven similarly (but much more easily!).  We shall leave the proofs of these properties as exercises:
-
-\begin {exercise}{polymult}
+%%%% Give answer for answer key
+\begin{exercise}{polymult}
 Using summation notation, prove the following properties of polynomial multiplication:
-\begin {enumerate}[(a)]
+\begin{enumerate}[(a)]
 \item
 Commutativity:~~ 
 $p(x) q(x) = q(x) p(x)$;
@@ -575,7 +588,7 @@ $p(x) (q(x) + r(x)) =p(x)q(x) + p(x)r(x)$.
 \end {enumerate}
 \end {exercise}
 
-%\section {Isomorphism with Matrices}
+%\section{Isomorphism with Matrices}
 %Another way of proving associativity and commutativity of polynomial multiplication is by using an isomorphism to matrices.  We can take polynomials, rewrite them in a very specific way as a matrix, and then add or multiply these matricies to get the same result.  This is the same idea as the isomorphism between complex numbers and ordered pairs that you studied in the isomorphism chapter, except here it is polynomials and matrices that are isomorphic:
 %
 %%%%\begin{figure}[htb]
@@ -653,14 +666,14 @@ $p(x) (q(x) + r(x)) =p(x)q(x) + p(x)r(x)$.
 %\[x^5 + 5x^3 + 3x^2 + 6x + 9\]
 %Which happens to be the the same answer as our polynomial multiplication above.  Now the reason we picked a $6\times6$ matrix was to account for each term in the answer.  If we had used a smaller matrix, the $x^5$ term would not have been accounted for in the lower left hand corner of the answer matrix.  
 %
-%\begin {exercise}
+%\begin{exercise}
 %Given two quadratic polynomials:
 %\[ 2x^2-8x+3 \quad \text{and} \quad -9x^2+3x+3 \]
 %Find the sum of the two by writing them as $4\times4$ matrices and using matrix addition.
 %\end {exercise}
 %
-%\begin {exercise}{matrixcommute}
-%\begin {enumerate}[(a)]
+%\begin{exercise}{matrixcommute}
+%\begin{enumerate}[(a)]
 %\item
 %Matrices are known for not being commutative over matrix multiplication.  Multiply the above matrices in opposite order to show the result is the same.
 %\end {enumerate}
@@ -767,7 +780,7 @@ $p(x) (q(x) + r(x)) =p(x)q(x) + p(x)r(x)$.
 %
 %%In other words, a set $R$ is a commutative ring if:
 %%
-%%\begin {enumerate}[1.]
+%%\begin{enumerate}[1.]
 %%\item
 %%$a+b = b + a$ for all $a,b \in R$
 %%\item
@@ -784,7 +797,7 @@ $p(x) (q(x) + r(x)) =p(x)q(x) + p(x)r(x)$.
 %%Use different coefficients for polynomials as exercises, Q[x], Z[x], 
 %%add exercise for proof of field, Q[x], Z[x], Z5[x]
 %%\end {enumerate}
-%\begin {exercise}{proofofring}
+%\begin{exercise}{proofofring}
 %Prove or disprove that the following sets are rings.
 %\begin{enumerate}[(a)]
 %\item
@@ -846,17 +859,17 @@ Divide $(2x^3+3x^2+x+4)$ by $(x+2)$ where  both polynomials are in $\mathbb{Z}_5
 \end{example}
 
 
-\begin {exercise}{div1}
+\begin{exercise}{div1}
 Find $q(x)$ and $r(x)$ in the following equations.
-\begin {enumerate} [(a)]
+\begin{enumerate} [(a)]
 \item $x^2+3x+27=(x-2)q(x) + r(x)$
 \item $15x^3+13x-27=(x-5)q(x) + r(x)$
 \item $10x^3 - x^2+3x+27=(2x^2-4)q(x) + r(x)$
 \end {enumerate}
 \end {exercise}
 
-\begin {exercise}{div2}
-\begin {enumerate} [(a)]
+\begin{exercise}{div2}
+\begin{enumerate} [(a)]
 \item Divide  $ ( 3x^6 + x^5 +4x^4 +2)$  by $ ( x+3) $ where both polynomials are in  $\mathbb{Z}_5$.
 \item Divide $ (x^7 + x^5 + x^3 + x)$  by $ ( x + 1 ) $ where both polynomials are in $ \mathbb{Z}_2$.
 \end {enumerate}
@@ -865,7 +878,7 @@ Find $q(x)$ and $r(x)$ in the following equations.
 
 And now, for the proof:
 
-\begin {prop} {Division for Polynomials} \emph{(Division algorithm for polynomials)}
+\begin{prop} {Division for Polynomials} \emph{(Division algorithm for polynomials)}
 Let $f(x)$ and $g(x)$ be nonzero polynomials where the degree of $g(x)$ is greater than 0.  Then there exists unique polynomials $q(x)$ and $r(x)$ such that 
 \[
 f(x) = g(x)q(x) + r(x)
@@ -873,7 +886,7 @@ f(x) = g(x)q(x) + r(x)
 where the degree of $r(x)$ is less than the degree of $g(x)$.
 \end {prop}
 
-\begin {rem}
+\begin{rem}
 This proposition is true for \emph{any} polynomial ring over a field. You may check the following proof works for any polynomial ring over a field, and not just real polynomials.
 \end{rem}
 
@@ -935,11 +948,11 @@ The Fundamental Theorem of Algebra (discussed in Section~\ref{sec:FTOA}) asserts
 
 The following proposition gives us a way to relate polynomial values to polynomial remainders.
 
-\begin {prop}{polyremainder}
+\begin{prop}{polyremainder}
 Let $f(x)$ be any polynomial in any polynomial ring over a field. When $f(x)$ is divided by $x-a$, the remainder is $f(a)$.
 \end {prop}
 
-\begin {proof}
+\begin{proof}
 According to Proposition~\ref{proposition:poly:Division for Polynomials}, if we divide $f(x)$ by $x-a$, it will produce two unique polynomials $q(x)$ and $r(x)$ such that $f(x) = (x-a)q(x) + r(x)$.  Since the degree of $x-a$ is 1, then according to the division algorithm, the degree of $r(x)$ must be less than 1.  Therefore $r(x)$ has to be a constant.  We will show this replacing $r(x)$ with $r$ where $r$ is an real number.  This yields:
 \[f(x) = (x-a)q(x) + r.\]
 If we set $x=a$ then we get:
@@ -961,7 +974,7 @@ Find the remainders when $\sum_{k=0}^{100} 3^k x^{k}$ is divided by $x+1/9$ and 
 
 The following proposition in an important special case of Proposition~\ref{proposition:poly:polyremainder}.
 
-\begin {prop}{divide}
+\begin{prop}{divide}
 $a$ is a root of $f(x)$ if and only if $x-a$ divides $f(x)$.
 \end {prop}
 
@@ -975,10 +988,10 @@ From Proposition~\ref{proposition:poly:polyremainder} $f(x) = (x-a) \cdot q(x) +
 We will need one more fact in order to prove (the easy part of) the Fundamental Theorem of Algebra. From basic algebra, we know that if $ab=0$ then either $a=0$ or $b=0$ (see also 
 Proposition~\ref{proposition:complex:nonzero_complex_product} of Chapter~\ref{complex}).  It turns out that the same is true for polynomials, as we now show.
 
-\begin {prop}{polyremainder}
+\begin{prop}{polyremainder}
 Suppose $F[x]$ is a polynomial ring over a field, and suppose $p(x),  q(x) \in F[x]$. Then $p(x)  q(x)=0$ iff either $p(x)=0$ or $q(x)=0$.
 \end {prop}
-\begin {proof}
+\begin{proof}
 Since this is a ``iff'' proof, we must actually prove two things:  
 
 First we prove the ``if'' part.  It is clear from the formula for multiplication of polynomials that if either $p(x)=0$ or $q(x)=0$, then the product $p(x)q(x)$ must also be 0. That was easy!
@@ -1000,12 +1013,12 @@ $c_{m+n}x^{m+n}$, so $p(x)q(x) \neq 0$.    The proof is completed.
 
 And here's the result we've been waiting for. Now that we've prepared the ground, it's not so difficult to prove.
 
-\begin {prop}{FTOA}
+\begin{prop}{FTOA}
 In any polynomial ring over a field, If $f(x)$ is a polynomial of degree $n$ then the equation $f(x)=0$ has at most $m$ solutions.
 \end {prop}
 
 
-\begin {proof}
+\begin{proof}
 Suppose $a_1$ is a solution to $f(x)=0$. Then by Proposition~\ref{proposition:poly:divide} it follows that $x-a_1$ divides $f(x)$. Therefore $f(x) = (x-a_1) g_{n-1}(x)$ where the degree of $g_{n-1}(x)=n-1$. 
 
 Now if $a_2 \neq a_1$ is another solution then using our above result we have
@@ -1018,18 +1031,32 @@ f(x) = (x - a_1)(x - a_2)...(x - a_n)g_0,\]
  where the degree of $g_0$ is 0 (in other words, $g_0$ is a constant.). So there can't be any more solutions, $a_{n+1}$, because $(x-a_{n+1})$ doesn't divide $g_0$.
 \end {proof}
 
-A special case of this theorem tells us something very, very important about the coefficients of a polynomial ring over a field.  Recall that we're presuming that the set of coefficients is an Abelian group under $+$, and also the nonzero coefficients form an Abelian group under $\cdot$.  (A set that satisfies these properties is called a \term{field}\index{Field!definition}. The theory of fields is an important area of abstract algebra, but we won't get into that now.)   From the previous theorem we immediately have:
+A special case of this theorem tells us something very, very important about the coefficients of a polynomial ring over a field. First, a definition:
 
-\begin {prop}{FTOA}
-Let $R[x]$ be a polynomial ring over a field, and let $c$ be any element $R$.  Then $c$ has at most $n$ $n^{\text{th}}$ roots.
+\begin{defn}
+A set $F$ is called a \term{field} if it satisfies the following properties:
+\begin{itemize}
+\item
+Two binary operations (denoted by `$+$' and `$\cdot$') are defined on $F$.  
+\item
+$F$ is an Abelian group under $+$. We denote the identity element by 0. 
+\item
+$F \setminus 0$ is an Abelian group under $\cdot$.
+\end{itemize}
+\end{defn}
+
+The previous theorem immediately gives us an extremely important general property of fields:
+
+\begin{prop}{}
+Let $F$ be a field, and let $c$ be any element $F$.  Then $c$ has at most $n$ $n^{\text{th}}$ roots.
 \end {prop}
 
 
-\begin {proof}
-By the previous proposition, the equation $x^n-c=0$ has at most $n$ solutions.  This is the same thing as saying that $c$ has at most $n$ $n^{\text{th}}$ roots.
+\begin{proof}
+Given the field $F$ let $F[x]$ be the associated polynomial ring over the field $F$. The polynomial $x^n-c$ is an element of $F[x]$. By Proposition~\ref{proposition:poly:FTOA}, the equation $x^n-c=0$ has at most $n$ solutions.  This is exactly the same thing as saying that $c$ has at most $n$ $n^{\text{th}}$ roots.
 \end {proof}
 
-
+The theory of fields is an extremely important part of abstract algebra, with many very beautiful and important results. 
 
 
 \section{Proof that $U(p)$ is cyclic}
@@ -1045,10 +1072,10 @@ Show that if $p$ is a prime greater than 3, then $|U(p)|$ is \emph{not} a prime.
 
 But all is not lost! Even though  $|U(p)|$ is not prime, we can still prove that $U(p)$ is cyclic using some of our results from the previous section. 
 
-\begin {prop}{Up_cyclic}
+\begin{prop}{Up_cyclic}
 $U(p)$ is cyclic for every prime $p$.
 \end {prop}
-\begin {proof}
+\begin{proof}
 First, notice that Proposition~\ref{proposition:poly:FTOA} says that there are at most $m$ solutions to the equation $x^m = 1$ in $\ZZ_p$. Since 0 is not a solution, it follow that all of these solutions are also in $U(p)$.
 
 Also, according to the factorization of Abelian groups (Proposition~\ref{FactorabelianGroup}), there exists an isomorphism $\phi$:
@@ -1080,6 +1107,8 @@ But at the beginning of this proof, we demonstrated that there can only be at mo
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
+Show that $U(6),U(8),$ and $U(9)$ are cyclic.
+\item
 Give an example of a positive integer $n$ for which $U(n)$ is \emph{not} cyclic.
 \item
 Is it possible to specify exactly the positive integers $n$ for which $U(n)$ is cyclic?  (You may do some internet research to answer this one.  Hint: the answer has something to do with the name ``Gauss''.)
@@ -1089,7 +1118,7 @@ Is it possible to specify exactly the positive integers $n$ for which $U(n)$ is 
 %
 %\begin{defn}
 %A vector spaae over $\mathbb{R}$ consists of a set \emph{V} along with two operations '+' and  ' $\cdot$ ' subject to the conditions that for all vectors $ \vec {v},\vec{w},\vec{u} \in$ \emph{V} and all scalars r, s $\in \mathbb{R}$:
-%\begin {enumerate} [(1)]
+%\begin{enumerate} [(1)]
 %\item
 %the set \emph{V} is closed under vector addition, that is, $ \vec{v} + \vec{w} \in \emph{V}$
 %\item
@@ -1113,7 +1142,7 @@ Is it possible to specify exactly the positive integers $n$ for which $U(n)$ is 
 %\end{enumerate}
 %\end{defn}
 %
-%\begin {example}{}
+%\begin{example}{}
 %  The set $\mathbb{R}^3$ is a vector space if the operations '$ + $' and  '$ \cdot$' have their usual meaning.
 %
 %$\left(\begin{array}{c}x_1\\x_2\\x_3\end{array}\right)$ $\mbox{~+~}$ $\left(\begin{array}{c}y_1\\y_2\\y_3\end{array}\right)$ = $\left(\begin{array}{c}x_1+y_1\\x_2+y_2\\x_3+y_3\end{array}\right)$ ~~~ r$\cdot$$\left(\begin{array}{c}x_1\\x_2\\x_3\end{array}\right)$ = $\left(\begin{array}{c}rx_1\\rx_2\\rx_3\end{array}\right)$
