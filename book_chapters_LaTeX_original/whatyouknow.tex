@@ -91,7 +91,7 @@ $((a \cdot b) \cdot c + b \cdot c) + c \cdot a = c \cdot ((a+b) + a \cdot b)$
 Note that the associative property allows us to write expressions without putting in so many parentheses.  So instead of writing $(a+b)+c$, we may simply write $a+b+c$. By the same reasoning, we can remove parentheses from any expression that involves only addition, or any expression that involves only multiplication: so for instance, $(a \cdot (b \cdot c) \cdot d) \cdot e = a \cdot b \cdot c \cdot d \cdots e$. Using the associative and distributive property, it is possible to write any arithmetic expression without parentheses. So for example, $(a \cdot b) \cdot (c + d)$ can be written as $a \cdot b \cdot c + a \cdot b \cdot d$.  (Remember that according to operator precedence rules, multiplication is always performed before addition: thus $3 \cdot 4 + 2$ is evaluated by first taking $3 \cdot 4$ and then adding 2.)
 
 \begin{exercise}{}
-Rewrite the following expressions without any parentheses, using \emph{only} the  associative and distributive properties.  ({\underline Don't use commutative in this exercise!})
+Rewrite the following expressions without any parentheses, using \emph{only} the  associative and distributive properties  (don't use commutative in this exercise!)
 \begin{enumerate}[(a)]
 \item
 $(((x + y) + (y+z))\cdot w) - 2y \cdot w$
@@ -210,13 +210,19 @@ $a + (c-b) - d > 0$
 \item
 $(a+c) + (-b + -d) > 0$
 \item
-$(a+c) + (-b + -d) + (b+d) > b+d$
+$((a+c) + (-b + -d)) + (b+d) > b+d$
 \item
-$(a+c) + (-b + (-d + b)+d > b+d$
+$(a+c) + ((-b + -d) + (b+d)) > b+d$
 \item
-$(a+c) + (-b + b) + (-d+d) > b+d$
+$(a+c) + ((-b + -d) + (d+b)) > b+d$
 \item
-$(a+c) + 0 + 0 > b+d$
+$(a+c) + (-b + ((-d + d) +b)) > b+d$
+\item
+$(a+c) + (-b + (0 +b)) > b+d$
+\item
+$(a+c) + (-b + b) > b+d$
+\item
+$(a+c)  + 0 > b+d$
 \item
 $a+c > b+d$
 \end{enumerate}

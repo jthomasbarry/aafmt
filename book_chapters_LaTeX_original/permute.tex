@@ -213,14 +213,14 @@ Although we've only shown this for two particular examples, it makes sense that 
 
 So far we have only looked at sets with four elements. Now it's time to generalize these results to sets of any size. First, some notation:
 
-\begin{notation}{}
+\begin{notation}
 The \term{order of a set} $Y$ is the number of elements of $Y$, and is written as $|Y|$.\index{Order! of a set}
 \footnote{ You're probably used to seeing $|\ldots|$ as representing absolute value. Of course a set is not a number, so it has no absolute value. We use $|Y|$ to denote order because it's a measure of the \emph{size} of set $Y$, just as the absolute value of a number is the ``size'' of the number.}
 \end{notation}
 
 Now let $X = \{1,2,\ldots, n\}$, and  consider any set $Y$ with $|Y| = n$. We could do a similar ``face-lifting'' as above to show that  $S_X$ is equivalent to $S_Y$.  So the group $S_X$ is equivalent to the permutations of \emph{any} set of $n$ elements.
 
-\begin{notation}{sym_group_n_numbers}
+\begin{notation}\label{sym_group_n_numbers}
 Let $X=\{ 1, 2, \ldots, n\}$. Instead of writing $S_X$, we write $S_n$\label{symmetricgroup}.  $S_n$ is called the \term{symmetric group}\index{Group!symmetric} on $n$ numbers.
 \end{notation}
 
@@ -503,7 +503,7 @@ A final question that may come to mind is:  do all permutations correspond to so
 
 Since cycles represent permutations, they can be composed together.  If we change the cycles to tableaus, we know how to compose them.  Now let's figure out how to compose them using the cycles themselves.\index{Composition!of cycles}\index{Cycle!composition}
 
-\begin{notation}{}
+\begin{notation}
 Given permutations $\sigma$ and $\tau$, instead of writing $\sigma \compose \tau$ we write the shorthand notation: $\sigma \tau$. Furthermore, instead of calling this the composition of $\sigma$ and $\tau$, we refer to it as the \term{product} of $\sigma$ and $\tau$.
 \footnote{Once again we see mathematicians'  annoying habit of  reusing familiar terms to mean something new  in a different contexts. In this case,  the ``product'' of permutations means something quite different from ordinary multiplication.}
 \end{notation}
@@ -2254,7 +2254,7 @@ What is the parity of  the product of an even permutation and an odd permutation
 % %
 % %To prove this, we first need a fact that we will assume without proof, because of the complexity of the proof.
 % %
-% %\begin{notation}{id_even}
+% %\begin{notation}\label{id_even}
 % %If the identity is written as the product of $r$ transpositions,
 % %\[
 % %id = \tau_1 \tau_2 \cdots \tau_r,

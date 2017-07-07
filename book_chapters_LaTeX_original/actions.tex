@@ -1,4 +1,4 @@
-\chap{Groups Actions and Regular Polyhedra }{actions}
+\chap{Group Actions and Regular Polyhedra }{actions}
 We've defined a  ``group'' as as set with an operation defined on it.  From this point of view, group elements are ``objects'' in a set. We have many examples of this: like the integers with addition, the integers mod $n$, the group of units $U(n)$, groups of matrices, and so on.
 
 Later on we introduced the idea that permutations form a group. Permutations are actually bijections (1-1, onto functions) that map a set of objects to itself.  Another way of saying this is that permutations ``act on'' a set by moving the elements around.  Similarly, we saw in Figure~\ref{groups_s3_symmetry_fig} in Section~\ref{SymmetryGroup} that the symmetries of an equilateral triangle (which are elements of the group $S_3$) move the vertices of the triangle from one position to another.  As a third example, in the group $\mathbb {Q}^*$ of non-zero rational numbers we can think of left multiplying by $2$ as ``moving''  $-5$ over to $-10$.  Left multiplying again by $2$ ``moves'' $-10$ to $-20$: and so on.   
@@ -11,34 +11,103 @@ This chapter  is by Holly Webb (edited by C.T.). Thanks to Tom Judson for materi
 \section{Basic definitions}\label{DefActions}
 We'll get to definitions momentarily, but first it's helpful to look at an example.
 
-\begin{example}{Actions1} 
-Consider the $60^{\circ}$ counterclockwise rotation of regular hexagon, an element of the group $D_6$.  We've seen this before (see Example~\ref{example:symmetries:hexagon} in Chapter~\ref{symmetries}). Following are the tableau and cycle representations of this rotation. 
-\[ \text{tableau:}~~r_{60} = \begin{pmatrix} A & B & C & D & E & F \\ B & C & D & E & F  & A \end{pmatrix}; \qquad 
-\text{cycle:}~~r_{60}=(A B C D E F).\]
- Both these notations indicate that the rotation acts on the set of vertices (by producing a permutation).  In the same way, any symmetry of the hexagon (rotation or reflection) acts on vertices of the hexagon.
-\end{example}
-	\begin{exercise}{Actions2}  Generalize the previous example to any regular $n$-gon. Include a tableau in your answer.
-\end {exercise}
-These examples show how it's possible for the elements of a group to ``act on'' a set. This idea can be generalized to a wide variety of sets and groups. Based on our experience with symmetries of plane figures, we give the following  general definition of group action. 
+\begin{example}{Actions1} Consider the group $S_3=\{id,(AB),(AC),(BC),(ABC),(ABC)\}$ and the set $X=\{A,B,C\}$. Each element of $S_3$ ``does something" to each element of $X$. See the Figure~\ref{fig:S3onABC} below.
 
-\begin{defn}
-Let $X$ be a set and $G$ be a group. A \term{(left) action}\index{Actions!group} of $G$ on $X$ is a map $G\times X\rightarrow X$
-given by $(g, x)\rightarrow gx$, where
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=4in]{images/S3onABC.png}
+\caption{$S_3$ acting on $X=\{A,B,C\}$.}\label{fig:S3onABC}
+\end{center}
+\end{figure}
+
+Let's discuss the last element of $S_3$, $(ACB)$. Notice $(ACB)$ ``does something'' to each element of $X$. It maps $A\rightarrow C$, $B\rightarrow A$, and $C\rightarrow B$, so the map images are also elements of $X$. The same is true for all other elements of $S_3$. In fact, each element of $S_3$ produces a bijection on the set $X=\{A,B,C\}$. We refer to this as the group $S_3$ \emph{acting on} the set $X$.
+\end{example} 
+
+\begin{example}{Actions2} Let $R$ be the group of all rotations around the origin in $\mathbb{R}^2$. Let $r_d\in R$ denote a counterclockwise rotation of $d$ degrees. Also, let $X$ be the set of all lines through the origin, where $x_d$ denote the line which makes an angle of $d$ degrees with the $x$-axis. See Figure~\ref{fig:rotate_line} below.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=2.5in]{images/rotate_line.png}
+\caption{$r_d=r_{30}$ acting on the line $x_d=x_{15}$}\label{fig:rotate_line}
+\end{center}
+\end{figure}
+
+Note that both $R$ and $X$ are infinite sets (unlike the previous example). As in Example~\ref{example:actions:Actions1}, each element of $R$ ``does something" to each element of $X$. In this case, each element of $R$ rotates an element of $X$, producing another element of $X$. For example, rotating the line $x_{15}$ by $r_{30}$ produces the line $x_{45}$. Furthermore $r_{30}$ can rotate every element of $X$ and \emph{only} produces elements of $X$. This is true for all other rotations in $R$: each element of $R$ produces a bijection on the set $X$. We again say that the group $R$ \emph{acts on} the set $X$.
+\end {example}
+
+In the previous two examples we have been talking about a group ``action" which is \emph{different} from the group operation.  For example, the group operation in Example~\ref{example:actions:Actions1} is composition of permutations, but the action is a mapping of points in $\{A,B,C\}$. In Example~\ref{example:actions:Actions2} the group operation is composition of rotations, but the action is a mapping of lines. In order to distinguish the two operations, we will use the period (.) to represent group action. For example the rotation illustrated in FIGURE can be expressed mathematically as $r_{30}.x_{15}=x_{45}$.
+
+Since we have two different operations (the group operation and the group action), we should determine how they interact with each other. We know that two group elements, $g_1$ and $g_2$, can produce a third group element via the group operator because of closure, and that group element can act on a set element, $x$. We would represent this symbolically as $(g_1g_2).x$. But could that process be done differently? Yes, in fact one group element, $g_2$, could act on the set element, $x$, then that resulting set element could be acted on by a different group element, $g_1$. Symbolically we would write this as $g_1.(g_2.x)$. It turns out (and we will verify) that these two processes are equal to each other: $(g_1g_2).x=g_1.(g_2.x)$. We refer to this equality as \term{compatibility}\index{Actions!compatibility property of}.
+
+\begin{example}{Compat1} To investigate this idea of compatibility let's compare $[(AB)(ACB)].C$ and $(AB).[(ACB).C]$ where $(AB),(ACB) \in S_3$ and $B \in X=\{A,B,C\}$. Note: square brackets were used to group because permutations use parentheses. Figure~\ref{fig:Compatibility1} below has the work and a visual representation of the work.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=4.75in]{images/Compatibility1.png}
+\caption{Formulas and diagrams demonstrating $[(AB)(ACB)].C=(AB).[(ACB).C]$}\label{fig:Compatibility1}
+\end{center}
+\end{figure}
+
+So, $[(AB)(ACB)].C=A=(AB).[(ACB).C]$, therefore, we can see compatibility in this specific case. Compatibility can be easily shown to hold for the other elements of $X$ because $S_3$ produces a bijection on $X$.
+
+Note the visual difference in the two operations. The group operation of composition of permutations has all the mapping arrows for all elements (the top left two illustrations). This is because the result of a composition of permutations is another permutation. The other illustrations have only one mapping arrow because $S_3$ is acting on $X$ producing only a single element of $X$.
+\end {example}
+
+\begin{example}{Compat2} Recall $R$ and $X$ from Example~\ref{example:actions:Actions2}, show that $(r_{40} \circ r_{30}).x_{15}=r_{40}.(r_{30}.x_{15})$.
+\begin{equation*}
+\begin{split}
+(r_{40} \circ r_{30}).x_{15}&\stackrel{?}{=}r_{40}.(r_{30}.x_{15}) \\
+ r_{70}.x_{15}&\stackrel{?}{=}r_{40}.x_{45}\\
+x_{85}&\stackrel{\checkmark}{=}x_{85}
+\end{split}
+\end{equation*}
+\end {example}
+
+\begin{exercise}{Compat3} Let $G$ be a group acting on the set $X$, and $\sigma, \tau \in G$ and $x \in X$. Using these elements, write a general rule for compatibility between $G$ and $X$.
+\end{exercise}
+
+These ideas motivate the following definitions of action and $G$-Set:
+
+\begin{defn}\label{def:action}
+Let $G$ be a group and $X$ be a set. A \term{(left) action}\index{Actions!group} of $G$ on $X$ is a map $G\times X\rightarrow X$ given by $(g, x)\rightarrow g.x$, such that
 \begin{enumerate}[(1)]
-\item $ex = x$ for all $x\in X$;
-\item $(g_1g_2)x = g_1(g_2x)$ for all $x\in X$ and all $g_1, g_2 \in G$.
+\item Identity: $e.x = x$ for all $x\in X$, and $e$ is the identity element of the group $G$;
+\item Compatibility: $(g_1g_2).x = g_1.(g_2.x)$ for all $x\in X$ and all $g_1, g_2 \in G$.
 \end{enumerate}
-The set $X$  on which $G$ acts is called a  \term{$G$-set}.\index{G-set@$G$-set}
+We will use the period to represent group action. The set $X$ on which $G$ acts is called a \term{$G$-set} \index{G-set@$G$-set}.
 \end{defn}
-It is also possible to define right group actions, but in this chapter we'll focus just on left group actions.\index{Actions!left and right}  Following are some more examples of group actions.
 
-\begin{example}{Actions3}
- Let $G = GL_2(\mathbb{R})$ (the group of invertible $2 \times 2$ matrices) and $X = \mathbb{R}^2$
-Then $G$ acts on $X$ by left multiplication. If $v\in \mathbb{ R}^2$
-and $I$ is the identity matrix, then $Iv = v$. If $A$ and $B$ are $2 \times 2$
-invertible matrices, then $(AB)v = A(Bv)$ since matrix multiplication is associative.  Therefore, by definition, $X$ is a $G$-set.\end{example}
+\begin{rem}
+\begin{enumerate}[(1)]
+\item $X$ is not required to be a group, it only needs to be a set. $G$ is the group. In some cases, as we will see, $X$ can be a group.
+\item $g.x$ is not group multiplication. It is the result when $g$ acts on $x$, and is always an element of $X$.
+\item We call the set $X$ a $G$-set because $G$ is acting on it. If $\mathbb{R}^2$ is acting on $X$ we will call $X$ an $\mathbb{R}^2$-set; $GL_2 (\mathbb{R})$ acting on $X$ would be a $GL_2 (\mathbb{R})$-set.
+\item Notice that the second condition in Definition~\ref{def:action} is NOT associativity. It is not associativity because the group operation between $g_1$ and $g_2$ is not the action between $g$ and $x$. Recall we refer to this property as compatibility.
+\end{enumerate}
+\end{rem}
 
-\begin{exercise}{Actions4}
+It is also possible to define right group actions.
+
+\begin{exercise}{RightAction}
+Fill in the blanks with the missing information for the definition of right action. Let $G$ be a group and $X$ be a set. A \term{(right) action}\index{Actions!group} of $G$ on $X$ is a map $\underline{~<1>~}\times \underline{~<2>~}\rightarrow \underline{~<3>~}$ given by $(\underline{~<4>~}, \underline{~<5>~})\rightarrow \underline{~<6>~}$, such that
+\begin{enumerate}[(1)]
+\item Identity: $\underline{~<7>~}=\underline{~<8>~}$ for all $x\in X$, and $e$ is the identity element of the group $G$;
+\item Compatibility: $\underline{~<9>~}=\underline{~<10>~}$ for all $x\in X$ and all $g_1, g_2 \in G$.
+\end{enumerate}
+\end{exercise}
+
+Moving forward in this chapter we'll focus just on left group actions.\index{Actions!left and right}  Following are some more examples of group actions.
+
+\begin{example}{Action3}
+Consider $GL_2(\mathbb{R})$ (the group of invertible $2 \times 2$ matrices) and $\mathbb{R}^2$. Show that $GL_2(\mathbb{R})$ acts on $\mathbb{R}^2$ by left multiplication on vectors which means that $\mathbb{R}^2$ is a $GL_2(\mathbb{R})$-set. To check we must show identity and compatibility:
+\begin{enumerate}[(1)]
+\item Check identity: If $v\in \mathbb{R}^2$ and $I$ is the identity matrix, then $I.v = v$. 
+\item Check compatibility: If $A$ and $B$ are $2 \times 2$ invertible matrices, then $(AB).v = A.(B.v)$ since matrix multiplication is associative (see exercise below). Using the associative property is okay here because $\mathbb{R}^2$ vectors can be written as a $2 \times 1$ matrix, so the group operation and the group action are both cases of matrix multiplication. 
+\end{enumerate}
+Therefore, by definition, $\mathbb{R}^2$ is a $GL_2(\mathbb{R})$-set.
+\end{example}
+
+\begin{exercise}{Action4}
 Let
 \begin{equation*}
 A=\left[\begin{array}{cc}
@@ -49,14 +118,34 @@ v=\left[\begin{array}{c}x\\ y\end{array}\right].
 Verify the previous example by showing the associative property of matrix and vector multiplication. 
 \end {exercise}
 
-\begin{exercise}{Action5}
+\begin{example}{Action5}
+Let $G$ be a group and $H$ be a subgroup of $G$. Let $S=\{xH~|~x\in G \}$ which is the set of all left cosets of $H$ in $G$. Then $G$ acts on $S$ by $g.xH = (gx)H$, which is also a coset of $H$. Show that $G$ is acting on $S$, which means that $S$ is a $G$-set. To check we must show identity and compatibility:
+\begin{enumerate}[(1)]
+\item Check identity: $e.xH=exH=xH$
+\item Check compatibility: Let $a,b \in G$, $(ab).(xH)=(ab)(xH)=(abx)H=a(bxH)=a.(b.(xH))$
+\end{enumerate}
+Therefore this is an action of $G$ on the set of left cosets $H$.
+\end{example}
+
+\begin{exercise}{Action6}
+Let $G$ be a group and $\mathcal{E}_n$ be the set of all subsets of $G$ with $n$ elements where $n$ is a positive integer and $n\leq |G|$. Let $S \in \mathcal{E}_n$, meaning $S$ is a subset of $G$ with $n$ elements. Then $G$ acts on $\mathcal{E}_n$ by $(g,S) \rightarrow g.S=\{gs~|~s \in S\}$. Note that $gS$ is a subset of $G$ with $n$ elements.
+\begin{enumerate}[(a)]
+\item Check the identity condition.
+\item Check the compatibility condition.
+\end{enumerate}
+Parts (a) and (b) verify that $\mathcal{E}_n$ is a $G$-set.
+\end{exercise}
+
+To show that something is not an action, or that a set is not a $G$-set, one must show that either the identity or compatibility condition fails in the definition of action and $G$-set.
+
+\begin{exercise}{Action7}
 \begin{enumerate}[(a)]
 \item 
 Let $G = 2\mathbb{Z}$ and let $X =\mathbb{Z}$. Show that $X$ is a $G$-set.
-\item Let $G = \mathbb{Z}$ and let $X = 2\mathbb{Z}$. Is $X$ a $G$-set? Explain.
+\item Let $X = 2\mathbb{Z}$. Show that $X$ is \emph{not} a $\mathbb{Z}$-set.
 \hyperref[sec:actions:hints]{(*Hint*)}
 \item Let $G = H_6$ (the complex $6$-th roots of unity (see Section~\ref{sec:RootsOfUnity} in Chapter~\ref{complex}) and let $X =\mathbb{C}$. Show that $X$ is a $G$-set.
-\item Let $G = \mathbb{C}$ and let $X = H_8$.  Is $X$ a $G$-set? Explain.
+\item Let $X = H_8$.  Is $X$ a $\mathbb{C}$-set? Explain.
 \hyperref[sec:actions:hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
@@ -68,7 +157,7 @@ In the following discussion we'll be introducing a bunch of new ideas. As usual,
 \subsection{$G$-equivalence and orbits}
 Some of the rotational symmetries of the cube are indicated in Figure~\ref{fig:CubeRot}.
 \footnote{Note that these are NOT the only rotational symmetries of the cube--we'll discuss the others later (see  this excellent video: \url{www.youtube.com/watch?v=gBg4-lJ19Gg}).}
-The figure shows three possible rotation axes. We will denote the $90^{\circ}$ counterclockwise rotations around the $x,y$ and $z$ axes as $r_x, r_y,r_z$ respectively.  We will also denote the faces of the cube as $x_-, x_+,y_-,y_+,z_-,z_+$.  For example the rotation $r_x\compose r_x=r_x^2$ will take the bottom face ($z_-$) to the top face ($z_+$). \emph{Note}:  when we rotate the cube, the axes remain fixed while the cube rotates around them.  For example, the $z$ axis is always vertical no matter how the cube is rotated.
+The figure shows three possible rotation axes. We will denote the $90^{\circ}$ counterclockwise rotations around the $x,y$ and $z$ axes as $r_x, r_y,r_z$ respectively.  We will also denote the faces of the cube as $x_-, x_+,y_-,y_+,z_-,z_+$.  For example the rotation $r_x\compose r_x=r_x^2$ will take the bottom face ($z_-$) to the top face ($z_+$). 
 
 \begin{figure}[ht]
 \begin{center}
@@ -77,10 +166,25 @@ The figure shows three possible rotation axes. We will denote the $90^{\circ}$ c
 \end{center}
 \end{figure}
 
+\begin{rem} When we rotate the cube, the axes remain \emph{fixed} while the cube rotates around them.  So in Figure~\ref{fig:CubeRot} you may imagine the axes to be like ``laser beams'' going through the cube, where the laser beams are labeled $x, y$ and $z$ according to their axes. These laser beams and labels do not move when the figure is rotated. For example, consider the rotation $r_z$ followed by $r_x$ (which is written as $r_x\circ r_z$). Under $r_z$, the face $x_+$ will rotate where the $y_+$ face was. Then following rotation $r_x$ will occur around the original laser beam $x$ axis, and not the axis to where the $x_+$ face has moved (which would be the rotation $r_y$). The cube ends up with the face $x_+$ on the top with the $z$ axis, $y_+$ on the negative side of the $x$ axis, and $z_+$ on the negative side of the $y$ axis.
+\end{rem}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=2.5in]{images/CubeFold.png}
+\caption[caption]{A paper cube to print, cut and fold 
+\\ \hspace{\textwidth} 
+(from \url{www.korthalsaltes.com}).}
+ \label{fig:CubeFold}
+\end{center}
+\end{figure}
+
+\begin{rem} Make or find a physical manipulative of a cube. This can be a 6-sided die or constructed from paper as seen in Figure~\ref{fig:CubeFold}. When working with a manipulative of your polyhedron it is a good idea label each face uniquely, whether by color, letter, number, or symbol. If you label your faces $x_+, x_-, y_+,$ etc., make sure to remember that these refer to \emph{faces} and not \emph{axes} (as we said above, the axes are like fixed laser beams that don't move with the cube).  It also helps to take a picture or two of your manipulative when in its starting position. You might also draw a pair of $x$ and $y$ axes on a spare sheet of paper, set this on the table, and rotate your cube above this paper.
+\end{rem}
 
 \begin{exercise}{Cube1}
 \begin{enumerate}[(a)]
-\item Give rotations that take the bottom face ($z_-$ ) to each of the faces $x_-,x_+,y_-,y_+$.
+\item Give rotations that take the bottom face ($z_-$) to each of the faces $x_-,x_+,y_-,y_+$.
 %$r_y$ or $r_y^{-3}$takes $z_-\rightarrow x_-$, $r_y\compose r_z^2$ or  $r_y^{-1}$ or $r_y^3$ takes $z_-\rightarrow x_+$, $r_x^3$ or $r_x^{-1}$takes $Z_-\rightarrow y_-$, r_x$ or $r_x^{-3}$takes $z_-\rightarrow y_+$,
 \item Give rotations that take the face $y_- $ to each of the faces $x_-,x_+,y_+,z_-,z_+$.
 %$r_z^{-1}$or $r_x^{3}$ takes $y_-\rightarrow x_-$, $r_z$ or $r_z^{-3}$ takes %$y_-\rightarrow x_+$, $r_z^{-2}$ or $r_z^{2}$takes $y_-\rightarrow y_+$, $r_x$ %or r_x^{-3} takes $y_-\rightarrow z_-$, $r_x^{-1}$or $r_x^{3}$ takes $y_-\rightarrow z_+$,
@@ -292,17 +396,7 @@ $$|G|=|G_{x_+}|\cdot |{\cal O}_{x_+}|.$$
 Note that $x_+$ was an arbitrary choice: we could use this argument with any of the faces and obtain the same result.
 \end{example}
 
-In the previous example we used faces to count the rotational symmetries of a cube but we could use edges or vertices as well.  In the next exercise we'll consider edges and in the following one we'll consider vertices.   A model of a cube might help with these exercises (see Figure~\ref{fig:CubeFold}).
-
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=2.5in]{images/CubeFold.png}
-\caption[caption]{A paper cube to print, cut and fold 
-\\ \hspace{\textwidth} 
-(from \url{www.korthalsaltes.com}).}
- \label{fig:CubeFold}
-\end{center}
-\end{figure}
+In the previous example we used faces to count the rotational symmetries of a cube but we could use edges or vertices as well.  In the next exercise we'll consider edges and in the following one we'll consider vertices.   Remember that amodel of a cube might help with these exercises (see Figure~\ref{fig:CubeFold}).
 
 \begin{exercise}{CountingFormula2}
 \begin{enumerate}[(a)]
@@ -370,7 +464,7 @@ Let $g G_x$ be any  left coset. If $g x =y$, then $\phi(y) = g G_x$.  Thus $gG_x
 
 This proposition enables us to quickly find some nifty relationships among numbers of faces, vertices, and edges:
 
-\begin{exercise}{cubeCounts}
+\begin{exercise}{CubeCounts}
 \begin{enumerate}[(a)]
 \item
 Show using Proposition~\ref{proposition:actions:CountingFormula} that for the cube, the ratio (number of edges / (number of  faces) = 4/2. 
@@ -1066,75 +1160,108 @@ As we can see, the action of the additive group $(R,+)$ on the cosets $\theta + 
 \end {example}
 Let's consider another example of group action on a set of cosets.  This example can be thought of as a two-dimensional version of the previous example, and can be envisioned using computer graphics.
 
-\begin{example}{IntLat1}
-Let $G$ be the $xy$-plane under addition (that is, $G=(\mathbb {R}^2,+)$).  Let $H=\mathbb{Z}\times \mathbb{Z}$, which is a subgroup of $G$ ($H$ is called the \term{integer lattice}\index{Integer!lattice}).  
-Cosets of $H$ in $G$ may be written as $x+H=\{(x_1+m, x_2+n):m,n \in\mathbb{ Z}\}$, where $x :=(x_1,x_2)$ can be any element of $G$.
+\subsection{The Integer Lattice}\label{subsec:lattice}
 
-It can be shown that each coset of the form $x+H$ has a single point inside the unit square.
-Consider for example a particular group element $g=(0.2,0)$, and a second group element $x=(0.9,0.5)$. The element $g$ acts on the coset $x+H$ as follows:  
-\begin{align*}
- g+x+H &=\{(0.2+.9+m, 0+0.5+n):m, n \in Z\}\\
-&=\{(1.1+m, 0.5+n):m, n \in Z\}. 
-\end{align*}
-If we take  $h= (-1, 0)$ (which is an element of $H$), we find $g+x+h=(0.1, 0.5)$, which is the only point of the coset $g+x+H $ which is inside the unit square. By basic properties of cosets, it follows that 
-$g+x+H =(0.1, 0.5)+H$. 
+Let $G$ be the $xy$-plane under addition (that is, $G=(\mathbb {R}^2,+)$).  Let $H=\mathbb{Z}\times \mathbb{Z}$, which is a subgroup of $G$ ($H$ is called the \term{integer lattice}\index{Integer!lattice}: see Figure~\ref{fig:HwithUnitSquare}).
+Cosets of $H$ in $G$ may be written as $a+H=\{(x+m, y+n):m,n \in\mathbb{ Z}\}$, where $a :=(x,y)$ can be any element of $G$. Recall from Proposition~\ref{cosets_theorem_2} that cosets form a partition, so $H$ and its cosets partition $\mathbb{R}^2$.
 
- This example can be used to describe the motion of a character on the screen of a ``wraparound'' video game.  Imagine the unit square is your computer screen. Suppose the character starts near
-the right edge at the point $x=(0.9,0.5)$, and undergoes linear motion to the right corresponding to the displacement
-vector $g=(0.2,0)$ then he moves off the right edge of the screen and re-appears at the left edge, ending
-up at the point (0.1,0.5) as shown in Figure~\ref{fig:UnitSquare}. 
-\end{example}
-
-\begin{figure}[ht]
+\begin{figure}[htpb]
 \begin{center}
-\includegraphics[width=3in]{images/UnitSquare.png}
-\caption{\label{fig:UnitSquare}Unit square illustrating a left group action of $G=(\mathbb {R}^2,+)$ on the left cosets of $H=\text{integer lattice}$ in $G$ }
-
+\includegraphics[width=4in]{images/Lattice_Hwithunitsquare.png}
+\caption{\label{fig:HwithUnitSquare}Diagram showing $H$ (the integer lattice) with the unit square shaded. This figure and the similar figures in the section were created using the software ``GeoGebra'' (see \url{www.geogebra.org}).  }
 \end{center}
 \end{figure}
 
-Recall that by definition a left coset of the integer lattice $x+H$  means adding the same point $\{x=(a,b)|a,b\in \mathbb{R}\}$ to each point in the integer lattice. A group action simply changes one coset of $H$ in $G$ to a different coset.  The three illustrations below show the progression of the group action  in the Example~\ref{example:actions:IntLat1}. You can duplicate this illustration by drawing the coset points (red diamonds) on a transparency, placing it over a graph of the integer lattice (blue points) and moving the transparency $0.2$ units to the right.
+The \term{unit square}\index{Unit!square} (the shaded area in Figure~\ref{fig:HwithUnitSquare}) is the area on the $xy$-plane that is $[0,1) \times [0,1)$, meaning the square includes the points on the $x$ and $y$ axes, but not on the lines $x=1$ and $y=1$. Note that $H$ has only one point in the unit square, namely $(0,0)$, similarly any coset of the form $a+H$ has only one point in the unit square (we will prove this mathematically later). We can say that $a\in \mathbb{R}^2$ maps $H$ to produce a coset $a+H$.
 
-\begin{figure}[ht]
+\begin{example}{IntLatIntro} Consider a particular group element $a=(0.7,0.5)$. Use a graphical illustration to model the point $a$ mapping the integer lattice $H$ which results in the coset $a+H$.
+
+\begin{figure}[htpb]
 \begin{center}
-\includegraphics[width=4.0in]{images/IntLat1.png}
-\caption{Illustrating $x+H$ for $x=(0.9,0.5)$ This figure and the two following were created using the software ``GeoGebra'' (see \url{www.geogebra.org}).  
-The rectangles should be thought of as unit squares (the scales on the $x$ and $y$ axes are not equal).   These figures illustrate a left group action of $(\mathbb{R},+)$ on a left coset of integer lattice. The lattice is represented by blue points, while the elements of the coset are represented by red diamonds.}
+\includegraphics[width=4in]{images/Lattice_xPlusH.png}
+\caption{\label{fig:Lattice_xPlusH}The integer lattice, $H$, is represented by blue points, while the elements of the coset $(0.7,0.5)+H$ are represented by red diamonds. The dotted black arrows show the creation of the coset.}
+\end{center}
+\end{figure}
+
+You can duplicate the above illustration by physically by drawing the coset points (red diamonds) on a plastic transparency, placing it over a graph of the integer lattice (blue points) and moving the transparency $0.7$ units to the right and $0.5$ units upwards.
+\end{example}
+
+Add small section defining floor function...
+
+\begin{exercise}{IntLatBijection} Using bijection, show that each coset of the form $a+H$, where $a\in\mathbb{R}^2$, has a single point, $a+h$ for some $h\in H$, inside the unit square.
+\end{exercise}
+
+\begin{exercise}{IntLatGset} Show that the set of all cosets of the form $\{a+H, x \in \mathbb{R}^2\}$ is a $\mathbb{R}^2$-set. (I THINK I want this question...need to think on it more...it's just a placeholder for now)
+\begin{enumerate}[(a)]
+\item walk students through determining what the . is in g.a and how to show that it is a r2 set
+\item hjkl
+\end{enumerate}
+\end{exercise}
+
+\begin{example}{IntLat1} Continuing from Example~\ref{example:actions:IntLatIntro}: let an additional group element be $b=(0.8,0.3)$, where $b \in G$. Find the point $h=(m,n) \in H$ such that $b+a+h$ is inside the unit square (recall $a=(0.7,0.5)$).
+
+The element $b$ acts on the coset $a+H$ as follows:  
+\begin{align*}
+ b+a+H &=\{(0.8+(0.7+m), 0.3+(0.5+n)):m, n \in \mathbb{Z}\}\\
+&=\{(0.8+0.7+m, 0.3+0.5+n):m, n \in \mathbb{Z}\}\\
+&=\{(1.5+m, 0.8+n):m, n \in \mathbb{Z}\}. 
+\end{align*}
+If $m=-1$ and $n=0$, then $b+a+h=(1.5-1,0.8+0)=(0.5,0.8)$, so $h=(-1,0)$. Generally the point $h=(m',n')$, where $m'=floor(x_1)$ and $n'=floor(x_2)$. ***FIX***
+\end{example}
+
+The point $b+a+h=(0.5,0.8)$ is the \emph{only} point of the coset $b+a+H$ which is inside the unit square. By basic properties of cosets, it follows that $b+a+H =(0.5, 0.8)+H$. Recall that by definition a left coset of the integer lattice $x+H$ means adding the same point, $a=(x,y)$, to each point in the integer lattice, $H$. A group action simply changes one coset of $H$ in $G$ to a different coset.  The illustrations in Figure~\ref{fig:IntegerLattice1} show the movement of the coset $a+H$ when acted on by $b$ on the left from Example~\ref{example:actions:IntLat1}. 
+
+\begin{figure}[htpb]
+\begin{center}
+\includegraphics[width=4.0in]{images/Lattice_baH.png}
+\caption{Illustrating  the movement of the coset $a+H$ for $a=(0.7,0.5)$ when acted on by $b=(0.8,0.3)$ on the left from Example~\ref{example:actions:IntLat1}. The lattice, $H$ is represented by blue points, the elements of the coset $a+H$ are represented by red diamonds, and the elements of the final coset $b+a+H$ are represented by purple crosses.}
 \label{fig:IntegerLattice1}
 \end{center}
 \end{figure}
 
-\begin{figure}[ht]
+In Example~\ref{example:actions:IntLat1} we saw $b$ acting on the coset $a+H$ producing the coset $b+a+H$. What is an equivalent coset $c+H$, where $c \in G$, such that $c+H=b+a+H$? To do this simply add $b+a=(0.7,0.5)+(0.8,0.3)=(1.5,0.8)=c$. Notice the coset $c+H$ has a unique element within the unit square, namely $(0.5,0.8)$ which is equal to $c+(-1,0)$ (we'll make use of this point in the next paragraph).
+
+\begin{figure}[htpb]
 \begin{center}
-\includegraphics[width=4.0in]{images/IntLat2.png}
-\caption{Illustrating $g+x+H$ for $g=(0.1,0)$ and $x=(0.9,0.5)$.}
-\label{fig:IntegerLattice2}
+\includegraphics[width=4.0in]{images/Lattice_cH.png}
+\caption{Illustrating the coset $c+H$ where $c=b+a$ from Example~\ref{example:actions:IntLat1}. The lattice, $H$ is represented by blue points, the elements of the coset $a+H$ are represented by red diamonds, and the elements of the final coset $b+a+H=c+H$ are represented by purple crosses.}
+\label{fig:Lattice_cH}
 \end{center}
 \end{figure}
 
+Example~\ref{example:actions:IntLat1} can be used to describe the motion of a character on the screen of a ``wraparound'' video game.  Imagine the unit square is your TV or computer screen. Suppose the character starts near the right edge at the point $a=(0.7,0.5)$, and undergoes linear motion to the right and up corresponding to the displacement vector $b=(0.8,0.3)$ then he moves off the right edge of the screen and re-appears at the left edge, ending up at the point $(0.5,0.8)$ as shown in Figure~\ref{fig:wraparound1}. 
 
-\begin{figure}[ht]
+\begin{figure}[htpb]
 \begin{center}
-\includegraphics[width=4.0in]{images/IntLat3.png}
-\caption{Illustrating $g+x+H$ for $g=(0.2,0)$ and $x=(0.9,0.5)$.}
-\label{fig:IntegerLattice3}
+\includegraphics[width=3in]{images/Lattice_wraparound1.png}
+\caption{\label{fig:wraparound1}Demonstrating the ``wraparound" effect, when only viewing the unit square, when $b=(0.8,0.3)$ acts on the coset $a+H$ where $a=(0.7,0.5)$.}
+
 \end{center}
 \end{figure}
 
+Let's have a little more fun! In the next example actions on H will be modeled on $\mathbb{R}^2:[-2,2] \times [-1,3]$ so that you will understand what is only visible on the unit square as $g$ acts on $x+H$
 
-\begin{exercise}{IntLat2}
+\begin{example}{IntLat2} Consider group elements $a=(-0.6,-0.4)$ and $b=(0.5,1.3)$ where $a,b \in \mathbb{R}^2$.
 \begin{enumerate}[(a)]
-\item Given $x=(0.8,0.6)$ and $g=(1.4,0)$ find a point  $h\in \mathbb{Z}\times \mathbb{Z}$ Such that $g+x+h$ is inside the unit square $[0,1) \times [0,1)$.  (In fact, this is the \emph{only} point $h$ for which $g+x+H$ is inside the unit square.)
-\item Given $x=(0.8,0.6)$ and $g=(1.2,1.3)$ find a point  $h\in \mathbb{Z}\times \mathbb{Z}$ Such that $g+x+h$ is an element of the unit square.
-\item Given $x=(0.8,0.6)$ and $g=(0,3.5)$ find a point  $h\in \mathbb{Z}\times \mathbb{Z}$ Such that $g+x+h$ is inside the unit square.
-\item For each $g$ and $x$ above, find $g'$ in the unit square, such that $g'+H=g+x+H$.
-\item Illustrate part (a) with a graph.  Graph the point $x$.  (This is actually the point $x+h'$ for $h'=(0,0)$).  Then graph the point $g+x+h$ using the $h$ you found in part (a).   Include ordered pairs to indicate the position of points.  Include arrows to indicate the apparent``movement'' from the initial point to the 
+\item Find the point $h=(m,n) \in H$ such that $b+a+H$ is inside the unit square.
+\item Find $c$ in the unit square, such that $c+H=b+a+H$.
+\item Graph the path of the points that are visible to only the unit square throughout the group action $b$ on $a+H$. (We will use ``zoomed out" graphs initially to help illustrate the paths to graph only on the unit square)
+\end{enumerate}
+\end{example}
+
+\begin{exercise}{IntLatHW1}
+\begin{enumerate}[(a)]
+\item Given $a=(0.8,0.6)$ and $b=(1.4,0)$ find the point $h\in H$ such that $b+a+h$ is inside the unit square. (In fact, this is the \emph{only} point $h$ for which $b+a+H$ is inside the unit square.)
+\item Given $a=(0.8,0.6)$ and $b=(1.2,1.3)$ find the point $h\in H$ such that $b+a+h$ is an element of the unit square.
+\item Given $a=(0.8,0.6)$ and $b=(0,3.5)$ find the point $h\in H$ such that $b+a+h$ is inside the unit square.
+\item For each $a$ and $b$ above, find $c$ in the unit square, such that $c+H=b+a+H$.
+\item Illustrate part (a) with a graph.  Graph the point $a$.  (This is actually the point $x+h'$ for $h'=(0,0)$). Then graph the point $b+a+h$ using the $h$ you found in part (a).  Include ordered pairs to indicate the position of points. Include arrows to indicate the apparent ``movement'' from the initial point to the 
 final point within the unit square (similar to Figure~\ref{fig:UnitSquare}.
 \item Create a similar graphs illustrating part (b) and (c).
-\item Prove that the above are examples of a group action of $G$ on cosets of the form $\{x+H, x \in \mathbb{R} \times \mathbb{R}$.  That is, show that the set of cosets of the form $x+H$ is a $G$-set. 
+\item Prove that the above are examples of a group action of $G$ on cosets of the form $\{a+H, a \in \mathbb{R} \times \mathbb{R}$.  That is, show that the set of cosets of the form $a+H$ is a $G$-set. 
 \end{enumerate}
 \end {exercise}
-We can think about this example in another way.  Suppose we have a \emph{torus}, which is the mathematical word for a donut shape. We could imagine creating a ``map'' of the surface of the torus by cutting the torus apart as shown in Figure~\ref{fig:Torus1}. If we spread this map out flat, it would look like a square (see Figure~\ref{fig:Torus2}). If we wanted to use the map to chart motion on the surface of the torus, then any motion that goes off the right edge would reappear at the left edge; and any motion that goes off the top edge would reappear at the bottom.  So you see this is exactly what we saw for the previous example. So using cosets of $\mathbb{Z}^2$ in $\mathbb{R}^2$, we've created a mathematical representation for motion on the surface of a torus.
+We can think about this example in another way. Suppose we have a \emph{torus}, which is the mathematical word for a donut shape. We could imagine creating a ``map'' of the surface of the torus by cutting the torus apart as shown in Figure~\ref{fig:Torus1}. If we spread this map out flat, it would look like a square (see Figure~\ref{fig:Torus2}). If we wanted to use the map to chart motion on the surface of the torus, then any motion that goes off the right edge would reappear at the left edge; and any motion that goes off the top edge would reappear at the bottom. So you see this is exactly what we saw for the previous example. So using cosets of $\mathbb{Z}^2$ in $\mathbb{R}^2$, we've created a mathematical representation for motion on the surface of a torus.
 
 \begin{figure}[ht]
 \begin{center}

@@ -201,7 +201,7 @@ One way to prove this is to prove the \emph{contrapositive}, \index{Contrapositi
 Finish the proof of the contrapositive by filling in the blanks:
 
 \noindent
-Suppose $a \not\equiv b \pmod{m}$. Let $r$ be the remainder of $a$ when divided by \underline{~$<1>$~}, and let $s$ be  the remainder of \underline{~$<2>$~} when divided by \underline{~$<3>$~}. Since the remainders are unequal, it follows that one must be bigger than the other: let us choose $a$ to be the number with the larger remainder, so that $r > \underline{~<4>~}$. By the definition of remainder, we may write $a = p\cdot m + \underline{~<5>~}$, and we may also write $b = q\cdot \underline{~<6>~} + \underline{~<7>~}$. Then by basic algebra, $a - b = (p-q)\cdot \underline{~<8>~} + (r - \underline{~<9>~})$. 
+Suppose $a \not\equiv b \pmod{m}$. Let $r$ be the remainder of $a$ when divided by $\underline{~<1>~}$, and let $s$ be  the remainder of $\underline{~<2>~}$ when divided by $\underline{~<3>~}$. Since the remainders are unequal, it follows that one must be bigger than the other: let us choose $a$ to be the number with the larger remainder, so that $r > \underline{~<4>~}$. By the definition of remainder, we may write $a = p\cdot m + \underline{~<5>~}$, and we may also write $b = q\cdot \underline{~<6>~} + \underline{~<7>~}$. Then by basic algebra, $a - b = (p-q)\cdot \underline{~<8>~} + (r - \underline{~<9>~})$. 
 
 We want to show that $r-s$ is the remainder of $a-b$ when divided by $m$. To do this, we need to show that $r-s$ is between 0 and $\underline{~<10>~}$. Since $r>s$ it follows that $r-s > \underline{~<11>~}$. Furthermore,
 Since $r < m$ and $s \ge 0$, it follows that $r - s < \underline{~<12>~}$.  So we have shown that $r-s$ is between $\underline{~<13>~}$ and $\underline{~<14>~}$, so 
@@ -338,7 +338,7 @@ Now you're ready! Give answers for the seven examples at the beginning of this c
 
 \subsection{More uses of modular arithmetic  }
  
-Supermarkets and retail stores have a nasty  little secret. Every time you scan your purchases, they're using modular arithmetic on you! In fact, modular arithmetic is the basis for \term{UPC} and \term{ISBN} bar codes. We will use these practical examples to introduce \emph{modular equations}\index{Modular equations}. 
+Supermarkets and retail stores have a nasty  little secret. Every time you scan your purchases, they're using modular arithmetic on you! In fact, modular arithmetic is the basis for  bar codes you see in stores. We will use these practical examples to introduce \emph{modular equations}\index{Modular equations}. 
 
 \begin{figure}
 \begin{center}
@@ -351,8 +351,8 @@ Supermarkets and retail stores have a nasty  little secret. Every time you scan 
 \end{figure}
 
 
-\begin{exercise}{UPCSymbols} \emph{Universal Product Code}
-\index{Code!UPC} (UPC) symbols are now found on most
+\begin{exercise}{UPCSymbols} \term{Universal Product Code (UPC)}
+\index{Code!UPC} symbols are now found on most
 products in grocery and retail stores. The UPC symbol (see Figure~\ref{groups_figure_3}) is a 12-digit
 code which identifies the manufacturer of a product and the product itself. The first 11 digits contain the information, while the twelfth digit is used to check for errors that may occur while scanning. If $d_1 d_2
 \cdots d_{12}$ is a valid UPC code, then  
@@ -1402,7 +1402,7 @@ The following table gives the results of multiplication mod $5$ for ${\mathbb Z}
 
 \begin{table}[h]
 \caption{\label{groups_Z5_mult_table} Multiplication table for ${\mathbb Z}_5$}
-{ \small
+{\small
 \begin{center}
 \index{Table!multiplication} 
 \begin{tabular}{c|cccccccc}
@@ -1423,7 +1423,7 @@ $\odot$ & 0 & 1 & 2 & 3 & 4 \\
 Again, looking at the entry in the ''2'' row and the ''3'' column we see 1, which tells us that $2 \odot 3 = 1$.
 
 Similarly, for each set of numbers ${\mathbb Z}_n$ we can construct a table to determine the result of any possible calculation mod $n$.
-These type of tables are known as \term*{Cayley tables}.  We will see them often throughout the course.
+Tables like these are  known as \term*{Cayley tables}.\footnote{Technically, this kind of operation table is only called a ``Cayley table'' if the operation satisfies the ``group properties'' (see Section~\ref{DefOfGroup}). }  We will see them often throughout the course.
 
 \begin{exercise}{49}
 Use the above Cayley tables for $\oplus$ and $\odot$  in $\integer_5$ to calculate each of the following.  (Remember, compute the remainders \emph{before} doing the arithmetic.)
@@ -1479,10 +1479,8 @@ $\oplus$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 \end{table}
 
 \begin{table}[h]
-\caption{\label{groups_Z8_mult_table} Multiplication table for ${\mathbb Z}_8$}
-{\small
+\caption{\label{groups_Z8_mult_table} Multiplication table for ${\mathbb Z}_8$}{\small
 \begin{center}
-\index{Table!multiplication} 
 \begin{tabular}{c|cccccccc}
 $\odot$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 \hline
@@ -1608,6 +1606,8 @@ In other words: for any $a \in {\mathbb Z}_n$ in  we can find an $a'$ such that:
 \[
 a \oplus a' = a' \oplus a  = 0.
 \]
+\end{prop}
+
 We structure the proof of Proposition~\ref{proposition:modular:addinv_property_Zn} as an exercise. We prove the two cases $a=0$ and $a \neq 0$ separately.
 
 \begin{exercise}{58}
@@ -1627,7 +1627,7 @@ Show that $a \oplus a' = a' \oplus a  = 0 \pmod{ n}$: that is, $a'$ is the addit
 \end{enumerate}
 \end{enumerate}
 \end{exercise}
-\end{prop}
+
 
 That takes care of additive inverse. What about multiplication? That is, no matter what $n$ is, given $a \in {\mathbb Z}_n$ is there always another element of ${\mathbb Z}_n$ which multiplies to give the multiplicative identity?  
 
@@ -1857,7 +1857,7 @@ The general question we now consider is: What's a good way to find the gcd of tw
 
 At this point, let's think back to our two-sticks problem. We saw that when we began with sticks of length 52 and 20, we ended up with a minimum measurable distance of 4--which just so happens to be the gcd of 52 and 20! So to get the gcd of 583768 and 260568447, in theory we could try creating one stick of length 583768 and another of length 260568447 and follow the same procedure. Of course this isn't practical. So instead, we'll try to duplicate the same procedure mathematically, without resorting to actual sticks.  Notice that when we subdivided a larger stick of length $a$ into sections of the length of $b$, the result was essentially the same as dividing $a$ by $b$ while leaving a remainder $r$.  See if you can complete the connection in the following example.
 
-\begin{example} {Greatest Common Divisor}
+\begin{example}{GCD}
 Let's use algebraic language to express the two-sticks algorithm applied to 52 and 20.
 Let's start by setting this up as a division problem with a remainder, again since this is effectively what is being done in the stick example above.
 \[ 52 = 20\cdot x + b\]
