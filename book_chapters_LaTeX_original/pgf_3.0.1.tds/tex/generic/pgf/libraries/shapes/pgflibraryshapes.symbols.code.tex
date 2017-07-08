@@ -981,7 +981,7 @@
         \advance\pgf@y\pgf@ya%
       }%
       %
-      % Get the midpoint of the 150� arc.
+      % Get the midpoint of the 150' arc.
       %
       \pgfextract@process\arcmidpoint{%
         \pgfextract@process\arcmidpoint{%
@@ -1183,7 +1183,7 @@
         %
         \pgfmathanglebetweenpoints{\pgfpointorigin}{\miterpoint}%
         \let\angle\pgfmathresult%
-        \ifdim\angle pt<\lastangle pt\relax% Guard against 360� = 0�
+        \ifdim\angle pt<\lastangle pt\relax% Guard against 360' = 0'
           \pgfmathadd@{\angle}{360}%
           \let\angle\pgfmathresult%
         \fi%
@@ -1221,7 +1221,7 @@
       %
       \pgf@sh@getcloudpuffparameters%
       %
-      % Hackery, for when an arc straddles 0�.
+      % Hackery, for when an arc straddles 0'.
       %
       \ifdim\endangle pt<\startangle pt\relax%
         \pgfmathadd@{\externalangle}{180}%
@@ -1264,7 +1264,7 @@
           %
           \pgfmathanglebetweenpoints{\centerpoint}{\arcpoint}%
           %
-          % Hackery, for when an arc straddles 0�.
+          % Hackery, for when an arc straddles 0'.
           %
           \ifdim\endangle pt<\startangle pt\relax%
             \pgfmathadd@{\pgfmathresult}{180}%
