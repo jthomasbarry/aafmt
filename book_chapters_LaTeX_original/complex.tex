@@ -95,7 +95,7 @@ screwed: in every case, we always have a contradiction. We seem to have reached 
 What's wrong is the \emph{supposition}. It \underbar{must} be the case that the supposition is not
 true. Consequently, the statement ``there exists a real number
 \emph{a} such that $a^{2}=-1$'' must be \underbar{false}. In other
-words, -1 has no real square root. This completes the proof. $\square$
+words, $-1$ has no real square root. This completes the proof. $\square$
 \footnote{The '$\square$' symbol will be used to indicate the end of a proof. In other words: Ta-da!}
 \medskip{}
 \newline
@@ -105,7 +105,7 @@ The above proof is pretty wordy. Often the first draft of a proof can be pretty 
 \noindent \textbf{Streamlined proof of Proposition~\ref{proposition:complex:no_sqrt} (suitable for writing up homework exercises)}
 
 The proof is by contradiction. Suppose $\exists \emph{a} \in \mathbb{R}$
-such that $a^{2}=-1$ (note the symbol ``$\exists$" means ``there exists,'' the symbol $\mathbb{R}$ denotes the real numbers, and the expression ``$\emph{a} \in \mathbb{R}$'' means that $a$ is a real number).
+such that $a^{2}=-1$ (note the symbol ``$\exists$" means ``there exists,'' the symbol $\mathbb{R}$ denotes the real numbers, and the expression ``$\emph{a} \in \mathbb{R}$'' means that $a$ is contained in $\mathbb{R}$, that is, $a$ is a real number).
 
 There are two cases: either (i) $a\geq0$ or (ii) $a<0$.
 
@@ -119,6 +119,8 @@ By contradiction, it follows that $-1$ has no real square root.
 \end{proof}
 You may note that in the streamlined case, we reduced the number of cases from three to two.  That's because we noticed that we really could combine the ``positive'' and the ``zero'' case into a single case.
 
+So far we've only considered square roots, but naturally we may ask the same questions about cube roots, fourth roots, and so on: 
+
 \begin{exercise}{root1}
  Imitate the proof of Proposition~\ref{proposition:complex:no_sqrt} to prove that $-2$ has no real fourth root.
 \end{exercise}
@@ -127,6 +129,11 @@ You may note that in the streamlined case, we reduced the number of cases from t
 Try to use the method of Proposition~\ref{proposition:complex:no_sqrt} to prove that -4 has no real cube root. At what step does the method fail?
 \end{exercise}
 
+Notice that the $n$th root of $a$ is a solution of the equation $x^n - a=0$ (and conversely--any solution of $x^n- a=0$ is an $n$th root of $a$). 
+Based on this observation, we may generalize the notion of ``root'':
+
+\begin{defn} Given a function $f(x)$ which is defined on the real numbers and takes real values, then a \term*{root}\index{Root! of a real function} of $f(x)$ is any solution of the equation $f(x)=0$.  
+\end{defn}
 
 \begin{exercise}{graph}
 \begin{enumerate}[(a)]
@@ -322,6 +329,18 @@ Prove that $\sqrt{6}$ is irrational.
 \begin{exercise}{6a}
 Prove that $p^{1/n}$ is irrational, if $p$ is a prime and $n$ is any integer with $|n|>1$.
 \end{exercise}
+
+\begin{exercise}{6aa}
+\begin{enumerate}[(a)]
+\item
+Suppose that $a,b,c$ are integers and  $(a/b)^2 = c$.  Suppose further that $a$ and $b$ have no common factors except $1$: that is, any integer $x > 1$ which divides $b$ doesn't divide $a$.  Prove by contradiction that $b=1$.
+\item
+Generalize part (a): Suppose that $a,b,c$ are integers and  $(a/b)^n = c$, where $n$ is a positive integer. If $a$ and $b$ have no common factors, prove by contradiction that $b=1$.
+\item
+Use part (b) to prove the following: Let $a$ and $n$ be integers, both greater than 1. Let $x$ be a real $n$th root of $a$.  If $x$ is not an integer, then $x$ is irrational.
+\end{enumerate}
+\end{exercise}
+
 
 The inconvenient truth expressed in Proposition~\ref{proposition:complex:irrational} forced mathematicians to extend
 the 'real' numbers to include \emph{irrational} as well as \emph{rational}
@@ -839,7 +858,7 @@ Mathematicians naturally think of complex numbers as points on a plane -- in fac
 
 \subsection{Vector representation of complex numbers}
 
-You should already know that a point in a plane can also be considered as a \emph{vector}: in other words, the ordered pair $(a,b)$ can be identified with the vector $a$\textbf{i} + $b$ \textbf{j}, where \textbf{i} and \textbf{j} are the unit vectors in the $x+$ and $y+$ directions, respectively. So complex numbers can also be considered as two-dimensional vectors.\index{Complex numbers!vector representation} 
+You should already know that a point in a plane can also be considered as a \emph{vector}: in other words, the ordered pair $(a,b)$ can be identified with the vector $a$\textbf{i} + $b$\textbf{j}, where \textbf{i} and \textbf{j} are the unit vectors in the $x+$ and $y+$ directions, respectively. So complex numbers can also be considered as two-dimensional vectors.\index{Complex numbers!vector representation} 
 
 \begin{exercise}{19} 
 \begin{enumerate}[(a)]
@@ -848,7 +867,7 @@ Write the numbers $3 + 7i$  and $-5 + 9i$ as  vectors.
 \item
 Find the sum of the two vectors that you found in (a).
 \item
- Find the sum$(3 + 7i) + (-5 + 9i)$
+ Find the sum $(3 + 7i) + (-5 + 9i)$
 \item
 What is the relation between your answers to (b) and (c)? Explain.
 \end{enumerate}
@@ -1353,192 +1372,11 @@ Use your picture to obtain the polar representation of $\bar{z}$ in terms of the
 \end{enumerate}
 \end{exercise}
 
-\section{Applications of complex numbers\quad
-\sectionvideohref{beo_65G9I7Q&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=6}}
+\section{Complex numbers and roots of algebraic equations}\label{complex_roots}
 
-\subsection{General remarks on the usefulness of complex numbers}
-
-We have already discussed that it took some time for complex numbers to be generally accepted by mathematicians, who tended to have a preference for ``pure'' numbers such as the integers. But complex numbers have had their revenge. Today the ``purest'' form of mathematics, namely number theory, is heavily dependent on complex numbers. The famous Fermat's Last Theorem\index{Fermat!last theorem} was proved using techniques that involved complex numbers.\footnote{See \url{http://www-history.mcs.st-and.ac.uk/HistTopics/Fermat's_last_theorem.html} for some of the long and sordid history of Fermat's Last Theorem.}
-
-But quite apart from pure mathematics, complex numbers have proved to be extremely practical. Complex numbers are indispensable tools for
-scientists and engineers. Virtually all of modern physics is based
-on complex numbers. Engineers build bridges using complex numbers.
-Without complex numbers, there would probably be no computers, cell
-phones or most other electronics. A strong argument could be made that complex numbers are far more useful than ``real'' numbers.
-
-Much of the practical usefulness of complex numbers comes from their close relationship
-with the trigonometric functions cosine and sine. We have seen a little
-bit of this already in the representation $z=r\cis\theta$.
-Complex numbers give a powerful way to express complicated functions
-of sine and cosine in a very simple way. We will give an introduction of this in the next section--you may see it again, or have already seen it, in your differential equations course.
-
-
-\subsection{Complex numbers, sine and cosine waves, and phasors}
-
-We have already seen there is a close relationship between complex numbers and the trigonometric functions sine and cosine. This relationship is the basis for much of the usefulness of complex numbers -- as we shall explain in this section.
-
-Figure \ref{fig:complex:1} shows the graphs of the cosine and sine functions.  They look like waves: for instance, the graph of $y = \cos(t)$ is a wave that includes the point $(0,1)$. The {\bf \emph{amplitude}}\index{Amplitude} of this wave is 1. The {\bf \emph{period}}\index{Period} of this wave is $2\pi$ radians. 
-
-\begin{figure}[htb]
-	   \center{\includegraphics[width=\textwidth]
-	         {images/cos_sin.png}}
-	  \caption{\label{fig:complex:1} Graphs of cosine and sine }
-\end{figure}
-
-
-Note that some references use the word ``wavelength" instead of ``period"\index{Wavelength}. This is because they are considering equations like $y = \cos(x)$ where the independent variable $x$ represents distance. We are considering the independent variable to be time: so it is appropriate to use the word ``period'' instead.
-
-Of course, there are cosine and sine waves with different periods. However, in this section  we will \emph{only}  be looking at cosine and sine waves with period $2\pi$. We re-emphasize:  all the cosine and sine waves in this chapter (and any that you use in the homework problems) have period $2 \pi$.
-
-Now we can create other waves by using the cosine as a ``parent function''. For instance, the graph of
-$y = A  \cos ( t + \theta) $ where $A > 0$
-is similar to the graph of $y = \cos(t)$, with the following differences:
-
-\begin{itemize}
-\item
-The amplitude is $A$
-\item
-The \term{phase shift}\index{Phase shift} (relative to the cosine curve) is $\theta$. 
-\end{itemize}
-
-%Changed 1/22/12 JW
-\begin{rem} 
-\begin{itemize}
-\item
-You may have studied ``parent functions'' in high school, and if so you may remember that the graph of $y = f(t+c)$ is shifted to the \emph{left} compared to the graph of $y = f(t)$.  It follows that a positive phase shift will shift the graph to the \emph{left}, while a negative phase shift will shift it to the \emph{right} (see Figure~\ref{fig:complex:2}).\footnote{ You should be careful when you encounter the term ``phase shift'' in other books, because some books define a positive phase shift as moving the graph to the \emph{right}. This is not wrong: it's just different terminology.}
-\item 
-If the variable $t$ is considered as time, then $y = A  \cos ( t + \theta) $ is \emph{advanced} by $\theta$ (corresponding to a left shift of the graph), while $y = A  \cos ( t - \theta) $ is \emph{delayed} by $\theta$ (corresponding to a right shift of the graph).  
-\end{itemize}
-\end{rem}
-%replaces:
-%\begin{rem} 
-%Be careful about the term ``phase shift''\index{Phase shift}. Some books define the phase of $y = A  \cos ( t + \theta) $ as $-\theta$ and not $\theta$ -- this is because the graph of $y = A  \cos ( t + \theta) $ includes the point $(-\theta,1)$.  If the variable $t$ is considered as time, then $y = A  \cos ( t + \theta) $ is \emph{advanced} by $\theta$ (corresponding to a left shift of the graph), while $y = A  \cos ( t - \theta) $ is \emph{delayed} by $\theta$ (corresponding to a right shift of the graph).
-%\end{rem}
-%1/22/12
- 
-\begin{figure}[htb]
-	   \center{\includegraphics[width=\textwidth]
-	         {images/ampl_phase.png}}
-	  \caption{\label{fig:complex:2} Cosine wave with amplitude and phase shift}
-\end{figure}
-
-\begin{exercise}{41}
-Sketch the function $y = 1.5 \cos(t + \pi/3)$. Label the amplitude and phase shift on your graph.
-\end{exercise}
-
-\begin{exercise}{wave1}
-Give the equation of a cosine wave with amplitude 7 and phase shift $-\pi$/2. Graph the function. How is this function related to a sine wave?
-\end{exercise}
-
-\begin{exercise}{waves}
-Give the equation of a cosine wave with amplitude $1/2$ and phase shift $2\pi$. Graph the function. How is this wave related to the original cosine wave with phase shift 0?
-\end{exercise}
-
-\begin{exercise}{42}
-\begin{enumerate}[(a)]
-\item
-Sketch the function $y = \sin(t)$.
-\item
-Find three different  choices of $A,\theta$ such that 
-$ \sin(t) = A  \cos (t + \theta)$.  What are the possible values of $A$?
-\hyperref[sec:complex:hints]{(*Hint*)}
-
-\end{enumerate}
-\end{exercise}
-
-\noindent
-In summary, amplitude and phase are two important properties of cosine and sine waves; and in fact the amplitude and phase uniquely determine the actual wave, as you saw in Exercises~\ref{exercise:complex:wave1} and \ref{exercise:complex:waves}. Now earlier in this chapter, we saw a different mathematical object that was characterized by amplitude and phase. Naturally, we're referring to the complex numbers.  We will now make a deep connection between these two types of mathematical objects that, on the surface, are very different.
-
-Recall that the \emph{real part} of the complex number $z = a + bi$ is $a$, and the \emph{imaginary part} is $b$. We also use the notation Re$[z]$ to denote the real part of the complex number $z$, and the notation Im$[z]$ to denote the imaginary part.
-
-\begin{exercise}{43}
-Show that Re$ [A  \cis\theta \cdot \cis( t)]  = A  \cos ( t +  \theta). $
-\hyperref[sec:complex:hints]{(*Hint*)}
- \end{exercise}
-
-\begin{exercise}{44}
-Show that Im$ [A \cis\theta \cdot \cis (t)] = A \sin (t + \theta). $
-\end{exercise}
-
-\noindent
-The previous two exercises show that: 
-
-\begin{itemize}
-\item
-A cosine wave with amplitude $A$ and phase shift $\theta$ can be represented  as the real part of  the complex number $A \cis\theta$ times the complex function $\cis(t)$.
-\item
-A sine wave with amplitude $A$ and phase shift $\theta$ can be represented  as the imaginary part of  the complex number $A \cis\theta$ times the complex function $\cis(t)$.
-\end{itemize}
-
-\noindent
-We may also understand this situation in terms of two-dimensional vectors with the help of Figure \ref{fig:complex:3}. We've already shown how complex numbers can be seen as two-dimensional vectors: in particular, the complex number $\cis\theta$ is identified with $\cos\theta$\textbf{i} + $\sin\theta$ \textbf{j}. As $t$ varies, the point $\cis(t+\theta)$ moves around the unit circle,and the real part of $\cis(t + \theta)$ is the projection of the moving point onto the $x$-axis.  In other words, the cosine wave on the right side of Figure \ref{fig:complex:3} tells us the vector's horizontal distance to the $y$-axis as a function of time $t$.
-
-\begin{figure}[htb]
-	   \center{\includegraphics[width=\textwidth]
-	         {images/phasors.png}}
-	  \caption{\label{fig:complex:3} Graphs of the vector representation and the wave representation of cosine }
-\end{figure}
-
-Now when two waves cross each other they produce a wave of a different shape--we may see this in water waves at the beach or pool (or physics class). This is called {\bf \emph{wave superposition}}\index{Wave superposition}. We will now see how complex numbers make it easy to compute the shape of this new wave.
-
-\begin{exercise}{45}
-\begin{enumerate}[(a)]
-\item
-Using $\cis \theta = \cos \theta + i\sin \theta$, complete the following argument by filling in the blanks:
-\begin{align*} 
-2 \cos(t + \pi/2) + 2 \cos(t - 5\pi/6) &= \text{Re}[2 \cis (t + \pi/2)] + \text{Re}[\underline{~<1>~})]\\
-&= \text{Re}[2 \cis (t) \cdot \cis(\pi/2)] + \textrm{Re}[\underline{~<2>~})]\\
-&= \text{ Re} \left[\left(\, 2 \cis(\pi/2) + 2 \cis(-5\pi/6) \, \right) \cdot \underline{~<3>~}) \right] 
-\end{align*}
-\item
-Convert $2 \cis(\pi/2)$ and $2 \cis(-5\pi/6)$ to cartesian form, and find the sum. Then convert back to polar form.
-\item
-Use your result in (b) to simplify the right-hand side of (a).
-\item
-Your result in (c) shows that the sum of the two cosine waves  $2\cos(t + \pi/2)$ and $2 \cos(t - 5\pi/6)$ is also equal to a cosine wave.  Find the amplitude and phase shift of the sum. Is the amplitude equal to the sum of the amplitudes? Explain.
-\end{enumerate}
-\end{exercise}
-
-Let us summarize our findings:
-\begin{itemize}
-\item
-Associated with each sine or cosine wave is a complex number $A \cis( \theta) $ such that $A$ is the amplitude and $\theta$ is the phase shift of the wave. This complex number is called the \term{phasor}\index{Phasor} associated with the wave.
-\item
-The sum of two sine or cosine waves is also equal to a cosine wave
-\item
-The amplitude and phase shift of the sum of two cosine waves may be obtained by adding the phasors of the two constituent cosine waves.
-\end{itemize}
-
-\begin{exercise}{46}
-A radio antenna receives three cosine-wave signals. The first signal has an amplitude of 4 and a phase shift of 0. The second has an amplitude of 3 and a phase shift of $\pi/2$. The third signal has an amplitude of 2 and a phase shift of $-\pi/3$.
-\begin{enumerate}[(a)]
-\item
-On graph paper,  plot the three phasors corresponding to the three signals. (The three phasors are $4 \cis(0), 3 \cis(\pi/2),$ and $2 \cis(-\pi/3)$)
-\item
-Use your picture in (a) to graphically add the three phasors. (Remember how to add vectors:  add the $x$-components, and add the $y$-components.)
-\item
-Convert the three phasors to rectangular form, and add them together algebraically.
-\item
-Use your result from (c) to find the amplitude and phase shift of the sum of the three signals.
-\end{enumerate}
-\end{exercise}
-
-
-\begin{exercise}{47}
-As in the previous problem, a radio antenna receives three cosine-wave signals. The three signals have equal amplitude. The first signal have a phase shift of 0. The second has a phase shift of $2\pi/3$. The third signal has  a phase shift of $4\pi/3$.
-\begin{enumerate}[(a)]
-\item
- What is the amplitude of the sum of the three signals?
-\item
-What is the phase shift of the sum of the three signals?
-\end{enumerate}
-\end{exercise}
-
-We hope that from the examples in this section, you may get some idea of how important complex numbers are in the study of signals. In fact, for many electrical engineers complex numbers are their ``bread and butter''. 
-
-\subsection{Roots of unity and regular polygons}\label{sec:RootsOfUnity}
+\subsection{Roots of unity and regular polygons\quad\sectionvideohref{c5WbBwp5av4&index=6&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{sec:RootsOfUnity}
 As we mentioned before, complex numbers got their start when mathematicians started considering the solutions to algebraic  equations. One particularly important equation is
-\[z^{n}=1.\]
+\[z^{n}=1, \qquad \text{ where } n \in \mathbb{N}.\]
 For example, when $n=4$ the complex numbers which solve $z^4=1$ are $z=1$, $-1$, $i$, and $-i$. In general, the complex numbers that satisfy the
 equation $z^{n}=1$ are called the \term*{$n$th roots of unity}\index{Roots! of unity}. (In other words, ``$n$th root of unity'' means the same thing as ''$n$th root of 1''.)
 
@@ -1553,37 +1391,77 @@ For what integers $n$ is $-1$ an $n$th root of unity?
 
 It turns out that in general we can find $n$ different $n$th roots of unity, as per the following proposition:
 
-\begin{prop}{nth_roots_of_1} The following $n$ numbers are $n$th roots of unity:
+\begin{prop}{nth_roots_of_1}The complex number $z$ is an $n$th root of unity if and only if $z$ satisfies the following condition:
 \[
-z=\cis\left(\frac{2k\pi}{n}\right),\]
- where $k=0,1,\ldots,n-1$. \end{prop}
+z=\cis\left(\frac{2k\pi}{n}\right), \text{ where } k \text{ is an integer between }0 \text{ and } n-1.\] 
+\end{prop}
 
-\begin{proof} By de Moivre's Theorem, \[
-z^{n}=\cis\left(n\frac{2k\pi}{n}\right)=\cis(2k\pi)=1.\]
- The $z$'s are distinct since the numbers $2k\pi/n$ are all distinct 
-and are greater than or equal to 0 but less than $2\pi$. 
+To illustrate this proposition, consider the case $n=4$. Then the equation gives: $z=\cis(2k\pi/4)$  where $k=0,1,2,3$, which works out to $\cis(0)$, $\cis(\pi/2)$, $\cis(\pi)$, and $\cis(3\pi/2)$.  Converting to Cartesian form we get  $1, i , -1, -i$ as our four roots, in perfect agreement with what we found in the first paragraph of this section.
+
+So, let's give a proof!
+
+\begin{proof}
+The proposition is an ``if and only if'' assertion, meaning that we'll have to prove it both ways. We'll start with the ``only if '' part.  To this end, we suppose $z$ is a complex $n$th root of unity. Our  goal is to show that $z$ must satisfy the given formula. Any complex number may be written in polar form, so we may write $z = r \cis(\theta)$ where $r$ is the modulus and $\theta$ is the complex argument of $z$.  So we may deduce:
+\begin{align*}
+z^n &= 1 & (z \text{ is a } n\text{th root of unity})\\
+\implies &(r \cis(\theta))^n=1 & (\text{polar form of } z)\\
+\implies &r^n \cis(n\theta)=1 & (\text{de Moivre's theorem})\\
+\implies &|r^n \cis(n\theta)|=|1| & (\text{take modulus of both sides})\\
+\implies &|r|^n =1 & (\text{properties of modulus})\\
+\implies &r =1. & (\text{Since }r\text{ is a nonnegative number})\\
+\end{align*}
+
+\noindent
+Now substituting $r=1$ back into the third line in this series of implications, we get:
+
+\begin{align*}
+\cis(n\theta)&=1 & (\text{substitution})\\
+\implies &\cos(n\theta) + i\sin(n\theta) =1 & (\text{definition of cis})\\
+\implies &\cos(n\theta)=1 \text{ and } \sin(n\theta)=0 &(\text{equality of complex numbers})\\
+\implies &n\theta = m \cdot 2\pi &\text{(periodicity of sin and cosine, from trig)}\\
+\implies &\theta = m\cdot 2\pi/n. &\text{(basic algebra)}
+\end{align*}
+
+\noindent
+To recap, we have:
+\[z= r \cis(\theta) \text{ where } r=1 \text{ and } \theta = 2\pi m/n, \text{ where }m \text{ is an integer}.\]
+
+Now, any fraction of the form $m/n$ can be written as an integer plus a fractional part between 0 and 1. Furthermore, the fractional part always has the form $k/n$ where $k$ is an integer between 0 and $n-1$. In other words:
+\[m/n  = \ell + k/n \qquad \text{where } \ell \text{ and } k \text{ are integers and } 0 \le k < n.\]
+It follows by substitution that
+\begin{align*}
+z= &\cis(2\pi m/n)&\text{(from last equality in previous series)}\\
+& \implies z= \cis(2\pi (\ell + k/n))&\text{(substitution)}\\
+& \implies z= \cis(2\pi\ell) \cis(2\pi k/n)&\text{(algebraic properties of cis)}\\
+& \implies z=  \cis(2\pi k/n).&\text{(def.  of cis and trig)}\\
+\end{align*}
+
+Our goal has been achieved: $z$ must definitely have the form $\cis(2\pi k/n)$ where $0 \le k < n$.
+
+Now for the ``if'' part; we must show that complex numbers which satisfy the formula as also $n$th roots of unity.  By de Moivre's Theorem, 
+\[ z^{n}=\cis\left(n\frac{2k\pi}{n}\right)=\cis(2k\pi)=1.\]
+Finished!
+
 \end{proof}
+
+\begin{rem}
+Note that the condition
+\[
+z=\cis\left(\frac{2k\pi}{n}\right), \text{ where } k \text{ is an integer between }0 \text{ and } n-1.\] 
+does indeed specify $n$ distinct values for $z$.  This is because $k/n$ produces $n$ different fractions between 0 and 1, so $\frac{2k\pi}{n}$ gives $n$ different angles between 0 and $2\pi$. Our vector representation of complex numbers tells us that different angles must produce different complex numbers.
+\end{rem}
 
 \begin{exercise}{49}
 \begin{enumerate}[(a)]
 \item
 Using Proposition~\ref{proposition:complex:nth_roots_of_1}, write three cube roots of unity in polar form. Convert to the form $a + bi$.
 \item
-Using Proposition~\ref{proposition:complex:nth_roots_of_1}, write four 4th roots of unity in polar form. Convert to the form $a+bi$.
+Using Proposition~\ref{proposition:complex:nth_roots_of_1}, write six 6th roots of unity in polar form. Convert to the form $a+bi$.
 \end{enumerate}
 \end{exercise}
 
-We have not actually shown that Proposition~\ref{proposition:complex:nth_roots_of_1} gives \emph{all} of the $n$th roots of unity, but in fact it does. First we'll  show this is true in the case where $n=4$:
-
-\begin{prop}{4throot}
- The only 4th roots of unity are the elements of the set $\{1,-1,i,-i\}$.
-\end{prop}
-
-\begin{proof}
-What this proposition is saying is that any complex number $w$ that is not in the set $\{1,-1,i,-i\}$ can't possibly be a fourth root of unity. We'll show  this in the following exercise: 
-
 \begin{exercise}{50}
-Suppose that $w$ is a complex number that is not equal to 1, -1, $i$, or $-i$ (in mathematical shorthand we write this as: $w \notin \{1,-1,i,-i \}$). 
+In this exercise you will give a different proof that there are exactly 4 4th roots of unity, by showing that any complex apart from 1, -1, $i$, or $-i$  cannot possibly be a 4th root of unity. First we suppose that $w$ is a complex number such that $w \notin \{1,-1,i,-i \}$. 
 \begin{enumerate}[(a)]
 \item
 Show that $(w-1)(w+1)(w-i)(w+i) \neq 0$.
@@ -1593,7 +1471,6 @@ Show that this implies that $w$ is not a 4th root of unity.
 \hyperref[sec:complex:hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
-\end{proof}
 
 \begin{exercise}{51}
 \begin{enumerate}[(a)]
@@ -1605,7 +1482,7 @@ Use your result in (a) to show that there are exactly 3 cube root of unity.
 \end{enumerate}
 \end{exercise}
 
-The roots of unity have interesting interesting geometric properties, as follows.
+When represented in the complex plane, the roots of unity have some very interesting geometric properties:
 
 \begin{example}{rootsunity} The 8th roots of unity can be represented
 as eight equally spaced points on the unit circle (Figure~\ref{rtsunity}).
@@ -1713,7 +1590,7 @@ $E \cdot E = \underline{~<5>~}$
 
 \end{multicols}
 
-\item Just as in part (c), use your answers from part (d) to draw arrows from $A$ to $E \cdot A$, $B$ to $E \cdot B$,etc. What do you observe about the arrows? 
+\item Just as in part (c), use your answers from part (d) to draw arrows from $A$ to $E \cdot A$, $B$ to $E \cdot B$, etc. What do you observe about the arrows? 
 
 \item
 Fill in the blanks:  If you choose one particular 6th root of unity and multiply it with all the other 6th roots, the new values correspond to different $\underline{~<1>~}$ of the original hexagon. The angle of $\underline{~<2>~}$ is equal to the complex argument of the $\underline{~<3>~}$.
@@ -1808,7 +1685,9 @@ where $AC,OA$, and $OC$ denote the lengths of segments $\overline{AC}, \overline
 In fact, many intricate theorems in plane geometry that require long proofs using conventional methods can be proven much more easily using complex numbers. We will not be exploring this further; but we hope these examples will whet your appetite!
 
 
-\subsection{Complex $n$th roots in general }
+\subsection{Complex $n$th roots in general 
+\quad\sectionvideohref{o5wpaYsDU4o&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=7}}
+
 In the previous section, we characterized all complex solutions of the equation $z^n = 1$; we called these solutions the $n$th roots of unity. A natural question to ask then is, What about the $n$th roots of any complex number? That is, given a complex number $a + bi$, can we find all solutions to the equation $z^n = a + bi$? Let's explore some simple cases first.
 
 \begin{exercise}{58}
@@ -1842,7 +1721,7 @@ Find two square roots of $-8i$.
 Next, let us consider the case of cube roots. Consider for example the cube roots of $1 + i$, which are the solutions to
 \[ z^3 = 1 + i. \]
 We  may rewrite this in polar form as
-\[ (r \cos \theta)^3 = \sqrt{2} \cis\left(\frac{\pi}{4}\right), \]
+\[ (r \cis \theta)^3 = \sqrt{2} \cis\left(\frac{\pi}{4}\right), \]
 where $r \cos \theta$ is $z$ in polar form. De Moivre's theorem then gives us:
 \[ r^3 \cos 3\theta = \sqrt{2} \cis\left(\frac{\pi}{4}\right). \]
 One solution for $r$ and $\theta$ which satisfies this equation is:
@@ -1871,6 +1750,10 @@ This takes care of cube roots. But let's not stop there! We can use a similar pr
 \item Multiply your result by all $n$ roots of unity to obtain $n$ distinct roots.
 \end{itemize}
 
+\begin{exercise}{}
+Show that the 2-step procedure above gives \emph{all} $n$th roots of a given complex number. That is, show that any complex $n$th root of $z$ can be obtained as an $n$th root of unity times any other complex $n$th root of $z$. You may proceed as follows. Suppose $z$ is a complex number, and $w$ and $y$ are $n$th roots of $z$. Show that there exists an $n$th root of unity $u$ such that $w$ is the product of $u$ and $y$, i.e. $w=u \cdot y$. 
+\end{exercise}
+
 \begin{exercise}{60}
 (In this exercise, you may leave your answers in polar form)
 \begin{enumerate}[(a)]
@@ -1886,9 +1769,20 @@ Find all sixth roots of $-16i$.
 \end{enumerate}
 \end{exercise}
 
+\begin{exercise}{60a}
+In previous exercises, we have considered $n$th roots where $n$ is a \emph{positive} integer. But what about \emph{negative} roots?
+\begin{enumerate}[(a)]
+\item
+For parts (a-d) in Exercise~\ref{exercise:complex:60}, find the corresponding \emph{negative} roots (i.e., in part (a) find the negative 5th roots, etc).
+\item
+Explain the relationship between the moduluses of the roots you found in Exercise~\ref{exercise:complex:60}, and the roots you found in part (a).
+\item
+Explain the relationship between the complex arguments of the roots you found in Exercise~\ref{exercise:complex:60}, and the complex arguments you found in part (a).
+\end{enumerate}
+\end{exercise}
 
-\section{Complex roots of polynomial equations\quad
-\sectionvideohref{kf-LAFy3vhg}}\label{sec:FTOA}
+\subsection{Complex roots of polynomial equations\quad
+\sectionvideohref{HKtljwos03o&index=8&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{sec:FTOA}
 
 Next we consider more general algebraic equations than the basic $n$th root equations we've been looking at so far.\index{Roots! of polynomial equations}  As a first example, consider the equation $z^2 + pz = q$, where $p$ and  $q$ are real numbers. Using  the quadratic formula, it is not too hard to show that if $a + bi$ is a solution of $z^2 + pz = q$ then the complex conjugate $a - bi$ is also a solution. This is because  $z^2 + pz = q$ can also be written as  $z^2 + pz - q = 0$, and the quadratic formula tells us that there are two solutions, given by:
 $$ z = \frac{-p \pm \sqrt{p^2 - (4)(1)(-q)}}{2} = \frac{-p}{2}  \pm \frac{\sqrt{p^2 + 4q}}{2}.$$
@@ -1898,7 +1792,7 @@ The $-p/2$ term is always real, but the square root term is either real or imagi
 Consider the cubic equation $z^3 + pz^2 + qz = r$, where $p, q$ and  $r$ are all real numbers.
 \begin{enumerate}[(a)]
 \item
-Using an appropriate identity from Exercise \ref{}, show that $\overline{z^3} = \overline{z}^3$.
+Using an appropriate identity from Exercise \ref{exercise:complex:cxprops}, show that $\overline{z^3} = \overline{z}^3$.
 \item
 Similarly, show  $\overline{pz^2} = p\overline{z}^2$ and $\overline{qz} = q\overline{z}$, and $\overline{r} = r$.
 \item 
@@ -1910,9 +1804,15 @@ Using (d), show that if $z$ is a solution to $z^3 + pz^2 + qz = r$ then $\overli
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{conjugate_root}
-Based on the result of the previous exercise, fill in the blank: Given that the complex number $z$ is a solution of $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $a_0, a_1, \ldots a_{n-1}$ are real numbers. Then $\_\_\_\_\_$ is also a solution to the same equation.
+\begin{exercise}{conjugate_root2}
+Suppose the cubic equation $z^3 + pz^2 + qz = r$ has an odd number of solutions. Show that at least one of the solutions must be real.
 \end{exercise}
+
+
+The proof in Exercise~\ref{exercise:complex:cubic_conj} can be straightforwardly generalized to quartic, quintic, and higher-degree polynomials as well. The result is:
+
+\begin{prop}{nth_degree_conj}   Given that the complex number $z$ is a solution of $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $a_0, a_1, \ldots a_{n-1}$ are real numbers. Then $\overline{z}$ is also a solution to the same equation. 
+\end{prop}
 
 \begin{exercise}{62} 
 \begin{enumerate}[(a)]
@@ -1925,8 +1825,7 @@ Given that $3 - 7i$ and $-2+i$ are solutions to an equation of the form $z^4 + a
 \end{exercise}
 
 \begin{exercise}{conjugate_root2}
-Using the statement in Exercise~\ref{exercise:complex:conjugate_root}, prove the following proposition:
-Given the equation  $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $a_0, a_1, \ldots a_{n-1}$ are real numbers. Let $N$ be the number of solutions of the equation that are \emph{not} real. Then either $N=0$ or $N$ is divisible by 2. 
+Given the equation  $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $a_0, a_1, \ldots a_{n-1}$ are real numbers. Let $N$ be the number of solutions of the equation that are \emph{not} real. Prove that either $N=0$ or $N$ is divisible by 2. 
 \hyperref[sec:complex:hints]{(*Hint*)}
 \end{exercise}
 
@@ -1935,7 +1834,7 @@ The most famous result concerning complex roots of polynomials is known as the {
 \begin{prop}{FTOA} Given any equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, \ldots a_{n-1}$ are real numbers. Then there exists at least one and at most $n$ distinct complex numbers which solve the given equation. 
 \end{prop}
 
-The Fundamental Theorem of Algebra actually has two parts. The easy part is the ``at most $n$ distinct complex roots'' part, and the hard part is the ``at least one complex root'' part. We will eventually prove the easy part in Chapter~\ref{poly}, but sadly the hard part is beyond our scope. (For more information on this see the Historical Note at the end of the chapter.
+The Fundamental Theorem of Algebra actually has two parts. The easy part is the ``at most $n$ distinct complex roots'' part, and the hard part is the ``at least one complex root'' part. We will eventually prove the easy part in Chapter~\ref{poly}, but sadly the hard part is beyond our scope. For more information on this see the Historical Note at the end of the chapter.
 
 \begin{exercise}{70}
 \begin{enumerate}[(a)]
@@ -1948,13 +1847,15 @@ Can you give an example of an equation of the form $z^3 + a_2z^2 + a_1 z = a_0$ 
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{71}
-Using the Fundamental Theorem of Algebra and our previous results on roots of unity, prove that for every positive integer $n$ there are \emph{exactly} $n$ distinct $n$th roots of unity (so far, we have only shown that there are \emph{at least} $n$ distinct $n$th roots).
-\end{exercise}
 
 \begin{exercise}{72}
 Using the Fundamental Theorem of Algebra and Exercise~\ref{exercise:complex:conjugate_root2}, prove the following proposition: 
 Given an equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, \ldots. a_{n-1}$ are real numbers. Suppose the equation has no real solutions. Then the equation has at least two distinct solutions.
+\end{exercise}
+
+\begin{exercise}{72}
+Using the Fundamental Theorem of Algebra and Exercise~\ref{exercise:complex:72}, prove the following proposition: 
+Given an equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n$ is a positive odd number and $a_0, a_1, \ldots. a_{n-1}$ are real numbers.  Then the equation has at least one real solution.
 \end{exercise}
 
 
@@ -1971,14 +1872,196 @@ The Fundamental Theorem of Algebra is a famous ``hard problem'' in the history o
 \histbox 
 }
 
+\section{Applications of complex numbers\quad
+\sectionvideohref{beo_65G9I7Q&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=6}}
 
-\section{The Mandelbrot set} \label{sec:mandelbrot}
+\subsection{General remarks on the usefulness of complex numbers}
+
+We have already discussed that it took some time for complex numbers to be generally accepted by mathematicians, who tended to have a preference for ``pure'' numbers such as the integers. But complex numbers have had their revenge. Today the ``purest'' form of mathematics, namely number theory, is heavily dependent on complex numbers. The famous Fermat's Last Theorem\index{Fermat!last theorem} was proved using techniques that involved complex numbers.\footnote{See \url{http://www-history.mcs.st-and.ac.uk/HistTopics/Fermat's_last_theorem.html} for some of the long and sordid history of Fermat's Last Theorem.}
+
+But quite apart from pure mathematics, complex numbers have proved to be extremely practical. Complex numbers are indispensable tools for
+scientists and engineers. Virtually all of modern physics is based
+on complex numbers. Engineers build bridges using complex numbers.
+Without complex numbers, there would probably be no computers, cell
+phones or most other electronics. A strong argument could be made that complex numbers are even more useful than ``real'' numbers.
+
+Much of the practical usefulness of complex numbers comes from their close relationship
+with the trigonometric functions cosine and sine. We have seen a little
+bit of this already in the representation $z=r\cis\theta$.
+Complex numbers give a powerful way to express complicated functions
+of sine and cosine in a very simple way. We will give an introduction of this in the next section--you may see it again, or have already seen it, in your differential equations course.
+
+\subsection{Complex numbers in electrical engineering: phasors}
+
+We have already seen there is a close relationship between complex numbers and the trigonometric functions sine and cosine. This relationship is the basis for much of the usefulness of complex numbers -- as we shall explain in this section.
+
+Figure \ref{fig:complex:1} shows the graphs of the cosine and sine functions.  They look like waves: for instance, the graph of $y = \cos(t)$ is a wave that includes the point $(0,1)$. The {\bf \emph{amplitude}}\index{Amplitude} of this wave is 1. The {\bf \emph{period}}\index{Period} of this wave is $2\pi$ radians. 
+
+\begin{figure}[htb]
+	   \center{\includegraphics[width=\textwidth]
+	         {images/cos_sin.png}}
+	  \caption{\label{fig:complex:1} Graphs of cosine and sine }
+\end{figure}
+
+
+Note that some references use the word ``wavelength" instead of ``period"\index{Wavelength}. This is because they are considering equations like $y = \cos(x)$ where the independent variable $x$ represents distance. We are considering the independent variable to be time: so it is appropriate to use the word ``period'' instead.
+
+Of course, there are cosine and sine waves with different periods. However, in this section  we will \emph{only}  be looking at cosine and sine waves with period $2\pi$. We re-emphasize:  all the cosine and sine waves in this chapter (and any that you use in the homework problems) have period $2 \pi$.
+
+Now we can create other waves by using the cosine as a ``parent function''. For instance, the graph of
+$y = A  \cos ( t + \theta) $ where $A > 0$
+is similar to the graph of $y = \cos(t)$, with the following differences:
+
+\begin{itemize}
+\item
+The amplitude is $A$
+\item
+The \term{phase shift}\index{Phase shift} (relative to the cosine curve) is $\theta$. 
+\end{itemize}
+
+%Changed 1/22/12 JW
+\begin{rem} 
+\begin{itemize}
+\item
+You may have studied ``parent functions'' in high school, and if so you may remember that the graph of $y = f(t+c)$ is shifted to the \emph{left} compared to the graph of $y = f(t)$.  It follows that a positive phase shift will shift the graph to the \emph{left}, while a negative phase shift will shift it to the \emph{right} (see Figure~\ref{fig:complex:2}).\footnote{ You should be careful when you encounter the term ``phase shift'' in other books, because some books define a positive phase shift as moving the graph to the \emph{right}. This is not wrong: it's just different terminology.}
+\item 
+If the variable $t$ is considered as time, then $y = A  \cos ( t + \theta) $ is \emph{advanced} by $\theta$ (corresponding to a left shift of the graph), while $y = A  \cos ( t - \theta) $ is \emph{delayed} by $\theta$ (corresponding to a right shift of the graph).  
+\end{itemize}
+\end{rem}
+%replaces:
+%\begin{rem} 
+%Be careful about the term ``phase shift''\index{Phase shift}. Some books define the phase of $y = A  \cos ( t + \theta) $ as $-\theta$ and not $\theta$ -- this is because the graph of $y = A  \cos ( t + \theta) $ includes the point $(-\theta,1)$.  If the variable $t$ is considered as time, then $y = A  \cos ( t + \theta) $ is \emph{advanced} by $\theta$ (corresponding to a left shift of the graph), while $y = A  \cos ( t - \theta) $ is \emph{delayed} by $\theta$ (corresponding to a right shift of the graph).
+%\end{rem}
+%1/22/12
+ 
+\begin{figure}[htb]
+	   \center{\includegraphics[width=\textwidth]
+	         {images/ampl_phase.png}}
+	  \caption{\label{fig:complex:2} Cosine wave with amplitude and phase shift}
+\end{figure}
+
+\begin{exercise}{41}
+Sketch the function $y = 1.5 \cos(t + \pi/3)$. Label the amplitude and phase shift on your graph.
+\end{exercise}
+
+\begin{exercise}{wave1}
+Give the equation of a cosine wave with amplitude 7 and phase shift $-\pi$/2. Graph the function. How is this function related to a sine wave?
+\end{exercise}
+
+\begin{exercise}{waves}
+Give the equation of a cosine wave with amplitude $1/2$ and phase shift $2\pi$. Graph the function. How is this wave related to the original cosine wave with phase shift 0?
+\end{exercise}
+
+\begin{exercise}{42}
+\begin{enumerate}[(a)]
+\item
+Sketch the function $y = \sin(t)$.
+\item
+Find three different  choices of $A,\theta$ such that 
+$ \sin(t) = A  \cos (t + \theta)$.  What are the possible values of $A$?
+\hyperref[sec:complex:hints]{(*Hint*)}
+
+\end{enumerate}
+\end{exercise}
+
+\noindent
+In summary, amplitude and phase are two important properties of cosine and sine waves; and in fact the amplitude and phase uniquely determine the actual wave, as you saw in Exercises~\ref{exercise:complex:wave1} and \ref{exercise:complex:waves}. Now earlier in this chapter, we saw a different mathematical object that was characterized by amplitude and phase. Naturally, we're referring to the complex numbers.  We will now make a deep connection between these two types of mathematical objects that, on the surface, are very different.
+
+Recall that the \emph{real part} of the complex number $z = a + bi$ is $a$, and the \emph{imaginary part} is $b$. We also use the notation Re$[z]$ to denote the real part of the complex number $z$, and the notation Im$[z]$ to denote the imaginary part.
+
+\begin{exercise}{43}
+Show that Re$ [A  \cis\theta \cdot \cis( t)]  = A  \cos ( t +  \theta). $
+\hyperref[sec:complex:hints]{(*Hint*)}
+ \end{exercise}
+
+\begin{exercise}{44}
+Show that Im$ [A \cis\theta \cdot \cis (t)] = A \sin (t + \theta). $
+\end{exercise}
+
+\noindent
+The previous two exercises show that: 
+
+\begin{itemize}
+\item
+A cosine wave with amplitude $A$ and phase shift $\theta$ can be represented  as the real part of  the complex number $A \cis\theta$ times the complex function $\cis(t)$.
+\item
+A sine wave with amplitude $A$ and phase shift $\theta$ can be represented  as the imaginary part of  the complex number $A \cis\theta$ times the complex function $\cis(t)$.
+\end{itemize}
+
+\noindent
+We may also understand this situation in terms of two-dimensional vectors with the help of Figure \ref{fig:complex:3}. We've already shown how complex numbers can be seen as two-dimensional vectors: in particular, the complex number $\cis\theta$ is identified with $\cos\theta$\textbf{i} + $\sin\theta$\textbf{j}. As $t$ varies, the point $\cis(t+\theta)$ moves around the unit circle,and the real part of $\cis(t + \theta)$ is the projection of the moving point onto the $x$-axis.  In other words, the cosine wave on the right side of Figure \ref{fig:complex:3} tells us the vector's horizontal distance to the $y$-axis as a function of time $t$.
+
+\begin{figure}[htb]
+	   \center{\includegraphics[width=\textwidth]
+	         {images/phasors.png}}
+	  \caption{\label{fig:complex:3} Graphs of the vector representation and the wave representation of cosine }
+\end{figure}
+
+Now when two waves cross each other they produce a wave of a different shape--we may see this in water waves at the beach or pool (or physics class). This is called {\bf \emph{wave superposition}}\index{Wave superposition}. We will now see how complex numbers make it easy to compute the shape of this new wave.
+
+\begin{exercise}{45}
+\begin{enumerate}[(a)]
+\item
+Using $\cis \theta = \cos \theta + i\sin \theta$, complete the following argument by filling in the blanks:
+\begin{align*} 
+2 \cos(t + \pi/2) + 2 \cos(t - 5\pi/6) &= \text{Re}[2 \cis (t + \pi/2)] + \text{Re}[\underline{~<1>~})]\\
+&= \text{Re}[2 \cis (t) \cdot \cis(\pi/2)] + \textrm{Re}[\underline{~<2>~})]\\
+&= \text{ Re} \left[\left(\, 2 \cis(\pi/2) + 2 \cis(-5\pi/6) \, \right) \cdot \underline{~<3>~}) \right] 
+\end{align*}
+\item
+Convert $2 \cis(\pi/2)$ and $2 \cis(-5\pi/6)$ to cartesian form, and find the sum. Then convert back to polar form.
+\item
+Use your result in (b) to simplify the right-hand side of (a).
+\item
+Your result in (c) shows that the sum of the two cosine waves  $2\cos(t + \pi/2)$ and $2 \cos(t - 5\pi/6)$ is also equal to a cosine wave.  Find the amplitude and phase shift of the sum. Is the amplitude equal to the sum of the amplitudes? Explain.
+\end{enumerate}
+\end{exercise}
+
+Let us summarize our findings:
+\begin{itemize}
+\item
+Associated with each sine or cosine wave is a complex number $A \cis( \theta) $ such that $A$ is the amplitude and $\theta$ is the phase shift of the wave. This complex number is called the \term{phasor}\index{Phasor} associated with the wave.
+\item
+The sum of two sine or cosine waves is also equal to a cosine wave
+\item
+The amplitude and phase shift of the sum of two cosine waves may be obtained by adding the phasors of the two constituent cosine waves.
+\end{itemize}
+
+\begin{exercise}{46}
+A radio antenna receives three cosine-wave signals. The first signal has an amplitude of 4 and a phase shift of 0. The second has an amplitude of 3 and a phase shift of $\pi/2$. The third signal has an amplitude of 2 and a phase shift of $-\pi/3$.
+\begin{enumerate}[(a)]
+\item
+On graph paper,  plot the three phasors corresponding to the three signals. (The three phasors are $4 \cis(0), 3 \cis(\pi/2),$ and $2 \cis(-\pi/3)$)
+\item
+Use your picture in (a) to graphically add the three phasors. (Remember how to add vectors:  add the $x$-components, and add the $y$-components.)
+\item
+Convert the three phasors to rectangular form, and add them together algebraically.
+\item
+Use your result from (c) to find the amplitude and phase shift of the sum of the three signals.
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{47}
+As in the previous problem, a radio antenna receives three cosine-wave signals. The three signals have equal amplitude. The first signal have a phase shift of 0. The second has a phase shift of $2\pi/3$. The third signal has  a phase shift of $4\pi/3$.
+\begin{enumerate}[(a)]
+\item
+ What is the amplitude of the sum of the three signals?
+\item
+What is the phase shift of the sum of the three signals?
+\end{enumerate}
+\end{exercise}
+
+We hope that from the examples in this section, you may get some idea of how important complex numbers are in the study of signals. In fact, for many electrical engineers complex numbers are their ``bread and butter''. 
+
+
+\subsection{Complex numbers and fractals: the Mandelbrot set} \label{sec:mandelbrot}
 The intricate \emph{Mandelbrot set}\index{Mandelbrot set} (see Figure~\ref{mandelbrot}) is a beautiful application of complex numbers.
 The Mandelbrot set is defined by means of \emph{iteration} of the function $f(z) = z^2 + c$. The definition is a little complicated: we show how it works using a couple of examples.
 
 First consider $c=1$, so $f(z) = z^2 + 1$. We start with $z=0$, which gives $f(0) = 1$; and we iterate by evaluating the function on the result of the previous evaluation. So we compute $f(1) = 2, f(2) = 5, f(5) = 26, \ldots.$. It is clear that $|f(z)|$ is getting larger and larger after repeated iterations. 
 
-On the other hand, if we use $c=i$ and start with $z=0$, we get $f(0) = i$ at first, and repeated iteration gives $f(i) = -1+i, f(-1+i) =- i, f(i) = -1 + i, \ldots$ so that this time $|f(z)|$ doesn't continue to grow indefinitely after repeated iterations. 
+On the other hand, if we use $c=i$ and start with $z=0$, we get $f(0) = i$ at first, and repeated iteration gives $f(i) = -1+i, f(-1+i) =- i, f(-i) = -1 + i, \ldots$ so that this time $|f(z)|$ doesn't continue to grow indefinitely after repeated iterations. 
 
 The Mandelbrot set is defined to be the set of values $c$ for which the iterations do \emph{not} grow indefinitely upon iteration. Thus $i$ is in the Mandelbrot set, while $1$ is not. 
 

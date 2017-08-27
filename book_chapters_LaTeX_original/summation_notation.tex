@@ -76,7 +76,7 @@ $\displaystyle{ \sum_{k=0}^{100} \left(\frac{1}{k+2} - \frac{1}{k+1}\right)}$
 \end {enumerate}
 \end{exercise}
 
-\section{Sigma notation properties}
+\section{Sigma notation properties} \label{sec:sigmaProperties}
 
 % Sigma, as with any other math notation, is designed not only to offer control and concise notation, but to offer the ability to change the representation of that notation without changing the value.  There are some circumstances where numbers can be moved or removed from the sum and yet the sum maintains the same value.  
 As with any algebraic notation, there are rules that allow us to do algebraic manipulations with expressions that involve sigmas. 
@@ -130,7 +130,7 @@ When removing a term from the middle, it may be necessary to split the sum into 
 %\[2 + \sum_{i=0}^{25}(2i+1)  \]
 
 %insert exercises for sigma notation modification
-\begin{exercise}{}
+\begin{exercise}{sum1}
 Take the following sigma notation examples and change the formula and final value so that the starting value becomes 0 and the sum maintains the same value.  Calculate the value of both the listed sum and the resulting sum to show that the value is the same.
 \begin{enumerate} [(a)]
  \item
@@ -150,7 +150,7 @@ If true then prove it; if not, give a counterexample.
 
 
 \section{Nested sigmas\quad
-\sectionvideohref{cVfYaB4Gn4M&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=44}}
+\sectionvideohref{cVfYaB4Gn4M&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=44}} \label{sec:sigmaNested}
 Since any  sufficiently patterned summation can be replaced with sigma notation, it's quite possible for one sigma to end up inside another:
 
 \[\sum_{i=0}^{3}\left( \sum_{j=0}^{2}1\right)\]
@@ -188,7 +188,7 @@ So far our examples have only two sigmas, but it's quite possible to have an unl
 
 %Another handy identity for more than one index:JW
 %\sum_{i=n}^s \sum_{j=m}^t a_{i,j} = \sum_{j=m}^t sum_{i=n}^s a_{i,j} 
-\begin{exercise}{}
+\begin{exercise}{nested1}
 Rewrite each of the following nested sums, exchanging the order of sums and changing the start values and end conditions as needed so that the nested sum maintains the same value. (In some cases, drawing a grid point diagram similar to Figure~\ref{fig:summation1} may be helpful.)
 \begin{enumerate}[(a)]
 \item
@@ -209,7 +209,7 @@ $\displaystyle{\sum_{i=m}^{n}\sum_{j=0}^{i}(i-j)^2 }$~~(You may assume $m>0$.  W
 \end{exercise}
 Another useful fact: in a nested sum, the outer summation index can be treated as a constant in the inner summation.  So for example:
 \[ \sum_{i=1}^{9} \sum_{j=1}^7 ij = \sum_{i=1}^{9} i \sum_{j=1}^7 j = \sum_{i=1}^{9} i\sum_{j=1}^7 j = \left(\sum_{i=1}^{9} i\right) \left(\sum_{j=1}^7 j\right) = 45\cdot 28=1260. \]
-\begin{exercise}{}
+\begin{exercise}{nested2}
 Using exchange of summation and other sum manipulation techniques, find the exact values of the following sums:
 
 
@@ -251,7 +251,7 @@ We can use the same reasoning to arrive at the following formula.
 where $a$ and $k$ are integers and $a<k$.
 
 %%% Need a better example before these exercises. Students don't know how to represent an odd number.  You can also do exercises where you skip 3 numbers instead of 2
-\begin{exercise}{}
+\begin{exercise}{common1}
 \begin{enumerate}[(a)]
 \item 
 Write the sum of odd integers from $2a+1$ to $2k+1$ in sigma notation.
@@ -363,7 +363,7 @@ There is a summation notation counterpart, called the \term{Kronecker delta}\ind
 0 ~ \text{if} ~ i \neq j.
 \end{cases} \]
 
-\begin{exercise}{}
+\begin{exercise}{KroneckerIdentity}
 \begin{enumerate}[(a)]
 \item
 What is the relationship between $\delta_{ij}$ and  the entries of the identity matrix $I$?
@@ -396,7 +396,7 @@ So for example, the expression
 in  Einstein notation simplifies to:
 \[ {d}_{i,m}=  a_{i,k} b_{k,j} c_{j,m}. \]
 
-\begin{exercise}{}
+\begin{exercise}{abbreviated1}
 Write the following expressions in both abbreviated notations. Note that all indices are summed over the full range of possible values.
 \begin{enumerate}[(a)]
 \item
@@ -406,7 +406,7 @@ $\sum_{\ell=1}^L \left( \sum_{m=1}^M \left( \sum_{n=1}^N  a_{\ell,m} b_{n,\ell} 
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{unabbreviated1}
 Suppose $A,B,C,D$ are $n \times n$ matrices.  Write the complete (unabbreviated) expression corresponding to the following sums in Einstein notation:
 \begin{enumerate}[(a)]
 \item
@@ -474,7 +474,7 @@ Transpose defines an isomorphism from $GL_n(\mathbb{R})$ to $GL_n(\mathbb{R})$.
 
 We can also express matrix inverse equations in summation notation.  Recall that the inverse of a matrix $A$ is a matrix $A^{-1}$ such that $AA^{-1}=I$ and $A^{-1}A=I$.
 
-\begin{exercise}{}
+\begin{exercise}{inverse1}
 \begin{enumerate}[(a)]
 \item
 Express the equations $AA^{-1}=I$ and $A^{-1}A=I$ using summation notation.  You may use the notation $[A]_{i,j}$ and $[A^{-1}]_{i,j}$ to express the entries of the two matrices.
@@ -565,7 +565,7 @@ This time we are using the index $i$ for both the row position and the column po
 
 The next exercise covers some basic properties of traces:
 
-\begin{exercise}{}
+\begin{exercise}{trace1}
 \begin{enumerate}[(a)]
 \item
 Prove that if $A$ and $B$ are square matrices of the same size, then $\text{Tr} \left( A + B \right) = \text{Tr} \left( A \right) + \text{Tr} \left( B \right)$.
@@ -1155,14 +1155,15 @@ Miraculously, these turn out to be equal.
 \end{exercise}
 \end{proof}
 
-No doubt this formula seems entirely unmotivated and somewhat useless (although you have to admit it's kind of cute.)  However, it becomes incredibly useful when we apply it to the case where $A$ is a rotation matrix. To this end, suppose $R$ is a rotation entry whose $(j,k)$ entry is denoted by $r_{j,k}$. We may define a vector $z$ by the following expression:
-\[ z_j :=  \sum_{k,\ell}\epsilon_{jk\ell} r_{k\ell}. \]
-Then the equality in Proposition~\ref{proposition:Sigma:crazyEq} becomes:
+No doubt this formula seems entirely unmotivated and somewhat useless (although you have to admit it's kind of cute.)  However, it becomes incredibly useful when we apply it to the case where $A$ is a rotation matrix. To this end, suppose $R$ is a rotation matrix whose $(j,k)$ entry is denoted by $r_{j,k}$. 
+Then the equality in Proposition~\ref{proposition:Sigma:crazyEq} applied to matrix $R$  becomes:
 \[ \sum_{j,k,\ell}\epsilon_{jk\ell} r_{ij}r_{k\ell} =  \sum_{j,k,\ell}\epsilon_{jk\ell} r_{ji}r_{k\ell}, \]
 which implies (by rearranging terms)
 \[ \sum_{j}r_{ij} \left( \sum_{k,\ell} \epsilon_{jk\ell} r_{k\ell} \right) 
 =  \sum_{j}r_{ji} \left( \sum_{k,\ell} \epsilon_{jk\ell} r_{k\ell} \right). \]
-This can be  greatly simplified by using our definition of $z_j$:
+The expressions in parentheses on the left and right are identical. So let's define:
+\[ z_j :=  \sum_{k,\ell}\epsilon_{jk\ell} r_{k\ell}, \]
+and we can replace the parenthetical expressions in our equality by $z_j$:
 \[ \sum_{j}r_{ij} z_j=  \sum_{j}r_{ji} z_j. \]
 Rewriting this in matrix notation gives $Rz = R^{\text{T}}z$. Using the fact that $R^{\text{T}} = R^{-1}$ (see Proposition~\ref{proposition:Sigma:detRotMx}) and a series of algebraic manipulations,  we find:
 \begin{align*}
@@ -1176,7 +1177,7 @@ Now, there are two cases to consider:
 In the case where $(R-I)z \neq 0$, then it must be true that $y := (R-I)z$ is a nonzero vector which satisfies $(R+I)y=0$. This implies that $y$ is an eigenvector of $R$ with eigenvalue $-1$. Now since $R$ is $3 \times 3$, it must have 3 eigenvalues in total. Let $\lambda_1$ and $\lambda_2$ be the 2 remaining eigenvalues.  We know from linear algebra that the product of the eigenvalues is equal to the determinant of $R$, which is equal to 1 by Proposition~\ref{proposition:Sigma:detRotMx}.  This imples that $-1 \cdot \lambda_1 \cdot \lambda_2 = 1$ or 
 $ \lambda_1 \cdot \lambda_2 = -1$. 
 
-Now, the $\lambda$'s could be complex, or they could be real. If complex, then they must be complex conjugates of each other (since $R$ is a real matrix), but then their product would be positive. Since their product is negative, this is not possible. 
+Now, the $\lambda$'s could be complex, or they could be real. If complex, then they must be complex conjugates of each other (since $R$ is a real matrix), but then their product would be positive (why is this?). Since their product is negative, this is not possible. 
 
 We may conclude that the $\lambda$'s are real. Now let $w$ be an eigenvector for the eigenvalue $\lambda_1$. Then $Rw = \lambda_1 w$, so that $ \lVert Rw \rVert = |\lambda_1| \lVert w \rVert$. But we know from the properties of rotations (see Section~\ref{subsec:rotMx3} that 
 $ \lVert Rw \rVert =  \lVert w \rVert$. This implies $|\lambda_1|=1$. The same argument shows $|\lambda_2|=1$. 
@@ -1184,7 +1185,7 @@ $ \lVert Rw \rVert =  \lVert w \rVert$. This implies $|\lambda_1|=1$. The same a
 So what've we got?  We know that $\lambda_1$ and $\lambda_2$ are real.  We also know that  $|\lambda_1|=|\lambda_2|=1$, so each $\lambda$ is either $+1$ or $-1$.  Finally, we know that $\lambda_1 \cdot \lambda_2 = -1$.  This means that one of the $\lambda$'s must be $-1$, and one must be 1. Since the remaining eigenvalue is $-1$, It follows that there is a unique eigenvector with eigenvalue 1, which is the unique fixed axis of the rotation.
 
 \item
-In the case where $(R-I)z = 0$, then the vector $z$ is fixed by the rotation $R$. But is it the only fixed vector?  We'll show that if there is another fixed vector, then $R$ must be the identity.  Suppose that there's another vector $y$ which is not parallel to $z$ and is also fixed by the rotation, so that $Ry=y$. since $R^{\text{T}}=R^{-1}$, we may multiply both sides by $R^{\text{T}}$ and obtain $y = R^{\text{T}}y$, or
+In the case where $(R-I)z = 0$, then the vector $z$ is fixed by the rotation $R$. But is it the only fixed vector?  We'll show that if there is another fixed vector, then $R$ must be the identity.  Suppose that there's another vector $y$ which is not parallel to $z$ and is also fixed by the rotation, so that $Ry=y$. Since $R^{\text{T}}=R^{-1}$, we may multiply both sides by $R^{\text{T}}$ and obtain $y = R^{\text{T}}y$, or
 \[ y_j = \sum_m r_{mj} y_m .\]
 By the same token, we have $z = R^{\text{T}}z$, or
 \[ z_k = \sum_n r_{nk} z_n .\]

@@ -8,7 +8,12 @@
 %%%%(c)
 %%%%(c)
 \chap{Group Theory Applications (II): Further Topics in Cryptography}{further_crypt}
-\section{Diffie-Hellman Key Exchange}\label{sec:DHKE:1}
+
+In this chapter we examine two specific topics in cryptography which are highly practical and are relatively recent developments: Diffie-Hellman key exchange (originated by Whitfield Diffie and Martin Hellman in 1976) and elliptic curve cryptography (proposed by Neal Koblitz and Victor Miller in 1985).
+
+This chapter is authored by Moses Marmolejo, with revisions by C.T.
+
+\section{Diffie-Hellman key exchange}\label{sec:DHKE:1}
 
 In order to share a private message over a public domain a sender must  "lock" or encrypt their message using a \emph{key}\index{key! in cryptogaphy}.  Recall from Section \ref{sec:crypt:overview}, that in cryptography a  key is a special piece of information (usually a number)  that is required to encrypt and decrypt data which is shared between the sender and receiver. There are generally three types of keys used: public, private and symmetric keys. A \emph{public key}\index{Public Key! in cryptography} can be widely distributed, and is typically used for encrypting messages.  For a public key to be effective, there must be a matching \emph{private key}\index{Private Key! in cryptography} which is known only to the receiver. The privat key can be used to decrypt the messages created using the public key.  Finally, a \emph{symmetric key}\index{Symmetric Key! in cryptography} is known by the sender and receiver, and is used to both encypt and decrypt messages.  Not all cryptosystems require all three kinds of keys, but every cryptosystem must have either a private key or a symmetric key.
 
@@ -215,7 +220,7 @@ From the foregoing discussion, we may see why it is important to choose a prime 
 Our previous discussion indicates the DHKE is very hard to crack if it uses a large enough modulus $p$ and a suitable base $g$. But, is there any way to successfully eavesdrop on Moses and Rachael's conversation without actually cracking the code?  Both Moses and Rachael seem confident with the security the DHKE provides, since an attacker would only be privy to $\bmod (g^n , p)$ and $\bmod (g^m , p)$, each of which cannot be used to decrypt the message since an attacker would have to compute the DL problem to find $m$ and $n$. 
 
 But what would happen if an attacker, Fred (an eavesdropper) places himself between Moses and Rachael's messages?  If Fred could do this then Rachael's message would pass through Fred first before reaching Moses, and vice-versa. Now, Fred can intercept the public key and can establish his own private key with Moses and Rachael.  Fred is now able to read or alter messages.  This type of attack is commonly referred to as the Man in the Middle (MiM) attack.  See Figure~\ref{fig:DH:DHKE_2} to see how Fred is able to modify the Key Exchange.
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=5in]
 	         {images/DHKE_18.png}}
 	  \caption{\label{fig:DH:DHKE_2} MiM Attack during Moses and Rachael's Key Exchange }
@@ -240,13 +245,13 @@ DHKE is vulnerable to this type of MiM attack since Moses cannot verify that Rac
 
  Diffie-Hellman is just one of many key exchange algorithms you can use. In the next section, we will talk about a different way to exchange keys that is even more secure.
 
-\section{Elliptic Curve Cryptography}\label{sec:ECC:2}
+\section{Elliptic curve cryptography}\label{sec:ECC:2}
 
-In the previous section we saw that the longer the key, the greater the security. The disadvantage to long keys is they require sending more information, thus slowing down communication.  Elliptic Curve Cryptography (ECC) is one approach to the public key sharing dilemma that offers greater security with smaller keys. The table in Figure~\ref{fig:DH:DHKE_9} shows the relationship between key length and security for three different cryptosystems: RSA, Diffie-Hellman, and ECC.  In the table, 'key length' refers to the number of binary bits in the key: for comparison, a 160 bit key has 49 decimal digits, while a 1024 bit key has 309 decimal digits. The 'security level' is also measured in bits (80, 128, 192, 256) where these bits refer to the size of the number of computational steps necessary to break the code.  For example, a security level of 80 means that $2^{80}$ computations are required to break the code (from reference(\ref{Certicom})). To give you an idea of what this means practically, in 2002 it took $10,000$ computers (mainly PCs) running 24 hours a day for 549 days to break an ECC system with a 109 bit key length. A 160-bit ECC would be $2^{25}$ times more secure: which means that (with 2002 technology) it would take one billion computers over 500 years to crack it.
+In the previous section we saw that the longer the key, the greater the security. The disadvantage to long keys is they require sending more information, thus slowing down communication.  Elliptic curve cryptography (ECC) is one approach to the public key sharing dilemma that offers greater security with smaller keys. The table in Figure~\ref{fig:DH:DHKE_9} shows the relationship between key length and security for three different cryptosystems: RSA, Diffie-Hellman, and ECC.  In the table, 'key length' refers to the number of binary bits in the key: for comparison, a 160 bit key has 49 decimal digits, while a 1024 bit key has 309 decimal digits. The 'security level' is also measured in bits (80, 128, 192, 256) where these bits refer to the size of the number of computational steps necessary to break the code.  For example, a security level of 80 means that $2^{80}$ computations are required to break the code (from reference(\ref{Certicom})). To give you an idea of what this means practically, in 2002 it took $10,000$ computers (mainly PCs) running 24 hours a day for 549 days to break an ECC system with a 109 bit key length. A 160-bit ECC would be $2^{25}$ times more secure: which means that (with 2002 technology) it would take one billion computers over 500 years to crack it.
 \begin{figure} [H]
 	   \center{\includegraphics[width=5in]
 	         {images/DHKE_9.png}}
-	  \caption{\label{fig:DH:DHKE_9}Key bit lengths of Cryptosystems for different security levels recommended by the National Institute of Standards and Technology, (from reference (\ref{mobile}))}
+	  \caption{\label{fig:DH:DHKE_9}Key bit lengths of cryptosystems for different security levels recommended by the National Institute of Standards and Technology, (from reference (\ref{mobile}))}
 \end{figure}
 Referencing the table in Figure~\ref{fig:DH:DHKE_9}, we can see that an ECC cryptosystem with a 160 bit key has a similar security level to RSA and Diffie-Hellman with 1024-bit keys. This means the same security with 6 times less information--a significant difference! 
 
@@ -258,13 +263,13 @@ Now that we have established the benefits of ECC, let us see what elliptic curve
 
 \subsection{Definition of elliptic curves}
 An Elliptic Curve (EC) is the set of solutions $(x,y)$ of  an equation of the form $y^2 = x^3 + ax + b$, where $a$ and $b$ are real coefficients.  See Figure~\ref{fig:DH:DHKE_5} below for graphs of some elliptic  curves.  
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=5in]
 	         {images/DHKE_5.png}}
 	  \caption{\label{fig:DH:DHKE_5}  Geometric shapes of elliptic curves, (from reference (\ref{Wolframalpha}))}
 \end{figure}
 Additionally, ECs are not allowed to have double or triple roots.  A triple root produces a cusp in the graph, and a double root produces a self-intersection (see graphs in Figure~\ref{fig:DH:DHKE_10}). See graphs in Figure~\ref{fig:DH:DHKE_10} for examples of elliptic curves with double and triple roots.
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=3in]
 	         {images/DHKE_10.png}}
 	  \caption{\label{fig:DH:DHKE_10}(Left) E: $ y^2$ = $x^3$ and (Right) E: $ y^2$ = $x^3-3x+2$, (From reference (\ref{Corbellini})}
@@ -286,14 +291,14 @@ In this section, we show how to do arithmetic on elliptic curves. Specifically, 
 
 Suppose that $P_1$ and $P_2$ are two points on an EC. We will consider first the case where $P_1 \neq P_2$: later we will consider the case where  $P_1= P_2$. Geometrically, if the two points are different then $P_1 + P_2$ is given by drawing a line from point $P_1$ to point $P_2$ and continuing the line until it intersects the elliptic curve, then reflect that point about the $x$-axis.  See Figure~\ref{fig:DH:DHKE_6} for a geometric representation of the operation $P_1+P_2$.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=2.5in]
 	         {images/DHKE_6.png}}
 	  \caption{\label{fig:DH:DHKE_6}Adding two distinct points, $P_1 + P_2$ on the EC (from reference (\ref{wikipedia2017})).}
 \end{figure}
 
 It turns out that $P_1 + P_2$ is always defined on the EC (except in one special case which we will explain a little bit later), even though sometimes the result of $P_1 + P_2$ is quite far away from both $P_1$ and $P_2$.  For instance, take E: $ y^2$ = $x^3 - x$, and points $P_1 = (2, -\sqrt{6})$ and $P_2 = (3, \sqrt{24})$.  Then $P_1 + P_2 = (49,-342.93)$ (we'll show this later in Example \ref{example:further_crypt:find P3}), as illustrated in Figure~\ref{fig:DH:DHKE_16}. 
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=2in]
 	         {images/DHKE_16.png}}
 	  \caption{\label{fig:DH:DHKE_16} $P_1 + P_2$ is always defined on the EC (from reference (\ref{wikipedia2017})).}
@@ -381,24 +386,24 @@ In the case of point doubling, once $m$ is found the expression for  the $x$ coo
 \[ -y_3 = m(x_3-x_1) + y_1 \]
 and $2P_1$ is given by $(x_3,y_3)$.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=2.5in]
 	         {images/DHKE_7.png}}
 	  \caption{\label{fig:DH:DHKE_7}Point doubling on the EC (from reference (\ref{Corbellini})).}
 \end{figure}
 There is one scenario where addition of two points doesn't give a point on the curve. Given a point $P$, we define  $-P$ as the reflection of $P$ about the x axis: so  if $P = (x, y)$, then $-P = (x, -y)$. The line through $P$ and $-P$ is vertical, and does not intersect the curve at any other point.  In order to make addition well-defined in this case we may create a notional \term{point at infinity}. See Figure~\ref{fig:DH:DHKE_19} below for a geometrical representation of the point at infinity.
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=3.5in]
 	         {images/DHKE_19.png}}
 	  \caption{\label{fig:DH:DHKE_19}The point at infinity located at $(0,\infty)$ (from reference (\ref{wikipedia2017})).}
 \end{figure}
 The point at infinity can be thought of as located at the point $(0,\infty)$, so that the line through any point $(x, y)$ and the point at infinity is a vertical line with infinite slope. Additionally, the point at infinity is its own reflection, so we consider $(0,\infty)$ and $(0,-\infty)$ as a single point, which we denote by the symbol $\infty$. You may think of the y  axis ``wrapping around'' so that when you keep moving in the +y direction eventually you wrap around to the -y axis.
-\subsection{Elliptic Curve Groups}
+\subsection{Elliptic curve groups}
 Remarkably, it turns out that the `+' operation turns the elliptic curve (plus the point at infinity)  into a group.  In this section we'll verify all of the group properties. 
 
 \begin{enumerate}[1.]
 \item \textbf{Identity}: The point at infinity serves as the identity element.  The line connecting $\infty$ with $P$ intersects $-P$, so its reflection about the x-axis is $P$. Therefore, $P + \infty = P$ and $\infty + P = P$. 
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=2in]
 	         {images/DHKE_13.png}}
 	  \caption{\label{fig:DH:DHKE_13} Identity property for EC: $\infty + P = P + \infty = P$ (from reference (\ref{wikipedia2017})).}
@@ -407,7 +412,7 @@ Remarkably, it turns out that the `+' operation turns the elliptic curve (plus t
 
 \item \textbf{Closure}: if $P_1$ and $P_2$ are points on the elliptic curve then $P_1 + P_2$ is also a point on the curve; as stated (without proof) in Section \ref{sec:ECA}.
 \item \textbf{Associativity}:$(P_1 + P_2) + P_3 = P_1 + (P_2 + P_3)$. This is always true, but it is not easy to prove since the computation involves finding the inverse of three distinct points of intersection on the curve, see Figure~\ref{fig:DH:DHKE_12} below.
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=2.5in]
 	         {images/DHKE_12.png}}
 	  \caption{\label{fig:DH:DHKE_12} Associative property for EC (from reference (\ref{wikipedia2017})).}
@@ -420,11 +425,11 @@ These properties are sufficient to establish the fact that the `+' operation on 
 Does the '+' operation define an Abelian group? Prove your answer.
 \end {exercise}
 
-\subsection{Elliptic Curves Over $\mathbb{Z}_p$} 
+\subsection{Elliptic curves over $\mathbb{Z}_p$}\label{sec:ECA2} 
 
 Thus far we have looked at elliptic curves whose coefficients are real numbers. Unfortunately, computer calculations with real numbers are prone to rounding errors, so real number arithmetic is not suitable for modern cryptography. To avoid this problem,  instead of using real numbers we use \emph{finite fields}\index{Finite fields!in EC cryptography}, which are finite additive groups that also have a multiplication operation with inverse. The simplest finite fields are  $\mathbb{Z}_p$ (integers mod $p$),  where $p$ is prime. In this section we will demonstrate how to do arithmetic with elliptic curves over $\mathbb{Z}_p$.
 
-At the end of the previous section, we showed that our new  `+' operation allows us to define a group on the set of points of an elliptic curve, when the curve is a subset of $R^2$ and is defined using real coefficients.  It turns out that exactly the same argument can be used to show the very same group property for curves with coefficients in $Z_p$, which are subsets of $Z_p \times Z_p$.  
+At the end of the previous section, we showed that our new  `+' operation allows us to define a group on the set of points of an elliptic curve, when the curve is a subset of $R^2$ and is defined using real coefficients.  It turns out that exactly the same argument can be used to show the very same group property for curves with coefficients in $\mathbb{Z}_p$, which are subsets of $\mathbb{Z}_p \times \mathbb{Z}_p$.  
 
 We saw in Section \ref{CyclicSubgroups} that every element of a group defines a \term{cyclic subgroup}\index{Cyclic subgroup! in EC cryptography}. Specifically, if the group $G$ is finite, then for any element $g \in G$ the set 
 \[ {\var id}, g, g^2, g^3, \ldots, g^{n-1} \ \]
@@ -435,7 +440,7 @@ is a subgroup of $G$, where $n$ is the \emph{order} of $g$ and satisfies $g^n = 
 \begin{example}{P1+P2} In this example we'll use arithmetic mod 17, so  all coefficients and variables take values on $\mathbb{Z}_{17}$.  
 
 Given E: $y^2 = x^3 + 2x + 2$, and $P = (5,1)$,  we want to find $2P$, where $2P = P + P$.\\ \\
-First we use the slope of the tangent line, using the same formula we did for the real case in Example \ref{example:further_crypt:ec:realplus}:	
+First we use the slope of the tangent line, using the samen formula we did for the real case in Example \ref{example:further_crypt:ec:realplus}:	
 \[m = (3x_1^2 + a) \cdot (2y_1)^{-1}\]	
 We may then calculate (remember we're doing arithmetic in  $\mathbb{Z}_{17}$!)
 \begin{align*}
@@ -464,7 +469,7 @@ Using the equations from Example~\ref{example:further_crypt:ec:realplus} parts (
 \end{exercise}
 In view of what we have just discussed, let's reconsider the Diffie-Hellman Key Exchange which we described in Section~\ref{sec:DHKE:1}. A little thought should convince you that in that section we made use of cyclic subgroups as well. So using Example \ref{example:further_crypt:P1+P2} and Exercise~\ref{exercise:further_crypt:P}, let's revise the Diffie-Hellman Key Exchange, but this time we'll use the cyclic group associated with the elliptic curve.  Use Figure~\ref{fig:DH:DHKE_8} as a guide to help you answer the following exercise.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=5in]
 	         {images/DHKE_8.png}}
 	  \caption{\label{fig:DH:DHKE_8} Elliptic Curve Key Exchange between Moses and Rachael }
@@ -473,286 +478,277 @@ In view of what we have just discussed, let's reconsider the Diffie-Hellman Key 
 \begin{exer}
 Using Example \ref{example:further_crypt:P1+P2} and Exercise~\ref{exercise:further_crypt:P}, what is the shared key exchange if Moses chooses $n = 9$ and Rachael chooses $m = 3$?
 \end{exer}
-\subsection{Elliptic Curve Integrated Encryption System} 
-In Chapter \ref{crypt} we explained how to use RSA with a shared key to exchange secrete messages.  We can construct a similar cryptosystem on the basis of elliptic curves. In this section, we'll describe one way that this may be done. The following discussion is based on reference (\ref{Kumar}).
+\subsection{An encryption system using elliptic curves} 
+In Chapter \ref{crypt} we explained how to use RSA with a shared key to exchange secret messages.  We can construct a similar cryptosystem on the basis of elliptic curves. In this section, we'll describe one way that this may be done. The following discussion is a simplified version of reference (\ref{Kumar}).
 
 Suppose Moses and Rachael would like to communicate a message using ECC, then they should first agree upon an elliptic curve and a code table. Each character of the encrypted message will correspond to a point on the elliptic curve.
 
-Next, Rachael and Moses construct public and private keys as follows. First, Rachael and Moses agree upon an elliptic curve, modulus, and a random point $C$ on the EC: in general, this will be public knowledge.  Additionally, Rachael selects at  random a positive integer $\alpha$ which is less than the order of the elliptic curve and a point $A$ on the EC. She computes $A_1 = $$\alpha$ $(C + A)$ and $A_2= $$\alpha$$A$. Rachael's private keys are $\alpha$ and the point $A$; her public keys are $A_1$ and $A_2$. 
+Next, Rachael and Moses construct public and private keys as follows. First, Rachael and Moses agree upon an elliptic curve, modulus, and a random point $C$ on the EC: in general, this will be public knowledge.  Additionally, Rachael selects at  random a large positive integer $\alpha$ which is  Rachael's private key. She computes $A = \alpha C$ which is her public key (recall that $\alpha C$ denotes adding the point $C$ $\alpha$ times, using EC addition). Moses similarly takes a large positive integer $\beta$ as his private key, and computes $B = \beta C$ as his public key.
 
-Similarly, Moses also selects a random positive integer $\beta$ and a point $B$ as his private keys, and computes $B_1 = $$\beta$ $(C + B)$ and $B_2= $$\beta$$B$ as his public keys. 
+Now if Moses wants to encrypt a message, he may do so one character at a time as follows. Suppose the character that he wants to encrypt corresponds to the point $M$ on the elliptic curve.   He chooses a random number $\gamma$ (which will be different for each character in the message). He then computes:
+\[
+E_1=\gamma C \text{   and   }
+E_2 = M +  \gamma A. 
+\]
+Moses then communicates $E_1$ and $E_2$ to  Rachael.  After receiving this information, Rachael may decrypt the message by computing $E_2 - \alpha E_1$.
 
-After Rachael and Moses exchange public keys, Rachael takes Moses' public key, $B_2$, and computes a third public key $A_B = $$\alpha$$B_2$, while Moses similarly computes $B_A = $$\beta$$A_2$ using Rachael's second public key. 
+\begin{exercise}{}
+\begin{enumerate}[a]
+\item
+Show that by computing $E_2 - \alpha E_1$, Rachael will correctly recover  the character $M$.
+\item
+Suppose a third party knows $E_1, E_2, A,$ and $C$. What else would a third party have to find out in order to obtain $M$?  Explain why it is difficult for the third party to gain this knowledge.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[a]
+\item
+Suppose Rachael wants to send a character to Moses.  What information should she send?
+\item
+What equation should Moses use to decode the information from Rachael?
+\end{enumerate}
+\end{exercise}
 
 To see how this works in practice, let's consider a simple example (reader beware: the modulus is way too small to make this a practical cryptosystem). We will consider the elliptic curve in $Z_{37}$ $\times$ $Z_{37}$ given by the equation $y^2 = x^3 + 2x + 9$ which is shown in Figure~\ref{fig:DH:DHKE_11} below. Notice how the graph of the function using modular arithmetic is a collection of discrete points on the curve rather than based on a continuous graph like the elliptic curves over the real numbers.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=5in]
 	         {images/DHKE_11.png}}
 	  \caption{\label{fig:DH:DHKE_11} Elliptic Curve, $(y^2 = x^3 + 2x + 9)$ in $Z_{37}$ x $Z_{37}$, (from reference (\ref{Kumar}))}
 \end{figure}
 
-In order to encode letters and numbers, we first need to assign different characters to different points on the curve. The table in Figure~\ref{fig:DH:DHKE_17} gives our character assignment. Notice the order of points in the table: we start with (5,25), then the second number $(1,30) =(5,25)+(5,25)$, the third number $(21,32)=(5,25)+(5,25)+(5,25)=3(5,25)$, and so on. This table is public, known to everyone. Note that in the case of a very large modulus, there is no difficulty in assigning a single character to multiple points on the curve, as long as each point has no more than one character assigned to it.
+In order to encode letters and numbers, we first need to assign different characters to different points on the curve. The table in Figure~\ref{fig:DH:DHKE_17} gives the character assignment that we'll use. Notice the order of points in the table: we start with (5,25), then the second number $(1,30) =(5,25)+(5,25)$, the third number $(21,32)=(5,25)+(5,25)+(5,25)=3(5,25)$, and so on. This table is public, known to everyone. Note that in the case of a very large modulus, there is no difficulty in assigning a single character to multiple points on the curve, as long as each point has no more than one character assigned to it.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 	   \center{\includegraphics[width=5.25in]
 	         {images/DHKE_17.png}}
 	  \caption{\label{fig:DH:DHKE_17} Code table using the EC agreed upon by Moses and Rachael, (from reference (\ref{Kumar}))}
 \end{figure}
 
-Now if Moses wants to encrypt a message, he may do so one character at a time as follows. Suppose the character that he wants to encrypt corresponds to the point $M$ on the elliptic curve.   He chooses a random number $\gamma$ which changes for each character in the message. He then computes:
-\begin{align*}
-E_1& =\gamma C,\\
-E_2 &= M + (\beta A_1 + A_B) + \gamma(A_1 -A_2). 
-\end{align*}
-Moses then communicates $E_1$ and $E_2$ to  Rachael.  After receiving the cipher text, Rachael may decrypt the message using:
+
+\begin{example}{26} Moses will send the message, ``attack" using the code table above. The point $C$ is chosen as $(9,4)$. 
+
+First, Rachael must establish her private and public key (Moses doesn't have to, because he's only sending and not receiving). Rachael chooses $\alpha= 5$, so that $A = 5C = 5(9,4)$. In this simple case, we  may use  the table in Figure~\ref{fig:DH:DHKE_17} to facilitate the calculation of $A$.  Notice that the point $C=(9,4)$ is the $11^{\textrm{th}}$ point in the table (counting $\infty$ as the zeroth point, (5,25) as the first point, (1,30) as the second point, etc). This means that $C = 11(5,25)$, and thus $5C = 5\cdot11(5,25) = 55(5,25)$.  However the point $(5,25)$ generates a cyclic group of order 37, and $\mod(55,37)=18$, so $55(5,25)=18(5,25)$.  The $18^{\textrm{th}}$ entry in the table is (31,15), which is Rachael's public key $A$.
+
+Now Moses must encrypt his message one character at a time. The first character of ``attack'' is ``a'', which according to the table corresponds to $M=(5,25)$.  Let's suppose that Moses chooses $\gamma = 8$ for this character. We thus obtain:
 \[
-M = E_2 - \alpha E_1 -(\alpha B_1 +B_A).
+E_1=\gamma C = 8(9,4)=(33,14)  \text{   and   } 
+E_2 = M +  \gamma A=(5,25) + 8(31,15) = (15,11). 
 \]
 
-\begin{example}{26} Moses will send the message, ``attack" using the code table above. The point $C$ is chosen as $C = (9,4)$.\\
-First, Rachael and Moses must establish their private and public keys.\\
-Rachael lets $C = (9,4)$ and $\alpha$ $= 5$ and $A = (10, 20)$ on the EC. These are her private keys.\\
-	$A_1 = 5[(9, 4) + (10, 20)] = (1, 7)$, public key\\
-	$A_2 = (33, 23)$, public key
+Thus Moses should send the pair of points $(33,14)$ and $(15,11)$ to Rachael. Since $(33,14)$ and $(15,11)$ are the $18^{\textrm{th}}$ and $34^{\textrm{th}}$ entries of the table respectively, it's easier for him simply to send the numbers 18 and 34, because Rachael can easily recover the points from these numbers.
 
-\begin{exercise}{A_2} Verify the value of $A_2$ shown in Example \ref{example:further_crypt:26} above (show your calculation).
-\end{exercise}
-Moses lets $B = (11, 20)$ and $\beta$ $= 7$. These are his private keys. \\
-	$B_1 = (11, 17)$, public key\\
-	$B_2 = (23, 30)$, public key
-
-\begin{exercise}{B_2} Verify the value of $B_1$ and $B_2$ shown above (show your calculation).
-\end{exercise}
-\begin{flushleft}
-Now Moses must encrypt his message one character at a time.
-\end{flushleft}
-\begin{enumerate}[(1)] 
-\item Moses chooses $\gamma$$ = 8$ and encrypts the letter ``a" \newline
-	So, the point $(5, 25)$ is encrypted as\newline
-	$E_1 = $$\gamma$$C = (1, 30)$ which corresponds to the letter ``b" since $C$ is in the 11th position in the generated table and $\bmod(8 \cdot 11,43) = 2$ and the second position is the character ``b". \newline
-	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B$ \newline
-	$= (5, 25) + 15(1, 7) - 8(33, 23) + (15, 11)$ \newline
-	$ = (2, 13)$ which corresponds to ``5" in the code table.  So, ``a" is encrypted as $(b, 5)$
-\item Moses chooses $\gamma$$ = 12$ and encrypts the letter ``t" \newline
-	So, the point $(10, 17)$ is encrypted as\newline
-	$E_1 = $$\gamma$$C = (21, 32)$ which corresponds to the letter ``c"\newline
-	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (2, 24)$ which corresponds to ``l" in the code table.  So, ``t" is encrypted as $(c, l)$
-\item Moses chooses $\gamma$$ = 19$ and encrypts the letter ``t" \newline
-	So, the point $(10, 17)$ is encrypted as\newline
-	$E_1 = $$\gamma$$C = (4, 9)$ which corresponds to the ``$\#$"\newline
-	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (27, 32)$ which corresponds to ``j" in the code table.  So, ``t" is encrypted as $($$\#$$, j)$
-\item Moses chooses $\gamma$$ = 2$ and encrypts the letter ``a" \newline
-	So, the point $(5, 25)$ is encrypted as\newline
-	$E_1 = $$\gamma$$C = (29, 31)$ which corresponds to the letter ``v"\newline
-	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (1, 30)$ which corresponds to ``b" in the code table.  So, ``a" is encrypted as $(v, b)$
-\item Moses chooses $\gamma$$ = 3$ and encrypts the letter ``c" \newline
-	So, the point $(5, 25)$ is encrypted as\newline
-	$E_1 = $$\gamma$$C = (1, 30)$ which corresponds to the letter ``b"\newline
-	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (31, 22)$ which corresponds to ``p" in the code table.  So, ``c" is encrypted as $(b, p)$
-\item Moses chooses $\gamma$$ = 23$ and encrypts the letter ``k" \newline
-	So, the point $(9, 4)$ is encrypted as\newline
-	$E_1 = $$\gamma$$C = (25, 25)$ which corresponds to ``@"\newline
-	$E_2 = M +($$\beta$ $+$$\gamma$$)$$A_1 -$$\gamma$$A_2 + A_B = (4, 28)$ which corresponds to ``f" in the code table.  So, ``a" is encrypted as $(@, f)$
+\begin{exercise}{}
+\begin{enumerate}[a]
+\item
+Verify the values of $E_1$ and $E_2$ computed above. Show your calculation.
+\item
+Verify that using these values of $E_1$ and $E_2$ and $\alpha=5$, Rachael can correctly decode the character.
 \end{enumerate}
-\begin{flushleft}
-"attack" is communicated to Rachael as the cypher $(b,5; c,l; $$\#$$,j; v,b; b,p; @,f)$. Rachael is now able to decrypt the cypher text by first converting the characters to their corresponding points, and then uses them to decrypt $M$.
-\end{flushleft}
-\begin{enumerate}[(1)]
-\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (5, 25)$ which corresponds to the character ``a" in the code table.\newline
-\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (10, 17)$ which corresponds to the character ``t" in the code table.\newline
-\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (10, 17)$ which corresponds to the character ``t" in the code table.\newline
-\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (5, 25)$ which corresponds to the character ``a" in the code table.\newline
-\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (21, 32)$ which corresponds to the character ``c" in the code table.\newline
-\item $M = E_2 - ($$\alpha$ $E_1 +$$\alpha$$B_1 +B_A) = (9, 4)$ which corresponds to the character ``k" in the code table.
-\end{enumerate}\end{example} 
-In practice, it is important to choose a large prime number $p$, in order to make it difficult for an eavesdropper to crack your code.  Internet protocols usually use a minimum of a 1024-bit prime number for $p$, which is equivalent to $2^{1024}$ or roughly 300 decimal digits long.  So, there are $2^{1023}$ different possibilities for 1024 bits (where the highest bit is a `1'). It is not necessary to generate your own prime.  There are many records of large primes published that can be referenced. For example, if you visit \url{http://primes.utm.edu/} you can see some lists of 210 digit primes and larger (from reference (\ref{Caldwell})).
-\subsection{Galois Field} 
-As a review, there are three types of algebraic structures: groups, rings, and fields (see Figure~\ref{fig:DH:DHKE_3}); each structure building from the previous structure.  Each structure is defined as a set of elements where: the given operation is closed, has the identity element, has the inverse element, and is associative. For the purpose of this text we'll focus on Finite Fields (FF), which is a field that contains a finite number of elements and is also known as Galois Fields (GF). Applications of Galois Fields can be seen in CD players, DVD players, disk storage systems, and apps found on computers, tablets and smart phones.
-\begin{figure}[H]
-	   \center{\includegraphics[width=4.5in]
-	         {images/DHKE_3.png}}
-	  \caption{\label{fig:DH:DHKE_3} Algebraic structures and types of FFs }
-\end{figure}
- GFs only exist if they have $P^m$ elements, $GF(P^m)$. So, there is a GF with 27 elements $GF(27) = GF(3^3)$, there is a $GF$ with 256 elements $GF(256) = GF(2^8)$, etc.  In EC we are interested in Binary Fields (BFs), GFs of order $2^m$, with $m \geq 1$.  Operations in the BF are defined in terms of an irreducible polynomial with degree $m$, this polynomial is also referred to as the reduction polynomial.  This means that the binary polynomial cannot be factored as a product of binary polynomials of degree less than $m$.  There are always $2^m$ elements in $GF(2^m)$.
+\end{exercise}
 
-\begin{rem} Given the polynomials $a,b \in  GF(P) = (0,1,2,...,P-1)$ then 
-\begin{align*} 		
-		a + b &\equiv c (\bmod P)\\
-		a - b &\equiv d (\bmod P)\\
-		a \cdot b &\equiv e (\bmod P) \quad \text{ ,the multiplicative group does not include 0}\\
-		a^{-1} &\equiv b, \mathrm{~if~} \bmod (ab, P) = 1
-\end{align*}
-\end{rem}
-\begin{eg} Below are the 8 elements of $GF(2^3)$:
-\begin{align*}
-0, \quad 1, \quad X, \quad X +1, \quad X^2, \quad X^2+1, \quad X^2 + X, \quad X^2 + X + 1
- \end{align*}
-\text{Adding two polynomials in $GF(2^3)$ is as follows:}
-\begin{align*}
-	f(x) &= X^2 + X\\
-	g(x) &= X^2  + 1\\
-           f(x) + g(x) &= X  + 1
- \end{align*}
- \text{Notice that the addition of the coefficient $X^2$ and the constant 1 = 0 in GF($2^3$). Also, it is }
-\text{important to note that the binary field has only two coefficients (0,1) so subtraction and}
-\text{addition are the same.}
-\end{eg}
-\begin{exer} Given $GF(2^4)$, add the following two polynomials:
-\begin{align*}
-	f(x) &= X^3 + X^2 + X + 1\\
-	g(x) &= X^2  + 1
- \end{align*}
-\end{exer}
-
-\begin{exer} Given $GF(2^8)$, subtract the following two polynomials, $f(x) - g(x)$:
-\begin{align*}	
-	f(x) &= X^8 +         X^6 +          X^3 + X^2 + 1\\
-	g(x) &=        X^7 + X^6 + X^5 +          X^2
-\end{align*}
-\end{exer}
-Next let us discuss polynomial multiplication and the problem it presents. To multiply two polynomials, multiply each term in one polynomial by each term in the other polynomial. The problem with this is that it gives you polynomials whose degree is too large. When this happens you have to use some method to reduce the degree. This method is similar to the method we used to construct modular addition in the first place.  In modular addition mod p, to define multiplication and then take the remainder mod p.  In Galois fields we multiply the two polynomials and then take the remainder after division by a fixed polynomial which is called the \term{reduction polynomial}.  The reduction polynomial plays the same role as the number $p$ in $\mathbb{Z}_p$.
-
-\begin{eg} Given $GF(2^4)$ and the reduction polynomial $X^4 + X + 1$, then multiplying two polynomials is as follows:
-\begin{align*}	
-	f(x) &=  X^2 + X + 1\\
-	g(x) &= X^3 + 1\\
- f(x) \cdot g(x) &= X^5 + X^4 + X^3 + X^2 + X + 1 (\bmod X^4 + X + 1)\\ 
-	       &= - X^3 + X \text{ , is the remainder (see below for explanation) }
-\end{align*}
-\begin{center}
-\begin{tabular}{rrcrcrcrcrcr}
-        &  $x$  &  $+$  &      $1$         \\ \cline{2-12}
- \multicolumn{1}{r|}{$x^4 + x + 1$}
-        &  $x^5$  &  $+$  &  $x^4$  &  $+$  & $ x^3$  &  $+$  &  $x^2$  &  $+$  & $ x$  &  $+$  &  $1$  \\
-        & $x^5$   &  $+$  &       	&          &      	  &          &  $x^2$   & $+$  &  $x$     \\ \cline{2-12}
-        &         &       &         $x^4$  & $+$   &  $ x^3$  &   $+$  &             &         &         &          &  $1$  \\
-        &         &       &         $x^4$  &  $+$  &             &           &              &         &  $x$   & $+$  &  $1$   \\ \cline{4-12}
-        &         &       &                    &          &   $x^3$ &    $+$  &              &         &  $x$    
-\end{tabular}
-\end{center}
-\end{eg}
-We proved the following in Exercise~\ref{exercise:modular:71}.
-\newline \newline
-Now we must show that multiplicative inverses exist as well.
-
-\begin{prop}{BezoutsIdentity}(\emph{Bezout's Identity})~ Let $x$ and $t$ be two-non-zero integers, and let $d$ be their GCD, then there exists integers $p$ and $a$ such that\\
- \hspace*{\parindent} $px + at = d$
-\end{prop}
-
-\begin{corollary}
-Using Bezout's Identity we can conclude that if $p$ and $a$ are relatively prime then we have\\
-\hspace*{\parindent} $px + at = 1$ \\
-reducing mod $p$ yields $at = 1 \bmod p$ .  So $t$ is the multiplicative inverse of\\
- $a$ $\bmod n$.
-\end{corollary}
-
-\begin{eg} Given $GF(2^8)$ and the reduction polynomial $X^8 + X^4 + X^3 + X +1$, and $a$ = $X^6 + X^4 + X + 1$ then finding the multiplicative inverse of $a$ is as follows:  $a^{-1}$ = $b$, if $a$ $\cdot$ $b$ $(\bmod p)$ = $1$ .  To find $a^{-1}$ use the Extended Euclidean Algorithm.
-\\
-	$p =  X^8 + X^4 + X^3 + X +1$\\ 
-	$a = X^6 + X^4 + X + 1$\\
-\\Using the quotients and remainders found below, we can find the multiplicative inverse of $a$ using the following steps \\(new $t$ = old $t$ - $t \cdot$ quotient):
-\begin{enumerate}
-\item $t = 0$
-\item new $ t = 1$ 
-\item new $t = 0 - 1\cdot(x^2 + 1)$
-\item  new $t = 1 - (x^4 + x^2)\cdot(x^2 + 1)$
-\item new $t = (x^2 + 1) - (x+1)\cdot(x^6 + x^2 + 1)$
-\item Stop here and simplify, since the subsequent remainder is 0.
-\item new $t = (x^2 + 1) - (x+1)\cdot(x^6 + x^2 + 1)$ = $x^7 + x^6 + x^3 + x$
+\begin{exercise}{}
+To encode t, t, a, c, k Moses chooses $\gamma = 12,19,2,3,23$ respectively. 
+\begin{enumerate}[a]
+\item Give the 5 pairs of numbers that Moses sends as cyphertext
+\item Verify that Rachael decodes each pair of numbers correctly.
 \end{enumerate}
-Thus, $a^{-1}$ = $x^7 + x^6 + x^3 + x$\\
-\begin{center}
-\begin{tabular}{rrcrcrcrcrcrcr}
-        &  $x^2$  &  $+$  &      $1$         \\ \cline{2-14}
- \multicolumn{1}{r|}{$x^6 + x^4 + x + 1$}
-        &  $x^8$  &  $+$  &    &      &  $x^4$  &  $+$  & $ x^3$  &  $+$  &   &   & $ x$  &  $+$  &  $1$  \\
-        & $x^8$   &  $+$  &    $x^6$      &    $+$         &      &     &  $x^3$  &  $+$  & $x^2$        \\ \cline{2-14}
-        &         &              &$x^6$ &$+$ &  $x^4$  & $+$   &              &          & $ x^2$  &   $+$  & $x$   &  $+$  & $1$       \\
-        &         &              &$x^6$ &$+$ &  $x^4$  & $+$   &              &          &   &    & $x$   &  $+$  & $1$   \\ \cline{4-14}
-        &         &               &          &      &             &           &       &     & $x^2$ 
-\end{tabular}
-\end{center}
+\end{exercise}
 
-\begin{center}.
+\end{example}
 
-\begin{tabular}{rrcrcrcrcrcrcr}
-        &  $x^4$  &  $+$  &      $x^2$      \\ \cline{2-8}
- \multicolumn{1}{r|}{$x^2$}
-        &  $x^6$  &  $+$  &    $x^4$  &  $+$   & $ x$  &  $+$  &  $ 1$  \\
-        & $x^6$     \\ \cline{2-8}
-        &              &           &     $x^4$   & $+$  & $x$   &  $+$   & $1$   \\ 
-        &              &           &     $x^4$    \\ \cline{4-8}  
-        &              &           &                  &          &  $ x$  &  $+$  &  $ 1$  \\
-\end{tabular}
-\end{center}
+\subsection{Next steps}
+The examples we've given show the basic idea of ECC, but genuinely practical ECC systems are somewhat more complicated. Notice the progression from Section~\ref{sec:ECA} to \label{sec:ECA2}. We first introduced elliptic curves as solution sets in $\mathbb{R}^2$ for a certain type of polynomial equation. But we then remarked that unfortunately these curves are not suitable for practical cryptography, because computers have trouble with real numbers. So in the next section we looked at elliptic curves that are subsets of $\mathbb{Z}_p \times \mathbb{Z}_p$ where $p$ is a prime, as in Figure~\ref{fig:DH:DHKE_11}. But there are disadvantages to $\mathbb{Z}_p$ as well: finding enormous primes is not all that easy. It turns out there is yet another alternative for sets for elliptic curves to live in:  these sets are called \term{Galois Fields}. Galois fields are derived from polynomials, where the polynomials have coefficients in $\mathbb{Z}_p$ (in practice, usually $p=2$).  Since we haven't really looked into polynomials yet, we're not quite ready to dive into this aspect of ECC just yet.  So, you have something to look forward to! 
 
-\begin{center}
-\begin{tabular}{rrcrcrcrcrcr}
-        &  $x$  &  $+$  &      $1$      \\ \cline{2-6}
- \multicolumn{1}{r|}{$x + 1$}
-        &  $x^2$  \\
-        & $x^2$   &  $+$  &    $x$  \\ \cline{2-6}
-        &             &          &    $x$   \\
-        &             &          &    $x$  & $+$ & $1$ \\ \cline{4-6}
-        &             &          &           &        &  $1$
-\end{tabular}
-\end{center}
+%In practice, it is important to choose a large prime number $p$, in order to make it difficult for an eavesdropper to crack your code.  Internet protocols usually use a minimum of a 1024-bit prime number for $p$, which is equivalent to $2^{1024}$ or roughly 300 decimal digits long.  So, there are $2^{1023}$ different possibilities for 1024 bits (where the highest bit is a `1'). It is not necessary to generate your own prime.  There are many records of large primes published that can be referenced. For example, if you visit \url{http://primes.utm.edu/} you can see some lists of 210 digit primes and larger (from reference (\ref{Caldwell})).
+%
+%\subsection{Galois Field} 
+%As a review, there are three types of algebraic structures: groups, rings, and fields (see Figure~\ref{fig:DH:DHKE_3}); each structure building from the previous structure.  Each structure is defined as a set of elements where: the given operation is closed, has the identity element, has the inverse element, and is associative. For the purpose of this text we'll focus on Finite Fields (FF), which is a field that contains a finite number of elements and is also known as Galois Fields (GF). Applications of Galois Fields can be seen in CD players, DVD players, disk storage systems, and apps found on computers, tablets and smart phones.
+%\begin{figure}[htbp]
+%	   \center{\includegraphics[width=4.5in]
+%	         {images/DHKE_3.png}}
+%	  \caption{\label{fig:DH:DHKE_3} Algebraic structures and types of FFs }
+%\end{figure}
+% GFs only exist if they have $P^m$ elements, $GF(P^m)$. So, there is a GF with 27 elements $GF(27) = GF(3^3)$, there is a $GF$ with 256 elements $GF(256) = GF(2^8)$, etc.  In EC we are interested in Binary Fields (BFs), GFs of order $2^m$, with $m \geq 1$.  Operations in the BF are defined in terms of an irreducible polynomial with degree $m$, this polynomial is also referred to as the reduction polynomial.  This means that the binary polynomial cannot be factored as a product of binary polynomials of degree less than $m$.  There are always $2^m$ elements in $GF(2^m)$.
+%
+%\begin{rem} Given the polynomials $a,b \in  GF(P) = (0,1,2,...,P-1)$ then 
+%\begin{align*} 		
+%		a + b &\equiv c (\bmod P)\\
+%		a - b &\equiv d (\bmod P)\\
+%		a \cdot b &\equiv e (\bmod P) \quad \text{ ,the multiplicative group does not include 0}\\
+%		a^{-1} &\equiv b, \mathrm{~if~} \bmod (ab, P) = 1
+%\end{align*}
+%\end{rem}
+%\begin{eg} Below are the 8 elements of $GF(2^3)$:
+%\begin{align*}
+%0, \quad 1, \quad X, \quad X +1, \quad X^2, \quad X^2+1, \quad X^2 + X, \quad X^2 + X + 1
+% \end{align*}
+%\text{Adding two polynomials in $GF(2^3)$ is as follows:}
+%\begin{align*}
+%	f(x) &= X^2 + X\\
+%	g(x) &= X^2  + 1\\
+%           f(x) + g(x) &= X  + 1
+% \end{align*}
+% \text{Notice that the addition of the coefficient $X^2$ and the constant 1 = 0 in GF($2^3$). Also, it is }
+%\text{important to note that the binary field has only two coefficients (0,1) so subtraction and}
+%\text{addition are the same.}
+%\end{eg}
+%\begin{exer} Given $GF(2^4)$, add the following two polynomials:
+%\begin{align*}
+%	f(x) &= X^3 + X^2 + X + 1\\
+%	g(x) &= X^2  + 1
+% \end{align*}
+%\end{exer}
+%
+%\begin{exer} Given $GF(2^8)$, subtract the following two polynomials, $f(x) - g(x)$:
+%\begin{align*}	
+%	f(x) &= X^8 +         X^6 +          X^3 + X^2 + 1\\
+%	g(x) &=        X^7 + X^6 + X^5 +          X^2
+%\end{align*}
+%\end{exer}
+%Next let us discuss polynomial multiplication and the problem it presents. To multiply two polynomials, multiply each term in one polynomial by each term in the other polynomial. The problem with this is that it gives you polynomials whose degree is too large. When this happens you have to use some method to reduce the degree. This method is similar to the method we used to construct modular addition in the first place.  In modular addition mod p, to define multiplication and then take the remainder mod p.  In Galois fields we multiply the two polynomials and then take the remainder after division by a fixed polynomial which is called the \term{reduction polynomial}.  The reduction polynomial plays the same role as the number $p$ in $\mathbb{Z}_p$.
+%
+%\begin{eg} Given $GF(2^4)$ and the reduction polynomial $X^4 + X + 1$, then multiplying two polynomials is as follows:
+%\begin{align*}	
+%	f(x) &=  X^2 + X + 1\\
+%	g(x) &= X^3 + 1\\
+% f(x) \cdot g(x) &= X^5 + X^4 + X^3 + X^2 + X + 1 (\bmod X^4 + X + 1)\\ 
+%	       &= - X^3 + X \text{ , is the remainder (see below for explanation) }
+%\end{align*}
+%\begin{center}
+%\begin{tabular}{rrcrcrcrcrcr}
+%        &  $x$  &  $+$  &      $1$         \\ \cline{2-12}
+% \multicolumn{1}{r|}{$x^4 + x + 1$}
+%        &  $x^5$  &  $+$  &  $x^4$  &  $+$  & $ x^3$  &  $+$  &  $x^2$  &  $+$  & $ x$  &  $+$  &  $1$  \\
+%        & $x^5$   &  $+$  &       	&          &      	  &          &  $x^2$   & $+$  &  $x$     \\ \cline{2-12}
+%        &         &       &         $x^4$  & $+$   &  $ x^3$  &   $+$  &             &         &         &          &  $1$  \\
+%        &         &       &         $x^4$  &  $+$  &             &           &              &         &  $x$   & $+$  &  $1$   \\ \cline{4-12}
+%        &         &       &                    &          &   $x^3$ &    $+$  &              &         &  $x$    
+%\end{tabular}
+%\end{center}
+%\end{eg}
+%We proved the following in Exercise~\ref{exercise:modular:71}.
+%\newline \newline
+%Now we must show that multiplicative inverses exist as well.
+%
+%\begin{prop}{BezoutsIdentity}(\emph{Bezout's Identity})~ Let $x$ and $t$ be two-non-zero integers, and let $d$ be their GCD, then there exists integers $p$ and $a$ such that\\
+% \hspace*{\parindent} $px + at = d$
+%\end{prop}
+%
+%\begin{corollary}
+%Using Bezout's Identity we can conclude that if $p$ and $a$ are relatively prime then we have\\
+%\hspace*{\parindent} $px + at = 1$ \\
+%reducing mod $p$ yields $at = 1 \bmod p$ .  So $t$ is the multiplicative inverse of\\
+% $a$ $\bmod n$.
+%\end{corollary}
+%
+%\begin{eg} Given $GF(2^8)$ and the reduction polynomial $X^8 + X^4 + X^3 + X +1$, and $a$ = $X^6 + X^4 + X + 1$ then finding the multiplicative inverse of $a$ is as follows:  $a^{-1}$ = $b$, if $a$ $\cdot$ $b$ $(\bmod p)$ = $1$ .  To find $a^{-1}$ use the Extended Euclidean Algorithm.
+%\\
+%	$p =  X^8 + X^4 + X^3 + X +1$\\ 
+%	$a = X^6 + X^4 + X + 1$\\
+%\\Using the quotients and remainders found below, we can find the multiplicative inverse of $a$ using the following steps \\(new $t$ = old $t$ - $t \cdot$ quotient):
+%\begin{enumerate}
+%\item $t = 0$
+%\item new $ t = 1$ 
+%\item new $t = 0 - 1\cdot(x^2 + 1)$
+%\item  new $t = 1 - (x^4 + x^2)\cdot(x^2 + 1)$
+%\item new $t = (x^2 + 1) - (x+1)\cdot(x^6 + x^2 + 1)$
+%\item Stop here and simplify, since the subsequent remainder is 0.
+%\item new $t = (x^2 + 1) - (x+1)\cdot(x^6 + x^2 + 1)$ = $x^7 + x^6 + x^3 + x$
+%\end{enumerate}
+%Thus, $a^{-1}$ = $x^7 + x^6 + x^3 + x$\\
+%\begin{center}
+%\begin{tabular}{rrcrcrcrcrcrcr}
+%        &  $x^2$  &  $+$  &      $1$         \\ \cline{2-14}
+% \multicolumn{1}{r|}{$x^6 + x^4 + x + 1$}
+%        &  $x^8$  &  $+$  &    &      &  $x^4$  &  $+$  & $ x^3$  &  $+$  &   &   & $ x$  &  $+$  &  $1$  \\
+%        & $x^8$   &  $+$  &    $x^6$      &    $+$         &      &     &  $x^3$  &  $+$  & $x^2$        \\ \cline{2-14}
+%        &         &              &$x^6$ &$+$ &  $x^4$  & $+$   &              &          & $ x^2$  &   $+$  & $x$   &  $+$  & $1$       \\
+%        &         &              &$x^6$ &$+$ &  $x^4$  & $+$   &              &          &   &    & $x$   &  $+$  & $1$   \\ \cline{4-14}
+%        &         &               &          &      &             &           &       &     & $x^2$ 
+%\end{tabular}
+%\end{center}
+%
+%\begin{center}.
+%
+%\begin{tabular}{rrcrcrcrcrcrcr}
+%        &  $x^4$  &  $+$  &      $x^2$      \\ \cline{2-8}
+% \multicolumn{1}{r|}{$x^2$}
+%        &  $x^6$  &  $+$  &    $x^4$  &  $+$   & $ x$  &  $+$  &  $ 1$  \\
+%        & $x^6$     \\ \cline{2-8}
+%        &              &           &     $x^4$   & $+$  & $x$   &  $+$   & $1$   \\ 
+%        &              &           &     $x^4$    \\ \cline{4-8}  
+%        &              &           &                  &          &  $ x$  &  $+$  &  $ 1$  \\
+%\end{tabular}
+%\end{center}
+%
+%\begin{center}
+%\begin{tabular}{rrcrcrcrcrcr}
+%        &  $x$  &  $+$  &      $1$      \\ \cline{2-6}
+% \multicolumn{1}{r|}{$x + 1$}
+%        &  $x^2$  \\
+%        & $x^2$   &  $+$  &    $x$  \\ \cline{2-6}
+%        &             &          &    $x$   \\
+%        &             &          &    $x$  & $+$ & $1$ \\ \cline{4-6}
+%        &             &          &           &        &  $1$
+%\end{tabular}
+%\end{center}
+%
+%\begin{center}
+%\begin{tabular}{rrcrcrcrcrcr}
+%        &  $x$  &  $+$  &      $1$      \\ \cline{2-4}
+% \multicolumn{1}{r|}{$1$}
+%        &  $x$      &   $+$ &    $1$  \\
+%        & $x$     \\ \cline{2-4}
+%        &             &          &    $1$   \\
+%        &             &          &    $1$ \\ \cline{3-4}
+%        &             &          &    $0$
+%\end{tabular}
+%\end{center}
+%
+%\end{eg}
+%
+%\begin{exer}
+%What are the binary elements of GF($2^4$)?
+%\end{exer}
+%\begin{exer}
+%Given GF($2^{12}$), then adding $f(X)$+ $g(X)$ = ?
+%        \\ $f(X)$ = $X^{10} + X^8 + X^5 + X + 1$
+%        \\ $g(X)$ = $X^{10} + 1$
+%\end{exer}
+%\begin{exer}
+%Given GF($2^4$), then adding $f(X)$ + $g(X)$ = ?
+%        \\ $f(X)$ = $X^{2} + X $
+%        \\ $g(X)$ = $X^{3} + 1$
+%\end{exer}
+%\begin{exer}
+%Given GF($2^5$), then subtracting $f(X)$ + $g(X)$ = ?
+%        \\ $f(X)$ = $X^{4} + X^2 + 1 $
+%        \\ $g(X)$ = $X^{3} + 1$
+%\end{exer}
+%\begin{exer}
+%Given GF($2^7$), then subtracting $f(X)$ + $g(X)$ = ?
+%        \\ $f(X)$ = $X^{6} + X^4 + X $
+%        \\ $g(X)$ = $X^{3} + 1$
+%\end{exer}
+%\begin{exer}
+%Given GF($2^5$) and the reduction polynomial $X^5 + X + 1$ , then multiplying two polynomials, $f(X)$ $\cdot$ $g(X)$ = ?
+%        \\ $f(X)$ = $X^{3} + X + 1 $
+%        \\ $g(X)$ = $X^{4} + X$
+%\end{exer}
+%\begin{exer}
+%Given GF($2^5$) and the reduction polynomial $X^5 + X + 1$ , then multiplying two polynomials, $f(X)$ $\cdot$ $g(X)$ = ?
+%        \\ $f(X)$ = $X^{4} + X^3 + 1 $
+%        \\ $g(X)$ = $X^{4} + X^2 + X + 1$
+%\end{exer}
+%\begin{exer}
+%Given GF($2^{160}$) and the reduction polynomial $X^{160} + X + 1$ , then multiplying two polynomials, $f(X)$ $\cdot$ $g(X)$ = ?
+%        \\ $f(X)$ = $X^{120} + X^{100} + 1 $
+%        \\ $g(X)$ = $X^{80} + X^{70} + X^{60}$
+%\end{exer}
 
-\begin{center}
-\begin{tabular}{rrcrcrcrcrcr}
-        &  $x$  &  $+$  &      $1$      \\ \cline{2-4}
- \multicolumn{1}{r|}{$1$}
-        &  $x$      &   $+$ &    $1$  \\
-        & $x$     \\ \cline{2-4}
-        &             &          &    $1$   \\
-        &             &          &    $1$ \\ \cline{3-4}
-        &             &          &    $0$
-\end{tabular}
-\end{center}
-
-\end{eg}
-
-\begin{exer}
-What are the binary elements of GF($2^4$)?
-\end{exer}
-\begin{exer}
-Given GF($2^{12}$), then adding $f(X)$+ $g(X)$ = ?
-        \\ $f(X)$ = $X^{10} + X^8 + X^5 + X + 1$
-        \\ $g(X)$ = $X^{10} + 1$
-\end{exer}
-\begin{exer}
-Given GF($2^4$), then adding $f(X)$ + $g(X)$ = ?
-        \\ $f(X)$ = $X^{2} + X $
-        \\ $g(X)$ = $X^{3} + 1$
-\end{exer}
-\begin{exer}
-Given GF($2^5$), then subtracting $f(X)$ + $g(X)$ = ?
-        \\ $f(X)$ = $X^{4} + X^2 + 1 $
-        \\ $g(X)$ = $X^{3} + 1$
-\end{exer}
-\begin{exer}
-Given GF($2^7$), then subtracting $f(X)$ + $g(X)$ = ?
-        \\ $f(X)$ = $X^{6} + X^4 + X $
-        \\ $g(X)$ = $X^{3} + 1$
-\end{exer}
-\begin{exer}
-Given GF($2^5$) and the reduction polynomial $X^5 + X + 1$ , then multiplying two polynomials, $f(X)$ $\cdot$ $g(X)$ = ?
-        \\ $f(X)$ = $X^{3} + X + 1 $
-        \\ $g(X)$ = $X^{4} + X$
-\end{exer}
-\begin{exer}
-Given GF($2^5$) and the reduction polynomial $X^5 + X + 1$ , then multiplying two polynomials, $f(X)$ $\cdot$ $g(X)$ = ?
-        \\ $f(X)$ = $X^{4} + X^3 + 1 $
-        \\ $g(X)$ = $X^{4} + X^2 + X + 1$
-\end{exer}
-\begin{exer}
-Given GF($2^{160}$) and the reduction polynomial $X^{160} + X + 1$ , then multiplying two polynomials, $f(X)$ $\cdot$ $g(X)$ = ?
-        \\ $f(X)$ = $X^{120} + X^{100} + 1 $
-        \\ $g(X)$ = $X^{80} + X^{70} + X^{60}$
-\end{exer}
-
-\section{References and Suggested Reading} 
+\section{References and suggested reading} 
 \begin{enumerate}[(1)]
 
 \item\label{Azad}
