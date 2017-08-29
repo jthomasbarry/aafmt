@@ -686,7 +686,7 @@ By rewriting the numerator, we can simplify the right-hand side:
 and we readily discover that $k=1 + 4n$ makes the right-hand side an integer, so that 
 
 \begin{center}
-$x = \dfrac{15\cdot(1+4n) +9}{4} = 6$, or $x \equiv 6 \pmod{15}$.
+$x = \dfrac{15\cdot(1+4n) +9}{4} = 6+15n$, or $x \equiv 6 \pmod{15}$.
 \end{center}
 
 % By following our procedure, we first convert this to $78x = 15k + 9$. If we solve this for $x$ as before, we get
@@ -1274,7 +1274,7 @@ The diagram in Figure~\ref{fig:commDiagModular} gives a way to visualize  Propos
 \caption{Visualization of Proposition~\ref{proposition:modular:number_remainder}.\label{fig:commDiagModular}}
 \end{figure}
 
-\begin{exercise}{}
+\begin{exercise}{diagram}
 Make a diagram similar to Figure~\ref{fig:commDiagModular} for modular multiplication instead of modular addition.
 \end{exercise}
 
@@ -1339,7 +1339,7 @@ We may notice that $80056 \equiv 80000 \pmod{56}$ and $69944 \equiv 70000 \pmod{
 \]
 By noticing some patterns we were able to save ourselves quite a bit of work.
 
-\begin{exercise}{}
+\begin{exercise}{prove}
 Prove or disprove, using the proposition in Exercise~\ref{exercise:modular:number_remainder}:
 \begin{enumerate}[(a)]
 \item
@@ -1718,7 +1718,7 @@ It's time for us to make a confession. All this time we've been talking about mo
 
 Notice that the set ${\mathbb Z}_n$ with the operation of $\oplus$ has an identity, and inverses, and the property of closure. Furthermore, ${\mathbb Z}_n$ is associative under $\oplus$, as we just showed.  Any combination of a set and an operation that has those three properties, as well as the associative property, is called a \emph{group}\index{Group!definition}
 
-\begin{defn}  A \textbf{\textit{group}}\index{Group!definition} is a set combined with an operation that has the following properties:
+\begin{defn} \label{definition:modular:group} A \textbf{\textit{group}}\index{Group!definition} is a set combined with an operation that has the following properties:
 \begin{itemize}
 \item \emph{Closure}: the set is closed under the operation;
 \item \emph{Identity}: the set has an identity element for the operation;
@@ -1751,7 +1751,7 @@ Is ${\mathbb Z}_n \setminus \{0\}$ a group under $\odot$ for \emph{every} intege
  
  
 \subsection{A sticky problem}
-The following problem may not seem to have anything to do with modular arithmetic, but it's an interesting problem and fun to think about. (And it will also turn out to be relevant after all!)\footnote{This section is by David Weathers (edited by CT).}
+The following problem may not seem to have anything to do with modular arithmetic, but it's an interesting problem and fun to think about. (And it will also turn out to be relevant after all!)\footnote{This section is by David Weathers, with extensive revisions by C.T.}
 
 \begin{example}{2sticks} Someone gives us a pencil and two unmarked sticks of lengths 52 cm and  20 cm respectively (see Figure~\ref{fig:1euclidean}). We are told to make measuring sticks by using the pencil to make markings on the sticks. Question: what is the smallest length that we can accurately measure? 
 \begin{figure}
@@ -1936,7 +1936,7 @@ If the remainder is not 0, set $a$ = $b$ and $b$ = $r$, go to step 1.
 \end{enumerate}
 
 
-\begin{exercise}{}
+\begin{exercise}{gcd}
 What is the greatest common divisor of:
 \begin{enumerate}[(a)]
 \item
@@ -2143,7 +2143,7 @@ which after working out the algebra gives us:
 $$ x = 24 + 863 \ell, y = 29 + 1053 \ell.$$
 \end{example}
  
-\begin{exercise}{}
+\begin{exercise}{dio1}
 Using the process above, find all integer solutions to the following equations.
 \begin{enumerate} [(a)]
 \item
@@ -2425,7 +2425,7 @@ We follow the same pattern.  There is a solution for the first congruence $x = 4
 From the Euclidean algorithm, we know there is a solution to this congruence if and only if gcd$(4,6) = 1$, but we know gcd$(4,6) = 2$.  Therefore there is no solution.  
 
 
-\begin{exercise}{}
+\begin{exercise}{91}
 Solve the following pairs of congruences or show that they have no common solution:
 \begin{enumerate}[(a)]
 \item

@@ -1,70 +1,33 @@
-
-%### More examples of reflexive, symmetric, transitive
-% ### Show relation on R x R using a graph of the subset
 %!TEX root = proofs+concepts.tex
 
-\chap{Equivalence Relations and Equivalence Classes\quad
-\sectionvideohref{M60zDP8q6fA&index=17&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}{EquivalenceRelationsChap}
+\chap{Equivalence Relations and Equivalence Classes}{EquivalenceRelationsChap}
 
 
 \medskip\noindent
 
-This can be thought of as a ``pivotal'' chapter. It generalizes the notion of ``function'', and relates this generalization to properties that we discussed in the Modular Arithmetic chapter. We will find that the new concepts we develop in this chapter will be foundational to the notions of \emph{coset} and \emph{conjugate}, two key group-theoretic structures which play central roles in group theory.
+This chapter marks the beginning of our ascent towards the world of higher-level abstraction. It  introduces the idea of a mathematical \emph{relation}, which generalizes the concept of function as formally defined in Definition~\ref{functionDef}. We explore various types of relations and their properties, and use these new ideas to envision modular arithmetic from a different perspective. The new concepts that we introduce in this chapter are foundational to the notions of \emph{coset} and \emph{conjugacy  class}, two key group-theoretic structures which play central roles in group theory.
 \medskip
 
-This chapter  is an adapted and expanded version of a chapter by D. and J. Morris.
+This chapter  is based on material by  D. and J. Morris, which was extensively revised and expanded by Mark Leech.
 
-\section{Binary relations} \label{sec.relation}
+\section{Binary relations \quad
+\sectionvideohref{nAFxMRkIBNE&index=17&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{sec.relation}
 
-
- Recall that, by definition, any function $f \colon A \to B$ is a set of ordered pairs. More precisely, each element of~$f$ is an ordered pair $(a,b)$, such that $a \in A$ and $b \in B$. Therefore, every element of~$f$ is an element of $A \times B$, so $f$~is a subset of $A \times B$.
-\factoidbox{Every function from~$A$ to~$B$ is a subset of $A \times B$.}
-
-
-\begin{eg} 
-The function $\var{mother} \colon \var{PEOPLE} \to \var{PEOPLE}$ is represented by the set
-\[ \{\, (p,m)  \in  {\var PEOPLE} \times {\var PEOPLE}  \mid  m  \text{  is the mother of } p \,\} .\]
-\end{eg}
-
-\begin{exercise}{student_mother}
-
-\noindent
-Let $\var{MY\_GENERATION}$ be the set consisting  of you, your siblings, and any cousins you have.  
-\begin{enumerate}[(a)]
-\item
-List the mothers of all individuals in $\var{MY\_GENERATION}$.
-\item
-Now for each individual in $\var{MY\_GENERATION}$, write an ordered pair that belongs to the function $\var{mother} \colon \var{PEOPLE} \to \var{PEOPLE}$. (For example, if Ben's  mother is Lucy, then (Ben,Lucy) is an ordered pair that belongs to the function $\var{mother}$.)
-\end{enumerate}
-\end{exercise}
+Recall that according to Definition~\ref{functionDef}, any function $f \colon A \to B$ can be represented as a set of ordered pairs. More precisely, each element of~$f$ is an ordered pair $(a,b)$, such that $a \in A$ and $b \in B$. Therefore, every element of~$f$ is an element of $A \times B$, so $f$~is a subset of $A \times B$.
+There are however subsets of $A \times B$ that are not functions.
 
 
-Many other relationships can also be represented by subsets of $\var{PEOPLE} \times \var{PEOPLE}$, even though they are not functions. For example, $\var{son}$ is not a function, because some people have more than one son (or because some people have no sons at all). However, we can represent this relation by the set
-\[  \{\, (p,s) \in  {\var PEOPLE} \times {\var PEOPLE} \mid s \text{ is a son of } p \,\} .\]
-	
-\begin{exercise}{student_son}
-\begin{enumerate}[(a)]
-\item
-List your parents, siblings, aunts, uncles, and cousins, as a set.  Denote this set as $F$.
-\item
-Define the relation called $\var{son}$ on $F \times F$ as
-\[
-\{ (x,y) \in F \times F \,|\, y \text{ is a son of } x \} \]
+\begin{example}{bbal}
+Let $P$ be the set of all professional basketball players in the NBA, and let $T$ be the set of NBA teams.  $f_T: P \to T$ as follows:
+$$f_T(p)=\text{the team that }p \text{ plays for}.$$
+Alternatively, $f_T$ can be represented as the set of ordered pairs:
+\[ f_T=\{\, (p,t)  \in  P \times T  \mid  p  \text{  is a member of } t\} .\]
+On the other hand, we may be interested not just in  players' current teams, but in \emph{all} teams that players have played for.  This relationship could also be characterized by a set of ordered pairs: 
+\[ \{\, (p,t)  \in  P \times T  \mid  p  \text{  has at one time or another played for } t\} .\]
+This is \emph{not} a function, because many NBA players have played on more than one team.
+\end{example}
 
-\noindent
-List the ordered pairs in $\var{son}$. (For example, if Paula and Joseph are both in $F$ and Joseph is Paula's son, then (Paula, Joseph) is an ordered pair in $\var{son}$.  Note however if Nathan is in $F$ and Nathan's son Luke is not in $F$, then (Nathan, Luke) is \emph{not} an ordered pair in $\var{son}$.)
-\end{enumerate}
-\end{exercise}
-	
-In fact, any relationship that you can define between two people (or, to say this in the official language of logic, any binary predicate on the set $\var{PEOPLE}$) can be represented by an subset of $\var{PEOPLE} \times \var{PEOPLE}$. A few examples of possible relationships are:
-	\begin{itemize}
-	\item $x$ is a sister of~$y$
-	\item $x$ knew $y$ in high school
-	\item $x$ is taller than $y$
-	\item $x$ and $y$ are in the same math class
-	\item etc.
-	\end{itemize}
-In recognition of this, mathematicians simply \emph{define} a relation to be a set of ordered pairs; that is, a relation is any subset of $A \times B$. Unlike the case of functions, there are no restrictions --- every subset is a relation.
+In light of the previous example, it makes mathematical sense to  define a relation between sets $A$ and $B$ to be a set of ordered pairs; that is, a relation between $A$ and $B$  is any subset of $A \times B$. Unlike the case of functions, there are no restrictions--every subset is a relation.
 
 
 \begin{defn} \label{relation} \index{Relation!definition of} Suppose $A$ and $B$ are sets. 
@@ -74,7 +37,56 @@ In recognition of this, mathematicians simply \emph{define} a relation to be a s
 \end{enumerate}
 \end{defn}
 
-\begin{eg}\label{ex_rel}
+\begin{example}{bbal}
+Let $P$ be the set of all professional basketball players in the NBA. 
+Consider the following subset of $P \times P$:
+\[ \{\, (p,p\,')  \in  P \times T  \mid  p\,'  \text{  is the tallest teammate of } p\} .\]
+This is a binary relation, according to Definition!~\ref{relation}, and it also can be identified with the function
+ $f_h: P \to P$ defined by: $f_h(p)=\text{the tallest teammate of }p .$
+
+On the other hand, consider a different subset of $P \times P$:
+\[ \{\, (p,p\,')  \in  P \times T  \mid  p\,'  \text{  is a teammate of } p\} .\]
+ This is a binary relation, but \emph{not} a function because any player will have many teammates.
+\end{example}
+
+\begin{exercise}{}
+Express the following relations on NBA players as subsets of $P \times P$ (as in Example~\ref{example:EquivalenceRelationsChap:bbal}).
+\begin{enumerate}[(a)]
+\item 
+Players that both play the same positions
+\item
+Players that have birthdays in the same month
+\item
+The second player is taller than the first
+\item
+The first player has a higher jersey number than the second
+\end{enumerate}
+\end{exercise}
+
+So far we've been discussing relations in a non-numerical context, but our definitions apply to relations on sets of numbers as well.  Relations on $\mathbb{R}$ (or subsets of $\mathbb{R}$)  are discussed in many middle or high school algebra courses. Any graph in the $\mathbb{R}^2$ plane gives a relation; an conversely, any relation involving subsets of $\mathbb{R}$ can be represented as a graph in the plane. Relations in $\mathbb{R}^2$ are often taught along with functions: for example, students are given a graph of some discrete or continuous relation in the $\mathbb{R}^2$ plane and asked to determine if the given relation is a function.
+
+\begin{example}{r2relation}
+Consider the graphs in Figure~\ref{fig:graphrelations}, where the set $A \times B$ is indicated at the top of each graph. Which are relations in $A \times B$? Which are binary relations? Which are functions?
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5in]{images/graphrelations.png}
+\caption{Graphs of relations. Constructed using GeoGebra}\label{fig:graphrelations}
+\end{center}
+\end{figure}
+
+\begin{itemize}
+\item
+All three graphs are relations because all graphs are subsets of $A \times B$ (as specified at the top of each graph).
+\item
+The first and third relations are binary relations, but the second relation isn't because $A \neq B$.
+\item
+The first is not a function, because e.g. both $(1,1)$ and $(1,-1)$ are in the graph. 
+The second is a function because it is uniquely defined on all of $A$ (in this case $A=\mathbb{R}$). The third is not a function because e.g. there is no pair of the form $(-1,y)$, so the function is not defined on all of $A$.
+\end{itemize}
+\end{example}
+
+\begin{example}{ex_rel}
 If $A = \{1,2,3\}$ and $B = \{4,5,6\}$, some examples of relations from $A$ to $B$ are:
 \[ \{ (1,4), (2,5), (3,6)\}, \]
 \[ \{ (1,6), (3,4)\}, \]
@@ -82,14 +94,16 @@ If $A = \{1,2,3\}$ and $B = \{4,5,6\}$, some examples of relations from $A$ to $
 \[ \emptyset, \]
 \[ \{ (1,4), (1,5), (1,6), (2,4), (2,5), (2,6), (3,4), (3,5), (3,6) \}.\] 
 Notice that all of these sets are subsets of $A \times B$. The final example is the set $A \times B$ itself. Notice that $\emptyset$ is a valid relation because it's a subset of $A \times B$ (a subset with no elements).  On the other hand, the set $\{ \emptyset \}$ is \emph{not} a relation, because it is  a set with one element (namely $\emptyset$), and this element is not an element of $A \times B$. For similar reasons, $\{(1, \emptyset) \}$ is \emph{not} a relation.
-\end{eg}
+\end{example}
 
-\begin{eg}
-Let $A = \{\text{all cities in the U.S.}\}$ and $B = \{\text{all states in the U.S.}\}$. two examples of relations from $A$ to $B$ are:
+\begin{example}{cities}
+Let $A = \{\text{all cities in the U.S.}\}$ and $B = \{\text{all states in the U.S.}\}$. some examples of relations from $A$ to $B$ are:
+\[ \{ \text{(Springfield,Illinois),(Springfield,Missouri),(Springfield,Texas),(Springfield,Wisconsin)}\}, \]
+\[ \{ \text{(Corinth,Texas),(Liverpool,Texas),(Paris,Texas),(Sudan,Texas),(Troy,Texas)}\}, \]
 \[ \{ \text{(Austin,Texas),(Boston,Massachusetts),(Phoenix,Arizona)}\}, \]
 \[ \{ (x,y) \text{ such that } x \text{ is the capital of } y \}. \]
-The first of these relations  is a \emph{subset} of the second.
-\end{eg}
+The third of these relations is a \emph{subset} of the last.
+\end{example}
 
 
 \begin{exercise}{7}
@@ -104,7 +118,7 @@ Let $A = \{a\}$ and $B = \{1,2\}$. List \emph{all} relations from $A$ to $B$.
 Let $A = \{a,b\}$ and $B = \{1\}$. List \emph{all} relations from $A$ to $B$.
 \hyperref[secEqRelChapHints]{(*Hint*)}
 \item
-** Let $A = \{a,b\}$. List all the binary relations on $A$.
+** Let $A = \{a,b\}$. List \emph{all} the binary relations on $A$.
 \hyperref[secEqRelChapHints]{(*Hint*)}
 \item
 ** Let $A = \{a,b,c\}$. How many binary relations are there on the set $A$?
@@ -112,14 +126,12 @@ Let $A = \{a,b\}$ and $B = \{1\}$. List \emph{all} relations from $A$ to $B$.
 \end{enumerate}
 \end{exercise}
 
+We'll mostly be concerned with binary relations, not relations from some set~$A$ to some other set~$B$.
 
-
-We will mostly be concerned with binary relations, not relations from some set~$A$ to some other set~$B$.
-
-\begin{eg} 
-Some examples of binary relations on $\var{PEOPLE}$ are:
-$\var{brother}$, $\var{sister}$, $\var{aunt}$, $\var{uncle}$, $\var{mother}$, $\var{father}$, $\var{grandfather}$, $\var{cousin}$, etc.
- \end{eg}
+\begin{exercise}{notbinary}
+Let $S$ be the set of all living people. Which of the follow relationships define binary relations on $S$?
+brother, pet, favorite color, dentist, college major, and professor?
+ \end{exercise}
 
 \begin{defn} \label{digraph} \index{Digraph}
 We can draw a picture to represent any given binary relation on any given set~$A$:
@@ -130,25 +142,44 @@ We can draw a picture to represent any given binary relation on any given set~$A
 The resulting picture is called a \term{digraph}. (The word is pronounced ``DIE-graff'' --- it is short for ``directed graph.''
 \end{defn}
  
- \begin{eg}
- Let $A =  \{1,2,3,4,5\}$. We can define a binary relation~$R$ on~$A$ by letting
- 	\[ R = \{\, (x,y) \mid x \neq y \text{ and } x^2 + y \leq 10 \,\} .\]
-This binary relation is represented by the following digraph:
-\\ \centerline{\includegraphics[scale=0.4]{images/x2+y.pdf}}
-For example, note that $(x,4) \in R$ iff $x \in \{1,2\}$, and the digraph has arrows from $1$ to~$4$ and from $2$ to~$4$.
-\end{eg}
+ \begin{example}{digraph1}
+ Let $A =  \{1,2,3,4,5\}$. We can define a binary relation~$R_1$ on~$A$ by letting
+ 	\[ R_1 = \{\, (x,y) \mid x \neq y \text{ and } x^2 + y \leq 10 \,\} .\]
+This binary relation is represented by the digraph in Figure~\ref{fig:x2y}:
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=3in]{images/x2+y.png}
+\caption{Digraph of the binary relation of $R_1$}\label{fig:x2y}
+\end{center}
+\end{figure}
+
+Note that there's a bidirectional arrow between $1$ and~$3$ because $(1,3) \in R_1$ and $(3,1) \in R_1$. On the other hand there's only a one directional arrow from $2$ to~$3$ because $(2,3) \in R_1$, but $(3,2) \notin R_1$.
+
+We can also define a binary relation $R_2$ on $A$ by letting
+$$R_2=\{(x,y) \text{ such that } x\mid y\},$$
+where $x\mid y$ means $x$ divides $y$. This binary relation is represented by the digraph in Figure~\ref{fig:xdividesy}.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=3in]{images/xdividesy.png}
+\caption{Digraph of the binary relation of $R_2$}\label{fig:xdividesy}
+\end{center}
+\end{figure}
+
+In this digraph there are loops at each number because $a \mid a$ for each $a$.
+
+\end{example}
 
  \begin{exer} \label{DrawBinRelExer}
-Using the set $F$ you defined in Exercise~\ref{exercise:EquivalenceRelationsChap:student_son}, draw a digraph for each of the following binary relations on~$F$: 
+Choose your favorite NBA team, and find a team roster (a good place to look is ESPN.com). Choose 6 players that have complete data, and let that be your set $A$.  draw a digraph for each of the following binary relations on~$A$: 
  \begin{enumerate}[(a)]
- \item \label{DrawBinRelExer-son}
- $\var{son}$  (as defined above) 
  \item \label{DrawBinRelExer-sister}
- $\var{sister}$
+ $\{ (x,y) \in F \times F \,|\, x  \text{'s height is within 2 inches of }y\text{'s height} \}$
+ \item \label{DrawBinRelExer-son}
+ $\{ (x,y) \in A \times A \,|\, x\text{'s age is within the same decade as }y\text{'s}  \}$ 
  \item \label{DrawBinRelExer-married}
- The relation ``has ever been married to."
+ The relation ``is taller than".
   \item \label{DrawBinRelExer-lived}
- The relation ``has ever lived with."
+ The relation ``is less than 10 pounds heavier than".
  \end{enumerate}
  \end{exer}
  
@@ -168,13 +199,13 @@ $ R_d = \{\, (x,y) \mid  x\equiv y \pmod{3} \,\} .$
  \end{exer}
 
  \begin{exer} \label{DrawBinRelExer2}
-It is also possible to draw digraphs for relations that are not binary relations.  
+It is also possible to draw digraphs for relations that are not binary relations. In this case, your digraph should have a dot for each element of $A \cup B$.
 % In each case, state whether or not your digraph is connected, and whether or not it is strongly connected.
  \begin{enumerate}[(a)]
  \item \label{DrawBinRelExer-son}
-Draw digraph representations of the relations given in Example \ref{ex_rel}.
+Draw digraph representations of the relations given in Example \ref{example:EquivalenceRelationsChap:ex_rel}.
  \item \label{DrawBinRelExer-sister}
-The graphs you drew in (a) are all examples of \term{bipartite} graphs.  Complete the following definition:  A bipartite graph is a graph in which the vertices (dots) can be divided into two  sets, such that $\ldots \ldots \ldots$.
+The graphs you drew in (a) are all examples of \term{bipartite} graphs.  Complete the following definition:  A bipartite graph is a graph in which the vertices (dots) can be divided into two  sets, such that $\ldots$.
  \end{enumerate}
  \end{exer}
 
@@ -182,7 +213,7 @@ The graphs you drew in (a) are all examples of \term{bipartite} graphs.  Complet
 We commonly use symbols  such as $=, < , \subset, \ldots $  that are used to compare elements of a set. You may have called these ``relations'' in your high school algebra class -- and in fact, they can all be considered as binary relations in the sense of Definition~\ref{relation}.
 For example, using the symbol $<$ we can define the following binary relation on ${\mathbb R}$ :
 \[ R_<  := \{\, (x,y) \in \mathbb{R} \times \mathbb{R} \mid x < y \}  \]
-(here the symbol ``:='' means ``defined as'').  Note that $ R_<$ here is a subset of $\mathbb{R} \times \mathbb{R}$, so it is indeed a binary relation according to Definition~\ref{relation}. 
+(here the symbol ``$:=$'' means ``defined as'').  Note that $ R_<$ here is a subset of $\mathbb{R} \times \mathbb{R}$, so it is indeed a binary relation according to Definition~\ref{relation}. 
 
 % This book (like other mathematics textbooks) deals mainly with binary relations on sets of mathematical objects. In fact, you are quite familiar with many relations already. S
 
@@ -193,38 +224,205 @@ For example, using the symbol $<$ we can define the following binary relation on
  \item  
  Define the set $R_=$ associated with the symbol ``$=$'' applied to the complex numbers. In your definition assume that equality of real numbers has been defined, and write complex numbers in rectangular form (for example, $a + bi$ or $c + di$).
  \item  
- List all the elements of the set $R_\subset$ associated with the symbol ``$\subset$'' applied to the subsets of $A := \{1,2\}$. (The set of subsets of $A$ is denoted as $P(A)$, the \term{power set}\index{Power set} of $A$.)
+ List all the elements of the set $R_\subset$ associated with the symbol ``$\subset$'' applied to the subsets of $A := \{1,2\}$. (The set of subsets of $A$ is denoted as $\mathcal{P}(A)$, the \term{power set}\index{Power set} of $A$.)
  \hyperref[secEqRelChapHints]{(*Hint*)}
  \item  
 Consider the set $R_\subset$ associated with the symbol ``$\subset$'' applied to the subsets of $A := \{1,2,3\}$. How many elements does $R_\subset$ have?
  \end{enumerate}
  \end{exer}
  
-Exercise~\ref{exercise:EquivalenceRelationsChap:RelationDef} shows that any comparison symbol applied to a set gives rise to a binary relation. So rather than writing $R_<, R_>, R_=$ and so on, we simply use the comparison symbol itself to represent the binary relation.  Notice that technically, '$<$' defined on $\mathbb{R}$ is a different relation from '$<$' defined on $\mathbb{N}$: we will always make it very clear which set the relation is being defined on.
+Exercise~\ref{exercise:EquivalenceRelationsChap:RelationDef} shows that any comparison symbol applied to a set gives rise to a binary relation. So rather than writing $R_<, R_>, R_=$ and so on, we simply use the comparison symbol itself to represent the binary relation.  Notice that technically, '$<$' defined on $\mathbb{R}$ is a different relation from '$<$' defined on $\mathbb{N}$: we will always make it very clear on which set the relation is being defined.
 
-We will use the symbol $\rel$ to denote a generic comparison symbol. If we are working with the set $A$, then the symbol $\rel$ also represents the binary relation $A_\rel := \{\, (x,y) \in A \times A \mid x \rel y \}$.
+We will use the symbol $\rel$ (which may be read as ``is related to", ``tilde", or ``twiddle") to denote a generic comparison symbol. If we are working with the set $A$, then the symbol $\rel$ also represents the binary relation $A_\rel := \{\, (x,y) \in A \times A \mid x \rel y \}$.
 
-We have shown that comparison symbols give rise to equivalence relations: the reverse is also true. Given a relation $R$ defined on the set $A$, we can define a comparison symbol $\rel$ applied to $a,b \in A$ as follows:
+We have shown that comparison symbols give rise to relations: the reverse is also true. Given a relation $R$ defined on the set $A$, we can define a comparison symbol $\rel$ applied to $a,b \in A$ as follows:
 $ a \rel b$ iff $(a,b) \in R$.
 
-There are three basic properties that any given binary relation may or may not have:
+\section{Partitions and properties of binary relations  \quad\sectionvideohref{SFk--oSOzfg&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=18}} \label{Partitions1}
 
-\begin{defn} \label{RefSymmTransDefn}
-Suppose $\rel$ is a binary relation on a set~$A$. 
-\begin{itemize}
-\item We say that $\rel$ is \term{reflexive} iff 
-	$$ \forall a \in A, a \rel a .$$\index{Relation!reflexive}\index{Reflexive}
-In other words, a binary relation on $A$ is reflexive if  every element of A is related to itself.
-\item We say that $\rel$ is \term{symmetric} iff 
-	$$ \forall a,b \in A,  (a \rel b) \eif (b \rel a)  .$$\index{Relation!symmetric}\index{Symmetric}
-In other words, a binary relation on $A$ is symmetric if  whenever $a$ is related to $b$, then $b$ is also related to $a$.  (Here $a$ and $b$ represent elements of the set $A$.)
-\item We say that $\rel$ is \term{transitive} iff 
-	$$ \forall a,b,c \in A,  \bigl( (a \rel b) \mbox{ and } (b \rel c) \bigr) \eif (a \rel c)  .$$\index{Relation!transitive}\index{Transitive}
-In other words, a binary relation on $A$ is transitive if  whenever $a$ is related to $b$ and $b$ is related to $c$, then $a$ is related to $c$.  (Here $a$, $b$ and $c$ represent elements of the set $A$.)
-\end{itemize}
+We've defined binary relations in general. In this section we present one very important situation where binary relations are very useful. It turns out that the binary relations which arise in this situation have some very special properties, which will become very important later.
+
+Given any set $A$ with 2 or more elements, it's possible to split up the elements of $A$ into disjoint subsets. We call such a division a \term{partition}. The mathematical definition is:
+
+\begin{defn} A \term{partition}\index{Partition} $\mathcal{P}$ of a set~$A$ is a collection of nonempty subsets of~$A$, such that each element of~$A$ is in exactly one of the subsets in $\mathcal{P}$. In other words:
+\begin{enumerate}[(a)]
+\item the union of the subsets in $\mathcal{P}$ is all of~$A$,
+and
+\item the subsets in $\mathcal{P}$ are pairwise disjoint: that is the intersection of any two subsets is empty.\index{Partition!definition of}
+\end{enumerate}
+Conditions (a) and (b) imply that every element of $A$ is in exactly one subset in $\mathcal{P}$.
 \end{defn}
 
-\begin{eg} \ 
+\begin{rem}
+Note that $\mathcal{P}$ is defined as a set of subsets of $A$. This means that the elements of $\mathcal{P}$ are \emph{subsets} which may contain multiple elements of $A$. The examples below with make this clearer.
+\end{rem}
+
+\begin{example}{partition1}
+\begin{enumerate}[(a)]
+\item Consider the set of real numbers $\mathbb{R}$. We know that every element of $\mathbb{R}$ belongs to one of two sets: the set of rational numbers, $\mathbb{Q}$, or the set of irrational numbers, $\mathbb{I}$. The union of these two subsets, $\mathbb{Q} \cup \mathbb{I}=\mathbb{R}$, and $\mathbb{Q}$ and $\mathbb{I}$ are disjoint sets, so based on the definition $\{\mathbb{Q},\mathbb{I}\}$ is a partition of $\mathbb{R}$. Alternatively the word ``partition" can be used as a verb, so we could also say that $\mathbb{Q}$ and $\mathbb{I}$ partition $\mathbb{R}$.
+\item Let $\mathbb{E}$ and $\mathbb{O}$ be the even and odd integers, respectively. Then $\{\mathbb{E},\mathbb{O}\}$ is a partition of $\mathbb{Z}$. Alternatively we could also say that $\mathbb{E}$ and $\mathbb{O}$ partition $\mathbb{Z}$.
+\item Let $S$ be the set of all single-element subsets of $\mathbb{Z}$, so that for example $\{-552\}$, $\{7\}$, $\{1492\}$ are all elements of $S$. Then $S$ is also a partition of $\mathbb{Z}$. Here $S$ has an infinite number of elements (all the single-element subsets of $\mathbb{Z}$), but each element of $S$ is a finite set.
+\item Consider the set of complex numbers $\mathbb{C}$. Every element of $\mathbb{C}$ has a real part which we denote as Re$[z]$ (as in Chapter 2). Let $R_a$ be the set of all complex numbers with real part $a$, i.e. $R_a:=\{z \in \mathbb{C} \mid \text{Re}[z]=a\}$. Let $\mathcal{P}$ be the set consisting of all of the $R_a$'s, i.e. $\mathcal{P}:=\{R_a \forall a \in \mathbb{R}\}$. Then $\mathcal{P}$ is a partition of $\mathbb{C}$. Here $\mathcal{P}$ has an infinite number of elements, where each element of $\mathcal{P}$ is an infinite set.
+\end{enumerate}
+\end{example}
+
+From the previous example you can see how partitions of sets of numbers are collections of subsets that divide up bigger sets. You could imagine it's like a little kid with a bucket of LEGO\textsuperscript{\textregistered} bricks who's sorting them out into different piles. The LEGOs could be sorted by color, shape, number of studs, or the original set in which they were bought. Similarly there are lots of different ways to sort out sets of numbers, mathematical objects, or any arbitrary sets with elements of any kind. Each different way of sorting gives rise to a different partition.
+
+\begin{example}{partition2}
+\begin{enumerate}[(a)]
+\item When making an inventory of the animals in a zoo, we may wish to count the number of antelopes, the number of baboons, the number of cheetahs, and so forth. In this case, all of the animals of the same species might be grouped together in a single set. Each species give rise to a different set and these sets form a partition of the animals in that zoo.
+\item If we are concerned only with people's given names (what Americans would call ``first name"), we can partition any set of people according to given name. Each set in the partition consists of all people who share a particular given name.
+\item In geometry, sometimes we are interested only in the shape of a triangle and not its location or orientation. In this case, we talk about \emph{congruent} triangles, where congruent means that corresponding sides of the two triangles are equal, and corresponding angles are also equal. For any triangle we may define the set of all triangles congruent to that triangle. There are an infinite number of such sets which form a partition of the set of all triangles.
+\end{enumerate}
+\end{example}
+
+
+What do partitions have to do with relations? We will illustrate with the following example.
+
+Let $A=\{1,2,3,4,5,6\}$ and partition these six numbers into evens and odds. Then we would have two subsets each with three elements. Suppose we use a six-sided die to determine a random outcome: where if we get an even number we win a dollar, but an odd number we lose a dollar. We don't care whether we get a 2, 4, or 6 -- only that we get an even number because we win the same amount regardless. In this way, rolling a 2, 4, or 6 are \emph{related}. Formally we can define a relation on $A$ as follows: Given $a,b \in A$, then $a \rel b$ iff $a$ and $b$ are either both even or both odd.
+
+We generalize the previous example in the following definition. 
+
+\begin{defn}\label{partitionrelation}
+Given a partition $\mathcal{P}$ on $A$, we may define a binary relation $\rel_\mathcal{P}\,\subset A \times A$ as follows: for $a,b \in A$, $a \rel_\mathcal{P} b$ iff $a$ and $b$ are both contained in the same subset in the partition.
+\end{defn}
+
+We already know that binary relations can be represented graphically. In the following exercise, we investigate graphical representations of some binary relations that come from partitions.
+
+\begin{exercise}{RelGraphR2}
+In the following parts we will considering partitions of $\mathbb{R}$ and the associated binary relations defined by Definition~\ref{partitionrelation}. 
+\begin{enumerate}[(a)]
+\item Let $\mathcal{P}=\{R_1, R_2\}$ where $R_1=\{x \mid x \in \mathbb{R}, x \geq 0\}$ and $R_2=\{x \mid x \in \mathbb{R}, x < 0\}$.
+\begin{enumerate}[(i)]
+\item Draw the real number line from $-5$ to 5, and indicate the sets $R_1, R_2 \in \mathcal{P}$ (similar to Figure~\ref{fig:partition_discrete}).
+\item Graph the associated binary relation $\rel_\mathcal{P}$. You only need to graph from $-5$ to 5. \hyperref[secEqRelChapHints]{(*Hint*)}
+\end{enumerate}
+
+\item Let $\mathcal{P}=\{\ldots, R_{-2}, R_{-1}, R_0, R_1, R_2, \ldots \}$ where $R_n=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor = n \}$ for any integer $n$. \footnote{We will use these brackets, $\lfloor~\rfloor$, to represent the \term{floor function}\index{Floor function}, also known as the greatest integer function. The floor function takes a real number, $x \in \mathbb{R}$ as input and outputs the greatest integer that is less than or equal to $x$.  Mathematically we can express this as:
+$$\lfloor x \rfloor=\max \{ m\in \mathbb{Z} ~|~m\leq x \}.$$
+
+For example: $\lfloor 4 \rfloor = 4$, $\lfloor \pi \rfloor = 3$, and $\lfloor -2.3 \rfloor = -3$.}
+\begin{enumerate}[(i)]
+\item Draw the real number line from $-5$ to 5, and indicate the visible sets in $\mathcal{P}$.
+\item Graph the associated binary relation $\rel_\mathcal{P}$. You only need to graph from $-5$ to 5.
+\end{enumerate}
+
+\item Let $\mathcal{P}=\{R_E, R_O\}$ where $R_E=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor \text{ is even}\}$ and $R_O=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor \text{ is odd}\}$.
+\begin{enumerate}[(i)]
+\item Draw the real number line from $-5$ to 5, and indicate the sets $R_1, R_2 \in \mathcal{P}$.
+\item Graph the associated binary relation $\rel_\mathcal{P}$. You only need to graph from $-5$ to 5.
+\end{enumerate}
+%\item possible exam question: x~y iff floor(abs(x)) = floor(abs(y)) or abs(floor(x)) = abs(floor(y))
+\end{enumerate}
+\end{exercise}
+
+To further explore Definition~\ref{partitionrelation}, we let $A=\{a,b,c,\ldots,i\}$ which has been partitioned into subsets $A_1, \ldots, A_5$. Figure~\ref{fig:partition_discrete} has a drawing of $A$.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.35]{images/partition_discrete.png}
+\caption{A partition of~$A$ into subsets $A_1, \ldots, A_5$. 
+(Each element of~$A$ is in one and only one of the subsets.)}\label{fig:partition_discrete}
+\end{center}
+\end{figure}
+
+From Figure~\ref{fig:partition_discrete}, we can tell some properties of $\rel_\mathcal{P}$:
+\begin{itemize}
+\item Each element of $A$ is related to itself, that is:
+$$a \rel_\mathcal{P} a$$
+(this is called the \term*{reflexive}\index{Reflexive!property of relations}\index{Relation!reflexive}  property). 
+We know this is true because $a$ is certainly in the same set of the partition as itself.
+\item If an element is related to another element the relation also goes in the other direction. That is: 
+$$a \rel_\mathcal{P} b \implies b \rel_\mathcal{P} a$$
+(this is called the \term*{symmetric}\index{Symmetric!property of relations}\index{Relation!symmetric} property
+We know this is true because if $a$ is related to $b$, then that means that $a$ and $b$ are in the same set of the partition. Since they are in the same set of the partition as each other $b$ is also related to $a$. This argument can easily be repeated in the other direction.
+\item If an element is related to another element and that element is related to a third element, then the first element is related to the third. That is: 
+$$a \rel_\mathcal{P} b \text{ and } b \rel_\mathcal{P} c \Rightarrow a \rel_\mathcal{P} c$$
+(this is called the \term*{transitive} property\index{Transitive!property of relations}\index{Relation!transitive})
+We know this is true because if $a$ is related to $b$ then they are in the same set of the partition, and if $b$ is related to $c$ then they too are in the same set of the partition. This means that $a$, $b$, and $c$ are all in the same set of the partition, therefore $a$ is related to $c$.
+\end{itemize}
+
+We have seen that the partition depicted in Figure~\ref{fig:partition_discrete} produces a binary relation with three distinctive properties. What about other partitions? Let's consider some of the partitions that we've defined previously.
+
+\begin{example}{relfrompart1}
+In this example we will define a binary relation from the given partition, and show that the relation has the above three properties.
+\begin{enumerate}[(a)]
+\item Given the partition in Example~\ref{example:EquivalenceRelationsChap:partition1}(a), we can define a binary relation $\rel_R$ on $\mathbb{R}$ by 
+\[x \rel_R y  \text{   iff   }  (x,y \in \mathbb{Q} \text{ or }x,y \in \mathbb{I}).\]
+
+\begin{itemize}
+\item  First property (reflexive): $x \rel_R x$ ($x$ is always in the same set, $\mathbb{Q}$ or $\mathbb{I}$, as itself);
+\item  Second property (symmetric): $x \rel_R y \implies y \rel_R x$ ($x$ is in the same set as $y$ implies $y$ is in the same set as $x$);
+\item  Third property (transitive): $x \rel_R y$ and $y \rel_R z \eif x \rel_R z$ (if $x$ is in the same set as $y$ and $y$ is in the same set as $z$, then $x$ is in the same set as $z$);
+\end{itemize}
+
+\item Given the partition in Example~\ref{example:EquivalenceRelationsChap:partition2}(a), we can define a binary relation $\rel_S$ on the set of animals in the zoo by 
+\[x \rel_S y  \text{   iff   }  x \text{ and } y \text{ are animals in the same species} .\]
+\begin{itemize}
+\item  Reflexive: $x \rel_S x$ ($x$ is always the same species as itself);
+\item  Symmetric: $x \rel_S y \implies y \rel_S x$ ($x$ is the same species as $y$ implies $y$ is the same species as $x$);
+\item  Transitive: $x \rel_S y$ and $y \rel_S z \eif x \rel_S z$ (if $x$ is the same species as $y$ and $y$ is the same species as $z$, then $x$ is the same species as $z$);
+\end{itemize}
+\end{enumerate}
+\end{example}
+
+\begin{exercise}{relfrompart2}
+Define a binary relation from the given partition, and show that the relation has the above three properties.
+\begin{enumerate}[(a)]
+\item The partition in Example~\ref{example:EquivalenceRelationsChap:partition1}(b)
+\item The partition in Example~\ref{example:EquivalenceRelationsChap:partition1}(c)
+\item The partition in Example~\ref{example:EquivalenceRelationsChap:partition1}(d)
+\item The partition in Example~\ref{example:EquivalenceRelationsChap:partition2}(b)
+\item The partition in Example~\ref{example:EquivalenceRelationsChap:partition2}(c)
+\end{enumerate}
+\end{exercise}
+
+The three properties seem to pop up whenever we define a binary relation from a patirtion. It's time to prove it.
+
+\begin{prop}{partbinrel} Given a partition $\mathcal{P}$ on set $A$, define a binary relation of $A$ as $a \rel b$ iff there exists a subset $C \in \mathcal{P}$ such that $a$ and $b$ are both elements of $C$, then the binary relation, $\rel$, satisfies the following 3 properties:
+\begin{enumerate}[(a)]
+\item \term{reflexivity}:
+	$$ \rel \text{ is reflexive} \iff \forall a \in A, a \rel a .$$\index{Relation!reflexive}\index{Reflexive}
+\item  \term{symmetry}:
+	$$ \rel \text{ is symmetric} \iff \bigl( \forall a,b \in A,  (a \rel b) \implies (b \rel a)\, \bigr)  .$$\index{Relation!symmetric}\index{Symmetric}
+\item  \term{transitivity}:
+	$$ \rel \text{ is transitive} \iff  \forall a,b,c \in A,  \bigl( (a \rel b) \mbox{ and } (b \rel c) \bigr) \eif (a \rel c)  .$$\index{Relation!transitive}\index{Transitive}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Earlier in the chapter we showed that the binary relation $\rel_\mathcal{P}$ from the partition in Figure~\ref{fig:partition_discrete} was reflexive, symmetric, and transitive. The arguments that we used are generally applicable, and can be used for any partition.
+\end{proof}
+
+\begin{rem} 
+\begin{itemize}
+\item In Proposition~\ref{proposition:EquivalenceRelationsChap:partbinrel} parts (a),(b), and (c) we used mathematical symbolism to express the concepts that were explained verbally in the discussion prior to Example~\ref{example:EquivalenceRelationsChap:relfrompart1}. Increasingly, you'll be expected to understand symbolism without verbal explanation. Here's a chance for you to practice: what does the following symbolism mean, and where have you seen it before? 
+\[ a \sim b \quad \iff \quad \exists C \in \mathcal{P}, ( a \in C \text{ and } b \in C ) .\]
+(Answer: this is the definition of  the relation $\sim$  defined in Proposition~\ref{proposition:EquivalenceRelationsChap:partbinrel}, expressed symbolically.
+We'll be using this symbolism in later propositions, e.g. Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel}.) 
+
+\item Even though the definition of symmetry begins with ``$\forall a,b \in A \ldots$" (``for every $a$ and $b$ in $A \ldots$") symmetry doesn't require \emph{every} pair of elements to be related to each other: symmetry only requires that whenever the \emph{if} clause ($a \rel b$) is true, the \emph{then} clause ($b \rel a$) must also be true. A similar caveat applies to transitivity.
+\end{itemize}
+\end{rem}
+
+These properties  are so important that we have a special term for binary relations that satisfy all three properties:
+
+\begin{defn}\label{defn:equivalencerelation}
+An \term{equivalence relation}\index{Equivalence relation} on a set~$A$ is a binary relation on~$A$ that is reflexive, symmetric, and transitive.
+\end{defn}
+
+The following is a restatement of Proposition~\ref{proposition:EquivalenceRelationsChap:partbinrel}, using our new terminology.
+
+\begin{prop}{parteqrel} Given a partition $\mathcal{P}$ on set $A$, define a binary relation $\sim$ on $A$ as follows: 
+\[a \sim b \quad \iff \quad \exists C \in \mathcal{P}, ( a \in C \text{ and } b \in C ).\]  
+Then the binary relation, $\rel$, is an equivalence relation.
+\end{prop}
+
+At one stroke, this proposition immediately proves that all  the relations defined from partitions in Examples~\ref{example:EquivalenceRelationsChap:partition1} and ~\ref{example:EquivalenceRelationsChap:partition2} are equivalence relations.
+
+In the following sections we'll consider more examples of equivalence relations , but first let's make sure we understand reflexivity, symmetry and transitivity:
+
+\begin{example}{binrelR} \ 
 Consider the following binary relations on ${\mathbb R}$:
 \begin{enumerate}[(a)]
 \item $=$ is reflexive, symmetric, and transitive.
@@ -235,6 +433,8 @@ Reflexive:  any real number $x$ equals itself, so $x=x~\forall x \in {\mathbb R}
 Symmetric:  for any real numbers $x$ and $y$, if $x = y$, then $y = x$. 
 \item
 Transitive:  for any real numbers $x$, $y$, and $z$, if $x = y$ and $y = z$, then $x = z$.
+\item
+Therefore $=$ on $\mathbb{R}$ is an equivalence relation because $=$ is reflexive, symmetric, and transitive.
 \end{itemize}
 \item $<$ is transitive, but neither reflexive nor symmetric.
 \begin{itemize}
@@ -244,6 +444,8 @@ Not Reflexive:  For example, it is not true that $1 < 1$.
 Not Symmetric:  For example, $1 < 2$ but it is not true that $2 < 1$.
 \item
 Transitive:  given three real numbers $x$, $y$, and $z$, if $x < y$ and $y < z$, then $x < z$.
+\item
+Therefore $<$ on $\mathbb{R}$ is not an equivalence relation.
 \end{itemize}
 \item
 The binary relation $a \rel b$ iff $a = b + 1$ [for instance $(3.5,2.5) \in {\mathbb R}_\rel$] is neither reflexive, symmetric, or transitive.
@@ -254,22 +456,107 @@ Not Reflexive:  $3 \neq 3 + 1$.
 Not Symmetric:  $4 \rel 3$, since $4 = 3 + 1$, but $3 \not\rel 4$, since $3 \neq 4 + 1$.
 \item
 Not Transitive:  $4 \rel 3$ and $3 \rel 2$, but $4 \not\rel 2$ ($4 \neq 2 + 1$).
+\item
+Therefore $\rel$ when $a \rel b$ iff $a = b + 1$ on $\mathbb{R}$ is not an equivalence relation.
 \end{itemize}  
 \end{enumerate}
-\end{eg}
+\end{example}
 
-Notice that in the above examples, we used specific counterexamples to demonstrate when properties were not true.  We recommend that you do this also, because it is both clear and convincing (and it's usually the easiest way). It only takes \emph{one} counterexample to show a property is not true! 
+Notice that in the above examples, we used specific counterexamples to demonstrate when properties were not true.  We recommend that you do the same--and remember, it only takes \emph{one} counterexample to show a property is not true! 
 
 \begin{exercise}{17}
 For each of the following, explain your answers. 
 \begin{enumerate}[(a)]
-\item Is $\leq$ defined on the set $\mathbb{R}$ transitive? Is it reflexive? Is it symmetric?
+\item Is the binary relation $\leq$ defined on the set $\mathbb{R}$ reflexive? Is it symmetric? Is it transitive? Is it an equivalence relation?
 \hyperref[secEqRelChapHints]{(*Hint*)}
-\item Is $\subset$ defined on the set $P(\mathbb{N})$ transitive? Is it reflexive? Is it symmetric? (Recall that $P(\mathbb{N})$ is the set of subsets of $\mathbb{N}$).
-\item Define the relation $\rel$ on $\mathbb{C}$ as follows: $ z_1 \rel z_2$ iff $z_1 = |z_2|$. Is $\rel$ transitive? Is it reflexive? Is it symmetric? \hyperref[secEqRelChapHints]{(*Hint*)} 
-\item Define the relation $\rel$ on $\mathbb{Z}$ as follows: $ a \rel b$ iff $|a - b|< 4$. Is $\rel$ transitive? Is it reflexive? Is it symmetric?
+\item Is  the binary relation $\subset$ defined on the set $\mathcal{P}(\mathbb{N})$ reflexive? Is it symmetric? Is it transitive? Is it an equivalence relation? (Recall that $\mathcal{P}(\mathbb{N})$ is the set of subsets of $\mathbb{N}$).
+\item Define the binary relation $\rel$ on $\mathbb{C}$ as follows: $ z_1 \rel z_2$ iff $z_1 = |z_2|$. Is $\rel$ reflexive? Is it symmetric? Is it transitive? Is it an equivalence relation? \hyperref[secEqRelChapHints]{(*Hint*)} 
+\item Define the binary relation $\rel$ on $\mathbb{Z}$ as follows: $ a \rel b$ iff $|a - b|< 4$. Is $\rel$ reflexive? Is it symmetric? Is it transitive? Is it an equivalence relation?
 \end{enumerate}
 \end{exercise}
+
+\begin{example}{relonB}
+Given the set $B = \{1,2,3\}$, consider the relation $\rel$ on $B$ defined by 
+\[
+B_\rel = \{(1,1), (2,2), (3,3), (1,2), (2,1), (2,3), (3,2) \}
+\]
+ The relation is shown in Figure~\ref{fig:relonB}.
+\begin{figure}[htpb]
+\begin{center}
+ \includegraphics[width=2in]{images/relonB.png}
+\caption{Diagram of the relation in Example~\ref{example:EquivalenceRelationsChap:relonB}\label{fig:relonB}}
+\end{center}
+\end{figure}
+
+\begin{itemize}
+\item $\rel$ is reflexive, because $1 \rel 1$, $2 \rel 2$, and $3 \rel 3$  (Note we had to check \emph{all} elements of the set $B$),
+\item $\rel$ is symmetric, because, for each $(a,b) \in \mathord{\rel}$, the reversal $(b,a)$ is also in~$\rel$.
+\item $\rel$ is \emph{not} transitive, because $1 \rel 2$ and $2 \rel 3$, but $1 \not\rel 3$.
+\end{itemize}
+\end{example}
+
+Transitivity can sometimes be a little tricky, as the following examples show.
+
+\begin{example}{transnotrefsym}
+Let's think about binary relations on $\{1,2,3\}$ as seen in Figure~\ref{fig:transnotrefsym}. Which of the binary relations, A, B, or C, are transitive? Why or why not?
+
+\begin{figure}[htpb]
+\begin{center}
+ \includegraphics[width=5.5in]{images/transnotrefsym.png}
+\caption{Digraphs to correspond with Example~\ref{example:EquivalenceRelationsChap:transnotrefsym}\label{fig:transnotrefsym}}
+\end{center}
+\end{figure}
+
+The relation in digraph A is transitive. Notice how transitivity is defined: \emph{if} $a \rel b$ and $b \rel c$ then  $a \rel c$; in other words, if there's an indirect route (one arrow following another) to get from one element to another by going through a third element, then there must also be a direct route (single arrow).  Notice there's an indirect route from 3 to 2 by going through 1, but there's also a direct route from 3 to 2 (or more formally, $3 \rel 1$, $1 \rel 2$, and $3 \rel 2$). Furthermore this is the only example in A of an indirect route. Therefore this relation is transitive. If $3 \rel 2$ is removed from this binary relation, then the relation isn't transitive because it's still be possible to get from 3 to 2 via 1, but there's no longer a direct route.
+so 
+The relation in digraph B is also transitive. This is true because the \emph{if} clause $\bigl((a \rel b)$ and $(b \rel c)\bigr)$ never holds, since there's no case of an indirect route. In other words, if you can \emph{prove} that there's no counterexample to a mathematical statement, then the statement must be true! Even if $3 \rel 1$ is removed from this relation and the digraph is just three dots, the relation is still transitive.
+
+Lastly, the relation in digraph C is \emph{not} transitive. At first glance it seems like it should be transitive because so many transitivity conditions are satisfied (e.g. $1 \rel 2$ and $2 \rel 3 \Rightarrow 1 \rel 3$, etc), however we can also find transitivity conditions that fail (see part (a) of the following exercise)--and it only takes one counterexample to disprove a statement. 
+\end{example}
+
+\begin{exercise}{trickyTransitive}
+\begin{enumerate}[(a)]
+\item Give a counterexample that proves that the binary relation C in Figure~\ref{fig:transnotrefsym} is \emph{not} transitive. \hyperref[secEqRelChapHints]{(*Hint*)}
+\item
+Explain why the binary relation 
+\[ R_{\sim} = \{(1,4), (1,1),(4,1) \} \]
+is \emph{not} transitive.
+\hyperref[secEqRelChapHints]{(*Hint*)} 
+\item
+Explain why the binary relation 
+\[ R_{\sim} = \{(1,2), (1,3),(1,4) \} \]
+\emph{is} transitive.
+\hyperref[secEqRelChapHints]{(*Hint*)}
+\end{enumerate}
+\end{exercise}
+
+\begin{exer} \label{BinRelSomePropsEx}
+Find binary relations on $\{1,2,3\}$ that meet each of the following conditions. Express each relation as a set of ordered pairs, and draw the corresponding digraph. (Note: each part can have more than one answer, but you only need to find one.)
+\begin{enumerate}[(a)]
+\item \label{BinRelSomePropsEx-symmonly}
+symmetric, but neither reflexive nor transitive.
+\item \label{BinRelSomePropsEx-refonly}
+ reflexive, but neither symmetric nor transitive.
+\item \label{BinRelSomePropsEx-transandsymm}
+transitive and symmetric, but not reflexive.
+\item \label{BinRelSomePropsEx-none}
+neither reflexive, nor symmetric, nor transitive.
+\end{enumerate}
+\end{exer}
+Digraphs are useful because they represent the relation in such a way that it is easy to deduce the relation's properties: 
+
+\begin{exercise}{21}
+\begin{enumerate}[(a)]
+\item
+How can you tell from looking at a digraph whether or not the corresponding relation is reflexive?
+\item
+How can you tell from looking at a digraph whether or not the corresponding relation is symmetric? 
+\item
+**How can you tell from looking at a digraph whether or not the corresponding relation is transitive?
+\end{enumerate}
+\end{exercise}
+
+%\section{Equivalence relations OLD} \label{EquivalenceRelationsOLD}
 
 %\begin{rem}
 %Each of the properties in \cref{RefSymmTransDefn} corresponds to a property of the digraph that we can draw of the relation. 
@@ -290,27 +577,6 @@ For each of the following, explain your answers.
 %\item Show that $\real$ is reflexive iff for all $a \in A$, we have $(a,a) \in \rel$.
 %\end{enumerate}
 %\end{exers}
-
-
-\begin{eg}\label{ex:Relation}
-Given the set $B = \{1,2,3\}$, consider the relation $\rel$ on $B$ defined by 
-\[
-B_\rel = \{(1,1), (2,2), (3,3), (1,2), (2,1), (2,3), (3,2) \}
-\]
- The relation is shown in Figure~\ref{relfig}.
-\begin{figure}[ht]
-\begin{center}
- \includegraphics[scale=0.25]{images/GraphRel.pdf}
-\caption{Diagram of the relation in Example~\ref{ex:Relation}\label{relfig}}
-\end{center}
-\end{figure}
-
-\begin{itemize}
-\item $\rel$ is reflexive, because $1 \rel 1$, $2 \rel 2$, and $3 \rel 3$  (Note we had to check \emph{all} elements of the set $B$),
-\item $\rel$ is symmetric, because, for each $(a,b) \in \mathord{\rel}$, the reversal $(b,a)$ is also in~$\rel$.
-\item $\rel$ is \emph{not} transitive, because $1 \rel 2$ and $2 \rel 3$, but $1 \not\rel 3$.
-\end{itemize}
-\end{eg}
 
 %
 %\begin{eg}
@@ -336,51 +602,6 @@ B_\rel = \{(1,1), (2,2), (3,3), (1,2), (2,1), (2,3), (3,2) \}
 %\end{enumerate}
 %\end{eg}
 
-Transitivity can sometimes be a little tricky:
-
-\begin{exercise}{trickyTransitive}
-\begin{enumerate}[(a)]
-\item
-Explain why the binary relation 
-\[ R_{\sim} = \{(1,4), (1,1),(4,1) \} \]
-is \emph{not} transitive.
-\hyperref[secEqRelChapHints]{(*Hint*)} 
-\item
-Explain why the binary relation 
-\[ R_{\sim} = \{(1,2), (1,3),(1,4) \} \]
-\emph{is} transitive.
-\hyperref[secEqRelChapHints]{(*Hint*)}
-\end{enumerate}
-\end{exercise}
-
-\begin{exer} \label{BinRelSomePropsEx}
-Find binary relations on $\{1,2,3\}$ that meet each of the following conditions 
-(Express each relation as a set of ordered pairs, and draw the corresponding digraph.)
-\begin{enumerate}[(a)]
-\item \label{BinRelSomePropsEx-symmonly}
-symmetric, but neither reflexive nor transitive.
-\item \label{BinRelSomePropsEx-refonly}
- reflexive, but neither symmetric nor transitive.
-\item \label{BinRelSomePropsEx-transandsymm}
-transitive and symmetric, but not reflexive.
-\item \label{BinRelSomePropsEx-none}
-neither reflexive, nor symmetric, nor transitive.
-\end{enumerate}
-\end{exer}
-Digraphs are useful because they represent the relation in such a way that it is easy to deduce the relation's properties: 
-
-\begin{exercise}{21}
-\begin{enumerate}[(a)]
-\item
-How can you tell from looking at a digraph whether or not the corresponding relation is reflexive?
-\item
-How can you tell from looking at a digraph whether or not the corresponding relation is symmetric? 
-\item
-**How can you tell from looking at a digraph whether or not the corresponding relation is transitive?
-\end{enumerate}
-\end{exercise}
-
-
 %\begin{exer} \label{EvenLengthRelExer}
 % \ 
 % \begin{enumerate}
@@ -391,73 +612,11 @@ How can you tell from looking at a digraph whether or not the corresponding rela
 %\end{enumerate}
 %\end{exer}
 
+\section{Examples of equivalence relations\quad\sectionvideohref{PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
 
+Let's take a look at some examples of equivalence relations (recall Definition~\ref{defn:equivalencerelation}). We will see shortly that they all have something in common.
 
-\section{Definition and basic properties of equivalence relations} \label{EquivalenceRelationsDefnSect}
-
-People often need to sort through a collection of objects, putting similar objects together in a group. 
-
-\begin{eg} \label{EquivRelZooEg}
-When making an inventory of the animals in a zoo, we may wish to count the number of antelopes, the number of baboons, the number of cheetahs, and so forth. In this case, all of the animals of the same species might be grouped together. Mathematically speaking, we would define a binary relation $S$ on the set of animals in the zoo by 
-\[x \rel_S y  \text{   iff   }  x \text{ and } y \text{ are in the same species} .\]
-\end{eg}
-
-%When $x$ and~$y$ are placed in the same group (that is, when $x \rel_S y$ in the above example), we may say that $x$ is ``equivalent" to~$y$. This means that $x$ and~$y$ are exactly the same in all respects that are of interest to us. (In the above example, we are interested only in the species of an animal, not its weight, or its age, or anything else.) We call the corresponding binary relation an ``equivalence relation.'' Thus, the binary relation~$\rel_S$ in the above example is an equivalence relation.
-
-Now if we consider the relation $\rel_S$ in light of the properties defined in Definition~\ref{RefSymmTransDefn}, we may discover:
-\begin{itemize}
-\item  $\rel_S$ is reflexive ($x$ is always the same species as itself);
-\item  $\rel_S$ is symmetric ($x$ is the same species as $y$ iff $y$ is the same species as $x$);
-\item  $\rel_S$ is transitive (if $x$ is the same species as $y$ and $y$ is the same species as $z$, then $x$ is the same species as $z$);
-\end{itemize}
-
-\begin{eg} \label{MoreEquivRelEgs}
-\begin{enumerate}[(a)]
-\item
-If we are concerned only with people's first names, we could define a relation~$\rel_N$ on the set of all people by 
-\[  x \rel_N y  \text{~iff~} x \text{ has the same first name as }y.  \]
-\item In geometry, sometimes we are interested only in the shape of a triangle and not its location or orientation. In this case, we talk about \emph{congruent} triangles. We may define a relation $\cong$ on the set of all triangles by 
-\[T_1 \cong T_2  \text{ iff } T_1  \text{ is congruent  to } T_2. \]
-Here ``congruent" means that corresponding sides of the two triangles are equal, and corresponding angles are also equal.
-\end{enumerate}
-\end{eg}
-
-\begin{exercise}{}
-\begin{enumerate}[(a)]
-\item
-For the relation $\rel_N$ in part (a) of Example~\ref{MoreEquivRelEgs}, explain why it is reflexive, symmetric, and transitive.
-\item
-For the relation $\cong$ in part (b) of Example~\ref{MoreEquivRelEgs}, explain why it is reflexive, symmetric, and transitive.
-
-%\item For any $n \in \mathbb{N}^+$, \cref{CongEquivRel} tells us  that congruence modulo~$n$ is reflexive, symmetric, and transitive, so it is an equivalence relation on~$\integer$.
-\end{enumerate}
-\end{exercise}
-
-% In view of the above examples, if $\sim$ is an equivalence relation then we would expect:
-% \begin{enumerate}[(a)]
-% \item $\sim$ is reflexive ($x$ is the same as~$x$),
-% \item $\sim$ is symmetric (if $x$ is the same as~$y$, then $y$ is the same as~$x$),
-% and
-% \item $\sim$ is transitive (if $x$ is the same as~$y$, and $y$~is the same as~$z$, then $x$~is the same as~$z$).
-% \end{enumerate}
-The above examples motivate the following definition:
-
-\begin{defn}
-An \term{equivalence relation}\index{Equivalence relation} on a set~$A$ is a binary relation on~$A$ that is reflexive, symmetric, and transitive.
-\end{defn}
-
-\begin{exer}
-\begin{enumerate}[(a)]
-\item
-``Congruence'' is an equivalence relation on triangles, that you studied in your geometry class. Can you think of another equivalence relation on triangles that you studied in high school geometry?
-\item
-Define an equivalence relation on the set of all polygons, such that in particular all triangles are equivalent. Explain why your relation is reflexive, symmetric, and transitive. (There are many possible answers to this question.)  
-\item
-Define an equivalence relation on the set of all polygons, such that in particular not all triangles are equivalent but all rectangles are equivalent. (There are many possible answers to this question.)
-\end{enumerate}
-\end{exer}
-
-\begin{eg}
+\begin{example}{binrelsquare}
 Define a binary relation~$\sim$ on~$\real$ by $x \sim y$ iff $x^2 = y^2$. Then $\sim$ is an equivalence relation.
 
 \begin{proof}
@@ -472,7 +631,7 @@ We wish to show that $\sim$ is reflexive, symmetric, and transitive.
 \noindent
 (transitive) Given $x,y,z \in \real$, such that $x \sim y$ and $y \sim z$, we have $x^2 = y^2$ and $y^2 = z^2$. Therefore $x^2 = z^2$, since equality is transitive. Hence $x \sim z$.
 \end{proof}
-\end{eg}
+\end{example}
 
 
 %\begin{eg}
@@ -528,36 +687,138 @@ The binary relation $\sim$ on the collection of all finite sets defined by
 \end{enumerate}
 \end{exercise}
 
+\begin{exercise}{}
+Do you see anything that all of the above examples have in common? (\emph{Spoiler Alert}: if you can't think of an answer, just keep reading.)
+\end{exercise}
 
-Any time we have a function, we also get an equivalence relation on its domain:
+The above equivalence relations can all be defined in terms of \emph{functions}. More specifically, they can all be defined according to the following pattern:
 
-\begin{eg} \ 
+Given a function $f: A \rightarrow B$, define a binary relation on $A$ by: $a_1 \rel a_2$ iff $f(a_1) = f(a_2)$.
+
+\noindent
+Definitions of this form seem to always produce equivalence relations. (We should say that in some cases, the definition we provided must be slightly massaged to bring it into this form.  For example, the equivalence relation in Example~\ref{example:EquivalenceRelationsChap:NxNEquivRelEg} follows the pattern if we use the function $f: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{Z}$ defined by $f(\, (a,b)\, ) = a-b$. )
+
+
+The previous examples have all involved sets of numbers, but we may see that the same thing happens even when we consider functions on other types of sets.
+
+\begin{example}{MoreEquivRelEgs}
 \begin{enumerate}[(a)]
-\item Every animal has only one species, so $\var{Species}$ is a function that is defined on the set of all animals. The equivalence relation~$\rel_S$ of Example~\ref{EquivRelZooEg} can be characterized by
+\item Every animal has only one species, so $\var{Species}$ is a function that is defined on the set of all animals. The equivalence relation~$\rel_S$ of Example~\ref{example:EquivalenceRelationsChap:relfrompart1} can be characterized by
 \[ x \rel_S y \quad \iff \quad {\var Species}(x) = {\var Species}(y) .\]
-\item If we assume that every person has a first name, then $\var{FirstName}$ is a function on the set of all people. The equivalence relation~$\rel_N$ of Example~\ref{MoreEquivRelEgs} can be characterized by
-\[  x \rel_N y \quad \iff \quad {\var FirstName}(x) = {\var FirstName}(y) .\]
+\item If we assume that every person has a given name, then $\var{GivenName}$ is a function on the set of all people. Let $\rel_N$ be the equivalence relation of Exercise~\ref{exercise:EquivalenceRelationsChap:relfrompart2} can be characterized by
+\[  x \rel_N y \quad \iff \quad {\var GivenName}(x) = {\var GivenName}(y) .\]
 \end{enumerate}
-\end{eg}
+\end{example}
 
-
-The following result generalizes this idea to all functions.
+We've seen enough examples to convince us that functions produce equivalence relations. But examples are never enough! The bottom line is that we need a proof--and here it is.
 
 \begin{prop}{EquivRelFromFunc}
 Suppose $f \colon A \to B$. If we define a binary relation~$\sim$ on~$A$ by
 \[ a_1 \sim a_2 \quad \iff \quad f(a_1) = f(a_2) ,\]
-then $\sim$ is an equivalence relation.
+then $\sim$ is an equivalence relation on $A$.
 \end{prop}
 
 \begin{exercise}{EquivRelFromFuncPfEx}
-Prove Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}. (That is, prove that the relation defined in the proposition is (a) reflexive, (b) symmetric, and (c) transitive.)
+Prove Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}: that is, prove that the relation defined in the proposition is (a) reflexive, (b) symmetric, and (c) transitive.  (If you like, you may model your proof on the discussion prior to Exercise~ Example~\ref{example:EquivalenceRelationsChap:relfrompart1}, where we proved the three properties for binary relations arising from partitions.)
+
 \end{exercise}
 
+Let's take a step back and take stock of where we are. We've shown (Proposition~\ref{proposition:EquivalenceRelationsChap:partbinrel}) that any partition has an associated equivalence relation. We've also shown (Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}) that any function has an associated equivalence relation. Is there any relationship between these two facts? Indeed, we'll see in subsequent discussions that partitions, functions, and equivalence relations are closely interrelated. In the following exercise, we'll show that any equivalence relation that comes from a partition also comes from a function.
 
+\begin{exercise}{partitionfunction}
+Given a set $A$ and a partition $\mathcal{P}=\{A_1, A_2, A_3, \ldots\}$ of $A$.  Let $\rel_\mathcal{P}$ be the equivalence relation associated with the partition $\mathcal{P}$. Now define a function $f:A \rightarrow \mathbb{N}$ as follows:
 
- \section{Equivalence classes} \label{EquivalenceRelationsClassesSect}
+$$f(a)=
+\begin{cases}
+1 & \mbox{if $a \in A_1$} \\
+2 & \mbox{if $a \in A_2$} \\
+\vdots & \vdots \\
+n & \mbox{if $a \in A_n$}
+\end{cases}$$
 
-If we are interested in first names (as in Example~\ref{MoreEquivRelEgs}), then we may also be interested in the set of all people who have the same first name as you. This is called your ``equivalence class."
+In general: $f(a)=j$ iff $a \in A_j$.
+\begin{enumerate}[(a)]
+\item
+Show that $a \rel_\mathcal{P} a \iff f(a)=f(b)$.
+\item 
+Let $\rel_f$ be the equivalence relation defined from $f$ as in Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}. 
+Show that $\rel_\mathcal{P} = \rel_f$ by showing that $a \rel_\mathcal{P} b \iff a \rel_f b$.
+\end{enumerate}
+\end{exercise}
+
+Exercise~\ref{exercise:EquivalenceRelationsChap:partitionfunction} amounts to a proof of the following proposition.     
+
+\begin{prop}{PartToFunc}
+Given a set $A$ with partition $\mathcal{P}=\{A_1, A_2, A_3, \ldots \}$. 
+Let $\rel_{\mathcal{P}}$ be the associated equivalence relation. 
+Then there exists a function $f:A \rightarrow \mathbb{N}$ with associated equivalence relation $\rel_f$ such that 
+$\rel_{\mathcal{P}} \, = \, \rel_{f}$.
+\end{prop}
+
+In other words, whenever we have a partition, we can also define a function that gives us the same equivalence relation as the partition.
+\footnote{This statement is true, but the proof in Exercise~\ref{exercise:EquivalenceRelationsChap:partitionfunction} isn't quite complete. The reason is that we've assumed that the partition $\mathcal{P}$ is \term{countable}, i.e. we can assign a unique natural number index to each set in $\mathcal{P}$. There are many sets in mathematics that are \emph{not} countable (such as the real numbers). To make a truly general proof, we should specify an index set that may depend on the partition.}
+
+%Notice that the previous proposition is not an if and only if proposition, because there could be an equivalence relation that can't be expressed as a function. But the good news about this proposition is that many relations can be expressed as a function as the previous examples and exercises have shown, including functions with arbitrary sets.
+
+\begin{exercise}{realfunction}
+From the relation $\rel_R$ in Examples~\ref{example:EquivalenceRelationsChap:partition1}(a) and~\ref{example:EquivalenceRelationsChap:relfrompart1}(a) (the $\mathbb{Q}$ and  $\mathbb{I}$ example) define a function such that $a_1 \sim a_2 \iff  f(a_1) = f(a_2)$ where $a_1, a_2 \in \mathbb{R}$. (Yes, we have already proved that $\rel_R$ is an equivalence relation by a different proposition, this is just for illustrative purposes.)
+\end{exercise}
+
+Exercise~\ref{exercise:EquivalenceRelationsChap:partitionfunction} starts with a partition, and constructs a function that gives the same equivalence relation.  We may go backwards as well: starting with a function, we may produce a partition with the same equivalence relation. The following exercise gives an example of this.
+
+\begin{exercise}{66}
+Let $f\colon \{-3,-2,-1,0,1,2,3\} \to \mathbb{Z}$ be defined by $f(x) =  x^2$.
+\begin{enumerate}[(a)]
+\item
+What is the range of $f$?
+\item
+For every number $n$ in the range of $f$, find the set of all numbers in the domain of $f$ that map to $n$. Denote this set as $A_n$ (for example, if we let $n=0$, then only 0 maps to 0, so $A_0 = 0$). List the elements of $A_n$ for each $n$ in the range of $f$. 
+\item 
+Show that the sets $\{ A_n \}$ that you listed in part (b) form a partition of the domain of $f$.
+\item
+According to Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part}, this partition produces an equivalence relation  on  the domain of $f$.  Draw a digraph that represents the equivalence relation.
+\item
+We also know that the function $f$ produces an equivalence relation on the domain of $f$, as in Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}.  Draw a digraph that represetns this equivalence relation.
+\item
+What may you conclude from your results in (d) and (e)?   
+\end{enumerate}
+\end{exercise}
+
+The following proposition generalizes the results of the previous exercise.
+
+\begin{prop}{FuncIsRange}
+Suppose $f:A \rightarrow B$. For each $b \in \text{Range}(f)$ define a subset $A_b \subset A$ as follows:
+$$A_b:=\{a \in A \mid f(a)=b \}.$$
+Then the collection of sets $ \mathcal{P} :=\{A_b \, |\,  b \in B\}$ form a partition of $A$. Furthermore, the equivalence relation $\sim_f$ derived from $f$ is identical to the equivalence relation $\sim_{\mathcal{P}}$ derived from $\mathcal{P}$: that is, $a_1 \sim_f a_2 \iff a_1 \sim_{\mathcal{P}} a_2$.
+\end{prop}
+\begin{proof}  The proof is broken up into steps in the following exercise.
+
+\begin{exercise}{Abdisjoint}
+\begin{enumerate}[(a)]
+\item Given any $b \in \text{Range}(f)$, show that $A_b$ is nonempty
+\item Given $b_1, b_2\in \text{Range}(f)$ with $b_1 \neq b_2$, show that $A_{b_1}$ and $A_{b_2}$ are disjoint, i.e. $A_{b_1} \cap A_{b_2}=\emptyset$.  
+\item Given any $a \in A$, show there exists a $b \in \text{Range}(f)$ such that $a \in A_b$. 
+\item Show that $\{A_b \, | \, b \in B\}$ includes all of $A$; that is, $A=\cup_{b \in B} A_b$.
+\item Verify that the (a)-(d) imply that $\{A_b | b \in B\}$ is a partition of $A$.
+\end{enumerate}
+\end{exercise}
+\end{proof}
+
+\section{Obtaining partitions from equivalence relations\quad\sectionvideohref{PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=20}} \label{EquivalenceRelationsDefnSect}
+
+Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel} tells us that given any partition $\mathcal{P}$ of a set $S$, we can define an equivalence relation which says that two elements of $S$ are equivalent iff they belong to the same set in the partition. We'll see in this section that we can go the other way as well: namely, given any equivalence relation on $S$ we can construct a partition on $S$ which divided all the elements of $S$ among disjoint subsets.
+
+To make this work, we first must define a key notion: \emph{equivalence classes}. Here we go!
+
+ \subsection{From equivalence relations to equivalence classes}
+
+Let's ramp up to our key definition by means of  an example. 
+
+\begin{example}{}
+Suppose we're studying a set of people, and we're only interested in their given names.  Of course there may be several Johns, several Marys, a couple of Sylvesters, and so on-- but  as far as given names are concerned, any two Johns can be considered as equivalent: indeed, we formalized this sense of equivalence in Example~\ref{example:EquivalenceRelationsChap:MoreEquivRelEgs}(b). We can group all Johns into a single set or class, which we'll refer to as an  \emph{equivalence class}. We can do the same thing with Marys, Sylvesters, Xyleenas, Zenobias, and so on. It follows that every person in the set belongs to her or his own equivalence class (even if the equivalence class consists of a single person!)
+\end{example}
+
+Let's generalize this example. Essentially, the only fact about given names that we used to define equivalence classes was that given name defines an equivalence relation on the set of interest. So it stands to reason that we can do something similar with any equivalence relation:
  
  \begin{defn}\label{DefEquivRel}
  Suppose $\sim$ is an equivalence relation on a set~$A$. For each $a \in A$, the \term{equivalence class}\index{Equivalence class} of~$a$ is the following subset of~$A$:
@@ -566,19 +827,19 @@ That is, the equivalence class of the element $a \in A$ is the set of all elemen
 \end{defn}
 
 
-\begin{eg}
-For the equivalence relation~$N$ described in Example~\ref{MoreEquivRelEgs}, we have
-	$$ [\var{Alice Cooper}] = \{\, x \in \var{People} \mid \var{FirstName}(x) = \var{FirstName}(\var{Alice Cooper}) \,\} .$$
-In other words, $[\var{Alice Cooper}]$ is the set of all people whose first name is Alice.
-\end{eg}
-
+\begin{example}{}
+For the equivalence relation~$N$ described in Example~\ref{example:EquivalenceRelationsChap:MoreEquivRelEgs}(b), we have
+	$$ [\var{Woodrow\,\,Wilson}] = \{\, x \in \var{People} \mid \var{GivenName}(x) = \var{GivenName}(\var{Woodrow\,\,Wilson}) \,\} .$$
+In other words, $[\var{Woodrow\,\,Wilson}]$ is the set of all people whose given name is Woodrow.
+\end{example}
 
 \begin{warn}
 The notation $[a]$ does not tell us which equivalence relation is being used. You should be able to figure out which relation it is from the context.
 \end{warn}
 
+Let's give a a more ``mathy'' example.
 
-\begin{eg} \label{EquivClassEg}
+\begin{example}{EquivClassEg}
 Suppose $A = \{1,2,3,4,5\}$ and 
 \begin{align*}
 &R = \\
@@ -592,8 +853,7 @@ $$ [1] = \{1,3,4\},
 \quad [3] = \{1,3,4\} 
 \quad[4] = \{1,3,4\} ,
 \quad [5] = \{2,5\} .$$
-\end{eg}
-
+\end{example}
 
 \begin{exercise}{EquivClassEasyEx}
 \begin{enumerate}[(a)]
@@ -617,7 +877,7 @@ Draw the arrow diagrams for $\rel_A, \rel_B,$ and $\rel_C$.
 
 The following proposition presents some very important properties of equivalence classes:
 
-\begin{thmprop} \label{EquivRelProps}
+\begin{prop}{EquivRelProps}
 Suppose $\sim$ is an equivalence relation on a set~$S$. Then:
 \begin{enumerate}[(a)]
 \item \label{EquivRelProps-aIn[a]}
@@ -633,10 +893,10 @@ Suppose $\sim$ is an equivalence relation on a set~$S$. Then:
 \item \label{EquivRelProps-disjoint}
  For any $a_1,a_2 \in S$, such that $a_1 \not\sim a_2$, we have $[a_1] \cap [a_2] = \emptyset$.
 \end{enumerate}
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{EquivRelPropsPfEx}
-Prove the assertions in Proposition~\ref{EquivRelProps}. You may use the following hints:
+Prove the assertions in Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelProps}. You may use the following hints:
 \begin{enumerate}[(a)]
 \item
 Use the reflexive property of $\sim$, together with Definition~\ref{DefEquivRel}
@@ -664,7 +924,7 @@ You can prove this one by contradiction. Suppose the intersection is non-empty. 
 \end{enumerate}
 \end{exercise}
 
-Proposition~ \ref{EquivRelProps} also gives us this important fact:
+Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelProps} also gives us this important fact:
 
 \begin{prop}{DisjointEquiv}
 Suppose $\sim$ is an equivalence relation on a set~$S$. Then any two equivalence classes are either equal or disjoint; that is, either they have exactly the same elements, or they have no elements in common. 
@@ -683,12 +943,103 @@ Hence, $a \in \_\_\_\_\_\_\_\_$ and $a \in \_\_\_\_\_\_\_\_$.
 \item
 By Definition~\ref{DefEquivRel}, this means $a \sim \_\_\_\_\_\_\_\_$ and $a \sim \_\_\_\_\_\_\_\_$. 
 \item
-Hence, Proposition~\ref{EquivRelProps} part \_\_\_\_\_\_\_\_  tells us that $[a] =\_\_\_\_\_\_\_\_$ and $[a] =\_\_\_\_\_\_\_\_$. 
+Hence, Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelProps} part \_\_\_\_\_\_\_\_  tells us that $[a] =\_\_\_\_\_\_\_\_$ and $[a] =\_\_\_\_\_\_\_\_$. 
 \item
 Therefore $\_\_\_\_\_\_\_\_ = [a] = \_\_\_\_\_\_\_\_$, as desired.
 \end{enumerate}
 \end{proof}
 \end{exercise}
+
+\subsection{From equivalence classes to partitions}
+
+It's time to come full circle, and show that partitions arise from equivalence classes. As in the previous section, we'll ramp up with an example.
+
+\begin{example}{EquivClassPartEg}
+In Example~\ref{example:EquivalenceRelationsChap:EquivClassEg}, the equivalence classes are $\{1,3,4\}$ and $\{2,5\}$. Since $1,2,3,4,5$ each belong to exactly one of these sets, we see that the set
+	$$ \bigl\{ \{1,3,4\}, \{2,5\} \bigr\} $$
+of equivalence classes is a partition of $\{1,2, 3,4,5\}$.
+\end{example}
+
+Intuitively, equivalence classes resulting from an equivalence relation on $S$ will always break $S$ up into disjoint sets which, taken together, include all the elements of $S$. We've seen this description before--this is exactly what a partition does. This observation places us at the doorstep of the following proposition:
+
+\begin{prop}{EquivRel->Part}
+Suppose $\sim$ is an equivalence relation on a set~$A$. Then 
+	$$ \{\, [a] \mid a \in A \,\} $$
+is a partition of~$A$.
+\end{prop}
+
+\begin{proof}
+From parts (\ref{EquivRelProps-nonempty}), (\ref{EquivRelProps-union}), and (\ref{EquivRelProps-disjoint}) of Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelProps}, we know that the equivalence classes are nonempty, that their union is~$A$, and that they are pairwise disjoint.
+\end{proof}
+
+The following exercises illustrate Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part}.
+
+\begin{exercise}{ECtoP}
+Consider the set $\mathbb{C}^*$ defined by $\mathbb{C}^* := \mathbb{C} \setminus 0$, i.e. the set of nonzero complex numbers. Define a binary relation $\sim_r$ on this set as follows.  Let $ r_1 \cis(\theta_1)$ and $r_2(\cis \theta_2)$  be two elements of $\mathbb{C}^*$ expressed in polar form, where $0 \le \theta < 2\pi$. Then
+\[ r_1 \cis(\theta_1) \sim_r r_2(\cis \theta_2)  \iff r_1 = r_2.\]
+
+\begin{enumerate}[(a)]
+\item
+Prove that $\sim_r$ thus defined is an equivalence relation.
+\item
+Sketch $[1], [1+i],$  and $[\pi \cis(\pi/3)]$ in the complex plane (show all three on a single sketch). Give geometrical descriptions (using words) of each of these sets (i.e. what can you say about the shape, size, and location of these three sets?)
+\item 
+Give a geometrical description of the equivalence classes of $\sim_r$ in the following form:  ``The equivalence classes of $\sim_r$ are all $\_\_\_\_\_\_\_\_\_$ centered at $\_\_\_\_\_\_\_\_\_$''.
+\item
+Based on your description in part (c), show that the equivalence classes of $\sim_r$ form a partition of $\mathbb{C}^*$.
+\item
+We've seen that functions produce equivalence relations.  Give a function with domain $\mathbb{C}^*$ that produces the equivalence relation $\sim_r$. 
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{ECtoP2}
+Consider the set $\mathbb{C}^*$ as defined in Exercise~\ref{exercise:EquivalenceRelationsChap:ECtoP}. Define a binary relation $\sim_{\theta}$ on this set as follows.  Let $ r_1 \cis(\theta_1)$ and $r_2(\cis \theta_2)$  be two elements of $\mathbb{C}^*$ expressed in polar form, where $0 \le \theta < 2\pi$. Then
+\[ r_1 \cis(\theta_1) \, \sim_{\theta} \, r_2(\cis \theta_2)  \iff \theta_1 = \theta_2.\]
+
+\begin{enumerate}[(a)]
+\item
+Prove that $\sim_{\theta}$ thus defined is an equivalence relation.
+\item
+Sketch $[1], [1+i],$  and $[\pi \cis(\pi/3)]$ in the complex plane (show all three on a single sketch). Give geometrical descriptions (using words) of each of these sets (i.e. what can you say about the shape, size, and location of these three sets?)
+\item 
+Give a geometrical description of the equivalence classes of $\sim_{\theta}$ in the following form:  ``The equivalence classes of $\sim_{\theta}$ are all $\_\_\_\_\_\_\_\_\_$ which begin at $\_\_\_\_\_\_\_\_\_$''.
+\item
+Based on your description in part (c), show that the equivalence classes of $\sim$ form a partition of $\mathbb{C}^*$.
+\item
+Give a function with domain $\mathbb{C}^*$ that produces the equivalence relation $\sim_{\theta}$. 
+\end{enumerate}
+\end{exercise}
+
+
+%\begin{exercise}{67}
+%Consider the Cartesian plane $\mathbb{R}^2$. Let $C_r$ be the circle of radius $r$ centered at $(0,0)$, for $r \in [0,\infty)$.(Note that in mathematics, ``circle'' means just the circumference and not the interior: the interior of the circle is called a ``disk''.)
+%\begin{enumerate}[(a)]
+%\item
+%Sketch $C_1$, $C_{2.5}$,$C_{\sqrt{2}}$, and $C_{\pi}$ in $\mathbb{R}^2$  (on the same graph).
+%\item
+%Show that $C_{r}$ and $C_{s}$ are disjoint whenever $r \neq s$. (Do this by showing that any element of $C_{r}$ is not an element of $C_{s}$, and vice versa).
+%\item
+%Show that the union of the set of all circles $\{C_r, r \in [0,\infty)$ is all of $\mathbb{R}^2$. (Do this by showing that every element of $\mathbb{R}^2$ is in at least one circle.)
+%\item
+%Show that the set of circles centered at $(0,0)$ form a partition of the Cartesian plane.
+%\hyperref[secEqRelChapHints]{(*Hint*)}
+%\item
+%According to Proposition~\ref{Part->EquivRel} part~\ref{Part->EquivRel-equiv}, this partition  defines an equivalence relation $\sim$ on $\mathbb{R}^2$. Use the equation in part (a) of this exercise to complete the following sentence:  $(x_1,y_1) \sim (x_2,y_2)$ iff $\underline{~~~~~~~~~~~~~~}$.
+%\end{enumerate}
+%\end{exercise}
+
+We close this section with  an exercise that reinforces the idea that partitions and equivalence classes are really two different ways of looking at the same thing.
+
+\begin{exercise}{}
+We know from Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel} that any partition  produces an equivalence relation.  
+We also know from Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part} that any equivalence relation produces a partition.
+\begin{enumerate}[(a)]
+\item
+Suppose we begin with a partition $\mathcal{P}$ on the set $A$, and define an equivalence relation $\sim_{\mathcal{P}}$ as in Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel}. Next, suppose that following Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part} we define a partition   $\mathcal{P}'$  consisting of the equivalence classes of $\sim_{\mathcal{P}}$. Show that $\mathcal{P}=\mathcal{P}'$. 
+\item
+Suppose we begin with an equivalence relation $\sim$ on the set $A$, and define a partition of $A$ as in Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part}. Let's call this partition $\mathcal{Q}$.  Next, suppose that following Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel} we define an equivalence relation  $\mathcal{Q}$. Show that the relations$\sim$ and $\sim_{\mathcal{Q}}$ are identical:  that is, $a \sim b \iff a \sim_{\mathcal{Q}} b$..
+\end{enumerate}
+\end{exercise}. 
 
 
 \section{Modular arithmetic redux\quad
@@ -723,7 +1074,7 @@ Exercise~\ref{exercise:EquivalenceRelationsChap:ProveModEquiv} enables us to app
 We have proven in Exercise~\ref{exercise:EquivalenceRelationsChap:ProveModEquiv} that equivalence mod 3 is a bona fide equivalence relation. So what are the equivalence classes? And how many are there?
 \medskip
 
-We can use Definition~\ref{mod_eqiv_def_1} to answer this question. The possible remainders when an integer is divided by~$3$ are either $0$, $1$, or~$2$. This tells us that  every integer is equivalent (modulo~$3$) to either $0$, $1$, or~$2$. Using Proposition~\ref{EquivRelProps} part~(d), it follows that:
+We can use Definition~\ref{mod_eqiv_def_1} to answer this question. The possible remainders when an integer is divided by~$3$ are either $0$, $1$, or~$2$. This tells us that  every integer is equivalent (modulo~$3$) to either $0$, $1$, or~$2$. Using Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelProps}(d), it follows that:
 \begin{itemize}
 \item[] for every $k \in \integer$, the equivalence class~$[k]_3$ must be either $[0]_3$, $[1]_3$, or~$[2]_3$.
 \end{itemize}
@@ -924,7 +1275,7 @@ By integer arithmetic it follows that $(a_1 + b_1) - (a_2 + b_2) =  \underline{~
 \item
 Since $k_1 + k_2$ is an integer it follows from Definition~\ref{mod_eqiv_def_2} that $(a_1 + b_1) \equiv \underline{~<7>~} \pmod{\underline{~<8>~}}$.
 \item 
-It follows from Proposition~\ref{EquivRelProps} part (d) that $\underline{~<9>~}$.
+It follows from Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelProps}(d) that $\underline{~<9>~}$.
 \item
 By Definition~\ref{integ_mod_n} (c) then $\class{a_1} \mathbin{+} \class{b_1} =  \underline{~<10>~}$ and $\class{a_2} \mathbin{+} \class{b_2} =  \underline{~<11>~}$.
 \item
@@ -980,121 +1331,54 @@ That is, show that there exists integers $a$, $b$ such that $[a]_n = [b]_n$ and 
 \end{enumerate}
 \end{exercise}
 
-
-\section{Partitions}  \label{EquivalenceRelationsPartitionsSect}
-
-Whenever we classify the elements of a particular set, essentially what we are doing is dividing the set up into several disjoint subsets. This is called a  \term{partition}\index{Partition!of a set} of the set. Figure~\ref{partitionfig} below shows a schematic representation of a partition.
-
-\begin{center}
-\begin{figure}[ht]
-\label{partitionfig}
-\includegraphics[scale=0.35]{images/partition.pdf}
-\caption{A partition of~$A$ into subsets $A_1, \ldots, A_5$. 
-(Each element of~$A$ is in one and only one of the subsets.)}
-\end{figure}
-\end{center}
-
-
-\begin{eg} \label{ToyPartitionEg}
-Mary is leaving for university, and does not want her childhood toys any more, so she will divide them up among her younger siblings: Alice, Bob, and Cindy. Let 
-\begin{itemize}
-\item $T$ be the set of all of Mary's toys, 
-and
-\item $A$, $B$, and~$C$ be the set of toys that she will give to Alice, to Bob, and to Cindy, respectively.
-\end{itemize}
-Then $A$, $B$, and~$C$ are subsets of~$T$, and they should be chosen so that:
-\begin{enumerate}[(a)]
-\item the union of $A$, $B$ and~$C$ is~$T$ (that is, $A \cup B \cup C = T$), so all of the toys are given away,
-and
-\item the sets $A$, $B$, and~$C$ are pairwise disjoint (that is, $A \cap B = \emptyset$, $A \cap C = \emptyset$, and $B \cap C = \emptyset$), so there will not be any confusion about who is the new owner of each toy (confusion of ownership among siblings is a dangerous situation).
-\end{enumerate}
-Here $\{A, B, C\}$ is a  partition of~$T$ into three disjoint subsets (as long as $A, B, C$ are all nonempty). 
-\end{eg}
-We generalize this example in the following definition:
-
-\begin{defn}
-A \term{partition} of a set~$A$ is a collection of nonempty subsets of~$A$, such that each element of~$A$ is in exactly one of the subsets. In other words:
-\begin{enumerate}[(a)]
-\item the union of the subsets in the collection is all of~$A$,
-and
-\item the subsets in the collection are pairwise disjoint.\index{Partition!definition of}
-\end{enumerate}
-\end{defn}
-
-
-\begin{eg} \label{EquivClassPartEg}
-In Example~\ref{EquivClassEg}, the equivalence classes are $\{1,3,4\}$ and $\{2,5\}$. Since $1,2,3,4,5$ each belong to exactly one of these sets, we see that the set
-	$$ \bigl\{ \{1,3,4\}, \{2,5\} \bigr\} $$
-of equivalence classes is a partition of $\{1,2, 3,4,5\}$.
-\end{eg}
-
-
-The following result is an immediate consequence of Proposition~\ref{EquivRelProps}. It says that equivalence classes always provide a partition.
-
-\begin{thm} \label{EquivRel->Part}
-Suppose $\sim$ is an equivalence relation on a set~$A$. Then 
-	$$ \{\, [a] \mid a \in A \,\} $$
-is a partition of~$A$.
-\end{thm}
-
-\begin{proof}
-From parts \ref{EquivRelProps-nonempty}, \ref{EquivRelProps-union}, and~\ref{EquivRelProps-disjoint} of Proposition~\ref{EquivRelProps}, we know that the equivalence classes are nonempty, that their union is~$A$, and that they are pairwise disjoint.
-\end{proof}
-
-Proposition~\ref{EquivRel->Part} tells us that every equivalence relation gives us a partition\index{Equivalence relation!as a partition}\index{Partition!as an equivalence relation}. Conversely, the following proposition shows that any partition comes from an equivalence relation. In other words, equivalence relations and partitions are just two different ways of looking at the same thing.
-
-\begin{prop}{}\label{Part->EquivRel}
-Suppose $\mathcal{P}$ is a partition of a set~$A$. Define a binary relation $\sim$ on~$A$ by
-\[ a \sim b \quad \iff \quad \exists C \in \mathcal{P}, ( a \in C \text{ and } b \in C ) .\]
-Then:
-\begin{enumerate}[(a)]
-\item \label{Part->EquivRel-equiv}
- $\sim$ is an equivalence relation on~$A$,
-and
-\item \label{Part->EquivRel-classes}
- the set of equivalence classes is the partition~$\mathcal{P}$.
-\end{enumerate}
-\end{prop}
-
-
-
 Recall that $\integer_n$ replaces integers $a$ and~$b$ that are congruent modulo~$n$ with objects~$\class{a}$ and~$\class{b}$ that are exactly equal to each other. This was achieved by letting $\integer_n$ be the set of all equivalence classes. The set $\integer_n$ applies only to congruence modulo~$n$, but the same thing can be done for any equivalence relation:
 
 \begin{defn}
 Suppose $\sim$ is an equivalence relation on a set~$A$. The set of all equivalence classes is called \term{$A$ modulo~$\sim$}. It is denoted $A/\mathord{\sim}$.
 \end{defn}
 
-\begin{eg}
+\begin{example}{}
 Suppose we define an equivalence relation~$\sim$ on~$\integer$ by $a \sim b$ iff $a \equiv b \pmod{n}$. Then $\integer/\mathord{\sim}$ is simply another name for~$\integer_n$.
-\end{eg}
+\end{example}
 
-\begin{exercise}{66}
-Let $f\colon \{-3,-2,-1,0,1,2,3\} \to \mathbb{Z}$ be defined by $f(x) =  x^2$. Define a relation $\sim$ on $\{-3,-2,-1,0,1,2,3\}$ by: $n \sim m$ iff $f(n) = f(m)$.
-\begin{enumerate}[(a)]
-\item
-Show that $\sim$ is an equivalence relation.
-\item
-According to Proposition~\ref{EquivRel->Part}, this equivalence relation produces a partition on  $\{-3,-2,-1,0,1,2,3\}$. List the sets in the partition.
-\end{enumerate}
-\end{exercise}
 
-\begin{exercise}{67}
-Consider the Cartesian plane $\mathbb{R}^2$. Let $C_r$ be the circle of radius $r$ centered at $(0,0)$, for $r \in [0,\infty)$.(Note that in mathematics, ``circle'' means just the circumference and not the interior: the interior of the circle is called a ``disk''.)
-\begin{enumerate}[(a)]
-\item
-If the point $(x,y) \in C_r$, then write an equation that $(x,y)$ must satisfy.
-\hyperref[secEqRelChapHints]{(*Hint*)}
-\item
-Show that $C_{r}$ and $C_{s}$ are disjoint whenever $r \neq s$. (Do this by showing that any element of $C_{r}$ is not an element of $C_{s}$, and vice versa).
-\item
-Show that the union of the set of all circles $\{C_r, r \in [0,\infty)$ is all of $\mathbb{R}^2$. (Do this by showing that every element of $\mathbb{R}^2$ is in at least one circle.)
-\item
-Show that the set of circles centered at $(0,0)$ form a partition of the Cartesian plane.
-\hyperref[secEqRelChapHints]{(*Hint*)}
-\item
-According to Proposition~\ref{Part->EquivRel} part~\ref{Part->EquivRel-equiv}, this partition  defines an equivalence relation $\sim$ on $\mathbb{R}^2$. Use the equation in part (a) of this exercise to complete the following sentence:  $(x_1,y_1) \sim (x_2,y_2)$ iff $\underline{~~~~~~~~~~~~~~}$.
-\end{enumerate}
-\end{exercise}
+%Recall that $\integer_n$ replaces integers $a$ and~$b$ that are congruent modulo~$n$ with objects~$\class{a}$ and~$\class{b}$ that are exactly equal to each other. This was achieved by letting $\integer_n$ be the set of all equivalence classes. The set $\integer_n$ applies only to congruence modulo~$n$, but the same thing can be done for any equivalence relation:
+%
+%\begin{defn}
+%Suppose $\sim$ is an equivalence relation on a set~$A$. The set of all equivalence classes is called \term{$A$ modulo~$\sim$}. It is denoted $A/\mathord{\sim}$.
+%\end{defn}
+%
+%\begin{eg}
+%Suppose we define an equivalence relation~$\sim$ on~$\integer$ by $a \sim b$ iff $a \equiv b \pmod{n}$. Then $\integer/\mathord{\sim}$ is simply another name for~$\integer_n$.
+%\end{eg}
+%
+%\begin{exercise}{66}
+%Let $f\colon \{-3,-2,-1,0,1,2,3\} \to \mathbb{Z}$ be defined by $f(x) =  x^2$. Define a relation $\sim$ on $\{-3,-2,-1,0,1,2,3\}$ by: $n \sim m$ iff $f(n) = f(m)$.
+%\begin{enumerate}[(a)]
+%\item
+%Show that $\sim$ is an equivalence relation.
+%\item
+%According to Proposition~\ref{EquivRel->Part}, this equivalence relation produces a partition on  $\{-3,-2,-1,0,1,2,3\}$. List the sets in the partition.
+%\end{enumerate}
+%\end{exercise}
+
+%\begin{exercise}{67}
+%Consider the Cartesian plane $\mathbb{R}^2$. Let $C_r$ be the circle of radius $r$ centered at $(0,0)$, for $r \in [0,\infty)$.(Note that in mathematics, ``circle'' means just the circumference and not the interior: the interior of the circle is called a ``disk''.)
+%\begin{enumerate}[(a)]
+%\item
+%If the point $(x,y) \in C_r$, then write an equation that $(x,y)$ must satisfy.
+%\hyperref[secEqRelChapHints]{(*Hint*)}
+%\item
+%Show that $C_{r}$ and $C_{s}$ are disjoint whenever $r \neq s$. (Do this by showing that any element of $C_{r}$ is not an element of $C_{s}$, and vice versa).
+%\item
+%Show that the union of the set of all circles $\{C_r, r \in [0,\infty)$ is all of $\mathbb{R}^2$. (Do this by showing that every element of $\mathbb{R}^2$ is in at least one circle.)
+%\item
+%Show that the set of circles centered at $(0,0)$ form a partition of the Cartesian plane.
+%\hyperref[secEqRelChapHints]{(*Hint*)}
+%\item
+%According to Proposition~\ref{Part->EquivRel} part~\ref{Part->EquivRel-equiv}, this partition  defines an equivalence relation $\sim$ on $\mathbb{R}^2$. Use the equation in part (a) of this exercise to complete the following sentence:  $(x_1,y_1) \sim (x_2,y_2)$ iff $\underline{~~~~~~~~~~~~~~}$.
+%\end{enumerate}
+%\end{exercise}
 
 
 %For example, \cref{EquivRel->Part} can be restated as the assertion that if $\sim$ is any equivalence relation on~$A$, then $A/\mathord{\sim}$ is a partition of~$A$.
@@ -1104,29 +1388,29 @@ According to Proposition~\ref{Part->EquivRel} part~\ref{Part->EquivRel-equiv}, t
 %\section{Connected components of a graph}
 %???
 
-\begin{summary}
-\item Important definitions:
-\begin{itemize}
-\item relation, binary relation
-\item reflexive, symmetric, transitive
-\item equivalence relation
-\item equivalence class
-%\item connected components
-\item modular arithmetic
-\item integers modulo $n$
-\item well-defined
-\item partition
-\end{itemize}
-\item Modular arithmetic is an important example of the use of equivalence classes.
-\item Functions must be well-defined.
-\item Every binary relation can be drawn as a digraph.
-\item Every partition gives rise to an equivalence relation, and vice versa.
-\item Notation:
-\begin{itemize}
-\item $\sim$, $\cong$, or $\equiv$ are used for equivalence relations
-\item $[a]$, or $\class{a}$
-\item $\integer_n$
-\end{itemize}
-\end{summary}
+%\begin{summary}
+%\item Important definitions:
+%\begin{itemize}
+%\item relation, binary relation
+%\item reflexive, symmetric, transitive
+%\item equivalence relation
+%\item equivalence class
+%%\item connected components
+%\item modular arithmetic
+%\item integers modulo $n$
+%\item well-defined
+%\item partition
+%\end{itemize}
+%\item Modular arithmetic is an important example of the use of equivalence classes.
+%\item Functions must be well-defined.
+%\item Every binary relation can be drawn as a digraph.
+%\item Every partition gives rise to an equivalence relation, and vice versa.
+%\item Notation:
+%\begin{itemize}
+%\item $\sim$, $\cong$, or $\equiv$ are used for equivalence relations
+%\item $[a]$, or $\class{a}$
+%\item $\integer_n$
+%\end{itemize}
+%\end{summary}
 
  

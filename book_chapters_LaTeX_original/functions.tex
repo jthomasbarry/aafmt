@@ -11,7 +11,7 @@ The idea of a function should be familiar to you from previous math classes. You
 
 This chapter  is an adapted and expanded version of a chapter by D. and J. Morris.
 
-\section{The Cartesian product: a different type of set operation}
+\section{The Cartesian product: a different type of set operation} \label{cartesian}
 
 In the previous chapter, we introduced set operations such as $\cup$ and $\cap$.  In this chapter we are going to need yet another set operation. This operation is called the "Cartesian product", and is denoted by the symbol $\times$. In order to define the Cartesian product, we will first need a preliminary definition:
 
@@ -37,7 +37,7 @@ $x \in {\mathbb R}$ and $y \in  {\mathbb R}$, but $(x, y) \notin {\mathbb R}$.
 
 We arrive at our general definition of Cartesian product by replacing ${\mathbb R}$ and ${\mathbb R}$ in our previous example with arbitrary sets $A$ and $B$:
 
-\begin{defn}
+\begin{defn}  \label{cartesianprod}
 For any sets $A$ and $B$, we define the \term{Cartesian product} of $A$ and $B$ (denoted $A \times B$ as:\index{Cartesian product!formal definition}
 \[
 A \times B = \{ (a, b) | a \in A, b \in B \}\]
@@ -47,7 +47,7 @@ In other words, $x$ is an element of $A \times B$ if and only if $x$ is an order
 
 \end{defn} 
 
-\begin{example}{}
+\begin{example}{4}
 \begin{enumerate} 
 \item
 $\{2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A \} \times \{ \clubsuit, \heartsuit, \spadesuit, \diamondsuit \} =  \mbox{ \{a standard deck of cards \}}$
@@ -62,7 +62,7 @@ $\{a, b\} \times \{1, 2, 3\} = \{ (a, 1), (a, 2), (a, 3), (b, 1), (b, 2), (b, 3)
 In view of the previous example, is $\times$ commutative?  \emph{Explain} your answer.
 \end{exercise}
  
-\begin{exercise}{}
+\begin{exercise}{6}
 Specify each set by listing its elements. 
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
@@ -80,7 +80,7 @@ $\{y,g,Y,G\} \times \{y,g,Y,G\}$
 
 Now $A \times B$ can be considered an operation on the sets $A$ and $B$, just like $A \cup B$ and $A \cap B$. But there is a very significant difference. Recall that if $A$ and $B$ are both subsets of the same universal set $U$, then so are $A \cup B$ and $A \cap B$. This is \emph{not} the case for $A \times B$! The operation $A \times B$ takes the sets $A$ and $B$ and creates another set with a \emph{completely new} type of element!
 
-\begin{exercise}{}
+\begin{exercise}{7}
 Let $A = \{a,b\}$ and let $B = \{b,c\}$.
 \begin{enumerate}[(a)]
 \item
@@ -96,7 +96,7 @@ We have shown in the previous chapter that the subsets of $\{a,b,c\}$ are closed
 
 We have been trying to emphasize that $A \times B$ is a very different set from the sets $A$ and $B$.  One question we could ask is: how does the number of elements in $A \times B$ compare with the numbers of elements in the sets $A$ and $B$?  By considering the above examples, you may be able to figure out a formula for yourself.  Go ahead and try, before reading the answer below.
 
-\begin{prop}{}
+\begin{prop}{prop1}
 Given any sets $A$ and $B$, then:
 
 \[  |A \times B|= |A| \cdot |B|. \]
@@ -131,7 +131,7 @@ there are m rows,
 It follows that the number of entries in the table is $m \cdot n$.
 \end{proof}
 
-\begin{exercise}{}
+\begin{exercise}{9}
 \begin{enumerate}[(a)]
 \item
 If $B = \{\mbox{vanilla, chocolate, strawberry} \}$, then what is $B \times \emptyset$?
@@ -142,7 +142,7 @@ Using the definition of Cartesian product, show that for any set $A$, $A \times 
 
 
 
-\section{Introduction to functions}
+\section{Introduction to functions} \label{intro}
 
 
 \subsection{Informal look at functions}
@@ -532,7 +532,7 @@ Draw an arrow diagram involving two sets.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{16}
  Which of the following sets of ordered pairs are functions from
 $\{\var{x}, \var{y}, \var{z}\}$ to $\{\var{a},\var{b},\var{c},\var{d},\var{e}\}$? 
 \begin{itemize}
@@ -589,33 +589,9 @@ $A = \{\var{a},\var{b}\}$, $B = \{\var{c},\var{d},\var{e}\}$
 \end{multicols}
 \end{exercise}
 
-\subsection{Summary of basic function concepts}
-\begin{itemize}
-\item A function accepts inputs, and provides a single output for each input.
-\item The set of allowable inputs is called the domain of the function.
-\item Some ways of representing functions are:
-\begin{itemize}
-\item a formula;
-\item a table;
-\item a set of ordered pairs;
-\item an arrow diagram.
-\end{itemize}
-\item Important definitions:
-\begin{itemize}
-\item function
-\item domain
-\item codomain, range
-\end{itemize}
-\item Notation: 
-\begin{itemize}
-\item $f \colon A \to B$
-\item $f(a)$
-\item $\{\, f(a) \mid a \in A \,\}$
-\end{itemize}
-\end{itemize}
 
 
-\section{One-to-one functions}
+\section{One-to-one functions} \label{onetoone}
 
 \subsection{Concept and definition}
 
@@ -657,7 +633,7 @@ there exists a temperature $b$ for which we can find two points on earth $x$ and
 \end{center}
 \end{example}
 
-\begin{exercise}{}
+\begin{exercise}{atomic}
 Is the function $\var{Atomic Number}$ from the set of chemical elements to the set of natural numbers a one-to-one function?  Explain why or why not.
 \end{exercise}
 
@@ -678,7 +654,7 @@ If you have an arrow diagram of a function, then it is easy to tell whether or n
 \end{figure}
 %\end{center}
 
-\begin{exercise}{}
+\begin{exercise}{arrow}
 Is function~$h$ of Figure \ref{arrow11} one-to-one?  Explain why or why not.
 \end{exercise}
 
@@ -814,7 +790,7 @@ In summary, the horizontal line test can only \emph{suggest} whether or not a fu
 Suppose that the function $f$ has domain $[a,b]$ and codomain $[c,d]$ (where for example $[a,b]$ signifies the interval $\{ a \le x \le b, x \in \mathbb{R} \}$). Restate the horizontal line test for one-to-one functions in this case. What changes need to be made in the statement?
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{horizontal}
 Graph each function and use the horizontal line test to determine whether or not the following functions are one-to-one.
 \begin{enumerate}[(a)]
 \item
@@ -832,7 +808,7 @@ $f:[1,4] \rightarrow [0,5]$, $f(x) = 6 - 2x$ (be careful!)
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{horizontal2}
 \begin{enumerate}[(a)]
 \item
 Sketch the function $f:\mathbb{R} \rightarrow \mathbb{R}$, where $f(x) = x(x-2)(x+2)$.
@@ -1060,7 +1036,7 @@ $r(z) = \text{Re}[z] + \text{Im}[z]$, where \\
 %\end{itemize}
 %\end{summary}
 
-\section{Onto functions}
+\section{Onto functions} \label{onto}
 
 \subsection{Concept and definition}
 In an arrow diagram of a function $f \colon A \to B$, the definition of a function requires that there is exactly one arrow out of each element of~$A$,  but it says nothing about the number of arrows into each element of~$B$. There may be elements of~$B$ with lots of arrows into them (unless the function is one-to-one), and there may be other elements of~$B$ that have no arrows into them. 
@@ -1099,7 +1075,7 @@ This means that if you draw an arrow from each person to his or her mother, ther
  is \emph{not} onto.
 \end{example}
 
-\begin{exercise}{}
+\begin{exercise}{atomic_onto}
 Is the function $\var{Atomic Number} \colon \{ \mbox{ Chemical Elements } \} \to \mathbb{N}$ onto?  Explain why or why not.
 \end{exercise}
 
@@ -1192,7 +1168,7 @@ On the other hand, the line $y=-1$ in Figure~\ref{fig:absx} does not intersect t
 Suppose that the function $f$ has domain $[a,b]$ and codomain $[c,d]$, where $[a,b]$ and $[c,d]$ are intervals of real numbers. Restate the horizontal line test for onto functions in this case. What changes need to be made in the statement?
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{horizontal_onto}
 Use the horizontal line test to determine whether the following functions are onto.  For those functions that are not onto, give a $y$ in the codomain which is not in the range of the function.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
@@ -1329,7 +1305,7 @@ For each function, either prove that it is onto, or prove that it is not.
 \end{exercise}
 
 
-\begin{exercise}{}
+\begin{exercise}{OntoExers2}
 For each of the following  functions, either prove that it is onto, or prove that it is not.
 \begin{enumerate}[(a)]
 \item
@@ -1346,7 +1322,7 @@ For each of the following  functions, either prove that it is onto, or prove tha
 \end{exercise}
 
 
-\begin{exercise}{}
+\begin{exercise}{OntoExers3}
 For each of the following  functions, either prove that it is onto, or prove that it is not.
 \begin{enumerate}[(a)]
 \item \label{modular_m3}
@@ -1475,7 +1451,7 @@ For each of the following  functions, either prove that it is onto, or prove tha
 %\end{summary}
  
  
-\section{Bijections}
+\section{Bijections} \label{bijections}
 
 \subsection{Concept and definition}
 
@@ -1635,7 +1611,7 @@ Show that if $a = 0$, then $f$ is \emph{not} a bijection.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{LinearWhenBijectionExer}
+\begin{exercise}{LinearWhenBijectionExer2}
 Let $a,b \in \mathbb{R}$, and define $f \colon [1,2] \to [4,7]$ by $f(x) = a x + b$. 
 Find all values of $a$ and $b$ such that $f$ is a bijection.
 \end{exercise}
@@ -1715,7 +1691,7 @@ Prove or disprove:
 \end{multicols}
 \end{exercise}
 
-\begin{exercise}{} \label{OntoCasesExer2}
+\begin{exercise}{} \label{OntoCasesExer3}
  Define function~$h$ from~$\mathbb{R}$ to~$\mathbb{R}$ by:
 $$ h(x) = 
 \begin{cases}
@@ -1755,7 +1731,7 @@ $B =  \{ r \cis \theta \in \mathbb{C}: r \ge 0 \text{ and } 0 \le \theta \le \pi
 \end{exercise}
 
 
-\begin{exercise}{} 
+\begin{exercise}{bijection1} 
 For each function, either prove that it is a bijection, or prove that it is not.
 \begin{enumerate}[(a)]
 \item \label{modular9}
@@ -1837,7 +1813,7 @@ Show that $f$ is a bijection.
 % \end{summary} 
   
  \section{Composition of functions\quad
-\sectionvideohref{lbCtiPOKbxk&index=14&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
+\sectionvideohref{lbCtiPOKbxk&index=14&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{composition}
  
  \subsection{Concept and definition}
 
@@ -2133,7 +2109,7 @@ Show that if $g$ and~$g \compose f$ are bijections, then $f$ is a bijection.
   
  
  \section{Inverse functions\quad
-\sectionvideohref{kUOf7DDgfHw&index=15&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
+\sectionvideohref{kUOf7DDgfHw&index=15&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{inverse}
 
 \subsection{Concept and definition}
 
@@ -2178,6 +2154,8 @@ Then the following statements are also true:
  $f \bigl( g(y) \bigr) = y$ for all $y \in Y$,
 
  \end{enumerate}
+\end{prop}
+
 We will furnish the proof of (a), while the proof of (b) is left as an exercise.
 
  \begin{proof}
@@ -2188,7 +2166,7 @@ Then for any $x \in X$, we may define $z$ as $z = f(x)$. By the $\eiff$ statemen
 \begin{exercise}{88}
 Prove part (b) of Proposition~\ref{proposition:functions:xgyInverseExer}.
 \end{exercise}
- \end{prop}
+ 
 
 \begin{exercise}{conv88}  Prove the converse of Proposition~\ref{proposition:functions:xgyInverseExer}. That is, given that 
 \[g \bigl( f(x) \bigr) = x \text{ for all } x \in X \quad \text{and} \quad f \bigl( g(y) \bigr) = y \text{ for all }y \in Y,\]
@@ -2326,7 +2304,7 @@ Suppose $f \colon X \to Y$ is a bijection. Show that the inverse of~$f^{-1}$ is~
 \end{enumerate}
 \end{exercise}
 
-\section{Do functions from $A$ to $B$ form a group?}
+\section{Do functions from $A$ to $B$ form a group?} \label{functions_group}
 
 At the end of the Sets chapter in Section~\ref{SetGroup} we considered the question, Do the subsets of a set form a group? Let's consider a similar question, but this time with functions. 
 
@@ -2367,9 +2345,9 @@ The foregoing discussion amounts to a proof of the following proposition.
 Let $A$ be a set, and let $G$ be the set of all invertible functions from $A$ to $A$. Then $G$ is a group under composition.
 \end{prop}
 
-In the following exercise we look at some particular sets of functions, and investigate whether or not these sets form groups under composition. 
+In the following exercise we look at some particular sets of functions, and investigate whether or not these sets form groups under composition. Recall that to show whether or not a set with binary operation is a group, you just need to show the properties: closure, identity, inverse, and associative. We're lucky in this case that we don't have to prove associative in every single case, because the operation of function composition is always associative, as we've proven before. So it's enough just to prove closure, identity, and inverse.
 
-\begin{exercise}{}
+\begin{exercise}{GpCompFun}
 \begin{enumerate}[(a)]
 \item
 Let $G_1$ be the set of all nonzero functions from $\mathbb{R}$ to $\mathbb{R}$ of the form $f(x)=ax$, where $a$ is a nonzero real number.  (For example, the functions $g(x) = -7x$ and $h(x) = \sqrt{2}x$ are both elements of $G_1$.) Prove or disprove: $G_1$ is a group under composition.
@@ -2392,8 +2370,8 @@ where $a$ and $b$ are nonzero \emph{rational} numbers.  Prove or disprove: $G_5$
 
 Finally, recall that some groups are commutative (commutative groups are also called \term{abelian} groups). Are groups under composition always abelian? Let's find out:
 
-\begin{exercise}{}
-Is the group $G$ defined in Proposition~\ref{proposition:functions:functionGroup} always an abelian group? (That is, is it always commutative?)  If so, then prove it; and if not, give an example of a set $A$ for which the corresponding group $G$ is non-abelian (not commutative). 
+\begin{exercise}{abelian_ex}
+For each of the examples in Exercise~\ref{exercise:functions:GpCompFun} which are groups, prove or disprove that the group is abelian.  To check this, you just need to check whether or not the formula $f \compose g = g \compose f$ for all $f,g$ in the set.  What this means is that if the group is not abelian, all you need to do is provide a single counterexample.
 \end{exercise}
   
 % CPT put this back in if we put in pre-image section
