@@ -30,7 +30,8 @@ def mytransform(text):
     thetext = utilities.replacemacro(thetext,r"\begin{exercise}",1,
                          r"\begin{exercise}\label{exercise:"+component.chapter_abbrev+":#1}")
 
-    thetext = re.sub(r"\\chap\s*{([^{}]*)}{([^{}]*)}",r"\\chapter{\1}\\label{\2}",thetext)
+#    thetext = re.sub(r"\\chap\s*{([^{}]*)}{([^{}]*)}",r"\\chapter{\1}\\label{\2}",thetext)
+    thetext = utilities.replacemacro(thetext,"\\chap",2, r"\chapter{#1}\label{#2}")
 
     # in actions.tex and crypt.tex many examples start with something like
     # \noindent {\bf Example 2.}
@@ -44,6 +45,8 @@ def mytransform(text):
 
     # delete empty label arguments
     thetext = re.sub(r"\\label{[a-zA-Z]+:[a-zA-Z]+:}","",thetext)
+    # move label outside of section title
+    thetext = re.sub(r"\\label{([^{}]+)}}",r"}\\label{\1}",thetext)
 
     return thetext
 
