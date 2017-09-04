@@ -303,6 +303,7 @@ It turns out that $P_1 + P_2$ is always defined on the EC (except in one special
 	         {images/DHKE_16.png}}
 	  \caption{\label{fig:DH:DHKE_16} $P_1 + P_2$ is always defined on the EC (from reference (\ref{wikipedia2017})).}
 \end{figure}
+
 \begin{example}{ec:realplus}
 Given E: $y^2 = x^3 + ax + b$, $P_1 = (x_1, y_1)$, $P_2 = (x_2, y_2)$, and $P_3 = (x_3, y_3)$. Find $P_3$, where $ P_3 =  P_1 + P_2$.
 
@@ -411,7 +412,7 @@ Remarkably, it turns out that the `+' operation turns the elliptic curve (plus t
 \item \textbf{Inverse}: A line through $P$ and$-P$ goes through $\infty$, and $\infty$ is its own reflection (see Figure \ref{fig:DH:DHKE_13}). Another way of saying this is, $P + (- P) = \infty$. In the same way, we can show that $(-P) + P = \infty$. Therefore the inverse of $P$ is $-P$. 
 
 \item \textbf{Closure}: if $P_1$ and $P_2$ are points on the elliptic curve then $P_1 + P_2$ is also a point on the curve; as stated (without proof) in Section \ref{sec:ECA}.
-\item \textbf{Associativity}:$(P_1 + P_2) + P_3 = P_1 + (P_2 + P_3)$. This is always true, but it is not easy to prove since the computation involves finding the inverse of three distinct points of intersection on the curve, see Figure~\ref{fig:DH:DHKE_12} below.
+\item \textbf{Associativity}:$(P_1 + P_2) + P_3 = P_1 + (P_2 + P_3)$. This is always true (for an example, see Figure~\ref{fig:DH:DHKE_12} below),  but it is not at all easy to prove. See for example \url{math.rice.edu/~friedl/papers/AAELLIPTIC.PDF}, which gives a 5-page ``elementary'' proof.
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=2.5in]
 	         {images/DHKE_12.png}}
@@ -440,7 +441,7 @@ is a subgroup of $G$, where $n$ is the \emph{order} of $g$ and satisfies $g^n = 
 \begin{example}{P1+P2} In this example we'll use arithmetic mod 17, so  all coefficients and variables take values on $\mathbb{Z}_{17}$.  
 
 Given E: $y^2 = x^3 + 2x + 2$, and $P = (5,1)$,  we want to find $2P$, where $2P = P + P$.\\ \\
-First we use the slope of the tangent line, using the samen formula we did for the real case in Example \ref{example:further_crypt:ec:realplus}:	
+First we use the slope of the tangent line, using the same formula we did for the real case in Example \ref{example:further_crypt:ec:realplus}:	
 \[m = (3x_1^2 + a) \cdot (2y_1)^{-1}\]	
 We may then calculate (remember we're doing arithmetic in  $\mathbb{Z}_{17}$!)
 \begin{align*}
