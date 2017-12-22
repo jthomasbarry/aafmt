@@ -462,11 +462,14 @@ This notation suggests that it should be true that
 To understand this, let's go back to arithmetic with real numbers. If we have an ordinary real number $r$, then $1/r$ is the \emph{multiplicative inverse}\index{Inverse!multiplicative} of $r$: that is, $r \cdot 1/r =1/r \cdot r = 1$. We also write $1/r$ as $r^{-1}$. By analogy, to make sense of $1/z = 1/(a+bi)$, we need to find a complex number $z^{-1}$ such that $z^{-1} \cdot z = z \cdot z^{-1} = 1$.
 
 \begin{exercise}{complex_mult_inv}  Given that $z = a+bi$ is a complex number and $z \neq 0$ (recall that $0$ is the same as $0+0i$).  Show that the complex number
-\[ z^{-1}=\frac{a-bi}{a^{2}+b^{2}}.\]
-satisfies $zz^{-1}=z^{-1}z=1$, where $z=a+bi$.
+\[w=\frac{a}{a^{2}+b^{2}}- \frac{b}{a^{2}+b^{2}}i.\]
+satisfies $zw=wz=1$, where $z=a+bi$.
 \hyperref[sec:complex:hints]{(*Hint*)}
 \end{exercise}
-Based on the previous exercise, we finally arrive at the formula for dividing two complex numbers:\index{Complex numbers!division rule}
+Based on the previous exercise, we are able to define $z^{-1}$ for the complex number $z = a+bi$:
+\[ z^{-1}\,\, =\,\, \frac{a}{a^{2}+b^{2}}- \frac{b}{a^{2}+b^{2}}i \,\, =\,\, \frac{a-bi}{a^{2} + b^{2}},\]
+where the second equality follows from the distributive law. We
+ finally arrive at the formula for dividing two complex numbers:\index{Complex numbers!division rule}
 \[\frac{c+di}{a+bi}=
 (c + di) \cdot \frac{a-bi}{a^2 + b^2}, \]
 or alternatively
@@ -563,7 +566,7 @@ Given that $z = a+bi$, $w=c+di$, and $z \cdot w = 0$. Then it must be true that 
 The proof of Proposition~\ref{proposition:complex:nonzero_complex_product} is outlined in the following exercise.
 
 \begin{exercise}{12}
-Complete the proof of Proposition~\ref{proposition:complex:nonzero_complex_product} by filling in the blanks.
+Complete the proof of Proposition~\ref{proposition:complex:nonzero_complex_product} by filling in the blanks. Note that some blanks may require an expression, and not just a single number or variable.
 
 \begin{enumerate}[(a)]
 \item The proof is by contradiction. So we begin by \emph{supposing} that $z \neq  \underline{~<1>~}$  and $w \neq  \underline{~<2>~}$ (which is the negation of what we're trying to prove).

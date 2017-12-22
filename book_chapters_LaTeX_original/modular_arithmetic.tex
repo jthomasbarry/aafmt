@@ -1520,7 +1520,7 @@ Prove Proposition~\ref{proposition:modular:closed_property_Zn}. That is, show th
 Please note that closure is not in general a trivial property, and there are many examples of number systems that are not closed under various operations. For instance, the positive integers are not closed under the operation of subtraction, because (for example) $5 - 7$ is not a positive integer. Similarly, the positive integers are not closed under the operation of square root, because the square root of 2 is not an integer.
 
 \begin{exercise}{53}
-For each of the following number systems, indicate whether or not they are closed under (i) addition (ii) subtraction (iii) multiplication (iv) division (v) square root.
+For each of the following number systems, state whether or not they are closed under (i) addition (ii) subtraction (iii) multiplication (iv) division (v) square root. In cases where closure holds you can simply state the fact (no proof is necessary). In cases where closure doesn't hold, give a counterexample. For example, we know that the negative real numbers are not closed under square root because $\sqrt{-1}$ is not a negative real number.
 \hyperref[sec:modular_arithmetic:hints]{(*Hint*)}  
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
@@ -1838,7 +1838,7 @@ Using the method above, find the smallest measure given sticks of length:
 
 While working on the exercises, you may have noticed that the units of measure used do not matter.  The only thing that matters is the actual count of those units of measure.  
 
-\begin{exercise}{}
+\begin{exercise}{m53}
 Using the method above:
 \begin{enumerate}[(a)]
 \item
@@ -1948,7 +1948,7 @@ What is the greatest common divisor of:
 \end{enumerate}
 \end{exercise} 
 
-Let us analyze this algorithm just a little further.  In the first step when we divide $a$ by $b$, the remainder satisfies the equation,  $r_1 = a - q_1\cdot b$, where $q$ is an integer.  In other words, $r_1$ can be written in the general form:  $r_1 = n \cdot a + m \cdot b$, where $n$ and $m$ are integers.
+Let's analyze this algorithm just a little further.  In the first step when we divide $a$ by $b$, the remainder satisfies the equation,  $r_1 = a - q_1\cdot b$, where $q$ is an integer.  In other words, $r_1$ can be written in the general form:  $r_1 = n \cdot a + m \cdot b$, where $n$ and $m$ are integers.
 
 \begin{exercise}{71}
 \begin{enumerate}[(a)]
@@ -2086,7 +2086,7 @@ At this point, we've gone as far as we can go.  (Verify this: what happens if yo
 \[42\cdot ( -3) + 16 \cdot 8 = 2.\]
 If we multiply this equation by 4, we have
 \[42 \cdot( -12) + 16 \cdot 32 = 8.\]
-It follows that $m=-12, n=32$ is an integer solution to our original equation, $16m + 42n = 8$.
+It follows that $m=32, n=-12$ is an integer solution to our original equation, $16m + 42n = 8$.
 
 Unfortunately we're not quite done yet, because we're supposed to find \emph{all} integer solutions. But we do have a particular solution, and we can leverage this information as follows.\footnote{What we're doing here  is a common ploy in mathematics.  We're using a \emph{particular} solution to reduce the problem to a \emph{homogeneous} equation (if you're not familiar with this terminology, then don't worry about it).  Exactly the same method is used in differential equations, and in linear algebra.}
    Suppose that $m,n$ is an arbitrary solution, so that  $42n + 16m = 8$.  We may subtract from this  equality the equation for the particular solution $m=-12, n=32$: 
@@ -2098,6 +2098,7 @@ Unfortunately we're not quite done yet, because we're supposed to find \emph{all
     42(n+12) &~~+& 16(m-32) &=& 0   
 \end{array}
 \]
+
 Rearranging and dividing by common factors, we obtain:
 \[ 21(n+12) = -8(m-32).\]
 Now since the right-hand side is divisible by 8, then the left-hand side must also be divisible by 8.  This implies that $n+12$ must be divisible by 8, or 
@@ -2207,7 +2208,7 @@ Prove the ``if'' part of Proposition~\ref{proposition:modular:74}.
 %Now we have the info to prove which modular equations have a solution.
 At the beginning of this section, we ``introduced'' Diophantine equations.  But we have seen them before:
 
-\begin{exercise}{}
+\begin{exercise}{m518}
 \begin{enumerate}[(a)]
 \item
 Find the general solution to: $242m + 119n = 53$.
@@ -2219,8 +2220,8 @@ Use your solution to solve the modular equation:  $119y \equiv 53 \pmod{242}$.
 \end{exercise}
 This example shows that Diophantine equations are just modular equations in a disguised form!  Furthermore, each Diophantine equation is associated with \emph{two} modular equations:
 
-\begin{exercise}{}
-Given that $(m,n)$ is a solution to $a \cdot m + b \cdot n  = c$, give (a) a modular equation with base $b$  involving $a,c$ that has $m$ as a solution; and (b) a modular equation with base $a$ involving $b,c$ that has $n$ as a solution.
+\begin{exercise}{m519}
+Given that $(m,n)$ is a solution to $a \cdot m + b \cdot n  = c$, give (a) a modular equation with base $b$  involving the constants $a$ and $c$ which has $m$ as a solution; and (b) a modular equation with base $a$ involving the constants $b$ and $c$ which has $n$ as a solution.
 \end{exercise}
 
 
@@ -2236,7 +2237,7 @@ Prove both the ``if''  and the ``only if'' parts of Proposition~\ref{proposition
 \end{exercise}
 
 
-\begin{exercise}{}
+\begin{exercise}{m522}
 Which of the following equations have integer solutions? If solutions exist, find them all. If no solutions exist, prove it!
 \begin{enumerate}[(a)]
 \item
@@ -2478,7 +2479,7 @@ x = 1 + 2k &\implies 1 + 2k \equiv 32 \pmod {63} \implies 2k \equiv 31 \pmod {63
 Substitute to obtain $x = 1 + 2(47+ 63j) = 95 + 126j \equiv 95 \pmod{126}.$.  
 
 
-\begin{exercise}{}
+\begin{exercise}{m534}
 Solve the following sets of congruences or show that they do not have a solution:
 \begin{enumerate}[(a)]
 \item

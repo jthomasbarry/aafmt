@@ -41,17 +41,17 @@ If you have a prodigious memory, you may recall that we've seen this before. Thi
 $\mathbb{Z}_2^n = \underbrace{\mathbb{Z}_2 \times \ldots \mathbb{Z}_2}_{n~\text{times}}$.
 \end{example}
 
-\begin{example}{}
-Multiplication is a little bit different. In this case, it's more convenient to use the polynomial representation and not resort to $n$-tuples. To multiply, we use the distributive law, then group terms together which correspond to the same power of $x$. So for example if $f(x) = x^2 + x + 1$ and $g(x) = x^3   + x + 1$, then:
-\begin{align*}
-f(x)\cdot g(x) &= ( x^2 + x + 1)( x^3 + x + 1)\\
-&= x^2( x^3 + x + 1) + x( x^3 + x + 1) + 1( x^3 + x + 1)\\
-&= (x^5 + x^3 + x^2) +  (x^4 + x^2 + x) + ( x^3 + x + 1)\\
-&= x^5 + x^4 + x^3 + x^3+ x^2 +   x^2 + x +  x + 1\\
-&= (x^5 + x^4 + (1\oplus 1)x^3+ (1 \oplus 1)x^2 + (1 \oplus 1)x + 1)\\
-&= (x^5 + x^4 +  1).
-\end{align*}
-\end {example}
+%\begin{exercise}{}
+%Multiplication is a little bit different. In this case, it's more convenient to use the polynomial representation and not resort to $n$-tuples. To multiply, we use the distributive law, tmen group terms together which correspond to the same power of $x$. So for example if $f(x) = x^2 + x + 1$ and $g(x) = x^3   + x + 1$, then:
+%\begin{align*}
+%f(x)\cdot g(x) &= ( x^2 + x + 1)( x^3 + x + 1)\\
+%&= x^2( x^3 + x + 1) + x( x^3 + x + 1) + 1( x^3 + x + 1)\\
+%&= (x^5 + x^3 + x^2) +  (x^4 + x^2 + x) + ( x^3 + x + 1)\\
+%&= x^5 + x^4 + x^3 + x^3+ x^2 +   x^2 + x +  x + 1\\
+%&= (x^5 + x^4 + (1\oplus 1)x^3+ (1 \oplus 1)x^2 + (1 \oplus 1)x + 1)\\
+%&= (x^5 + x^4 +  1).
+%\end{align*}
+%\end {example}
 
 We will be using these polynomials to represent certain special types of codes, as we shall see shortly.
 

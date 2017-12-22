@@ -88,7 +88,7 @@ $((a \cdot b) \cdot c + b \cdot c) + c \cdot a = c \cdot ((a+b) + a \cdot b)$
 \end{enumerate}
 \end{exercise} 
 
-Note that the associative property allows us to write expressions without putting in so many parentheses.  So instead of writing $(a+b)+c$, we may simply write $a+b+c$. By the same reasoning, we can remove parentheses from any expression that involves only addition, or any expression that involves only multiplication: so for instance, $(a \cdot (b \cdot c) \cdot d) \cdot e = a \cdot b \cdot c \cdot d \cdots e$. Using the associative and distributive property, it is possible to write any arithmetic expression without parentheses. So for example, $(a \cdot b) \cdot (c + d)$ can be written as $a \cdot b \cdot c + a \cdot b \cdot d$.  (Remember that according to operator precedence rules, multiplication is always performed before addition: thus $3 \cdot 4 + 2$ is evaluated by first taking $3 \cdot 4$ and then adding 2.)
+Note that the associative property allows us to write expressions without putting in so many parentheses.  So instead of writing $(a+b)+c$, we may simply write $a+b+c$. By the same reasoning, we can remove parentheses from any expression that involves only addition, or any expression that involves only multiplication: so for instance, $(a \cdot (b \cdot c) \cdot d) \cdot e = a \cdot b \cdot c \cdot d \cdot e$. Using the associative and distributive property, it is possible to write any arithmetic expression without parentheses. So for example, $(a \cdot b) \cdot (c + d)$ can be written as $a \cdot b \cdot c + a \cdot b \cdot d$.  (Remember that according to operator precedence rules, multiplication is always performed before addition: thus $3 \cdot 4 + 2$ is evaluated by first taking $3 \cdot 4$ and then adding 2.)
 
 \begin{exercise}{}
 Rewrite the following expressions without any parentheses, using \emph{only} the  associative and distributive properties  (don't use commutative in this exercise!)
@@ -119,30 +119,38 @@ $1 + 2 \cdot 3 + 3 \cdot 4 \cdot 5 + 5 \cdot 6 \cdot 7 \cdot 2$
 \end{exercise}
 
 
-\subsection{Order relations: properties}\label{subsec:orderprop}
-We also have \term*{order relations}\index{Order relation!in ordinary arithmetic} on the real, rational, and integer number systems, which are expressed by the terms `greater than'  and 'less than' with corresponding symbols $>$ and $<$. Positive numbers are greater than 0, and negative numbers are less than zero. We assume the following properties of the order relation on the integers, rational numbers, and real numbers:
+\subsection{Order relations}\label{subsec:orderprop}
+We also have \term*{order relations}\index{Order relation!in ordinary arithmetic} on the real, rational, and integer number systems, which are expressed by the terms `greater than'  and 'less than' with corresponding symbols $>$ and $<$. If $a$ and $b$ are numbers, then  the mathematical statement `$a > b$' is logically identical to the statement  `$b<a$' (another way of saying this is: $a > b$ if and only if $b < a$). \term{Positive numbers} are defined to be those numbers greater than the additive identity 0, and \term{negative numbers} are defined to be those that  are less than 0. We assume the following properties of the order relation on the integers, rational numbers, and real numbers:
 
 \begin{enumerate}[(A)] 
+\item
+The multiplicative identity $1$ is positive.
 \item
 Given two numbers, exactly one of these three are true: either the first number is greater than the second, or the second number is greater than the first, or the two numbers are equal.
 \item
 The sum of two  positive numbers  is positive. The sum of two negative numbers is negative.
 \item
-The product of two  nonzero numbers with the same sign is positive. The product of two numbers with different signs is negative.
+The product of two  positive or two negative numbers is positive. The product of a positive and negative number is negative.
 \end{enumerate}
 
-\begin{exercise}{3}
-Suppose $a > b$,  $b \ge 0$ and $ab = 0$.  What can you conclude about the values of $a$ and $b$? Use one (or more)  of the properties we have mentioned to justify your answer.
+\begin{exercise}{3-a}
+Using the above properties, show that $1+1$, $1+1+1$, and $1+1+1+1$ are all positive. (It can be shown by induction that the sum of any number of copies of 1 must be positive. The set $\{1, 1+1, 1+1+1, \ldots\}$ is called the \term{set of positive integers}.)
 \end{exercise}
 
-Besides these order properties, there is a special order property that applies only to integers. This property is called the \term{Principle of Well-Ordering}, and may be stated as follows:
 
-\begin{center}
-Any set of positive numbers has a smallest element.
-\end{center}
+\begin{exercise}{3}
+Suppose $a > b$,  $b \ge 0$ and $ab = 0$ (note that `$b \ge 0$' means that either $b>0$ or $b=0$).  What can you conclude about the values of $a$ and $b$? Use one (or more)  of the properties we have mentioned to justify your answer.
+\end{exercise}
+
+Besides these order properties, there is a special order property that applies only to integers. This property is called the \term{principle of well-ordering}, and may be stated as a proposition as follows:
+
+\begin{prop}{}\emph{(Well-ordering principle)}
+Any set of positive integers  has a smallest element.
+\end{prop}
 
 \noindent
-This may seem ``obvious'', but in mathematics we have to do our best not to take anything for granted.
+This may seem obvious, but in mathematics we have to do our best not to take anything for granted.  Sometimes the most ``obvious'' statements are the most difficult to prove. In this case, the well-ordering principle can be proved from the principle of mathematical induction (see Chapter~\ref{induction}). The proof is beyond the scope of this course.\footnote{It is also possible to prove the principle of mathematical induction from well-ordering principle--it's a matter of personal preference which is taken as an axiom, and which is taken as a consequence.}
+
 
 \subsection {Manipulating equations and inequalities}\label{subsec:eqsAndIneqs}
 
@@ -186,9 +194,9 @@ $(-1) \cdot a$ is the additive inverse of $a$.
 As a result of the previous exercise, we have a proof of the following proposition:
 
 \begin{prop}{minusOne}
-For any integer, rational, or real number $a$ the following equation holds: $ -a -1 \cdot a $. 
+For any integer, rational, or real number $a$ the following equation holds: $ -a =  (-1) \cdot a $. 
 \end{prop}
-This proposition may seem way too obvious to you, but it's actually saying something very significant. ``$-a$'' denotes the additive inverse of $a$, while ``$-1 \cdot a$'' denotes the additive inverse of 1 times the number $a$. There is no a priori reason why theses two things should be the same. Try to think back to when you first learned this arithmetic stuff--at that time, it probably wasn't as obvious as it seems now. The exercise shows that it actually follows from even more basic facts about arithmetic.
+This proposition may seem way too obvious to you, but it's actually saying something very significant. ``$-a$'' denotes the additive inverse of $a$, while ``$(-1) \cdot a$'' denotes the additive inverse of 1 times the number $a$. There is no a priori reason why theses two things should be the same. Try to think back to when you first learned this arithmetic stuff--at that time, it probably wasn't as obvious as it seems now. The exercise shows that it actually follows from even more basic facts about arithmetic.
 
 
 The following exercise walks you through a proof of another important fact.
@@ -239,6 +247,57 @@ Let $a,b,c,d$ be integer, rational, or real numbers such that $a>b$ and $c>d$.  
 %Given that a prime number $p$ evenly divides into a number $q$, it is true that the prime number $p$ must divide one of the factors of $q$.
 %
 %Given that the product of two numbers is equal to 0, then it is true that one of the numbers must be 0.
+
+
+Finally, we're going to prove is that $-1$ is negative.  At this point you may be thinking, `` Duh,  it's got a minus sign, so of course it's negative!'' But if you look back in Section~\ref{OpsAndRels} property (B), you'll see that the minus sign on $-1$ just means that it's the additive inverse of the multiplicative identity 1. On the other hand, negative numbers were defined in  Section~\ref{subsec:orderprop} as numbers that are less than the additive identity 0.  Just because we've decided to write the additive inverse of 1 as $-1$, doesn't mean that we can automatically assume that $-1<0$.  Remember, be skeptical!
+
+\begin{prop}{minusOne2}
+$-1 < 0$
+\end{prop}
+
+\begin{proof}
+This will be our first exposure to a proof technique called \term{proof by contradiction}. We'll make use of this technique throughout the book. In this case, the idea goes as follows.  There's no way that $-1$ could be positive, because if it were then $1 + (-1)$ would also have to be positive, which it isn't because we know it's 0.  There's also no way that $-1$ could be 0, because if it were we'd have $-1=0$, and adding 1 to both sides gives $0 = 1$, which is false because 1 is positive and 0 isn't.  Since -1 isn't positive and it isn't equal to 0, the only option left is that it's negative. This is the gist of the argument, but we have to write it out more carefully to satisfy those nit-picking mathematicians. Every step in our argument must have a solid reason. 
+
+So here goes the formal proof. We'll give a logical sequence of mathematical statements, followed by a reason that justifies each statement--this is called \term*{statement-reason format}\index{Proof!statement-reason format}\index{Statement-reason!proof}.
+
+\noindent
+First we show that $-1 > 0$ is false:
+
+\begin{tabular}{l| l}
+Statement& Reason\\
+\hline
+Suppose $-1>0$ . & Proof by contradiction: supposing the opposite\\
+$1>0$ &  Prop. (A) in Section~\ref{subsec:orderprop}\\
+$1 + (-1)> 0$. & Prop. (C) in  Section~\ref{subsec:orderprop}\\
+$1 + (-1) = 0$ & Prop. (B) in Section~\ref{OpsAndRels}\\
+Contradiction is acheived&  The last 2 statements contradict\\
+$-1>0 $ is false& The supposition must be false
+\end{tabular}
+
+\noindent
+Next, we show that $-1=0$ is false:
+
+\begin{tabular}{l| l}
+Statement& Reason\\
+\hline
+Suppose $-1=0$ & Proof by contradiction: supposing the opposite\\
+$1 + (-1) = 1 + 0$ & Follows from previous statement by substitution\\
+$0=1$   & Props. (A) and (B) in Section~\ref{OpsAndRels}\\
+$0>0$  & Prop. (A)  in  Section~\ref{subsec:orderprop}\\
+Contradiction is achieved & $0>0$ contradicts Prop. (B)  in  Section~\ref{subsec:orderprop}\\
+$-1 = 0$ is false &The supposition must be false
+\end{tabular}
+
+\noindent
+According to   Property (B) in  Section~\ref{subsec:orderprop}, there are three  possibilities: either $-1>0, -1=0,$ or $-1<0$.  We have eliminated the first two possibilities.  So the third possibility must be true:  $-1<0$. This completes the proof.
+
+\end{proof} 
+\footnote{The '$\square$' symbol will be used to indicate the end of a proof. In other words: Ta-daa!}
+
+\begin{exercise}{}
+Using Proposition~\ref{proposition:BeforeWeBegin:minusOne}  Proposition~\ref{proposition:BeforeWeBegin:minusOne2}, and one of the order relation properties, show that the additive inverse of any positive number is negative.
+\end{exercise}
+
 
 \subsection {Exponentiation (VERY important)}
 

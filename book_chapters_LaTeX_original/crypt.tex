@@ -7,7 +7,7 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Group Theory Applications (I): Introduction to Cryptography\quad
+\chap{Application: Introduction to Cryptography\quad
 \sectionvideohref{tkGDFDuf_Gw&index=33&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}{crypt}
 \chaptermark{Introduction to Cryptography}
 
@@ -22,7 +22,7 @@ heavily dependent on abstract algebra and number theory.
 
 \noindent
 \emph{Prerequisites}: The cryptographic systems we'll be looking at are all based on modular arithmetic.
-To understand this chapter, the reader should be familiar with the material in  Chapter~\ref{modular}. Section \ref{subsec:polyCodes} uses some simple matrix multiplication.
+To understand this chapter, the reader should be familiar with the material in  Chapters~\ref{modular} and~\ref{functions}. Section \ref{subsec:polyCodes} also uses some simple matrix multiplication.
 \bigskip
 
 Thanks to Tom Judson for material used in this chapter.
@@ -88,21 +88,21 @@ letting $\mbox{A}  = 0, \mbox{B}  = 1, \ldots, \mbox{Y} = 24, \mbox{Z} = 25$. Th
 $$ 1,0,24.$$
 An example of a shift encoding function is
 $$
-f(p) =\bmod( p + 3,  26).
+f(n) =\bmod( n + 3,  26).
 $$
 which can also be written as
 $$
-f(p) =p \oplus 3,
+f(n) =n \oplus 3,
 $$
-with the understanding that $\oplus$ refers to addition in $\mathbb{Z}_{26}$. This encoding function takes 
+with the understanding that $n$ refers to the numerical value assigned to each letter, and $\oplus$ refers to addition in $\mathbb{Z}_{26}$. This encoding function takes 
 $$0 \rightarrow 3, 1 \rightarrow 4, \ldots, 25 \rightarrow 1,26 \rightarrow 2,$$
 so that our numerical representation of BAY is changed to:  $ 4,3,1$, which is the numerical representation of EDB.
 
 The decoding
-function is the inverse of $f(p)$, which we can find by solving the equation $c = p \oplus 3$ for p.
-The result is $p = c \ominus 3$, so that
+function is the inverse of the function $f$, which we can find in the usual way by solving the equation $m = n \oplus 3$ for $n$.
+The result is $n = m \ominus 3$, so that
 $$
-f^{-1}(c) = c \ominus 3 \qquad \textrm{ or }\qquad f^{-1}(c) = c \oplus 23.
+f^{-1}(m) = m \ominus 3 \qquad \textrm{ or }\qquad f^{-1}(m) = m \oplus 23.
 $$
 
 Suppose we receive the encoded message DOJHEUD. To decode this
@@ -124,7 +124,7 @@ different shift.
 \item
 Encode IXLOVEXMATH using the cryptosystem in Example~\ref{example:crypt:ex1}.
 \item
-Encode the same message using the encoding function $f(p) =p \oplus 10$.
+Encode the same message using the encoding function $f(n) =n \oplus 10$.
 \end{enumerate}
 \end{exercise} 
  \medskip
@@ -169,7 +169,7 @@ decryption possible.
 Suppose we receive a message that we know was encrypted by using a
 shift transformation on single letters of the 26-letter alphabet. To
 find out exactly what the shift transformation was, we must compute
-$b$ in the equation $f(p) = p + b \bmod 26$. We can do this using
+$b$ in the equation $f(n) = n + b \bmod 26$. We can do this using
 \term{frequency analysis}\index{Frequency analysis}.  
 The letter $\mbox{E} = 04$ is the most commonly
 occurring letter in the English language. Suppose that $\mbox{S} = 18$
@@ -177,11 +177,11 @@ is the most commonly occurring letter in the ciphertext.  Then we have
 good reason to suspect that  $18 = 4 \oplus b $, or $b= 14$.
 Therefore, the most likely encoding function is
 $$
-f(p) = p \oplus 14.
+f(n) = n \oplus 14.
 $$
 The corresponding decoding function is
 $$
-f^{-1}(c) = c \oplus 12.
+f^{-1}(m) = m \oplus 12.
 $$
 It is now easy to determine whether or not our guess is correct.
 \end{example}
@@ -219,18 +219,18 @@ Thai script has 44 letters. How many different shift codes are there for the Tha
 Let us investigate a slightly more sophisticated cryptosystem. Suppose
 that the encoding function is given by  
 $$
-f(p) = \bmod(ap + b,  26),
+f(n) = \bmod(an + b,  26),
 $$
 which can also be written as
 $$
-f(p) = (a \odot p) \oplus b.
+f(n) = (a \odot n) \oplus b.
 $$
 We first need to find out when a decoding function $f^{-1}$ exists.
 Such a decoding function exists when we can solve the equation
 $$
-c \equiv ap + b \pmod{26}\qquad \textrm{or}\qquad a \odot p = c \ominus  b
+m \equiv an + b \pmod{26}\qquad \textrm{or}\qquad a \odot n = m \ominus  b
 $$
-for $p$ in $\mathbb{Z}_{26}$. By Proposition~\ref{proposition:modular:mod_eq_solution} in Chapter~\ref{modular}, this is possible exactly when $a$ has an
+for $n$ in $\mathbb{Z}_{26}$. By Proposition~\ref{proposition:modular:mod_eq_solution} in Chapter~\ref{modular}, this is possible exactly when $a$ has an
 inverse in $\mathbb{Z}_{26}$, which means that $\gcd( a, 26) =1$. 
 Such a cryptosystem is called an \term{affine
 cryptosystem}\index{Cryptosystem!affine}. 
@@ -249,32 +249,32 @@ For the numbers in (a) which have inverses mod 26, compute the inverses.
 Find the decoding function for the following  affine encoding functions (used on the English alphabet).
 \begin{enumerate}[(a)]
 \item
-$f(p)=(3 \odot p) \oplus 14$
+$f(n)=(3 \odot n) \oplus 14$
 \item
-$f(p)=5 \odot p \oplus 15$
+$f(n)=(5 \odot n) \oplus 15$
 \item
-$f(p)=7 \odot p \oplus 23$
+$f(n)=(7 \odot n) \oplus 23$
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}{}
- Show that the  general formula for the decoding function for $f(p) = a \odot p \oplus b$ is
+ Show that the  general formula for the decoding function for $f(n) = (a \odot n) \oplus b$ is
 $$
-f^{-1}(c) = (a^{-1} \odot c)  \ominus (a^{-1}\odot b).
+f^{-1}(m) = (a^{-1} \odot m)  \ominus (a^{-1}\odot b).
 $$
- (That is, show that $f \compose f^{-1}(c)=c$, and $ f^{-1}\compose  f(p) =  p$.)
+ (That is, show that $f \compose f^{-1}(m)=m$, and $ f^{-1}\compose  f(n) =  n$. Note that  $n$ and $m$ are \emph{variables}, while $a$ and $b$ are \emph{constants} which characterize the encoding function.)
 \end{exercise}
 
 \begin{example}{}
-Let's consider the affine cryptosystem encoding function $f(p) = (a \odot p) \oplus  b$ (the $\odot$ and $\oplus$ are multiplication and addition mod 26).  For
+Let's consider the affine cryptosystem encoding function $f(n) = (a \odot n) \oplus  b$, where $\odot$ and $\oplus$ are multiplication and addition mod 26 respectively.  For
 this cryptosystem to work we must choose an $a \in {\Bbb Z}_{26}$
 that is invertible. This is only possible if $\gcd(a, 26) = 1$.
 Recognizing this fact, we will let $a = 5$ since $\gcd(5, 26) = 1$. The reader may check that $a^{-1} = 21$. Therefore, we can take our
-encryption function to be $f(p) = (5 \odot p) \oplus 3$. Thus, ALGEBRA is
+encryption function to be $f(n) = (5 \odot n) \oplus 3$. Thus, ALGEBRA is
 encoded as $3, 6, 7, 23, 8, 10, 3$, or DGHXIKD. The decryption
 function will be   
 $$
-f^{-1}(p) = (21 \odot  p) \ominus (21\odot 3)  =(21 \odot  p) \oplus 15.
+f^{-1}(n) = (21 \odot  n) \ominus (21\odot 3)  =(21 \odot  n) \oplus 15.
 $$
 \end{example}
 
@@ -282,13 +282,13 @@ $$
 For each of the following functions, (i) determine whether the function is a valid encoding function; (ii) if the function is valid, find the decoding function. (Assume the function is working on an alphabet with 26 letters.)
 \begin{enumerate}[(a)]
 \item
-$f(p) = (4 \odot p) \oplus 7$
+$f(n) = (4 \odot n) \oplus 7$
 \item
-$f(p) = (5 \odot p) \oplus 13$
+$f(n) = (5 \odot n) \oplus 13$
 \item
-$f(p) = (11 \odot p) \oplus 14$
+$f(n) = (11 \odot n) \oplus 14$
 \item
-$f(p) = (13 \odot p) \oplus 22$
+$f(n) = (13 \odot n) \oplus 22$
 \end{enumerate}
 \end{exercise}
 
@@ -296,7 +296,7 @@ $f(p) = (13 \odot p) \oplus 22$
 \begin{exercise}{english}
 \begin{enumerate}[(a)]
 \item
-The general form for an affine cryptosystem encoding function is $f(p) = (a \odot p) \oplus  b$. How many different possible values of $a$ are there, for an affine cryptosystem that works on the English alphabet of 26 letters?
+The general form for an affine cryptosystem encoding function is $f(n) = (a \odot n) \oplus  b$. How many different possible values of $a$ are there, for an affine cryptosystem that works on the English alphabet of 26 letters?
 \item
 For the same situation as (a), how many different possible values are there for $b$?
 \item
@@ -313,8 +313,8 @@ The Hebrew alphabet has  22 letters. Give answers to parts (a), (b), and (c) of 
 \end{exercise}
 
 \begin{exercise}{}
-Suppose that the encoding function for an affine cryptosystem is $f(p) = (a \odot p) \oplus  b$, and the decoding function is 
-$f^{-1}(c) = (a' \odot c) \oplus  b'$. Suppose that a different cryptosystem uses the encoding function $g(p) = (a' \odot p) \oplus  b'$. What is the decoding function for this second cryptosystem?
+Suppose that the encoding function for an affine cryptosystem is $f(n) = (a \odot n) \oplus  b$, and the decoding function is 
+$f^{-1}(m) = (a' \odot m) \oplus  b'$. Suppose that a different cryptosystem uses the encoding function $g(n) = (a' \odot n) \oplus  b'$. What is the decoding function for this second cryptosystem?
 \end{exercise}
 
 \begin{exercise}{}
@@ -381,25 +381,25 @@ type of cryptosystem, called a \term{polyalphabetic
 cryptosystem},\index{Cryptosystem!polyalphabetic} we will generalize
 affine codes by using matrices. The idea works roughly the same as
 before; however, instead of encrypting one letter at a time we will
-encrypt pairs of letters.  We can store a pair of letters $p_1$ and
-$p_2$ in a vector  
+encrypt pairs of letters (as before, letters are represented by elements of ${\Bbb Z}_{26}$).  We can store a pair of letters $n_1$ and
+$n_2$ in a vector  
 $$
-{\bold p} = 
+{\bold n} = 
 \left(
 \begin{array}{c}
-p_1 \\ p_2
+n_1 \\ n_2
 \end{array}
 \right).
 $$
 Let $A$ be a $2 \times 2$ invertible matrix
 with entries in ${\Bbb Z}_{26}$. We can define an encoding function by
 $$
-f({\bold p}) = (A \odot {\bold p}) \oplus {\bold b} ,
+f({\bold n}) = (A \odot {\bold n}) \oplus {\bold b} ,
 $$
 where ${\bold b}$ is a fixed column vector and matrix operations are
 performed in ${\Bbb Z}_{26}$. The formula for  the decoding function (which is the inverse of the encoding function) is very similar to the decoding function formula that we found for affine encoding:
 $$
-f^{-1}({\bold p}) = (A^{-1} \odot {\bold p}) \ominus (A^{-1} \odot {\bold b}),
+f^{-1}({\bold m}) = (A^{-1} \odot {\bold m}) \ominus (A^{-1} \odot {\bold b}),
 $$
 where $A^{-1}$ is the \emph{matrix inverse} of $A$: that is, $A^{-1}A = A A^{-1} = I$, where $I$ is the $2 \times 2$ identity matrix.  *Note* that in these formulas, we are using \emph{modular} matrix multiplication instead of \emph{regular} matrix multiplication: that is, the  regular $\cdot$ and $+$ operations are replaced by  $\odot$ and $\oplus$:
 
@@ -574,10 +574,10 @@ quite often; the pair {\em qz} never appears.  To avoid decryption by
 a third party, we must use a larger matrix than the one we used in
 Example~\ref{example:crypt:4}. 
   
-\subsection{Spreadsheet exercises\quad
-\sectionvideohref{6tgBvDI1Tiw&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=35}\quad
-\sectionvideohref{SJstRseE0V4&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=34}}
+\subsection{Spreadsheet exercises}
 Spreadsheets can be used to automate many of the calculations that we have looked at in the previous sections.
+
+\subsubsection*{Shift encoding and decoding spreadsheet \quad \sectionvideohref{6tgBvDI1Tiw&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=35}}
 
 \begin{exercise}{EngShift}
 In this exercise, you will use a spreadsheet to create an automated shift encoder for English. Please refer to Figure~\ref{fig:AutoShiftEnc} for guidance:
@@ -621,6 +621,10 @@ MS KIUPVA	UID NIKPS VA MD DPMUBChM MS UMQACh
 
 (Note that `Ch' counts as a single letter.)
 \end{exercise}
+
+\subsubsection*{Affine encoding and decoding spreadsheet
+\quad
+\sectionvideohref{SJstRseE0V4&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=34}}
 
 \begin{exercise}{}
 Create a spreadsheet that can perform any affine encoding on English plaintext.  You may model your spreadsheet on the sheet in Figure~\ref{fig:affine}.  Use your spreadsheet to decode the following message:

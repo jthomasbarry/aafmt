@@ -3,15 +3,14 @@
 % ### when proving 1-1, give piecewise examples
 % ### proving 1-1 and onto -- give more examples of algebraic functions
 % ### bivariate example for 1-1, and for onto
-\chap{Functions: Basic Concepts\quad
-\sectionvideohref{m0F1__joNzw&index=13&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}{functions}
+\chap{Functions: Basic Concepts}{functions}
 
 The idea of a function should be familiar to you from previous math classes. Your calculus class no doubt was all about functions defined on real numbers. In this book, we will be more interested in functions on \emph{finite} sets.  Rather than ``doing things'' to these functions (such as integrating and differentiating), instead we will dig more deeply into the basic nature of functions themselves. This will eventually lead us to discover profound connections between groups and functions (see the Permutations chapter).
 \medskip
 
 This chapter  is an adapted and expanded version of a chapter by D. and J. Morris.
 
-\section{The Cartesian product: a different type of set operation} \label{cartesian}
+\section{The Cartesian product: a different type of set operation  \quad \sectionvideohref{m0F1__joNzw&index=13&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{cartesian}
 
 In the previous chapter, we introduced set operations such as $\cup$ and $\cap$.  In this chapter we are going to need yet another set operation. This operation is called the "Cartesian product", and is denoted by the symbol $\times$. In order to define the Cartesian product, we will first need a preliminary definition:
 
@@ -142,7 +141,7 @@ Using the definition of Cartesian product, show that for any set $A$, $A \times 
 
 
 
-\section{Introduction to functions} \label{intro}
+\section{Introduction to functions \quad \sectionvideohref{m0F1__joNzw&index=13&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{intro}
 
 
 \subsection{Informal look at functions}
@@ -204,7 +203,7 @@ Thus, temperature defines a function $\var{temp}$ from the surface of the earth 
  $\var{temp}(x)$ is the temperature at the point~$x$.
  \item The items in a grocery store each have a particular price, which is a certain number of cents, so $\var{price}$ can be thought of as a function from the set of items for sale to the set $\mathbb{N}$ of all natural numbers:
  $\var{price}(x)$ is the price of item~$x$ (in cents).
- \item If we let $\var{People}$ be the set of all people (alive or dead), then $\var{mother}$ is a function from $\var{People}$ to $\var{People}$. For example, 
+ \item If we let $\var{People}$ be the set of all people (alive or dead), then $\var{mother}$ (i.e. biological mother) is a function from $\var{People}$ to $\var{People}$. For example, 
  $$\var{mother}(\var{Prince\ Charles}) = \var{Queen\ Elizabeth} .$$
  (To avoid ambiguity, we need to say that, by ``mother," we mean ``biological mother.")
  \item In contrast, $\var{grandmother}$ is \emph{not} a function
@@ -591,7 +590,7 @@ $A = \{\var{a},\var{b}\}$, $B = \{\var{c},\var{d},\var{e}\}$
 
 
 
-\section{One-to-one functions} \label{onetoone}
+\section{One-to-one functions \quad \sectionvideohref{m0F1__joNzw&index=13&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{onetoone}
 
 \subsection{Concept and definition}
 
@@ -607,7 +606,7 @@ and
 \item Alice is Bob's wife.
 \end{enumerate}
 Then the inspector can arrest Bob for theft,
-because a woman cannot (legally) be the wife of more than one husband.
+because a person cannot (legally) be the wife of more than one husband.\footnote{According to U.S. law as of 2017.}
 
 \item On the other hand, suppose the inspector knows:
 \begin{enumerate}
@@ -618,7 +617,7 @@ and
 Then the inspector does not know enough to be sure who the forger is,
 because it could be some other child of Alice.
 \end{itemize}
-This example illustrates a fundamental difference between the $\var{wife}$ function and the $\var{mother}$ function: two different people can have the same mother, but only one person can have any particular person as their wife. 
+This example illustrates a fundamental difference between the $\var{wife}$ function and the $\var{mother}$ function: two different people can have the same mother, but only one person can have any particular person as their legal wife. 
 In mathematical terms, this important property of the $\var{wife}$ function is expressed by saying that the $\var{wife}$ function is  \emph{one-to-one}.\index{One-to-one!informal definition}
 \end{example}
 
@@ -900,8 +899,8 @@ Does the answer to (a) or (b) change if we change the domain and codomain to $[0
 \end{exercise}
 
 \begin{exercise}{}
-Suppose  $f:\mathbb{Q}$ to $\mathbb{R}$ is a function such that $f(q_1) + f(q_2)$ is irrational whenever $q_1 \neq q_2$.
-Show that this implies that $f$ is one-to-one.
+Suppose  $f:\mathbb{Q} \rightarrow \mathbb{R}$ is a function such that $f(q_1) - f(q_2)$ is irrational whenever $q_1 \neq q_2$.
+Show that this implies that $f$ is one-to-one.  (Recall that $\mathbb{Q}$ is the set of rational numbers.)
 \end{exercise}
 
 
@@ -973,11 +972,11 @@ For each of the following functions, either prove the function is one-to-one, or
 \item \label{11Exers-formula-q}
 \quad $q:\mathbb{R} \rightarrow  \mathbb{R}, q(x) = 1/ \bigl( |x+1| + 1 \bigr)$.
 \item \label{11Exers-formula-r}
-\quad $q:[-5,1] \rightarrow  [0,1], q(x) = 1/ \bigl( |x+1| + 1 \bigr)$.
+\quad $r:[-5,1] \rightarrow  [0,1], r(x) = 1/ \bigl( |x+1| + 1 \bigr)$.
 \item \label{11Exers-formula-s}
 \quad $s:\mathbb{R} \rightarrow  \mathbb{R}, s(x) = (x+1)(x+2)(x+3)$.
 \item \label{11Exers-formula-t}
-\quad $s:\mathbb{R}^+ \rightarrow  \mathbb{R}^+, s(x) = (x+1)(x+2)(x+3)$.
+\quad $t:\mathbb{R}^+ \rightarrow  \mathbb{R}^+, t(x) = (x+1)(x+2)(x+3)$.
 \end{enumerate}
 \end{exercise}
 
@@ -1036,7 +1035,7 @@ $r(z) = \text{Re}[z] + \text{Im}[z]$, where \\
 %\end{itemize}
 %\end{summary}
 
-\section{Onto functions} \label{onto}
+\section{Onto functions \quad \sectionvideohref{m0F1__joNzw&index=13&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{onto}
 
 \subsection{Concept and definition}
 In an arrow diagram of a function $f \colon A \to B$, the definition of a function requires that there is exactly one arrow out of each element of~$A$,  but it says nothing about the number of arrows into each element of~$B$. There may be elements of~$B$ with lots of arrows into them (unless the function is one-to-one), and there may be other elements of~$B$ that have no arrows into them. 
@@ -1451,7 +1450,7 @@ For each of the following  functions, either prove that it is onto, or prove tha
 %\end{summary}
  
  
-\section{Bijections} \label{bijections}
+\section{Bijections \quad \sectionvideohref{m0F1__joNzw&index=13&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{bijections}
 
 \subsection{Concept and definition}
 
@@ -1648,7 +1647,7 @@ If $x_1 > 0$ and $x_2 \le 0$, then $f(x_1) \neq f(x_2)$.
 \item[(e)]
 If $x_1 \le 0$ and $x_2 \le 0$, then $f(x_1)=f(x_2)$ implies $x_1=x_2$.
 \end{enumerate}
-From these facts it follows that $f(x)$ is one-to-one, because no matter whether $x>0$ or $x \le 0$) it is always true that $f(x) = f(x') \implies x=x'$. 
+From these facts it follows that $f(x)$ is one-to-one, because no matter whether $x>0$ or $x \le 0$) it is always true that $f(x_1) = f(x_2) \implies x_1=x_2$. 
 \end{example}
  
 \begin{exercise}{}
@@ -1656,7 +1655,7 @@ Prove statements (a)$-$(e) in Example~\ref{example:functions:piecewise}.  For ex
 \end{exercise}
 
 \begin{exercise}{} \label{OntoCasesExer}
- Define function $f$  from~$\mathbb{R}$ to~$\mathbb{R}$ by:
+ Define a function $f$  from~$\mathbb{R}$ to~$\mathbb{R}$ by:
 $$ f(x) = 
 \begin{cases}
 1/x & \mbox{if $x > 0$} \\
@@ -1804,13 +1803,6 @@ f\bigl( (a,b),c \bigr) = \bigl( a,(b, c) \bigr).\]
 Show that $f$ is a bijection.
 \end{exercise}
 
- 
-% \begin{summary}
-%\item Important definitions:
-%\begin{itemize}
-%\item bijection
-%\end{itemize}
-% \end{summary} 
   
  \section{Composition of functions\quad
 \sectionvideohref{lbCtiPOKbxk&index=14&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{composition}
@@ -2253,6 +2245,26 @@ So $f$ is both one-to-one and onto: thus $f$ is a bijection.
 Prove the reverse direction of Proposition~\ref{InverseBijection}.
 \hyperref[sec:functions:hints]{(*Hint*)} 
 \end{exercise}
+
+
+A function that has an inverse is said to be \term*{invertible}.\index{Function!invertible}\index{Invertible function} The following exercise deals with a very important class of invertible functions/bijections.
+
+\begin{exercise}{inverMod}
+Given a number $a \in \mathbb{Z}_n$, consider the function $f_a: \mathbb{Z}_n \rightarrow \mathbb{Z}_n$ given by $f_a(m) = a \odot m$.
+\begin{enumerate}[(a)]
+\item
+Show that the function $f_6$ defined on $\mathbb{Z}_7$ is a bijection by finding an inverse of $f_6$.
+ \item 
+For the six numbers $a=0,1,2,3,4,5$ in $\mathbb{Z}_6$, which of these give bijections for $f_a$? \emph{Explain} your answer.
+Suppose that $a \in  \mathbb{Z}_n$ is relatively prime to $n$. Show that in this case, $f_a:\mathbb{Z}_n \rightarrow \mathbb{Z}_n$ is a bijection (you may want to refer to Section~\ref{sec:diophantine}).
+\hyperref[sec:functions:hints]{(*Hint*)}
+\item
+Suppose that $a \in  \mathbb{Z}_n$ such that $ax \equiv 1 \pmod{n}$ does \emph{not} have an integer solution $x$. Show that in this case, $f_a:\mathbb{Z}_n \rightarrow \mathbb{Z}_n$ is \emph{not} a bijection.
+\hyperref[sec:functions:hints]{(*Hint*)}
+\end{enumerate}
+\end{exercise}  
+
+We close out this section with several exercises that prove various properties of inverses.
 
  \begin{exercise}{InverseUniqueExers} 
  \begin{enumerate}[(a)]

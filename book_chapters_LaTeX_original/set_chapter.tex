@@ -2,12 +2,12 @@
 %%% Descriptions of sets need to be concise.
 
 
-\chap{Set Theory\quad
-\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}{sets}
+\chap{Set Theory}{sets}
 
 
 
-\section{Set Basics}\label{basics}
+\section{Set Basics \quad
+\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{basics}
 
 You've probably seen sets, set relations, and set operations in previous classes.  In fact, in the previous two chapters of this book you've already been working with sets.  So we'll review them quickly before moving on to further properties and proofs concerning sets and their accessories.
 \medskip
@@ -60,7 +60,7 @@ For the purposes of this book, it would be good enough to say, ``$X$ is the set 
 \item
 What elements are in the following set:  $S = \{x : x  \textrm{ is the name of a U.S. state and } x  \textrm{ begins with `W'} \}$?  Write the set as a list of objects.
 \item
-Rewrite the following as a list =$\{x : x \textrm{is a type of polygon with less than 6 sides} \}$.
+Rewrite the following as a list =$\{x : x \textrm{ is a type of regular polygon with less than 6 sides} \}$.
 \item
 Rewrite the following set of dates by using a property:  $T = \{ \textrm{Jan. 4th  2011, Jan. 11th  2011, Jan. 18  2011, Jan. 25  2011}, \ldots, \textrm{Dec. 27 2011} \}$ (Note: January 1 2011 was on a Saturday).
 \item
@@ -194,7 +194,7 @@ It is convenient to have a set with no elements in it.  This set is called the \
 
 Note that the empty set is a subset of every set.  
 
-\begin{exercise}{}
+\begin{exercise}{s16}
 Let $S$ be a set with a single element.
 \begin{enumerate}[(a)]
 \item
@@ -506,7 +506,8 @@ $A \cap (B \cup C)'$
 \end{exercise} 
 
 
-\section{Properties of set operations} \label{propset}
+\section{Properties of set operations \quad
+\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{propset}
 
 Now that we have the basics out of the way, let's look at the some of  the properties of set operations.
 The individual steps of the following proofs depend on \emph{logic}; and a rigorous treatment  of these proofs would require that we introduce formal logic and its rules. However, many of these logical rules are intuitive, and it should be possible for you to follow the proofs even if you haven't studied mathematical logic.
@@ -701,18 +702,20 @@ $(A \cap B)' = A' \cup B'$.
  \end{enumerate}
 \end{thm}
  
- We will use the same strategy we used to prove Proposition~\ref{proposition:sets:sets_theorem_set_ops} part (7): we show sets are equal by showing they are subsets of each other.
+ We will use the same strategy we used to prove Proposition~\ref{proposition:sets:sets_theorem_set_ops} part (7)-that is, we show that sets are equal by showing they are subsets of each other.
 \medskip{}
 
 \begin{proof} 
 
 \noindent
-(1)
+We'll prove (1), and leave (2) as an exercise. The proof will show that the sets on the left and right sides of the equality in (1)  are both subsets of each other.
+
 First we show that $(A \cup B)' \subset A' \cap B'$.  Let $x \in (A \cup B)'$.  Then $x \notin A \cup B$. So $x$ is neither in $A$ nor in $B$, by the definition of $\cup$.  By the definition of $'$, $x \in A'$ and $x \in B'$.  Therefore, $x \in A' \cap B'$ and we have $(A \cup B)' \subset A' \cap B'$.
+
  To show the reverse inclusion, suppose that $x \in A' \cap B'$.  Then $x \in A'$ and $x \in B'$, and so $x \notin A$ and $x \notin B$.  Thus $x \notin A \cup B$ and so $x \in (A \cup B)'$.  
 \end{proof}
 
-\begin{exercise}{}
+\begin{exercise}{s27}
 Prove Proposition~\ref{sets_de_morgan} part (2).
 \end{exercise}
  
@@ -791,6 +794,9 @@ A \cap A' \cap B \cap B'    &\mbox{[by Proposition~\ref{proposition:sets:sets_th
  
 \begin{exercise}{30}
 Prove the following statements by mimicking the style of proof in Example~\ref{example:sets:other_relations}; that is use the definitions of $\cap, \cup, \setminus$, and $'$ as well as their properties listed in Proposition~\ref{proposition:sets:sets_theorem_set_ops} and  Proposition~\ref{sets_de_morgan}. This type of proof is called an ``algebraic'' proof.  Every time you use a property, remember to give a reference!
+
+We should mention that the best strategy is usually to begin with the more complicated side of the equality, and try to simplify to the point where it agrees with the other side. if you can't get it to agree, then start working on the other side and simplify until the simplified versions of both sides finally agree.
+
 \begin{enumerate}[(a)]
 \item
 $(A \cap B) \setminus B = \emptyset$.
@@ -805,11 +811,12 @@ $(A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)$.
 \item
 $(A \cup B \cup C) \cap D) = (A \cap D) \cup (B \cap D)\cup (C \cap D)$. 
 \item
-$(A \cap B \cap C) \cup D) = (A \cup D) \cap (B \cup D)\cap (C \cup D)$. 
+$(A \cap B \cap C) \cup D = (A \cup D) \cap (B \cup D)\cap (C \cup D)$. 
 \end{enumerate}
 \end{exercise}
 
-\section{Do the subsets of a set form a group?}\label{SetGroup} 
+\section{Do the subsets of a set form a group? \quad
+\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{SetGroup} 
 Some of the properties in Proposition~\ref{proposition:sets:sets_theorem_set_ops} may ring a bell. Recall that in the Section~\ref{DefOfGroup} of the Modular Arithmetic chapter  we defined a \emph{group}\index{Group!definition} to be a set combined with an operation that has the following properties:
 \begin{enumerate}
 \item

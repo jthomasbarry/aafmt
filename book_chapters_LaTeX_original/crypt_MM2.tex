@@ -7,11 +7,17 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Group Theory Applications (II): Further Topics in Cryptography}{further_crypt}
+\chap{Application: Further Topics in Cryptography}{further_crypt}
 
 In this chapter we examine two specific topics in cryptography which are highly practical and are relatively recent developments: Diffie-Hellman key exchange (originated by Whitfield Diffie and Martin Hellman in 1976) and elliptic curve cryptography (proposed by Neal Koblitz and Victor Miller in 1985).
+\medskip
 
-This chapter is authored by Moses Marmolejo, with revisions by C.T.
+\noindent
+\emph{Prerequisites}: 
+To understand this chapter, the reader should be familiar with the material in  Chapters~\ref{modular},\ref{functions}, and~\ref{groups}. We also make use of one important result from Chapter~\ref{poly}, but we only apply the result and don't make use of the proof itself.  
+\bigskip
+
+This chapter is written by Moses Marmolejo, with revisions by C.T.
 
 \section{Diffie-Hellman key exchange}\label{sec:DHKE:1}
 
@@ -241,7 +247,7 @@ Given $p=73,$ and $g=11$ find $q, r, r_f, q_f, k_M,$ and $k_R$ if Moses chooses 
 %ans:q=13, k_M=7, r_f=17, q_f=48, r=41, k_R=2
 \end{exercise}
 
-DHKE is vulnerable to this type of MiM attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Fortunately, you can prevent a MiM attack by using a \term{digital signature}.  To understand what a digital signature does, first let us consider the purpose of a conventional signature.  Typically, a signature is uniquely scribed on a document, and is proof of authentication.  Comparitively, a digital signature is intended to authenticate the origin of the sender and ensure the integrity of the message.  In Section \ref{sec:DHKE:1}, we discussed that using private key to encrypt and a public key to decrypt will allow for message verification.  Once a message is signed and encrypted, it cannot be altered without destroying the signature which authenticates the message. In summation, the MiM can prevent Moses and Rachael from establishing a shared key (by tampering with the message), but Fred cannot eavesdrop on any secret communication.
+DHKE is vulnerable to this type of MiM attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Fortunately, you can prevent a MiM attack by using a \term{digital signature}.  To understand what a digital signature does, first let us consider the purpose of a conventional signature.  Typically, a signature is uniquely scribed on a document, and is proof of authentication.  Comparitively, a digital signature is intended to authenticate the origin of the sender and ensure the integrity of the message.  In Section \ref{sec:DHKE:1}, we described how to verify messages by using a private key to encrypt and a public key to decrypt.  Once a message is signed and encrypted, it cannot be altered without destroying the signature which authenticates the message. In summation, the MiM can prevent Moses and Rachael from establishing a shared key (by tampering with the message), but Fred cannot eavesdrop on any secret communication.
 
  Diffie-Hellman is just one of many key exchange algorithms you can use. In the next section, we will talk about a different way to exchange keys that is even more secure.
 
@@ -449,19 +455,19 @@ We may then calculate (remember we're doing arithmetic in  $\mathbb{Z}_{17}$!)
 	          &\equiv  (77) \cdot (2)^{-1} \\
                      &\equiv (9) \cdot (9)\\
                      &\equiv 81 \\
-                    &\equiv 13 (\bmod 17)
+                    &\equiv 13 \pmod{17}
 		\end{align*}
 Next we use the following formulas (which we used before for reall elliptic curves) to find $x_3$ and $y_3$: \[ x_3 = m^2 - 2x_1  , \text{and~} y_3 =-(  m(x_3 - x_1)+y_1)\]
 where once again, arithmetic is in $\mathbb{Z}_{17}$:
 \begin{align*}
 		x_3 &\equiv  (13^2 - 5 - 5 ) \\
 	          &\equiv 159\\
-                     &\equiv 6 (\bmod 17)
+                     &\equiv 6 \pmod{17}
 		\end{align*}
 			\begin{align*}
 		y_3 &\equiv - (13(6 - 5) +1) \\
 	          &\equiv -14\\
-                     &\equiv 3 (\bmod 17)
+                     &\equiv 3 \pmod{17}
 		\end{align*}
 Therefore, $2P = (6,3)$.
 \end{example}

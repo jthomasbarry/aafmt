@@ -26,25 +26,9 @@ Thanks to Tom Judson for material used in this chapter.
   
 Let us examine a simple model of a communications system for
 transmitting and receiving coded messages (Figure~\ref{encoding}).  
-\begin{figure}[htb]
+\begin{figure}[htbp]
 \begin{center}
-\setlength{\unitlength}{.15in}
-\begin{picture}(19,23)(0,1)
-\thicklines
-\put(3.2,1.2){\small \it m-digit received message or error}
-\put(5.8,6.3){\small \it n-digit received word}
-\put(8.8,11.3){\small \it Noise}
-\put(6.7,16.3){\small \it n-digit codeword}
-\put(6.7,21.3){\small \it m-digit message word}
-\put(7,3){\framebox(6,2){\small Decoder}}
-\put(7,8){\framebox(6,2){\small Receiver}}
-\put(7,13){\framebox(6,2){\small Transmitter}}
-\put(7,18){\framebox(6,2){\small Encoder}}
-\thinlines
-\multiput(10,6)(0,5){4}{\vector(0,-1){1}}
-\put(10,3){\vector(0,-1){1}}
-\multiput(10,8)(0,5){3}{\line(0,-1){1}}
-\end{picture}
+\includegraphics{images/simpleCommModel.png}
 \end{center}
 \caption{Encoding and decoding messages\label{encoding}}
 \end{figure}
@@ -93,17 +77,12 @@ x_{1}, x_{2}, \ldots, x_{n}).
 To decode the received word, we choose as the $i$th digit the one that
 appears in the $i$th place in at least two of the three transmissions.
 For example, if the original message is $(0110)$, then the transmitted
-message will be \mbox{$(0110\:0110\:0110)$}. If there is a transmission error
-in the fifth digit, then the received word will be
+message will be $(0110\:0110\:0110)$. If the fifth bit is transmitted incorrectly, then the received word will be
 $(0110\:1110\:0110)$, which will be correctly decoded as
 $(0110)$.\footnote{We will adopt the convention that bits are numbered
 left to right in binary $n$-tuples.} 
 This triple-repetition method \index{Decoding scheme!repetition}will automatically detect and correct
-all single errors, but it is slow and inefficient: to send a message word
-consisting of $m$ bits, $2m$ extra bits are required, and we can only
-detect and correct single errors. We will see that it is possible to
-find an error-correcting encoding scheme that will encode a message of $m$ bits into
-$n$ bits with $n$ much smaller than $3m$.
+all single errors, but it is slow and inefficient (just imagine having to repeat everything you say three times in order to make yourself understood!)  We'll see shortly that there are much better alternatives.
 \end{example}
 
 \begin{example}{}

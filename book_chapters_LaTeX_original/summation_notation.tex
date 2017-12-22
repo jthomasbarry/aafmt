@@ -12,14 +12,14 @@
 
 %If its not already included, it would be useful to have a list of identities involving summation notation. JW
 
-\chap{Sigma Notation\quad
-\sectionvideohref{W9vTsHE5SJE&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=43}}{Sigma}
+\chap{Sigma Notation}{Sigma}
 We're about to start looking at polynomials, which means we'll be working with sums of terms--sometimes many terms. Such sums are often written using a special notation known as ``sigma notation''.  It's possible that you are already a master of sigma notation. If not, you can brush up with the material in this section. (At very least, you should try some of the exercises to make sure that you haven't gotten rusty.)
 \bigskip
 
 David Weathers wrote the original version of Sections~\ref{sec:sigmaExamples}-\ref{sec:CommonSums}. Johnny Watts started Sections~\ref{sec:sigmaLinAlg}-\ref{sec:sumByParts}, while  Rachel McCoy made significant improvements to Section~\ref{sec:sumByParts}.
 
-\section{Lots of examples}\label{sec:sigmaExamples}
+\section{Lots of examples\quad
+\sectionvideohref{W9vTsHE5SJE&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=43}}\label{sec:sigmaExamples}
 
 It's unavoidable that in mathematics, one often encounters sums.  Sometimes these sums have very few terms, but occasionally the sums can reach hundreds, thousands or even an infinite number of terms.  In these cases, rather than listing each and every term or listing the first several terms and assuming the pattern is obvious, one can represent a sum using \term{summation notation}, often referred to as \term{sigma notation}. 
 
@@ -159,6 +159,7 @@ This means that for each value of the index of the outside sigma, the entire sum
 
 \[\sum_{i=0}^{3}\sum_{j=0}^{2}1 =  \sum_{i=0}^{3}\ 3  = 3+3+3+3 = 12. \]
 (Note that this time we didn't put a parenthesis around the inner sum--when two sums are written next to each other, it's understood that the second sum is nested inside the first.)
+
 The situation becomes more interesting when the sum inside depends on the the index variable of the outside sigma:
 
 \[\sum_{i=0}^{3}\sum_{j=0}^{i}1\]
@@ -186,21 +187,19 @@ Alternatively, we can arrange these index pairs by $j$ coordinate.  When $j$ is 
 
 So far our examples have only two sigmas, but it's quite possible to have an unlimited number of nested sigmas. For example, with three nested sigmas we would have grid points in three dimensions.  It doesn't matter what order you sum the terms in--as long as you include them all!
 
-%Another handy identity for more than one index:JW
-%\sum_{i=n}^s \sum_{j=m}^t a_{i,j} = \sum_{j=m}^t sum_{i=n}^s a_{i,j} 
 \begin{exercise}{nested1}
-Rewrite each of the following nested sums, exchanging the order of sums and changing the start values and end conditions as needed so that the nested sum maintains the same value. (In some cases, drawing a grid point diagram similar to Figure~\ref{fig:summation1} may be helpful.)
+Draw a grid point diagram (similar to Figure~\ref{fig:summation1}) for each of the following sums.  Then use the grid point diagram  as a guide to exchanging the order of summation.
 \begin{enumerate}[(a)]
 \item
 $\displaystyle{\sum_{i=0}^{4}\sum_{j=0}^{8}i}$
 \item
-$\displaystyle{\sum_{j=0}^{3} \sum_{i=j}^{j+3}*(i+j)}$~~(Write as the sum of two summations.)
+$\displaystyle{\sum_{j=0}^{3} \sum_{i=j}^{j+3} (i+j)}$~~(Write as the sum of two summations.)
 \item
-$\displaystyle{\sum_{k=0}^{17}\sum_{i=0}^{k}(2i+1) }$
+$\displaystyle{\sum_{k=0}^{7}\sum_{i=0}^{k}(2i+1) }$
 \item
-$\displaystyle{\sum_{i=1}^{10}\sum_{j=i}^{i+1} (i-j) }$~~(Write as a nested sum plus two additional terms.)
+$\displaystyle{\sum_{i=1}^{6}\sum_{j=i}^{i+1} (i-j) }$~~(Write as a nested sum plus two additional terms.)
 \item
-$\displaystyle{\sum_{i=1}^{10}\sum_{j=i}^{10} ij }$
+$\displaystyle{\sum_{i=1}^{5}\sum_{j=i}^{10} ij }$
 \item
 $\displaystyle{\sum_{i=m}^{n}\sum_{j=i}^{2n}jx^i }$~~(Write as the sum of two summations.)
 \item
@@ -209,6 +208,43 @@ $\displaystyle{\sum_{i=m}^{n}\sum_{j=0}^{i}(i-j)^2 }$~~(You may assume $m>0$.  W
 \end{exercise}
 Another useful fact: in a nested sum, the outer summation index can be treated as a constant in the inner summation.  So for example:
 \[ \sum_{i=1}^{9} \sum_{j=1}^7 ij = \sum_{i=1}^{9} i \sum_{j=1}^7 j = \sum_{i=1}^{9} i\sum_{j=1}^7 j = \left(\sum_{i=1}^{9} i\right) \left(\sum_{j=1}^7 j\right) = 45\cdot 28=1260. \]
+
+\begin{exercise}{interchangeSum}
+\begin{enumerate}[(a)]
+\item
+Using a grid point diagram, interchange the order of summation in the following nested sum:
+\[
+\sum_{k=1}^{5} \sum_{\ell=1}^k (\ell + k)
+\]
+\item
+Using a grid point diagram, interchange the order of summation in the following nested sum:
+\[
+\sum_{i=1}^{7} \sum_{j=1}^i ij
+\]
+\item
+Using what you've from (a) and (b) above, give a general formula for intechanging sums of the form:
+\[
+\sum_{m=1}^M \sum_{n=1}^m f(m,n),
+\]
+where $f(m,n)$ is an arbitrary expression involving the variables $m$ and $n$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+In Exercise~\ref{exercise:Sigma:interchangeSum}, all sums had 1 as lower limit.  Repeat the exercise (parts a,b,c) but use 0 as the lower limit on all sums.
+\item
+Repeat Exercise~\ref{exercise:Sigma:interchangeSum} again, but use 2 as the lower limit on all sums.
+\item
+Based on what you have learned from (a) and (b), give a general formula for interchanging the order of summation in the following expression:
+\[
+\sum_{m=a}^b \sum_{n=a}^m f(m,n),
+\]
+\end{enumerate}
+\end{exercise}
+
+
 \begin{exercise}{nested2}
 Using exchange of summation and other sum manipulation techniques, find the exact values of the following sums:
 
@@ -224,7 +260,7 @@ $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i \frac{1}{11-j}}$
 \item
 $\displaystyle{\sum_{i=1}^{10} \sum_{j=i}^{10} \frac{i}{j(j+1)}}$
 \item
-$\displaystyle{\sum_{i=1}^{20} \sum_{j=1}^i \frac{i}{400-j^2}}$
+$\displaystyle{\sum_{i=1}^{20} \sum_{j=1}^i \frac{i}{400-j^2}}$ \hyperref[sec:sigma:hints]{(*Hint*)} 
 \item
 $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i (j+i)}$
 \end{enumerate}
@@ -232,10 +268,13 @@ $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i (j+i)}$
 \end{exercise}
 
 \section{Common Sums\quad
-\sectionvideohref{i5RI-Ssnwps&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=46}}\label{sec:CommonSums}
+\sectionvideohref{i5RI-Ssnwps&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=54}}\label{sec:CommonSums}
 There are several sums, even a few infinite sums, for which the total value is known. One very basic example is:
-\[\sum_{i=1}^{k}1\]
-The answer is NOT 1. (What is it?) Make sure you don't get tripped up by this one.
+\[\sum_{i=1}^{k}1.\]
+
+\begin{exercise}{}
+Evaluate the preceding sum. Be careful-the answer is NOT 1. 
+\end{exercise}
 
 Another very useful example is:
 
@@ -247,14 +286,14 @@ If one were to take the first term 1 and add it to the last term $k$, we get $k+
 
 We can use the same reasoning to arrive at the following formula.
 
-\[\sum_{i=a}^{k}i=a+(a+1)+(a+2)\cdots+(k-1) + k = (k+a)*(k-a+1)/2,\] 
+\[\sum_{i=a}^{k}i=a+(a+1)+(a+2)\cdots+(k-1) + k = (k+a)(k-a+1)/2,\] 
 where $a$ and $k$ are integers and $a<k$.
 
-%%% Need a better example before these exercises. Students don't know how to represent an odd number.  You can also do exercises where you skip 3 numbers instead of 2
+
 \begin{exercise}{common1}
 \begin{enumerate}[(a)]
 \item 
-Write the sum of odd integers from $2a+1$ to $2k+1$ in sigma notation.
+Write the sum of odd integers from $2a+1$ to $2k+1$ in sigma notation. (Note that every odd number can be expressed as $2n+1$, where $n$ is an integer.)
 \item
 Give a formula for the sum that you wrote in (a).  (Use the same reasoning that we used to find sums of consecutive integers.)
 \item 
@@ -268,37 +307,101 @@ Give a formula for the sum that you wrote in (e).
 \end {enumerate}
 \end {exercise}
 
-%%% Give the derivation of the geometric series for a finite number of terms.
-The so-called \emph{geometric series} is defined as the sum of non-negative integer powers of a common base.  For example, here is the geometric series when the base is 1/2:
-\[\sum_{i=0}^{\infty}\left({\dfrac{1}{2}}\right)^i=\left({\dfrac{1}{2}}\right)^0+\left({\dfrac{1}{2}}\right)^1+\left({\dfrac{1}{2}}\right)^2\cdots = 1 + {\dfrac{1}{2}} + {\dfrac{1}{4}} + {\dfrac{1}{8}}\cdots\]
-As we continue to add  terms,  the sum approaches $2$ but never quite gets there. But since we can approach as close as we want to 2 by taking more terms, we say that the sum of the infinite series is ``equal to'' 2. 
-More generally for any value $-1<x<1$ the series:
-\[\sum_{i=0}^{\infty}x^i = \dfrac{1}{1-x}\]
-We can easily prove this using some fairly simple algebra.  Let $S$ be the value of this sum.  We can solve for $S$  by writing:
- \[S=1+x+x^2+x^3+ \cdots \]
-\[xS=x+x^2+x^3+x^4+ \cdots \] 
-Subtracting these two equations gives $S-xS=1$, and solving for $S$ gives:
-\[S=\dfrac{1}{1-x}. \]
-This same technique can be used to prove the formula for a geometric series with a finite number of terms:
-\[ \sum_{i=0}^{n-1} ar^i = a \dfrac{1-r^n}{1-r} \]
-As before, we let $S$ be the value of this sum. We then compute $S - rS$ (most terms in the sums cancel) and solve for $S$.  See if you can do this for yourself.  (It may come in handy--many teachers consider this a good test problem.)
+All of the sums in Exercise~\ref{exercise:Sigma:common1} have a constant difference between consecutive terms (this constant difference is also called the \term*{step size}\index{Step size! for arithmetic sum}). The step sizes for parts (a), (c), and (e) are 2,2, and 5 respectively.  Any sum with a constant step size is called an \term{arithmetic sum}: and all arithmetic sums can be evaluated using the same technique that was used  in parts (b),(d), and (f) of the exercise.  
 
-Other sums with known values include:
-\[\sum_{i=0}^{\infty}\dfrac{x^i}{i!} =1+\dfrac{x^1}{1!}+\dfrac{x^2}{2!}+\dfrac{x^3}{3!} \cdots=e^x\]
-\[\sum_{i=0}^{\infty}\dfrac{(-1)^i x^{2i+1}}{(2i+1)!} = \dfrac{x^1}{1!}-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}\cdots= \sin(x)\]
+\term{Geometric sums} are defined as the sum of non-negative integer powers of a common base.  For example, here is a geometric sum with base 1/2:
+\[
+\sum_{i=0}^{n}\left({\dfrac{1}{2}}\right)^i=\left({\dfrac{1}{2}}\right)^0+\left({\dfrac{1}{2}}\right)^1+\left({\dfrac{1}{2}}\right)^2\cdots +\left({\dfrac{1}{2}}\right)^n  = 1 + {\dfrac{1}{2}} + {\dfrac{1}{4}} + {\dfrac{1}{8}}\cdots +\left({\dfrac{1}{2}}\right)^n
+\]
+We can evaluate this sum using an algebraic trick.  Let $S$ be the value of this sum.  We can solve for $S$  by multiplying $S$ term-by-term by 1/2 and subtracting:
+\[ S=1+\frac{1}{2}+ \cdots + \frac{1}{2^n} \quad \text{and} \quad
+{1}{2}S=\frac{1}{2}+ \cdots + \frac{1}{2^{n+1}},
+\]
+so that
+\[
+\left(S - \frac{1}{2}S\right) = 1 - \frac{1}{2^{n+1}}.
+\]
+Solving this last equation for $S$ gives:
+\[S=\dfrac{1 - \frac{1}{2^{n+1}}}{1-\frac{1}{2}}. \]
 
-There are also sums which \emph{diverge}\index{Sum!divergent}, that is, they can be shown to approach positive or negative infinity. Examples include:
+This same technique can be used to prove the formula for a great variety of geometric sums, as we show in the following exercise.
 
-\[\text{The harmonic series:  }\sum_{i=0}^{\infty}\left(\dfrac{1}{i} \right) \]
-\[\text{The geometric series when~} |x| \ge 1: ~~\sum_{i=0}^{\infty} x^i. \]
+\begin{exercise}{geoSum}
+let 
+\[
+S = \sum_{i=0}^{n} ar^i,
+\]
+where both $a$ and $r$ are complex numbers, and $n$ is a positive integer.
+Use the ``sum subtraction'' technique (used above for the geometric sum with base 1/2) to derive the the following general formula:\index{Geometric series!sum of}
+\[ \sum_{i=0}^{n} ar^i = a \dfrac{1-r^{n+1}}{1-r}. \]
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Evaluate $\sum_{n=0}^{10} \left(\frac{4}{5}\right)^n$.
+\item
+Evaluate $\sum_{n=0}^{100} \left(\frac{4}{5}\right)^n$.
+\item
+Evaluate $\sum_{n=0}^{1000} \left(\frac{4}{5}\right)^n$.
+\item
+What do you think happen when the upper limit of the sum gets arbitrarily large?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+Use ``sum subtraction'' to obtain a general formula for the following sum:
+\[
+S = \sum_{k=m}^{n} w\cdot z^k,
+\]
+Where $m,n$ are arbitrary integers ($m<n$) and $w,z$ are arbitrary nonzero complex numbers.
+\end{exercise} 
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Let $z = \cis (2\pi/3)$.  Evaluate $\sum_{n=1}^3 z^n$.
+\item
+Let $z = \cis (2\pi/10)$.  Evaluate $\sum_{n=-4}^5 z^n$.
+\item
+Let $z = \cis (2\pi/13)$.  Evaluate $\sum_{n=2}^{14} z^n$.
+\item
+Write down an equation that generalizes the results of parts (a),(b),(c).  Prove your equation.  
+\end{enumerate}
+\end{exercise}
+
+
+Some sums can be evaluated by grouping terms together to partially cancel out.  Two examples are:
+\[
+1-2+3-4+\ldots -1000 = (1-2)+(3-4)+\ldots + (999-1000)  = (-1) + (-1) + \ldots + (-1) = -500.
+\]
+\begin{align*}
+1 - 4 + 9 -16 + 25 - 36 + \ldots +49^2 &=  1 + (-4+9) + (-16+25) + \ldots + (-48^2+49^2)\\
+& = 1 + 5 + 9 + \ldots + 97\\
+& = (1 + 4\cdot 0) + (1 + 4\cdot 1) + \ldots + (1 + 4 \cdot 24) \\
+&= (1 + \ldots + 1) + 4\cdot(0 + 1 + \ldots + 24) \\
+& = 24 + 4\cdot (24+1)\frac{24}{2}\\
+&= 24 + 1200 = 1224.
+\end{align*}  
+
+In calculus you saw (or will see) sums that have an infinite number of terms, otherwise known as \term{infinite series}. Some examples include:
+\begin{align*}
+e^x &= \sum_{i=0}^{\infty}\dfrac{x^i}{i!} =1+\dfrac{x^1}{1!}+\dfrac{x^2}{2!}+\dfrac{x^3}{3!} \cdots \\
+\sin(x) &= \sum_{i=0}^{\infty}\dfrac{(-1)^i x^{2i+1}}{(2i+1)!} = \dfrac{x^1}{1!}-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}\cdots
+\end{align*}
+
+Although we won't be talking about infinite series, the same summation notation that we've been using also applies to sums with an infinite number of terms. 
 
 \section{Sigma notation in linear algebra\quad
 \sectionvideohref{M0jHrubtHBA&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=45}}\label{sec:sigmaLinAlg}
 
-In the following discussions, we will assume that all matrices have real entries.  However, all of the results that we will prove also apply (in some cases, with slight modifications)  for matrices with \emph{complex} entries, or even matrices with entries in $\mathbb{Z}_p$.
+In the following discussions, we will assume that all matrices have real entries.  However, all of the results that we will prove also apply (in some cases, with slight modifications)  for matrices with \emph{complex} entries, or matrices with entries in $\mathbb{Z}_p$.
 
 \subsection{Matrix multiplication}
-It should come as no surprise that summation notation commonly shows up when working with matrices. In the following discussion, we will follow the common practice of denoting a matrix with a capital letter in italics, and the entries of the matrix with the same letter in lowercase. Thus for example, $a_{2,4}$ denotes the entry of matrix $A$ in row 2, column 4.
+It should come as no surprise that summation notation commonly shows up when working with matrices. 
+In the following discussion, we will follow the common practice of denoting a matrix with a capital 
+letter in italics, and the entries of the matrix with the same letter in lowercase. 
+Thus for example, $a_{2,4}$ denotes the entry of matrix $A$ in row 2, column 4.
    
  Consider the example of multiplying the $3 \times 3$ matrix $A$ and the $3 \times 2$ matrix $B$. 
 \[{A}{B} = \left( \begin{array}{ccc}
@@ -315,19 +418,71 @@ a_{1,1} b_{1,1} + a_{1,2} b_{2,1} + a_{1,3} b_{3,1} & a_{1,1} b_{1,2} + a_{1,2} 
 a_{2,1} b_{1,1} + a_{2,2} b_{2,1} + a_{2,3} b_{3,1} & a_{2,1} b_{1,2} + a_{2,2} b_{2,2} + a_{2,3} b_{3,2}  \\
 a_{3,1} b_{1,1} + a_{3,2} b_{2,1} + a_{3,3} b_{3,1} & a_{3,1} b_{1,2} + a_{3,2} b_{2,2} + a_{3,3} b_{3,2}  \end{array} \right) \]
 
-How great would it be if we shorten that mess?  Fortunately we can!  Let the matrix ${C}$ be the product ${A} {B}$, where ${A}$ is an $m ~\times ~n$ matrix  and ${B}$ is an $n ~\times ~p$ matrix , which implies that the dimensions of ${C}$ will be $m ~ \times ~ p$.\footnote{Remember the requirement for multiplying any two matrices is that the number of columns of the first must match the number of rows of the second.}  If the row number is given by the first index (in this case $i$), and the column number is given by the second index (in this case $j$), we can write the entries of  ${C}$ as: 
+Wouldn't it be nice if we could shorten that mess?  Fortunately we can!  Let the matrix ${C}$ be the product ${A} {B}$, where ${A}$ is an $m ~\times ~n$ matrix  and ${B}$ is an $n ~\times ~p$ matrix , which implies that the dimensions of ${C}$ will be $m ~ \times ~ p$.\footnote{Remember the requirement for multiplying any two matrices is that the number of columns of the first must match the number of rows of the second.}  If the row number is given by the first index (in this case $i$), and the column number is given by the second index (in this case $j$), we can write the entries of  ${C}$ as: 
 
 \[ {c}_{i,j}= \sum_{k=1}^n a_{i,k} b_{k,j} \]
 
-(what do you think the restrictions on $i$ and $j$ are?)
 
-This may look a little confusing at first, but once you do a few examples it will start to make sense.  Suppose ${A}$ is a $3 \times 3$ matrix and ${B}$ is a $3 \times 2$ matrix as in our previous example, then the result of the product ${A} {B}$ is a $3 \times 2 $ matrix we can call ${C}$.  Now suppose we want to find the entry on the third row in the second column of ${C}$, then we would compute:
+\begin{exercise}{}
+In the above formula, both $i$ and $j$ are restricted to a particular range of values.  
+What are the possible values of $i$ and $j$?
+\end{exercise} 
+
+Let's show how this formula works in a specific case. Suppose ${A}$ is a $3 \times 3$ matrix and ${B}$ is a $3 \times 2$ matrix as in our previous example, then the result of the product ${A} {B}$ is a $3 \times 2 $ matrix that we can call ${C}$.  Now suppose we want to find the entry on the third row in the second column of ${C}$, then we would compute:
 
 \begin{align*}
 {c}_{3,2} =& \sum_{k=1}^3 a_{3,k} b_{k,2} \\
 =& a_{3,1} b_{1,2} + a_{3,2} b_{2,2} + a_{3,3} b_{3,2}.  
 \end{align*}
 Sure enough, when we look at the long version we wrote earlier for the product ${AB}$ our result matches the entry on the second row, third column.
+
+The above formula makes it possible to calculate individual matrix elements, without having to compute the entire matrix.
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Let the entries of $A$ be given by $a_{i,j} = \sqrt{i+j}$ for $1 \le i,j \le 100$. Let $C = A\cdot A$ (we can also write $C=A^2$). Compute $c_{10,10}$.
+\item
+Let the entries of $A$ and $B$ be given by $a_{i,j} = (i+j)^2$ and $b= \frac{1}{i+j}$ for $1 \le i,j \le 27$. Let $C = A\cdot B$ Compute $c_{8,8}$.
+\item
+For the matrices $A$ and $B$ in part (b), give a general formula for $c_{k,k}, 1 \le k \le 27$ where $C=AB$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Let the entries of $A$ and $B$ be given by $a_{i,j} =2^{i+j}$ and $b_{i,j} =2^{-(i+j)}$ for $1 \le i,j \le 50$. Let $C = AB$.  Compute $c_{7,11}$.
+\item
+Let the entries of $A$ and $B$ be given by $a_{i,j} =3^{i+j}$ and $b_{i,j} =4^{-(i+j)}$ for $1 \le i,j \le 22$. Let $C = AB$.  Compute $c_{5,4}$.
+\item
+Let the entries of $A$ and $B$ be given by $a_{i,j} =r^{i+j}$ and $b_{i,j} =s^{-(i+j)}$ for $1 \le i,j \le N$, where $r$ and $s$ are arbitrary real numbers. Let $C = AB$.  Give a general formula for $c_{i,j}$, $1\le i,j \le N$. (Note the same formula works if $r$ and $s$ are taken as complex numbers.) 
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Let the entries of $A$ and $B$ be given by $a_{i,j} =2^{ij}$ and $b_{i,j} =2^{-ij}$ for $1 \le i,j \le 20$. Let $C = AB$.  Compute $c_{11,11}$.
+\item
+For $A,B,C$ as in part (a), compute $c_{9,6}$. 
+\item
+Let the entries of $A$ and $B$ be given by $a_{i,j} =2^{ij}$ and $b_{i,j} =2^{-ij}$ for $1 \le i,j \le N$. Let $C = AB$.  Give a general formula for  $c_{i,j}$ that is valid for any $(i,j)$ with $1 \le i,j \le N$.
+\item
+Let the entries of $A$ and $B$ be given by $a_{i,j} =w^{ij}$ and $b_{i,j} =w^{-ij}$ for $1 \le i,j \le N$, where $w$ is a fixed complex number. Let $C = AB$  Give a general formula for  $c_{i,j}$ that is valid for any $(i,j)$ with $1 \le i,j \le N$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Let $z= \cis(\pi/4)$, and let the entries of $A$ and $B$ be given by $a_{i,j} =z^{ij}$ and $b_{i,j} =z^{-ij}$ for $1 \le i,j \le 8$. Let $C = AB$  Compute $c_{4,4}$ and $c_{3,5}$ .
+\item
+Let $z= \cis(2\pi/N)$, and let the entries of $A$ and $B$ be given by $a_{i,j} =z^{ij}$ and $b_{i,j} =z^{-ij}$ for $1 \le i,j \le N$. Let $C = AB$  Give a general formula for $c_{k,k}$ which is valid for all $k$ with $1 \le k \le N$.
+\item
+Let $z= \cis(2\pi/N)$, and let the entries of $A$ and $B$ be given by $a_{i,j} =z^{ij}$ and $b_{i,j} =z^{-ij}$ for $1 \le i,j \le N$. Let $C = AB$  Give a general formula for $c_{k+1,k}$ which is valid for all $k$ with $1 \le k \le N-1$.
+\end{enumerate}
+\end{exercise}
 
 \begin{exercise}{sigmaAssoc}
 Given three matrices $A, B, C$ with sizes $m \times n, n \times p, p \times q$ respectively.
@@ -341,11 +496,10 @@ Let $H$ =  $(AB)$, and let $M = HC$. Write a formula for the entries $m_{\ell,j}
 \item
 Using parts (b) and (c), show that matrix multiplication is \emph{associative}. 
 \hyperref[sec:sigma:hints]{(*Hint*)} 
-
 \end{enumerate}
 \end{exercise}
 
-The \term{identity matrix}\index{Matrix!identity ($I$)} $I$ often comes up when working with matrices. You may remember that an identity matrix looks like:
+The \term{identity matrix}\index{Matrix!identity ($I$)} $I$ often comes up when working with matrices. You may remember that an identity matrix has 1's on its diagonal and 0's everywhere else:
 
 \[I = \left[ \begin{array}{ccccc}
 1 & 0  & \cdots & 0 & 0 \\
@@ -355,7 +509,8 @@ The \term{identity matrix}\index{Matrix!identity ($I$)} $I$ often comes up when 
 0 & 0  & \cdots & 0 & 1  \\
  \end{array} \right]. \]
 
-There is a summation notation counterpart, called the \term{Kronecker delta}\index{Kronecker delta}.\footnote{After Leopold Kronecker (1823-1891), a prominent German mathematician who made many contributions to abstract algebra and number theory. But outside of those areas, he is most famous for his strong opposition to the theory of infinite sets first proposed by Georg Cantor (1845-1918).  Most mathematicians today would say that Cantor was right, and Kronecker was wrong. This is an interesting topic that you can read about.} The Kronecker delta is written as $\delta_{i,j}$, and it takes the following values:
+Notice that the ($i,j$) entry lies on the diagonal if and only if its row index ($i$) is equal to its column index ($j$).  This pattern is expressed in summation notation  by the so-called  
+ \term{Kronecker delta}\index{Kronecker delta}.\footnote{After Leopold Kronecker (1823-1891), a prominent German mathematician who made many contributions to abstract algebra and number theory. Outside of those areas, he is most famous for his strong opposition to the theory of transfinite numbers first proposed by Georg Cantor (1845-1918).  Most (but not all) mathematicians today would say that Cantor was right and Kronecker was wrong. This is a fascinating research topic if you're interested in the history of mathematics.} The Kronecker delta is written as $\delta_{i,j}$ and takes the following values:
 
 \[ \delta_{ij}=
 \begin{cases}
@@ -363,19 +518,146 @@ There is a summation notation counterpart, called the \term{Kronecker delta}\ind
 0 ~ \text{if} ~ i \neq j.
 \end{cases} \]
 
+By comparison with our description of the identity matrix, we may see that the $i,j$ entry of the identity matrix is equal to $\delta_{ij}$. We may denote the ($i,j$) entry of $I$ as $[I]_{i,j})$, so that:
+\[  [I]_{i,j} = \delta_{ij}.\]
+
 \begin{exercise}{KroneckerIdentity}
 \begin{enumerate}[(a)]
 \item
-What is the relationship between $\delta_{ij}$ and  the entries of the identity matrix $I$?
+We know that if a matrix $B$ is the inverse of the $n \times n$ matrix $A$ then we have the equations: $BA = I$ and $AB = I$.  Rewrite these matrix equations in summation notation, making use of the Kronecker delta $\delta_{ij}$ (As above, denote the ($i,j$) entries of $A$ and $B$ as $a_{i,j}$ and $b_{i,j}$ respectively. You will need to choose your indices in order to make the product work out correctly.) 
 \item
-We know that if a matrix $B$ is the inverse of the $n \times n$ matrix $A$ then we have the equations: $BA = I$ and $AB = I$.  Rewrite these matrix equations in summation notation, making use of the Kronecker delta $\delta_{ij}$.
+What matrix equation corresponds to the following system of equations in summation notation: $\displaystyle{ \sum_{k=1}^n  \delta_{ik}\delta_{kj}=\delta_{ij}}.$
 \end{enumerate}
 \end{exercise}
 
+It is possible to use the Kronecker delta to define matrices besides the identity matrix. For example, consider the $4 \times 4$ matrix $A$ with entries $a_{i,j}$ defined by:
+\[  a_{i,j} := \delta_{i+1,j}, \qquad 1 \le i,j \le 4.\]
+In this case, the entry is 1 if the column index is one greater than the row index, and 0 otherwise:
+
+\[A = \left[ \begin{array}{ccccc}
+0 & 1   & 0 & 0 \\
+0 & 0  & 1 & 0  \\
+0 & 0  &  0 & 1 \\
+0 & 0  & 0 & 0  \\
+ \end{array} \right]. \]
+
 \begin{exercise}{}
-Show that: $\displaystyle{ \sum_{k=1}^n  \delta_{ik}\delta_{kj}=\delta_{ij}}.$
+Write out the following   matrices:
+\begin{enumerate}[(a)]
+\item
+The matrix $C$ defined by 
+$\displaystyle  c_{i,j} := \frac{1}{2} (-\delta_{i,j+1}+\delta_{i,j-1})  \qquad 1 \le i,j \le 6$.
+\item
+The matrix $D$ defined by 
+$\displaystyle  d_{i,j} := -2\delta_{i,j} + \delta_{i+1,j} + \delta_{i-1,j}, \qquad 1 \le i,j \le 5$.
+\item 
+The matrix $U$ defined by 
+$\displaystyle  u_{i,j} := \delta_{i,j-1} + 2\delta_{i,j-2} + 3\delta_{i,j-3}, \qquad 1 \le i,j \le 4$.
+\item
+The matrix $X$ defined by 
+$\displaystyle  x_{i,j} := -2\delta_{i,j} + 2\delta_{i,4-j}  \qquad 1 \le i,j \le 5$.
+\end{enumerate}
 \end{exercise}
 
+For matrices that are expressable in terms of Kronecker deltas, it is possible to find matrix products using summation notation.
+
+\begin{example}{}
+Let $\mathbf{v}$ be the $10 \times 1$ matrix given by  
+\[
+v_{j,1} = j, j=1 \ldots 10.
+\]
+(Note that $\mathbf{v}$ is essentially a column vector.) Let us compute $C\mathbf{v}$, where 
+the matrix $C$ defined by 
+\[
+  c_{i,j} := \frac{1}{2} (-\delta_{i-1,j} + \delta_{i+1,j}), \quad 1 \le i,j \le 10.
+\]
+The summation notation expression for the product is:
+\[
+[C\mathbf{v}]_{ij} = \sum_{k=1}^{10} c_{i,k} v_{k,j}.
+\]
+The first thing to notice is that the second index $j$ must be 1 since $\mathbf{v}$ is a $10 \times 1$ matrix. We may also substitute the expressions for $d_{i,k}$ and  $v_{k,j}$ and simplify:
+\begin{align*}
+[C\mathbf{v}]_{i1} &= \sum_{k=1}^{10} \frac{1}{2} (-\delta_{i-1,j} + \delta_{i+1,j}) k \qquad \qquad [\text{Definitions of } c_{i,k} \text{ and } v_{k,1}]\\ 
+&= -\frac{1}{2}\sum_{k=1}^{10}  \delta_{i-1,k}k + \frac{1}{2}\sum_{k=1}^{10}  \delta_{i+1,k}k \qquad \qquad [\text{Summation rules}]
+\end{align*}
+At this point, we need to think about how the $\delta$'s function within these two sums. Consider the first sum, namely: 
+\[ \sum_{k=1}^{10}  \delta_{i-1,k}k. \] 
+For each value of $i=1,...,10$, this sum will give a different result:
+\begin{itemize}
+\item
+When $i=1$, all terms in the sum are 0, so the result is zero.
+\item
+When $i=2$, the only term that contributes is the $k=1$ term, since  $\delta_{1,k} = 0$ unless $k=1$. So for $i=2$, the sum gives 1.
+\item
+Similarly when $i=3,...,10$, the only term that contributes is the $k=i-1$ term, since  $\delta_{3,k} = 0$ unless $k=i-1$. So the sum gives $i-1$ for $2\le i \le 10$.
+\end{itemize}
+We may summarize these findings as follows:
+\[
+\sum_{k=1}^{10}  \delta_{i-1,k}k = \begin{cases} 0 & \text{ if } i=1 \\ i-1 & \text{ if } 2 \le i \le 10. \end{cases}
+\]
+The second sum may be evaluated similarly: this time, $i=10$ is the exceptional case:
+\[
+\sum_{k=1}^{10}  \delta_{i+1,k}k = \begin{cases}  i+1 & \text{ if } 1 \le i \le 9 \\ 0 & \text{ if } i=10 . \end{cases}
+\]
+Substituting these expressions into our matrix product formula gives:
+\[
+[C\mathbf{v}]_{i1} = \begin{cases}  -\frac{0}{2} + \frac{2}{2} = 1 & \text{ if } i=1\\
+							-\frac{i-1}{2} + \frac{i+1}{2} = 1 & \text{ if } 2 \le i \le 9\\
+							-\frac{9}{2} + \frac{0}{2} = -4.5 & \text{ if } i=10.
+                                  \end{cases}
+\]
+The result is a $10 \times 1$ column vector with entries all 1, except for a $-4.5$  in the $10^{\text{th}}$ entry.
+\end{example}
+
+Let's try another example, this time with two square matrices.
+
+\begin{example}{}
+This time we'll compute the entries of the matrix product $FV$, where the entries $f_{ij}$ of $F$ and $v_{ij}$ of $V$ are given by:
+\[
+f_{ij} := \delta_{i+1,j} - \delta_{i,j}; \qquad v_{i,j} := 2^{i+j}, \quad 1 \le i,j \le 20.
+\]
+We may begin once again with the matrix product formula:
+\begin{align*}
+[FV_{ij} &= \sum_{k=1}^{20} f_{ik}v_{kj} \qquad \qquad [\text{Matrix mulitplication formula }]\\ 
+&=  \sum_{k=1}^{20} (\delta_{i+1,k} - \delta_{i,k})2^{k+j} \qquad \qquad [\text{Substitution}]\\
+&=  \sum_{k=1}^{20} \delta_{i+1,k}2^{k+j} - \delta_{i,k}2^{k+j} \qquad \qquad [\text{Substitution}]\\
+&= 2^{i+1+j} - 2^{i+j} \qquad \qquad [\text{Select nonzero term in each summation}]\\
+&= 2^{i+j}(2 - 1) \qquad \qquad [\text{Factor out common factor}]\\
+&= 2^{i+j}. \qquad \qquad \qquad [\text{Exponent rules}]\\
+\end{align*}
+
+The shakiest step in this computation is the one labeled ``Select nonzero term in each summation'', and we should double-check to make sure we did it right.  When $i = 1,2,...,19$, then it is always true that 
+$\delta_{i+1,k}$ will be nonzero for a single value of $k$ between 1 and 20, so the sum over $k$ of $\delta_{i+1,k}$ will reduce to a single term. But the case $i=20$ is different.  In this case, $\delta_{20+1,k}$ is equal to 0 for \emph{all} values of $k$ between 1 and 20. So we'll have to redo the calculation in this case:
+\begin{align*}
+\sum_{k=1}^{20} \delta_{20+1,k}2^{k+j} - \delta_{20,k}2^{k+j} &= 0 - 2^{2-+j}\\
+&= - 2^{20+j}.
+\end{align*}
+This brings us to the final result: 
+\[
+[FV]_{ij} = \begin{cases}  2^{i+j} & \text{ if } 1 \le i \le 19 \text{ and } 1 \le j \le 20\\
+					- 2^{20+j}	  & \text{ if } i=20 \text{ and } 1 \le j \le 20.\\
+                   \end{cases}
+\]
+ \end{example}
+
+\begin{exercise}{}
+Let $\mathbf{v}$ be the $10 \times 1$ matrix (a.k.a column vector) given by:  $v_{j,1} = j^2,$ $j=1 \ldots 10$. Compute $D\mathbf{v}$, where 
+the entries of $D$ are given by 
+$\displaystyle  d_{i,j} := -2\delta_{i,j} + \delta_{i+1,j} + \delta_{i-1,j}, \qquad 1 \le i,j \le 10$
+(The matrix $D$ is an example of a \term{discrete second derivative matrix}\index{Matrix!discrete second deriviatve}.)
+\end{exercise}
+
+\begin{exercise}{}
+Let $F$ and $B$ be the $50 \times 50$ matrices defined by  $f{i,j} = \delta_{i+1,j} - \delta_{i,j}$, and $b_{i,j} = \delta_{i,j}-\delta_{i-1,j}$, respectively.  ( $F$ and $B$ are examples of  \term{forward difference matrix} and \term{backward difference matrix}, respectively.)\index{Matrix!forward difference}\index{Matrix!backward difference}
+\begin{enumerate}[(a)]
+\item
+Compute $FB$.
+Compute $BF$. 
+\end{enumerate}
+\end{exercise}
+
+
+It turns out that matrices defined using Kronecker deltas play a prominent role in numerical analysis, and in particular the numerical solution of ordinary and partial differential equations.
 \subsection{Abbreviated matrix notations}
 In the following discussion, we will be seeing lots of sums involving matrices. This being the case, it's worth our while to try to simplify our notation. In our expression for $C=AB$, we had:
 \[ {c}_{i,j}= \sum_{k=1}^n a_{i,k} b_{k,j} \]
@@ -422,7 +704,7 @@ In the following sections we will use the first type of abbreviated notation (no
 \subsection{Matrix transpose and matrix inverse}
 
 \subsubsection*{Matrix transpose}
-Transpose is another operation on matrices that lends itself to summation notation.  Recall that the transpose of a matrix changes the rows to columns,so that the first row becomes the first column, the second row becomes the second column, and so on.  The transpose of matrix $A$ is denoted as $A^{\text{T}}$. Using indices and recalling that first index is the row and the second is the column, we can express this as:
+Transpose is another operation on matrices that lends itself to summation notation.  Recall that the transpose of a matrix changes the rows to columns,so that the first row becomes the first column, the second row becomes the second column, and so on.  The transpose of matrix $A$ is denoted as $A^{\text{T}}$.\index{Transpose!of a matrix}\index{Matrix!transpose} Using indices and recalling that first index is the row and the second is the column, we can express this as:
 
 \[ \left[ {A}^{\text{T}} \right]_{i,j} = \left[ A \right]_{j,i}, \]
 that is, the $(i,j)$ entry of $A^{\text{T}}$ is equal to the $(j,i)$ entry of $A$.  Since we typically write the $(j,i)$ entry of $A$ as $a_{j,i}$, we may also write:
@@ -461,14 +743,28 @@ Give a formula for $(ABC)^T$, and prove your formula using summation notation.
 \end{exercise}
 
 \begin{exercise}{}
-We know that the transpose of a $n \times n$ matrix is a $n \times n$ matrix.  So we can consider transpose as a function from $GL_n(\mathbb{R})$ to $GL_n(\mathbb{R})$, where (as before)  $GL_n(\mathbb{R})$  is the multiplicative group of $n \times n$ real invertible matrices. Prove or disprove the following:
+We know that the transpose of a $n \times n$ matrix is a $n \times n$ matrix.  So we can consider transpose as a function from $M_n(\mathbb{R})$ to $M_n(\mathbb{R})$, where (as before)  $M_n(\mathbb{R})$  is the additive group of $n \times n$ matrices. Prove or disprove the following:
 \begin{enumerate}[(a)]
 \item
-Transpose defines an invertible function from $GL_n(\mathbb{R})$ to $GL_n(\mathbb{R})$.
+Transpose defines an invertible function from $M_n(\mathbb{R})$ to $M_n(\mathbb{R})$.
 \item
-Transpose defines an isomorphism from $GL_n(\mathbb{R})$ to $GL_n(\mathbb{R})$.
+Transpose defines an isomorphism from $M_n(\mathbb{R})$ to $M_n(\mathbb{R})$.
 \end{enumerate}
 \end{exercise}
+
+\begin{exercise}{}
+Recall that $GL_n(\mathbb{R})$  is the multiplicative group of $n \times n$ real invertible matrices.
+ Prove or disprove the following:
+\begin{enumerate}[(a)]
+\item
+Prove that the transpose of a matrix in $GL_n(\mathbb{R})$  is also in $GL_n(\mathbb{R})$ .  Hence, transpose defines a function from $GL_n(\mathbb{R})$  to $GL_n(\mathbb{R})$. 
+\item
+Prove or disprove: transpose defines an invertible function from $GL_n(\mathbb{R})$ to $GL_n(\mathbb{R})$.
+\item
+Prove or disprove: transpose defines an isomorphism from $GL_n(\mathbb{R})$ to $GL_n(\mathbb{R})$.
+\end{enumerate}
+\end{exercise}
+
 
 \subsubsection*{Matrix inverse}
 
@@ -678,7 +974,7 @@ For an epsilon with three indices, each index can be either 1,2,or 3. The values
 0 ~ \text{where} ~  i=j, i=k, ~ \text{or} ~ j=k, ~ \text{i.e., if any index is repeated.}
 \end{cases} \]
 
-What is the rule behind this definition?  Every permutation of $(1,2,3)$.  corresponds to one possible rearrangement of the indices. For instance the permutation 
+What's the rule behind this definition?  Every permutation of $(1,2,3)$.  corresponds to one possible rearrangement of the indices. For instance the permutation 
 $ \left( \begin{smallmatrix}  1 & 2 & 3  \\ 2 & 3 & 1  \end{smallmatrix} \right)$ (in tableau notation) corresponds to the rearrangement $(2,3,1)$.  Whenever this permutation $\left( \begin{smallmatrix} 1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right) $ is \emph{even} (that is, it can be written as the product of an even number of transpositions), then the corresponding value of $\epsilon_{ijk}$ is 1. Whenever this permutation $\left( \begin{smallmatrix} 1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right)$ is \emph{odd} , then the corresponding value of $\epsilon_{ijk}$ is -1. Whenever any of the indices $i,j,k$  are repeated, then  $\left( \begin{smallmatrix} 1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right) $ does not correspond to a permutation, and the value of $\epsilon_{ijk}$ is 0.
 
 We may simplify the notation somewhat if we define the \term*{sign} of a permutation as follows:
@@ -1155,7 +1451,7 @@ Miraculously, these turn out to be equal.
 \end{exercise}
 \end{proof}
 
-No doubt this formula seems entirely unmotivated and somewhat useless (although you have to admit it's kind of cute.)  However, it becomes incredibly useful when we apply it to the case where $A$ is a rotation matrix. To this end, suppose $R$ is a rotation matrix whose $(j,k)$ entry is denoted by $r_{j,k}$. 
+No doubt this formula seems entirely unmotivated and somewhat useless (although you have to admit it's kind of cute.)  However, it becomes incredibly useful when we apply it to rotation matrices. To this end, suppose $R$ is a rotation matrix whose $(j,k)$ entry is denoted by $r_{jk}$. 
 Then the equality in Proposition~\ref{proposition:Sigma:crazyEq} applied to matrix $R$  becomes:
 \[ \sum_{j,k,\ell}\epsilon_{jk\ell} r_{ij}r_{k\ell} =  \sum_{j,k,\ell}\epsilon_{jk\ell} r_{ji}r_{k\ell}, \]
 which implies (by rearranging terms)

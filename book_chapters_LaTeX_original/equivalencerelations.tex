@@ -49,7 +49,7 @@ On the other hand, consider a different subset of $P \times P$:
  This is a binary relation, but \emph{not} a function because any player will have many teammates.
 \end{example}
 
-\begin{exercise}{}
+\begin{exercise}{bball_subsets}
 Express the following relations on NBA players as subsets of $P \times P$ (as in Example~\ref{example:EquivalenceRelationsChap:bbal}).
 \begin{enumerate}[(a)]
 \item 
@@ -63,7 +63,7 @@ The first player has a higher jersey number than the second
 \end{enumerate}
 \end{exercise}
 
-So far we've been discussing relations in a non-numerical context, but our definitions apply to relations on sets of numbers as well.  Relations on $\mathbb{R}$ (or subsets of $\mathbb{R}$)  are discussed in many middle or high school algebra courses. Any graph in the $\mathbb{R}^2$ plane gives a relation; an conversely, any relation involving subsets of $\mathbb{R}$ can be represented as a graph in the plane. Relations in $\mathbb{R}^2$ are often taught along with functions: for example, students are given a graph of some discrete or continuous relation in the $\mathbb{R}^2$ plane and asked to determine if the given relation is a function.
+So far we've been discussing relations in a non-numerical context, but our definitions apply to relations on sets of numbers as well.  Relations on $\mathbb{R}$ (or subsets of $\mathbb{R}$)  are discussed in many middle or high school algebra courses. Any graph in the $\mathbb{R}^2$ plane gives a relation; and conversely, any relation involving subsets of $\mathbb{R}$ can be represented as a graph in the plane. Relations in $\mathbb{R}^2$ are often taught along with functions: for example, students are given a graph of some discrete or continuous relation in the $\mathbb{R}^2$ plane and asked to determine if the given relation is a function.
 
 \begin{example}{r2relation}
 Consider the graphs in Figure~\ref{fig:graphrelations}, where the set $A \times B$ is indicated at the top of each graph. Which are relations in $A \times B$? Which are binary relations? Which are functions?
@@ -169,7 +169,7 @@ In this digraph there are loops at each number because $a \mid a$ for each $a$.
 
 \end{example}
 
- \begin{exer} \label{DrawBinRelExer}
+ \begin{exercise}{DrawBinRelExer1}
 Choose your favorite NBA team, and find a team roster (a good place to look is ESPN.com). Choose 6 players that have complete data, and let that be your set $A$.  draw a digraph for each of the following binary relations on~$A$: 
  \begin{enumerate}[(a)]
  \item \label{DrawBinRelExer-sister}
@@ -181,9 +181,9 @@ Choose your favorite NBA team, and find a team roster (a good place to look is E
   \item \label{DrawBinRelExer-lived}
  The relation ``is less than 10 pounds heavier than".
  \end{enumerate}
- \end{exer}
+ \end{exercise}
  
- \begin{exer} \label{DrawBinRelExer}
+ \begin{exercise}{DrawBinRelExer3}
 Let $A =  \{-2,-1,0,1,2\}$ Draw a digraph for each of the following binary relations on~$A$: 
 
  \begin{enumerate}[(a)]
@@ -196,9 +196,9 @@ $ R_b = \{\, (x,y) \mid  x^2 - y^2 < 2 \,\} .$
   \item \label{DrawBinRelExer-lived}
 $ R_d = \{\, (x,y) \mid  x\equiv y \pmod{3} \,\} .$
  \end{enumerate}
- \end{exer}
+ \end{exercise}
 
- \begin{exer} \label{DrawBinRelExer2}
+ \begin{exercise}{DrawBinRelExer2}
 It is also possible to draw digraphs for relations that are not binary relations. In this case, your digraph should have a dot for each element of $A \cup B$.
 % In each case, state whether or not your digraph is connected, and whether or not it is strongly connected.
  \begin{enumerate}[(a)]
@@ -207,7 +207,7 @@ Draw digraph representations of the relations given in Example \ref{example:Equi
  \item \label{DrawBinRelExer-sister}
 The graphs you drew in (a) are all examples of \term{bipartite} graphs.  Complete the following definition:  A bipartite graph is a graph in which the vertices (dots) can be divided into two  sets, such that $\ldots$.
  \end{enumerate}
- \end{exer}
+ \end{exercise}
 
 
 We commonly use symbols  such as $=, < , \subset, \ldots $  that are used to compare elements of a set. You may have called these ``relations'' in your high school algebra class -- and in fact, they can all be considered as binary relations in the sense of Definition~\ref{relation}.
@@ -217,7 +217,7 @@ For example, using the symbol $<$ we can define the following binary relation on
 
 % This book (like other mathematics textbooks) deals mainly with binary relations on sets of mathematical objects. In fact, you are quite familiar with many relations already. S
 
-\begin{exer} \label{exercise:EquivalenceRelationsChap:RelationDef}
+\begin{exer}\label{exercise:EquivalenceRelationsChap:RelationDef}
 \begin{enumerate}[(a)]
  \item  
  Define the set $R_>$ associated with the symbol ``$>$'' applied to the natural numbers.
@@ -244,7 +244,7 @@ We've defined binary relations in general. In this section we present one very i
 
 Given any set $A$ with 2 or more elements, it's possible to split up the elements of $A$ into disjoint subsets. We call such a division a \term{partition}. The mathematical definition is:
 
-\begin{defn} A \term{partition}\index{Partition} $\mathcal{P}$ of a set~$A$ is a collection of nonempty subsets of~$A$, such that each element of~$A$ is in exactly one of the subsets in $\mathcal{P}$. In other words:
+\begin{defn} A \label{Partition}\term{partition}\index{Partition} $\mathcal{P}$ of a set~$A$ is a collection of nonempty subsets of~$A$, such that each element of~$A$ is in exactly one of the subsets in $\mathcal{P}$. In other words:
 \begin{enumerate}[(a)]
 \item the union of the subsets in $\mathcal{P}$ is all of~$A$,
 and
@@ -530,7 +530,7 @@ Explain why the binary relation
 \end{enumerate}
 \end{exercise}
 
-\begin{exer} \label{BinRelSomePropsEx}
+\begin{exercise}{BinRelSomePropsEx}
 Find binary relations on $\{1,2,3\}$ that meet each of the following conditions. Express each relation as a set of ordered pairs, and draw the corresponding digraph. (Note: each part can have more than one answer, but you only need to find one.)
 \begin{enumerate}[(a)]
 \item \label{BinRelSomePropsEx-symmonly}
@@ -542,7 +542,7 @@ transitive and symmetric, but not reflexive.
 \item \label{BinRelSomePropsEx-none}
 neither reflexive, nor symmetric, nor transitive.
 \end{enumerate}
-\end{exer}
+\end{exercise}
 Digraphs are useful because they represent the relation in such a way that it is easy to deduce the relation's properties: 
 
 \begin{exercise}{21}
@@ -612,7 +612,7 @@ How can you tell from looking at a digraph whether or not the corresponding rela
 %\end{enumerate}
 %\end{exer}
 
-\section{Examples of equivalence relations\quad\sectionvideohref{PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
+\section{Examples of equivalence relations\quad\sectionvideohref{PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}  \label{exampleEquivRel}
 
 Let's take a look at some examples of equivalence relations (recall Definition~\ref{defn:equivalencerelation}). We will see shortly that they all have something in common.
 
@@ -639,7 +639,7 @@ We wish to show that $\sim$ is reflexive, symmetric, and transitive.
 %\end{eg}
 
 
-\begin{eg} \label{NxNEquivRelEg}
+\begin{example}{NxNEquivRelEg}
 Define a binary relation~$\sim$ on~$\mathbb{N} \times \mathbb{N}$ by $(a_1,b_1) \sim (a_2,b_2)$ iff $a_1 + b_2 = a_2 + b_1$. Then $\sim$ is an equivalence relation.
 
 \begin{proof}
@@ -663,7 +663,7 @@ We wish to show that $\sim$ is reflexive, symmetric, and transitive.
 Subtracting $a_2 + b_2$ from both sides of the equation, we conclude that $a_1 + b_3 = a_3 + b_1$,
 so $(a_1,b_1) \sim (a_3,b_3)$.
 \end{proof}
-\end{eg}
+\end{example}
 
 
 \begin{exercise}{EquivRelShowEx}
@@ -778,7 +778,7 @@ Show that the sets $\{ A_n \}$ that you listed in part (b) form a partition of t
 \item
 According to Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part}, this partition produces an equivalence relation  on  the domain of $f$.  Draw a digraph that represents the equivalence relation.
 \item
-We also know that the function $f$ produces an equivalence relation on the domain of $f$, as in Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}.  Draw a digraph that represetns this equivalence relation.
+We also know that the function $f$ produces an equivalence relation on the domain of $f$, as in Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}.  Draw a digraph that represents this equivalence relation.
 \item
 What may you conclude from your results in (d) and (e)?   
 \end{enumerate}
@@ -1030,7 +1030,7 @@ Give a function with domain $\mathbb{C}^*$ that produces the equivalence relatio
 
 We close this section with  an exercise that reinforces the idea that partitions and equivalence classes are really two different ways of looking at the same thing.
 
-\begin{exercise}{}
+\begin{exercise}{equivalencePartition}
 We know from Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel} that any partition  produces an equivalence relation.  
 We also know from Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part} that any equivalence relation produces a partition.
 \begin{enumerate}[(a)]
@@ -1193,15 +1193,18 @@ Just as in the case of mod 3, whenever we're doing arithmetic mod $n$ you should
 
 Note that $\left|\integer_n \right| = n$. (Recall that for a set $S$, $|S|$ means the number of elements in $S$.) We may enumerate the elements precisely as follows:
 
-\begin{prop}{}
+\begin{prop}{equivModN}
 For any $n \in \mathbb{N}^+$, we have 
 	$$\integer_n = \{ \class{0}, \class{1}, \class{2}, \ldots, \class{n-1} \}$$
 and $\class{0}, \class{1}, \class{2}, \ldots, \class{n-1}$ are all distinct.
 \end{prop}
 
+\begin{exercise}{}
+Prove Proposition~\ref{proposition:EquivalenceRelationsChap:equivModN}.  It is sufficient to show (a) $\class{0}, \class{1}, \class{2}, \ldots, \class{n-1} $ are distinct; and (b) for any integer, the  equivalence class $\class{k}$ is one of $\class{0}, \class{1}, \class{2}, \ldots, \class{n-1} $.
+\end{exercise}
 
 \begin{exercise}{ModArithEx}  
-Make tables that show the results of:
+Using the definitions of addition, subtraction, and multiplication given in part (c) of Definition~\ref{integ_mod_n}, make tables that show the results of:
 \begin{enumerate}[(a)]
 \item \label{ModArithEx-tables-addition} 
 addition modulo~$4$.
@@ -1221,7 +1224,7 @@ Now it's time to go back to our statement in Section~\ref{sec:intMod3} that the 
 
 One way to see this is to consider the Cayley tables. There is a striking similarity between the Cayley tables for $\oplus$ and $\odot$ that we computed in Section~\ref{sec:cayleyForZn1} and the tables that we just finished computing in the previous section:
 
-\begin{exercise}{}
+\begin{exercise}{compareCaley}
 \begin{enumerate}[(a)]
 \item
 Compute Cayley tables for $\oplus$ and $\odot$ for $\integer_7$ using remainder arithmetic (as we did in Section~\ref{sec:cayleyForZn1}).
@@ -1319,7 +1322,7 @@ That is, show that if $[a]_n = [b]_n$, then $ [a]_m =  [b]_m$.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{58}
 \begin{enumerate}[(a)]
 \item  \label{WellDefEx-odd2}
  Show that if we try to define a function $g \colon \integer_3 \to \integer_2$ by $g \bigl( [a]_3 \bigr) = [a]_2$, then the result is \emph{not} well-defined. That is, show that there exist $a, b \in \integer$ such that
@@ -1333,7 +1336,7 @@ That is, show that there exists integers $a$, $b$ such that $[a]_n = [b]_n$ and 
 
 Recall that $\integer_n$ replaces integers $a$ and~$b$ that are congruent modulo~$n$ with objects~$\class{a}$ and~$\class{b}$ that are exactly equal to each other. This was achieved by letting $\integer_n$ be the set of all equivalence classes. The set $\integer_n$ applies only to congruence modulo~$n$, but the same thing can be done for any equivalence relation:
 
-\begin{defn}
+\begin{defn} \label{moduloRelation}
 Suppose $\sim$ is an equivalence relation on a set~$A$. The set of all equivalence classes is called \term{$A$ modulo~$\sim$}. It is denoted $A/\mathord{\sim}$.
 \end{defn}
 
