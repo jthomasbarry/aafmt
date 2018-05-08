@@ -7,7 +7,7 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Group Theory Applications (III): Error-Detecting and Correcting Codes\quad
+\chap{Application: Error-Detecting and Correcting Codes\quad
 \sectionvideohref{EOKgMvWuBpc&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=39}}{algcodes}
 \chaptermark{Error-Detecting and Correcting Codes}
  
@@ -16,7 +16,7 @@ arises in many areas of communications, including radio, telephone, television, 
 \medskip
 
 \noindent
-\underline{\bf Prerequisites}: In this chapter we will make extensive use of the group ${\Bbb Z}^{n}_{2}$, which is the direct product of $n$ copies of ${\Bbb Z}_{2}$ (direct products were introduced in Section~\ref{isomorph_section_2}.  Section~\ref{sec:MaximumLikelihood} on maximum-likelihood decoding uses some probability theory--this section is independent of the rest of the chapter, and may be omitted if desired. The discussion of linear block codes (Section~\ref{section:algcodes:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:efficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{cosets}.  
+\underline{\bf Prerequisites}: In this chapter we will make extensive use of the group $\mathbb{Z}^{n}_{2}$, which is the direct product of $n$ copies of $\mathbb{Z}_{2}$ (direct products were introduced in Section~\ref{isomorph_section_2}.  Section~\ref{sec:MaximumLikelihood} on maximum-likelihood decoding uses some probability theory--this section is independent of the rest of the chapter, and may be omitted if desired. The discussion of linear block codes (Section~\ref{section:algcodes:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:efficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{cosets}.  
 \bigskip
 
 Thanks to Tom Judson for material used in this chapter.
@@ -24,7 +24,7 @@ Thanks to Tom Judson for material used in this chapter.
  
 \section{Definitions and basic properties}\label{section:algcodes:1}
   
-Let us examine a simple model of a communications system for
+Let's examine a simple model of a communications system for
 transmitting and receiving coded messages (Figure~\ref{encoding}).  
 \begin{figure}[htbp]
 \begin{center}
@@ -32,21 +32,17 @@ transmitting and receiving coded messages (Figure~\ref{encoding}).
 \end{center}
 \caption{Encoding and decoding messages\label{encoding}}
 \end{figure}
-Uncoded messages consist of a sequence of symbols, such as letters or characters. Typically these symbols 
-are re-expressed in a binary code (such as ASCII)\index{Code!binary}\index{Code!ASCII}, so that the message can be considered as a sequence of
-binary digits (binary digits are referred to as \term*{bits}\index{Bits}). This sequence is divided up into chunks of $m$ bits apiece: these binary $m$-tuples
-are referred to as \term{message words} \index{Message word}. Message words are
+Uncoded messages consist of a sequence of symbols, such as letters or characters. Now when computers do calculations they can't understand letters: they can only understand sequences consisting of 0's and 1's (0 and 1 are referred to as binary digits or \term{bits}).  So before coding, individual symbols are  re-expressed as sequences of binary bits, and then these bits are strung together to form a single sequence of bits which expresses the message content.  This sequence is divided up into chunks (or tuples) of $m$ bits apiece: these binary $m$-tuples
+are referred to as \term{message words}. Message words are
 then encoded into \term{codewords}\index{Codeword} of $n$ bits apiece by a device
-called an \term{encoder}\index{Encoder}. The Codewords are transmitted over a channel and received by a receiver.
+called an \term{encoder}\index{Encoder}. These codewords are transmitted over a channel and received by a receiver.
 Random noise in this transmission process causes some of the bits to be corrupted: and we say that 
- an \term{error} \index{Error}occurs every time a bit is changed from 0 to 1 or vice-versa due to transmission noise. A \term{decoding scheme} \index{Decoding scheme}is a method that either converts
+ an \term{error} \index{Error}occurs every time a bit is changed from 0 to 1 or vice-versa due to transmission noise.The \term{decoder} converts
 each received $n$-tuple into a message word or
-gives an error message for that $n$-tuple. If the received word is
-a codeword (one of the special $n$-tuples allowed to be transmitted),
-then the decoded message word must be the unique message word that encodes
-into the codeword. For received words that are not codewords, the decoding scheme will
-give an error indication, or, if we are more clever, will actually try
-to correct the error and reconstruct the original message word. Our goal is
+gives an error message for that $n$-tuple. If the recieved codeword was not corrupted by random noise during transmission,
+then the decoded message word will agree with the original message word. For received words that are not codewords, the decoding scheme will
+give an error indication, or (in the case of error-correcting codes) will try
+to correct the error and reconstruct the original message word. The  goal is
 to transmit error-free messages as cheaply and quickly as possible.
 
 \begin{exercise}{}
@@ -63,80 +59,36 @@ Why is the following encoding scheme not acceptable?
  \end{exercise} 
  
 \begin{example}{}
-One possible coding scheme would be to send each message word several
-times and to compare the received copies with one another. Suppose
-that the message word to be encoded is a binary $m$-tuple $(x_{1}, x_{2},
-\ldots, x_{m})$. The message is encoded into a binary $3m$-tuple by
-simply repeating the message three times: 
-\[
-(x_{1}, x_{2}, \ldots, x_{n})
-\mapsto
-(x_{1}, x_{2}, \ldots, x_{n}, x_{1}, x_{2}, \ldots, x_{n},
-x_{1}, x_{2}, \ldots, x_{n}).
-\]
-To decode the received word, we choose as the $i$th digit the one that
-appears in the $i$th place in at least two of the three transmissions.
-For example, if the original message is $(0110)$, then the transmitted
-message will be $(0110\:0110\:0110)$. If the fifth bit is transmitted incorrectly, then the received word will be
-$(0110\:1110\:0110)$, which will be correctly decoded as
-$(0110)$.\footnote{We will adopt the convention that bits are numbered
-left to right in binary $n$-tuples.} 
-This triple-repetition method \index{Decoding scheme!repetition}will automatically detect and correct
-all single errors, but it is slow and inefficient (just imagine having to repeat everything you say three times in order to make yourself understood!)  We'll see shortly that there are much better alternatives.
-\end{example}
-
-\begin{example}{}
-\term{Even parity}\index{Even parity!coding scheme}, a  commonly  used coding scheme, is much
-more efficient than the simple repetition scheme. The ASCII (American
-Standard Code for Information Interchange) coding system uses binary
-8-tuples, yielding $2^{8} = 256$ possible codewords. However, only seven
-bits are needed since there are only $2^7 = 128$ ASCII characters.
-What can or should be done with the extra bit? Using the full eight
-bits, we can detect single transmission errors. For example, the ASCII
-codes for A, B, and C are 
-\[
-\begin{array}{rcccl}
-\mbox{A} & = & 65_{10} & = & 01000001_{2}, \\
-\mbox{B} & = & 66_{10} & = & 01000010_{2}, \\
-\mbox{C} & = & 67_{10} & = & 01000011_{2}.
-\end{array}
-\]
-Notice that the leftmost bit is always set to 0; that is, the 128 ASCII
-characters have codes 
-\begin{eqnarray*}
-00000000_{2} & = & 0_{10}, \\
-& \vdots & \\
-01111111_{2} & = & 127_{10}.
-\end{eqnarray*}
-The bit can be used for error checking on the other seven bits. It is
-set to either 0 or 1 so that the total number of 1 bits in the
-representation of a character is even. Using even parity\index{Parity!even}, the codes
+\term{Even parity}\index{Even parity!coding scheme} is a  commonly  used coding scheme, which (as we shall see) can be generalized to form powerful and versatile codes. Computers use the ASCII (American
+Standard Code for Information Interchange) coding system to encode the letters and special characters that appear on your keyboard (these may be considered as the "message words", according to the above terminology). There are 128 of these characters, so it is possible to represent them using 7 bits (since  $128 = 2^7$).   For example, the 7-bit representations for A, B, and C are 
+\begin{align*}
+\textrm{A} & = 1000001, \\
+\textrm{B} & = 1000010, \\
+\textrm{C} & =  1000011.
+\end{align*}
+Although 7 bits are sufficient, the ASCII code uses 8 bits for each charater. A bit is added to the front of the codeword according to the following rule:  if the number of 1's in the seven-bit 
+representation is even, then the front bit is 0; otherwise, the front bit is 1. 
+According to this rule, the 8-bit codes
 for A, B, and C now become 
-\begin{eqnarray*}
-\mbox{A} & = & 01000001_{2}, \\
-\mbox{B} & = & 01000010_{2}, \\
-\mbox{C} & = & 11000011_{2}.
-\end{eqnarray*}
-Suppose an A is sent and a transmission error in the sixth
+\begin{align*}
+\textrm{A} & = & 01000001, \\
+\textrm{B} & = & 01000010, \\
+\textrm{C} & = & 11000011.
+\end{align*}
+Notice that these 8-bit codes all have an \emph{even} number of 1's.
+
+Now suppose an A is sent and a transmission error in the sixth
 bit is caused by noise over the communication channel so that 
 (01000101) is received. We know an error has occurred since the
 received word has an odd number of 1's, and we can now request that the
 codeword be transmitted again. When used for error checking, the
 leftmost bit is called a \term{parity check bit}\index{Parity!parity check bit}.  
   
-By far the most common error-detecting
-codes used in computers are based on the addition of a parity bit.
-Typically, a computer stores information in binary words consisting of 8, 16, or 32 bits:
-a \term{byte} \index{Byte} for example is a 8-bit binary word. One bit in each binary 
-word is set aside as the parity check bit, and is not used to store
-information. This bit is set to either 0 or 1, so as to make the total number of 1's to be even. 
- 
 Adding a parity check bit allows the detection of all single errors
 because changing a single bit either increases or decreases the number
 of 1's by one, and in either case the parity has been changed from
-even to odd, so the new word is not a codeword. (We could also
-construct an error detection scheme based on \term{odd parity}\index{Parity!odd}; that
-is, we could set the parity check bit so that a codeword always has an
+even to odd, so the new word is not a codeword. (We could equally well
+construct an error detection scheme based on \term{odd parity}\index{Parity!odd}, where the parity check bit is set so that codewords always have an
 odd number of 1's.)  
 \end{example} 
 
@@ -149,6 +101,22 @@ Second, we do not have the ability to correct errors.  If the 8-tuple
 have no idea which bit has been changed. We will now investigate a
 coding scheme that will not only allow us to detect transmission
 errors but will actually correct the errors. 
+
+\begin{example}{bit3}
+Suppose that our original message is either a 0 or a 1, and that 0
+encodes to (000) and 1 encodes to (111). If only a single
+error occurs during transmission, we can detect and correct the
+error. For example, if a 101 is received, then the second bit must
+have been changed from a 1 to a 0.  The originally transmitted
+codeword must have been (111). 	This method will detect and correct 
+all single errors. 
+ 
+ 
+In Table~\ref{algcodes:table0}, we present all possible words that might be received
+for the transmitted codewords (000) and (111). Table~\ref{algcodes:table0} also shows 
+the number of bits by which each received 3-tuple differs from each
+original codeword. 
+
  
 \begin{table}[htb]
 \caption{A repetition code\label{algcodes:table0}}{\small
@@ -167,218 +135,223 @@ Codeword   & 111 & 3   &  2  & 2   &  1  &  2  &   1 &  1
 }
 \end{table}
 
-\begin{example}{bit3}
-Suppose that our original message is either a 0 or a 1, and that 0
-encodes to (000) and 1 encodes to (111). If only a single
-error occurs during transmission, we can detect and correct the
-error. For example, if a 101 is received, then the second bit must
-have been changed from a 1 to a 0.  The originally transmitted
-codeword must have been (111). 	This method will detect and correct 
-all single errors. 
- 
- 
-In Table~\ref{algcodes:table0}, we present all possible words that might be received
-for the transmitted codewords (000) and (111). Table~\ref{algcodes:table0} also shows 
-the number of bits by which each received 3-tuple differs from each
-original codeword. 
+This triple-repetition method \index{Repetition!encoding}will automatically detect and correct
+all single errors, but it's not very efficient (just imagine having to repeat everything you say three times in order to make yourself understood!)  We'll see shortly that there are much better alternatives.
 \end{example}
 
-\subsection{Maximum-Likelihood Decoding\quad
-\sectionvideohref{EOKgMvWuBpc&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=39}}\label{sec:MaximumLikelihood}
+%\subsection{Maximum-Likelihood Decoding\quad
+%\sectionvideohref{EOKgMvWuBpc&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=39}}\label{sec:MaximumLikelihood}
+% 
+%\begin{quote}
+%\emph{This section
+%requires a knowledge of probability, It can be
+%skipped without loss of continuity.} 
+%\end{quote}
+%
+%The coding scheme presented in Example~\ref{example:algcodes:bit3} is not a complete solution to
+%the problem because it does not account for the possibility of
+%multiple errors. For example, either a (000) or a (111) could be sent
+%and a (001) received. We have no means of deciding from the received
+%word whether there was a single error in the third bit or two errors,
+%one in the first bit and one in the second.  No matter what coding 
+%scheme is used, an incorrect message could
+%be received: we could transmit a (000), have errors in all three
+%bits, and receive the codeword (111). It is important to make explicit
+%assumptions about the likelihood and distribution of transmission
+%errors so that, in a particular application, it will be known whether
+%a given
+%error detection scheme is appropriate. We will assume that
+%transmission errors are rare, and, that when they do occur, they occur
+%independently in each bit; that is, if $p$ is the probability of an
+%error in one bit and $q$ is the probability of an error in a different
+%bit, then the probability of errors occurring in both of these bits at
+%the same time is $pq$. We will also assume that a received $n$-tuple 
+%is
+%decoded into a codeword that is closest to it; that is, we assume that
+%the receiver uses \term{maximum-likelihood
+%decoding}\index{Maximum-likelihood decoding}.
+% 
+% \begin{figure}[htb]
+%\begin{center}
+%\setlength{\unitlength}{.1in}
+%\begin{picture}(14,9)
+%\put(2,2){\vector(1,0){10}}
+%\put(2,8){\vector(1,0){10}}
+%\put(2,2.5){\vector(2,1){10}}
+%\put(2,7.5){\vector(2,-1){10}}
+%\put(0.8,7.5){\small 0}
+%\put(0.8,1.6){\small 1}
+%\put(12.6,7.5){\small 0}
+%\put(12.6,1.6){\small 1}
+%\put(6.5,8.6){\small $p$}
+%\put(6.5,1){\small $p$}
+%\put(7.5,6){\small $q$}
+%\put(7.5,3.5){\small $q$}
+%\end{picture}
+%\end{center}
+%\caption{Binary symmetric channel}
+%\label{channel}
+%\end{figure}
+% 
+%A \term{binary symmetric channel}\index{Binary symmetric channel}
+%is a model that consists of a transmitter capable of sending a binary 
+%signal, either a 0 or a 1, together with a receiver. Let $p$ be the 
+%probability that the signal is correctly
+%received. Then $q=1-p$ is the probability of an incorrect reception.
+%If a 1 is sent, then the probability that a 1 is received is $p$ and
+%the probability that a 0 is received is $q$ (Figure~\ref{channel}).
+%The probability that no errors occur during the transmission of a binary
+%codeword of length $n$ is $p^{n}$. For example, if $p=0.999$ and a
+%message consisting of 10,000 bits is sent, then the probability of a
+%perfect transmission is 
+%\[
+%(0.999)^{10,000} \approx 0.00005.
+%\]
+% 
+% \begin{prop}{}
+%If a binary $n$-tuple $(x_{1}, \ldots, x_{n})$ is transmitted across a
+%binary symmetric channel with probability $p$ that no error will occur
+%in each coordinate, then the probability that there are errors in
+%exactly $k$ coordinates~is \index{Error!probability of}
+%\[
+%\left(
+%\begin{array}{c}
+%n \\ k
+%\end{array}
+%\right)
+% q^kp^{n-k}.
+%\]
+%\end{prop}
+%  
+%\begin{proof}
+%Fix $k$ different coordinates. We first compute the probability that
+%an error has occurred in this fixed set of coordinates. The
+%probability of an error occurring in a particular one of these $k$
+%coordinates is $q$; the probability that an error will not occur
+%in any of the remaining $n-k$ coordinates is $p$. The
+%probability of each of these $n$ independent events is
+%$q^{k}p^{n-k}$. The number of possible error patterns with exactly $k$
+%errors occurring is equal to 
+%\[
+%\left(
+%\begin{array}{c}
+%n \\ k
+%\end{array}
+%\right)
+%= \frac{n!}{k!(n-k)!},
+%\]
+%the number of combinations of $n$ things taken $k$ at a time. Each of
+%these error patterns has probability $q^{k}p^{n-k}$ of occurring;
+%hence, the probability of all of these error patterns is
+%\[
+%\left(
+%\begin{array}{c}
+%n \\ k
+%\end{array}
+%\right)
+%q^{k}p^{n-k}.
+%\]
+%\end{proof}
+% 
+% 
+%\begin{example}{}
+%Suppose that $p = 0.995$ and a 500-bit message is sent. The
+%probability that the message was sent error-free is 
+%\[
+%p^{n} = (0.995)^{500} \approx 0.082.
+%\]
+%The probability of exactly one error occurring is
+%\[
+%\left(
+%\begin{array}{c}
+%n \\ 1
+%\end{array}
+%\right)
+%qp^{n-1}= 500(0.005)(0.995)^{499}
+%\approx 0.204.
+%\]
+%The probability of exactly two errors is
+%\[
+%\left(
+%\begin{array}{c}
+%n \\ 2
+%\end{array}
+%\right)
+%q^{2}p^{n-2}=
+%\frac{500 \cdot 499}{2}(0.005)^{2}(0.995)^{498} \approx
+%0.257.
+%\]
+%The probability of more than two errors is approximately
+%\[
+%1-0.082-0.204 -0.257=0.457.
+%\]
+%\end{example}
+% 
+% \begin{exercise}{}
+% \begin{enumerate}[(a)]
+% \item
+% In a binary symmetric channel  where the error probability of any bit is 0.05, then what's the probability that a 3-bit message  is transmitted with no errors? What's the probability it's transmitted with 1 error?
+% \item
+% Same as (a), except this time the message is 30 bits.
+% \item
+% Same as (a), except this time the error probability is 0.005.
+% \item
+% Same as (b), except this time the error probability is 0.005.
+% \end{enumerate}
+% \end{exercise}
+% 
+% 
+%\begin{exercise}{}
+%Suppose that a 1000-bit binary message is transmitted. Assume that the
+%probability of a single error is $p$ and that the errors occurring in
+%different bits are independent of one another. If $p = 0.01$, what is
+%the probability of more than one error occurring? What is the
+%probability of exactly two errors occurring?  Repeat this problem for
+%$p = 0.0001$.
+%\end{exercise}
  
-\begin{quote}
-\emph{This section
-requires a knowledge of probability, It can be
-skipped without loss of continuity.} 
-\end{quote}
+\section{Block Codes}
+ 
+In the examples we've seen so far,  all message words are the same size, and all codewords are the same size (but message words and code words could be of different sizes, as in Example~\ref{example:algcodes:bit3}). This is certainly not the only possibility. For instance, we could encode different message words with codewords of differing sizes. Alternatively, we could use some kind of scheme which doesn't break the message into words at all. Such coding schemes have extremely important practical uses. Nonetheless, we will focus on the simple case where message words all have equal size, and all codewords also have equal size. These are called  ``block codes'', because both the original and encoded message are divided into ``blocks'' (e.g. codewords) of fixed size, and encoding /decoding proceeds block by block.  We shall see shortly that group
+theory  can be used to design block codes with very nice properties. 
 
-The coding scheme presented in Example~\ref{example:algcodes:bit3} is not a complete solution to
-the problem because it does not account for the possibility of
-multiple errors. For example, either a (000) or a (111) could be sent
-and a (001) received. We have no means of deciding from the received
-word whether there was a single error in the third bit or two errors,
-one in the first bit and one in the second.  No matter what coding 
-scheme is used, an incorrect message could
-be received: we could transmit a (000), have errors in all three
-bits, and receive the codeword (111). It is important to make explicit
-assumptions about the likelihood and distribution of transmission
-errors so that, in a particular application, it will be known whether
-a given
-error detection scheme is appropriate. We will assume that
-transmission errors are rare, and, that when they do occur, they occur
-independently in each bit; that is, if $p$ is the probability of an
-error in one bit and $q$ is the probability of an error in a different
-bit, then the probability of errors occurring in both of these bits at
-the same time is $pq$. We will also assume that a received $n$-tuple 
-is
-decoded into a codeword that is closest to it; that is, we assume that
-the receiver uses \term{maximum-likelihood
-decoding}\index{Maximum-likelihood decoding}.
- 
- \begin{figure}[htb]
-\begin{center}
-\setlength{\unitlength}{.1in}
-\begin{picture}(14,9)
-\put(2,2){\vector(1,0){10}}
-\put(2,8){\vector(1,0){10}}
-\put(2,2.5){\vector(2,1){10}}
-\put(2,7.5){\vector(2,-1){10}}
-\put(0.8,7.5){\small 0}
-\put(0.8,1.6){\small 1}
-\put(12.6,7.5){\small 0}
-\put(12.6,1.6){\small 1}
-\put(6.5,8.6){\small $p$}
-\put(6.5,1){\small $p$}
-\put(7.5,6){\small $q$}
-\put(7.5,3.5){\small $q$}
-\end{picture}
-\end{center}
-\caption{Binary symmetric channel}
-\label{channel}
-\end{figure}
- 
-A \term{binary symmetric channel}\index{Binary symmetric channel}
-is a model that consists of a transmitter capable of sending a binary 
-signal, either a 0 or a 1, together with a receiver. Let $p$ be the 
-probability that the signal is correctly
-received. Then $q=1-p$ is the probability of an incorrect reception.
-If a 1 is sent, then the probability that a 1 is received is $p$ and
-the probability that a 0 is received is $q$ (Figure~\ref{channel}).
-The probability that no errors occur during the transmission of a binary
-codeword of length $n$ is $p^{n}$. For example, if $p=0.999$ and a
-message consisting of 10,000 bits is sent, then the probability of a
-perfect transmission is 
-\[
-(0.999)^{10,000} \approx 0.00005.
-\]
- 
- \begin{prop}{}
-If a binary $n$-tuple $(x_{1}, \ldots, x_{n})$ is transmitted across a
-binary symmetric channel with probability $p$ that no error will occur
-in each coordinate, then the probability that there are errors in
-exactly $k$ coordinates~is \index{Error!probability of}
-\[
-\left(
-\begin{array}{c}
-n \\ k
-\end{array}
-\right)
- q^kp^{n-k}.
-\]
-\end{prop}
-  
-\begin{proof}
-Fix $k$ different coordinates. We first compute the probability that
-an error has occurred in this fixed set of coordinates. The
-probability of an error occurring in a particular one of these $k$
-coordinates is $q$; the probability that an error will not occur
-in any of the remaining $n-k$ coordinates is $p$. The
-probability of each of these $n$ independent events is
-$q^{k}p^{n-k}$. The number of possible error patterns with exactly $k$
-errors occurring is equal to 
-\[
-\left(
-\begin{array}{c}
-n \\ k
-\end{array}
-\right)
-= \frac{n!}{k!(n-k)!},
-\]
-the number of combinations of $n$ things taken $k$ at a time. Each of
-these error patterns has probability $q^{k}p^{n-k}$ of occurring;
-hence, the probability of all of these error patterns is
-\[
-\left(
-\begin{array}{c}
-n \\ k
-\end{array}
-\right)
-q^{k}p^{n-k}.
-\]
-\end{proof}
- 
- 
-\begin{example}{}
-Suppose that $p = 0.995$ and a 500-bit message is sent. The
-probability that the message was sent error-free is 
-\[
-p^{n} = (0.995)^{500} \approx 0.082.
-\]
-The probability of exactly one error occurring is
-\[
-\left(
-\begin{array}{c}
-n \\ 1
-\end{array}
-\right)
-qp^{n-1}= 500(0.005)(0.995)^{499}
-\approx 0.204.
-\]
-The probability of exactly two errors is
-\[
-\left(
-\begin{array}{c}
-n \\ 2
-\end{array}
-\right)
-q^{2}p^{n-2}=
-\frac{500 \cdot 499}{2}(0.005)^{2}(0.995)^{498} \approx
-0.257.
-\]
-The probability of more than two errors is approximately
-\[
-1-0.082-0.204 -0.257=0.457.
-\]
-\end{example}
- 
- \begin{exercise}{}
- \begin{enumerate}[(a)]
- \item
- In a binary symmetric channel  where the error probability of any bit is 0.05, then what's the probability that a 3-bit message  is transmitted with no errors? What's the probability it's transmitted with 1 error?
- \item
- Same as (a), except this time the message is 30 bits.
- \item
- Same as (a), except this time the error probability is 0.005.
- \item
- Same as (b), except this time the error probability is 0.005.
- \end{enumerate}
- \end{exercise}
- 
- 
-\begin{exercise}{}
-Suppose that a 1000-bit binary message is transmitted. Assume that the
-probability of a single error is $p$ and that the errors occurring in
-different bits are independent of one another. If $p = 0.01$, what is
-the probability of more than one error occurring? What is the
-probability of exactly two errors occurring?  Repeat this problem for
-$p = 0.0001$.
-\end{exercise}
- 
-\subsection{Block Codes}
- 
-In Figure~\ref{encoding} we illustrated the case where $m$-digit message words 
-are encoded into $n$-digit codewords. This is certainly not the only scheme possible. For instance, we could encode different message words with codewords of differing sizes. Alternatively, we could use some kind of scheme which doesn't break the message into words at all. Such coding schemes have extremely important practical uses. Nonetheless, we will focus on the simple case where message words all have equal size, and all codewords also have equal size. We shall see shortly that group
-theory  can be used in this case to design  codes with ``good'' properties. 
-
-We begin as usual with a definition. In the following, the notation ${\Bbb Z}^{m}_{2}$ denotes the set of  binary $m$-tuples.
+We begin with a formal definition of block code, which generalizes the examples discussed in the previous section. In the following, the notation $\mathbb{Z}^{m}_{2}$ denotes the set of  binary $m$-tuples.
 
 \begin{defn}\label{definition:algcodes:BlockCode}
-a $(n, m)$ \term{block code} \index{Block code} is a code that divides information into $m$-bit message words, and encodes each message word as a $n$-bit codeword. In order to accomplish this, the specification of an $(n,
-m)$-block code must include a one-to-one \term{encoding function} \index{Function!encoding}
+a $(n, m)$ \term{block code} \index{Block code}  consists of a one-to-one \term{encoding function} \index{Function!encoding}
 \[
-E:{\Bbb Z}^{m}_{2} \rightarrow {\Bbb Z}^{n}_{2}
+E:\mathbb{Z}^{m}_{2} \rightarrow \mathbb{Z}^{n}_{2}
 \]
-and an \emph{onto} \term{decoding function} \index{Decoding function}
+and an onto \term{decoding function} \index{Decoding function}
 \[
-D:{\Bbb Z}^{n}_{2} \rightarrow {\Bbb Z}^{m}_{2}.
+D:\mathbb{Z}^{n}_{2} \rightarrow \mathbb{Z}^{m}_{2}.
 \]
-A \term{codeword} \index{Codeword} is any element in the range of $E$. 
+The functions $E$ and $D$ satisfy $D \compose E (z)= z$ for any $z \in \mathbb{Z}_2^m$ (in other words, $D \compose E$ is the identity function on the set $\mathbb{Z}_2^m$).
+
+We refer to the elements of the domain of $E$ as \term{message words}, and elements of the range of $E$ as \term{codewords}. 
 \end{defn}
 
-In the above definition, the encoding function $E$ for a block code is required to be one-to-one so each codeword will correspond to a \emph{unique}. On the other hand, the decoding function $D$  is required to be onto so that any encoded message can be decoded (although the decoded message may have errors).
+\begin{rem}
+In Definition~\ref{definition:algcodes:BlockCode}, the encoding function $E$ for a block code is required to be one-to-one so that two different message words are never assigned to the same codeword (which would make decoding impossible). On the other hand, the decoding function $D$  is required to be onto so that any encoded message can be decoded (although the decoded message may have errors).
+\end{rem}
+
+\begin{exercise}{DEstuff}
+\begin{enumerate}[(a)]
+\item
+Explain why the definition requires that $D \compose E$ is the identity function on the domain of $E$. (In other words, what property of encoding and decoding does this guarantee?)
+\item
+Show that the condition $D \compose E = \var{id}$ implies that $D$ is onto  (in other words, to prove that $D$ is a decoding function it's enough to prove that $D \compose E = \var{id}$, and you don't have to prove onto-ness separately).
+\item
+Show that in Example~\ref{example:algcodes:bit3}, it is not true that $E \compose D$ is the identity function on the domain of $D$.
+\item
+Suppose that  $E$ and $D$ are  encoding and decoding functions for an error-correcting code. Prove that $E \compose D$ is \emph{not} equal to the identity function on the domain of $D$.
+\item
+Prove that for an error-correcting code, $E$ and $D$ are not inverse of each other. 
+\end{enumerate}
+\end{exercise}
 
 \begin{exercise}{}
-Given the above definition, is it possible to have a $(n,m)$ block code where $n > m$? Is $m > n$ possible? \emph{Explain} your answer.
+According to Definition~\ref{definition:algcodes:BlockCode}, is it possible to have a $(n,m)$ block code where $n > m$? Is $m > n$ possible? \emph{Explain} your answer.
 \end{exercise}
  
 \begin{example}{evenparity}
@@ -387,13 +360,40 @@ ASCII characters is an $(8,7)$-block code. The encoding function \index{Encoding
 \[
 E(x_7, x_6, \ldots, x_1) = (x_8, x_7,  \ldots, x_1),
 \]
-where $x_8 = x_7 + x_6 + \cdots + x_1$ with addition in ${\Bbb Z}_2$. 
+where $x_8 = x_7 + x_6 + \cdots + x_1$ (the addition here is in $\mathbb{Z}_2$). 
+
+One possible decoding function takes the 8-bit codeword and removes the front bit:
+\[
+D(x_8,x_7, x_6, \ldots, x_1) = (x_7,  \ldots, x_1).
+\]
+This is a natural choice of decoding function, but it's not the only posssibility, as you will explore in the following exercise.
+There are several other possible decoding functions as well.  
 \end{example}
 \begin{exercise}{}
-What is the decoding function for the code in Example~\ref{example:algcodes:evenparity}?
+\begin{enumerate}[(a)]
+\item
+Show that the function $D(x)$ given above is a decoding function (remember that based on Exercise~\ref{exercise:algcodes:DEstuff}(b) it's enough to prove that $D \compose E = \var{id}$). 
+\item
+Prove that the following function is also a decoding function for the even parity code:
+\[
+D(x_8,x_7, x_6, \ldots, x_1) = ( x_8 + x_6 + \cdots + x_1, x_6,  \ldots, x_1)\quad \textrm{(addition in }\mathbb{Z}_2).
+\]
+\item
+Give two more possible decoding functions for the even parity code.
+\end{enumerate}
 \end{exercise}
+
 \begin{exercise}{}
-Given an even-parity coding system in which codewords have $n$ bits.  Is the code a block code? If so, what are the parameters $n$ and $m$? What is the encoding function? What is the decoding function?
+\begin{enumerate}[(a)]
+\item
+Consider an even-parity coding system in which codewords have $k$ bits. 
+\item
+Is the code a block code? If so, what are the parameters $n$ and $m$? 
+\item
+What is the encoding function? 
+\item
+Give two possible decoding functions.
+\end{enumerate}
 \end{exercise}
 
 In order to characterize error detection and correction properties of codes, we need to quantify the degree of ``similarity'' between code words, since two code words that are similar are liable to be mistaken for each other. This leads naturally to the idea of ``distance'' between code words, defined as follows.
@@ -595,10 +595,10 @@ problem is that $d({\bold x}, {\bold y}) = 1$, so a single-bit error can change 
 On the other hand, given the two codewords ${\bold x} = (1100)$
 and ${\bold y} = (1010)$ then $d({\bold x}, {\bold y})
 = 2$. If ${\bold x}$ is transmitted and a single error occurs, then no matter which bit is in error it's still impossible for 
-${\bold y}$ to be received. If for example the third bit is mistransmitted and received word is $(1110)$, then we can tell something is wrong -- that is, we can detect that an error has taken place. The same will hold true whenever the distance between codewords is greater than or equal to 2: a single-bit error will be detectable.
+${\bold y}$ to be received. If for example the third bit is mistransmitted and received word is $(1110)$, then we can tell something is wrong -- that is, we can detect that an error has taken place. In general, single-bit errors are detectable in any code where the distance between any two codewords is bigger than 1.
 
 \begin{example}{} Consider the $(4,3)$ code in which the first three bits carry
-information and the fourth is an even parity check bit.
+information and the fourth is an even parity check bit. (Note that now we're putting the parity bit on the \emph{right} instead of on the \emph{left} as we did in Example~\ref{example:algcodes: evenparity}. This will turn out to be more useful in the development of the general theory.)
 Table~\ref{algcodes:table1} gives the distances
 between all codewords in this code.  We can see
 that the minimum distance here is 2; hence, the code is suitable as
@@ -626,7 +626,7 @@ a single error-detecting code.
 \end{table}
 \end{example}
  
-Let us generalize and extend this discussion. Given codewords ${\bold x}$ and ${\bold y}$:
+Let's generalize based on this example. Given codewords ${\bold x}$ and ${\bold y}$:
 \begin{itemize}
 \item
  If
@@ -634,7 +634,7 @@ $d({\bold x}, {\bold y}) = 1$ and an error occurs where ${\bold x}$
 and ${\bold y}$ differ, then ${\bold x}$ is changed to ${\bold y}$.
 The received codeword is ${\bold y}$ and no error message is given.
 \item
-If $d({\bold x}, {\bold y}) = 2$, then a single error cannot
+If $d({\bold x}, {\bold y}) = 2$, then a single error can't
 change ${\bold x}$ to ${\bold y}$. Therefore, if $d_{\min} = 2$, we
 have the ability to detect single errors. However, suppose that
 $d({\bold x}, {\bold y}) = 2$, ${\bold y}$ is sent, and a noncodeword
@@ -642,7 +642,7 @@ ${\bold z}$ is received such that
 \[
 d({\bold x}, {\bold z}) = d({\bold y}, {\bold z}) = 1.
 \]
-Then the decoder cannot decide between ${\bold x}$ and ${\bold y}$. Even
+Then the decoder can't decide between ${\bold x}$ and ${\bold y}$. Even
 though we are aware that an error has occurred, we do not know what
 the error is.
 \item 
@@ -681,7 +681,7 @@ correctly decoded as ${\bold x}$. Now suppose that ${\bold x}$ is
 transmitted and ${\bold y}$ is received and that at least one error 
 has occurred, but not more than $2n$ errors. Then $1 \leq d( {\bold x},
 {\bold y} ) \leq 2n$.  Since the minimum distance between codewords is
-$2n +1$, ${\bold y}$ cannot be a codeword.  Consequently, the code can
+$2n +1$, ${\bold y}$ can't be a codeword.  Consequently, the code can
 detect between 1 and $2n$ errors. 
 \end{proof}
  
@@ -721,13 +721,13 @@ Construct a $(5,2)$-block code. Discuss the error-detection and
 error-correction capabilities of your code.
  \end{exercise}
  
-\section{Group codes and linear codes\quad
+\section{Group codes\quad
 \sectionvideohref{t9DFd_1BWis&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=41}}
 
-So far in this book, we have tried to relate everything we've talked about to groups. Codes are no exception to this rule!  In fact, we know that all codewords of length $n$ are elements of ${\Bbb Z}_2^n$, which in fact turns out to be a group. To show this, we must first define a group operation:
+So far in this book, we've tried to relate everything we've talked about to groups. Codes are no exception to this rule!  In fact, we know that all codewords of length $n$ are elements of $\mathbb{Z}_2^n$, which in fact turns out to be a group. To show this, we must first define a group operation:
 
 \begin{defn}\label{defn:algcodes:group}
-The group ${\Bbb Z}_2^n$ consists of the set of all binary $n$-tuples, together with an operation ``+'' defined as follows:
+The group $\mathbb{Z}_2^n$ consists of the set of all binary $n$-tuples, together with an operation ``+'' defined as follows:
 \[ (x_1, \ldots, x_n) +  (y_1, \ldots, y_n) = (x_1 \oplus y_1, \ldots, x_n \oplus y_n), \]
 where ``$\oplus$'' means addition mod 2.
 \end{defn}
@@ -736,32 +736,31 @@ where ``$\oplus$'' means addition mod 2.
 Please note  that in the following, if  ${\bold x}$ and ${\bold y}$ are binary $n$-tuples then the expression ${\bold x}$ + ${\bold y}$ \emph{always} refers to the operation ``+'' defined in Definition~\ref{defn:algcodes:group} rather than ordinary addition. This is just one more example of the fact that in mathematics, the meaning of symbols is determined by the context.
 \end{rem}
 
-Now we need to put our money where our mouth is, and verify that 
-${\Bbb Z}_2^n$ is indeed a group.
+So it's time to get our hands dirty and verify that 
+$\mathbb{Z}_2^n$ is indeed a group.
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
-Show that if ${\bold x}$ and ${\bold y}$ are in ${\Bbb Z}_2^n$, then ${\bold x} + {\bold y}$ is also in ${\Bbb Z}_2^n$.
+Show that if ${\bold x}$ and ${\bold y}$ are in $\mathbb{Z}_2^n$, then ${\bold x} + {\bold y}$ is also in $\mathbb{Z}_2^n$.
 \item
-What is the identity of ${\Bbb
-Z}_2^n$ under the + operation?
+What is the identity of ${\Bbb Z}_2^n$ under the + operation?
 \item
-In ${\Bbb Z}_2^9$, what is $(11000101) + (11000101)$?
+In $\mathbb{Z}_2^9$, what is $(11000101) + (11000101)$?
 \item
-If ${\bold x} \in {\Bbb Z}_2^n$, then what is ${\bold x} + {\bold x}$?
+If ${\bold x} \in \mathbb{Z}_2^n$, then what is ${\bold x} + {\bold x}$?
 \item
-Explain why the above results show that ${\Bbb Z}_2^n$ is a group under the operation +.
+Explain why the above results show that $\mathbb{Z}_2^n$ is a group under the operation +.
 \item
 Is the group abelian? \emph{Prove} your answer.
 \end{enumerate}
 \end{exercise} 
 
 \begin{exercise}{}
-We may define a subtraction operation on ${\Bbb Z}_2^n$ as we usually do on additive groups: namely, ${\bold x} - {\bold y}$ is defined as ${\bold x} + {\bold y'}$, where ${\bold y'}$ is the additive inverse of ${\bold y}$.  Based on the previous exercise, what can you conclude about the difference between ${\bold x} - {\bold y}$ and ${\bold x} + {\bold y}$?
+We may define a subtraction operation on $\mathbb{Z}_2^n$ as we usually do on additive groups: namely, ${\bold x} - {\bold y}$ is defined as ${\bold x} + {\bold y'}$, where ${\bold y'}$ is the additive inverse of ${\bold y}$.  Based on the previous exercise, what can you conclude about the difference between ${\bold x} - {\bold y}$ and ${\bold x} + {\bold y}$?
 \end{exercise} 
   
-It turns out that  weight and Hamming distance are in some sense ``compatible'' with the operation + defined on ${\Bbb Z}_2^n$, as shown in the following proposition.
+It turns out that  weight and Hamming distance are in some sense ``compatible'' with the operation + defined on $\mathbb{Z}_2^n$, as shown in the following proposition.
 
 \begin{prop}{norm}
 Let ${\bold x}$, ${\bold y}$, and ${\bold z}$ be binary $n$-tuples. Then
@@ -784,32 +783,34 @@ Prove part (b) of Proposition~\ref{proposition:algcodes:norm} by using part (a) 
 \item Prove part (c) \hyperref[sec:algcodes:hints]{(*Hint*)} 
 \end{enumerate}
 \end{exercise}
-The codes we discussed in Section~\ref{section:algcodes:1} were all subsets of ${\Bbb Z}_2^n$, for some positive integer $n$. We shall now see that codes that are also \emph{subgroups} have special properties that enable efficient encoding and decoding. Accordingly, we define:
+The codes we discussed in Section~\ref{section:algcodes:1} were all subsets of $\mathbb{Z}_2^n$, for some positive integer $n$. We shall now see that codes that are also \emph{subgroups} have special properties that enable efficient encoding and decoding. Accordingly, we define:
 
 \begin{defn}
  A \term{group
 code}\index{Code!group}\index{Group code} is a set of codewords that is also a subgroup of ${\Bbb
 Z}_2^n$.  
  \end{defn}
-\emph{Note} that at this point we are simply thinking of a group code as a set of codewords with certain properties. Of course, practical codes also require  encoding and decoding functions: we'll talk about these later.
- 
+
+\begin{rem} At this point we are simply thinking of a group code as a set of codewords with certain properties. Of course, practical codes also require  encoding and decoding functions: we'll talk about these later.
+\end{rem} 
+
  To check that a set of codewords is a group code, we need only verify closure under addition. It turns out that identity and inverse are guaranteed by closure:
 
 \begin{exercise}{ctns0}
 \begin{enumerate}[(a)]
 \item
 Show that a set of codewords in
-${\Bbb Z}_2^n$ which is closed under the operation + must also contain ${\bold 0}$ 
+$\mathbb{Z}_2^n$ which is closed under the operation + must also contain ${\bold 0}$ 
 \item
 Show that any set of codewords always includes the inverses of those codewords.
 \item
-Prove that any set of codewords of length $n$ that is closed under + is a subgroup of ${\Bbb Z}_2^n$.
+Prove that any set of codewords of length $n$ that is closed under + is a subgroup of $\mathbb{Z}_2^n$.
 \end{enumerate}
 \end{exercise} 
  
 \begin{exercise}{}
 Without doing any addition, explain why the following set of 4-tuples in
-${\Bbb Z}_2^4$ cannot be a group code. 
+$\mathbb{Z}_2^4$ can't be a group code. 
 \[
 \begin{array}{cccc}
 (0110) & (1001) & (1010) & (1100)
@@ -865,7 +866,9 @@ d_{\min} &= & \min \{ d({\bold x},{\bold y}) : {\bold x}
  
 \section{Linear Block Codes \label{section:algcodes:BlockCodes}}
   
-Using Proposition~\ref{proposition:algcodes:GroupCodeMinDist}, it is now a simple matter to find the error detection and correction capabilities of a group code. However, so far we don't have a good method  for creating group codes. In this section, we will use some techniques from linear algebra to give one such method. This method is widely used in digital information processing: for instance, in CD's DVD's and satellite communications.\footnote{To understand this section, readers should familiar with basic notions of linear algebra such as vectors, linear combination, matrix multiplication, and transpose. Readers may find a brief refresher on matrix multiplication in Chapter~\ref{Sigma}.}
+Using Proposition~\ref{proposition:algcodes:GroupCodeMinDist}, it is now a simple matter to find the error detection and correction capabilities of a group code. However, so far we don't have a good method  for creating group codes. In this section, we will use some techniques from linear algebra to give one such method. This method is widely used in digital information processing: for instance, in CDs, DVDs, and satellite communications.
+
+To understand this section, readers should familiar with basic notions of linear algebra such as systems of linear equations, vectors, linear combination, matrix multiplication, and transpose. Readers may find a brief refresher on matrix multiplication in Chapter~\ref{Sigma}.
  
  \begin{defn}
 The \term{inner product}\index{Inner product} of two binary
@@ -880,12 +883,10 @@ For example, $(011001) \cdot (110101) = 0+1+0+0+0+1 \equiv 0$ (mod $2$).
 \end{defn}
 \emph{Note} the difference between inner product and weight. When computing the weight of a codeword, the entries are added using ordinary addition. However, when computing the inner product  in ${\Bbb Z_2^n}$, the terms are added  with mod 2 addition.
 
-We can also look at an inner product as the matrix product of a row vector with a column vector. To do so, we will need to re-envision our codewords as \emph{column vectors}: so for example the binary $n-$tuple $(011001)$
-should be considered as the $6 \times 1$ column vector  $(0,1,1,0,0,1)^{\rm T}$, where ``${\rm T}$'' denotes transpose.
-Hence in our new vector picture, the codewords ${\bold x}$ and ${\bold y}$ are envisioned as column vectors:  ${\bold x} = (x_1, x_2, \ldots, x_n)^{\rm T}$ and ${\bold y} = (y_1, y_2, \ldots, y_n)^{\rm T}$. 
+We can also look at an inner product as the matrix product of a row vector with a column vector. Recall that transpose (denoted by ``T'') changes a row vector into a column vector with the same entries in the same order.
 Then we have
 \begin{eqnarray*}
-{\bold x} \cdot {\bold y} & = & {\bold x}^{\rm T}  {\bold y}
+{\bold x} \cdot {\bold y} & = & {\bold x}  {\bold y}^{\rm T}
 \\
 & = &
 \left(
@@ -906,18 +907,18 @@ x_{1}y_{1} + x_{2}y_{2} + \cdots + x_{n}y_{n}.
 \end{eqnarray*}
 Again, we emphasize the addition here is mod 2 addition. 
 
-\begin{example}{ParityCheck}
+\begin{example}{ParityCheck0}
 Suppose that the words to be encoded consist of all binary
-\mbox{3-tuples}
+3-tuples, 
 and that our encoding scheme is even-parity. To encode an arbitrary
 3-tuple, we add a fourth bit to obtain an even number of 1's. Notice
-that an arbitrary $n$-tuple ${\bold x} = (x_1, x_2, \ldots, x_n)^{\rm T}$ has an even number of 1's exactly when $x_1 + x_2 + \cdots + x_n =
-0$; hence, a 4-tuple ${\bold x} = (x_1, x_2, x_3, x_4)^{\rm T}$ has an
+that an arbitrary $n$-tuple ${\bold x} = (x_1, x_2, \ldots, x_n)$ has an even number of 1's exactly when $x_1 + x_2 + \cdots + x_n =
+0$; hence, a 4-tuple ${\bold x} = (x_1, x_2, x_3, x_4)$ has an
 even number of 1's if $ x_1+ x_2+ x_3+ x_4 = 0$, or 
 \[
 {\bold 1} \cdot {\bold x} 
 = 
-{\bold 1}^{\rm T} {\bold x} 
+{\bold 1} {\bold x}^{\rm T} 
 =
 \left(
 \begin{array}{cccc}
@@ -934,16 +935,16 @@ x_4
 \right) = 0.
 \]
 \end{example} 
-Example~\ref{example:algcodes:ParityCheck} shows that an even-parity codeword can be verified by an inner product, which is a special case of a matrix multiplication. We will now show that codewords in other types of group codes can also be verified by matrix multiplication. But first, as usual, a definition:
+Example~\ref{example:algcodes:ParityCheck0} shows that an even-parity codeword can be verified by an inner product, which is a special case of a matrix multiplication. We will now show that codewords in other types of group codes can also be verified by matrix multiplication. But first, as usual, a definition:
 
 \begin{defn} 
-Let ${\Bbb M}_{k \times n}({\Bbb Z}_2)$ denote the set
-of all $k \times n$ matrices with entries in ${\Bbb Z}_2$. We do
+Let ${\Bbb M}_{k \times n}(\mathbb{Z}_2)$ denote the set
+of all $k \times n$ matrices with entries in $\mathbb{Z}_2$. We do
 matrix operations as usual except that all our addition and multiplication
-operations occur in ${\Bbb Z}_2$. Define the \term{null
+operations occur in $\mathbb{Z}_2$. Define the \term{null
 space}\index{Matrix!null space of}\index{Null space!of a matrix} of 
-a matrix $H \in {\Bbb M}_{k \times n}({\Bbb Z}_2)$ to be the set of
-all binary $n$-tuples ${\bold x}$ such that $H{\bold x} = {\bold 0}$.
+a matrix $H \in {\Bbb M}_{k \times n}(\mathbb{Z}_2)$ to be the set of
+all binary $n$-tuples ${\bold x}$ such that $H{\bold x}^{\rm T} = {\bold 0}$.
 We denote the null space of a matrix $H$ by ${\rm Null}(H)$.  
 \end{defn} 
  
@@ -959,19 +960,181 @@ H =
 \end{array}
 \right).
 \]
-For a 5-tuple ${\bold x} = (x_1, x_2, x_3, x_4, x_5)^{\rm T}$ to be in
-the null space of $H$, $H{\bold x} = {\bold 0}$. Equivalently, the
-following system of equations must be satisfied (note that ``+'' is binary addition):   
+For a 5-tuple ${\bold x} = (x_1, x_2, x_3, x_4, x_5)$ to be in
+the null space of $H$ it must satisfy $H{\bold x}^\textrm{T} = {\bold 0}$. 
+
+This means that,
+\[
+\left(
+\begin{array}{ccccc}
+0 & 1 & 0 & 1 & 0 \\
+1 & 1 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1 & 1
+\end{array}
+\right)\cdot
+\left(
+\begin{array}{c}
+x_1 \\
+x_2\\
+x_3\\
+x_4\\
+x_5
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+0\\
+0\\
+0\\
+0\\
+0
+\end{array}
+\right)
+\]
+
+So the following system of equations must be satisfied (note that ``+'' is binary addition):   
 \begin{eqnarray*}
  x_2 + x_4   & = & 0 \\
 x_1 + x_2 + x_3 + x_4  & = & 0 \\
  x_3 + x_4 + x_5 & = & 0.
 \end{eqnarray*}
-This set of equations may be solved using conventional methods such as elimination (the only difference of course is that we're using binary arithmetic). Since there are more variables than equations, there is more than one solution. The set of all solutions is
+This set of equations may be solved using conventional methods such as substitution or elimination  (remember to use binary arithmetic!). Since there are more variables than equations, there is more than one solution. Here we use Gaussian elimination to obtain our solutions.
+
+First we have,
+
+\begin{eqnarray*}
+ x_2 + x_4   & = & 0 \\
+x_1 + x_2 + x_3 + x_4  & = & 0 \\
+ x_3 + x_4 + x_5 & = & 0
+\end{eqnarray*}
+% \begin{eqnarray*} ~ \\ \xrightarrow{R_2\leftrightarrow R_1} \end{eqnarray*}
+Then we switch the first and second equations to obtain the following system.
+ \begin{eqnarray*}
+ x_1 + x_2 + x_3 + x_4  & = & 0\\
+  x_2 + x_4   & = & 0\\
+  x_3 + x_4 + x_5 & = & 0
+\end{eqnarray*}
+% \begin{eqnarray*} ~ \\ \xrightarrow{R_2+R_1} \end{eqnarray*}
+Then we replace the first equation with the sum of the first two equations.
+  \begin{eqnarray*}
+  x_1 + x_3  & = & 0\\
+ x_2 + x_4  & = & 0\\
+   x_3 + x_4 + x_5 & = & 0
+\end{eqnarray*}
+%& \begin{eqnarray*} ~ \\ \xrightarrow{R_3+R_1} \end{eqnarray*}
+Finally, we replace the first equation with the sum of the first and third equations to obtain the following system.
+\begin{eqnarray*}
+  x_1 + x_4  + x_5 & = & 0 \\
+ x_2 + x_4  & = & 0 \\
+ x_3 + x_4 + x_5 & = & 0.
+\end{eqnarray*}
+
+Solving for $x_1$, $x_2$, and $x_3$ we have the following dependent solutions,
+
+\begin{eqnarray*}
+  x_1 &=& - x_4  + (- x_5)  \\
+ x_2 &=& - x_4   \\
+ x_3 &=& - x_4 + (-x_5).
+\end{eqnarray*}
+
+Now since we are working in $\mathbb{Z}_2^5$, $-1\equiv1$. Therefore, we have the following dependent equations.
+
+\begin{eqnarray*}
+  x_1 &=& x_4  + x_5 \\
+ x_2 &=&  x_4   \\
+ x_3 &=&  x_4 + x_5.
+\end{eqnarray*}
+
+Notice that $x_1$ and $x_3$ both depend on $x_4$ and $x_5$. Also $x_2$ depends on $x_4$. In this case,     $x_1$, $x_2$, and $x_3$ are called \emph{pivot variables} and $x_4$ and $x_5$ are called \emph{free variables}.The free variables can take on values of 0 or 1, since we are working in $\mathbb{Z}_2^5$. Because the free variables can take on two values, the number of solutions is equal to $2^k$, where $k$ is the number of free variables. So we should get four solutions.
+
+%The leading variables after applying the Gaussian method are called \emph{pivot variables}, while the non-leading variables are called \emph{free variables}. The solutions to the pivot variables depend on the  free variables. In our system, the pivot variables are $x_1$, $x_2$, and $x_3$; while the  free variables are $x_4$ and  $x_5$. 
+
+If $x_4=1$ and $x_5=1$, then we substitute those values into our system and use binary addition to find that $x_1=0$, $x_2=1$, and $x_3=0$. So one solution is $(x_1,x_2,x_3,x_4,x_5) = (0,1,0,1,1)$.
+Likewise, if $x_4=1$ and $x_5=0$, then we have as a solution $(x_1,x_2,x_3,x_4,x_5) = (1,1,1,1,0)$
+and if $x_4=0$ and $x_5=1$, we have $(x_1,x_2,x_3,x_4,x_5) = (1,0,1,0,1)$.
+Finally, if $x_4=0$ and $x_5=0$, then we have as a solution $(x_1,x_2,x_3,x_4,x_5) = (0,0,0,0,0)$.
+
+So the  set of all solutions is
 \[
-(x_1,x_2,x_3,x_4,x_5) = \{(0,0,0,0,0),(1,1,1,1,0), (1,0,1,0,1), (0,1,0,1,1)\}.
+\{(0,0,0,0,0),(1,1,1,1,0), (1,0,1,0,1), (0,1,0,1,1)\}.
 \]
-This code is easily determined to be a group code.
+ This code is easily determined to be a group code (for example, by constructing the Cayley table).
+
+(You may have noticed that the solution set is finite, unlike similar systems of linear equations that you may have seen in linear algebra. Indeed the solution set must be finite, because the set of vectors in $\mathbb{Z}_2^5$ is finite. The difference is that we're now dealing with $\mathbb{Z}_2^n$ rather than $\mathbb{R}^n$ or $\mathbb{C}^n$.) 
+\end{example}
+Let's do another example in $\mathbb{Z}_2^n$ , but this time in $\mathbb{Z}_2^4$.
+
+\begin{example}{}
+Suppose that
+\[
+H =
+\left(
+\begin{array}{cccc}
+1 & 0 & 1 & 1 \\
+1 & 1 & 1 &  0 
+\end{array}
+\right).
+\]
+For a 4-tuple ${\bold x} = (x_1, x_2, x_3, x_4)$ to be in
+the null space of $H$ it must satisfy $H{\bold x}^\textrm{T} = {\bold 0}$. 
+
+This means that,
+\[
+\left(
+\begin{array}{cccc}
+1 & 0 & 1 & 1 \\
+1 & 1 & 1 &  0
+\end{array}
+\right)\cdot
+\left(
+\begin{array}{c}
+x_1 \\
+x_2\\
+x_3\\
+x_4
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+0\\
+0\\
+0\\
+0
+\end{array}
+\right)
+\]
+So the following system of equations must be satisfied. 
+\begin{eqnarray*}
+ x_1 + x_3 + x_4   & = & 0 \\
+x_1 + x_2 + x_3   & = & 0.
+\end{eqnarray*}
+
+
+We proceed again with Gaussian elimination and  replace the second equation with the sum of the two equations to obtain the following system.
+
+\begin{eqnarray*}
+ x_1 + x_3 + x_4   & = & 0 \\
+ x_2 + x_4 & = & 0.
+\end{eqnarray*}
+
+Solving for $x_1$ and $x_2$, and replacing {-1} with its modular equivalent, {1}, we have the following dependent solutions,
+
+\begin{eqnarray*}
+  x_1 &=&  x_3  +  x_4  \\
+ x_2 &=&  x_4 .
+\end{eqnarray*}
+ 
+Notice that there are two free variables $x_3$ and $x_4$. Therefore, there are $2^2=4$ solutions. If $x_3=1$ and $x_4=1$, then $x_1=0$, $x_2=1$. So one solution is $(x_1,x_2,x_3,x_4,x_5) = (0,1,1,1)$.
+Likewise, if $x_3=1$ and $x_4=0$, then we have as a solution $(x_1,x_2,x_3,x_4,x_5) = (1,0,1,0)$
+and if $x_3=0$ and $x_4=1$, we have $(x_1,x_2,x_3,x_4,x_5) = (1,1,0,1)$.
+Finally, if $x_3=0$ and $x_4=0$, then we have as a solution $(x_1,x_2,x_3,x_4,x_5) = (0,0,0,0)$.
+
+So the  set of all solutions is
+\[
+\{(0,0,0,0),(1,1,0,1), (1,0,1,0), (0,1,1,1)\}.
+\]
 \end{example}
 
 \begin{exercise}{LinearCodes}
@@ -1070,41 +1233,40 @@ In cases (a) and (b), show that the result is a group code.
 \end{exercise}
  
 
-Example~\ref{example:algcodes:FirstGroupCode} shows a case where the null space of a matrix with entries in ${\Bbb Z}_2$ turns out to be a group code. In fact, the nulll space of such a matrix  is \emph{always} a group code: 
+Example~\ref{example:algcodes:FirstGroupCode} shows a case where the null space of a matrix with entries in $\mathbb{Z}_2$ turns out to be a group code. In fact, the null space of such a matrix  is \emph{always} a group code: 
  
 \begin{prop}{}
-Let $H$ be in ${\Bbb M}_{k \times n}({\Bbb Z}_2)$. Then the null space of
+Let $H$ be in $\mathbb{M}_{k \times n}(\mathbb{Z}_2)$. Then the null space of
 $H$ is a group~code.\index{Group code}
 \end{prop}
   
 \begin{proof}
 As mentioned previously, to show that ${\rm Null}(H)$  is a group code we just need to show that it's closed under the group operation +. Let ${\bold x},
-{\bold y} \in {\rm Null}(H)$ for some matrix $H$ in ${\Bbb M}_{k \times
-n}({\Bbb Z}_2)$. Then $H{\bold x} = {\bold 0}$ and $H{\bold y} =
+{\bold y} \in {\rm Null}(H)$ for some matrix $H$ in $\mathbb{M}_{k \times
+n}(\mathbb{Z}_2)$. Then $H{\bold x}^{\mathrm{T}} = {\bold 0}$ and $H{\bold y}^{\mathrm{T}} =
 {\bold 0}$. So 
 \[
-H({\bold x}+{\bold y}) = H({\bold x} +{\bold y})
+H({\bold x}+{\bold y})^{\mathrm{T}} = H({\bold x}^{\mathrm{T}} +{\bold y}^{\mathrm{T}})
 =
-H{\bold x} + H{\bold y} = {\bold 0}
+H{\bold x}^{\mathrm{T}} + H{\bold y}^{\mathrm{T}} = {\bold 0}
 +
 {\bold 0}
 = {\bold 0}.
 \]
 Hence, ${\bold x}+{\bold y}$ is in the null space of $H$ and
 therefore must be a codeword. 
-\mbox{\hspace{1in}}
 \end{proof}
 
 We give a special name to  group codes that are obtained as null spaces:
 
 \begin{defn}
 A code is a \term{linear code}\index{Code!linear} if it is
-determined by the null space of some matrix $H \in {\Bbb M}_{k \times
-n}({\Bbb Z}_2)$.  
+determined by the null space of some matrix $H \in \mathbb{M}_{k \times
+n}(\mathbb{Z}_2)$.  
  \end{defn}
  
  \noindent
-\emph{Note} that at this point, all we know is that linear codes are group codes -- we haven't yet proven that all group codes in ${\Bbb Z}_2^n$ are linear codes (although this turns out to be true also!)
+\emph{Note} that at this point, all we know is that linear codes are group codes -- we haven't yet proven that all group codes in $\mathbb{Z}_2^n$ are linear codes (although this turns out to be true also!)
  
 \begin{example}{SevenTuple}
 Let $C$ be the code given by the matrix
@@ -1118,11 +1280,11 @@ H =
 \end{array}
 \right).
 \]
-Suppose that the 7-tuple ${\bold x} = (0,1,0,0,1,1)^{\rm T}$ is received.
+Suppose that the 7-tuple ${\bold x} = (0,1,0,0,1,1)$ is received.
 It is a simple matter of matrix multiplication to determine whether or
 not ${\bold x}$ is a codeword. Since 
 \[
-H{\bold x} =
+H{\bold x}^{\mathrm{T}} =
 \left(
 \begin{array}{c}
 0 \\
@@ -1139,11 +1301,11 @@ correct the word or request that it be transmitted again.
 Which of the following are codewords for the code in Example~\ref{example:algcodes:SevenTuple}?
 \begin{enumerate}[(a)]
 \item
-$(1,1,1,1,1,0)^{\rm T}$
+$(1,1,1,1,1,0)$
 \item
-$(1,0,0,0,1,1)^{\rm T}$
+$(1,0,0,0,1,1)$
 \item
-$(1,0,1,0,1,0)^{\rm T}$
+$(1,0,1,0,1,0)$
 \end{enumerate}
 \end{exercise}
 
@@ -1157,8 +1319,8 @@ We have shown how to define a set of codewords for a block linear code. But so f
 \sectionvideohref{1eCIhwdnJLU&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=42}}
 
 \begin{defn}
-  Suppose that $H$ is an $k \times n$ matrix with entries in
-${\Bbb Z}_2$ and $n > k$. If the last $k$ columns of the
+  Suppose that $H$ is a $k \times n$ matrix with entries in
+$\mathbb{Z}_2$ and $n > k$. If the last $k$ columns of the
 matrix form the $k \times k$ identity matrix, $I_k$, then
 the matrix is called a \term{canonical parity-check
 matrix}\index{Matrix!parity-check}\index{Parity!canonical parity-check matrix}. More specifically, $H= (A \mid I_k
@@ -1190,7 +1352,7 @@ and $I_k$ is the $k \times k$ identity matrix
 Only one of the matrices in Exercise~\ref{exercise:algcodes:LinearCodes} is a canonical parity-check matrix. Which one is it?
 \end{exercise}
 
-Readers who have had a class in linear algebra may notice the similarity between canonical parity-check matrices and reduced row-echelon form. The only difference is that reduced row-echelon matrices have the identity submatrix on the left, while the canonical parity-check matrix has it on the right.
+Readers who have had a class in linear algebra may notice the similarity between canonical parity-check matrices and reduced row-echelon form. The only difference is that reduced row-echelon matrices have the identity submatrix on the \emph{left}, while the canonical parity-check matrix has it on the \emph{right}.
 
 In the following example, we will explore the relation between the canonical parity-check matrix $H$ and the structure of the codewords.
 % Our goal will be to show that $G {\bold x} = {\bold y}$ if and only if
@@ -1235,7 +1397,7 @@ x_3, x_4, x_5, x_6)$, then
 \[
 {\bold 0}
 =
-H{\bold x}
+H{\bold x}^{\mathrm{T}}
 =
 \left(
 \begin{array}{l}
@@ -1251,15 +1413,12 @@ x_2 + x_3 + x_4 & = & 0 \\
 x_1 + x_2 + x_5 & = & 0 \\
 x_1 + x_3 + x_6 & = & 0
 \end{eqnarray*}
-(remember that all of these equations are using binary arithmetic!) Here $x_4$ serves as a check bit for $x_2$ and $x_3$; $x_5$ is a check
-bit for $x_1$ and $x_2$; and $x_6$ is a check bit for $x_1$ and $x_3$.
-The identity matrix keeps $x_4$, $x_5$, and $x_6$ from having to check
-on each other. Hence, $x_1$, $x_2$, and $x_3$ can be arbitrary but
+(remember that all of these equations are using binary arithmetic!) Here each of the bits in $\{x_4, x_5, x_6\}$ serves as a parity check bit for two of the bits in the set $\{x_1, x_2, x_3\}$.  Hence, $x_1$, $x_2$, and $x_3$ can be arbitrary but
 $x_4$, $x_5$, and $x_6$ must be chosen to ensure parity. By following this method, we find that the vectors in Null($H$) are
 \[
 \begin{array}{cccc}
- (000000)^{\mathrm{T}} & (001101)^{\mathrm{T}} & (010110)^{\mathrm{T}} & (011011)^{\mathrm{T}} \\
- (100011)^{\mathrm{T}} & (101110)^{\mathrm{T}} & (110101)^{\mathrm{T}} & (111000)^{\mathrm{T}}.
+ (000000) & (001101) & (010110) & (011011) \\
+ (100011) & (101110) & (110101) & (111000).
 \end{array}
 \]
 \end{example}
@@ -1267,13 +1426,13 @@ $x_4$, $x_5$, and $x_6$ must be chosen to ensure parity. By following this metho
 The following proposition generalizes some of our findings from Example~\ref{example:algcodes:ParityCheck}.
 
 \begin{prop}{RowEchelon}
-Let $H \in {\Bbb M}_{k \times n}({\Bbb Z}_2)$ be a canonical
+Let $H \in \mathbb{M}_{k \times n}(\mathbb{Z}_2)$ be a canonical
 parity-check matrix. Then ${\rm Null}(H)$ consists of all 
 ${\bold x} \in {\Bbb
 Z}_2^n$ whose first $n-k$ bits are arbitrary but whose last $k$ bits
-are determined by $H{\bold x} = {\bold 0}$. Each of
+are determined by $H{\bold x}^{\mathrm{T}} = {\bold 0}$. Each of
 the last $k$ bits serves as an even parity check bit for some of the
-first $n-k$ bits. Hence, $H$ gives rise to an $(n, n-k)$-block code\index{Block code} \index{Code! block code}. 
+first $n-k$ bits. Hence, $H$ gives rise to an $(n, n-k)$-block code\index{Block code} \index{Code! block code} (according to the notation that we introduced in Definition~\ref{definition:algcodes:BlockCode}). 
 \end{prop}
 
 The proof of Proposition~\ref{proposition:algcodes:RowEchelon} simply follows the same steps as in Example~\ref{example:algcodes:ParityCheck}, except that instead of 3 equations in 6 unknowns we have $k$ equations in $n$ unknowns. Readers who've had linear algebra may recognize that this is exactly the same as the method for solving linear equations using row-echelon form: the $k$ equations in $n$ unknowns give rise to $n-k$ free variables, that determine the other variables in the solution.
@@ -1290,18 +1449,22 @@ and the last three are the check bits.
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
-Find the canonical parity-check matrix that gives the even parity check code with three information bits. How many check bits are there?
+Find the canonical parity-check matrix for a code that performs a single even parity check for  three information bits (i.e. 3 information bits, 1 check bit).
 \item
 Same as (a), except with seven information bits.
 \item
-It is possible to implement the odd parity-check code using a parity-check matrix?  \emph{Explain} your answer.
+Is it possible to implement the odd parity-check code using a parity-check matrix?  \emph{Explain} your answer.
 \end{enumerate}
 \end{exercise}
 
  
  \subsection{Standard Generator Matrices}
  
-We now have a relatively straightforward way to generate the codewords in Null($H$), if $H$ is a canonical parity-check matrix. But there's an even easier way -- and one that gives us an encoding function in the bargain. But first, another definition: 
+We now have a relatively straightforward way to generate the codewords in Null($H$), if $H$ is a canonical parity-check matrix. But there's an even easier way -- and one that gives us an encoding function in the bargain. 
+
+Before jumping into this discussion, we should simplify our notation. Up to now we've been very careful to identify code words as row vectors, as opposed to column vectors: so for instance we've always written the parity check condition as $H \textbf{x}^\textrm{T} = 0$, in order to ensure that $\textbf{x}$ is interpreted as a column vector.  But when you come right down to it, vectors are vectors, no matter whether they're written horizontally or vertically. In the following discussion we'll be  more casual, and simply denote the codeword by $\textbf{x}$ whether it's arranged as a row or column vector. So for instance, we'll simply write $H \textbf{x} = \textbf{0}$ instead of  $H \textbf{x}^\textrm{T} = \textbf{0}$ . The context will determine whether the row or column vector is meant.
+
+Now that that's out of the way,  let's begin on our new code generation method.  First, a definition:
 
 \begin{defn}\label{definition:algcodes:GeneratorMatrix}
 With each $k \times n$ canonical parity-check matrix 
@@ -1336,7 +1499,7 @@ G=
 \end{array}
 \right)
 \]
-By comparing $G$ with the  list of vectors in Null($H$), we find that all the columns of $G$ ``just happen'' to be  contained in Null($H$) (this is no accident, as we shall see!). In fact, any linear combination of the columns of $G$ will also be in Null(\emph{H}). To see this, denote the columns of $G$ by ${\bold g}_1, {\bold g}_2, {\bold g}_3$, and let $x_1, x_2, x_3 \in {\Bbb Z}_2$. Then  we have (by ordinary matrix multiplication, except all operations are binary)
+By comparing $G$ with the  list of vectors in Null($H$), we find that all the columns of $G$ ``just happen'' to be  contained in Null($H$) (this is no accident, as we shall see!). In fact, any linear combination of the columns of $G$ will also be in Null(\emph{H}). To see this, denote the columns of $G$ by ${\bold g}_1, {\bold g}_2, {\bold g}_3$, and let $x_1, x_2, x_3 \in \mathbb{Z}_2$. Then  we have (by ordinary matrix multiplication, except all operations are binary)
 \[
 H (x_1 {\bold g}_1 + x_2{\bold g}_2 + x_3{\bold g}_3) = 
 x_1H {\bold g}_1 + x_2H{\bold g}_2 + x_3H{\bold g}_3
@@ -1345,7 +1508,7 @@ x_1H {\bold g}_1 + x_2H{\bold g}_2 + x_3H{\bold g}_3
  The linear combination of columns of $G$ can in fact be represented more simply using matrix-vector multiplication:
 \[x_1 {\bold g}_1 + x_2{\bold g}_2 + x_3{\bold g}_3 = G{\bold x} 
 \]
-This gives us another way to generate codewords that are in Null($H$): we just take any element in ${\Bbb Z}_2^3$, and multiply it by $G$. In fact, this gives us our long-sought encoding function! For any message word in ${\Bbb Z}_2^3$ we multiply on the left by $G$ and voil\`{a}! The result is a codeword.
+This gives us another way to generate codewords that are in Null($H$)--namely, take any element in $\mathbb{Z}_2^3$ and multiply it by $G$. In fact, this gives us our long-sought encoding function! For any message word in $\mathbb{Z}_2^3$ we multiply on the left by $G$ and voil\`{a}! The result is a codeword.
 Table~\ref{table:algcodes:generator} shows the results of this procedure. From the table, we find that this method of generating codewords gives us all of the vectors in Null(\emph{H}). Furthermore, each different message word produces a different codeword, as a proper encoding function should.
  
 \begin{table}[htb]
@@ -1373,16 +1536,8 @@ ${\bold x}$ & $G {\bold x}$ \\ \hline
 \begin{exercise}{StandardGenerator}
 For each of the following canonical parity-check matrices, find the corresponding standard generator matrix. Use the standard generator matrix to compute codewords (make a table similar to Table~\ref{table:algcodes:generator}), and verify that the codewords are in the null space of the canonical parity-check matrix.
  
-\vspace{3pt}        %two column exercise list
- 
-\hspace{-7pt}
-\begin{minipage}[t]{4.6in}
-\noindent
-\begin{minipage}[t]{2.25in}
-\begin{itemize}
- 
- \item[{\bf (a)}]
-\raisebox{-17.5pt}{\parbox{1.85in}{
+\begin{enumerate}[(a)]
+ \item
 \[
 \left(
 \begin{array}{ccccc}
@@ -1393,27 +1548,8 @@ For each of the following canonical parity-check matrices, find the correspondin
 \end{array}
 \right)
 \]
-}}
- 
- \item[{\bf (c)}]
-\raisebox{-5.75pt}{\parbox{1.85in}{
-\[
-\left(
-\begin{array}{cccc}
-1 & 1 & 1 & 0 \\
-1 & 0 & 0 & 1
-\end{array}
-\right)
-\]
-}}
- 
-\end{itemize}
-\end{minipage} \hfill
-\begin{minipage}[t]{2.25in}
-\begin{itemize}
- 
- \item[{\bf (b)}]
-\raisebox{-17.5pt}{\parbox{1.85in}{
+
+\item
 \[
 \left(
 \begin{array}{cccccc}
@@ -1424,33 +1560,37 @@ For each of the following canonical parity-check matrices, find the correspondin
 \end{array}
 \right)
 \]
-}}
- 
- \item[{\bf (d)}]
-\raisebox{-17.5pt}{\parbox{1.85in}{
+
+ \item
 \[
 \left(
-\begin{array}{ccccccc}
-0 & 0 & 0 & 1 & 0 & 0 & 0 \\
-0 & 1 & 1 & 0 & 1 & 0 & 0 \\
-1 & 0 & 1 & 0 & 0 & 1 & 0 \\
-0 & 1 & 1 & 0 & 0 & 0 & 1
+\begin{array}{cccc}
+1 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1
 \end{array}
 \right)
 \]
-}}
- 
-\end{itemize}
-\end{minipage}
-\end{minipage}
+
+ \item
+\[
+\left(
+\begin{array}{cccccc}
+0 & 1 & 1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 & 0 & 1
+\end{array}
+\right)
+\]
+\end{enumerate}
 \end{exercise}
 
  The following proposition  generalizes what we found in the previous example.
  
  \begin{prop}{}
-Suppose that $G$ is an $n \times k$  standard generator matrix.  Then
-\mbox{$C = \{ {\bold y} : G {\bold x} ={\bold y} \mbox{ for ${\bold x} \in
-{\Bbb  Z}_2^k$} \}$} is an  $(n,k)$-block code. More specifically, $C$
+Suppose that $G$ is an $n \times m$  standard generator matrix.  Then
+$C = \{ \textbf{y} : G \textbf{x} =\textbf{y}$  for $\textbf{x} \in
+{\Bbb  Z}_2^m \}$ is an  $(n,m)$-block code. More specifically, $C$
 is a group code.  
 \end{prop}
  
@@ -1465,7 +1605,7 @@ G {\bold x}_1 + G {\bold x}_2
 =
 {\bold y}_1 + {\bold y}_2.
 \]
-We must also show that two message blocks \index{Message block} cannot be encoded into the
+We must also show that two message blocks \index{Message block} can't be encoded into the
 same codeword. That is, we must show that if $G {\bold x} = G
 {\bold y}$, then ${\bold x} = {\bold y}$.  Suppose that $G
 {\bold x} = G {\bold y}$. Then
@@ -1494,7 +1634,7 @@ matrix and $G = \left(
 A
  \end{array} \right)$ be the
 corresponding $n \times (n-k)$ standard generator matrix. Then $HG =
-{\bold 0}$, where  ${\bold 0}$ denotes the $k \times n-k$ matrix of all 0's.
+{\bold 0}$, where  ${\bold 0}$ denotes the $k \times (n-k)$ matrix of all 0's.
 \end{prop}
   
 \begin{proof}
@@ -1504,7 +1644,7 @@ It is possible to prove this by writing out the matrix product $HG$ using summat
  I_{n-k} \\
 A
  \end{array} \right) = (A + A),\]
-but since we are adding in binary, it follows that $A + A$ is the $k \times n-k$ matrix of all 0's.
+but since we are adding in binary, it follows that $A + A$ is the $k \times (n-k)$ matrix of all 0's.
 % Let $C = HG$.  The $ij$th entry in $C$ is
 % \begin{eqnarray*}
 % c_{ij}
@@ -1535,10 +1675,10 @@ but since we are adding in binary, it follows that $A + A$ is the $k \times n-k$
 % is the Kronecker delta\index{Kronecker delta}.
 \end{proof}
  
- We now administer the coup-de gr\^{a}ce, and establish equality between Null($H$) and the code generated by $G$.
+ We now top things off by establishing equality between Null($H$) and the code generated by $G$.
   
  \begin{prop}{}
-Let $H = (A \mid I_k )$ be an $k \times n$ canonical parity-check
+Let $H = (A \mid I_k )$ be a $k \times n$ canonical parity-check
 matrix and let $G = \left(
 \begin{array}{c}
 I_{n-k} \\
@@ -1553,18 +1693,14 @@ canonical parity-check matrix $H$.
  
 \begin{proof}
 First suppose that ${\bold y} \in C$. Then $G {\bold x} = {\bold y}$
-for some ${\bold x} \in {\Bbb Z}_2^{n-k}$. By Proposition~\ref{proposition:algcodes:HGEquals0}, $H {\bold y} = HG
+for some ${\bold x} \in \mathbb{Z}_2^{n-k}$. By Proposition~\ref{proposition:algcodes:HGEquals0}, $H {\bold y} = HG
 {\bold x} = {\bold 0}$. 
  
  
-Conversely, suppose that ${\bold y} = (y_1, \ldots, y_n)^{\rm T}$ is
+Conversely, suppose that ${\bold y} = (y_1, \ldots, y_n)$ is
 in the null space of $H$. We can split ${\bold y}$ into two parts as follows:
-\[{\bold y} =  \left(
- \begin{array}{c}
- {\bold y}_a \\
-{\bold y}_b
- \end{array} \right) \quad
-\mathrm{where~} {\bold y}_a := (y_1, \ldots, y_{n-k})^{\mathrm{T}} \text{ and } {\bold y}_b := (y_{n-k+1}, \ldots, y_n)^{\mathrm{T}}. \]
+\[{\bold y} =  \left(  {\bold y}_a \,\, {\bold y}_b
+ \right), \text{ where } {\bold y}_a := (y_1, \ldots, y_{n-k}) \text{ and } {\bold y}_b := (y_{n-k+1}, \ldots, y_n). \]
 Since  ${\bold y}$ is in the null space of $H$ we have 
  $H
 {\bold y} = {\bold 0}$, which we can also write as (using partitioned matrix multiplication)
@@ -1597,10 +1733,10 @@ In this section, we will show how to  obtain the error correction and detection 
 
 Suppose that a codeword ${\bold x}$ is transmitted with a single error. Then the resulting transmitted word can be written as ${\bold x} + {\bold e}_j$, where ${\bold e}_j$ has a nonzero entry only in the $j$'th position:
 \begin{eqnarray*}
-{\bold e}_1 & = & (100 \cdots 00)^{\rm T} \\
-{\bold e}_2 & = & (010 \cdots 00)^{\rm T} \\
+{\bold e}_1 & = & (100 \cdots 00) \\
+{\bold e}_2 & = & (010 \cdots 00) \\
  & \vdots & \\
-{\bold e}_n & = & (000 \cdots 01)^{\rm T}
+{\bold e}_n & = & (000 \cdots 01)
 \end{eqnarray*}
 In this case, when we apply the parity check matrix to the transmitted codeword we obtain
 \[ H({\bold x} + {\bold e}_j) = H{\bold x} + H{\bold e}_j = {\bold 0} + H{\bold e}_j  = H{\bold e}_j. \]
@@ -1628,8 +1764,8 @@ We generalize our findings in this exercise as follows:
 
 \begin{prop}{BasisVectors}
 Let ${\bold e}_i$ be the binary $n$-tuple with a $1$ in the $i$th
-coordinate and $0$'s elsewhere and suppose that $H \in {\Bbb M}_{m
-\times n}({\Bbb Z}_2)$. Then $H{\bold e}_i$ is the $i$th column of
+coordinate and $0$'s elsewhere and suppose that $H \in \mathbb{M}_{m
+\times n}(\mathbb{Z}_2)$. Then $H{\bold e}_i$ is the $i$th column of
 the matrix $H$.  
 \end{prop}
  Proposition~\ref{proposition:algcodes:BasisVectors} is a well-known fact in linear algebra, so we refer the reader to a linear algebra textbook for proof.\footnote{See for example: David C. Lay, ``Linear Algebra and its Applications'' (Third Edition), Section 1.4.}
@@ -1650,7 +1786,7 @@ codewords of less than weight 2 other than the zero codeword. That
 is, ${\bold e}_i$ must not be a codeword for $i = 1, \ldots, n$. Since
 $H{\bold e}_i$ is the $i$th column of $H$, the only way in which
 ${\bold e}_i$ could be in the null space of $H$ would be if the $i$th
-column were all zeros, which is impossible; hence, the code must have
+column of $H$ were all zeros, which is impossible; hence, the code must have
 the capability to detect at least single errors.
  
  Conversely, suppose that no column of $H$ is the zero column. By 
@@ -1694,9 +1830,9 @@ H =
 \end{array}
 \right)
 \]
-The corresponding code is single error-correcting if all nonzero codewords have weight greater than two. Since there are no zero columns, Proposition~\ref{proposition:algcodes:SingleErrorDetect} tells us that no codewords have weight 1. So we only need to check that  ${\rm Null}(H)$ does not contain any 4-tuples of weight
-2, so that $(1100)^{\mathrm{T}}$, $(1010)^{\mathrm{T}}$, $(1001)^{\mathrm{T}}$, $(0110)^{\mathrm{T}}$, $(0101)^{\mathrm{T}}$, and
-$(0011)^{\mathrm{T}}$ must not be in ${\rm Null}(H)$.
+The corresponding code is single error-correcting if all nonzero codewords have weight greater than two. Since there are no zero columns, Proposition~\ref{proposition:algcodes:SingleErrorDetect} tells us that no codewords have weight 1. We thus only need to check that  ${\rm Null}(H)$ does not contain any 4-tuples of weight
+2, so that $(1100)$, $(1010)$, $(1001)$, $(0110)$, $(0101)$, and
+$(0011)$ must not be in ${\rm Null}(H)$.
 \end{example}
 
 \begin{exercise}{}
@@ -1734,7 +1870,7 @@ three rows. Then we might ask how many more columns we can add to
 the matrix and still have a null space that is a single
 error-detecting and single error-correcting code. Since each column
 has three entries, there are $2^3 = 8$ possible distinct columns. We
-cannot add the columns 
+can't add the columns 
 \[
 \left(
 \begin{array}{c} 0 \\ 0 \\ 0 \end{array}
@@ -1812,8 +1948,8 @@ H =
 \end{array}
 \right)
 \]
-and the 5-tuples ${\bold x} = (11011)^{\rm T}$ and ${\bold y} =
-(01011)^{\rm T}$, we can compute
+and the 5-tuples ${\bold x} = (11011)$ and ${\bold y} =
+(01011)$, we can compute
 \[
 H{\bold x} =
 \left(
@@ -1837,7 +1973,7 @@ where the error occurred. If we flip the first bit in ${\bold y}$ from
  It appears from this example that the vector $H{\bold x}$ has special importance, so we create a special term for it:
  
  \begin{defn}
-If $H$ is an $k \times n$ matrix and ${\bold x} \in {\Bbb Z}_2^n$,
+If $H$ is an $k \times n$ matrix and ${\bold x} \in \mathbb{Z}_2^n$,
 then $H{\bold x}$ is called the \term{syndrome}\index{Syndrome of a code} of
 ${\bold x}$
 \end{defn}
@@ -1867,7 +2003,7 @@ following proposition follows immediately from Proposition~\ref{proposition:algc
 the fact that $H{\bold e}_j$ is the $j$th column of the matrix $H$.
  
  \begin{prop}{}
-Let $H \in {\Bbb M}_{ k \times n} ( {\Bbb Z}_2)$ and suppose that the
+Let $H \in \mathbb{M}_{ k \times n} ( \mathbb{Z}_2)$ and suppose that the
 linear code corresponding to $H$ is single error-correcting. Let
 ${\bold r}$ be a received $n$-tuple that was transmitted with at most
 one error. If the syndrome of ${\bold r}$ is ${\bold 0}$, then no
@@ -1978,11 +2114,11 @@ We can use group theory to obtain another way of decoding messages that makes us
 forgotten what cosets are, you may look back at Chapter~\ref{cosets} to refresh your memory.) 
 
 Since the
-linear code $C$ is a subgroup of ${\Bbb Z}_2^n$, it follows that ${\Bbb Z}_2^n$ 
+linear code $C$ is a subgroup of $\mathbb{Z}_2^n$, it follows that $\mathbb{Z}_2^n$ 
 may be partitioned into cosets of $C$. 
-In particular,  if $C$ is an $(n,m)$-linear code, then a coset of $C$ in ${\Bbb Z}_2^n$ is written in
-the form ${\bold x} + C$, where ${\bold x} \in {\Bbb Z}_2^n$. By Lagrange's Theorem, 
-there are $2^{n-m}$ distinct cosets of $C$ in ${\Bbb Z}_2^n$. The following example shows how 
+In particular,  if $C$ is an $(n,m)$-linear code, then a coset of $C$ in $\mathbb{Z}_2^n$ is written in
+the form ${\bold x} + C$, where ${\bold x} \in \mathbb{Z}_2^n$. By Lagrange's Theorem, 
+there are $2^{n-m}$ distinct cosets of $C$ in $\mathbb{Z}_2^n$. The following example shows how 
 this works in a particular case:
 
  
@@ -2004,7 +2140,7 @@ The code consists of the codewords
 (00000)& (01101)& (10011)& (11110),
 \end{array}
 \]
-There are $2^{5-2} = 2^3$ cosets of $C$ in ${\Bbb Z}_2^5$, each with
+There are $2^{5-2} = 2^3$ cosets of $C$ in $\mathbb{Z}_2^5$, each with
 order $2^2 =4$.  These cosets are listed in Table~\ref{table:algcodes:cosets}. 
 \end{example}
  
@@ -2062,7 +2198,7 @@ that we  calculate from the received codeword points to exactly one coset:
 
  \begin{prop}{}
 Let $C$ be an $(n,k)$-linear code given by the matrix $H$ and suppose
-that ${\bold x}$ and ${\bold y}$ are in ${\Bbb Z}_2^n$. Then ${\bold
+that ${\bold x}$ and ${\bold y}$ are in $\mathbb{Z}_2^n$. Then ${\bold
 x}$ and ${\bold y}$ are in the same coset of $C$ if and only if
 $H{\bold x} = H{\bold y}$. That is, two $n$-tuples are in the same
 coset if and only if their syndromes are the same.
@@ -2136,8 +2272,8 @@ Syndrome & Coset Leader \\
  
  
 \begin{exercise}{}
-Let $C$ be the group code in ${\Bbb Z}_2^3$ defined by the codewords
-$(000)$ and $(111)$. Compute the cosets of $H$ in ${\Bbb Z}_2^3$. Why
+Let $C$ be the group code in $\mathbb{Z}_2^3$ defined by the codewords
+$(000)$ and $(111)$. Compute the cosets of $H$ in $\mathbb{Z}_2^3$. Why
 was there no need to specify right or left cosets? Give the
 single transmission error, if any, to which each coset corresponds.
  \end{exercise}
@@ -2261,7 +2397,7 @@ weight or exactly half of the codewords have even weight.  \hyperref[sec:algcode
 Let $C$ be an $(n,k)$-linear code. Define the \term{
 dual}\index{Code!dual} or \term{Orthogonal code}\index{Code!orthogonal} of $C$  to be 
 \[
-C^\perp = \{ {\bold x} \in {\Bbb Z}_2^n :  {\bold x} \cdot {\bold y} =
+C^\perp = \{ {\bold x} \in \mathbb{Z}_2^n :  {\bold x} \cdot {\bold y} =
 0 \mbox{ for all } {\bold y} \in C \}. 
 \]
 
@@ -2290,7 +2426,7 @@ $C^\perp$. What happens in general? Prove your conjecture.
  \end{exercise}
  
 \begin{exercise}{}
-Let $H$ be an $m \times n$ matrix over ${\Bbb Z}_2$, where the $i$th
+Let $H$ be an $m \times n$ matrix over $\mathbb{Z}_2$, where the $i$th
 column is the number $i$ written in binary with $m$ bits. The null
 space of such a matrix is called a \term{Hamming
 code}\index{Hamming code!definition}\index{Code!Hamming}. 
@@ -2351,11 +2487,7 @@ your simulation with the theoretically predicted error probability.
 \end{exercise}
   
 
-\histhead
- 
- 
-\noindent{\small \histf
-Modern coding theory began in 1948 with C. Shannon's\index{Shannon,
+\begin{rem} (\emph{historical background})  Modern coding theory began in 1948 with C. Shannon's\index{Shannon,
 C.} paper, ``A Mathematical Theory of Information'' [7]. This paper offered
 an example of an algebraic code, and Shannon's Theorem proclaimed
 exactly how good codes could be expected to be. Richard
@@ -2370,8 +2502,7 @@ contained over 1500 references. Linear codes (Reed-Muller $(32,
 space probes such as Voyager have used what are called convolution
 codes.  Currently, very active research is being done with Goppa
 codes, which are heavily dependent on algebraic geometry.
-\histbox
-} 
+\end{rem}
  
 \section{References and Suggested Readings}
  

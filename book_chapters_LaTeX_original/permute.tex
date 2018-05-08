@@ -49,11 +49,11 @@ We mentioned at the beginning of  the ``Functions'' chapter that we would be int
 
 Thanks to Tom Judson for material used in this chapter.
 
-\section{Introduction to permutations}
+\section{Introduction to permutations}\label{introduction}
 
 In Chapter~\ref{symmetries} we saw that all symmetries are  bijections whose domain and codomain were the same.  Thus symmetries are special cases of \emph{permutations}, which are defined mathematically as follows.
 
-\begin{defn}
+\begin{defn} \label{defperm}
 A bijection whose domain and codomain are equal is called a \term{permutation}\index{Permutation!definition of}\index{Bijection!as a permutation}. The set of all bijections from a finite set $X$ to itself is called the \term{set of permutations on $X$} and is denoted as $S_X$.
 \end{defn}
 
@@ -139,7 +139,7 @@ Actually, \emph{any} symmetry is a permutation, since a symmetry is by definitio
 
 
 
-\section{Permutation groups and other generalizations}
+\section{Permutation groups and other generalizations}\label{groups_generalizations}
 
 %Suppose in the exercise above that $X = \{1, 2, 3, 4\}$ instead of $\{A, B, C, D\}$.  Could we still represent a four-sided figure with $X$.  Of course; we can label the vertices of the figure whatever we want.  More importantly, 
 
@@ -165,7 +165,7 @@ Finally, composition of functions is associative, which makes the group operatio
 Hence $S_X$ is a group under function composition.
 \end{proof}
 
-\subsection{The symmetric group on $n$ numbers}
+\subsection{The symmetric group on $n$ numbers}\label{subsec:permute:symmn}
 
 We can label the vertices of a triangle as $A, B, C$ or $1, 2, 3$ or $\var{apple, pear, cherry}$ or whatever, without changing the triangle. No matter how we label the triangle, the symmetries of the triangle will be the "same" in some sense (although we write them down differently). 
 
@@ -213,7 +213,7 @@ Although we've only shown this for two particular examples, it makes sense that 
 
 So far we have only looked at sets with four elements. Now it's time to generalize these results to sets of any size. First, some notation:
 
-\begin{notation}
+\begin{notation}\label{order_y}
 The \term{order of a set} $Y$ is the number of elements of $Y$, and is written as $|Y|$.\index{Order! of a set}
 \footnote{ You're probably used to seeing $|\ldots|$ as representing absolute value. Of course a set is not a number, so it has no absolute value. We use $|Y|$ to denote order because it's a measure of the \emph{size} of set $Y$, just as the absolute value of a number is the ``size'' of the number.}
 \end{notation}
@@ -232,7 +232,7 @@ We've just seen the very same thing for $S_n$. If  $|X| = |Y| = n$ and we replac
 
 This "equivalence of groups" is one of the premier concepts in abstract algebra, almost as important as the concept of a group  itself.  When two groups are equivalent like this, we say that they are \term{isomorphic groups}; we also say that the bijection that causes the groups to be equivalent is an \term{isomorphism}\index{Isomorphic groups}\index{Group!isomorphic}\index{Isomorphism!definition of}.  We will see in a later chapter how to show in general that two groups are isomorphic; but for now, forming the groups' Cayley Tables and seeing if you can match elements to make the tables the same is a very good strategy.
 
-\begin{exercise}{}
+\begin{exercise}{isomorphic1}
 Let $W =\{G, H \}$ and $Z = \{J, K \}$.
 \begin{enumerate}[(a)]
 \item
@@ -264,7 +264,7 @@ Give a bijection from $X$ to $Y$, and the corresponding bijection from $S_X$ to 
 
 Let's summarize this section so far.  The permutations on a set $X$ of $n$ elements is a group under function composition (denoted by  $S_n$).  Further, for any figure with $n$ sides, the symmetries of that figure is a subset of $S_n$ containing at least the identity permutation, and that subset is itself a group under function composition.  This example motivates the following definition.
 
-\begin{defn}
+\begin{defn}\label{def_subgroup}
 A subset of a group $G$ that is itself a group under the same operation as $G$ is called a \term{subgroup}\index{Subgroup} of $G$.  
 \end{defn}
 
@@ -286,7 +286,7 @@ The permutations of $\{1,2,3\}$ are a subgroup of the permutations of $\{1,2,3,4
 
 %Now, let us generalize again.  Suppose we were looking at the set of symmetries for a rectangle.  We've proved it's a group by the properties of symmetries and bijections.  If we took that set of permutations and "erased" the rectangle, would the permutations still be a group?  If the set didn't correspond to the symmetries of a figure, would the permutations sill act as a group?  They should, because whether the permutation are connected to a figure or not, they should still act the same when you compose them.  In fact it makes sense that they would, because the Cayley Table for that set of permutations would remain exactly the same.  Therefore you would still have closure under function composition, and the operation of the identity permutation and existence of inverses would remain exactly the same.  The associativity of the set wouldn't change, because function composition is still associative.  Nothing would actually change.  So the permutations that correspond to the symmetries of a rectangle are a subgroup in their own right.  This leads to the following generalization and definition:
 
-\begin{defn}
+\begin{defn}\label{def_perm_group}
 A subgroup of $S_n$ is called a \term{permutation group}\index{Group!permutation}\index{Permutation group}.
 \end{defn}
 
@@ -366,7 +366,7 @@ As the example shows, a permutation group need not comprise all symmetries of a 
 %\end{rem}
 
 \section{Cycle notation\quad
-\sectionvideohref{DdlusCIP-4k&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=21}}
+\sectionvideohref{DdlusCIP-4k&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=21}}\label{cycle}
 \subsection{Tableaus and cycles}
 In the Symmetries chapter, we introduced tableau notation to deal with bijections because of its brevity and ease of use for function composition.  But as you may have noticed in the last section, even tableaus can become cumbersome to work with.  To work effectively with permutation groups, we need a more streamlined method of writing down and manipulating permutations.  This method is known as cycle notation.
 
@@ -468,7 +468,7 @@ Hence
 Based on the procedure in the previous example then, how would we represent the identity permutation on a set of $n$ elements?  All the elements stay put, so technically ${\var id}$ would equal the ``empty cycle''.  Some references in fact use  ``$()$" to denote the identity: but in this book we will always denote
 the identity permutation  by ${\var id}$ as a reminder that this is in fact the group's identity element.\index{Permutation!identity}\index{Identity!of permutation groups}
 
-\begin{warn}
+\begin{warn}\label{cycle_domain}
 Cycle notation does not indicate the domain of the permutation. For instance, the permutation $(243)$ in Example~\ref{example:permute:permute_to_cycle_3} had domain $\{1,2,3,4,5,6\}$, but  $(243)$ could also refer to a permutation on the domain $\{1,2,3,4\}$. When working with permutations in cycle notation, make sure you know what the domain is. (In most cases, it's clearly specified by the context.)
 % We must be very careful when working with and interpreting permutations in cycle notation.  $\tau$ only has three elements in its cycle, yet we know it has six elements in its domain.  What happened to the other elements?  Those single element parentheses were dropped because those elements "stayed put".  Therefore when we are given $\tau = (243)$, we must assume the other elements stay put.  Basically we assume the single parentheses are there, just like in the equation ''$3 + x = 8$'' we assume there is a 1 in front of $x$ though the coefficient isn't written.  However, what if I gave you $\tau$ without giving you the domain?  What elements, if any, can you assume stay put?  To make that assumption about $\tau$ we \emph{must} know the domain of $\tau$.  That \emph{cannot} be assumed, it must be known.
 \end{warn}
@@ -1004,22 +1004,26 @@ $(1254)^2 (123)(45)$
 
 \subsection{Cycle structure of permutations}
 
-Over the last several subsections, we've seen permutations represented as no cycles (${\var id}$), a single cycle, or the product of any number of disjoint cycles.  This worked because both a single cycle and a product of disjoint cycles can't be reduced to a simpler form in cycle notation.  Are there any other possibilities?   Are there permutations that can't be represented as either a single cycle or a product of disjoint cycles?  The answer to this compelling question is given in the following proposition. 
+Over the last several subsections, we've seen permutations represented as no cycles (${\var id}$), a single cycle, or the product of any number of disjoint cycles.  This worked because both a single cycle and a product of disjoint cycles can't be reduced to a simpler form in cycle notation.  Are there any other possibilities?   Are there permutations that can't be represented as either a single cycle or a product of disjoint cycles?  The answer to this compelling question is given in the following proposition. This type of proposition is called an ``existence and uniqueness'' statement, and for convenience we'll divide the statement into two parts:
 
 %%% I don't think it's necessary to include the following
 % For instance, suppose there was a permutation that couldn't be represented by either a one-cycle or $n$ disjoint cycles.  Then it would have to be represented by more than one cycle, say $k$ cycles, in which $m$ (at least two) of the cycles are disjoint.  But if this was the case, then by our work so far, we know we could take the $m$ disjoint cycles and simplify them, two at a time, to either one-cycle or say $p$ disjoint cycles.  Either way, our permutation would then be represented by either a one-cycle or $(k - m + p)$ disjoint cycles.  This then is an informal, not fully generalized explanation (short of a proof) for the following fact:
 
-\begin{prop}{perm_simple_notation}     
-Every permutation in $S_n$ can be written either as the identity, a  single cycle, or as the product of disjoint cycles. 
+\begin{prop}{perm_simple_notation}
+\begin{enumerate}[(a)]
+\item    
+Every permutation $\sigma$ in  $S_n$ can be written either as the identity, a  single cycle, or as the product of disjoint cycles. 
+\item
+These  disjoint cycles are \emph{uniquely} determined by the permutation $\sigma$.
+\end{enumerate}
 \end{prop}
 
 \noindent
 The following  proof is a formalized version of the procedure we've been using to change permutations from tableau form to cycle notation.
 Admittedly, it looks intimidating. However, we include it for your ``cultural enrichment'', because higher-level  mathematics is typically  like this. It's often the case that  particular examples of a certain principle are relatively easy to explain, but constructing a  general proof that covers \emph{all} cases is much more difficult.
 
-\medskip
 \noindent
-Also, recall  that the notation $\sigma = (a_1 \, a_2 \, \ldots \, a_n)$ means:
+Before starting the proof, we remind you   that the notation $\sigma = (a_1 \, a_2 \, \ldots \, a_n)$ means:
 \begin{align*}
 \sigma( a_1 )  = a_2  & &
 \sigma( a_2 )  = a_3 & 
@@ -1032,9 +1036,10 @@ and $\sigma( x) =x$ for all other elements $x \in X$.
 
 
 \begin{proof}
+Let's begin with (a)
 We can assume that $X = \{ 1, 2, \ldots, n \}$. Let $\sigma \in S_n$,
-and define $X_1 = \{1,  \sigma(1), \sigma^2(1), \ldots \}$. The set $X_1$ is finite since $X$ is finite. Therefore the sequence  $1, \sigma(1), \sigma^2(1), \ldots $ must repeat. Let $j_1$ be the first index where the sequence repeats: that is, $\sigma^{j_1}(1) = \sigma^k(1)$ for some $k < j_1$.  Then if we apply $\sigma^{-1}$  to both sides of the equation we get 
-$\sigma^{j_1-1}(1) = \sigma^{k-1}(1)$. Repeating this $k-1$ more times gives $\sigma^{j_1-k}(1) = 1$. This implies that the sequence repeats at index $j_1-k$: but we've already specified that $j_1$ is the \emph{first} index where the sequence repeats. The only way this can happen is if $k=0$. It follows that $X_1 = \{1, \sigma(1), \sigma^2(1), \ldots \sigma^{j_1-1}(1) \}$, where $\sigma^j_1(1) = 1$.
+and define $X_1 = \{1,  \sigma(1), \sigma^2(1), \ldots \}$. The set $X_1$ is finite since $X$ is finite. Therefore the sequence  $1, \sigma(1), \sigma^2(1), \ldots $ must repeat. Let $j_1$ be the first index where the sequence repeats, so that   $\sigma^{j_1}(1) = \sigma^k(1)$ for some $k < j_1$.  Then if we apply $\sigma^{-1}$  to both sides of the equation we get 
+$\sigma^{j_1-1}(1) = \sigma^{k-1}(1)$. Repeating this $k-1$ more times gives $\sigma^{j_1-k}(1) = 1$. This implies that the sequence repeats at index $j_1-k$: but we've already specified that $j_1$ is the \emph{first} index where the sequence repeats. The only way this can happen is if $k=0$. It follows that $X_1 = \{1, \sigma(1), \sigma^2(1), \ldots \sigma^{j_1-1}(1) \}$, where $\sigma^{j_1}(1) = 1$.
 
 Now there are two possible cases: 
 
@@ -1054,7 +1059,8 @@ We claim furthermore that  $X_1$ and $X_2$ are disjoint. We can see this by cont
 Continuing in
 the same manner, we can define finite disjoint sets $X_3, X_4, \ldots$.
 Since $X$ is a finite set, we are guaranteed that this process will
-end and there will be only a finite number of these sets, say $r$. If
+end and there will be only a finite number of these sets. Some of these sets $X_j$ will have only a single element: in this case, $\sigma_j= \var{id}$, and it is 
+not necessary to include these sets in the list. We may remove these sets, and relabel the remaining sets as $X_1,\ldots X_s$.  If
 $\sigma_i$ is the cycle defined by 
 \[
 \sigma_i( x )
@@ -1065,15 +1071,24 @@ x & x \notin X_i,
 \end{array}
 \right.
 \]
-then $\sigma = \sigma_1 \sigma_2 \cdots \sigma_r$. Since the sets
+then $\sigma = \sigma_1 \sigma_2 \cdots \sigma_s$. Since the sets
 $X_1, X_2, \ldots, X_r$ are disjoint, the cycles $\sigma_1, \sigma_2,
-\ldots, \sigma_r$ must also be disjoint.  
+\ldots, \sigma_s$ must also be disjoint.  
 
-Now recall case (i) above. In this case,  $\sigma = \sigma_1$.  Hence, $\sigma$ is either a single cycle or the product of $r$ disjoint cycles.
+Now recall case (i) above. In this case,  $\sigma = \sigma_1$.  Hence, $\sigma$ is either a single cycle or the product of $r$ disjoint cycles.Note that if $\sigma = \var{id}$, then the process described above will yield all single-element sets, so that $r=0$ and $\{X_1,\ldots X_r\}=\empty$ (this is why we treat the $\var{id}$ as a special case). But if $\sigma \neq \var{id}$, the process will create at least one cycle of length $\ge 2$. This completes the proof of (a).
 
-Note that this proof also works in case $\sigma = {\var id}$: In this case all of the $X_m$'s are single-element sets, and each cycle has length 1.
+
+
+Let's move on to (b).  To show uniqueness of the disjoint cycles, we suppose that $\sigma = \sigma_1 \ldots \sigma_s$ and also$\sigma = \rho_1 \ldots \rho_r$.  The proof may be accomplished by showing that $S = R$, where $S := \{sigma_1,\ldots \sigma_s \}$ and $R  := \{\rho_1,\ldots,\rho_r\}$. To do this, we may show every element of $S$ is an element of $R$, and vice versa. So take $\sigma_j \in S$, and write $\sigma_j =(a_1 \, a_2 \, \ldots \, a_J)$. Since $\sigma_j(a_1) = a_2$, it follows that $\sigma(a_1) = a_2$. But this means that there must be a cycle $rho_\ell \in R$ such that $\rho_\ell(a_1) = a_2$.  In the same way we may show that $\rho(a_2) = a_3, \ldots \rho(a_J)=a_1$.: In other words, $sigma_j = \rho_\ell$.  Thus every element of $S$ is also an element of $R$.  The proof is then completed by the following exercise:
+
+\begin{exercise}{}
+Complete the proof of Proposition~\ref{proposition:permute:perm_simple_notation} by showing that every $\rho_j$ in $R$ is also in the set $S$.
+\end{exercise}  
+
 \end{proof}
 \medskip
+
+
 
 % CPTshow cycle structure is unique? (in the sense that every cycle in one rep must be a cycle in the other rep, and vice versa)
 Proposition~\ref{proposition:permute:perm_simple_notation} is a \emph{classification theorem}. You have seen classification theorems before: for instance, you know that any natural number $>1$ can be written uniquely as the product of primes.  Proposition~\ref{proposition:permute:perm_simple_notation} similarly gives us a standard way to represent permutations. It allows us to characterize the types of permutations in $S_n$ according to their cycle sizes, as shown in the following example.
@@ -1110,7 +1125,7 @@ two disjoint cycles of lengths 2 and 3;  and two disjoint cycles of lengths 2 an
 \end{example}
 
 \begin{exercise}{cycle_types}
-Following Example~\ref{example:permute:S5_cycle_types}, list the types (cycle structures) of permutations in the following:
+Following Example~\ref{example:permute:S5_cycle_types}, list  all possible cycle structures of permutations in the following:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
 \item
@@ -1123,14 +1138,14 @@ $S_8$
 \end{multicols}
 \end{exercise}
 
-\section{Algebraic properties of cycles\quad
+\section{Algebraic properties of cycles\quad \label{algebraic_props}
 \sectionvideohref{WWd8yzA91xg&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=22}}
 \subsection{Powers of cycles: definition of order}
 
 Let's revisit the product of cycles.  We will look at what happens when you compose a cycle with itself multiple times.\index{Cycle!powers of}
 
 \begin{example}{cycle_squared}
-Consider the product $(1264)(1264)$. As in the previous section, we can use a diagram (see Figure~\ref{fig:perm_square}) to compute this product. But let's try to understand better what's really going on.
+Consider the product $(1264)(1264)$, which we may also write as $(1264)^2$. As in the previous section, we can use a diagram (see Figure~\ref{fig:perm_square}) to compute this product. But let's try to understand better what's really going on.
 
 \begin{figure}[ht]
 \begin{center}
@@ -1219,7 +1234,7 @@ What general statement can you make about $\sigma^k(x)$ for $x \in X \backslash 
 \noindent
 Hopefully you're beginning to see the picture! To generalize these results, we need some additional terminology:
 
-\begin{defn}
+\begin{defn}\label{def_order_cycle}
 The \term{order} of a cycle $\sigma$ is the smallest natural number $k$ such that $\sigma^k = {\var id}$.\index{Cycle!order of}\index{Order!of a cycle}   The order of $\sigma$ is denoted by the notation $|\sigma|$.
 \footnote{This is in keeping with our practice of using $|\ldots|$ to denote the ``size'' of things.}
 \end{defn}
@@ -1276,7 +1291,7 @@ We'll deal with these two cases separately (as we did  in Exercise~\ref{exercise
 \item
 In this case, $\sigma(x) = \underline{~<2>~} $  It follows that $\sigma^2(x) = \sigma( \sigma(x)) = \sigma( \underline{~<3>~}) = \underline{~<4>~}$. We can use the same argument to show that $\sigma^3(x) = \underline{~<5>~}$, and that $\sigma^k(x) = \underline{~<6>~}$ for any natural number $\underline{~<7>~}$.
 \item
-In this case, then $x = a_j$ for some integer $j, 1 \le j \le \underline{~<8>~}$.  It follows from the definition of cycle that $\sigma(x) = \sigma(a_j) = a_{\bmod(j+1,k)}$. Furthermore, $\sigma^2(x) = \sigma(a_{j+1}) = \underline{~<9>~}$. Similarly it follows that $\sigma^{k}(x) = a_{\bmod(j+ \underline{~<10>~},k)} = a_{\underline{~<11>~}} = x$.
+In this case, then $x = a_j$ for some integer $j, 1 \le j \le \underline{~<8>~}$.  It follows from the definition of cycle that $\sigma(x) = \sigma(a_j) = a_{\bmod(j+1,k)}$. Furthermore, $\sigma^2(x) = \sigma(a_{\bmod(j+1,k)}) = \underline{~<9>~}$. Similarly it follows that $\sigma^{k}(x) = a_{\bmod(j+ \underline{~<10>~},k)} = a_{\underline{~<11>~}} = x$.
 \end{enumerate}
 
 \noindent
@@ -1366,7 +1381,7 @@ $\tau^2 = {\large(} (2 4 )(1 6 ) {\large )} {\large(} (2 4 )(1 6 ) {\large )}$
 \end{example}
 
 
-\begin{exercise}{}
+\begin{exercise}{disjoint_cube}
 \begin{enumerate}[(a)]
 \item
 Let $\sigma = (237)$ and $\tau = (458)$. By following the format of Example~\ref{example:permute:disjoint_squared}, show that $(\sigma \tau)^3 = {\var id} $ (write out each step, and cite the property used).
@@ -1581,8 +1596,8 @@ $(a_1 a_2 a_3 a_5 a_6 a_7 a_8)$
 \noindent
 The preceding exercises demonstrate the following proposition:
 
-\begin{prop}{transposition_formula}\index{Cycle!as products of transpositions}
-Every cycle can be written as the product of transpositions:
+\begin{prop}{transposition_formula}
+Every cycle can be written as the product of transpositions:\index{Cycle!as products of transpositions}
 \[ (a_1, a_2, \ldots, a_n ) = (a_1 a_n ) (a_1 a_{n-1} ) \cdots ( a_1 a_3 ) (a_1 a_2 ) \]
 \end{prop}
 \begin{proof}
@@ -1592,7 +1607,7 @@ The proof involves checking that left and right sides of the equation agree when
 \noindent
 Recall that we also know that any permutation can be written as a product of disjoint cycles, which leads to:
 
-\begin{prop}{}
+\begin{prop}{trans_perm}
 Any permutation of a finite set containing at least two elements can
 be written as the product of transpositions. 
 \end{prop}
@@ -1625,7 +1640,7 @@ $( 1 3 5 7 9 )(2 4 6 8 ) (1 9 7 5 3) (2 8 6 4)$
 \noindent
 Even the identity permutation ${\var id}$ can be expressed as the product of transpositions:\index{Identity!of transpositions}
 
-\begin{exercise}{}
+\begin{exercise}{prod_of_trans_2}
 Compute the following products:
 \begin{enumerate}[(a)]
 \begin{multicols}{3}
@@ -1850,7 +1865,7 @@ Prove that any permutation in $S_n$ can be obtained as a product of powers of $r
 What we have shown in the previous exercise is that the two permutations $r$ and $t$ \emph{generate} the group $S_n$. In other words, all of the information contained in the huge and complicated group $S_n$ is characterized in just two permutations! The study of group generators is an important part of group theory, but unfortunately it is beyond the level of this course.  
 
 
-\section{Other groups of permutations \sectionvideohref{KJyItH3ZgpU&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=24}}
+\section{Other groups of permutations \sectionvideohref{KJyItH3ZgpU&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=24}}\label{other_groups}
 \subsection{Even and odd permutations}
 
 We saw in the previous section that any permutation can be represented as a product of transpositions. However, this representation is not unique. Consider for instance:
@@ -1919,7 +1934,7 @@ Using this representation, we can now investigate what happens when we multiply 
 \end{center}
 \end{figure}
 
-\begin{exercise}{}
+\begin{exercise}{trans_perm}
 In each of the following situations, we are considering the multiplication of a transposition $(ab)$ with a permutation $\sigma$. Match each situations to the  correct case (a)--(f) in Figure~\ref{fig:abC2}. For example, $(ab)=12$ and $\sigma = (1234)(567)$ corresponds to case (d), because $a$ and $b$ are consecuitve elements in one of the cycles of $\sigma$.  
 \begin{enumerate}[(a)]
 \item
@@ -1936,7 +1951,7 @@ $(ab) = (34), \sigma = (278)(13546)$
 \end{exercise}
 
 
-\begin{exercise}{}
+\begin{exercise}{trans_perm2}
 Draw  a set of pictures (similar to Figure~\ref{fig:abC}(c)) for each of the possibilities (a)--(f) in Figure~\ref{fig:abC2} showing the effect of the transposition $(ab)$ on the cycles.   Keep in mind that the transposition merely redirects the arrows into $a$ and $b$ so that they point into $b$ and $a$, respectively.
 \end{exercise}
 
@@ -1969,7 +1984,7 @@ Using your results from the previous exercise, complete Table~\ref{transposition
 If you did the previous exercise correctly, you will find that no matter where the transposition falls,  the entry in the last column   is always `odd'. Consider what this means. Suppose I have a permutation  $\sigma$ whose sum of cycle lengths minus number of cycles is equal to $N$. I then multiply $\sigma$ by a transposition to obtain another permutation $\tau$, whose sum of cycle lengths minus number of cycles is equal to $M$. The last column of Table~\ref{transposition_table}shows that it must be true that $M-N$ is \emph{always} odd. In other words, if $M$ is even then $N$ is odd: and vice versa. We may express this concisely using the following definition:
 
 
-\begin{defn} for any permutation $\sigma$, the number 
+\begin{defn}\label{def_parity} for any permutation $\sigma$ written in disjoint cycle notation, the number 
 
 \[ \text{mod(sum of cycle lengths minus number of cycles,2)} \]
 
@@ -1980,7 +1995,7 @@ is called the \term{parity} of $\sigma$.\index{Permutation!parity} A permutation
 We may  summarize our argument so far as follows:
 
 \begin{prop}{multByTrans}
-Multiplication of permutations by transpositions changes their parity. In other words, given a permutation $\sigma$ and a transposition $(ab)$, then the parity of $(ab)\sigma$ is different from the parity of $\sigma$.
+Given a permutation $\sigma$ and a transposition $(ab)$, then the parity of $(ab)\sigma$ is different from the parity of $\sigma$.
 \end{prop}
 
 \begin{exercise}{}
@@ -1997,8 +2012,8 @@ Also, $\sigma$ can be written as the product of an odd number of transpositions 
 \end{prop}
 
 
-\begin{exercise}{}
-Prove that it is impossible to write the identity permutation as the product of an odd number of cycles.
+\begin{exercise}{id_odd}
+Prove that it is impossible to write the identity permutation as the product of an odd number of transpositions.
 \end{exercise}
 
 
@@ -2175,14 +2190,14 @@ Prove that it is impossible to write the identity permutation as the product of 
 %number of transpositions, then  we call $\sigma$ an \term{odd permutation}. \index{Permutation!odd}\index{Odd permutation}. The property of ``evenness'' or ``oddness'' is called \term{parity}\index{Permutation!parity} (so we will say that an even permutation has even parity, and similarly for odd).
 %\end{defn}
 
-\begin{exercise}{}
+\begin{exercise}{even_odd}
 Suppose $\sigma$ is an $n$-cycle.  How can you tell  whether $\sigma$ is an even or odd permutation?
 \end{exercise}
 
 
 In the following exercises you will explore a bit further the parity properties of permutations. 
 
-\begin{exercise}{Ex95}\label{ex:evenoddprod} %%% Note for some reason the conventional label doesn't work
+\begin{exercise}{Ex95}\label{exercise:evenoddprod} %%% Note for some reason the conventional label doesn't work.. 2/24 KW it does now?
 \begin{enumerate}[(a)]
 \item
 Prove that the product of two even permutations is even.
@@ -2306,12 +2321,11 @@ $S_8$
 \subsection{The alternating group}\label{sec:AlternatingGroup}
 
 We have shown that all permutations are either even or odd. In other words, for any $n \in \mathbb{Z}$ we have that $S_n$ is the union of two disjoint sets: $S_n = A_n \cup B_n$, where $A_n$ and $B_n$ are the even and odd permutations respectively.
-
-\begin{exercise}{S_nequiv}
-Use the sets $A_n$ and $B_n$ to define an equivalence relation on $S_n$, and verify that it is an equivalence relation.
-\hyperref[sec:permute:hints]{(*Hint*)}
-\end{exercise}
-
+% This needs to be commented if the Equiv Relations chapter is moved.
+%\begin{exercise}{S_nequiv}
+%Use the sets $A_n$ and $B_n$ to define an equivalence relation on $S_n$, and verify that it is an equivalence relation.
+%\hyperref[sec:permute:hints]{(*Hint*)}
+%\end{exercise}
 We are particularly interested in the set $A_n$, because it has nice properties with respect to product of permutations:
 
 \begin{exercise}{A_nGroupProps}
@@ -2463,7 +2477,7 @@ $A_8$
 
 
 \markright{EXERCISES}
-\section{Additional exercises}
+\section{Additional exercises}\label{sec:permute:additional}
  
  
 \begin{enumerate}
@@ -2569,44 +2583,46 @@ $\sigma$ such that $\sigma \tau \sigma^{-1 } = \mu$.
  
  
 \item
-For $\alpha$ and $\beta$ in $S_n$, define $\alpha \sim \beta$ if there
+For $\alpha$ and $\beta$ in $S_n$, we say that $\alpha$ and $ \beta$ are
+\term{conjugate permutations}\index{Permutations!conjugate}
+if there
 exists an $\sigma \in S_n$ such that $\sigma \alpha \sigma^{-1} =
 \beta$.  
-\begin{enumerate}
-\item
-Show that $\sim$ is an equivalence relation on $S_n$.
- \item
-Show that if $\alpha \sim \beta$ and $\alpha \in A_n$, then also $\beta \in A_n$.
- \end{enumerate}
+%\begin{enumerate}
+%\item
+%Show that $\sim$ is an equivalence relation on $S_n$.
+% \item
+Show that if $\alpha$ and  $\beta$ are conjugate permutations, and $\alpha \in A_n$, then also  $\beta \in A_n$.
+% \end{enumerate}
 
  
  
-\item
-Let $\sigma \in S_X$. If $\sigma^n(x) = y$ for some integer $n$, we will say that $x \sim
-y$. Note that the equivalence relation depends on the permutation $\sigma$.
-\begin{enumerate}
- 
- \item
-Show that $\sim$ is an equivalence relation on $X$.
- 
-\item
-Define the \term{orbit}\index{Orbit} of $x \in X$ under the permutation $\sigma \in
-S_X$ to be the set 
-\[
-{\cal O}_{x, \sigma} = \{ y : x \sim y  \}.
-\]
-Compute the orbits of $\alpha, \beta, \gamma$ where
-\begin{align*}
-\alpha & = (1254) \\
-\beta & = (123)(45)\\
-\gamma & = (13)(25).
-\end{align*}
- 
- \item
-If ${\cal O}_{x, \sigma} \cap {\cal O}_{y, \sigma} \neq \emptyset$,
-prove that ${\cal O}_{x, \sigma} = {\cal O}_{y, \sigma}$.  The orbits
-under a permutation $\sigma$ are the equivalence classes corresponding
-to the equivalence relation $\sim$.
+%\item
+%Let $\sigma \in S_X$. If $\sigma^n(x) = y$ for some integer $n$, we will say that $x \sim
+%y$. Note that the equivalence relation depends on the permutation $\sigma$.
+%\begin{enumerate}
+% 
+% \item
+%Show that $\sim$ is an equivalence relation on $X$.
+% 
+%\item
+%Define the \term{orbit}\index{Orbit} of $x \in X$ under the permutation $\sigma \in
+%S_X$ to be the set 
+%\[
+%{\cal O}_{x, \sigma} = \{ y : x \sim y  \}.
+%\]
+%Compute the orbits of $\alpha, \beta, \gamma$ where
+%\begin{align*}
+%\alpha & = (1254) \\
+%\beta & = (123)(45)\\
+%\gamma & = (13)(25).
+%\end{align*}
+% 
+% \item
+%If ${\cal O}_{x, \sigma} \cap {\cal O}_{y, \sigma} \neq \emptyset$,
+%prove that ${\cal O}_{x, \sigma} = {\cal O}_{y, \sigma}$.  The orbits
+%under a permutation $\sigma$ are the equivalence classes corresponding
+%to the equivalence relation $\sim$.
  
  
 %\item
@@ -2615,9 +2631,9 @@ to the equivalence relation $\sim$.
 %there exists a $\sigma \in H$ such that $\sigma(x) =y$. Prove that
 %$\langle \sigma \rangle$ is transitive if and only if ${\cal O}_{x,
 %\sigma} = X$ for some $x \in X$. 
- 
- 
-\end{enumerate}
+%
+% 
+%\end{enumerate}
  
  
 \item

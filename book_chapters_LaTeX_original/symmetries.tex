@@ -28,15 +28,15 @@ The above quotes give some flavor of the importance and the mystery of symmetry,
 Thanks to Tom Judson for material used in this chapter.
 
 
-\section{Definition and examples}
+\section{Definition and examples}\label{definition_examples}
 
 In plane geometry we talk about various shapes: triangles, rectangles, pentagons, and so on. Shapes are important because real objects have shapes (duh), and objects are important. What would life be without triangles?
 
-Now suppose you and your friend cut an equilateral triangle out of a piece of plane white paper and put it on the table. Then you tell your friend to go out of the room. While she's gone, you take the triangle and move it, but in such a way that it looks exactly the same. You can do this by rotating the triangle, or flipping it over, or by some combination of these two actions. When your friend comes back into the room, although the triangle has been moved there's no way for her to tell. This type of motion is called a \emph{symmetry operation}. Clearly we may perform symmetry operations on other objects besides equilateral triangles, but only if the shape of the object has some kind of regularity. In the following discussion, we will explore the relationship between shapes and symmetry operations. 
+Now suppose you and your friend cut an equilateral triangle out of a piece of plain white paper and put it on the table. Then you tell your friend to go out of the room. While she's gone, you take the triangle and move it, but in such a way that it looks exactly the same. You can do this by rotating the triangle, or flipping it over, or by some combination of these two actions. When your friend comes back into the room, although the triangle has been moved there's no way for her to tell. This type of motion is called a \emph{symmetry operation}. Clearly we may perform symmetry operations on other objects besides equilateral triangles, but only if the shape of the object has some kind of regularity. In the following discussion, we will explore the relationship between shapes and symmetry operations. 
 
 We've given an intuitive picture of what symmetry means--now let's try to translate that into mathematics. We start with a definition:
 
-\begin{defn} A \term{symmetry}\index{Symmetry!definition} of a geometrical figure is a rearrangement of the figure that (i) preserves distances and angles between points of the figure,
+\begin{defn}\label{symmDef} A \term{symmetry}\index{Symmetry!definition} of a geometrical figure is a rearrangement of the figure that (i) preserves distances and angles between points of the figure,
  and (ii) leaves the appearance and location of the figure unchanged.
 \end{defn}
 
@@ -65,7 +65,7 @@ If you rotate the image $180^\circ$ counterclockwise about the center, the resul
 \item
 We could also ``flip over'' the logo (like flipping a pancake) in such a way that the left half moves to the right, and vice versa.  Then the vertical point stays in the same place while the left and right point exchange positions, leaving the appearance of the logo unchanged. The motion has the same effect as if the logo were \term{reflected} across the vertical axis.\index{Reflection (rigid motion)} After the motion, the logo looks the same. 
 \item
-Shifting  the original image (shifts are also called \term{translations}\index{Translation!as a rigid motion} in any direction is a rigid motion, and  the resulting image looks the same as the original, but the location is different.  Hence this shift is \emph{not} not a symmetry of the Mercedes logo.
+Shifting  the original image (shifts are also called \term{translations}\index{Translation!as a rigid motion} in any direction is a rigid motion, and  the resulting image looks the same as the original, but the location is different.  Hence this shift is \emph{not} a symmetry of the Mercedes logo.
 \end{itemize}
 \end{example}
 
@@ -132,12 +132,12 @@ Proposition~\ref{proposition:symmetries:SymmBijection} says that all symmetries 
 \end{exercise}
 
 \begin{example}{rectsymmetries}
-Figure~\ref{SymmOfRect} below shows all symmetries of a rectangle.
+Figure~\ref{SymmOfRect}  shows all symmetries of a rectangle.
 
 \begin{figure}[htb]   %Symmetries of a rectangle  Replaced diagram with a tikz figure - TWJ 5/4/2010
 \begin{center}
 \tikzpreface{groups_rectangle}
-\begin{tikzpicture}[scale=1.2]\label{groups_figure_rectangle}
+\begin{tikzpicture}[scale=1.2]
 \draw (-3,0) -- (-1.25,0) -- (-1.25,1) -- (-3,1) -- cycle;
 \draw (3,0) -- (1.25,0) -- (1.25,1) -- (3,1) -- cycle;
 \draw [->] (-1,0.5) -- (1,0.5);
@@ -213,7 +213,7 @@ Write each of the symmetries of a rectangle as a function (use either a table, o
 \end{exercise}  
 
 
-\section{Composition of symmetries}
+\section{Composition of symmetries}\label{composition}
 
 Since the symmetries of a figure are functions, we can do anything with symmetries that we can do with functions--including composition.  That is,  we can perform two symmetries on a figure back-to-back, and since they are both functions, by definition of function composition the result is a function.  In fact, we saw in the Functions chapter that the composition of two bijections is a bijection.  So the composition (or net motion) resulting from two symmetries is a bijection.  But a bijection of a figure is not necessarily a symmetry. as we showed in Exercise~\ref{exercise:symmetries:bijectnotsym} above.  This raises the question:  is the composition of two symmetries a symmetry?  That is: if one symmetry is followed by another on a figure, is the net motion a symmetry?  You will investigate this question in the following exercise.
 
@@ -340,7 +340,7 @@ $f=$rotation by $ 180^\circ, g=$reflection across the line $CF$
 \section{Do the symmetries of an object form a group?\quad
 \sectionvideohref{EC5do5EUQ9c&index=19&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo?}}\label{SymmetryGroup}
 
-With reference to the set of symmetries of a particular figure,  Proposition~\ref{proposition:symmetries:symcompclosed} tell us that this set is closed under the operation of composition. Given this fact, the next natural inquiry is to see if this set of symmetries forms a group under composition.  Let's look first at a particular example to see if it works.
+With reference to the set of symmetries of a particular figure,  Proposition~\ref{proposition:symmetries:symcompclosed} tells us that this set is closed under the operation of composition. Given this fact, the next natural inquiry is to see if this set of symmetries forms a group under composition.  Let's look first at a particular example to see if it works.
 
 \begin{example}{symmsofeqtri}
 Figure~\ref{groups_s3_symmetry_fig} shows all the symmetries of an equilateral triangle:  ${\var id}$ is the identity  ; $\rho_1$ is the $120^\circ$ counterclockwise rotation; $\rho_2$ is the $240^\circ$ counterclockwise rotation; $\mu_1$ is the reflection across the median through $A$; $\mu_2$ is the reflection across the median through $B$; and $\mu_3$ is the reflection across the median through $C$. We remind the reader once again of the comment we made in Example~\ref{example:symmetries:hexagon}: for example, in the symmetry $\rho_1$ the triangle's vertices $A,B,C$ before the motion appear to be relabeled as $C,A,B$ respectively, which means that $C \rightarrow A$, $A \rightarrow B$, and $B \rightarrow C$ rather than vice-versa.
@@ -577,11 +577,18 @@ Write out the proof of Proposition \ref{proposition:symmetries:symcompinv} part 
 \hyperref[sec:symmetries:hints]{(*Hint*)}
 \end{exercise}
 
-\bigskip
-Hence we've shown it!  By Propositions~\ref{proposition:symmetries:symcompclosed}, ~\ref{proposition:symmetries:symcompassoc}, ~\ref{proposition:symmetries:symcompid}, and~\ref{proposition:symmetries:symcompinv}, we've proved that the set of symmetries of \emph{any} figure is a group under function composition.
+And finally, as the grand culmination of this series of propositions, we have:
+
+\begin{prop}{symcompinv}
+The set $S$ of symmetries of any figure forms a group.
+\end{prop}
+
+\begin{exercise}{group_proof}
+Prove Proposition~\ref{exercise:symmetries:group_proof} (make use of the propositions that we've proved previously.)
+\end{exercise}
 
 \bigskip
-\begin{exercise}{}
+\begin{exercise}{symm_rectangle}
 \begin{enumerate}[(a)]
 \item
 Write the Cayley table for the symmetries of a rectangle.
@@ -590,7 +597,7 @@ List the inverses of each symmetry of the symmetries of a rectangle.
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{symm_square}
 \begin{enumerate}[(a)]
 \item
 Describe all symmetries of a square  (for example: ``reflection about the vertical axis '' describes one symmetry: give similar descriptions of all symmetries of the square)
@@ -632,14 +639,13 @@ Which logos have no symmetries except for the identity?
 \section{The dihedral groups}\label{sec:dihedral}
 
 We have investigated the symmetries of equilateral triangle, square, and regular hexagon. But what about other regular polygons: heptagon, octagon, nonagon, decagon, and so on?
-\footnote{Recall from geometry that a \emph{regular} polygon has all sides equal and all angles equal}
+(Recall from geometry that a \term{regular polygon}\index{Polygon!regular} has all sides equal and all angles equal.)
 In this section, we will  take a general look at the symmetries of $n$-sided regular polygons. 
 
-We already know that the symmetries of an n-sided regular polygon will form a group. We define the \term{
-nth dihedral group}\index{Group!dihedral} to be the group of 
+We already know from Exercise~\ref{exercise:symmetries:group_proof} that the symmetries of any n-sided regular polygon form a group. We define the \term{
+$n$th dihedral group}\index{Group!dihedral} to be the group of 
 symmetries of a regular $n$-gon.
-\footnote{Just a reminder that ``symmetry'' here means a rigid motion that leaves the $n$-sided polygon invariant.}
-  We will denote this group by
+We will denote this group by
 $D_n$\label{dihedralgroup}.  
 
 %% Replaced with tikz figure and change to a counterclockwise rotation - TWJ 5/7/2010
@@ -741,7 +747,7 @@ where we have included ${\var id}$ since it is ``rotation by 0 degrees'' (as men
 
 We have labeled the vertices of the $n$-gon as $1,2,\ldots,n$. In the following discussion, we will use the letter  $s$ to denote the reflection that leaves the vertex labeled 1  \emph{fixed}, that is, $s(1) = 1$.\footnote{In math books you may also find the termi ``invariant'' instead of ``fixed''.}  Another way of saying the same thing is:  the vertex labeled 1 is ``fixed by'' $s$.
 
-\begin{exercise}{}
+\begin{exercise}{reflection_pentagon}
 \begin{enumerate}[(a)]
 \item
 Write the reflection $s$  for the pentagon in tableau form.  
@@ -824,7 +830,7 @@ By multiplying both sides on the \emph{right} by $r^{n-p}$, we obtain $s \compos
 \item
 By associativity, we have $s \compose  \underline{~<4>~} =  \underline{~<5>~}$
 \item
-Using the fact that \underline{~<6>~} = {\var id}, we obtain $s = \underline{~<7>~}$
+Using the fact that \underline{~<6>~} = ${\var id}$, we obtain $s = \underline{~<7>~}$
 \item
 The left side of this equation is a reflection, and the right side is a $\underline{~<8>~}$, which is a contradiction.
 \item
@@ -976,7 +982,7 @@ What is $\mu_1 \compose \mu_1$? What is $\mu_2 \compose \mu_2$? What is $\mu_3 \
 
 The preceding exercises are generalized to arbitrary $n$ in the following proposition. Although we do not give a complete proof, it is reasonable that we can generalize Exercise~\ref{exercise:symmetries:PentagonRefl} to all \emph{odd} $n$-gons, and we can  generalize Exercise~\ref{exercise:symmetries:HexagonRefl} to all \emph{even} $n$-gons:
 
-\begin{prop}{}
+\begin{prop}{dihReflRot}
 \begin{itemize}
 \item
 The dihedral group $D_n$ contains $n$ distinct reflections (in addition to $n$ distinct rotations);
@@ -1032,7 +1038,7 @@ In fact, following the method of Example\ref{example:symmetries:compref} it is p
 Using only associativity and Proposition~\ref{proposition:symmetries:Dn_generator_theorem}, complete the entire Cayley table for $D_4$.  Remember, there is a row and a column for each element of $D_4$. List the elements as indicated in Proposition~\ref{proposition:symmetries:D_elts}. You don't need to show all your computations. \emph{(But don't use tableau form--no cheating!)} 
 \end{exercise}
 
- \begin{exercise}{}
+ \begin{exercise}{D5}
 Using only associativity and Proposition~\ref{proposition:symmetries:Dn_generator_theorem}, complete the entire Cayley table for $D_5$.  You don't need to show all your computations. \emph{(But don't use tableau form -- no cheating!)} 
 \end{exercise}
 

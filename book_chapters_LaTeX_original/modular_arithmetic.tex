@@ -136,7 +136,7 @@ Given any integer $a$ and any positive integer $m$, then there exists  a unique 
 \end{prop}
 
 \begin{proof}
-It turns out that proving this ``simple'' fact is not so simple! Although this fact has been used for millennia (it's sometimes called \term{Euclidean division}, because Euclid used it ca. 300 B.C.), the first rigorous proof was found relatively recently.  There are actually two things to prove: first, that the remainder $r$  exists, and second, that it's unique. We're going to punt on the `existence' part: you can find the proof in a book on number theory.\footnote{Or check the internet, e.g.:  \url{www.oxfordmathcenter.com/drupal7/node/479}.}
+It turns out that proving this ``simple'' fact is not so simple! Although this fact has been used for millennia (it's sometimes called \term{Euclidean division}, because Euclid used it ca. 300 B.C.), the first rigorous proof was found relatively recently.  There are actually two things to prove: first, that the remainder $r$  exists, and second, that it's unique. We're going to punt on the `existence' part: you can find the proof in a book on number theory.\footnote{Or check the internet, e.g.:  \url{http://www.oxfordmathcenter.com/drupal7/node/479}.}
 The `unique' part is proved by the following fill-in-the-blanks exercise:
 
 \begin{exercise}{27} 
@@ -1654,7 +1654,7 @@ What do the three numbers you found in (a) and (b) have in common?
 
 \subsection{Other arithmetic properties of $\oplus$ and $\odot$}
 
-In many respects, $\oplus$ and $\odot$ are very similar to the ordinary arithmetic operations $+$ and $\cdot$. It makes sense that they too should be associative, distributive, and commutative  (recall these properties were defined   in Section~\ref{OpsAndRels}). But as mathematicians, it's not enough for something to ``make sense''. We need solid proof. So, voil\`{a}:
+In many respects, $\oplus$ and $\odot$ are very similar to the ordinary arithmetic operations $+$ and $\cdot$. It makes sense that they too should be associative, distributive, and commutative  (recall these properties were defined   in Section~\ref{OpsAndRels}). But as mathematicians, it's not enough for something to ``make sense''--we need solid proof. So let's buckle down and crank out some proofs.
 
 \begin{prop}{Zn_comm_assoc}
 In the following $n$ is an arbitrary positive integer and $a, b, c$ denote arbitrary elements of ${\mathbb Z}_n$.
@@ -1713,8 +1713,8 @@ Prove  part (\ref{distrib}) of Proposition \ref{proposition:modular:Zn_comm_asso
 \end{enumerate}
 \end{exercise} 
 
-\subsection{Definition of a group}\label{DefOfGroup}
-It's time for us to make a confession. All this time we've been talking about modular arithmetic, we've had an ulterior motive. We're not so interested in modular arithmetic for its own sake:\footnote{Although you have to admit it \emph{is} interesting.} rather, we've spent all this time and effort discussing modular arithmetic because it provides good examples of the central concept in abstract algebra, namely, the concept of a \emph{group}.
+\subsection{Group: a central concept in abstract algebra}\label{DefOfGroup}
+It's time for us to make a confession. We have an ulterior motive. We've been spending lots of time and effort discussing modular arithmetic because it provides good examples of one of the central concepts in abstract algebra, namely the notion of a \emph{group}.
 
 Notice that the set ${\mathbb Z}_n$ with the operation of $\oplus$ has an identity, and inverses, and the property of closure. Furthermore, ${\mathbb Z}_n$ is associative under $\oplus$, as we just showed.  Any combination of a set and an operation that has those three properties, as well as the associative property, is called a \emph{group}\index{Group!definition}
 
@@ -1730,28 +1730,55 @@ Notice that the set ${\mathbb Z}_n$ with the operation of $\oplus$ has an identi
 \noindent
 Notice that we do  \emph{not} include the commutative property in this list. Later on we'll see examples of groups that are \emph{not} commutative. 
 
-We have shown that  ${\mathbb Z}_n$ is a group under the operation $\oplus$ for \emph{any} integer $n$. What about multiplication? The answer isn't quite so easy.
+Now that we've defined groups, in retrospect we may look back and see that we've encountered groups before. In fact, we've been working with groups since the very beginning of the book! 
 
-\begin{exercise}{64}
+\begin{exercise}{}
+For each of the following sets of numbers, determine which of the four group properties holds, using the operation of addition. If a property does \emph{not} hold, give a specific counterexample which shows that the property is false. State also whether or not each set is a group.
+
+\noindent (a) Integers;~~(b)Positive integers;~~(c) Rational numbers;~~(d) Real numbers; ~~(e) Complex numbers.
+\end{exercise}
+
+
+We've shown several examples of group under the operation of addition (+ or $\oplus$). But what about multiplication? With multiplication, things turn out quite differently.
+
+
+\begin{exercise}{}
+For each of the following sets of numbers, determine which of the four group properties holds, using the operation of addition. If a property does \emph{not} hold, give a specific counterexample which shows that the property is false. State also whether or not each set is a group.
+
+\noindent (a) Integers;~~(b)Positive integers;~~(c) Rational numbers;~~(d) Real numbers; ~~(e) Complex numbers.
+\end{exercise}
+
+Based on our experience with the previous exercise, we may generalize:
+
+\begin{exercise}{64_0}
 \begin{enumerate}[(a)]
-\item Show that for $n \ge 2$, ${\mathbb Z}_n$ is \emph{not} a group under $\odot$. 
-\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 \item
-Show that the nonzero elements of ${\mathbb Z}_3$ (that is, ${\mathbb Z}_3 \setminus \{0\}$)  is a group under $\odot$.
-\item
-Is ${\mathbb Z}_n \setminus \{0\}$ a group under $\odot$ for \emph{every} integer $n \ge 2$?  \emph{Justify} your answer.
+Explain why it is \emph{impossible} for any set of (real or complex) numbers which contains both 0 and 1 to be a group under the operation of multiplication.
+\item Explain why $\mathbb{Z}_n$ is \emph{not} a group under $\odot$ for any $n>1$.
 \end{enumerate}
 \end{exercise}
 
+We've seen in Exercise~\ref{exercise:modular:64_0} that 0 causes a problem for multiplication, as far as making groups is concerned. But what if we remove 0 from the set? We may have better luck: 
+ 
+\begin{exercise}{64}
+\begin{enumerate}[(a)]
+\item
+Show that the nonzero elements of ${\mathbb Z}_3$  is a group under $\odot$.
+\item
+Can you find an $n>3$ such that the nonzero elements of ${\mathbb Z}_n$ do \emph{not} form a group under $\odot$? If so, tell which $n$, and explain why ${\mathbb Z}_n$ fails to be a group in this case.
+\end{enumerate}
+\end{exercise}
+
+Now that you know what a group is, we'll be referring back to this definition fairly frequently throughout the rest of the book. In particular, we'll be saying a lot more about multiplicative groups, which turn out to be somewhat more intricate (and more interesting) than additive groups.
 
  \section{Modular division\quad
 \sectionvideohref{kdD2fQHXlfA&index=11&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{euclidean}
 
- Before we get to modular division, we'll first look at some preliminary stuff. This all may seem irrelevant, but  please be patient: we'll get to the point soon enough.
+ Before getting to modular division, we'll look at something else first. This all may seem irrelevant, but  please be patient: we'll get to the point soon enough.
  
  
 \subsection{A sticky problem}
-The following problem may not seem to have anything to do with modular arithmetic, but it's an interesting problem and fun to think about. (And it will also turn out to be relevant after all!)\footnote{This section is by David Weathers, with extensive revisions by C.T.}
+The following problem may not seem to have anything to do with modular arithmetic, but it's an interesting problem and fun to think about. (And it turns out to be relevant after all!)\footnote{This section is by David Weathers, edited by C.T.}
 
 \begin{example}{2sticks} Someone gives us a pencil and two unmarked sticks of lengths 52 cm and  20 cm respectively (see Figure~\ref{fig:1euclidean}). We are told to make measuring sticks by using the pencil to make markings on the sticks. Question: what is the smallest length that we can accurately measure? 
 \begin{figure}
@@ -1850,7 +1877,7 @@ Use what you've discovered in part (b) to quickly find a solution to the two-sti
 \end{enumerate}
 \end{exercise}
 
-\subsection{Greatest common divisors}
+\subsection{Greatest common divisors}\label{sec:gcd}
 You may be  familiar with the notion of greatest common divisor (gcd) of two numbers.  The gcd is defined as the greatest number that divides the two given numbers. gcd's play a key role in modular arithmetic, as we shall see. 
 
 The general question we now consider is: What's a good way to find the gcd of two integer numbers? It may be easy to find the gcd of small numbers like 12 and 20, but what if you have to find the gcd of 583768 and 260568447? 
@@ -2043,7 +2070,7 @@ This second example is also in C++, but uses recursion.
 %%% CPT start with the example.
 Let's look now at another type of  problem, which has played a key role in the history of mathematics.
 
-\begin{defn}\label{definition:modular:equivalence}
+\begin{defn}\label{definition:modular:dioequiv}  %%KW changed label it duplicated one used previously.  I checked for other uses in hints & study_guide and found none.
 A \term{Diophantine equation} in the variables $m, n$ is an equation of the form
 \[ a \cdot m + b \cdot n = c\]
 where $a,b,c$ are integers, and $m$ and $n$  are assumed to have integer values.
@@ -2252,7 +2279,7 @@ $504x \equiv 919 \pmod{1002}$
 
 \end{exercise}
 
-To close off this section, we take care of some unfinished business. Way back when we were showing the existence of irrational numbers, we made use of \emph{Euclid's Lemma} (Proposition~\ref{proposition:complex:EuclidLemma} in Chapter~\ref{complex}). We weren't able to give a real proof then--but now we can, thanks to Proposition~\ref{proposition:modular:74}:\index{Euclid's lemma!proof}
+To close off this section, we take care of some unfinished business. Way back when we were showing the existence of irrational numbers, we made use of \emph{Euclid's lemma} (Proposition~\ref{proposition:complex:EuclidLemma} in Chapter~\ref{complex}). We weren't able to give a real proof then--but now we can, thanks to Proposition~\ref{proposition:modular:74}.\index{Euclid's lemma!proof} In the proof, we use the terms ``prime'' and ``relatively prime'': recall that a prime number is a natural number $>1$ whose only factor $>1$ is itself (Definition~\ref{defPrime}); and two numbers are \term*{relatively prime} if they have no common factors $>1$.\index{Prime!relatively}\index{Relatively prime!definition}
 
 \begin{exercise}{EuclidLemmaProof}
 \begin{enumerate}[(a)]
@@ -2268,6 +2295,7 @@ Prove \term{Euclid's Lemma}:  Let $p$ be a prime number, and let $a$ and $b$ be 
 \end{enumerate}
 \end{exercise}
 
+Euclid's lemma can be used to prove another ``obvious'' fact about natural numbers that ``everybody knows'' (but few people can prove): namely, that all natural numbers greater than 1 can be factored as a product of primes in exactly one way. This fact is known as the \term{Fundamental Theorem of Arithmetic}. There are two parts to the proof: first, showing that such a factorization alwasy exists; and second, that there is only  one way to do it (up to rearrangement of the factors).  Both parts may be proved by induction, and a proof of the first part is given in Section~\ref{strong_induction}.
 
 \subsection{Multiplicative inverse for modular arithmetic\label{subsec:MultInve}}
 This section is supposed to be about modular division, but so far we've been talking about all kinds of other stuff. You may be wondering, So where's the modular division? You're about to find out!
@@ -2488,9 +2516,3 @@ $x \equiv 2 \pmod{3}; \quad x \equiv 3 \pmod{4}; \quad x \equiv 4 \pmod{5}.$
 $x \equiv 12 \pmod{23}; \quad x \equiv 7 \pmod{11}; \quad x \equiv 3 \pmod{4}.$
 \end {enumerate}
 \end {exercise}
-
-
-
-
-
-

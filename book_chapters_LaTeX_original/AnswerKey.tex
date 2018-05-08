@@ -858,27 +858,74 @@ e. $(x_1,y_1)\sim (x_2,y_2)$ iff $x_1^2+y_1^2=x_2^2+y_2^2$\\
 \section{Solutions for  ``Symmetries of Plane Figures''}
 \noindent\textbf{\textit{ (Chapter \ref{symmetries})}}\bigskip
 
-\textbf{Exercise \ref{exercise:symmetries:bijectnotsym}:}\\
+\noindent\textbf{Exercise \ref{exercise:symmetries:mercedes}:}
+\begin{enumerate}
+\item
+$id$
+\item
+$r_{120}$
+\item
+$r_{240}$
+\item
+$s_v$
+\item
+$s_{120^{\circ}}$
+\item
+$s_{240^{\circ}}$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:hexagon}:}
+\begin{enumerate}[{a.}]
+\item
+Yes, $r_{60}$ is one-to-one, because each element of the domain goes to only one element of the codomain.
+\item
+Yes, $r_{60}$ is onto, because every element of the codomain maps to an element in the domain.
+\item
+Yes, $r_{60}$ is it is one-to-one and onto it is a bijection.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:bijectnotsym}:}
 It's not symmetry because it doesn't preserve the length and position of corresponding side $\overline{AB}$.\\
 $\begin{pmatrix}
 A & B & C & D & E & F\\
 A & C & B & D & E & F
 \end{pmatrix}$\\
-\\
-\textbf{Exercise \ref{exercise:symmetries:10}:}\\
-b. square\\
-c. $r_{360}$\\
-d. $id: \begin{pmatrix}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:10}:}
+\begin{enumerate}[{a.}]
+\item
+The two rotations and the reflection all change the final image so they are not symmetries.
+\item
+square
+\item
+$r_{360}$
+\item
+$id: \begin{pmatrix}
 A & B & C & D\\
-A & C & B & D
+A & B & C & D
 \end{pmatrix}$
 $\qquad r_{180}: \begin{pmatrix}
 A & B & C & D\\
 C & D & A & B
 \end{pmatrix}$\\
-\\
-\textbf{Exercise \ref{exercise:symmetries:SymmComposition}:}\\
-c. $r_{180}: \begin{pmatrix}
+$s_{v}: \begin{pmatrix}
+A & B & C & D\\
+D & C & B & A
+\end{pmatrix}$
+$\qquad s_{h}: \begin{pmatrix}
+A & B & C & D\\
+B & A & D & C
+\end{pmatrix}$\\
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:SymmComposition}:}
+\begin{enumerate}[{a.}]
+\item
+$r_{180} = \{(A, C), (B, D), (C, A), (D, B)\}$
+\item
+$s_v = \{(A, D), (B, C), (C, B), (D, A)\}$
+\item 
+$r_{180}: \begin{pmatrix}
 A & B & C & D\\
 C & D & A & B
 \end{pmatrix}$
@@ -886,27 +933,40 @@ $\qquad s_v: \begin{pmatrix}
 A & B & C & D\\
 D & C & B & A
 \end{pmatrix}$\\
-\\
-$r_{180}\circ s_v=\begin{pmatrix}
-(A,B) & (B,A) & (C,D) & (D,C)
-\end{pmatrix}$\\
+$r_{180}\circ s_v = \{(A,B), (B,A), (C,D), (D,C)\}$\\
+It's a symmetry $s_h$.
+\item
+$s_v\circ r_{180}= \{(A,B), (B,A), (C,D), (D,C)\}$\\
 It's a symmetry $s_h$.\\
-\\
-d. $s_v\circ r_{180}=\begin{pmatrix}
-(A,B) & (B,A) & (C,D) & (D,C)
-\end{pmatrix}$\\
-It's a symmetry $s_h$.\\
-\\
-\textbf{Exercise \ref{exercise:symmetries:CompSymm}:}\\
-b. Yes, $r_{180}\circ s_v=s_h$\\
-c. $s_h\circ s_v=\begin{pmatrix}
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:CompSymm}:}
+\begin{enumerate}[{a.}]
+\item
+$s_h: \begin{pmatrix}
+A & B & C & D\\
+B & A & D & C
+\end{pmatrix}$
+\item
+Yes, $r_{180}\circ s_v=s_h$
+\item
+$s_h\circ s_v=\begin{pmatrix}
 A & B & C & D\\
 C & D & A & B
-\end{pmatrix}$\\
-It's a symmetry $r_{180}$\\
-\\
-\textbf{Exercise \ref{exercise:symmetries:16}:}\\
-a. $f=r_{240}=\begin{pmatrix}
+\end{pmatrix}$
+It's a symmetry $r_{180}$
+\item
+$s_v\circ r_{180}=\begin{pmatrix}
+A & B & C & D\\
+B & A & D & C
+\end{pmatrix}$
+It's a symmetry $s_h$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:16}:}
+\begin{enumerate}[{a.}]
+\item
+$f=r_{240}=\begin{pmatrix}
 A & B & C & D & E & F\\
 E & F & A & B & C & D
 \end{pmatrix}$
@@ -921,9 +981,9 @@ A & B & C & D & E & F
 $g\circ f=\begin{pmatrix}
 A & B & C & D & E & F\\
 A & B & C & D & E & F
-\end{pmatrix}=id$\\
-\\
-b. $f=id=\begin{pmatrix}
+\end{pmatrix}=id$
+\item
+$f=id=\begin{pmatrix}
 A & B & C & D & E & F\\
 A & B & C & D & E & F
 \end{pmatrix}$
@@ -938,9 +998,9 @@ C & D & E & F & A & B
 $g\circ f=\begin{pmatrix}
 A & B & C & D & E & F\\
 C & D & E & F & A & B
-\end{pmatrix}=r_{120}$\\
-\\
-c. $f=r_{240}=\begin{pmatrix}
+\end{pmatrix}=r_{120}$
+\item
+$f=r_{240}=\begin{pmatrix}
 A & B & C & D & E & F\\
 E & F & A & B & C & D
 \end{pmatrix}$
@@ -955,10 +1015,42 @@ A & F & E & D & C & B
 $g\circ f=\begin{pmatrix}
 A & B & C & D & E & F\\
 E & D & C & B & A & F
-\end{pmatrix}=s_{CF}$\\
-\\
-\textbf{Exercise \ref{exercise:symmetries:S3Table}:}\\
-b. row 4, column 2\\
+\end{pmatrix}=s_{CF}$
+\item
+$f=r_{180}=\begin{pmatrix}
+A & B & C & D & E & F\\
+D & E & F & A & B & C
+\end{pmatrix}$
+$\qquad g=s_{CF}=\begin{pmatrix}
+A & B & C & D & E & F\\
+E & D & C & B & A & F
+\end{pmatrix}$\\
+$f\circ g=\begin{pmatrix}
+A & B & C & D & E & F\\
+B & A & F & E & D & C
+\end{pmatrix}=s_{30}$\\
+$g\circ f=\begin{pmatrix}
+A & B & C & D & E & F\\
+B & A & F & E & D & C
+\end{pmatrix}=s_{30}$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:S3Table}:}
+\begin{enumerate}[{a.}]
+\item
+row 2, column 4\\
+$\rho_1 \circ \mu_1 = \begin{pmatrix}
+A & B & C\\
+B & C & A
+\end{pmatrix} \circ \begin{pmatrix}
+A & B & C\\
+A & C & B
+\end{pmatrix}=\begin{pmatrix}
+A & B & C\\
+B & A & C
+\end{pmatrix}=\mu_3$
+\item
+row 4, column 2\\
 $\mu_1\circ \rho_1=\begin{pmatrix}
 A & B & C\\
 A & C & B
@@ -968,9 +1060,9 @@ B & C & A
 \end{pmatrix}=\begin{pmatrix}
 A & B & C\\
 C & B & A
-\end{pmatrix}=\mu_2$\\
-\\
-c. row 3, column 6\\
+\end{pmatrix}=\mu_2$
+\item
+row 3, column 6\\
 $\rho_2\circ \mu_3=\begin{pmatrix}
 A & B & C\\
 C & A & B
@@ -980,31 +1072,35 @@ B & A & C
 \end{pmatrix}=\begin{pmatrix}
 A & B & C\\
 A & C & B
-\end{pmatrix}=\mu_1$\\
-\\
-\textbf{Exercise \ref{exercise:symmetries:20}:}\\
-a. Any symmetry composes with $id$ leave that symmetry unchanged.\\
-$Id$ composes with any symmetry still leave that symmetry unchanged.\\
-b. Yes.\\
+\end{pmatrix}=\mu_1$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:20}:}
+\begin{enumerate}[{a.}]
+\item
+Any symmetry composes with $id$ leave that symmetry unchanged.\\
+$id$ composes with any symmetry still leave that symmetry unchanged.
+\item
+Yes.\\
 Inverse of $id$ is $id$.\\
 Inverse of $\rho_1$ is $\rho_2$.\\
 Inverse of $\rho_2$ is $\rho_1$.\\
 Inverse of $\mu_1$ is $\mu_1$.\\
 Inverse of $\mu_2$ is $\mu_2$.\\
-Inverse of $\mu_3$ is $\mu_3$.\\
-c. because $\mu_1\circ \mu_2 = \rho_1$ but $\mu_2\circ \mu_1=\rho_2$\\
-\\
-\textbf{Exercise \ref{exercise:symmetries:InverseRot}:}\\
-a. $r^k=r\circ r\circ\dots \circ r$ (k times)\\
-$r^m=r\circ r\circ r\circ\dots \circ r$ (m times)\\
-$\implies r^k\circ r^m=(r\circ r\circ\dots \circ r)\circ(r\circ r\circ r\circ\dots \circ r)=r^{k+m}$\\
-\\
-b. $r^k\circ r^{n-k}=r^{k+n-k}=r^n=id$\\
-$r^{n-k}\circ r^{k}=r^{n-k+k}=r^n=id$\\
-\\
-c. $(r^k)^{-1}=r^{n-k}$\\
-\\
-\textbf{Exercise \ref{exercise:symmetries:31}:}\\
+Inverse of $\mu_3$ is $\mu_3$.
+\item
+because $\mu_1\circ \mu_2 = \rho_1$ but $\mu_2\circ \mu_1=\rho_2$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:prop_proof}:}\\
+We show that $s^{-1}$ leave distances between points unchanged as follows:\\
+Proof:\\
+Choose any two points $A$ and $B$ in the figure, and let $A'=s^{-1}(A)$ and $B'=s^{-1}(B)$.\\
+By definition of inverse, it follows that $s(A')=A$ and $s(B')=B$.\\
+Since $s$ is a symmetry, it follows that $\overline{A'B'}$ = $\overline{AB}$\\
+Since $A$ and $B$ were arbitrary points in the figure, we have shown that $s^{-1}$ leaves distance between points unchanged.
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:31}:}
 b. Two vertices are fixed: 1 and 5.\\
 c. $s^2=s\circ s=id$\\
 \\
@@ -1551,13 +1647,40 @@ Since product of permutations is commutative, product of an odd permutation and 
 \section{Solutions for  ``Abstract Groups''}
 \noindent\textbf{\textit{ (Chapter \ref{groups})}}\bigskip
 
+\noindent\textbf{Exercise \ref{exercise:groups:trivial}:}\\
+A trivial group $(T, \circ )$, containing only the element $e$, is a set $T$ under the law of composition if it satisfies the following axioms. 
+
+\begin{itemize}
+\item
+The set $T$ is closed under the law of composition.  That is, 
+$e \circ e = e$.
+\\
+\item
+There exists an element $e \in T$, called the identity element, such that 
+$e \circ e = e$.
+\\
+\item
+For each element $e \in T$, there exists an inverse element in $T$, denoted by $e^{-1}$, such that 
+$e \circ e^{-1} = e^{-1} \circ e = e$.
+\\
+\item
+The law of composition is associative. That is, 
+$(e \circ e) \circ e = e \circ (e \circ e) = e$.
+\end{itemize}
+
+Therefore, since the set $T$ meets the criteria for each axiom set $T$ is a group.
+\\
+\\
 \noindent\textbf{Exercise \ref{exercise:groups:Rstar_group}:}\\
-a. $(R^*,.)$ is a group.\\
-$R^*$ is closed under multiplication.\\
-$R^*$ has 1 as the identity element.\\
-Each element has its own multiplicative inverse.\\
-Multiplication is associative.\\
+a. $(R^*, \cdot)$ is a group.\\
+$R^*$ is closed under multiplication. (by Example~\ref{example:groups:Rstar_group}) \\
+$R^*$ has 1 as the identity element. (by Properties of arithmetic operations~\ref{OpsAndRels}(A))\\
+Each element has its own multiplicative inverse. (by  Properties of arithmetic operations~\ref{OpsAndRels}(C))\\
+Multiplication is associative. (by Properties of arithmetic operations~\ref{OpsAndRels}(D))\\
+\\
 b. $(R^*,+)$ is not a group because it's not closed under addition. For example, we have $1+(-1)=0\not\in R^*$.\\
+\\
+
 c. $(R^*,.)$ has infinite order.\\
 \\
 \textbf{Exercise \ref{exercise:groups:C_star}:}\\

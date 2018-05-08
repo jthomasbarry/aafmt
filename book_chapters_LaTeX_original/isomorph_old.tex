@@ -242,9 +242,9 @@ for all $a$ and $b$ in $G$. If $G$ is isomorphic to $H$, we write $G \cong H$\la
 
 Some important properties of isomorphisms follow directly from this definition. First we have:
 
-\begin{thm}\label{IsoId}
+\begin{thmprop}\label{IsoId}
 Given that  $\phi : G \rightarrow H$ is an  isomorphism, then $\phi$ takes the identity to the identity: that is, if $e$ is the identity of $G$, then  $\phi(e)$ is the identity of $H$.
-\end{thm}
+\end{thmprop}
 
 \begin{exercise}{}
 Fill in the blanks in the following proof of Proposition~\ref{IsoId}:
@@ -268,12 +268,12 @@ It follows from the definition of identity that $\_\_\_\_\_$ is the identity of 
 
 Another important property of isomorphisms is:
 
-\begin{thm}\label{IsoInv}
+\begin{thmprop}\label{IsoInv}
 Given that  $\phi : G \rightarrow H$ is an  isomorphism, then $\phi$ preserves the operation of inverse: that is, for any $g \in G$ we have
 \begin{equation*}
 \phi(g^{-1}) = (\phi(g))^{-1}.
 \end{equation*}
-\end{thm}
+\end{thmprop}
 
 \begin{exercise}{}
 Fill in the blanks in the following proof of Proposition~\ref{IsoInv}:
@@ -309,9 +309,9 @@ Given that  $\phi : G \rightarrow H$ and $\psi : H \rightarrow K$ is an  isomorp
 
 We said in the previous section that isomorphic groups are ``equivalent'' in some sense. This fact has a formal mathematical statement as well:
 
-\begin{thm}\label{GpEquivRel}
+\begin{thmprop}\label{GpEquivRel}
 Isomorphism is an equivalence relation on groups. 
-\end{thm}
+\end{thmprop}
 
 \begin{exercise}{}
 Prove Proposition~\ref{GpEquivRel}.  (\emph{Hint}: Recall that this involves proving the three properties: reflexive, symmetric, and transitive. You may find that Exercise~\ref{exercise:isomorph:InvCompIso}  is useful.)
@@ -668,9 +668,9 @@ which contradicts the fact that $a$ and $b$ do not commute.
 Although we have only proven the non-isomorphicity of abelian and non-abelian groups for one particular case, the same  method of proof can be used to prove the following general result.
 %Notice that in the general method for proving $D_3 \ncong {\mathbb Z}_6$, the elements $a, b, m$ and $n$ used were completely general and could have been picked from any two groups, one abelian and one not.  Therefore, that proof would work just as well for proving that any abelian group couldn't be isomorphic to a non-abelian group.  Hence 
 
-\begin{thm}\label{abelian_non-abelian}
+\begin{thmprop}\label{abelian_non-abelian}
 If $G$ is an abelian group and $H$ is a non-abelian group, then $G \ncong H$.
-\end{thm}
+\end{thmprop}
 
 \begin{exercise}{}
 Prove Proposition ~\ref{abelian_non-abelian} by imitating the proof in Example ~\ref{example:isomorph:not_isomorph_abelian}.
@@ -683,9 +683,9 @@ Prove $D_4 \ncong {\mathbb Z}_8$.
 
 Finally, let's look at ${\mathbb Z}$ and ${\mathbb R}$.  We know ${\mathbb Z}$ is a cyclic group with $1$ as the generator, while ${\mathbb R}$ is not cyclic. (Do you remember why?)  We might suspect  that  ${\mathbb Z} \ncong {\mathbb R}$, since one group is cyclic and the other isn't.  This is in fact true, and we'll prove it.   Since ${\mathbb Z}$ and ${\mathbb R}$ are infinite groups though, we can't use Cayley tables, so we have to use another method (three guessess as to what it is):
 
-\begin{thm}\label{not_isomorph_cyclic}
+\begin{thmprop}\label{not_isomorph_cyclic}
 ${\mathbb Z}$ is not isomorphic to ${\mathbb R}$.
-\end{thm}
+\end{thmprop}
 \begin{proof}
 We will use a proof by contradiction.   Suppose that there exists an isomorphism $\omega: {\mathbb Z} \rightarrow {\mathbb R}$.  Choose any $x \in {\mathbb R}$, and let $m \in {\mathbb Z}$ be the pre-image of $x$, that is $\omega(m) = x$.  It follows that: 
 
@@ -698,9 +698,9 @@ ${\mathbb R}$ is \emph{not} cyclic. This contradiction shows that our original s
 
 Again we can generalize this proof to prove that no cyclic group can be isomorphic to a non-cyclic group.
 
-\begin{thm}\label{cyclic_noncyclic}
+\begin{thmprop}\label{cyclic_noncyclic}
 Given any group $G$ that is cyclic and any group $H$ that is not cyclic, $G \ncong H$.
-\end{thm}
+\end{thmprop}
 
 \begin{exercise}{}
 Prove Proposition ~\ref{cyclic_noncyclic}. (\emph{Hint}: Imitate the proof of Proposition~\ref{not_isomorph_cyclic}.)
@@ -713,7 +713,7 @@ Prove that ${\mathbb Q}$ is not isomorphic to ${\mathbb Z}$.
 \section{Properties of isomorphisms}\label{iso_properties}
 In the last two sections we  proved several properties of isomorphic groups and their corresponding isomorphisms.  We collect these properties (and add a few more) in the following proposition:
 
-\begin{thm}\label{isomorph_theorem_1}
+\begin{thmprop}\label{isomorph_theorem_1}
 Let $\phi : G \rightarrow H$ be an isomorphism of two groups.  Then the following statements are true. 
 \begin{enumerate}[(1)]
  
@@ -734,7 +734,7 @@ $G$ is cyclic if and only if $H$ is cyclic.
 $G$ has a subgroup of order $n$ if and only if $H$ has a subgroup of order $n$.
  
 \end{enumerate}
-\end{thm}
+\end{thmprop}
 
 \begin{proof}
 Assertion (1) follows from the fact that $\phi$ is a bijection.  The proofs of (2)--(5) are indicated in the following exercises.
@@ -801,9 +801,9 @@ We have been emphasizing that two groups that are isomorphic are the ``same'' as
 
 Our first classification result concerns cyclic groups.
 
-\begin{thm}\label{isomorph_theorem_2}
+\begin{thmprop}\label{isomorph_theorem_2}
 All cyclic groups of infinite order are isomorphic to ${\mathbb Z}$.
-\end{thm}
+\end{thmprop}
 
 \begin{proof}
 Let $G$ be a cyclic group with infinite order and suppose that $a$ is a generator of $G$.  Define a map $\phi : {\mathbb Z} \rightarrow  G$ by $\phi : n \mapsto a^n$. Then 
@@ -821,9 +821,9 @@ Using Proposition ~\ref{isomorph_theorem_2}, prove again that $2^{\mathbb Z} \co
 Prove again that $n{\mathbb Z} \cong {\mathbb Z}$ for $n \neq 0$.
 \end{exercise}
 
-\begin{thm}\label{isomorph_theorem_3}
+\begin{thmprop}\label{isomorph_theorem_3}
 If $G$ is a cyclic group of order $n$, then $G$ is isomorphic to~${\mathbb Z}_n$.  
-\end{thm}
+\end{thmprop}
  
 \begin{proof}
 Let $G$ be a cyclic group of order $n$ generated by $a$ and define a map $\phi : {\mathbb Z}_n \rightarrow  G$ by $\phi : k \mapsto a^k$, where $0 \leq k < n$. The proof that $\phi$ is an isomorphism is left as the next exercise. 
@@ -914,9 +914,9 @@ that is the isomorphic image of 1 is actually the function from ${\mathbb Z}_3 \
 \end{example}
 
 
-\begin{thm}[Cayley]\index{Cayley's Theorem}\label{isomorph_theorem_6}
+\begin{thmprop}[Cayley]\index{Cayley's Theorem}\label{isomorph_theorem_6}
 Every group is isomorphic to a group of permutations.
-\end{thm}
+\end{thmprop}
 
 \begin{proof}
 Let $G$ be a group with $|G|$ elements.  We seek a group of permutations $P \subset S_{|G|}$ that is isomorphic to $G$.  For any $g \in G$ we may  define a  function $\sigma_g : G \rightarrow G$ by 
@@ -995,9 +995,9 @@ If $(G,\cdot)$ and $(H, \circ)$ are groups, then we can make the Cartesian produ
 \]
 that is, we just multiply elements in the first coordinate as we do in $G$ and elements in the second coordinate as we do in $H$.  We have specified the particular operations $\cdot$ and $\circ$ in each group here for the sake of clarity; we usually just write $(g_1, h_1)(g_2, h_2) = (g_1  g_2, h_1 h_2)$.  
 
-\begin{thm}\label{isomorph_theorem_7}
+\begin{thmprop}\label{isomorph_theorem_7}
 Let $G$ and $H$ be groups. The set $G \times H$ is a group under the operation $(g_1, h_1)(g_2, h_2) = (g_1  g_2, h_1 h_2)$ where $g_1, g_2 \in G$ and $h_1, h_2 \in H$. 
-\end{thm}
+\end{thmprop}
 The proof is outlined in the following exercise. (\emph{Hint}: for each group property to be proved, use the corresponding group property for $G$ and $H$.)
 
 \begin{exercise}{proof_thm_7}
@@ -1041,11 +1041,11 @@ areas of computer science.
 \end{example}
 
  
-\begin{thm}\label{isomorph:lcm_theorem}
+\begin{thmprop}\label{isomorph:lcm_theorem}
 Let $(g, h) \in G \times H$. If $g$ and $h$ have finite orders $r$ and
 $s$ respectively, then the order of $(g, h)$ in $G \times H$ is the
 least common multiple of $r$ and $s$. \index{Isomorphism!least common multiple theorem}
-\end{thm}
+\end{thmprop}
 
  
 \begin{proof}
@@ -1098,10 +1098,10 @@ The next proposition tells us exactly when the direct product of two
 cyclic groups is cyclic. 
  
 
-\begin{thm}\label{Z_pq_theorem}
+\begin{thmprop}\label{Z_pq_theorem}
 The group ${\mathbb Z}_m \times {\mathbb Z}_n$ is isomorphic to ${\mathbb
 Z}_{mn}$ if and only if $\gcd(m,n)=1$. 
-\end{thm}
+\end{thmprop}
  
 
 \begin{proof}
@@ -1227,10 +1227,10 @@ will never be satisfied for $h \in H$ and $k \in K$.
 \end{example}
 
  
-\begin{thm}
+\begin{thmprop}
 Let $G$ be the internal direct product of  subgroups $H$ and $K$. Then
 $G$ is isomorphic to $H \times K$. 
-\end{thm}
+\end{thmprop}
  
 
 \begin{proof}
@@ -1284,10 +1284,10 @@ $h_i h_j = h_j h_i$ for all $h_i \in H_i$ and $h_j \in H_j$.
 \end{itemize}
 We will leave the proof of the following proposition as an exercise. 
  
-\begin{thm}
+\begin{thmprop}
 Let $G$ be the internal direct product of subgroups $H_i$, where $i =
 1, 2, \ldots, n$. Then $G$ is isomorphic to $\prod_i H_i$. 
-\end{thm}
+\end{thmprop}
 
  
 

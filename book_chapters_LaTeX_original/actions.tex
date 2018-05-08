@@ -8,7 +8,9 @@ The examples in the previous paragraph  illustrate a general concept called \emp
 
 This chapter  is by Holly Webb, with numerous additions by Mark Leech. Thanks to Tom Judson for material used in this chapter.
 
-\section{Basic definitions}\label{DefActions}
+\section{Basic definitions\quad
+\sectionvideohref{1KOUEx-IEkg&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=37
+}}\label{DefActions}
 We'll get to definitions momentarily, but first it's helpful to look at an example.
 
 \begin{example}{Actions1} Consider the group $S_3=\{id,(AB),(AC),(BC),(ABC),(ABC)\}$ and the set $X=\{A,B,C\}$. Each element of $S_3$ ``does something" to each element of $X$. See the Figure~\ref{fig:S3onABC} below.
@@ -149,228 +151,6 @@ Let $G = 2\mathbb{Z}$ and let $X =\mathbb{Z}$. Show that $X$ is a $G$-set.
 
 %Add two exercises: (1) Let $X$ and $Y$ be sets and  $x \in X$ and $y \in Y$, and given an operation (.); why is $x.y$ NOT considered $x$ acting on $y$. Why must one of these sets be a group? (2) Are actions invertable? (bijective map)
 
-\section{Group actions associated with subgroups and cosets}\label{SubgroupsAndCosets}
-It turns out that if the set $X$ is also a group, then it's always possible to define a group action of $X$ on itself, where the group action is identical to the group operation: $g.x:=gx$.
-
-\begin{example}{SubgroupAction1}
-Consider the group $\mathbb{Z}_5$ which as we know is a group under addition. We will show that $\mathbb{Z}_5$ is a $\mathbb{Z}_5$-set where the group action is $g.x := g+x$. To do this we must show the identity and compatibility conditions. First, $0.x = 0+x = x$ for all $x \in\mathbb {Z}_5$, so the identity condition is met.  Secondly, we need to show compatibility: by the associative property of addition in $\mathbb {Z}_5$, we have $(g_1+g_2).x = (g_1+g_2)+x  = g_1+(g_2+x) = g_1.(g_2.x)$ for all $x, g_1,g_2 \in\mathbb{ Z}_5$. So the compatibility condition is met.  Therefore, by definition of $G$-set, $\mathbb{Z}_5$ is a $\mathbb{Z}_5$-set.
-\end {example}
-
-\begin{exercise}{SubgroupAction2}
-\begin{enumerate} [(a)]
-\item Recall $\mathbb{ Q}^* $ is the nonzero rational numbers under multiplication. Show that $\mathbb{ Q}^* $ is a $\mathbb{ Q}^* $-set.
-\item Recall $H_5$ is the complex 5th roots of unity under complex multiplication (see Section~\ref{sec:RootsOfUnity}). Show that $H_5$ is an $H_5$-set.
-\item Let $T$ be the unit circle in the complex numbers under multiplication (see Figure~\ref{rtsunity} in Section~\ref{sec:RootsOfUnity}).  Find a group $G$ such that $T$ is a $G$-set, and prove the statement.
-\end{enumerate}
-\end {exercise}
-We can generalize the results of the preceding exercise in the following proposition:
-
-\begin{prop}{GSetSelf} 
-For any group $G$, $G$ is a $G$-set with action equal to the group operation in $G$: $g.h:=gh$ for any $g,h \in G$.
-\end{prop}
-
-\begin{exercise}{GSetSelf2}: 
-Prove the above proposition.
-\end {exercise}
-
-\begin{exercise}{SubgroupAction3}
-\begin{enumerate} [(a)]
-\item Let $G=\{2^n~|~n \in \mathbb{Z}\}$: $G$ is a multiplicative subgroup of $\mathbb{Q}^*$. Show that $\mathbb{Q}^*$ is a $G$-set.
-\item Let $T$ be the unit circle in the complex numbers under multiplication.  Show $T$ is an $H_5$-set.
-\end{enumerate}
-\end {exercise}
-
-In Exercises~\ref{exercise:actions:Action7} and \ref{exercise:actions:SubgroupAction3}, we've seen cases where $G$ is a group and $H$ is a subgroup of $G$.  In this situation, $H$ will always produce a group action on $G$:
-
-\begin{prop}{HSet} 
-If $G$ is a group, and $H$ is a subgroup of $G$, then $G$ is an $H$-set using the definition $h.g:=hg$.
-\end{prop}
-
-\begin{exercise}{HSet2} 
-Prove the above proposition.
-\end {exercise}
-
-Recall our discussion of cosets in Chapter~\ref{cosets} In particular, a left coset consists of a group element $g$ acting on a subgroup $H$ of $G$. The group element acts on each element of the subgroup to create a coset. In other words, a coset is a subgroup shifted by action of a group element.  If $G$ is a group, we can let $L$ be the set of left cosets. We will see in the following examples that we can define a group action on $L$.  That is the set of left cosets, $L$ is a $G$-set.
-Let $G$ be the additive group of real numbers.  That is, $G=(\mathbb{R},+)$, and let $H$ be all integer multiples of $2\pi$.   That is, $H=\{2k\pi:k\in \mathbb{Z}\}$, or $H = 2 \pi \mathbb{Z}$ for short.  
-
-\begin{exercise}{AngleCoset1}
-Prove that $2 \pi \mathbb{Z}$ is a subgroup of $(\mathbb{R},+)$.
-\end{exercise}
-\begin{example}{AngleCoset2}
-Let $L$ be the set of left cosets of $2\pi \mathbb{Z}$ in the group $(\mathbb{R},+)$.  Recall from Definition~\ref{def_coset} in Chapter~\ref{cosets} that the set of left cosets $L$ is defined as $x+2\pi \mathbb{Z}=\{x+h:h\in 2\pi\mathbb{Z}\}$.  For example, the left coset which contains $\pi/3$ is the set $ \{\pi/3 +2k\pi, k\in \mathbb{Z}\}$, which we could also write as $\{ \ldots \pi/3-4\pi, \pi/3-2\pi, \pi/3, \pi/3+2\pi, \pi/3 + 4\pi, \ldots \}$.  It turns out that $L$ is $G$-set under the action  
-$(g,x+2\pi\mathbb{Z}) \rightarrow g+x+2\pi\mathbb{Z}$. Let's verify the two conditions of a $G$-set:
-\begin{enumerate}[(a)]
-\item
-For the identity condition note that $e\in G=0$. Then, $0+x+2\pi\mathbb{Z}=x+2\pi\mathbb{Z}$ for any $x+2\pi\mathbb{Z}\in L$.  So the identity condition is true.
-\item 
-For the compatibility condition consider two real numbers $a,b$.  Then, by associativity of real number addition, $(a+b)+x+2\pi\mathbb{Z}=a+(b+x+2\pi\mathbb{Z})$ for any $x+2\pi\mathbb{Z}$  in $L$.  So the compatibility condition is true.  $L$ is a $G$-set of the additive group of real numbers.
-\end {enumerate}
-This example has a very practical significance. We know that angles on a unit circle are arbitrary up to multiples of $2\pi$. So we can think of each angle as a coset:  that is, the angle $\theta$ where $0\leq\theta<2\pi$ corresponds to  the coset $\theta + 2\pi \mathbb{Z}$, which represents the set of values $\{\theta +2k\pi\}$, where $k \in \mathbb{Z}$. Now consider what an arbitrary rotation $\phi$ does to the angle $\theta$. For instance, consider the case where $\theta=\frac{\pi}{4}$~--~then $\theta+H=\{ \frac{\pi}{4}+2k\pi\}$.  We'll suppose that the rotation angle is $\phi=\frac{15\pi}{2}$.  According to the group action, $\phi+\theta+H =\frac{15\pi}{2}+\{\frac{\pi}{4}+2k\pi\}$ which will result in the new coset $\{\frac{31\pi}{4}+2k\pi\}=\{\frac{7\pi}{4}+2k\pi\}$.
-As we can see, the action of the additive group $(R,+)$ on the cosets $\theta + 2\pi \mathbb{Z}$ corresponds to rotation by arbitrary angles around the unit circle. If the rotation is more than $2 \pi$, the action still works because the cosets take care of any extra factors of $2 \pi$.
-\end {example}
-
-In the following exercise you will generalize the above example by showing how the set of all left cosets from a particular subgroup of group $G$ is a $G$-set.
-
-\begin{exercise}{Action5}
-Let $G$ be a group and $H$ be a subgroup of $G$. Let $L=\{xH~|~x\in G \}$ which is the set of all left cosets of $H$ in $G$. Then $G$ acts on $L$ by $g.xH = (gx)H$, which is also a coset of $H$. Show that $G$ is acting on $L$, which means that $L$ is a $G$-set.
-\end{exercise}
-
-Let's consider another example of group action on a set of cosets.  This example can be thought of as a two-dimensional version of Example~\ref{example:actions:AngleCoset2}, and can be envisioned using computer graphics.
-
-\subsection{The integer lattice}\label{subsec:lattice}
-
-Let $G$ be the $xy$-plane under addition (that is, $G=(\mathbb {R}^2,+)$).  Let $H=\mathbb{Z}\times \mathbb{Z}$, which is a subgroup of $G$ ($H$ is called the \term{integer lattice}\index{Integer lattice}: see Figure~\ref{fig:HwithUnitSquare}).
-Cosets of $H$ in $G$ may be written as $a+H=\{(x+m, y+n):m,n \in\mathbb{ Z}\}$, where $a :=(x,y)$ can be any element of $G$. Recall from Proposition~\ref{cosets_theorem_2} that cosets form a partition, so $H$ and its cosets partition $\mathbb{R}^2$.
-
-\begin{figure}[htpb]
-\begin{center}
-\includegraphics[width=4in]{images/Lattice_Hwithunitsquare.png}
-\caption{\label{fig:HwithUnitSquare}Diagram showing $H$ (the integer lattice) with the unit square shaded. This figure and the similar figures in the section were created using the software ``GeoGebra'' (see \url{www.geogebra.org}).  }
-\end{center}
-\end{figure}
-
-The \term{unit square}\index{Unit square} (the shaded area in Figure~\ref{fig:HwithUnitSquare}) is the area on the $xy$-plane that is $[0,1) \times [0,1)$, meaning the square includes the points on the $x$ and $y$ axes, but not on the lines $x=1$ and $y=1$. Note that $H$ has only one point in the unit square, namely $(0,0)$, similarly any coset of the form $a+H$ has only one point in the unit square (we will prove this mathematically later). We can say that $a\in \mathbb{R}^2$ maps $H$ to produce a coset $a+H$.
-
-\begin{example}{IntLatIntro} Consider a particular group element $a=(0.7,0.5)$. Let's use a graphical illustration to model the point $a$ mapping the integer lattice $H$ which results in the coset $a+H$.
-
-\begin{figure}[htpb]
-\begin{center}
-\includegraphics[width=4in]{images/Lattice_xPlusH.png}
-\caption{\label{fig:Lattice_xPlusH}The integer lattice, $H$, is represented by blue points, while the elements of the coset $(0.7,0.5)+H$ are represented by red diamonds. The dotted black arrows show the creation of the coset.}
-\end{center}
-\end{figure}
-
-You can duplicate the above illustration by physically by drawing the coset points (red diamonds) on a plastic transparency, placing it over a graph of the integer lattice (blue points) and moving the transparency $0.7$ units to the right and $0.5$ units upwards.
-\end{example}
-
-We will be needing to use the \term{floor function}\index{Floor function}, also known as the greatest integer function. The floor function takes a real number, $x \in \mathbb{R}$ as input and outputs the greatest integer that is less than or equal to $x$. We will use these brackets, $\lfloor~\rfloor$, to represent the floor function. Mathematically we can express this as:
-$$\lfloor x \rfloor=\max \{ m\in \mathbb{Z} ~|~m\leq x \}.$$
-
-Here are just a few quick examples: $\lfloor 4 \rfloor = 4$, $\lfloor \pi \rfloor = 3$, and $\lfloor -2.3 \rfloor = -3$.
-
-\begin{exercise}{IntLatBijection} In the following you will show that there is a bijection between cosets of the form $a+H$, where $a\in\mathbb{R}^2$ and points of the unit square.
-\begin{enumerate}[(a)]
-\item Let $(m,n)$ be the lower left point of the lattice square which contains the point $a$. Using the floor function, give  expressions for $m$ and $n$.
-\item Show that $a+(-m,-n)$ is inside the unit square. This implies that $a+H$ contains at least one point inside the unit square.
-\item Use proof by contradiction to show that the coset $a+H$ cannot have two different points inside the unit square.
-\end{enumerate}
-Since each coset $a+H$ contains exactly one point in the unit square, and each point in the unit square is contained in exactly one coset $a+H$, it follows that there exists a one-to-one and onto correspondence (i.e. a bijection) between points in the unit square and cosets of $H$.
-\end{exercise}
-
-\begin{example}{IntLat1} Continuing from Example~\ref{example:actions:IntLatIntro}: let $b=(0.8,0.3)$, where $b \in G$. Find the point $h=(m,n) \in H$ such that $b+a+h$ is inside the unit square (recall $a=(0.7,0.5)$).
-
-The element $b$ acts on the coset $a+H$ as follows:  
-\begin{align*}
- b+a+H &=\{(0.8+(0.7+m), 0.3+(0.5+n)):m, n \in \mathbb{Z}\}\\
-&=\{(0.8+0.7+m, 0.3+0.5+n):m, n \in \mathbb{Z}\}\\
-&=\{(1.5+m, 0.8+n):m, n \in \mathbb{Z}\}. 
-\end{align*}
-If $m=-1$ and $n=0$, then $b+a+h=(1.5-1,0.8+0)=(0.5,0.8)$, so $h=(-1,0)$.
-\end{example}
-
-\begin{exercise}{floorh} Generalize the above example as follows. Let $a,b \in \mathbb{R}^2$ such that $a=(a_x,a_y)$ and $b=(b_x,b_y)$. Let $h=(m,n)$ where $m=-\lfloor b_x+a_x \rfloor$ and $n=-\lfloor b_y+a_y \rfloor$ (note that $h \in H$). Verify graphically the formulas for $m$ and $n$, and show algebraically that $b+a+h$ is in the unit square.
-\end{exercise}
-
-The point $b+a+h=(0.5,0.8)$ is the \emph{only} point of the coset $b+a+H$ which is inside the unit square. By basic properties of cosets, it follows that $b+a+H =(0.5, 0.8)+H$. Recall that by definition a left coset of the integer lattice $a+H$ means adding the same point, $a=(x,y)$, to each point in the integer lattice, $H$. A group action simply changes one coset of $H$ in $G$ to a different coset.  The top illustration in Figure~\ref{fig:IntegerLattice1} show the displacement of the coset $a+H$ when acted on by $b$ on the left from Example~\ref{example:actions:IntLat1}. 
-
-\begin{figure}[htpb]
-\begin{center}
-\includegraphics[width=4.0in]{images/Lattice_baHcH.png}
-\caption{From Example~\ref{example:actions:IntLat1}, the top figure is illustrating the displacement of the coset $a+H$ for $a=(0.7,0.5)$ when acted on by $b=(0.8,0.3)$ on the left. The bottom figure is illustrating the coset $c'+H$, where $c'=b+a$. The lattice, $H$ is represented by blue points, the elements of the coset $a+H$ are represented by red diamonds, and the elements of the final coset $b+a+H=c'+H$ are represented by purple crosses.}
-\label{fig:IntegerLattice1}
-\end{center}
-\end{figure}
-
-Our above discussion can help us describe the motion of a character on the screen of a ``wraparound'' video game.  Imagine the unit square is your TV or computer screen. Suppose the character starts near the right edge at the point $a=(0.7,0.5)$, and undergoes linear motion to the right and up in the direction of the displacement vector $b=(0.8,0.3)$. Then he moves off the right edge of the screen and re-appears instantly at the left edge, ending up at the previously found point $c=(0.5,0.8)$ as shown in Figure~\ref{fig:wraparound1}. So the point $b+a+h=c$ where $h=(-1,0)$.
-
-\begin{figure}[htpb]
-\begin{center}
-\includegraphics[width=3in]{images/Lattice_wraparound1.png}
-\caption{\label{fig:wraparound1}Demonstrating the ``wraparound" effect, when only viewing the unit square, when $b=(0.8,0.3)$ acts on the coset $a+H$ where $a=(0.7,0.5)$.}
-\end{center}
-\end{figure}
-
-In our conclusion of Exercise~\ref{exercise:actions:IntLatBijection}, we found that there's a bijection between the points of the unit square and the cosets of $H$. So instead of observing an entire coset, we only need to look at the point that is currently inside the unit square, as seen in Figure~\ref{fig:wraparound1} for example. What appears to be a jumpy motion in the unit square (i.e. when the point jumps from the right edge to the left edge) can also be understood in terms of a continuous ``motion" of cosets.
-
-\begin{example}{IntLat2} Consider group elements $a=(-0.6,-0.4)$ and $b=(0.9,1.6)$ where $a,b \in \mathbb{R}^2$.
-Let's first find the point $h=(m,n) \in H$ such that $b+a+H$ is inside the unit square. From Exercise~\ref{exercise:actions:floorh}, $m=-\lfloor -0.6+0.9 \rfloor=-\lfloor 0.3 \rfloor=0$ and $n=-\lfloor -0.4+1.6 \rfloor=-\lfloor 1.2 \rfloor=-1$, so $h=(0,-1)$
-
-Next, let's find the point $b+a+h$ in the unit square, let's call this point $c$. $$c=(0.9,1.6)+(-0.6,-0.4)+(0,-1)=(0.3,0.2)$$ So $c=(0.3,0.2)$ and is a point inside the unit square.
-
-Lastly, let's graph the ``movement" of the points that are visible to only the unit square throughout the group action $b$ on $a+H$. Similar to Figure~\ref{fig:wraparound1}.
-
-The Figure~\ref{fig:Lattice2} (top) we have shown ``paths" which follow the action of $b$ on $a+H$. Note that each path is a continuous straight segment. However, if we restrict our field of view to the unit square (see Figure~\ref{fig:Lattice2} (bottom)), there appears to be four disconnected segments, but the top figure shows us how these can be envisioned as a continuous motion.
-
-\begin{figure}[htpb]
-\begin{center}
-\includegraphics[width=4.0in]{images/Lattice2.png}
-\caption{The top figure is illustrating the movement of the coset $a+H$ for $a=(-0.6,-0.4)$ when acted on by $b=(0.9,1.6)$ on the left (only one arrow, labeled $a$, representing the movement of $a$ acting on $H$ is shown so the image wouldn't be cluttered). The bottom figure is illustrating the ``wraparound" effect when only viewing the unit square. The movements are numbered in order and there are different patterns for clarity.}
-\label{fig:Lattice2}
-\end{center}
-\end{figure}
-
-\end{example}
-
-\begin{exercise}{IntLatHW1}
-\begin{enumerate}[(a)]
-\item Given $a=(0.8,0.6)$ and $b=(1.4,0)$ find the point $h\in H$ such that $b+a+h$ is inside the unit square, and find $c$ in the unit square, such that $c+H=b+a+H$.
-\item Given $a=(0.8,0.6)$ and $b=(1.2,1.3)$ find the point $h\in H$ such that $b+a+h$ is an element of the unit square, and find $c$ in the unit square, such that $c+H=b+a+H$.
-\item Given $a=(0.8,0.6)$ and $b=(0,3.5)$ find the point $h\in H$ such that $b+a+h$ is inside the unit square, and find $c$ in the unit square, such that $c+H=b+a+H$.
-\item Illustrate the first part (a) with a graph.  Graph the point $a+h$.  Then graph the point $b+a+h$, or simply $c$.  Include ordered pairs to indicate the position of these points. Include arrows to indicate the apparent ``movement'' from the point $a+h$ to the point $c$ within the unit square.
-\item Create similar graphs illustrating parts (b) and (c).
-\end{enumerate}
-\end{exercise}
-
-\begin{exercise}{IntLatNotGset} Show that $H$ is \emph{not} an $\mathbb{R}^2$-set. \hyperref[sec:actions:hints]{(*Hint*)}
-\end{exercise}
-
-\begin{exercise}{SetOfCosetsGset} Show that the set of all cosets of the form $\{a+H, a \in \mathbb{R}^2\}$ is a $\mathbb{R}^2$-set by answering the following:
-\begin{enumerate}[(a)]
-\item Let $b \in \mathbb{R}^2$. Define the action of $b$ on $(a+H)$ (in other words complete the following equation: $b.(a+H)=$~?).
-\item Prove the identity condition.
-\item Prove the compatibility condition.
-\end{enumerate}
-\end{exercise}
-
-
-We can think about this example in another way. Suppose we have a \emph{torus}, which is the mathematical word for a donut shape. We could imagine creating a ``map'' of the surface of the torus by cutting the torus apart as shown in Figure~\ref{fig:Torus1}. If we spread this map out flat, it would look like a square (see Figure~\ref{fig:Torus2}). If we wanted to use the map to chart motion on the surface of the torus, then any motion that goes off the right edge would reappear at the left edge; and any motion that goes off the top edge would reappear at the bottom. So you see this is exactly what we saw for the previous example. So using cosets of $\mathbb{Z}^2$ in $\mathbb{R}^2$, we've created a mathematical representation for motion on the surface of a torus.
-
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=3in]{images/Torus1.png}
-\caption{Torus, showing two cut lines.}\label{fig:Torus1}
-\end{center}
-\end{figure}
-
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=3in]{images/Torus2.png}
-\caption{The cut torus, flattened out.}\label{fig:Torus2}
-\end{center}
-\end{figure}
-
-We can generalize the two previous examples by considering cosets of a subgroup $H$ in a group $G$ that contains $H$.
-
-\begin{example}{CosetAction}
-Let $H$ be a subgroup of $G$ and $L_H$ the set of left cosets of $H$. The set $L_H$ is a $G$-set under the action 
-$g.(xH)=(gx)H$ (note that $gx\in G$ so $(gx)H$ is a coset of $H$).
-Again, it is easy to see that the identity condition is true. Since $(gg').(xH) =(gg'x)H=g.((g'x)H)= g.(g'.(xH))$, the compatibility condition is also true.
-\end{example}
-So far, we've been looking at group actions on left cosets.  What about right cosets?  Let's investigate.
-
-\begin{exercise}{RtCosetAction}
-Consider the case where $G=S_3$, $H=\{\var{id},(12)\}$, and $R$ is the set of right cosets of $H$.  Define a function from $G\times R\rightarrow R$ by $(g,R)\rightarrow Rg$. Does this function define a group action of $G$ on $R$? 
-\hyperref[sec:actions:hints]{(*Hint*)}
-\end {exercise}
-The previous exercise shows that we can't always do the same thing with right cosets that we can do with left cosets.  Let's look at an alternative:  
-
-\begin{exercise}{RtCosetAction2}
-\begin{enumerate}[(a)]
-\item Repeat the previous exercise, but this time use the function $(g,R)\rightarrow Rg^{-1}$.
-\item Show that in general the function $(g,R)\rightarrow Rg^{-1}$ defines an action of $G$ on the right cosets of $H$.  
-\end {enumerate}
-\end {exercise}
-
 \section{Symmetries of regular polyhedra}\label{ActionsOnPolyhedra}
 We want to apply our new ideas to gain insight about the groups of rotational symmetries of \term{regular polyhedra}\index{Polyhedron!regular}  In general, a \emph{polyhedron} can be thought of as a collection of faces, edges and vertices: for example, a cube has 6 faces, 12 edges and 8 vertices. A \emph{regular polyhedron} is a polyhedron in which all faces are congruent regular polygons, and the same number of edges meet at every vertex. The group of rotational symmetries of a polyhedron act on the faces, edges and vertices.  Any rotational symmetry will always take faces to faces, edges to edges and vertices to vertices. 
 
@@ -378,7 +158,7 @@ In the following discussion we'll be introducing a bunch of new ideas. As usual,
 
 \subsection{$G$-equivalence and orbits}
 Some of the rotational symmetries of the cube are indicated in Figure~\ref{fig:CubeRot}.
-\footnote{Note that these are NOT the only rotational symmetries of the cube--we'll discuss the others later (see  this excellent video: \url{www.youtube.com/watch?v=gBg4-lJ19Gg}).}
+\footnote{Note that these are NOT the only rotational symmetries of the cube--we'll discuss the others later (see  this excellent video: \url{http://www.youtube.com/watch?v=gBg4-lJ19Gg}).}
 The figure shows three possible rotation axes. We will denote the $90^{\circ}$ counterclockwise rotations around the $x,y$ and $z$ axes as $r_x, r_y,r_z$ respectively.  We will also denote the faces of the cube as $x_-, x_+,y_-,y_+,z_-,z_+$.  For example the rotation $r_x\compose r_x=r_x^2$ will take the bottom face ($z_-$) to the top face ($z_+$). 
 
 \begin{figure}[ht]
@@ -395,8 +175,7 @@ The figure shows three possible rotation axes. We will denote the $90^{\circ}$ c
 \begin{center}
 \includegraphics[width=2.5in]{images/CubeFold.png}
 \caption[caption]{A paper cube to print, cut and fold 
-\\ \hspace{\textwidth} 
-(from \url{www.korthalsaltes.com}).}
+(from \url{http://www.korthalsaltes.com}).}
  \label{fig:CubeFold}
 \end{center}
 \end{figure}
@@ -416,24 +195,24 @@ The figure shows three possible rotation axes. We will denote the $90^{\circ}$ c
  %$r_x$ or$r_x^{-3}$ takes $+-\,-\rightarrow -\,++$, 
 %$r_x\compose r_y^2$ takes $+-\,-\rightarrow -\,++$, 
 
-\item Let's denote the edges of the cube as follows.  For example, $\overline{x_+z_-}$ represents the edge where the faces $x_+$ and $z_-$ meet.  The edge $\overline{x_+y_-}$ is where the faces $x_+$ and $y_-$ meet.  (This is the left, front-facing edge of cube in Figure~\ref{fig:CubeRot}.)  
+\item Let's denote the edges of the cube as follows.  For example, $\overline{x_+,z_-}$ represents the edge where the faces $x_+$ and $z_-$ meet.  The edge $\overline{x_+,y_-}$ is where the faces $x_+$ and $y_-$ meet.  (This is the left, front-facing edge of cube in Figure~\ref{fig:CubeRot}.)  
 \begin{enumerate}[(i)]
 \item Using the above notation, list all edges of the cube.
-\item Give rotations that take the edge $\overline{x_+y_+}$ to each of the other edges. 
+\item Give rotations that take the edge $\overline{x_+,y_+}$ to each of the other edges. 
 \end {enumerate}
 \end{enumerate}
 \end{exercise} 
-%$\overline{x_+y_-}$, $\overline{x_+z_+}$,$\overline{x_+z_-}$,$\overline{x_-%y_+}$,$\overline{x_-y_-}$,$\overline{x_-z_+}$,$\overline{x_-z_-%}$,$\overline{y_+z_+}$,$\overline{y_+z_-}$,$\overline{y_-z_+}$,$\overline{y_-z_-}$,
+%$\overline{x_+,y_-}$, $\overline{x_+,z_+}$,$\overline{x_+,z_-}$,$\overline{x_-y_+}$,$\overline{x_-y_-}$,$\overline{x_-z_+}$,$\overline{x_-z_-}$,$\overline{y_+z_+}$,$\overline{y_+z_-}$,$\overline{y_-z_+}$,$\overline{y_-z_-}$,
 %In part (a) of the previous exercise, we saw that we could rotate the bottom face of the cube ($z_-$) to any other face.  We can use this information to rotate between any two faces.  For example, if we want to rotate the top face ($z_+$) to $x_+$, we can do this in two stages as follows.  First, we can rotate $z_+$ to $z_-$ using $r_x^{-1}\compose r_x^{-1}$ (which is the \emph{inverse} of the rotation that we used to take $z_-$ to $z_+$).  Second, we follow this by a rotation that takes $z_-$ to $x_+$ (such as $r_y^{-1}$).  In summary, we then have that 
 From the previous exercise it's pretty clear that for any two faces of a cube there is at least one symmetry that takes the first face to the second.  In other words, if $A$ and $B$ represent faces then there always exists a symmetry $g$ such that $gA=B$.  This example motivates the following definition.
 
 \begin{defn}\label{GEquivalent}
 If a group $G$ acts on a set $X$ and $x, y \in X$, then $x$ is said to be
 \term{$G$-equivalent}\index{G-equiv@$G$-equivalent} to $y$ if there exists a
-$g \in G$ such that $gx =y$. We write $x \sim_Gy$ or $x \sim y$ if
+$g \in G$ such that $g.x =y$. We write $x \sim_Gy$ or $x \sim y$ if
 two elements are $G$-equivalent.
 \end{defn}
-By this definition we can say that all faces of a cube are $G$-equivalent to each other under the group of rotational symmetries of a cube, because given any two faces we can always find a rotation that takes the first face to the second face (and the inverse rotationtakes the second face back to the first face).
+By this definition we can say that all faces of a cube are $G$-equivalent to each other under the group of rotational symmetries of a cube, because given any two faces we can always find a rotation that takes the first face to the second face (and the inverse rotation takes the second face back to the first face).
 The notation we're using strongly suggests that $\sim_G$ must be an equivalence relation.  If fact this is true:
 
 \begin{prop}{}
@@ -442,17 +221,17 @@ on $X$.
 \end{prop}
 \begin{proof}
 The relation $\sim$ is reflexive since $ex = x$. Suppose that $x \sim
-y$ for $x, y \in X$. Then there exists a $g$ such that $gx = y$. In
-this case $g^{-1}y=x$; hence, $y \sim x$. To show that the relation is
+y$ for $x, y \in X$. Then there exists a $g$ such that $g.x = y$. In
+this case $g^{-1}.y=x$; hence, $y \sim x$. To show that the relation is
 transitive, suppose that $x \sim y$ and $y \sim z$. Then, there must
-exist group elements $g$ and $h$ such that $gx = y$ and $hy= z$. So $z
-= hy = (hg)x$, and $x$ is equivalent to $z$.
+exist group elements $g$ and $h$ such that $g.x = y$ and $h.y= z$. So $z
+= h.y = (hg).x$, and $x$ is equivalent to $z$.
 \end{proof}
 
 Recall from Chapter~\ref{EquivalenceRelationsChap} that every equivalence relation on a set $X$ is associated with a partition of $X$, where a partition is a collection of disjoint subsets whose union is $X$. Each set in this partition is called an \term{equivalence class}.\index{Equivalence class}
 
 \begin{exercise}{Cube2}
-Consider the edge $\overline{y_+z_+}$ of a cube.  What is the equivalence class of this edge under $G$-equivalence, where $G$ is the group of rotational symmetries of a cube? \emph{Explain} your answer.
+Consider the edge $\overline{y_+,z_+}$ of a cube.  What is the equivalence class of this edge under $G$-equivalence, where $G$ is the group of rotational symmetries of a cube? \emph{Explain} your answer.
 \end {exercise}
 
 In the case of a cube where $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$ The three sets $\{\text{faces}\},\{\text{edges}\},\{\text{vertices}\}$ are disjoint equivalence classes whose union is $X$. We call each of these sets an \emph{orbit} of $X$ under $G$.  In general, we have the following definition.
@@ -496,7 +275,7 @@ Similarly, the rotations about the axis through $y_+$ and $y_-$ form a subgroup 
  These are all examples of \emph{stabilizer subgroups}. The general definition is as follows.
 
 \begin{defn}\label{StabilizerSubgroups} 
-Given that $X$ is a $G$-set and  $x \in X$, let $G_x$ be the set of  group elements $g$ that fix $x$:  in other words, $gx=x$.  Then $G_x$ is called the \term{stabilizer subgroup}\index{Subgroup!stabilizer} or \term{isotropy 
+Given that $X$ is a $G$-set and  $x \in X$, let $G_x$ be the set of  group elements $g$ that fix $x$:  in other words, $g.x=x$.  Then $G_x$ is called the \term{stabilizer subgroup}\index{Subgroup!stabilizer} or \term{isotropy 
 subgroup}\index{Subgroup!isotropy} of $x$.
 \end{defn}
 
@@ -515,7 +294,7 @@ This leads to another definition:
 Let $G$ be a group acting on a set $X$, and let $g$ be
 an element of $G$. The \term{fixed point set}\index{Fixed point
 set!of a group element} of $g$ in $X$, denoted by $X_g$, is the set of 
-all $x \in X$ such that $gx = x$.
+all $x \in X$ such that $g.x = x$.
 \end{defn}
 \noindent
 It is important to remember that $X_g \subset X$ and $G_x \subset G$. 
@@ -534,8 +313,8 @@ since the identity rotation  leaves the entire cube unchanged.
 Let's consider the stabilizer subgroups for the faces of a cube.  These contain the elements of the group $G$ of rotations of the cube that leave each face unchanged.  The stabilizer subgroups for the faces are:
 $$\begin{array} {c}
 G_{x_+}=G_{x_-}=\{\var{id},r_x,r_x^2,r_x^3\}\\
-G_{y_+}=G_{y_-}=\{\var{id},r_y,r_y^2,r_y^3\}\\
-G_{z_+}=G_{z_-}=\{\var{id},r_x,r_x^2,r_x^3\}
+G_{y_+}=G_{y_-}=\{\var{id},r_y,r_y^2,r_y^3\}\\......
+..G_{z_+}=G_{z_-}=\{\var{id},r_x,r_x^2,r_x^3\}
 \end {array}$$
 \end{example}
 
@@ -560,14 +339,14 @@ G_3 = G_4 = G_5 = G_6 = \{(1)\}.
 $$
 \end{example}
 
-%\begin{thm}
+%\begin{thmprop}
 %Let $G$ be a group acting on a set $X$ and $x \in X$. The stabilizer
 %group, $G_x$, of $x$ is a subgroup of $G$. 
-%\end{thm}
+%\end{thmprop}
 %\begin{proof}
 %Clearly, $e \in G_x$ since the identity fixes every element in the
-%set $X$. Let $g, h \in G_x$. Then $gx = x$ and $hx = x$. So $(gh)x =
-%g(hx) = gx = x$; hence, the product of two elements in $G_x$ is also
+%set $X$. Let $g, h \in G_x$. Then $g.x = x$ and $hx = x$. So $(gh).x =
+%g.(h.x) = g.x = x$; hence, the product of two elements in $G_x$ is also
 %in $G_x$. Finally, if $g \in G_x$, then $x = ex = (g^{-1}g)x =
 %(g^{-1})gx = g^{-1} x$. So $g^{-1}$ is in $G_x$. 
 %\end{proof}
@@ -627,7 +406,7 @@ In the previous example we used faces to count the rotational symmetries of a cu
 %$G_{\overline{x_+,z_+}}=\{r_x^2\compose r_y, \var{id}\}$
 \item Find the stabilizer subgroup for the edge $\overline{x_-,y_+}$.
 % $G_{\overline{x_-,y_+}}=\{r_y^2\compose r_z^{-1}, \var{id}\}$
-\item In Example ~\ref {example:actions:CountingFormula1} we constructed a formula for $|G|$ in terms of $| G_{x_+}|$ and $|{\cal O}_{x_+}|$.  Can you do the same thing with $\overline{x_+,z_+}$ using part (a)?  Can you do the same thing with $\overline{x_-,y_+}$ using part (b)?  
+\item In Example ~\ref{example:actions:CountingFormula1} we constructed a formula for $|G|$ in terms of $| G_{x_+}|$ and $|{\cal O}_{x_+}|$.  Construct a similar formula using $G_{\overline{x_+,z_+}}$ and $|{\cal O}_{\overline{x_+,z_+}}|$, and show that you get the same answer. Do the same thing with $G_{\overline{x_-,y_+}}$ and $|{\cal O}_{\overline{x_-,y_+}}|$.  
 \item Find the stabilizer subgroup for the vertex $+,+,+$ 
 \hyperref[sec:actions:hints]{(*Hint*)}
 % $G_{+,+,+}=\{var{id}, r_y\compose r_z, r_z^{-1}\compose r_y^{-1} \}$
@@ -640,7 +419,7 @@ In the previous example we used faces to count the rotational symmetries of a cu
 From the previous example and exercises, it seems we have a general formula:  if $G$ acts on $X$ and $x\in X$, then 
 $$|G|=|G_x|\cdot|{\cal O}_x|.$$
 
-This may remind you of \emph{Lagrange's Theorem}, which we proved in %/Proposition~\ref{LagrangeTheorem} in section ~\ref{sec:LagThm} of Chapter ~\ref{cosets}:  
+This may remind you of \emph{Lagrange's Theorem}, which we proved in Section~\ref{sec:LagThm} of the Cosets chapter:  
 $$|G|=|H|\cdot [G:H], $$
 where $H$ is any subgroup of $G$.  If we replace $H$ with $G_x$, this becomes $$|G|=|G_x|\cdot [G:G_x]. $$
 Comparing with our previous formula, we get
@@ -690,8 +469,9 @@ This proposition enables us to quickly find some nifty relationships among numbe
 \begin{enumerate}[(a)]
 \item
 Show using Proposition~\ref{proposition:actions:CountingFormula} that for the cube, the ratio (number of edges / (number of  faces) = 4/2. 
-\item Use the same method to find the ratio (number of edges) / (number of vertices).
-\item For the dodecahedron (regular polyhedron with 12-sided faces), find the ratio of (number of edges) / (number of edges).
+\item Use the same method to find the ratio (number of edges) / (number of vertices) for the cube.
+\item For the dodecahedron (regular polyhedron with 12-sided faces), find the ratio of (number of faces) / (number of vertices).
+\hyperref[sec:actions:hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise} 
 
@@ -716,12 +496,12 @@ What are the orders of the rotations (besides the identity) that leave an edge f
 Do edges come in pairs or not?  If so give the pairs, if not, explain why not.
 % edges come in pairs a rotation that stabilizes $\overline{x_+,z__+}$ will also stabilize $\overline{x_-,z_-}$ and $\overline{y_-,z_+}$ is stabilized by the same rotation as $\overline{y_+,z_-}$
 \item
-How many additional group elements do we obtain from the stabilizers of the different edges, and what are their orders? 
+Altogether how many group elements (besides the identity) stabilize at least one edge?
 % There are 6 pairs of edges each stabilized by one element of order two as well as the identity.  There are 6 group elements in the stabilizers of the different edges.
 \end{enumerate}
 \end{exercise}
 \begin{exercise}{Stabilizers2}
-Based on the information given in the preceding discussion, complete the following table to characterize the group elements of the rotational symmetries of a cube according to their orders and fixed point sets (you may also find this video to be helpful: \url{www.youtube.com/watch?v=gBg4-lJ19Gg}).
+Based on the information given in the preceding discussion, complete the following table to characterize the group elements of the rotational symmetries of a cube according to their orders and fixed point sets (you may also find this video to be helpful: \url{http://www.youtube.com/watch?v=gBg4-lJ19Gg}).
 \hyperref[sec:actions:hints]{(*Hint*)}
 
 \begin{tabular}{| c |c|c| r |}\hline
@@ -752,7 +532,7 @@ Consider the group $S_4$, which has 24 elements. Make a table with three columns
 \subsection{Examples of other regular polyhedral rotation groups}
 Let's get to know some other regular polyhedra using orbits and stabilizer subgroups to describe their rotational symmetry groups.
 \subsubsection*{The tetrahedron}
-Consider a regular tetrahedron, as shown in Figure~\ref {fig:TetRot}. This polyhedron has 4 faces, 6 edges and 4 vertices.  Each face is a triangle and each face is opposite a vertex. We will consider the rotations of a tetrahedron around 4 axes.  Each axis passes through a vertex and the face opposite that vertex. See Figure~\ref {fig:TetRot}. For example, a rotation of the axis through vertex $A$ will also stabilize face $a$.  We can call this axis $\overset{\leftrightarrow}{Aa}$.  Similarly, we will call the other axes $\overset{\leftrightarrow}{Bb}$, $\overset{\leftrightarrow}{Cc}$ and $\overset{\leftrightarrow}{Dd}$.
+Consider a regular tetrahedron, as shown in Figure~\ref{fig:TetRot}. This polyhedron has 4 faces, 6 edges and 4 vertices.  Each face is a triangle and each face is opposite a vertex. We will consider the rotations of a tetrahedron around 4 axes.  Each axis passes through a vertex and the face opposite that vertex. See Figure~\ref{fig:TetRot}. For example, a rotation of the axis through vertex $A$ will also stabilize face $a$.  We can call this axis $\overset{\leftrightarrow}{Aa}$.  Similarly, we will call the other axes $\overset{\leftrightarrow}{Bb}$, $\overset{\leftrightarrow}{Cc}$ and $\overset{\leftrightarrow}{Dd}$.
 
 \begin{figure}[ht]
 \begin{center}
@@ -773,7 +553,7 @@ You can also make your own tetrahedron like the one in Figure~\ref{fig:TetraFold
 \begin{center}
 \includegraphics[width=2.5in]{images/TetrahedronFold.png}
 \caption{\label{fig:TetraFold}Tetrahedron to print, cut and fold 
-(from \url{www.korthalsaltes.com}).}
+(from \url{http://www.korthalsaltes.com}).}
  
 \end{center}
 \end{figure}
@@ -810,7 +590,7 @@ Consider the vertex $A$ of a tetrahedron.  What is the equivalence class of this
 
 %$ cal{O}_A =\{A,B,C,D\}
 
-Just as with the cube, the rotation group $G$ of any polyhedron acts on the set $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$. Recall that each group element $g\in G$ has a \emph{fixed point set} $X_g\in X$ that it leaves unchanged: that is, $gx=x$ for any $x\in X_g$. Let's find some fixed point sets for rotations of the tetrahedron.
+Just as with the cube, the rotation group $G$ of any polyhedron acts on the set $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$. Recall that each group element $g\in G$ has a \emph{fixed point set} $X_g\in X$ that it leaves unchanged: that is, $g.x=x$ for any $x\in X_g$. Let's find some fixed point sets for rotations of the tetrahedron.
 
 \begin{exercise}{Tetra5}
 \begin{enumerate}[(a)]
@@ -849,7 +629,7 @@ So far we've found 4 rotational axes and two rotations around each axis (besides
 \end{exercise}	
 
 \begin{exercise}{Tetra8}
-In Exercise~\ref{exercise:actions:Tetra6} we constructed a formula for $|G|$ in terms of$| G_{A}|$ and $|{\cal O}_{A}|$.  Can you do the same thing using $| G_{\overline{AB}}|$ and $|{\cal O}_{\overline{AB}}|$?
+In Exercise~\ref{exercise:actions:Tetra6} we constructed a formula for $|G|$ in terms of$| G_{A}|$ and $|{\cal O}_{A}|$. Do the same thing using $| G_{\overline{AB}}|$ and $|{\cal O}_{\overline{AB}}|$, and show that you get the same answer for $|G|$.
 \end{exercise}
 
 \begin{exercise}{Tetra9}
@@ -902,7 +682,7 @@ A model of an octahedron might help with the following exercises.  You can make 
 \begin{center}
 \includegraphics[width=2.5in]{images/OctahedronFold.png}
 \caption{\label{fig:OctaFold} A paper octahedron to print, cut and fold
- (from \url{www.korthalsaltes.com}). }
+ (from \url{http://www.korthalsaltes.com}). }
 
 \end{center}
 \end{figure}
@@ -966,7 +746,7 @@ So far we have discovered 10 rotational symmetries of an octahedron.  Three axis
 \end{exercise}
 
 \begin{exercise}{Octa9}
-In Exercise ~\ref {exercise:actions:Octa6} we constructed a formula for $|G|$ in terms of $|G_{y_+}|$ and $|{\cal O}_{y_+}|$.  Can you do the same thing using $|G_{\triangle_{+ + +}}|$ and $|{\cal O}_{\triangle_{+ + +}}|$?
+In Exercise ~\ref{exercise:actions:Octa6} we constructed a formula for $|G|$ in terms of $|G_{y_+}|$ and $|{\cal O}_{y_+}|$. Do the same thing using $|G_{\triangle_{+ + +}}|$ and $|{\cal O}_{\triangle_{+ + +}}|$, and show that you get the same value for $|G|$.
 \end{exercise}
 
 \begin{exercise}{Octa10}
@@ -1016,7 +796,7 @@ You can also make your own dodecahedron to help you explore its rotational symme
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=2.5in]{images/DodecahedronFold.png}
-\caption{ \label{fig:DodecaFold}A dodecahedron to print, cut and fold  (from  \url{www.korthalsaltes.com}).}
+\caption{ \label{fig:DodecaFold}A dodecahedron to print, cut and fold  (from  \url{http://www.korthalsaltes.com}).}
 
 \end{center}
 \end{figure}
@@ -1193,7 +973,7 @@ Prove your equation using Proposition~\ref{proposition:actions:CountingFormula}.
 % $|G|=2\cdot |{\cal O}_e|\$
 \end{enumerate}
 \end {exercise}
- Now in Exercises~\ref{exercise:actions:Stabilizers2}, \ref{exercise:actions:Tetra9}, and \ref{exercise:actions:Octa10}  we showed another way of counting the elements of $G$: by counting the stabilizers of faces, vertices, and edges (plus the identity)But does this work for \emph{every} polyhedron? Could there possibly be a rotation that doesn't stabilize \emph{anything}? It turns out that this isn't possible (at least in three dimensions). The argument (which depends on a key fact proved by the famous mathematician Leonhard Euler) goes as follows. 
+ Now in Exercises~\ref{exercise:actions:Stabilizers2}, \ref{exercise:actions:Tetra9}, and \ref{exercise:actions:Octa10}  we showed another way of counting the elements of $G$: by counting the stabilizers of faces, vertices, and edges (plus the identity). But does this work for \emph{every} polyhedron? Could there possibly be a rotational symmetry that doesn't stabilize \emph{anything}? It turns out that this isn't possible (at least in three dimensions). The argument (which depends on a key fact proved by the famous mathematician Leonhard Euler) goes as follows. 
 
 Euler proved in 1775 that any rotation in three dimensions has a unique fixed axis. (We won't give the proof here, but it's related to the cross product discussed in Section~\ref{subsec:LeviCivita}.)  Now if we  rotate a polyhedron, then the axis must intersect the polyhedron twice: that is, it must intersect two elements of $X$ where $X = \{\text{faces, vertices, edges}\}$. Let's call these two elements $\epsilon_1$ and $\epsilon_2$. Since the rotation leaves the two intersections unchanged, there's one point of $\epsilon_1$ which maps to itself (and similarly for $\epsilon_2$). If the rotation is a symmetry, then $\epsilon_1$ must be fixed by the rotation, because there's no way it couldn't map to a different element of $X$ and still have one point which remains in $\epsilon_1$. The same argument holds for $\epsilon_2$. This shows that any rotational symmetry must stabilize at least two elements of $X$. 
 
@@ -1217,7 +997,7 @@ Rearranging, we find:
 \[ |{\cal O}_f| +  |{\cal O}_v|  +  |{\cal O}_e| =  |G|+2. \]
 But we've also seen that $|G| = 2{\cal O}_e$ for regular polyhedra. Substituting and rearranging a little further gives:
 \[ |{\cal O}_f|+|{\cal O}_v|-|{\cal O}_e|=2. \]
-This powerful equation is a special case of \term*{Euler's formula}\index{Euler's formula!For networks on a sphere}.  Let's see how it can be useful in determining properties of regular polyhedra.
+This powerful equation is called \term*{Euler's formula}\index{Euler's formula!For networks on a sphere}.  Let's see how it can be useful in determining properties of regular polyhedra.
 
 \begin{exercise}{Euler5}
 A certain regular polyhedron has 20 triangular faces. 
@@ -1238,8 +1018,9 @@ Using Proposition~\ref{proposition:actions:CountingFormula}, find the number of 
 \end{enumerate}
 \end {exercise}
 
-
-It turns out that this version of Euler's formula works for any network of edges and vertices which can be drawn on a sphere. Variants of the formula work for networks drawn on other shapes (like a donut).  Pursuing this topic further would lead us into the area  of mathematics known as \term{algebraic topology}, which is utterly fascinating but unfortunately a bigger mouthful than we can chew at this point. 
+\begin{rem}
+ Euler's formula has far more general application than we've shown here. It works for any network of edges and vertices which can be drawn on a sphere. Variants of the formula work for networks drawn on other shapes (like a donut, or a donut with multiple holes).  Pursuing this topic further would lead us into the area  of mathematics known as \term{algebraic topology}, which is a fascinating topic but unfortunately a much bigger mouthful than we can swallow at this point. 
+\end{rem}
 
 We don't need to limit ourselves to Euler's formula.  There are lots of other fun facts we can prove:
 
@@ -1310,7 +1091,7 @@ Suppose that $f=5$.  Find the possible values of $v$.  For each value of $v$, fi
 \item
 Suppose that $f \ge 6$. Show that this would imply $v<3$, which is impossible.
 \item
-Besides the four polyhedra we have investigated, could there be any others? If so, what are its properties?
+Besides the four polyhedra we have investigated, could there be any others? If so, what are their properties?
 \end{enumerate}
 \end{exercise}
 
@@ -1326,9 +1107,236 @@ The set of all possible rotations in 3 dimensions forms a group, which is called
 
 In Chapter~\ref{symmetries} we encountered another class of finite subgroups of $SO_3$, namely the dihedral groups $D_n$ which consist of rotations and flips (we should be careful to include $D_2$, which is generated by  a single 180-degree rotation and a flip). Although a flip is not a 2-d rotation, it is a rotation in 3-dimensions (as we indicated in  Section~\ref{subsec:reflSym}). Naturally, the rotation groups for the different $n$-gons (which are subgroups of the $D_n$ form another class of finite subgroups of $SO_3$.
 
-Are there any other finite subgroups of $SO_3$.  The answer is \emph{NO}-- and we can prove it! For a proof, the reader may consult: \url{hompages.math.uic.edu/~kauffman/FiniteRot.pdf}.
+Are there any other finite subgroups of $SO_3$.  The answer is \emph{no} For a proof, the reader may consult: \url{homepages.math.uic.edu/~kauffman/FiniteRot.pdf}.
 
-Once again, note the amazing power of mathematics. Mathematics commands the universe, and it must obey. Mathematics tells reality what it can and cannot do.
+Once again, note the amazing power of mathematics. Mathematics tells reality what it can and cannot do. Mathematics commands the universe, and the universe must obey. 
+
+
+\section{Group actions associated with subgroups and cosets}\label{SubgroupsAndCosets}
+It turns out that if the set $X$ is also a group, then it's always possible to define a group action of $X$ on itself, where the group action is identical to the group operation: $g.x:=gx$.
+
+\begin{example}{SubgroupAction1}
+Consider the group $\mathbb{Z}_5$ which as we know is a group under addition. We will show that $\mathbb{Z}_5$ is a $\mathbb{Z}_5$-set where the group action is $g.x := g+x$. To do this we must show the identity and compatibility conditions. First, $0.x = 0+x = x$ for all $x \in\mathbb {Z}_5$, so the identity condition is met.  Secondly, we need to show compatibility: by the associative property of addition in $\mathbb {Z}_5$, we have $(g_1+g_2).x = (g_1+g_2)+x  = g_1+(g_2+x) = g_1.(g_2.x)$ for all $x, g_1,g_2 \in\mathbb{ Z}_5$. So the compatibility condition is met.  Therefore, by definition of $G$-set, $\mathbb{Z}_5$ is a $\mathbb{Z}_5$-set.
+\end {example}
+
+\begin{exercise}{SubgroupAction2}
+\begin{enumerate} [(a)]
+\item Recall $\mathbb{ Q}^* $ is the nonzero rational numbers under multiplication. Show that $\mathbb{ Q}^* $ is a $\mathbb{ Q}^* $-set.
+\item Recall $H_5$ is the complex 5th roots of unity under complex multiplication (see Section~\ref{sec:RootsOfUnity}). Show that $H_5$ is an $H_5$-set.
+\item Let $T$ be the unit circle in the complex numbers under multiplication (see Figure~\ref{rtsunity} in Section~\ref{sec:RootsOfUnity}).  Find a group $G$ such that $T$ is a $G$-set, and prove the statement.
+\end{enumerate}
+\end {exercise}
+We can generalize the results of the preceding exercise in the following proposition:
+
+\begin{prop}{GSetSelf} 
+For any group $G$, $G$ is a $G$-set with action equal to the group operation in $G$: $g.h:=gh$ for any $g,h \in G$.
+\end{prop}
+
+\begin{exercise}{GSetSelf2}: 
+Prove the above proposition.
+\end {exercise}
+
+\begin{exercise}{SubgroupAction3}
+\begin{enumerate} [(a)]
+\item Let $G=\{2^n~|~n \in \mathbb{Z}\}$: $G$ is a multiplicative subgroup of $\mathbb{Q}^*$. Show that $\mathbb{Q}^*$ is a $G$-set.
+\item Let $T$ be the unit circle in the complex numbers under multiplication.  Show $T$ is an $H_5$-set.
+\end{enumerate}
+\end {exercise}
+
+In Exercises~\ref{exercise:actions:Action7} and \ref{exercise:actions:SubgroupAction3}, we've seen cases where $G$ is a group and $H$ is a subgroup of $G$.  In this situation, $H$ will always produce a group action on $G$:
+
+\begin{prop}{HSet} 
+If $G$ is a group, and $H$ is a subgroup of $G$, then $G$ is an $H$-set using the definition $h.g:=hg$.
+\end{prop}
+
+\begin{exercise}{HSet2} 
+Prove the above proposition.
+\end {exercise}
+
+Recall our discussion of cosets in Chapter~\ref{cosets} In particular, a left coset consists of a group element $g$ acting on a subgroup $H$ of $G$. The group element acts on each element of the subgroup to create a coset. In other words, a coset is a subgroup shifted by action of a group element.  If $G$ is a group, we can let $L$ be the set of left cosets. We will see in the following examples that we can define a group action on $L$.  That is the set of left cosets, $L$ is a $G$-set.
+Let $G$ be the additive group of real numbers.  That is, $G=(\mathbb{R},+)$, and let $H$ be all integer multiples of $2\pi$.   That is, $H=\{2k\pi:k\in \mathbb{Z}\}$, or $H = 2 \pi \mathbb{Z}$ for short.  
+
+\begin{exercise}{AngleCoset1}
+Prove that $2 \pi \mathbb{Z}$ is a subgroup of $(\mathbb{R},+)$.
+\end{exercise}
+\begin{example}{AngleCoset2}
+Let $L$ be the set of left cosets of $2\pi \mathbb{Z}$ in the group $(\mathbb{R},+)$.  Recall from Definition~\ref{def_coset} in Chapter~\ref{cosets} that the set of left cosets $L$ is defined as $x+2\pi \mathbb{Z}=\{x+h:h\in 2\pi\mathbb{Z}\}$.  For example, the left coset which contains $\pi/3$ is the set $ \{\pi/3 +2k\pi, k\in \mathbb{Z}\}$, which we could also write as $\{ \ldots \pi/3-4\pi, \pi/3-2\pi, \pi/3, \pi/3+2\pi, \pi/3 + 4\pi, \ldots \}$.  It turns out that $L$ is $G$-set under the action  
+$(g,x+2\pi\mathbb{Z}) \rightarrow g+x+2\pi\mathbb{Z}$. Let's verify the two conditions of a $G$-set:
+\begin{enumerate}[(a)]
+\item
+For the identity condition note that $e\in G=0$. Then, $0+x+2\pi\mathbb{Z}=x+2\pi\mathbb{Z}$ for any $x+2\pi\mathbb{Z}\in L$.  So the identity condition is true.
+\item 
+For the compatibility condition consider two real numbers $a,b$.  Then, by associativity of real number addition, $(a+b)+x+2\pi\mathbb{Z}=a+(b+x+2\pi\mathbb{Z})$ for any $x+2\pi\mathbb{Z}$  in $L$.  So the compatibility condition is true.  $L$ is a $G$-set of the additive group of real numbers.
+\end {enumerate}
+This example has a very practical significance. We know that angles on a unit circle are arbitrary up to multiples of $2\pi$. So we can think of each angle as a coset:  that is, the angle $\theta$ where $0\leq\theta<2\pi$ corresponds to  the coset $\theta + 2\pi \mathbb{Z}$, which represents the set of values $\{\theta +2k\pi\}$, where $k \in \mathbb{Z}$. Now consider what an arbitrary rotation $\phi$ does to the angle $\theta$. For instance, consider the case where $\theta=\frac{\pi}{4}$~--~then $\theta+H=\{ \frac{\pi}{4}+2k\pi\}$.  We'll suppose that the rotation angle is $\phi=\frac{15\pi}{2}$.  According to the group action, $\phi+\theta+H =\frac{15\pi}{2}+\{\frac{\pi}{4}+2k\pi\}$ which will result in the new coset $\{\frac{31\pi}{4}+2k\pi\}=\{\frac{7\pi}{4}+2k\pi\}$.
+As we can see, the action of the additive group $(R,+)$ on the cosets $\theta + 2\pi \mathbb{Z}$ corresponds to rotation by arbitrary angles around the unit circle. If the rotation is more than $2 \pi$, the action still works because the cosets take care of any extra factors of $2 \pi$.
+\end {example}
+
+In the following exercise you will generalize the above example by showing how the set of all left cosets from a particular subgroup of group $G$ is a $G$-set.
+
+\begin{exercise}{Action5}
+Let $G$ be a group and $H$ be a subgroup of $G$. Let $L=\{xH~|~x\in G \}$ which is the set of all left cosets of $H$ in $G$. Then $G$ acts on $L$ by $g.xH = (gx)H$, which is also a coset of $H$. Show that $G$ is acting on $L$, which means that $L$ is a $G$-set.
+\end{exercise}
+
+
+\subsection{The integer lattice}\label{subsec:lattice}
+
+In this section we'll take a close look at a group action on a set of cosets.  This example can be thought of as a two-dimensional version of Example~\ref{example:actions:AngleCoset2}, and can be envisioned using computer graphics.
+
+
+Let $G$ be the $xy$-plane under addition (that is, $G=(\mathbb {R}^2,+)$).  Let $H=\mathbb{Z}\times \mathbb{Z}$, which is a subgroup of $G$ ($H$ is called the \term{integer lattice}\index{Integer lattice}: see Figure~\ref{fig:HwithUnitSquare}).
+Cosets of $H$ in $G$ may be written as $a+H=\{(x+m, y+n):m,n \in\mathbb{ Z}\}$, where $a :=(x,y)$ can be any element of $G$. Recall from Proposition~\ref{cosets_theorem_2} that cosets form a partition, so $H$ and its cosets partition $\mathbb{R}^2$.
+
+\begin{figure}[htpb]
+\begin{center}
+\includegraphics[width=4in]{images/Lattice_Hwithunitsquare.png}
+\caption{\label{fig:HwithUnitSquare}Diagram showing $H$ (the integer lattice) with the unit square shaded. This figure and the similar figures in the section were created using the software ``GeoGebra'' (see \url{http://www.geogebra.org}).  }
+\end{center}
+\end{figure}
+
+The \term{unit square}\index{Unit square} (the shaded area in Figure~\ref{fig:HwithUnitSquare}) is the area on the $xy$-plane that is $[0,1) \times [0,1)$, meaning the square includes the points on the $x$ and $y$ axes, but not on the lines $x=1$ and $y=1$. Note that $H$ has only one point in the unit square, namely $(0,0)$, similarly any coset of the form $a+H$ has only one point in the unit square (we will prove this mathematically later). We can say that $a\in \mathbb{R}^2$ maps $H$ to produce a coset $a+H$.
+
+\begin{example}{IntLatIntro} Consider a particular group element $a=(0.7,0.5)$. Let's use a graphical illustration to model the point $a$ mapping the integer lattice $H$ which results in the coset $a+H$.
+
+\begin{figure}[htpb]
+\begin{center}
+\includegraphics[width=4in]{images/Lattice_xPlusH.png}
+\caption{\label{fig:Lattice_xPlusH}The integer lattice, $H$, is represented by blue points, while the elements of the coset $(0.7,0.5)+H$ are represented by red diamonds. The dotted black arrows show the creation of the coset.}
+\end{center}
+\end{figure}
+
+You can duplicate the above illustration by physically by drawing the coset points (red diamonds) on a plastic transparency, placing it over a graph of the integer lattice (blue points) and moving the transparency $0.7$ units to the right and $0.5$ units upwards.
+\end{example}
+
+We will be needing to use the \term{floor function}\index{Floor function}, also known as the greatest integer function. The floor function takes a real number, $x \in \mathbb{R}$ as input and outputs the greatest integer that is less than or equal to $x$. We will use these brackets, $\lfloor~\rfloor$, to represent the floor function. Mathematically we can express this as:
+$$\lfloor x \rfloor=\max \{ m\in \mathbb{Z} ~|~m\leq x \}.$$
+
+Here are just a few quick examples: $\lfloor 4 \rfloor = 4$, $\lfloor \pi \rfloor = 3$, and $\lfloor -2.3 \rfloor = -3$.
+
+\begin{exercise}{IntLatBijection} In the following you will show that there is a bijection between cosets of the form $a+H$, where $a\in\mathbb{R}^2$ and points of the unit square.
+\begin{enumerate}[(a)]
+\item Let $(m,n)$ be the lower left point of the lattice square which contains the point $a$. Using the floor function, give  expressions for $m$ and $n$.
+\item Show that $a+(-m,-n)$ is inside the unit square. This implies that $a+H$ contains at least one point inside the unit square.
+\item Use proof by contradiction to show that the coset $a+H$ cannot have two different points inside the unit square.
+\end{enumerate}
+Since each coset $a+H$ contains exactly one point in the unit square, and each point in the unit square is contained in exactly one coset $a+H$, it follows that there exists a one-to-one and onto correspondence (i.e. a bijection) between points in the unit square and cosets of $H$.
+\end{exercise}
+
+\begin{example}{IntLat1} Continuing from Example~\ref{example:actions:IntLatIntro}: let $b=(0.8,0.3)$, where $b \in G$. Find the point $h=(m,n) \in H$ such that $b+a+h$ is inside the unit square (recall $a=(0.7,0.5)$).
+
+The element $b$ acts on the coset $a+H$ as follows:  
+\begin{align*}
+ b+a+H &=\{(0.8+(0.7+m), 0.3+(0.5+n)):m, n \in \mathbb{Z}\}\\
+&=\{(0.8+0.7+m, 0.3+0.5+n):m, n \in \mathbb{Z}\}\\
+&=\{(1.5+m, 0.8+n):m, n \in \mathbb{Z}\}. 
+\end{align*}
+If $m=-1$ and $n=0$, then $b+a+h=(1.5-1,0.8+0)=(0.5,0.8)$, so $h=(-1,0)$.
+\end{example}
+
+\begin{exercise}{floorh} Generalize the above example as follows. Let $a,b \in \mathbb{R}^2$ such that $a=(a_x,a_y)$ and $b=(b_x,b_y)$. Let $h=(m,n)$ where $m=-\lfloor b_x+a_x \rfloor$ and $n=-\lfloor b_y+a_y \rfloor$ (note that $h \in H$). Verify graphically the formulas for $m$ and $n$, and show algebraically that $b+a+h$ is in the unit square.
+\end{exercise}
+
+The point $b+a+h=(0.5,0.8)$ is the \emph{only} point of the coset $b+a+H$ which is inside the unit square. By basic properties of cosets, it follows that $b+a+H =(0.5, 0.8)+H$. Recall that by definition a left coset of the integer lattice $a+H$ means adding the same point, $a=(x,y)$, to each point in the integer lattice, $H$. A group action simply changes one coset of $H$ in $G$ to a different coset.  The top illustration in Figure~\ref{fig:IntegerLattice1} show the displacement of the coset $a+H$ when acted on by $b$ on the left from Example~\ref{example:actions:IntLat1}. 
+
+\begin{figure}[htpb]
+\begin{center}
+\includegraphics[width=4.0in]{images/Lattice_baHcH.png}
+\caption{From Example~\ref{example:actions:IntLat1}, the top figure is illustrating the displacement of the coset $a+H$ for $a=(0.7,0.5)$ when acted on by $b=(0.8,0.3)$ on the left. The bottom figure is illustrating the coset $c'+H$, where $c'=b+a$. The lattice, $H$ is represented by blue points, the elements of the coset $a+H$ are represented by red diamonds, and the elements of the final coset $b+a+H=c'+H$ are represented by purple crosses.}
+\label{fig:IntegerLattice1}
+\end{center}
+\end{figure}
+
+Our above discussion can help us describe the motion of a character on the screen of a ``wraparound'' video game.  Imagine the unit square is your TV or computer screen. Suppose the character starts near the right edge at the point $a=(0.7,0.5)$, and undergoes linear motion to the right and up in the direction of the displacement vector $b=(0.8,0.3)$. Then he moves off the right edge of the screen and re-appears instantly at the left edge, ending up at the previously found point $c=(0.5,0.8)$ as shown in Figure~\ref{fig:wraparound1}. So the point $b+a+h=c$ where $h=(-1,0)$.
+
+\begin{figure}[htpb]
+\begin{center}
+\includegraphics[width=3in]{images/Lattice_wraparound1.png}
+\caption{\label{fig:wraparound1}Demonstrating the ``wraparound" effect, when only viewing the unit square, when $b=(0.8,0.3)$ acts on the coset $a+H$ where $a=(0.7,0.5)$.}
+\end{center}
+\end{figure}
+
+In our conclusion of Exercise~\ref{exercise:actions:IntLatBijection}, we found that there's a bijection between the points of the unit square and the cosets of $H$. So instead of observing an entire coset, we only need to look at the point that is currently inside the unit square, as seen in Figure~\ref{fig:wraparound1} for example. What appears to be a jumpy motion in the unit square (i.e. when the point jumps from the right edge to the left edge) can also be understood in terms of a continuous ``motion" of cosets.
+
+\begin{example}{IntLat2} Consider group elements $a=(-0.6,-0.4)$ and $b=(0.9,1.6)$ where $a,b \in \mathbb{R}^2$.
+Let's first find the point $h=(m,n) \in H$ such that $b+a+H$ is inside the unit square. From Exercise~\ref{exercise:actions:floorh}, $m=-\lfloor -0.6+0.9 \rfloor=-\lfloor 0.3 \rfloor=0$ and $n=-\lfloor -0.4+1.6 \rfloor=-\lfloor 1.2 \rfloor=-1$, so $h=(0,-1)$
+
+Next, let's find the point $b+a+h$ in the unit square, let's call this point $c$. $$c=(0.9,1.6)+(-0.6,-0.4)+(0,-1)=(0.3,0.2)$$ So $c=(0.3,0.2)$ and is a point inside the unit square.
+
+Lastly, let's graph the ``movement" of the points that are visible to only the unit square throughout the group action $b$ on $a+H$. Similar to Figure~\ref{fig:wraparound1}.
+
+The Figure~\ref{fig:Lattice2} (top) we have shown ``paths" which follow the action of $b$ on $a+H$. Note that each path is a continuous straight segment. However, if we restrict our field of view to the unit square (see Figure~\ref{fig:Lattice2} (bottom)), there appears to be four disconnected segments, but the top figure shows us how these can be envisioned as a continuous motion.
+
+\begin{figure}[htpb]
+\begin{center}
+\includegraphics[width=4.0in]{images/Lattice2.png}
+\caption{The top figure is illustrating the movement of the coset $a+H$ for $a=(-0.6,-0.4)$ when acted on by $b=(0.9,1.6)$ on the left (only one arrow, labeled $a$, representing the movement of $a$ acting on $H$ is shown so the image wouldn't be cluttered). The bottom figure is illustrating the ``wraparound" effect when only viewing the unit square. The movements are numbered in order and there are different patterns for clarity.}
+\label{fig:Lattice2}
+\end{center}
+\end{figure}
+
+\end{example}
+
+\begin{exercise}{IntLatHW1}
+\begin{enumerate}[(a)]
+\item Given $a=(0.8,0.6)$ and $b=(1.4,0)$ find the point $h\in H$ such that $b+a+h$ is inside the unit square, and find $c$ in the unit square, such that $c+H=b+a+H$.
+\item Given $a=(0.8,0.6)$ and $b=(1.2,1.3)$ find the point $h\in H$ such that $b+a+h$ is an element of the unit square, and find $c$ in the unit square, such that $c+H=b+a+H$.
+\item Given $a=(0.8,0.6)$ and $b=(0,3.5)$ find the point $h\in H$ such that $b+a+h$ is inside the unit square, and find $c$ in the unit square, such that $c+H=b+a+H$.
+\item Illustrate the first part (a) with a graph.  Graph the point $a+h$.  Then graph the point $b+a+h$, or simply $c$.  Include ordered pairs to indicate the position of these points. Include arrows to indicate the apparent ``movement'' from the point $a+h$ to the point $c$ within the unit square.
+\item Create similar graphs illustrating parts (b) and (c).
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{IntLatNotGset} Show that $H$ is \emph{not} an $\mathbb{R}^2$-set. \hyperref[sec:actions:hints]{(*Hint*)}
+\end{exercise}
+
+\begin{exercise}{SetOfCosetsGset} Show that the set of all cosets of the form $\{a+H, a \in \mathbb{R}^2\}$ is a $\mathbb{R}^2$-set by answering the following:
+\begin{enumerate}[(a)]
+\item Let $b \in \mathbb{R}^2$. Define the action of $b$ on $(a+H)$ (in other words complete the following equation: $b.(a+H)=$~?).
+\item Prove the identity condition.
+\item Prove the compatibility condition.
+\end{enumerate}
+\end{exercise}
+
+
+We can think about this example in another way. Suppose we have a \emph{torus}, which is the mathematical word for a donut shape. We could imagine creating a ``map'' of the surface of the torus by cutting the torus apart as shown in Figure~\ref{fig:Torus1}. If we spread this map out flat, it would look like a square (see Figure~\ref{fig:Torus2}). If we wanted to use the map to chart motion on the surface of the torus, then any motion that goes off the right edge would reappear at the left edge; and any motion that goes off the top edge would reappear at the bottom. So you see this is exactly what we saw for the previous example. So using cosets of $\mathbb{Z}^2$ in $\mathbb{R}^2$, we've created a mathematical representation for motion on the surface of a torus.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=3in]{images/Torus1.png}
+\caption{Torus, showing two cut lines.}\label{fig:Torus1}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=3in]{images/Torus2.png}
+\caption{The cut torus, flattened out.}\label{fig:Torus2}
+\end{center}
+\end{figure}
+
+We can generalize the two previous examples by considering cosets of a subgroup $H$ in a group $G$ that contains $H$.
+
+\begin{example}{CosetAction}
+Let $H$ be a subgroup of $G$ and $L_H$ the set of left cosets of $H$. The set $L_H$ is a $G$-set under the action 
+$g.(xH)=(gx)H$ (note that $gx\in G$ so $(gx)H$ is a coset of $H$).
+Again, it is easy to see that the identity condition is true. Since $(gg').(xH) =(gg'x)H=g.((g'x)H)= g.(g'.(xH))$, the compatibility condition is also true.
+\end{example}
+So far, we've been looking at group actions on left cosets.  What about right cosets?  Let's investigate.
+
+\begin{exercise}{RtCosetAction}
+Consider the case where $G=S_3$, $H=\{\var{id},(12)\}$, and $R$ is the set of right cosets of $H$.  Define a function from $G\times R\rightarrow R$ by $(g,R)\rightarrow Rg$. Does this function define a group action of $G$ on $R$? 
+\hyperref[sec:actions:hints]{(*Hint*)}
+\end {exercise}
+The previous exercise shows that we can't always do the same thing with right cosets that we can do with left cosets.  Let's look at an alternative:  
+
+\begin{exercise}{RtCosetAction2}
+\begin{enumerate}[(a)]
+\item Repeat the previous exercise, but this time use the function $(g,R)\rightarrow Rg^{-1}$.
+\item Show that in general the function $(g,R)\rightarrow Rg^{-1}$ defines an action of $G$ on the right cosets of $H$.  
+\end {enumerate}
+\end {exercise}
+
+
 
 
 \section{Conjugation}\label{Conjugation}
@@ -1360,7 +1368,7 @@ We may also think of this another way. The paths $f\sigma$ and $\mu f$  both tak
 There's a shortcut way to obtain $\mu$. Actually, $\mu$ is simply $\sigma$ relabeled according to $f$.  That is, if we take the cycle representation of $\sigma$ and replace the numbers according to $f$ ($1\rightarrow A, 2\rightarrow B, 3\rightarrow C$), then we end up with $\mu$.  We will call this shortcut, ``the relabeling method''.\index{Conjugation!relabeling method}
 
 \begin{exercise}{Conj1}
-For each $\sigma$ and and $f$, complete a commutative diagram like the one in Figure~\ref{fig:Commutative1}. Find the conjugate mapping in two ways, using conjugation and the relabeling method.
+For each $\sigma$ and and $f$, complete a commutative diagram like the one in Figure~\ref{fig:Commutative1}. Find the conjugate mapping using the relabeling method, and verify that the result agrees with $f \compose \sigma \compose f^{-1}$.
 \begin{enumerate}[(a)]
 \item $\sigma=(12)(35)$ and $f=\begin{pmatrix} 1&2&3&4&5\\ A&B&C&D&E& \end{pmatrix} $
 \item $\sigma=(2346)$ and $f=\begin{pmatrix} 1&2&3&4&5&6\\ A&B&C&D&E&F \end{pmatrix}$
@@ -1411,8 +1419,8 @@ In each of the following find a permutation $\tau$ that makes $\sigma$ and $\mu$
 
 \begin{enumerate}[(a)]
 \item $\sigma=(135)(792)(468)$, $\mu=(236)(189)(457)$
-\item $\sigma=(2579)(3561)$, $\mu=(2461)(5793)$
-\item $\sigma=(25)(13578)$, $\mu=(36)(28454)$
+\item $\sigma=(2879)(3561)$, $\mu=(2461)(5793)$
+\item $\sigma=(25)(13578)$, $\mu=(36)(28154)$
 \end{enumerate}
 \end{exercise}
 These examples lead up to the following theorem:
@@ -1571,7 +1579,7 @@ Suppose that $\tilde{g}$ is conjugate to $g$. This means that there exists an $x
 \end{align*}
 \noindent
 From Proposition~\ref{proposition:groups:Cyclic_subgrp_order}, it follows that  $| \tilde{g}|$ divides $|\underline{~<11>~}|$. On the other hand, \[(\underline{~<12>~})\tilde{g}(\underline{~<13>~})=g\qquad\text{(inverse property)}.\]  
-The same proof  with $g$ and $\tilde{g}$ interchanged shows that $|g|divides |\underline{~<14>~}|$ Therefore,  $|g|=\underline{~<15>~}$ 
+The same proof  with $g$ and $\tilde{g}$ interchanged shows that $|g|$ divides $|\underline{~<14>~}|$ Therefore,  $|g|=\underline{~<15>~}$ 
 \end {exercise}
 \end{proof}
 
@@ -1704,7 +1712,7 @@ In the next exercise you may practice creating a conjugacy table using both perm
 
 \begin{exercise}{Conj 19}
 \begin{enumerate}[(a)]
-\item Create a conjugacy table for $A_4$ (The subgroup of even permutations in $S_4$) See Definition~\ref {Alternating_Group} of Section~\ref{sec:AlternatingGroup}. We show one a table with one row.  How many rows to complete the conjugacy table? (Use the relabeling method to save time in creating your table.)
+\item Create a conjugacy table for $A_4$ (The subgroup of even permutations in $S_4$) See Definition~\ref{Alternating_Group} of Section~\ref{sec:AlternatingGroup}. We show one a table with one row.  How many rows to complete the conjugacy table? (Use the relabeling method to save time in creating your table.)
 
 \begin{center}
 \begin{tabular}

@@ -264,14 +264,14 @@ $x$ is the hypotenuse of the right & Given\\
 $x$ is rational & \emph{supposition} (will be contradicted)\\
 $x^2 = 2$ & Pythagorean Theorem\\
 $x = m/n$ where $m,n$ are integers& Definition of rational\\
-$m, n$ are relatively prime & Fraction can always be reduced\\
+$m, n$ have no common factors & Fraction can always be reduced\\
 $(m/n)^2 = 2$ & Substitution\\
 $m^2 = 2n^2$ & Rearrangement\\
 $m = 2k$ where $k$ is an integer & Exercise~\ref{exercise:complex:m2even} part (b)\\
 $(2k/n)^2 = 2$ & Substitution\\
 $n^2 = 2k^2$& Rearrangement\\
 $n = 2j$ where  $j$ is an integer&Exercise~\ref{exercise:complex:m2even} part (b)\\
-$m$ and $n$ are not relatively prime& Definition of relatively prime\\
+$m$ and $n$ have a common factor& 2 is a factor of both\\
 \emph{supposition} is false & Contradictory statements\\
 $x$ cannot be rational &  Negation of supposition
 \end{tabular}
@@ -303,7 +303,12 @@ Use substitution to prove the following statement:  if $12 | n$ and $n | 4m$, wh
 \hyperref[sec:complex:hints]{(*Hint*)}
 \end{exercise}
 
-We should also come clean and admit that our proof of Proposition~\ref{proposition:complex:irrational} falls short of true mathematical rigor. The reason is that we made use of Exercise~\ref{exercise:complex:m2even}, and we never actually \emph{proved} part (a) of the exercise. Even though it's something that ``everybody knows", mathematicians still want a proof! Now, part (a) is a consequence of the following more general proposition, which is known as \term{Euclid's Lemma}:\index{Euclid's lemma}
+We should also come clean and admit that our proof of Proposition~\ref{proposition:complex:irrational} falls short of true mathematical rigor. The reason is that we made use of Exercise~\ref{exercise:complex:m2even}, and we never actually proved part (a) of the exercise. Even though it's something that ``everybody knows", mathematicians still want a proof! Now, part (a) is a consequence of a more general proposition known as \term{Euclid's Lemma}:\index{Euclid's lemma}. Before giving this lemma, let's be precise about what we mean by ``prime number'':
+
+\begin{defn}\label{defPrime} A \term*{prime number}\index{Prime!definition} is a natural number (i.e. positive integer) bigger than 1 that only has one factor bigger than 1, namely itself.
+\end{defn}
+
+Now we are ready to state Euclid's lemma: 
 
 \begin{prop}{EuclidLemma}
 Let $a$ and $b$ be integers, and let $p$ be a prime number. If $p$ divides $ab$, then either $p$ divides $a$, or $p$ divides $b$.
@@ -1689,7 +1694,7 @@ In fact, many intricate theorems in plane geometry that require long proofs usin
 
 
 \subsection{Complex $n$th roots in general 
-\quad\sectionvideohref{o5wpaYsDU4o&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=7}}
+\quad\sectionvideohref{o5wpaYsDU4o&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=7}}\label{rootsingeneral}
 
 In the previous section, we characterized all complex solutions of the equation $z^n = 1$; we called these solutions the $n$th roots of unity. A natural question to ask then is, What about the $n$th roots of any complex number? That is, given a complex number $a + bi$, can we find all solutions to the equation $z^n = a + bi$? Let's explore some simple cases first.
 
@@ -1837,7 +1842,7 @@ The most famous result concerning complex roots of polynomials is known as the {
 \begin{prop}{FTOA} Given any equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, \ldots a_{n-1}$ are real numbers. Then there exists at least one and at most $n$ distinct complex numbers which solve the given equation. 
 \end{prop}
 
-The Fundamental Theorem of Algebra actually has two parts. The easy part is the ``at most $n$ distinct complex roots'' part, and the hard part is the ``at least one complex root'' part. We will eventually prove the easy part in Chapter~\ref{poly}, but sadly the hard part is beyond our scope. For more information on this see the Historical Note at the end of the chapter.
+The Fundamental Theorem of Algebra actually has two parts. The easy part is the ``at most $n$ distinct complex roots'' part, and the hard part is the ``at least one complex root'' part. We will eventually prove the easy part in Chapter~\ref{poly}, but sadly the hard part is beyond our scope. For more information on this see the  Remark  at the end of the chapter.
 
 \begin{exercise}{70}
 \begin{enumerate}[(a)]
@@ -1867,13 +1872,9 @@ Give an example of a polynomial of the form  $z^6 + a_{5}z^{5} + a_{4} z^{4} + \
 \end{exercise}
 
 
-\histhead
- 
- 
-\noindent{\small \histf
-The Fundamental Theorem of Algebra is a famous ``hard problem'' in the history of mathematics. Some of the greatest mathematicians in history (including Euler, Lagrange, Laplace, and Gauss) thought they had proofs, only to have later mathematicians point out flaws or gaps in the arguments. See \url{http://www-history.mcs.st-and.ac.uk/HistTopics/Fund_theorem_of_algebra.html} for more details. In the modern mathematics curriculum, the proof  is usually given in courses on complex analysis as an easy consequence of ``Liouville's theorem'', which was first proved in 1847. Modern college students who learn basic concepts from the theory of complex variables can readily grasp the theorem which stymied the greatest mathematical minds of history.
-\histbox 
-}
+\begin{rem} (\emph{historical background})
+ The Fundamental Theorem of Algebra is a famous ``hard problem'' in the history of mathematics. Some of the greatest mathematicians in history (including Euler, Lagrange, Laplace, and Gauss) thought they had proofs, only to have later mathematicians point out flaws or gaps in the arguments. See \url{http://www-history.mcs.st-and.ac.uk/HistTopics/Fund_theorem_of_algebra.html} for more details. In the modern mathematics curriculum, the proof  is usually given in courses on complex analysis as an easy consequence of ``Liouville's theorem'', which was first proved in 1847. Modern college students who learn basic concepts from the theory of complex variables can readily grasp the theorem which stymied the greatest mathematical minds of history.
+\end{rem}
 
 \section{Applications of complex numbers\quad
 \sectionvideohref{beo_65G9I7Q&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=6}}
