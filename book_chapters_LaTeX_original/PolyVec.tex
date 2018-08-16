@@ -10,11 +10,11 @@
 % Show polynomials are a subring of matrix ring
 % Other applications of matrix rings?
 % Then make a separate chapter: Polynomials, Matrices, and Signal processing
-\chap{Polynomials and Matrices}{PolyVec}
+\chap{Application: Ring Isomorphisms and Signal Processing }{PolyVec}
 
-In this chapter, we will show how polynomials are used in modern communications technology: in particular, in the area of signal processing. But before we do this, we need to make some connection between polynomials and linear algebra.
+In the previous chapter, we formally introduced the concept of \term*{isomorphism} as it relates to groups. But the concept of isomorphism  applies to other mathematical structures besides groups. In this chapter, we will give an example of a \term{ring isomorphism}, and show a practical application  to  digital  signal processing, a key area in modern technology. 
 
-To understand this chapter you will need some background in linear algebra, because we will draw heavily on concepts from this area. In particular, you will need to understand algebraic operations on vectors and matrices. To jog your memory,  We'll first review some of the fundamental concepts of vectors and vector spaces. 
+To understand this chapter you will need some background in linear algebra. In particular, you will need to understand algebraic operations on vectors and matrices. To jog your memory,  We'll first review some of the fundamental concepts of vectors and vector spaces. 
 
 \section{Definition of  vector space}
 %%% Needs new section and introduction -- relate polynomials to vector spaces. Assume students have seen vector space in linear algebr, but brief review.
@@ -123,7 +123,10 @@ r \cdot \left(\left(\begin{array}{c}v_1\\v_2\\v_3\end{array}\right) ~+~\left(\be
 Prove conditions 4,5,6,7,9,10 for column vectors in $\RR^3$.
 \end{exercise}
 
-\section{Polynomials are vectors}\label{sec:polyAreVec}
+\section{Digital signals as vectors}
+\textbf{@@@ Must complete this section @@@}
+
+\section{Polynomials are also  vectors}\label{sec:polyAreVec}
 
 At this point the ``abstract''  of abstract algebra comes into play. Once we have defined vector space, then \emph{any} set of any objects that satisfies all ten requirements qualifies as a bona fide vector space, and objects in the set can be called vectors. Do polynomials qualify? We already know that we can add polynomials together, and we can also multiply polynomials by  scalars. To see whether or not the set of polynomials with real coefficients (that is, $\RR[x]$) is a vector space, we will need to check all 10 conditions: 
 \medskip{}
@@ -162,7 +165,7 @@ Another vector space that we will want to examine is the set of $n \times n$ mat
 Let $M$ be the set of $n \times n$ matrices with real entries. Let $A$, $B$, and $C$ be elements of $M$, and let $\alpha$, $\beta\in\mathbb{R}$ be scalars.  Write the 10 vector space conditions in terms of  $A,B,C,\alpha,\beta$. 
 \end{exercise}
 
-\section{Ring isomorphism between polynomials and banded lower-triangular matrices}\label{sec:ringIsoPolyMat}
+\section{Identifying polynomials with matrices}\label{sec:ringIsoPolyMat}
 
 We have seen that both vectors and matrices define vectors spaces.  But matrices (in particular, square matrices) have something that vectors don't have: namely, two square matrices of the same size can be multiplied together to get a square matrix of the same size.  In contrast, we don't know of any way in general to multiply two $n \times 1$ vectors to obtain another $n \times 1$ vector. 
 
@@ -536,4 +539,11 @@ So we finally proved that $\varphi$ preserves the operation of multiplication.\\
 %Using the fact that $\varphi(ax^k) = a\varphi(x^k)$, show that $\varphi(ax^k) \varphi(bx^l) = \varphi(abx^{k + l})$.
 %\end{enumerate}
 %\end{exercise}
-We have done amazing things in this chapter. We showed that polynomials rings are vector spaces and polynomials can be represented by subdiagonal banded matrices. Then you may ask: So what? Can we get anything useful and practical out of these facts? You will be surprised to see that there are, in fact, many real-life applications of polynomials. We will talk about one of them in the next chapter.
+
+\section{@@Digital filters and Matrices @@}
+Show also that any signal can be identifed with a filter -- impulse response
+\section{@@Periodic signals@@}
+Change to finite vector space
+\section{The diagonal matrix ring}
+\section{Ring isomorphism and Fourier transform}
+Change of basis

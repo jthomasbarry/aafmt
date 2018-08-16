@@ -1,0 +1,231 @@
+\section{Solutions for ``Modular Arithmetic''}
+\noindent \textbf{\textit{ (Chapter \ref{modular})}}\bigskip
+
+\noindent\textbf{Exercise \ref{exercise:modular:racetrack_displacements}:}\\
+a. Net displacement $=346-432+99=13$.\\
+b. Net displacement $=44+13.53=733$.\\
+\\
+\textbf{Exercise \ref{exercise:modular:racetrack_positions}:}\\
+a. Position: mod(13,5)=3.\\
+   Position: mod(733,5)=3.\\
+b. Both cases have the same position.\\
+\\
+\textbf{Exercise \ref{exercise:modular:equivdef}:}\\
+by m, of b, by m, $r>s$, $a=pm+r$, $b=qm+s$, $a-b=(p-q)m+(r-s)$, between 0 and m, $r-s>0$, $r-s<m$, between 0 and m, by m.\\
+\\
+\textbf{Exercise \ref{exercise:modular:eqproof}:}\\
+$a \equiv b$ (mod n) $\rightarrow n|(a-b)$ (Prop.\ref{proposition:modular:equivalence_alt})\\
+$b \equiv c$ (mod n) $\rightarrow n|(b-c)$\\
+$\rightarrow a-b=kn$ and $ b-c=ln$ (k,l are integers).\\
+$\rightarrow a-c=(k+l)n \rightarrow n|(a-c) \implies a \equiv c$ (mod n).\\
+\\
+\textbf{Exercise \ref{exercise:modular:jan25}:}\\
+a. 3 mod 7 = 3 and 25 mod 7 = 4 $\implies$  Jan 3 is not Thursday.\\
+b. 7 doesn't divide $(31 - 25) \implies 31 \not\equiv 25$ (mod 7). So Jan 31 is not a Thursday.\\
+\\
+\textbf{Exercise \ref{exercise:modular:22}:}\\
+c. $101 \equiv 29$ (mod 6): True\\
+e. True\\
+f. False. Can change it to $1476532 \equiv -71832772$ (mod 10)\\
+\\
+\textbf{Exercise \ref{exercise:modular:27}:}\\
+$b \le n$, $-b \ge -n$, $a-b \ge -n$, $a \le n$ and $b \ge 0$, $-b \le 0$, $a-b \le n$\\
+a - b is between -n and n, a-b is a multiple of n, n between -n and n is 0, a - b = 0, a = b\\
+\\
+\textbf{Exercise \ref{exercise:modular:28}:}\\
+Example 3: Thursday (total 113 days from Dec 24, 2011 to Apr 15, 2012 and 113 mod 7 = 1).\\
+Example 4: Feb 14, 2010 is Chinese New Year day. Feb 14, 2011 is 365 days after that.\\
+365 mod 354 = 11 so Chinese New Year in 2011 is Feb 3.\\
+Chinese New Year in 2012 is Jan 23 (354 days after Feb 3).\\
+In 2009, Chinese New Year is Feb 25.\\
+\\
+\textbf{Exercise \ref{exercise:modular:UPCSymbols}:}\\
+a. It's a valid UPC because $30 \equiv 0$ (mod 10).\\
+b. Total sum is $33 \not\equiv 0$ (mod 10).\\
+d. Transposition will be detected because the sum is $24 \not\equiv 0$ (mod 10).\\
+Transposition error that can't be detected is 005000300426.\\
+e. Error is detectable.\\
+f. Suppose one code has the following digits: $d_1,d_2,d_3,...,d_{10}$ and the other code has the following digits: $e_1,e_2,e_3,...,e_{10}$ are both valid and suppose that the corresponding digits at each position are equal except for the $n^{th}$ digit $\implies d_n \neq e_n$ with $1 \le n \le 10$.\\
+If n is even:\\
+$(sum + d_n) \equiv (sum + e_n)$ (mod 10)\\
+$\implies d_n \equiv e_n$ (mod 10) because $d_n, e_n \le 9$\\
+$\implies d_n = e_n$\\
+It contradicts to the original supposition.\\
+If n is odd:\\
+$(sum+3d_n) \equiv (sum+3e_n)$ (mod 10)\\
+$\implies 10|(sum+3d_n-sum-3e_n)$\\
+$\implies 10|3(d_n-e_n)$\\
+Since $d_n-e_n \le 10$, the only solution to make 10 divides $3(d_n-e_n)$ is $3(d_n-e_n)=0 \implies d_n=e_n$.\\
+It also contradicts to the original supposition.\\
+Therefore UPC error detection scheme detects all single digit errors.\\
+\\
+\textbf{Exercise \ref{exercise:modular:ISBNCodes}:}\\
+a. $3(1)+5(2)+4(3)+0(4)+9(5)+6(6)+0(7)+3(8)+5(9)+10(10) \equiv 0 \pmod{11}$\\
+$\implies 275 \equiv 0 \pmod{11}$\\
+c. The first 9 digits are arbitrary, and uniquely determine the 10th digit. So, $10^9$.\\
+\\
+\textbf{Exercise \ref{exercise:modular:mod_eq_1}:}\\
+b. $25+x \equiv 6 \pmod{12}$\\
+$1+x \equiv 6 \pmod{12}$\\
+$x= 12k+6-1$\\
+$x=5+12k$\\
+\\
+\textbf{Exercise \ref{exercise:modular:mod_eq_2}:}\\
+g. $x=-1+7k$\\
+i. $5x+1 \equiv 13 \pmod{26}$\\
+$x= \displaystyle\frac{26k+12}{5}$\\
+Let $k=3+5n$\\
+$x=18+6n$\\
+h. $5x+1 \equiv 13 \pmod{23}$\\
+$x= \displaystyle\frac{23k+12}{5}$\\
+Let $k=1+5n$\\
+$x=7+23n$\\
+\\
+\textbf{Exercise \ref{exercise:modular:44}:}\\
+a. Since $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$\\
+then $a=b+sn$ and $c=d+tn$\\
+$\implies a.c =(b+sn)(d+tn)=bd+n(bt+sd+stn)$\\
+By definition of $\odot$: $b \odot d \pmod{n} \to$ there is some integer q such that $bd=(b \odot d) +qn$\\
+So we have: $ac=(b \odot d)+qn+n(bt+sd+stn)=b \odot d + n(q+bt+sd+stn)$\\
+$\implies ac \equiv b \odot d \pmod{n}$\\
+b. $x \ominus y=r iff x-y=r+sn$ and $r \in Z_n$\\
+c. We have $a=b+sn$ and $c=d+tn$\\
+$\implies a-c=b+sn-d-tn=b-d+n(s-t)$\\
+By definition of $\ominus$: $b \ominus d \pmod{n} \to$ there is some integer k such that $b-d=b \ominus d +kn$\\
+Therefore $a-c=b \ominus d +n(k+s-t) \implies a-c=b \ominus d \pmod{n}$\\
+\\
+\textbf{Exercise \ref{exercise:modular:ops}:}\\
+a. $a+c \equiv b \oplus d \pmod{n}$ (Prop. 43)\\
+Let call $a+c=k$ and $b \oplus d=r$\\
+$\implies (a+c)+e=k+e$\\
+$\implies (a+c)+e \equiv r \oplus f \pmod{n}$ (Prop. 43)\\
+$\implies (a+c)+e \equiv (b \oplus d) \oplus f \pmod{n}$\\
+b. $ac \equiv b \odot d \pmod{n}$ (Prop. 43)\\
+Let $ac=k$ and $b \odot d =r$\\
+$\implies k \equiv r \pmod{n}$\\
+$\implies k+e \equiv r \oplus f \pmod{n}$ (Prop. 43)\\
+$\implies ac+e \equiv (b \odot d) \oplus f \pmod{n}$\\
+c. $a+c \equiv b \oplus d \pmod{n}$ (Prop. 43)\\
+Let $a+c=k$ and $b \oplus d =r$\\
+$k \equiv r \pmod{n}$\\
+$ke \equiv r \odot f \pmod{n}$ (Prop. 43)\\
+$\implies (a+c)e \equiv (b \oplus d) \odot f \pmod{n}$\\
+\\
+
+\textbf{Exercise \ref{exercise:modular:prove}:}\\
+b. $(5 \cdot 9)+7 \equiv (5 \cdot 9)+6 \pmod{10}$\\
+$\implies 2 \not\equiv 1 \pmod{10}$\\
+
+\textbf{Exercise \ref{exercise:modular:49}:}\\
+a. $\equiv 1 \pmod{5}$\\
+b. $\equiv 2 \pmod{5}$\\
+c. $\equiv 1 \pmod{5}$\\
+d. $\equiv 0 \pmod{5}$\\
+\\
+\textbf{Exercise \ref{exercise:modular:52}:}\\
+Suppose $a,b \in Z_n$ then by the definition of modular multiplication (Def. 42), we have $a \odot b =r \pmod{n}$ where $r \in \{0,1,...,n-1\}$\\
+$\implies a \odot b \in Z_n$\\
+$\implies Z_n$ is closed under modular multiplication.\\
+\\
+\textbf{Exercise \ref{exercise:modular:53}:}\\
+b. Rational numbers: closed under addition, subtraction, multiplication.\\
+d. Positive rational numbers: closed under addition and multiplication.\\
+e. Positive real number: closed under addition, subtraction, multiplication, divison, and square root.\\
+\\
+\textbf{Exercise \ref{exercise:modular:54}:}\\
+Let $z_1=a+bi$ and $z_2=c+di$, then:\\
+$z_1z_2=(a+bi)(c+di)=(ac-bd)+(ad+bc)i$ is a complex number\\
+$\implies$  Complex numbers are closed under multiplication.\\
+\\
+\textbf{Exercise \ref{exercise:modular:56}:}\\
+Given any a $\in Z_n, (n>1)$ then $a \odot 1$ is computed as follows:\\
+a. Compute $a.1$ using ordinary multiplication\\
+b. taking the remainder mod n \\
+Since $a1=a$, and $0 \le a <n$, it follows that the remainder is also a.\\
+Hence $a \odot 1=a$.\\
+Similarly, we can show that $1 \odot a=a$.\\
+So, 1 satisfies the definition of multiplicative identity for $Z_n$ when $n>1$.\\
+When $n=1$, $Z_1=\{0\} \to$ multiplicative identity for $Z_1$ is 0.\\
+\\
+\textbf{Exercise \ref{exercise:modular:58}:}\\
+a. $0 \in Z_n$ and $0 \oplus 0=0 \to$ additive inverse of $0 \in Z_n$ is 0.\\
+b. Suppose $a \in Z_n \setminus \{0\}$ and let $a'=n-a$\\
+We have $0<a<n \implies n>a'>0 \implies a' \in Z_n$\\
+We also have $a \oplus a'=a+n-a \pmod{n}=n \pmod{n}=0 \pmod{n}$\\
+Similarly, we have $a' \oplus a=0 \pmod{n}$\\
+$\implies a'$ is the additive inverse of a.\\
+\\
+\textbf{Exercise \ref{exercise:modular:60}:}\\
+a. n = 3\\
+b. n = 7\\
+\\
+\textbf{Exercise \ref{exercise:modular:64}:}\\
+a. 0 has no multiplicative inverse under $\odot \implies Z_n$ is not a group.\\
+b. $Z_3 \setminus \{0\}$ is a group under $\odot$.\\
+\\
+\textbf{Exercise \ref{exercise:modular:stick_units}:}\\
+b. 1 ft\\
+\\
+\textbf{Exercise \ref{exercise:modular:m53}:}\\%name
+b. 12 in\\
+\\
+\textbf{Exercise \ref{exercise:modular:gcd}:}\\
+b. 11\\
+\\
+\textbf{Exercise \ref{exercise:modular:71}:}\\
+a. We have $r_2=b-r_1q_2$ (Prop. 68)\\
+We also have $r_1=a-bq_1$ (from previous step)\\
+$\implies r_2=b-(a-bq_1)q_2=b(1+q_1q_2)-aq_2$ where $q_1$ and $q_2$ are integers.\\
+$\implies r_2$ can also be written in the form $r_2=na+mb$ where n and m are integers.\\
+b. For $k>2$, we have:\\
+$r_{k-2}=na+mb$\\
+$r_{k-1}=sa+tb$\\
+We also have $r_k=r_{k-2}-r_{k-1}q_k$ (Prop. 68)\\
+$\implies r_k=na+mb-(sa+tb)q_k=a(n-sq_k)+b(m-tq_k)$\\
+$\implies r_k$ can also be written in the form $r_k=va+wb$ where $v$ and $w$ are integers.\\
+c. From Prop. 68, $r_k$ is the gcd of two numbers a and b.\\
+From b. we know that $r_k$ can be written in the form $na+mb$.\\
+$\implies$  the gcd of two numbers a and b can be written in the form $na+mb$ where $n$ and $m$ are integers.\\
+\\
+\textbf{Exercise \ref{exercise:modular:dio1}:}\\
+e. $m=7241k+1371$ $n=-3524k-151$\\
+\\
+\textbf{Exercise \ref{exercise:modular:diophant}:}\\
+b. 3 and 27 are divisible by 3. 2 is not divisible by 3.\\
+\\
+\textbf{Exercise \ref{exercise:modular:m518}:}\\%name
+a. $m=1590-119k$ $n=242k-3233$\\
+b. $x=m$\\
+c. $y=n$\\
+\\
+\textbf{Exercise \ref{exercise:modular:m519}:}\\%name
+$am \equiv c \pmod{b}$\\
+\\
+\textbf{Exercise \ref{exercise:modular:m522}:}\\%name
+No solution. The gcd of 504 and 1002 is 3. 919 is not divisible by 3. Prop. 3.5.20\\
+\\
+\textbf{Exercise \ref{exercise:modular:90}:}\\
+a. $Z_5 \setminus \{0\}$ forms a group.\\
+b. $Z_7 \setminus \{0\}$ forms a group.\\
+c. $Z_9 \setminus \{0\}$ doesn't form a group because element 3 doesn't have multiplicative inverse.\\
+d. $Z_n \setminus \{0\}$ with n is a prime number will form a group under $\odot$.\\
+\\
+\textbf{Exercise \ref{exercise:modular:93}:}\\
+Let $a \in Z_n \setminus \{0\}$, we need to find $x$ is the multiplicative inverse of $a$\\
+$\implies ax \equiv 1 \pmod{n}$.
+According to Prop. 78, we can only find $x$ if 1 is an integer multiple of the gcd of $a$ and $n$\\
+$\implies$  1 is the gcd of $a$ and $n$ in order to find $x$, which is the multiplicative inverse of $a$.\\
+$\implies a$ is relatively prime to $n$ to make $x$ exist.\\
+If $a$ is not relatively prime to $n \to$ they have a gcd which is bigger than 1 $\implies$  1 is not an integer multiple of the gcd of $a$ and $n \to$ we can't find $x$ (Prop. 78) $\implies a$ doesn't have an inverse under multiplication (mod n).\\
+\\
+\textbf{Exercise \ref{exercise:modular:94}:}\\
+For $Z_n \setminus \{0\}$, if n is not prime, there is $1<a<n \in Z_n$ that $a|n$\\
+$\implies$  the gcd of $a$ and $n$ is bigger than 1 $\implies a$ does not have a multiplicative inverse (according to Exercise 86) $\implies Z_n \setminus \{0\}$ is not a group under $\odot$.\\
+\\
+\textbf{Exercise \ref{exercise:modular:91}:}\\
+a. $x=11 \pmod{12}$\\
+c. $x=237 \pmod{403}$\\
+\\
+\textbf{Exercise \ref{exercise:modular:m534}:}\\%name
+a. $x=59 \pmod{60}$\\
+\\

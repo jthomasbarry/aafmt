@@ -293,7 +293,7 @@ Show that condition (5) implies condition (2).
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{equiv_conditions}
 Proposition~\ref{cosets_theorem_1} deals with \emph{left} cosets. A parallel proposition holds for right cosets. List the five equivalent conditions for \emph{right} cosets that correspond to the five conditions given in Proposition~\ref{cosets_theorem_1}.
 \end{exercise}
 
@@ -309,7 +309,7 @@ The proof has two parts, namely  (1) Cosets are disjoint; and (2) The union of c
 \item
 Let $g_1 H$ and $g_2 H$ be two cosets of $H$ in $G$.  We must show that either $g_1 H \cap g_2 H = \emptyset$ or $g_1 H = g_2 H$.  Suppose that $g_1 H \cap g_2 H \neq \emptyset$ and $a \in g_1 H \cap g_2 H$.  Then by the definition of a left coset, $a = g_1 h_1 = g_2 h_2$ for some elements $h_1$ and $h_2$ in $H$.  Hence, $g_1 = g_2 h_2 h_1^{-1}$ or $g_1 \in g_2 H$.  By Proposition~\ref{cosets_theorem_1}, $g_1 H = g_2 H$. 
 \item
-\begin{exercise}{}
+\begin{exercise}{disjoint_union_proof}
 Complete part (2) of the proof: that is, prove that $\bigcup_{g \in G} g H = G$.
 \end{exercise}
 \end{enumerate}
@@ -342,7 +342,7 @@ Suppose that $G= S_3$, $H = \{ (1),(123), (132) \}$, and $K= \{ (1), (12) \}$.  
 How many right cosets of  $H = \{ (1),(123), (132) \}$ in $S_3$ were there?  How about right cosets of  $K= \{ (1), (12) \}$ in $S_3$?
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{index_right_cosets}
 Using your work from Exercise~\ref{exercise:cosets:left_right_cosets}, find:
 
 \begin{enumerate}[(a)]
@@ -460,7 +460,7 @@ Why must $|G| \geq 35$?
 \end{enumerate}
 \end{exercise} 
 
-\begin{exercise}{}
+\begin{exercise}{finite_60}
 Suppose that $G$ is a finite group with 60 elements.  What are the possible orders for subgroups of $G$?
 \end{exercise}
 
@@ -563,7 +563,7 @@ Verify Euler's theorem for $n = 22$ and $a = 3$.
 \end{exercise}
 
 
-\begin{exercise}{}
+\begin{exercise}{modvals}
 Evaluate the following, using the results of Exercise~\ref{exercise:cosets:phivals}
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
@@ -878,7 +878,9 @@ Finally, here's one that will be very useful in the very near future.
 \begin{exercise}{normal_mult}
 \begin{enumerate}[(a)]
 \item
-Let $H \subset G$ be a normal subgroup, and let $g \in G, h \in H$. Show that there exists an $h' \in H$ such that $hg = g h'$.
+Let $H \subset G$ be a normal subgroup, and let $g \in G, h \in H$. Show that $g^{-1}hg \in H$.
+\item
+Let $H \subset G$ be a normal subgroup, and let $g \in G, h \in H$. Use part (a) to show how that there exists an $h' \in H$ such that $hg = g h'$.
 \item
 Let $H \subset G$ be a normal subgroup, and suppose $x_1 \in g_1H$ and $x_2 \in g_2H$. Prove that $x_1x_2 \in g_1g_2H$.
 \hyperref[sec:cosets:hints]{(*Hint*)}
@@ -1076,7 +1078,7 @@ a group.  Now there are $2n$ symmetries in $D_n$ and $n$ rotations in $R_n$; so 
 Since $R_n$, the rotations, are one of the cosets, the reflections must be the other coset.  So the group $D_n / R_n$ boils down to to two elements, rotations and reflections, described by a $2 \times 2$ Cayley table.  
 \end{example}
 
-\begin{exercise}{}
+\begin{exercise}{cayley_dn_rn}
 Construct the Cayley table for  $D_n / R_n$. 
 \end{exercise}
 

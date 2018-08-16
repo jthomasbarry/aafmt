@@ -351,7 +351,8 @@ $$
 %(g^{-1})gx = g^{-1} x$. So $g^{-1}$ is in $G_x$. 
 %\end{proof}
 
-\begin{exercise}{}
+\begin{exercise}{s4_gset_group}
+\\
 Let $G = S_4$ (the permutations of 4 elements), and let $X = \{1,2,3,4\}$.  $X$ is a $G$-set.
 \begin{enumerate}[(a)]
 \item
@@ -367,7 +368,7 @@ Repeat part (b) with $G=A_4$ (the group of even permutations on 4 elements).
 As usual, we will denote the number of elements in the fixed point set of an
 element $g \in G$ by $|X_g|$, the number of elements of the stabilizer subgroup of $x\in X$ as $|G_x|$ and the number of elements in the orbit of $x \in X$ by $|{\cal O}_x|$.
 
-\begin{exercise}{}
+\begin{exercise}{sn_gset_group}
 Let $G = S_n$ (the permutations of n elements), and let $X = \{1,2,\ldots n \}$.  $X$ is a $G$-set.
 \begin{enumerate}[(a)]
 \item
@@ -593,8 +594,9 @@ Consider the vertex $A$ of a tetrahedron.  What is the equivalence class of this
 Just as with the cube, the rotation group $G$ of any polyhedron acts on the set $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$. Recall that each group element $g\in G$ has a \emph{fixed point set} $X_g\in X$ that it leaves unchanged: that is, $g.x=x$ for any $x\in X_g$. Let's find some fixed point sets for rotations of the tetrahedron.
 
 \begin{exercise}{Tetra5}
+Let $G$ be the rotational symmetries of a tetrahedron
 \begin{enumerate}[(a)]
-\item Let $G$ be the rotational symmetries of a tetrahedron what is the fixed point set of $r_{Bb}$
+\item  What is the fixed point set of $r_{Bb}$?
 %$X_{r_{Bb}}=\{B,b\}
 \item What is the fixed point set of $r_{Bb}\compose r_{Dd}$? 
 \hyperref[sec:actions:hints]{(*Hint*)}
@@ -608,7 +610,7 @@ Just as with the cube, the rotation group $G$ of any polyhedron acts on the set 
 Let's consider the stabilizer subgroups for the faces and vertices of a tetrahedron. 
 
 \begin{exercise}{Tetra5a}
-Find the stabilizer subgroups for each of the following:
+Find the following stabilizer subgroups:
 $G_{A},  G_{B}$, $G_{C}$, $G_{D}$, $G_{a}$, $G_{b}$, $G_{c}$, $G_{d}$. Which subgroups are equal?
 \hyperref[sec:actions:hints]{(*Hint*)}
 \end{exercise}
@@ -1368,7 +1370,7 @@ We may also think of this another way. The paths $f\sigma$ and $\mu f$  both tak
 There's a shortcut way to obtain $\mu$. Actually, $\mu$ is simply $\sigma$ relabeled according to $f$.  That is, if we take the cycle representation of $\sigma$ and replace the numbers according to $f$ ($1\rightarrow A, 2\rightarrow B, 3\rightarrow C$), then we end up with $\mu$.  We will call this shortcut, ``the relabeling method''.\index{Conjugation!relabeling method}
 
 \begin{exercise}{Conj1}
-For each $\sigma$ and and $f$, complete a commutative diagram like the one in Figure~\ref{fig:Commutative1}. Find the conjugate mapping using the relabeling method, and verify that the result agrees with $f \compose \sigma \compose f^{-1}$.
+For each $\sigma$ and $f$, complete a commutative diagram like the one in Figure~\ref{fig:Commutative1}. Find the conjugate mapping using the relabeling method, and verify that the result agrees with $f \compose \sigma \compose f^{-1}$.
 \begin{enumerate}[(a)]
 \item $\sigma=(12)(35)$ and $f=\begin{pmatrix} 1&2&3&4&5\\ A&B&C&D&E& \end{pmatrix} $
 \item $\sigma=(2346)$ and $f=\begin{pmatrix} 1&2&3&4&5&6\\ A&B&C&D&E&F \end{pmatrix}$

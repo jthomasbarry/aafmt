@@ -14,14 +14,14 @@
  In this chapter we'll be looking at  polynomials from an algebraic point of view. First we'll review basic  polynomial arithmetic that you've seen in high school; then we'll jump off from there and see how far we can generalize. In doing so, we will be naturally led to the algebraic notion of a \term{ring}, which somewhat resembles a group but has two operations instead of just one.
 \bigskip
 
-This chapter contains contributions from David Weathers, Johnny Watts, Jennifer Lazarus, and Semi Harrison (edited by C.T.). Thanks to Tom Judson for material used in this chapter. 
+This chapter is by Jennifer Lazarus, and builds on preliminary work by David Weathers, Johnny Watts, and Semi Harrison (edited by C.T.). Thanks to Tom Judson for the original chapter source.
 
 \section{Why study polynomials?}
 Undoubtedly you've seen polynomials quite a bit in high school math. You've added and multiplied them; you've graphed them; you've factored them; you've found roots. Let's take a moment to remind ourselves why polynomials and their operations are important.	
 
 Polynomials are used to express relationships between variables. For example, we may consider the situation  of a vehicle that is moving on a straight road. We'll use $x$ to denote the position, and $t$ to denote time.   If (for example) the vehicle has an initial displacement of 100 meters, initial velocity equal to 40 m/sec, and constant acceleration $-5$ $\text{m/sec}^2$, then we may write the following relationship between position ($x$) and time ($t$):
 $$ x =  -\frac{5}{2} t^2+ 40t + 100$$
-(the factor of $1/2$ in the $t^2$ term comes from calculus). In this equation, we have expressed $x$ as a function of $t$: in other words, $t$ is the \term{independent variable}, and $x$ is the \term{dependent variable}.
+(the factor of $-\frac{5}{2}$ in the $t^2$ term comes from calculus). In this equation, we have expressed $x$ as a function of $t$: in other words, $t$ is the \term{independent variable}, and $x$ is the \term{dependent variable}.
 
 Now suppose a second vehicle is moving along the same road  in the opposite direction. We'll represent this vehicle's position as $y$, and suppose that $y$ depends on $t$ as follows:
 $$ y =   t^2- 30t + 600.$$
@@ -50,8 +50,9 @@ If we would like to find the time(s) at which the relative distance is equal to 
 $$500^2 = \frac{29}{4}t^4 - 260t^3+3200t^2-28,000t+370000, $$
 which can be rearranged to give
 $$ \frac{29}{4}t^4 - 260t^3+3200t^2-28,000t+120000=0.$$
-This equation has two real solutions and two complex solutions. (In Section~\ref{sec:FTOA} we saw that a  polynomial of degree four always has at least 1 and at most 4 distinct complex roots.) The real solutions correspond to the two times that the cars are 500 meters apart. 
-
+This equation has two real solutions and two complex solutions. (In Section~\ref{FTOA} we will see that a  polynomial of degree four always has at least 1 and at most 4 distinct complex roots.) The real solutions correspond to the two times that the cars are 500 meters apart. 
+  
+                                   
 \begin{exercise}{poly1}
 Suppose vehicle 1 has an initial position of $x_0=150$ m, an initial velocity of $v_0=60$  m/sec, and a constant acceleration of $a=-8$ $\text{m/sec}^2$. Additionally, suppose vehicle 2 has an initial position of $y_0=80$ $\text{m}$, an initial velocity of $ v_0=-50$  m/s, and a constant acceleration of $a=2$ $\text{m/sec}^2$.
 \begin{enumerate}[(a)]
@@ -84,7 +85,7 @@ We hope that this discussion will convince you that the study of polynomials and
 
 Let's briefly review what you've previously learned about polynomial arithmetic in earlier algebra classes.  In this section we'll cover polynomial addition, subtraction, and multiplication. Polynomial division is a bit more complicated, so we'll talk about that later.
 
-In your earlier classes, most likely you considered polynomials with integer, rational, or real coefficients. But everything we do in this chapter also applies to polynomials with complex coefficients.  And in fact, there are even more exotic types of polynomials to which the same formulas and results apply. We'll be talking about these later in the chapter.
+In your earlier classes, most likely you considered polynomials with integer, rational, or real coefficients. But everything we do in this chapter also applies to polynomials with complex coefficients.  And in fact, there are even more exotic types of polynomials to which the same formulas and results apply. We'll consider these later in the chapter.
 
 We'll begin with an example. Let
 $$ p(x)  = x^3 -3x +2  \quad \text{and} \quad q(x)  = 5x^3+3x^2 -6x +5.$$
@@ -186,7 +187,7 @@ Where $a_n$  is the \term{coefficient} \index{Polynomial!coefficients} of $x^n$,
 \end{defn}
 
 \begin{rem}
-According to  Definition~\ref{def:sumPoly}, we write polynomials in ascending order This differs from Section~\ref{sec:polyStripe}, where we wrote polynomials in descending order as is customary in secondary school. Since the operation `+'  is commutative, the two ways are equivalent: but we will increasingly use this new way, which turns out to be useful for a number of reasons. 
+According to  Definition~\ref{def:sumPoly}, we write polynomials in ascending order. This differs from Section~\ref{sec:polyStripe}, where we wrote polynomials in descending order as is customary in secondary school. Since the operation `+'  is commutative, the two ways are equivalent: but we will increasingly use this new way, which turns out to be useful for a number of reasons. 
 \end{rem}
 
  \begin{example}{poly3.5} Express the following polynomials in summation notation:
@@ -252,14 +253,14 @@ Re-express the following polynomials in summation notation,  and give the degree
 \item
 $2 + 0x + 6x^2 + 0x^3 + 10x^4 + 0x^5 + 14x^6 +0x^7 +  18x^8$
 \item
-$ \cis(\pi/2)x^2 + 0x^3 + \cis(\pi)x^4 + 0x^5  + \cis(3\pi/2)x^6 + 0x^7$
+$\cis(\frac{\pi}{2})x^2 + 0x^3 + \cis(\pi)x^4 + 0x^5  + \cis(\frac{3\pi}{2})x^6$
 \item
 $1+ 2x + 4x^2 + 8x^3 + 16x^4 + 32x^5$
 \item
 $1+4x+11x^2+30x^3+85x^4$
 \hyperref[sec:polyrings:hints]{(*Hint*)} 
 \item
-$1-\frac{1}{3}x + \frac{1}{5}x^2 - \frac{1}{7}x^3 + \frac{1}{9}x^4 - \frac{1}{11}^5$
+$1-\frac{1}{3}x + \frac{1}{5}x^2 - \frac{1}{7}x^3 + \frac{1}{9}x^4 - \frac{1}{11}x^5$
 \end{enumerate}
 \end{exercise}
 
@@ -445,9 +446,9 @@ p(x)  q(x)  =  &1\cdot 2+(3 \cdot 2 + 1 \cdot 2)x+(3 \cdot 2 +  1 \cdot 3)x^2+\\
 Compute the sum and product of $p(x)$ and $q(x)$.
 \begin{enumerate}[(a)]
 \item
-$p(x)= 2x^2 + x + 1$, $q(x)=x^3 +3x^2$,where both polynomials are in $\mathbb{Z}_5[x]$.
+$p(x)=1+x+2x^2$, $q(x)=3x^2+x^3$,where both polynomials are in $\mathbb{Z}_5[x]$.
 \item
-$p(x)= 2x^4 + 3x^3 + 4x^2+1$, $q(x)=x^3 +2x^2+5$, where both polynomials are in $\mathbb{Z}_6[x]$.
+$p(x)= 1+4x^2+3x^3+2x^4$, $q(x)=5+2x^2+x^3$, where both polynomials are in $\mathbb{Z}_6[x]$.
 \end{enumerate}
 \end{exercise}
 
@@ -471,14 +472,15 @@ We may consider the set $n\mathbb{Z}[x]$, the set of all polynomials whose coeff
 these polynomials, because any such polynomial is also in $\mathbb{Z}[x]$.  But it is important to note that any sum or product of polynomials in 
 $n\mathbb{Z}[x]$ is also in $n\mathbb{Z}[x]$: in other words, $n\mathbb{Z}[x]$ is \emph{closed} under addition and multiplication.
 
+
 \begin{exercise}{5Z}
 \begin{enumerate}[(a)]
 \item
-Suppose that $p(x) = a_2 x^2 + a_1 x + a_0$ and $q(x) = b_1 x + b_0$, and both $p(x)$ and $q(x)$ are elements of $5\mathbb{Z}$. Prove that 
-$p(x) + q(x)$ and $p(x)  q(x)$ are also elements of $5\mathbb{Z}$. \hyperref[sec:polyrings:hints]{(*Hint*)} 
+Suppose that $p(x) = a_2 x^2 + a_1 x + a_0$ and $q(x) = b_1 x + b_0$, and both $p(x)$ and $q(x)$ are elements of $5\mathbb{Z}[x]$. Prove that 
+$p(x) + q(x)$ and $p(x)  q(x)$ are also elements of $5\mathbb{Z}[x]$. \hyperref[sec:polyrings:hints]{(*Hint*)} 
 
 \item
-Repeat the proof of (a), except replace $5\mathbb{Z}$ with $n\mathbb{Z}$, where $n$ is an arbitrary positive integer.
+Repeat the proof of (a), except replace $5\mathbb{Z}[x]$ with $n\mathbb{Z}[x]$, where $n$ is an arbitrary positive integer.
 \end{enumerate}
 \end{exercise}
 
@@ -817,8 +819,7 @@ $$q(x)=  \begin{bmatrix}
  x^2$$
 \end{exercise}
 
-
-\section{Polynomials coefficients and  rings}\label{polycoefficients}
+\section{Polynomials, coefficients, and  rings}\label{polycoefficients}
 
 Let's step back for a moment and see if we can make any generalizations based on the examples of polynomials in the previous section. Pause for a moment and consider: what do these examples have in common?
 
@@ -1279,7 +1280,7 @@ Division rings whose multiplication is commutative are called \term*{fields}.  F
 \begin{defn} \label{def:field}
 A division ring $F$ is called a \term{field} if the multiplication operation is abelian. \end{defn}
 
-In many of the rings we've seen so far, the field axioms are also satisfied. In the following discussion, we will be considering the case where the polynomial coefficients form a field. We will see in Section~\ref{divisionalgorithm} that this allows us to perform polynomial long division and determine gcd's, very much like we did with integers in Chapter~\ref{modular}.
+In many of the rings we've seen so far, the field axioms are also satisfied. In the following discussion, we will be considering the case where the polynomial coefficients form a field. We will see in Section~\ref{divisionalgorithm} that this allows us to perform polynomial long division and determine gcd's, very much like we did with integers in the modular arithmetic chapter.
 
 \begin{exercise}{poly47}
 Which of the following rings are also fields?
@@ -1359,7 +1360,7 @@ If the ring $R$ has zero divisors, then $R[x]$ will also have zero divisors, as 
 \item
 Find two nonzero polynomials in $\mathbb{Z}_4[x]$ of degree 1 and 3 respectively  whose product is 0.
 \item
-Suppose $n=pq$, where $p$ and $q$ are positive integers greater than 1. Show that there exist two nonzero polynomials in $\mathbb{Z}_n[x]$ with degree greater than 1 whose product is 0.
+Suppose $n=pq$, where $p$ and $q$ are integers greater than 1. Show that there exist two nonzero polynomials in $\mathbb{Z}_n[x]$ with degree greater than 1 whose product is 0.
 \end{enumerate}
 \end{exercise}
 %Solution
@@ -1423,7 +1424,7 @@ The property of having no zero divisors turns out to be a very important conside
 \section{The Division Algorithm for Polynomials over Fields\quad
 \sectionvideohref{qc8GBcukwr4&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=49}}\label{divisionalgorithm}
 %only works if polynomial coefficients are in a field.
-In the chapter on modular arithmetic, we used the following fact about integers: for any two integers $a$ and $b$  with $b > 0$, then there exist unique
+In the chapter on Modular Arithmetic, we used the following fact about integers: for any two integers $a$ and $b$  with $b > 0$, then there exist unique
 integers $q$ and $r$ such that $a = bq+r$, where $0 \leq r < b$. This fact was known to the ancient Greeks, who proved it using what's known as the \emph{division algorithm}.\footnote{As we said before, you may find a proof in any book on number theory. Or, take a look at:  \url{http://2000clicks.com/mathhelp/NumberTh09EuclidsAlgorithm.aspx}.} It turns out that a similar
 division algorithm\index{Division algorithm!for polynomials} exists for
 polynomials. In this section we'll  give the proof. But first, as usual, some examples.
@@ -1542,7 +1543,7 @@ This implies
 \[
 g(x) [q(x) - q'(x) ] = r'(x) - r(x).
 \]
-If $q(x) - q'(x)$ is not the zero polynomial, then $ \deg( g(x) \leq \deg( g(x) [q(x) - q'(x) ])$ , which implies
+If $q(x) - q'(x)$ is not the zero polynomial, then since the field $F$ has no zero divisors it follows that $ \deg( g(x)) \leq \deg( g(x) [q(x) - q'(x) ])$. This in turn implies
 \[
 \deg g(x) \leq \deg( g(x) [q(x) - q'(x) ] )= \deg( r'(x) - r(x) ).
 \]
@@ -1551,7 +1552,7 @@ the degree of $g(x)$, so their difference can't have such a large degree.  It fo
 \end{proof}
 
 \section{Greatest common divisors of polynomials}
-In Section \ref{sec:gcd}, we used the Euclidean algorithm to find the gcd's of sets of integers. Now that we have a division algorithm for polynomials, we can find gcd's of polynomials in the same way. 
+In the Modular Arithmetic chapter, we used the Euclidean algorithm to find the gcd's of sets of integers. Now that we have a division algorithm for polynomials, we can find gcd's of polynomials in the same way. 
 
 To illustrate this, we begin with an example in $\mathbb{R}[x]$.
 
@@ -1660,11 +1661,11 @@ Use the Euclidean algorithm to compute the gcd of $a(x)=x^3+x^2+3x$ and  $b(x)=3
 Use the Euclidean algorithm to compute the gcd of $a(x)=x^3+2x^2+2$ and  $b(x)=2x^2-x+1$ in $\mathbb{Z}_3[x]$. 
 \end{enumerate}
 \end{exercise}
-%add example in $\mathbb{C}[x]$
+%add example in $\mathbb{C}[x]
 
-\section{Polynomial roots and the  Fundamental Theorem of Algebra (easy part) \quad                                      
-\sectionvideohref{Uh-czcHjyq4&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=50}}
-The Fundamental Theorem of Algebra (discussed in Section~\ref{sec:FTOA}) asserts that a real polynomial of degree $n$ has at most $n$ roots (actually this is just the easy part of the theorem, as we mentioned before.) You've probably heard this before in previous math classes, but chances are you've probably never seen it proved. Seek no more: the proof is at hand! Not only that--our results will apply to  \emph{any} polynomial ring over a field, including $\RR[x]$, $\CC[x]$, $\QQ[x]$, and $\ZZ_p[x]$ (when $p$ is prime).  
+\section{Polynomial roots and the FTOA (easy part) \quad                                      
+\sectionvideohref{Uh-czcHjyq4&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=50}}\label{FTOA}
+The Fundamental Theorem of Algebra asserts that a real polynomial of degree $n$ has at most $n$ roots. Actually, this is just the easy part of the theorem that you've probably heard before in previous math classes, but chances are you've probably never seen it proved. Seek no more: the proof is at hand! Not only that--our results will apply to  \emph{any} polynomial ring over a field, including $\RR[x]$, $\CC[x]$, $\QQ[x]$, and $\ZZ_p[x]$ (when $p$ is prime).  
 
 The following proposition gives us a way to relate polynomial values to polynomial remainders.
 
@@ -1904,7 +1905,7 @@ Find the roots of $f(x)=x^3-13x+12$.
 %$x=-4, 1, 3$
 %\end{solution}
 
-\section{Algebraic closure and the Fundamental Theorem of Algebra (hard part)}
+\section{Algebraic closure and the FTOA (hard part)}
 
 We've been referring to the ``easy part'' of the Fundamental Theorem of Algebra. It's time now to consider the hard part. As a lead-in, we may notice that  for every polynomial in $\mathbb{R}[x]$ that we looked at we were always able to find complex roots, even when weren't able to find real roots. This might lead us to conjecture that every polynomial in $\mathbb{R}[x]$ has roots in $\mathbb{C}$.  The Fundamental Theorem of Algebra asserts that this is true, and more.  Not only polynomials in $\mathbb{R}[x]$, but also polynomials in $\mathbb{C}[x]$ have roots in $\mathbb{C}$:  
 
@@ -2143,7 +2144,7 @@ Give an example of a field extension that is not algebraic. Justify your answer.
 \end{enumerate}
 \end{exercise}
 
-A field extension may be algebraic, but still not contain \emph{all} possible roots of polynomials over its subfield. There's a special term for those that do:
+A field extension may be algebraic, but still contain polynomials that have no roots. There's a special term for field extensions which contain roots for \emph{all} their polynomials:
 
 %\begin{solution}{}
 %\begin{enumerate}[(a)]
@@ -2155,7 +2156,7 @@ A field extension may be algebraic, but still not contain \emph{all} possible ro
 %\end{solution}
 
 \begin{defn}\label{def:algclosure}  
-Let $E$ be an algebraic extension field of $F$. Suppose that for every $p(x) \in F[x]$, there exists $a \in E$ such that $p(a)=0$.  Then  $E$ is  an \term*{algebraic closure}\index{Field!algebraic closure of}\index{Algebraic closure!of a field} of $F$ (see Figure \ref{algebraicclosure}).
+Let $E$ be an algebraic extension field of $F$. Suppose that for every $p(x) \in E[x]$, there exists $a \in E$ such that $p(a)=0$.  Then  $E$ is  an \term*{algebraic closure}\index{Field!algebraic closure of}\index{Algebraic closure!of a field} of $F$ (see Figure \ref{algebraicclosure}).
 \end{defn}
 
 \begin{figure}

@@ -61,6 +61,13 @@
      \chapter{#1}\label{#2}
 }
 
+% Allows skipping items in lists KW 5/9/18
+\makeatletter
+\newcommand{\skipitems}[1]{%
+  \addtocounter{\@enumctr}{#1}%
+}
+\makeatother
+
 % Examples as environment
 \newenvironment{example}[1]
   {\refstepcounter{example}{\bigskip\noindent\bf Example~\arabic{example}.}\label{example:\chaplabel:#1}}
