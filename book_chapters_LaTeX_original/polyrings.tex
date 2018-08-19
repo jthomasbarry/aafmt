@@ -1674,10 +1674,14 @@ Let $F$ be a field, $f(x) \in F[x]$, and $a \in F$. When $f(x)$ is divided by $x
 \end {prop}
 
 \begin{proof}
-According to Proposition~\ref{proposition:poly:Division for Polynomials}, if we divide $f(x)$ by $x-a$, it will produce two unique polynomials $q(x)$ and $r(x)$ such that $f(x) = (x-a)q(x) + r(x)$.  Since the degree of $x-a$ is 1, then according to the division algorithm, the degree of $r(x)$ must be less than 1.  Therefore $r(x)$ has to be a constant.  We will show this replacing $r(x)$ with $r$ where $r$ is an real number.  This yields:
+According to Proposition~\ref{proposition:poly:Division for Polynomials}, if we divide $f(x)$ by $x-a$, it will produce two unique polynomials $q(x)$ and $r(x)$ such that $f(x) = (x-a)q(x) + r(x)$.  Since the degree of $x-a$ is 1, then according to the division algorithm, the degree of $r(x)$ must be less than 1.  Therefore $r(x)$ must be a constant $r$, and we may write:
 \[f(x) = (x-a)q(x) + r.\]
 If we set $x=a$ then we get:
-\[f(a) = (a-a)q(x) + r \implies f(a) = 0 \cdot q(x) + r \implies f(a) = r.\]
+\begin{align*}
+f(a) &= (a-a)q(x) + r\\
+& = 0 \cdot q(x) + r \\
+& = r.
+\end{align*}
 \end {proof}
 
 This proposition can save lots of time when finding remainders under division by monomials.
@@ -1700,10 +1704,10 @@ Let $F$ be a field, $f(x) \in F[x]$, and $a \in F$.  Then $x-a$ divides $f(x)$ i
 \end {prop}
 
 \begin{proof}
-From Proposition~\ref{proposition:poly:polyremainder} $f(x) = (x-a) \cdot q(x) + f(a)$, so $f(a) = 0$ if and only if $f(x)=(x-a) \cdot q(x)$ which is true if and only if $x-a$ divides $f(x)$.
+From Proposition~\ref{proposition:poly:polyremainder} $f(x) = (x-a) \cdot q(x) + f(a)$. Therefore $f(a) = 0$ if and only if $f(x)=(x-a) \cdot q(x)$, which is true if and only if $x-a$ divides $f(x)$.
 \end{proof}
 
-Note, in the above proposition, that if $f(a) = 0$ then a is a root of $f(x)$.
+We may also restate Proposition~\ref{proposition:poly:polydivides} as:  $a$ is a root of the polynomial $f(x)$ if and only if $x-a$ divides $f(x)$.
 %irreduceable polynomials
 %It is possible for a polynomial to always have a remainder regardless of which polynomial is used to divide it.  A polynomial that cannot be evenly divided cannot be further factored.  A polynomial that cannot be further factored we call an \term{irreducible polynomial}.  \index{Irreducible Polynomial} These polynomials serve a similar function for polynomials as prime numbers do for integers.  Since these polynomials cannot be reduced, we can make deductions as to the behavior of a product of irreducible polynomials.  For example the polynomial $(x+a)$ where $a$ is a real number cannot be factored any further, and the polynomial $mx+b$ where $m$ and $b$ are reals can only be factored into $(x+b/m)(m)$.  A like with real numbers, if we know that $f(x) \cdot g(x) = 0$ then either $f(x) = 0$ or $g(x) = 0$.  Now it is possible to get a higher degree polynomial to be irreducible, but the number set that is used can affect the irreducibility of a polynomial.  For example $x^2 + 1$ is irreducible over the reals, but could be factored over the complex numbers into $(x-i)(x+i)$.  
 
@@ -1714,9 +1718,9 @@ Proposition~\ref{proposition:complex:nonzero_complex_product} of Chapter~\ref{co
 Suppose $F[x]$ is a polynomial ring over a field, and suppose $p(x),  q(x) \in F[x]$. Then $p(x)  q(x)=0$ iff either $p(x)=0$ or $q(x)=0$.
 \end {prop}
 \begin{proof}
-Since this is a ``iff'' proof, we must actually prove two things:  
+Since this is a ``iff'' proof, we must actually prove both the ``if''' statement and the ``only if'' statement.  
 
-First we prove the ``if'' part.  It is clear from the formula for multiplication of polynomials that if either $p(x)=0$ or $q(x)=0$, then the product $p(x)q(x)$ must also be 0. That was easy!
+First we prove the ``if'' part.  It follows from  the formula for multiplication of polynomials that if either $p(x)=0$ or $q(x)=0$, then the product $p(x)q(x)$ must also be 0. That was easy!
 
 The ``only if'' part is harder. We will prove the contrapositive, namely that  $p(x)\neq\ 0$ and  $ q(x)\neq\ 0$ implies that  $p(x)q(x) \neq 0$.
 Let 
@@ -1736,7 +1740,7 @@ $c_{m+n}x^{m+n}$, so $p(x)q(x) \neq 0$.    The proof is completed.
 And here's the result we've been waiting for. Now that we've prepared the ground, it's not so difficult to prove.
 
 \begin{prop}{FTOA}(\emph{Fundamental Theorem of Algebra: easy part})
-Let $F$ be a field and let $f(x)$ be a polynomial in $F[x]$ of degree $n$. Then the equation $f(x)=0$ has at most $n$ solutions: that is, there are at most $n$ distinct elements $\{x_1,\ldots x_n\}$ of $F$ such that $f(x_m)=0$.
+Let $F$ be a field and let $f(x)$ be a polynomial in $F[x]$ of degree $n$. Then the equation $f(x)=0$ has at most $n$ solutions: that is, there are at most $n$ distinct elements $\{x_1,\ldots x_n\}$ of $F$ such that $f(x_m)=0$ for $1 \le m \le n$.
 \end {prop}
 
 
@@ -1913,7 +1917,7 @@ We've been referring to the ``easy part'' of the Fundamental Theorem of Algebra.
 Any polynomial in $\mathbb{C}[x]$ has at least one complex root.
 \end {prop}
 
-There are several proofs of this theorem. The most elegant involves the field of mathematics known as ``complex analysis'': specifically, the theory of integrals of functions whose domain and codomain are $\mathbb{C}$.  This proof is one of the highlights in most undergraduate complex analysis classes.
+There are several proofs of this theorem. The most elegant involves the field of mathematics known as ``complex analysis'', and specifically the theory of integrals of functions whose domain and codomain are $\mathbb{C}$.  This proof is one of the highlights in most undergraduate complex analysis classes.
 
 We may give some examples that illustrate Proposition~\ref{proposition:poly:FTOAhard} 
 
@@ -2046,14 +2050,14 @@ Use the polynomial $x^6 + 2$ to determine whether or not $\mathbb{Z}_7$ is algeb
 We've seen quite a few fields that are not algebraically closed. For example, the rational numbers $\mathbb{Q}$ are not algebraically closed, because e.g. $x^2 - 2$ has no  roots in $\mathbb{Q}$.  However, we were able to find a larger field (namely $\mathbb{R}$) that contains $\mathbb{Q}$ which has the root that $\mathbb{Q}$ is lacking. In this section, we'll talk about situations like this in a general context. 
 
 
-First we need some general terminology to describe the case where one field is contained in  another:
+First we need some  terminology to describe the case where one field is contained in  another:
 
 
 \begin{defn}\label{def:subfield}  
 Given a field $E$ and $F\subset E$, then $F$ is called a \term{subfield} of $E$ if $F$ is also a field with the same field operations as $E$. Conversely, $E$ is called an \term{extension field}\index{Field!extension} of $F$.
  \end{defn}
 
-Now let's complete the following exercise to bolster our understanding of Definition~\ref{def:subfield}
+The following exercise should  bolster your understanding of Definition~\ref{def:subfield}
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]
@@ -2089,7 +2093,7 @@ Let $F$ be a subfield of $E$, and let $a\in E$. If $p(a)=0$ for some $p(x) \in F
 \begin{exercise}{}
 \begin {enumerate}[(a)]
 \item
-Give an example of an element of $\mathbb{C}\setminus \mathbb{R}$ which is algebraic over $\mathbb{Q}$. Justify your answer.
+Give an example of a complex number $z \in \mathbb{C}\setminus \mathbb{R}$ which is algebraic over $\mathbb{Q}$ (in other words, $z$ satisfies $f(z)=0$ where $f(x) \in \mathbb Q[x]$). Justify your answer.
 \item
 Suppose that $z \in \mathbb{C}$ is algebraic over $\mathbb{R}$. Show that $\bar{z}$ is also algebraic over $\mathbb{R}$.
 \item
