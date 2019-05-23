@@ -121,7 +121,7 @@ How are your answers in (a) related to the corresponding answers in Exercise~\re
 \end{enumerate}
 \end{exercise}
 
-You may have noticed that different displacements may correspond to the same position. For example, displacements of 8, 23, and -17 all correspond to the same position (namely 3). We say that two displacements that correspond to the same position are \emph{equivalent}. The fact that displacements 8 and 23 are equivalent on a 5-mile racetrack may be expressed mathematically as: $13 \equiv 18 \pmod{5}$.
+You may have noticed that different displacements may correspond to the same position. For example, displacements of 8, 23, and -17 all correspond to the same position (namely 3). We say that two displacements that correspond to the same position are \emph{equivalent}. The fact that displacements 8 and 23 are equivalent on a 5-mile racetrack may be expressed mathematically as: $8 \equiv 23 \pmod{5}$ (in words, we say `8 is equivalent to 23 mod 5').
 
 How can you tell when two displacements correspond to the same position?  
 In our racetrack example we may notice that 8, 23, and -17 all  have remainder 3 when divided by 5. 
@@ -132,7 +132,7 @@ This seems to indicate that we can define a notion of equivalence in terms of re
 How do you know there will always be a remainder? And how do you know there's only one?  Why couldn't some numbers have two different remainders, and some have none at all? It appears that before we can define modular equivalence in terms of remainders, 
 first we're going to have to establish some solid facts about remainders:
 
-\begin{prop}{DivAlg}(\emph{The }\term{division algorithm})  
+\begin{prop}{DivAlg}(\emph{The }  \term{division algorithm})  
 Given any integer $a$ and any positive integer $m$, then there exists  a unique number $r$ between $0$ and $m-1$ such that  $a = q \cdot m + r$ for some integer $q$. In this expression, $q$  is called the  \term*{quotient}\index{Quotient! under integer division}, and $r$ is called the \term*{remainder}\index{Remainder!under integer division}.  
 \end{prop}
 
@@ -144,7 +144,7 @@ The `unique' part is proved by the following fill-in-the-blanks exercise:
 Fill in the blanks in the following proof that the remainder is always unique.
 
 \noindent
-We'll give a proof by contradiction. Suppose that $a$ has two different remainders when divided by $m$.  Let's call these two different remainders $r$ and $s$, where $r$ and $s$ are both between 0 and $\underline{~<1>~}$ and $r \neq s$.
+We'll give a proof by contradiction. Suppose that $a$ has two different remainders when divided by $m$.  Let's call these two different remainders $r$ and $s$, where $0 \le r,s \le \underline{~<1>~}$ and $r \neq s$.
 
 It follows that $a = q \cdot m + r$ and $a = p \cdot m + \underline{~<2>~}$, where $q$ and  $p$ are $\underline{~<3>~}$. Setting these two expressions equal and rearranging enables us to obtain an expression for $r-s$, namely:
 $r - s = (\underline{~<4>~})\cdot m$. Thus $r-s$ is an integer multiple of $\underline{~<5>~}$.
@@ -159,6 +159,11 @@ Thus the remainder when $a$ is divided by $m$ is unique, and the proof is comple
 \end{exercise}
 \end{proof}
 
+We'll use the notation ``mod($a,m$)'' to indicate the remainder of $a$ when divided by $m$.  This notation  is used in most mathematical software (such as Excel, Matlab, and so on), and it reflects the fact that the remainder is a function of $a$ and $m$. 
+
+\begin{rem} Unlike many  references, we do \emph{not} use the expressions  ``$a \bmod m$'' or ``$a \pmod m$'' to denote the remainder when $a$ is divided by $m$.  In this book we \emph{never} write  ``$a \bmod m$'' or ``$a \pmod m$'' as stand-alone expressions.   In the expression $a \equiv b \pmod n$, the $\pmod n$ refers to the `$\equiv$' and not to the $b$. So it's true that $2 = 17 \pmod 5$, and it's also true that $17 \equiv 2 \pmod{5}$.  
+\end{rem}
+
 Now that we know that unique remainders really do always exist, we're in a position to use them in our definition of modular equivalence: 
 
 \begin{defn}\label{definition:modular:equivalence}
@@ -169,9 +174,6 @@ Now that we know that unique remainders really do always exist, we're in a posit
 Notice that Definition~\ref{definition:modular:equivalence} uses the 3-lined ``$\equiv$'' here instead of the usual $=$ sign. This notation is used  to emphasize the fact that modular equivalence resembles equality, but is not quite the same thing.  For example, we have already seen that 8 and 23 are equivalent mod 5, even though they are not equal.  In a later chapter we'll discuss equivalence relations, and we'll see that equivalence is in some sense a generalization of equality. For now,  be alerted to the fact that ``$\equiv$'' and ``$=$'' do not necessarily have the same properties. It's tempting for instance to make statements such as, ``$a \equiv b \pmod{m}$ implies $a-b \equiv 0 \pmod{m}$''. But just because this is true for $=$ doesn't mean it's also true for $\equiv$!  In this case the statement turns out to be true, but it requires proof -- and in this class you are not allowed to make assertions that have not been proven.\footnote{This may be one reason why not many mathematicians are politicians, and vice-versa.}  
 \end{rem}
 
-\begin{rem}
-**(\emph{Important})** Many references use the expression ``$a \bmod m$'' to denote the remainder when $a$ is divided by $m$.  We prefer not to use this notation, since it can sometimes be confusing.  For example, according to this notation it is not true that $12 = 17 \bmod 5$, even though it is true that $12 \equiv 17 \pmod{5}$.   We will use instead the expression ``mod($a,m$)'' to indicate the remainder of $a$ when divided by $m$.  This is the notation used in most mathematical software (such as Excel and Matlab), and it reflects the fact that the remainder is a function of $a$ and $m$. 
-\end{rem}
 
 The following result enables us to verify when we've indeed found a remainder.
 
@@ -205,8 +207,8 @@ Finish the proof of the contrapositive by filling in the blanks:
 Suppose $a \not\equiv b \pmod{m}$. Let $r$ be the remainder of $a$ when divided by $\underline{~<1>~}$, and let $s$ be  the remainder of $\underline{~<2>~}$ when divided by $\underline{~<3>~}$. Since the remainders are unequal, it follows that one must be bigger than the other: let us choose $a$ to be the number with the larger remainder, so that $r > \underline{~<4>~}$. By the definition of remainder, we may write $a = p\cdot m + \underline{~<5>~}$, and we may also write $b = q\cdot \underline{~<6>~} + \underline{~<7>~}$. Then by basic algebra, $a - b = (p-q)\cdot \underline{~<8>~} + (r - \underline{~<9>~})$. 
 
 We want to show that $r-s$ is the remainder of $a-b$ when divided by $m$. To do this, we need to show that $r-s$ is between 0 and $\underline{~<10>~}$. Since $r>s$ it follows that $r-s > \underline{~<11>~}$. Furthermore,
-Since $r < m$ and $s \ge 0$, it follows that $r - s < \underline{~<12>~}$.  So we have shown that $r-s$ is between $\underline{~<13>~}$ and $\underline{~<14>~}$, so 
-$r-s$ is the remainder of $a-b$ when divided by $m$. However, $r-s > 0$, which means that $a-b$ is not divisible by $\underline{~<15>~}$. This is exactly what we needed to prove, so the proof is complete. 
+Since $r < m$ and $s \ge 0$, it follows that $r - s < \underline{~<12>~}$.  So we have shown that $r-s$ is between $\underline{~<13>~}$ and $\underline{~<14>~}$, so by Proposition   $\underline{~<15>~}$ it follows that
+$r-s$ is the remainder of $a-b$ when divided by $m$. However, $r-s > 0$, which means that $a-b$ is not divisible by $\underline{~<16>~}$. This is exactly what we needed to prove, so the proof is complete. 
 \end{exercise}
 
 We summarize Exercise~\ref{exercise:modular:equivdef} and the preceding discussion together in the following proposition.
@@ -521,15 +523,15 @@ $\ldots$
 \end{itemize}
 Notice however that there is only one way to write the solution in terms of a number in ${\mathbb Z}_{11}$, namely:
 \[
-x \equiv 9 \pmod{11}
+ \bmod(x,11)=9
 \]
 In order to avoid ambiguity, mathematicians and textbooks always write solutions mod $n$ in terms of numbers in ${\mathbb Z}_n$. 
 In our current example, it's easy enough to obtain the standard solution ($x \equiv 9 \pmod{11}$)  directly from the equation $x = k \cdot 11 - 2$? by taking
 one of the $11$'s and adding it to the $-2$ to get
 \[
-x = (k-1) \cdot 11 + 11 - 2 = (k-1) \cdot 11 + 9,
+x = (k-1) \cdot 11 + 11 - 2 = (k-1) \cdot 11 + 9.
 \]
-giving  $x \equiv 9 \pmod{11}$.
+Since $k$ is an arbitrary integer, $k-1$ is also an arbitrary integer. So we get  $x \equiv 9 \pmod{11}$.
 
 \end{example}
 
@@ -707,17 +709,17 @@ $x = \dfrac{15\cdot(1+4n) +9}{4} = 6+15n$, or $x \equiv 6 \pmod{15}$.
 % which implies $x \equiv 6 \text{ (mod 15)}$ is the solution.
 \end{example}
 
-Just one more similar example:
+Here's another example, which is just a little more complicated. 
 
 \begin{example}{speed_up2}
 To solve the equation $447x + 53 \equiv 712 \pmod{111}$ we proceed as follows:
 \begin{align*}
 447x + 53 \equiv& 712 \pmod{111} \\
-\implies 3x + 53 \equiv& 46 \pmod{111} &\text{(modular equivalence)} \\
- \implies 3x + 53 =& 46 + 111k &\text{(modular equivalence)}\\ 
- \implies 3x  =& -7 + 111k &\text{(basic algebra)}\\ 
- \implies x =& \frac{-7 +111k}{3} &\text{(basic algebra)}\\
- \implies x =& \frac{-7}{3} + 37k &\text{(basic algebra)}
+\implies 447x \equiv& 659 \pmod{111} & \text{(subtract 53 from both sides)}\\
+\implies 3x  \equiv& 104 \pmod{111} &\text{(modular equivalence)} \\
+ \implies 3x  =& 104 + 111k &\text{(basic algebra)}\\ 
+ \implies x =& \frac{104 +111k}{3} &\text{(basic algebra)}\\
+ \implies x =& 34+\frac{2}{3} + 37k &\text{(basic algebra)}
  \end{align*}
 It should be clear that no value of $k$  makes the right side an integer.  Hence $x$ has no solution. You may have run into a similar situation in a previous exercise.
 \end{example}
@@ -749,7 +751,7 @@ $530x - 183 \equiv 215 \pmod{ 128}$
 \end{multicols}
 \end{exercise}
 
-From parts (h) and (i) of Exercise \ref{exercise:modular:modeq3} we see that even our trick with modular equivalences doesn't make all modular equations easy to solve.  When the coefficient of $x$ and the modulus are both large, you may end up needing \emph{lots} of trial and error.  And mathematicians are a bit snobby: we prefer solution methods that don't require \emph{any} trial and error.  There is actually a method that both eliminates trial and error and solves \emph{any} modular equation: this is the Euclidean algorithm, which we'll discuss later.
+From parts (h) and (i) of Exercise \ref{exercise:modular:modeq3} we see that even our trick with modular equivalences doesn't make all modular equations easy to solve.  When the coefficient of $x$ and the modulus are both large, you may end up needing \emph{lots} of trial and error. Such ``brute force'' methods are rather distasteful to snobby mathematicians, who prefer ``elegant'' solutions.  Later we'll talk about an ``elegant''  method (the Euclidean algorithm) that solves  modular equations without any trial and error whatsoever.
 
 % \begin{exercise}{}
 % Find all $x \in {\mathbb Z}$ satisfying each of the following equations.
@@ -1210,27 +1212,24 @@ Although technically we could define $\ell \oplus m$ and $\ell \odot m$ for \emp
 Our first step towards showing that ordinary arithmetic can be replaced with arithmetic with remainders is the following proposition:
 
 \begin{prop}{number_remainder}
-Given $\ell,m \in {\mathbb Z}$. If $a =\bmod(\ell,n)$ and $b=\bmod(m,n)$, then 
+Given $\ell,m \in {\mathbb Z}$. 
 \begin{enumerate}[(a)]
 \item
-$\bmod(\ell+ m,n) = a \oplus b$, 
+$\bmod(\ell+ m,n) = \bmod(\ell,n) \oplus \bmod(m,n)$, 
 \item
-$\bmod(\ell \cdot m,n) = a \odot b$.
+$\bmod(\ell \cdot m,n) = \bmod(\ell,n) \odot \bmod(m,n)$.
 \end{enumerate}
 \end{prop}
 
-Before we prove the proposition, let's give an example of how it can be applied. Suppose we know that:
-\[   \bmod(8640,7)= 2 \quad \text{and} \quad \bmod(1059895,7)=  4,
-\] 
-and we want to compute the following remainders: 
+Before we prove Proposition~\ref{proposition:modular:number_remainder}, let's give an example of how it can be applied. Suppose we want to compute the following remainders: 
 \[
 \text{mod}(8640 + 1059895,7) \quad \text{ and} \quad  \text{mod}(8640 \cdot 1059895, 7).
 \]  
-Well, let's apply the proposition. If we let $\ell=8640$ then we must let $a=2$, since $2=\text{mod}(8640,7)$. Similarly, if we let $m=1059895$ then  $b$ must be 4. But then what does the proposition say? Substituting: 
-\[
-\ell \rightarrow 8640, m \rightarrow 1059895, a \rightarrow 2, \text{ and } b \rightarrow 4,
-\]
-we get:
+OK, let's apply the proposition. If we let $\ell=8640, m=1059895$ and $n=7$, then we have the following correspondence
+\[ \bmod(\ell+ m,n) \rightarrow \bmod(8640 + 1059895,7) \]
+By division we may compute $\bmod(8640,7)=2$ and $\bmod(1059895,7)=4$. This gives us the correspondence:
+\[  \bmod(\ell,n) \rightarrow 2; \quad \bmod(m,n) \rightarrow 4. \]
+Using these correspondences,  Proposition~\ref{proposition:modular:number_remainder} gives us immediately that
 \[
 \bmod(8640+ 1059895,7) = 2 \oplus 4 , \quad \text{and} \quad \bmod(8640 \cdot 1059895,7) = 2 \odot 4,
 \]
@@ -1240,16 +1239,19 @@ which gives us 6 and 1  for the sum and product, respectively.  Isn't this  an a
 So let's get back to the proof.  We'll do (a) here: part (b) is left as an exercise.
 
 \begin{proof}
-Since $\ell \equiv a \pmod{n}$ and $m \equiv b \pmod{n}$, then
-\[ \ell = a + sn \mathrm{~~~and~~~} m = b + tn  \mathrm{~~~~~~(definition~of~modular~equivalence)} \]
-Therefore, 
-\[ \ell + m =a + b + (s + t)n \mathrm{~~~~~~(subs.~and~ basic~algebra)} \]
-Now by the definition of $\oplus$ there is some $p \in {\mathbb Z}$ such that  $a + b = (a \oplus b) + pn$; therefore 
+For simplicity we let $a :=  \bmod(\ell,n)$ and $b :=  \bmod(m,n)$. Then according to the definition of remainder mod $n$ we have
+\[ \ell = a + sn \mathrm{~~~and~~~} m = b + tn. \]
+Adding these two equations (which is basically substitution) and basic algebra we find
+\[ \ell + m =a + b + (s + t)n \]
+Now by the definition of $\oplus$, there is some $p \in {\mathbb Z}$ such that  $a + b = (a \oplus b) + pn$; therefore 
 \[ \ell + m = (a \oplus b) + pn + (s + t)n = (a \oplus b) + ( p + s + t)n. \mathrm{~~~~~~(subs.~and~ basic~algebra)} \]
 Hence by the definition of modular equivalence, 
 \[ \ell + m \equiv a \oplus b \pmod{n}. \]
 Now since $a \oplus b$ is between $0$ and $n-1$ by definition, it follows from Proposition~\ref{proposition:modular:remThm} that
 \[ \bmod(\ell + m,n)= a \oplus b. \]
+Recalling the definitions of $a$ and $b$ above we get finally:
+\[ \bmod(\ell + m,n)=  \bmod(\ell,n) \oplus \bmod(m,n), \]
+and we're finished!
 \end{proof}
 
 \begin{exercise}{44}
@@ -1318,7 +1320,8 @@ We can use similar methods as in Exercise~\ref{exercise:modular:ops}, to show th
 This completes our discussion showing that arithmetic mod $n$ can be reduced to arithmetic in ${\mathbb Z}_n$.  What we've shown can simplify other modular arithmetic arguments as well:
 
 \begin{exercise}{number_remainder}
-Prove the following proposition, which relies on Proposition~\ref{proposition:modular:number_remainder}.  (In fact, to prove (a) here you may use  part (a) of   Proposition~\ref{proposition:modular:number_remainder} twice, and similarly for (b).)
+Use  Proposition~\ref{proposition:modular:number_remainder} twice and the first definition of modular equivalence to prove the following propostions.  (It is also possible to prove these propositions directly from the definitions, 
+but the point of this exercise is to look at the proof from a different perspective.)
 
 \noindent {\bf Proposition}: Given $\ell,m,x,y \in {\mathbb Z}$ where $\ell \equiv x \pmod{n}$ and $m \equiv y \pmod{n}$, then 
 
@@ -1330,7 +1333,7 @@ $\ell \cdot m \equiv x \cdot y \pmod{n}$.
 \end{enumerate}
 \end{exercise}
 
-This proposition shows that we can freely replace numbers with other numbers that are equivalent mod $n$,  as long as we're only interested in the result mod $n$. For example, suppose we  want to find the following remainder:  
+This proposition shows that we can freely replace  numbers  in arithmetic expressions involving $+$ and $\cdot$ with other numbers that are equivalent mod $n$,  as long as we're only interested in the result mod $n$. For example, suppose we  want to find the following remainder:  
 \[
 \text{mod}(80056 \cdot 69944, 56).  
 \]
@@ -1340,6 +1343,7 @@ We may notice that $80056 \equiv 80000 \pmod{56}$ and $69944 \equiv 70000 \pmod{
 \]
 By noticing some patterns we were able to save ourselves quite a bit of work.
 
+Note that we were careful to specify that this replacement works for added and multiplied. It does \emph{not} work for integer exponents. for example, it is not true that $2^1 \equiv 2^4 (\text{mod} 3)$, even though $1 \equiv 4  (\text{mod} 3)$. It turns out that exponents can be replaced with simpler exponents in modular equivalences, but we won't find out how this works until  Section~\ref{sec:Fermat} (if you want to look ahead!)   
 \begin{exercise}{prove}
 Prove or disprove, using the proposition in Exercise~\ref{exercise:modular:number_remainder}:
 \begin{enumerate}[(a)]
@@ -1349,7 +1353,14 @@ $7787 \cdot 21005 \cdot 495 \equiv 56002 \cdot  492 \cdot 213 \pmod{7}$
 $(12345 \cdot 6789) + 1357 \equiv (98765 \cdot 13579) + 9876 \pmod{10}$
 \item
 $(4545 \cdot 5239) + 1314 \equiv (7878 \cdot 3614) + 4647 \pmod{101}$
-
+\item
+$765432121234567\cdot 234567878765432 \equiv 456456456456456456 \cdot 789789789789789789789 \pmod{10}$
+\item
+$543254325432543254325432^3 \equiv 1212121212121212121212^7  \pmod{10}$
+\item
+$786786786786786786786^3 \equiv 456456456456456456456^4  \pmod{10}$
+\item
+$654321^87654321 \equiv 123456^12345678  \pmod{5}$
 \end{enumerate}
 \end{exercise}
 
@@ -1883,37 +1894,38 @@ You may be  familiar with the notion of greatest common divisor (gcd) of two num
 
 The general question we now consider is: What's a good way to find the gcd of two integer numbers? It may be easy to find the gcd of small numbers like 12 and 20, but what if you have to find the gcd of 583768 and 260568447? 
 
-At this point, let's think back to our two-sticks problem. We saw that when we began with sticks of length 52 and 20, we ended up with a minimum measurable distance of 4--which just so happens to be the gcd of 52 and 20! So to get the gcd of 583768 and 260568447, in theory we could try creating one stick of length 583768 and another of length 260568447 and follow the same procedure. Of course this isn't practical. So instead, we'll try to duplicate the same procedure mathematically, without resorting to actual sticks.  Notice that when we subdivided a larger stick of length $a$ into sections of the length of $b$, the result was essentially the same as dividing $a$ by $b$ while leaving a remainder $r$.  See if you can complete the connection in the following example.
+At this point, let's think back to our two-sticks problem. We saw that when we began with sticks of length 52 and 20 we ended up with a minimum measurable distance of 4, which just so happens to be the gcd of 52 and 20. Was this a coincidence? Not at all!  The minimum measureable distance has to evenly divide the two sticks' lengths, otherwise we could find a smaller measurable distance using the marking-off procedure described in the previous section. This implies that the minimum measureable distance must be a common divisor. To show that it's the \emph{greatest} common divisor takes a little more work--we'll give the proof below. For now, we'll assume that the minimum measureable distance is in fact the gcd. 
+
+So to get the gcd of 583768 and 260568447, in theory we could try creating one stick of length 583768 and another of length 260568447 and follow the same procedure. Of course this isn't practical. So instead, we'll try to duplicate the same procedure mathematically, without resorting to actual sticks.  Notice that when we subdivided a larger stick of length $a$ into sections of the length of $b$, the result was essentially the same as dividing $a$ by $b$ while leaving a remainder $r$.  See if you can complete the connection in the following example.
 
 \begin{example}{GCD}
 Let's use algebraic language to express the two-sticks algorithm applied to 52 and 20.
-Let's start by setting this up as a division problem with a remainder, again since this is effectively what is being done in the stick example above.
-\[ 52 = 20\cdot x + b\]
+Let's start by setting this up as a division problem with a remainder (recall Proposition~\ref{proposition:modular:DivAlg}), since this is effectively what is being done in the stick example above.
+\[ 52 = 20\cdot q_1 + r_1,\]
+where $q_1$ and $r_1$ are integers  (we put the subscript `1' on the variables $q_1$ and $r_1$ because we're going to repeat the process).
+By division with remainder we find $q_1=2$ and $r_1=12$.
+Now we repeat the process, but this time dividing the remainder 12 into the smaller stick length 20: 
 
-By division with remainder we find $x=2$ and $b=12$
-Now we set up the problem again, this time dividing 12 into 20. 
+\[ 20 = 12\cdot q_2 + r_2,\]
+which yields $q_2=1, r_2=8$.  Here we go again, this time dividing the second remainder 8 into the first remainder 12:
 
-\[ 20 = 12\cdot x + b\]
+\[ 12 = 8\cdot q_3 + r_3\]
 
-This yields $x=1, b=8$.  Then set up the problem again, this time dividing 8 into 12.
+This yields $q_3=1, r_3=4$.  One more time, this time dividing the new remainder 4 into the previous remainder 8:
 
-\[ 12 = 8\cdot x + b\]
+\[ 8 = 4\cdot q_4 + r_4\]
 
-This yields $x=1, b=4$.  Then set up the problem again, this time dividing 4 into 8.
+This yields $q_4=2, r_4=0$.  
 
-\[ 8 = 4\cdot x + b\]
+Now notice that 8 is divisible by 4.  In the equation before that, we have $12 = 4\cdot2 + 4$.  Since the right hand side is a sum of multiples of 4, the left hand side must also be a multiple of 4.  In the next equation up $20=12\cdot x + 8$ again, the right hand side is a sum of multiples of 4, so the left hand side must also be a multiple of 4.  Continuing this logic upward shows that all intervals created along the way are divisible by 4.  Hence the algorithm has generated a divisor of the original lengths 52 and 20.  In summary, the \emph{last nonzero remainder} gave us  the gcd.
 
-This yields $x=2, b=0$.  
-
-Now notice that 8 is divisible by 4.  In the equation before that, we have $12 = 4\cdot2 + 4$.  Since the right hand side is a sum of multiples of 4, the left hand side must also be a multiple of 4.  In the next equation up $20=12\cdot x + 8$ again, the right hand side is a sum of multiples of 4, so the left hand side must also be a multiple of 4.  Continuing this logic upward shows that all intervals created along the way are divisible by 4.  Hence the algorithm has generated a divisor of the original lengths 52 and 20.  
-
-The procedure we have just described is called the \term{Euclidean algorithm}.\index{Euclidean algorithm}(An \emph{algorithm} is a mathematical procedure designed to compute a specific result). The Euclidean algorithm is very powerful, and in fact can be used to calculate gcd's of large numbers as we'll see below.
-
- In the above example,  by factoring 52 and 20 into primes: $20=2\cdot2\cdot5$ and $52=2\cdot2\cdot13$, it is plain to see that the only common factors are 2 and 4.  Thus the divisor produced by the Euclidean algorithm happened to be the greatest common divisor. This turns out to be true in general, as we will now prove.
+The procedure we have just described is called the \term{Euclidean algorithm}.\index{Euclidean algorithm} (An \emph{algorithm} is a mathematical procedure designed to compute a specific result). The Euclidean algorithm is very powerful, and in fact can be used to calculate gcd's of large numbers as we'll see below.
 
  %%% CPT this is an orphan comment. It doesn't lead anywhere.
 %While it is possible to select the divisor and remainder differntly to more quickly arrive at the answer, it becomes a trial %and error process.  However, by simply following the algorithm, one will eventually arrive at a common divisor and that divisor will be the largest.
 \end{example}
+
+As noted above,  the divisor produced by the Euclidean algorithm turned out to be the greatest common divisor. Let's prove this in general.
 
 \begin{prop}{Greatest Common Divisor}
 The Euclidean algorithm applied to two integers will give the gcd of those two integers.
@@ -1960,7 +1972,7 @@ Divide $b$ into $a$ and find the remainder $r$
 \item
 If $r$ = 0, $b$ is the greatest common divisor.
 \item
-If the remainder is not 0, set $a$ = $b$ and $b$ = $r$, go to step 1.
+If the remainder is not 0, then replace $a$ with $b$ and $b$ with $r$ and return  to step 1.
 \end{enumerate}
 
 
@@ -2169,7 +2181,7 @@ is the most general solution.
 This solution is correct, but we can simplify it by shifting the value of $k$.  Note that $92365 = 107 \cdot 863 + 24$ and $112700 = 107 \cdot 1053 + 29$.  So we may replace $k$ with $(\ell + 107)$ to obtain:
 $$ x = 92365 - 863(\ell + 107), y = -112700 + 1053(\ell + 107),$$
 which after working out the algebra gives us:
-$$ x = 24 + 863 \ell, y = 29 + 1053 \ell.$$
+$$ x = 24 - 863 \ell, y = 29 + 1053 \ell.$$
 \end{example}
  
 \begin{exercise}{dio1}
@@ -2239,7 +2251,7 @@ At the beginning of this section, we ``introduced'' Diophantine equations.  But 
 \begin{exercise}{m518}
 \begin{enumerate}[(a)]
 \item
-Find the general solution to: $242m + 119n = 53$.
+Find the general integer solution to: $242m + 119n = 53$.
 \item 
 Use your solution to solve the modular equation: $242x \equiv 53 \pmod{119}$.
 \item

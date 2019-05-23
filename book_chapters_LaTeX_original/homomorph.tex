@@ -276,7 +276,7 @@ $\cdot$ & 1 & -1  \\
 }
 \end{table}
 
-Now this isn't the \emph{whole} Cayley table for $\langle i \rangle$ (Table~\ref{4_roots_table3}), but it \emph{is} the part of the Cayley table that corresponds to the elements 1 and -1 (remove rows 2 and 4 as well as columns 2 and 4).  So $q$  preserves the operations between $\ZZ_8$ and $\langle i \rangle$, since for all $a,b \in {\mathbb Z}_8$ we have
+Now this isn't the \emph{whole} Cayley table for $\langle i \rangle$ (Table~\ref{groups_Z8_transfom2}), but it \emph{is} the part of the Cayley table that corresponds to the elements 1 and -1 (remove rows 2 and 4 as well as columns 2 and 4).  So $q$  preserves the operations between $\ZZ_8$ and $\langle i \rangle$, since for all $a,b \in {\mathbb Z}_8$ we have
 \[
 q(a \oplus b) = q(a) \cdot q(b).
 \]
@@ -965,7 +965,7 @@ As mentioned above, we only need to show that $F$ is 1-1, onto, and preserves th
 1-1: Suppose that $F(g_1K) = F(g_2K)$.  Then according to the definition of $F$, this means that
 $f(g_1) = f(g_2)$. From this we obtain (using the homomorphism property of $f$):
 \[ f(g_1^{-1}g_2)) = f(g_1^{-1})f(g_2) =  f(g_1)^{-1}f(g_2) = f(g_1)^{-1}f(g_1) = e'  \implies g_1^{-1}g_2 \in K.\]
-By Proposition~\ref{cosets_theorem_1} in the Cosets chapter (parts (1) and (2)), this implies that $g_1K = g_2K$.
+By Proposition~\ref{proposition:cosets:cosets_theorem_1} in the Cosets chapter (parts (1) and (2)), this implies that $g_1K = g_2K$.
 \item
 Onto:  Let $h$ be an arbitrary element of $f(G)$. Then there exists $g \in G$ such that $f(g)=h$.  By the definition of $F$, we have
 also that $F(gK) = h$.

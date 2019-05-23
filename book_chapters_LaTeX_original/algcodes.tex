@@ -15,7 +15,9 @@ arises in many areas of communications, including radio, telephone, television, 
 \medskip
 
 \noindent
-\underline{\bf Prerequisites}: In this chapter we will make extensive use of the group $\mathbb{Z}^{n}_{2}$, which is the direct product of $n$ copies of $\mathbb{Z}_{2}$ (direct products were introduced in Section~\ref{isomorph_section_2}.  Section~\ref{sec:MaximumLikelihood} on maximum-likelihood decoding uses some probability theory--this section is independent of the rest of the chapter, and may be omitted if desired. The discussion of linear block codes (Section~\ref{section:algcodes:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:efficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{cosets}.  
+\underline{\bf Prerequisites}: In this chapter we will make extensive use of the group $\mathbb{Z}^{n}_{2}$, which is the direct product of $n$ copies of $\mathbb{Z}_{2}$ (direct products were introduced in Section~\ref{isomorph_section_2}.  
+%Section~\ref{sec:MaximumLikelihood} on maximum-likelihood decoding uses some probability theory--this section is independent of the rest of the chapter, and may be omitted if desired. 
+The discussion of linear block codes (Section~\ref{section:algcodes:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:efficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{cosets}.  
 \bigskip
 
 Thanks to Tom Judson for material used in this chapter.
@@ -57,7 +59,7 @@ Why is the following encoding scheme not acceptable?
 \]
  \end{exercise} 
  
-\begin{example}{}
+\begin{example}{evenParity}
 \term{Even parity}\index{Even parity!coding scheme} is a  commonly  used coding scheme, which (as we shall see) can be generalized to form powerful and versatile codes. Computers use the ASCII (American
 Standard Code for Information Interchange) coding system to encode the letters and special characters that appear on your keyboard (these may be considered as the "message words", according to the above terminology). There are 128 of these characters, so it is possible to represent them using 7 bits (since  $128 = 2^7$).   For example, the 7-bit representations for A, B, and C are 
 \begin{align*}
@@ -597,7 +599,7 @@ and ${\bold y} = (1010)$ then $d({\bold x}, {\bold y})
 ${\bold y}$ to be received. If for example the third bit is mistransmitted and received word is $(1110)$, then we can tell something is wrong -- that is, we can detect that an error has taken place. In general, single-bit errors are detectable in any code where the distance between any two codewords is bigger than 1.
 
 \begin{example}{} Consider the $(4,3)$ code in which the first three bits carry
-information and the fourth is an even parity check bit. (Note that now we're putting the parity bit on the \emph{right} instead of on the \emph{left} as we did in Example~\ref{example:algcodes: evenparity}. This will turn out to be more useful in the development of the general theory.)
+information and the fourth is an even parity check bit. (Note that now we're putting the parity bit on the \emph{right} instead of on the \emph{left} as we did in Example~\ref{example:algcodes:evenParity}. This will turn out to be more useful in the development of the general theory.)
 Table~\ref{algcodes:table1} gives the distances
 between all codewords in this code.  We can see
 that the minimum distance here is 2; hence, the code is suitable as

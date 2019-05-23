@@ -26,6 +26,8 @@
 \usepackage{tikz}
 \newcommand{\tikzpreface}[1]{\relax}
 
+\usetikzlibrary{arrows.meta} %KW added for arrowhead options
+
 \usepackage{float}
 \restylefloat{table}
 
@@ -235,13 +237,13 @@
 %
 \begin{titlepage}
 \title{Instructor's Supplement for Elementary Abstract Algebra: Examples and Applications}
-\author{Chris Thron (ed), Khoi Tran}
+\author{Chris Thron (ed), Kat Weis, Khoi Tran}
 \begin{center}
 \vspace{3.5cm}
 {\huge \textbf{Instructor's Supplement for}\\
 \textbf{ Elementary Abstract Algebra: Examples and Applications}}\\[1cm]
 Solutions by: \\ 
-{ \textbf{Khoi Tran } } \\
+{ \textbf{Kat Weis and Khoi Tran } } \\
 Texas A\&M University -- Central Texas \\[0.4cm]
 ``Group Actions'' solutions by: \\ 
 { \textbf{Holly Webb} } \\
@@ -282,9 +284,24 @@ ISBN:  978-1-312-85635-6
 %
 \mainmatter
 %
-\include{AnswerKey}
+\chap{Answer Key}{AnswerKey}
+\input{complex_suppl}
+\input{modular_arithmetic_suppl}
+\input{set_chapter_suppl}
+\input{functions_suppl}
+\input{crypt_suppl}
+\input{polyrings_suppl}
+%\input{polycodes_suppl}
+\input{symmetries_suppl}
+\input{permute_suppl}
+\input{groups_suppl}
+\input{equivalencerelations_suppl}
+\input{cosets_suppl}
+\input{isomorph_suppl}
+\input{actions_suppl}
 \include{induction_solutions}
 \include{TestQuestions}
+% Note there are more test questions from Spring 2018 to put in.  (Or put them in as exercises in the chapter)
 
 
 \clearpage

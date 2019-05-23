@@ -9,7 +9,7 @@
 %%%%(c)
 \chap{Application: Further Topics in Cryptography}{further_crypt}
 
-In this chapter we examine two specific topics in cryptography which are highly practical and are relatively recent developments: Diffie-Hellman key exchange (originated by Whitfield Diffie and Martin Hellman in 1976) and elliptic curve cryptography (proposed by Neal Koblitz and Victor Miller in 1985).
+In this chapter we examine two specific topics in cryptography which are highly practical and are relatively recent developments: Diffie-Hellman key exchange (originated by W. Diffie and M. Hellman in 1976) and elliptic curve cryptography (proposed by N. Koblitz and V. Miller in 1985).
 \medskip
 
 \noindent
@@ -21,11 +21,11 @@ This chapter is written by Moses Marmolejo, with revisions by C.T.
 
 \section{Diffie-Hellman key exchange}\label{sec:DHKE:1}
 
-In order to share a private message over a public domain a sender must  "lock" or encrypt their message using a \emph{key}\index{key! in cryptogaphy}.  Recall from Section \ref{sec:crypt:overview}, that in cryptography a  key is a special piece of information (usually a number)  that is required to encrypt and decrypt data which is shared between the sender and receiver. There are generally three types of keys used: public, private and symmetric keys. A \emph{public key}\index{Public Key! in cryptography} can be widely distributed, and is typically used for encrypting messages.  For a public key to be effective, there must be a matching \emph{private key}\index{Private Key! in cryptography} which is known only to the receiver. The privat key can be used to decrypt the messages created using the public key.  Finally, a \emph{symmetric key}\index{Symmetric Key! in cryptography} is known by the sender and receiver, and is used to both encypt and decrypt messages.  Not all cryptosystems require all three kinds of keys, but every cryptosystem must have either a private key or a symmetric key.
+In order to share a private message over a public domain a sender must  "lock" or encrypt their message using a \emph{key}\index{key! in cryptogaphy}.  Recall from Section \ref{sec:crypt:overview}, that in cryptography a  key is a special piece of information (usually a number)  that is required to encrypt and decrypt data which is shared between the sender and receiver. There are generally three types of keys used: public, private and symmetric keys. A \emph{public key}\index{Public Key! in cryptography} can be widely distributed, and is typically used for encrypting messages.  For a public key to be effective, there must be a matching \emph{private key}\index{Private Key! in cryptography} which is known only to the receiver. The private key can be used to decrypt the messages created using the public key.  Finally, a \emph{symmetric key}\index{Symmetric Key! in cryptography} is known by the sender and receiver, and is used to both encypt and decrypt messages.  Not all cryptosystems require all three kinds of keys, but every cryptosystem must have either a private key or a symmetric key.
 
   If a symmetric key is used, then both parties must share their key before they can begin communicating securely. The requirement of establishing a key exchange is so essential that it is embedded into almost every technology we use today.  Some examples of key exchange can be seen in media applications, cell phones, banking, online purchasing, and emails.  
 
- But what if the only way the two parties have to communicate is via a public network (such as the Internet), where eavesdroppers can listen in?  Under these conditions how can they possibly establish a shared key in such a way that no one else can find out?  The Diffie Hellman Key Exchange (DHKE) is one possible solution to the problem of creating a secret key over an insecure communication channel.  Note that the DHKE is not used for encryption/decryption of messages, but only to establish a key that can be used to encrypt/decrypt subsequent messages.  Follow the steps below to see the DHKE process.  
+ But what if the only way the two parties have to communicate is via a public network (such as the Internet), where eavesdroppers can listen in?  Under these conditions how can they possibly establish a shared key in such a way that no one else can find out?  The Diffie Hellman key exchange (DHKE) is one possible solution to the problem of creating a secret key over an insecure communication channel.  Note that the DHKE is not used for encryption/decryption of messages, but only to establish a key that can be used to encrypt/decrypt subsequent messages.  Follow the steps below to see the DHKE process.  
 
  \begin{enumerate}[Step 1.]
  \item First, Moses and Rachael agree upon a pair of numbers $p$ and $g$. $p$ is called the \term{modulus},while $g$ is called the \term{base}. These numbers are not secret, but Moses and Rachael do not care if eavesdroppers find out what $p$ and $g$ are. In practice, $p$ and $g$ are required to have certain properties (as explained below) to maximize secrecy.  However, the DHKE procedure still works for any values of $p$ and $g$.
@@ -58,15 +58,15 @@ Fill in the blanks in the following proof that  $k_R$ is always equal to  $k_M$.
 
 Now that you understand the process for DHKE, follow the example below.  (Note that this example is just to give you the idea--it's much too simple to use in practical applications.)
 
- \begin{eg} Key Exchange between a sender and receiver (Moses and Rachael) using the DHKE is shown in the following steps.
+ \begin{eg} Key exchange between a sender and receiver (Moses and Rachael) using the DHKE is shown in the following steps.
 \begin{enumerate}[Step 1.]
 \item Prior to sending data, Moses and Rachael agree $p$ = 13 and $g$= 7; 
 \item Moses chooses $n$ = 2, and sends Rachael $\bmod (7^2 , 13) = 10$;
 \item Rachael chooses $m$ = 8, and sends Moses $\bmod (7^8  , 13) = 3 $;
 \item Moses computes $\bmod ((3)^2 , 13 ) = 9$;
 \item Rachael computes $\bmod ((10)^8 , 13 ) = 9$;
-\item Moses and Rachael share the number 9;
 \end{enumerate}
+As a result of the exchange, both Moses and Rachel have obtained the same shared key, which is 9.
 \end{eg}
 
 %  \emph{Fermat's Little Theorem}\index{Fermat's Little Theorem! in cryptography} states that if $p$ is a prime number such that $p \nmid a$, and $a$ is an integer, then $1 \equiv \bmod(a^{p-1}, p)$.
@@ -150,7 +150,7 @@ We may define a function $f: \mathbb{N} \rightarrow \mathbb{Z}_7 \setminus \{0\}
 Use parts (a) and (b) of Exercise~\ref{exercise:further_crypt:DLex1} to prove that $f$ is neither one-to-one nor onto.
 %ans: Not 1-1 (counter example): 3 is an element of Z_7, by definition of 1-1, 3 must be an element of mod(2^n,7) however from part 5b we can see that it is not an element.  Onto: The codomain = 1,2,3,4,5,6; by definition of onto there must exist an element in the domain that maps to every element of the codomain.  However, from exercise 5 we can see that the domain only maps to 1,2, and 4.  Thus is not onto.
 \item
-We may also define a function $g: \mathbb{N} \rightarrow \mathbb{Z}_7 \setminus \{0\}$ by the equation: $f(n) = \bmod(3^n,7)$. 
+We may also define a function $g: \mathbb{N} \rightarrow \mathbb{Z}_7 \setminus \{0\}$ by the equation: $g(n) = \bmod(3^n,7)$. 
 Prove or disprove: $g$ is one-to-one.
 %ans: Proof, g is 1-1: f(1)=3, f(2)=2, f(3)=6, f(4)=4, f(5)=5, f(6)=1,every element in domain maps to exactly every element in codomain once.  Thus 1-1.
 \item
@@ -168,13 +168,13 @@ Suppose that $p$ is a prime, and $g$ is a generator of $U(p)$.  Consider the fun
 %ans: 1-1: since there are p-1 possibilities modp, this means that each of the first p-1 possibilities must be different modp. Onto: By definition of a generator, any element of U(p) may be expressed as a power of g given by mod(g^n,p), thus 1-1.  Thus bijection.
 \end{exercise}
 
-It's about time we got back to the main point of why we're even interested in  DL in the first place.  Suppose an eavesdropper who is listening in on Moses and Rachael's conversation wants to figure out the secret key. 
-The eavesdropper knows $p, g, q=\bmod(g^n,p)$, and $r=\bmod(g^m,p)$.  That's all the information he has in order to figure out the shared key, which is  $k=\bmod(g^{mn},p)$. If he could figure out $m$ he would be finished, because then he could compute $\bmod(q^m,p)$ which is equal to $K$. But this is none other than a DL problem, since $m$ is a DL of $r$ with base $g$ under multiplication mod $p$.  
+It's about time we got back to the main point of why we're talking about  DL's in the first place.  Suppose an eavesdropper who is listening in on Moses and Rachael's conversation wants to figure out the secret key $k$. 
+The eavesdropper knows $p, g, q=\bmod(g^n,p)$, and $r=\bmod(g^m,p)$.   If he could figure out $m$ he could easily get the secret key by computing $\bmod(q^m,p)$ which is equal to $k$.   But finding $m$  is just  a DL problem, since $m$ is a DL of $r$ with base $g$ under multiplication mod $p$.  
 
 There is an issue that we should address here. We have pointed out that any DL problem has many different solutions. What if the eavesdropper finds a different solution to the DL problem, which is not equal to the $m$ originally used by Rachael? It turns out that the eavesdropper can crack the code with \emph{any} DL solution, as the following exercise shows:
 
 \begin{exercise}{DLex3}
-We have just stated that ``$m$ is a DL of $r$ with base $g$ under multiplication mod $p$''.  But we already know there are \emph{many} DL's, not just one. Let $m'$ be a \emph{different} DL of $r$ with base $g$ under multiplication mod $p$. Show that $\bmod(g^{mn},p)=\bmod(g^{m'n},p)$. In other words, an eavesdropper can use \emph{any} DL of $r$ with base $g$ under multiplication mod $p$ to find the shared key.
+Suppose that $m$ and $m'$ are two different DL's of $r$ with base $g$ under multiplication mod $p$.  Show that $\bmod(g^{mn},p)=\bmod(g^{m'n},p)$. In other words, an eavesdropper can use \emph{any} DL of $r$ with base $g$ under multiplication mod $p$ to find the shared key.
 %ans: mod(g^m,p)=mod(g^m',p) => mod(g^mn,p)=mod(g^m'n,p), by multiplying both sides by g^n
 \end{exercise}
 
@@ -223,16 +223,16 @@ What trend do you see in the number of computations required in parts (a), (b), 
 From the foregoing discussion, we may see why it is important to choose a prime $p$ as a modulus and a primitive root $g$ as a base in an effective DHKE scheme. This choice will minimize duplicate DLs and create the largest search space possible for an eavesdropper.  If you do not use a primitive root as a generator, then you will end up with a smaller subgroup of $U(p)$ which will have an increased number of DLs, and an eavesdropper trying to calculate $m$ using a brute force method is more likely to succeed. 
 
 \subsection{Man in the middle attack}
-Our previous discussion indicates the DHKE is very hard to crack if it uses a large enough modulus $p$ and a suitable base $g$. But, is there any way to successfully eavesdrop on Moses and Rachael's conversation without actually cracking the code?  Both Moses and Rachael seem confident with the security the DHKE provides, since an attacker would only be privy to $\bmod (g^n , p)$ and $\bmod (g^m , p)$, each of which cannot be used to decrypt the message since an attacker would have to compute the DL problem to find $m$ and $n$. 
+Our previous discussion indicates the DHKE is very hard to crack if it uses a large enough modulus $p$ and a suitable base $g$. But, is there any way to successfully eavesdrop on Moses and Rachael's conversation without actually cracking the code?  It seems that Moses and Rachael's security is assured, since an attacker would only be privy to $\bmod (g^n , p)$ and $\bmod (g^m , p)$, each of which cannot be used to decrypt the message since an attacker would have to compute the DL problem to find $m$ and $n$. 
 
-But what would happen if an attacker, Fred (an eavesdropper) places himself between Moses and Rachael's messages?  If Fred could do this then Rachael's message would pass through Fred first before reaching Moses, and vice-versa. Now, Fred can intercept the public key and can establish his own private key with Moses and Rachael.  Fred is now able to read or alter messages.  This type of attack is commonly referred to as the Man in the Middle (MiM) attack.  See Figure~\ref{fig:DH:DHKE_2} to see how Fred is able to modify the Key Exchange.
+But not so fast. What would happen if an attacker, Fred (an eavesdropper) places himself between Moses and Rachael's messages?  If Fred could do this then Rachael's message would pass through Fred first before reaching Moses, and vice-versa.  Fred would then be able to intercept the public key and establish his own private keys with Moses and Rachael separately.  Fred is now able to read or alter messages.  This type of attack is commonly referred to as the Man in the Middle (MiM) attack.  See Figure~\ref{fig:DH:DHKE_2} to see how Fred is able to modify the key exchange.
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=5in]
 	         {images/DHKE_18.png}}
-	  \caption{\label{fig:DH:DHKE_2} MiM Attack during Moses and Rachael's Key Exchange }
+	  \caption{\label{fig:DH:DHKE_2} MiM Attack during Moses and Rachael's key exchange }
 \end{figure}
 
-Following Figure~\ref{fig:DH:DHKE_2}, Fred establishes a shared key $k_M$ with Moses and another secret key $k_R$ with Rachael.  Now Moses thinks $r_f$ is Rachael's public key, and Rachael thinks that she has Moses' public key. Moses and Rachael both combine their private keys with Fred's public keys and create two different symmetric keys, $k_M$ and $k_R$ respectively. At this point if Moses or Rachael sends a message then Fred is free to decrypt and encrypt the message using the appropriate symmetric key. 
+Following Figure~\ref{fig:DH:DHKE_2}, Fred establishes one secret key $k_M$ with Moses and a different secret key $k_R$ with Rachael.  Now Moses thinks $r_f$ is Rachael's public key, and Rachael thinks that she has Moses' public key. Moses and Rachael both combine their private keys with Fred's public keys and create two different symmetric keys, $k_M$ and $k_R$ respectively. At this point if either Moses or Rachael sends a message, then Fred is free to decrypt and encrypt the message using the appropriate key. 
 
 \begin{exercise}{}
 Redo Figure~\ref{fig:DH:DHKE_2} using different values of $p, g, n,m, f_n,$ and $f_m$, remember to choose a prime for $p$ and a primitive root for $g$ (there are many primitive root calculators you can find online).
@@ -247,13 +247,13 @@ Given $p=73,$ and $g=11$ find $q, r, r_f, q_f, k_M,$ and $k_R$ if Moses chooses 
 %ans:q=13, k_M=7, r_f=17, q_f=48, r=41, k_R=2
 \end{exercise}
 
-DHKE is vulnerable to this type of MiM attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Fortunately, you can prevent a MiM attack by using a \term{digital signature}.  To understand what a digital signature does, first let us consider the purpose of a conventional signature.  Typically, a signature is uniquely scribed on a document, and is proof of authentication.  Comparitively, a digital signature is intended to authenticate the origin of the sender and ensure the integrity of the message.  In Section \ref{sec:DHKE:1}, we described how to verify messages by using a private key to encrypt and a public key to decrypt.  Once a message is signed and encrypted, it cannot be altered without destroying the signature which authenticates the message. In summation, the MiM can prevent Moses and Rachael from establishing a shared key (by tampering with the message), but Fred cannot eavesdrop on any secret communication.
+DHKE is vulnerable to this type of MiM attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Fortunately,  MiM attacks can be prevented if messages are sent with a so-called \term{digital signature} which uniquely identifies the source of the message   In Section \ref{sec:DHKE:1}, we described how to send uniquely-identifiable messages by using a private key to encrypt  messages that can be decrypted by a public key.  So Moses may share his key with Rachael by encrypting his public key, together with some known text. Even if the MiM can receives and decode this information, there is no way for him (or her) to send a bogus key to Rachel, because (s)he does not know Moses' signature key.  
 
- Diffie-Hellman is just one of many key exchange algorithms you can use. In the next section, we will talk about a different way to exchange keys that is even more secure.
+ Diffie-Hellman is just one of many key exchange algorithms. In the next section, we will talk about a different key exchange method that is even more secure.
 
 \section{Elliptic curve cryptography}\label{sec:ECC:2}
 
-In the previous section we saw that the longer the key, the greater the security. The disadvantage to long keys is they require sending more information, thus slowing down communication.  Elliptic curve cryptography (ECC) is one approach to the public key sharing dilemma that offers greater security with smaller keys. The table in Figure~\ref{fig:DH:DHKE_9} shows the relationship between key length and security for three different cryptosystems: RSA, Diffie-Hellman, and ECC.  In the table, 'key length' refers to the number of binary bits in the key: for comparison, a 160 bit key has 49 decimal digits, while a 1024 bit key has 309 decimal digits. The 'security level' is also measured in bits (80, 128, 192, 256) where these bits refer to the size of the number of computational steps necessary to break the code.  For example, a security level of 80 means that $2^{80}$ computations are required to break the code (from reference(\ref{Certicom})). To give you an idea of what this means practically, in 2002 it took $10,000$ computers (mainly PCs) running 24 hours a day for 549 days to break an ECC system with a 109 bit key length. A 160-bit ECC would be $2^{25}$ times more secure: which means that (with 2002 technology) it would take one billion computers over 500 years to crack it.
+In the previous section we saw that the longer the key, the greater the security. Unfortunately longer keys require sending more information, thus slowing down communication.  Elliptic curve cryptography (ECC) is one approach to the public key sharing dilemma that offers greater security with smaller keys. The table in Figure~\ref{fig:DH:DHKE_9} shows the relationship between key length and security for three different cryptosystems: RSA, Diffie-Hellman, and ECC.  In the table, `key length' refers to the number of binary bits in the key: for comparison, a 160 bit key has 49 decimal digits, while a 1024 bit key has 309 decimal digits. The 'security level' is also measured in bits (80, 128, 192, 256) where these bits refer to the size of the number of computational steps necessary to break the code.  For example, a security level of 80 means that $2^{80}$ computations are required to break the code (from reference(\ref{Certicom})). To give you an idea of what this means practically, in 2002 it took $10,000$ computers (mainly PCs) running 24 hours a day for 549 days to break an ECC system with a 109 bit key length. A 160-bit ECC would be $2^{25}$ times more secure: which means that (with 2002 technology) it would take one billion computers over 500 years to crack it.
 \begin{figure} [H]
 	   \center{\includegraphics[width=5in]
 	         {images/DHKE_9.png}}
@@ -262,10 +262,10 @@ In the previous section we saw that the longer the key, the greater the security
 Referencing the table in Figure~\ref{fig:DH:DHKE_9}, we can see that an ECC cryptosystem with a 160 bit key has a similar security level to RSA and Diffie-Hellman with 1024-bit keys. This means the same security with 6 times less information--a significant difference! 
 
 \begin{exercise}{}
-How long would it take to crack a cryptosystem with a 128 bit security, using a billion modern computers with 2 GHz processors?
+How long would it take to crack a cryptosystem with a 128 bit security, using a billion modern computers with 2 GHz processors? (\emph{Note:} A 2 GHz processor is able to perform $2 \cdot 10^9$ computations per second.)
 \end{exercise}
 
-Now that we have established the benefits of ECC, let us see what elliptic curves are all about. Our discussion will be quite wide-ranging, and touch on several areas of mathematics. Although we will not go into the background, elliptic curves originally arose from complications using calculus. Elliptic curves also have deep connections to the theory of complex functions. 
+Now that we've described the benefits of ECC, let's see what elliptic curves are all about. Our discussion will be quite wide-ranging, and touch on several areas of mathematics. Although we will not go into the background, elliptic curves originally arose from the study of polynomial equations in multiple variables. Elliptic curves also have deep connections to the theory of complex functions. 
 
 \subsection{Definition of elliptic curves}
 An Elliptic Curve (EC) is the set of solutions $(x,y)$ of  an equation of the form $y^2 = x^3 + ax + b$, where $a$ and $b$ are real coefficients.  See Figure~\ref{fig:DH:DHKE_5} below for graphs of some elliptic  curves.  
@@ -274,7 +274,7 @@ An Elliptic Curve (EC) is the set of solutions $(x,y)$ of  an equation of the fo
 	         {images/DHKE_5.png}}
 	  \caption{\label{fig:DH:DHKE_5}  Geometric shapes of elliptic curves, (from reference (\ref{Wolframalpha}))}
 \end{figure}
-Additionally, ECs are not allowed to have double or triple roots.  A triple root produces a cusp in the graph, and a double root produces a self-intersection (see graphs in Figure~\ref{fig:DH:DHKE_10}). See graphs in Figure~\ref{fig:DH:DHKE_10} for examples of elliptic curves with double and triple roots.
+Additionally, ECs are not allowed to have double or triple roots in the variable $x$.  A triple root produces a cusp in the graph, and a double root produces a self-intersection (see graphs in Figure~\ref{fig:DH:DHKE_10}). See graphs in Figure~\ref{fig:DH:DHKE_10} for examples of elliptic curves with double and triple roots.
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=3in]
 	         {images/DHKE_10.png}}
@@ -290,7 +290,7 @@ Additionally, ECs are not allowed to have double or triple roots.  A triple root
 \end {enumerate} 
 \end{exercise}
 
-All of the cryptosystems that we have studied so far have been based on group operations associated with a particular group. For example, Diffie-Hellman used discrete exponentiation (which is repeated multiplication in $U(p)$) to construct a one-way function. In order to make use of elliptic curves to construct cryptosystems, we will need to show that we can associate a group with each elliptic curve. In the following sections, we will show first how to define an arithmetic operation on the points of  any  elliptic curve: and then that this operation is in fact a group operation.
+All of the cryptosystems that we have studied so far have been based on group operations associated with a particular group. For example, Diffie-Hellman used discrete exponentiation (which is repeated multiplication in $U(p)$) to construct a one-way function. In order to  use elliptic curves to construct cryptosystems, we'll need to show that we can associate a group with each elliptic curve. In the following sections we'll define an arithmetic operation on the points of  any  elliptic curve, an  show that this operation is in fact a group operation.
 
 \subsection{Elliptic curve arithmetic}\label{sec:ECA}
 In this section, we show how to do arithmetic on elliptic curves. Specifically, we define an operation (denoted by `+') which acts on two points of an elliptic curve, to give another point on the same curve. 
@@ -332,7 +332,7 @@ It turns out that the sum of the roots is $m^2$ (see Exercise~\ref{exercise:furt
 In part (c) of Example~\ref{example:further_crypt:ec:realplus} we mentioned that $x_1+x_2+x_3=m^2$, where $x_1,x_2,x_3$ are the x-coordinates of three intersections of the a with the EC and $m$ is the slope of the line.  In this exercise, we will prove this.
 \begin{enumerate}[(a)]
 \item
-Substitute the equation for $y$ in (b) into equation E. The resulting equation can be rearranged to form a cubic equation in $x$ of the form: $0 = x^3 + c_2 x^2 + c_1 x + c_0$, where $c_1, c_2, c_3$ depend on the parameters $a,b,m,x_1,x_2$. Find the coefficient $c_2$ in terms of these parameters.
+Substitute the equation for $y$ in (b) of Example~\ref{example:further_crypt:ec:realplus} into equation E. The resulting equation can be rearranged to form a cubic equation in $x$ of the form: $0 = x^3 + c_2 x^2 + c_1 x + c_0$, where $c_0,c_1, c_2$ depend on the parameters $a,b,m,x_1,y_1$. Express the coefficient $c_2$ in terms of these parameters.
 \item
 The cubic equation $0 = x^3 + c_2 x^2 + c_1 x + c_0$ has three roots, so the cubic equation can be factored:  $x^3 + c_2 x^2 + c_1 x + c_0 = (x-x_1)(x-x_2)(x-x_3)$. Use this equality to express $c_2$ in terms of $x_1, x_2, x_3$.
 \item
@@ -384,7 +384,7 @@ If the two points are the same, $P_1 = P_2 = (x_1,y_1)$, then a tangent line to 
 which may be found using implicit differentiation (note that $a$ refers to the coefficient of $x$ in the elliptic curve equation--see Example~\ref{example:further_crypt:ec:realplus}).  See Figure~\ref{fig:DH:DHKE_7} below for a geometrical representation of point doubling.
 
 \begin{exercise}{}
-Derive the equation for $m$ by taking the derivative of E and solving for $\frac{dy}{dx}$. Show your steps.
+Derive the equation for $m$ by taking derivatives of both sides  of equation  E and solving for $\frac{dy}{dx}$. Show your steps.
 \end{exercise}
 
 In the case of point doubling, once $m$ is found the expression for  the $x$ coordinate of the other intersection of the tangent line with the curve is:
@@ -471,15 +471,17 @@ where once again, arithmetic is in $\mathbb{Z}_{17}$:
 		\end{align*}
 Therefore, $2P = (6,3)$.
 \end{example}
+
 \begin{exercise}{P}
-Using the equations from Example~\ref{example:further_crypt:ec:realplus} parts (c) and (d), find the following: $3P, 4P, 5P, ..., 20P.$  Note that $3P = 2P + P,  4P = 3P +P,$ and so on. Note also that arithmetic operations are to be performed in mod 17.  What do you notice about $18P,  19P,$ and $20P?$
+Using the equations from Example~\ref{example:further_crypt:ec:realplus} parts (c) and (d), find the following: $3P, 4P, 5P, ..., 20P$ for the point $P=(5,1)$ that was used in Example~\ref{example:further_crypt:P1+P2}.  Note that $3P = 2P + P,  4P = 3P +P,$ and so on. Note also that arithmetic operations are to be performed in mod 17.  What do you notice about $18P,  19P,$ and $20P?$
 \end{exercise}
-In view of what we have just discussed, let's reconsider the Diffie-Hellman Key Exchange which we described in Section~\ref{sec:DHKE:1}. A little thought should convince you that in that section we made use of cyclic subgroups as well. So using Example \ref{example:further_crypt:P1+P2} and Exercise~\ref{exercise:further_crypt:P}, let's revise the Diffie-Hellman Key Exchange, but this time we'll use the cyclic group associated with the elliptic curve.  Use Figure~\ref{fig:DH:DHKE_8} as a guide to help you answer the following exercise.
+
+In view of what we have just discussed, let's reconsider the Diffie-Hellman key exchange which we described in Section~\ref{sec:DHKE:1}. A little thought should convince you that in that section we made use of cyclic subgroups as well. So using Example \ref{example:further_crypt:P1+P2} and Exercise~\ref{exercise:further_crypt:P}, let's revise the Diffie-Hellman key exchange, but this time we'll use the cyclic group associated with the elliptic curve.  Use Figure~\ref{fig:DH:DHKE_8} as a guide to help you answer the following exercise.
 
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=5in]
 	         {images/DHKE_8.png}}
-	  \caption{\label{fig:DH:DHKE_8} Elliptic Curve Key Exchange between Moses and Rachael }
+	  \caption{\label{fig:DH:DHKE_8} Elliptic Curve key exchange between Moses and Rachael }
 \end{figure}
 
 \begin{exer}
@@ -525,7 +527,7 @@ To see how this works in practice, let's consider a simple example (reader bewar
 	  \caption{\label{fig:DH:DHKE_11} Elliptic Curve, $(y^2 = x^3 + 2x + 9)$ in $Z_{37}$ x $Z_{37}$, (from reference (\ref{Kumar}))}
 \end{figure}
 
-In order to encode letters and numbers, we first need to assign different characters to different points on the curve. The table in Figure~\ref{fig:DH:DHKE_17} gives the character assignment that we'll use. Notice the order of points in the table: we start with (5,25), then the second number $(1,30) =(5,25)+(5,25)$, the third number $(21,32)=(5,25)+(5,25)+(5,25)=3(5,25)$, and so on. This table is public, known to everyone. Note that in the case of a very large modulus, there is no difficulty in assigning a single character to multiple points on the curve, as long as each point has no more than one character assigned to it.
+In order to encode letters and numbers, we first need to assign different characters to different points on the curve. The table in Figure~\ref{fig:DH:DHKE_17} gives the character assignment that we'll use. Notice the order of points in the table: we start with (5,25), then the second number $(1,30) =(5,25)+(5,25)$, the third number $(21,32)=(5,25)+(5,25)+(5,25)=3(5,25)$, and so on. The information required to create this table is public knowledge, so anyone can duplicate it (for a practical code, the table would be much, much larger and impossible to compute even with the fastest computers) . Note that in the case of a very large modulus, there is no difficulty in assigning a single character to multiple points on the curve, as long as each point has no more than one character assigned to it.
 
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=5.25in]
@@ -536,12 +538,12 @@ In order to encode letters and numbers, we first need to assign different charac
 
 \begin{example}{26} Moses will send the message, ``attack" using the code table above. The point $C$ is chosen as $(9,4)$. 
 
-First, Rachael must establish her private and public key (Moses doesn't have to, because he's only sending and not receiving). Rachael chooses $\alpha= 5$, so that $A = 5C = 5(9,4)$. In this simple case, we  may use  the table in Figure~\ref{fig:DH:DHKE_17} to facilitate the calculation of $A$.  Notice that the point $C=(9,4)$ is the $11^{\textrm{th}}$ point in the table (counting $\infty$ as the zeroth point, (5,25) as the first point, (1,30) as the second point, etc). This means that $C = 11(5,25)$, and thus $5C = 5\cdot11(5,25) = 55(5,25)$.  However the point $(5,25)$ generates a cyclic group of order 37, and $\mod(55,37)=18$, so $55(5,25)=18(5,25)$.  The $18^{\textrm{th}}$ entry in the table is (31,15), which is Rachael's public key $A$.
+First, Rachael must establish her private and public key (Moses doesn't have to, because he's only sending and not receiving). Rachael chooses $\alpha= 5$, so that $A = 5C = 5(9,4)$. In this simple case, we  may use  the table in Figure~\ref{fig:DH:DHKE_17} to facilitate the calculation of $A$.  Notice that the point $C=(9,4)$ is the $11^{\textrm{th}}$ point in the table (counting $\infty$ as the zeroth point, (5,25) as the first point, (1,30) as the second point, etc). This means that $C = 11(5,25)$, and thus $5C = 5\cdot11(5,25) = 55(5,25)$.  However the point $(5,25)$ generates a cyclic group of order 37, and $\mod(55,37)=18$, so $55(5,25)=18(5,25)$.  The $18^{\textrm{th}}$ entry in the table is (35,21), which is Rachael's public key $A$.
 
 Now Moses must encrypt his message one character at a time. The first character of ``attack'' is ``a'', which according to the table corresponds to $M=(5,25)$.  Let's suppose that Moses chooses $\gamma = 8$ for this character. We thus obtain:
 \[
 E_1=\gamma C = 8(9,4)=(33,14)  \text{   and   } 
-E_2 = M +  \gamma A=(5,25) + 8(31,15) = (15,11). 
+E_2 = M +  \gamma A=(5,25) + 8(35,21) = (15,11). 
 \]
 
 Thus Moses should send the pair of points $(33,14)$ and $(15,11)$ to Rachael. Since $(33,14)$ and $(15,11)$ are the $18^{\textrm{th}}$ and $34^{\textrm{th}}$ entries of the table respectively, it's easier for him simply to send the numbers 18 and 34, because Rachael can easily recover the points from these numbers.
@@ -564,6 +566,11 @@ To encode t, t, a, c, k Moses chooses $\gamma = 12,19,2,3,23$ respectively.
 \end{exercise}
 
 \end{example}
+
+\begin{exercise}{}
+There is a serious drawback with the above encryption scheme. Another person could easily impersonate Moses, and send a message to Rachael. Come up with a strategy whereby Moses and Rachael can ensure that the messages actually come from each other, and not from someone else 
+\end{exercise}
+% When Moses receives a message from Rachel, when he decrypts the message he can re-encrypt part of it and send it back to Rachel.  Rachel can verify that it's Moses because it agrees with the original. 
 
 \subsection{Next steps}
 The examples we've given show the basic idea of ECC, but genuinely practical ECC systems are somewhat more complicated. Notice the progression from Section~\ref{sec:ECA} to \label{sec:ECA2}. We first introduced elliptic curves as solution sets in $\mathbb{R}^2$ for a certain type of polynomial equation. But we then remarked that unfortunately these curves are not suitable for practical cryptography, because computers have trouble with real numbers. So in the next section we looked at elliptic curves that are subsets of $\mathbb{Z}_p \times \mathbb{Z}_p$ where $p$ is a prime, as in Figure~\ref{fig:DH:DHKE_11}. But there are disadvantages to $\mathbb{Z}_p$ as well: finding enormous primes is not all that easy. It turns out there is yet another alternative for sets for elliptic curves to live in:  these sets are called \term{Galois Fields}. Galois fields are derived from polynomials, where the polynomials have coefficients in $\mathbb{Z}_p$ (in practice, usually $p=2$).  Since we haven't really looked into polynomials yet, we're not quite ready to dive into this aspect of ECC just yet.  So, you have something to look forward to! 

@@ -24,6 +24,10 @@
 \usepackage{dialogue}
 \usepackage{hhline}
 
+%% CT added 
+\usepackage{chngcntr} 
+\counterwithin{figure}{section}
+
 \usepackage{tikz}
 \newcommand{\tikzpreface}[1]{\relax}
 
@@ -326,7 +330,6 @@ ISBN:  978-0-359-04211-1
 \include{crypt}
 \input{crypt_hints}
 \include{crypt_study_guide}
-\include{equivalencerelations_study_guide}
 \include{summation_notation}
 \input{summation_notation_hints}
 \include{summation_notation_study_guide}
@@ -348,12 +351,12 @@ ISBN:  978-0-359-04211-1
 \input{algcodes_hints}
 \include{isomorph}
 \input{isomorph_hints}
+\include{PolyVec}
+\input{polyvec_hints}
 \include{homomorph}
 \input{homomorph_hints}
 \include{actions}
 \input{actions_hints}
-%\include{PolyVec}
-%\input{polyvec_hints}
 %\include{poly_codes}
 \include{induction_appendix}
 

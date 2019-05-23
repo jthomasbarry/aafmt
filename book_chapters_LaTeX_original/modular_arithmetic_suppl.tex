@@ -1,51 +1,326 @@
 \section{Solutions for ``Modular Arithmetic''}
 \noindent \textbf{\textit{ (Chapter \ref{modular})}}\bigskip
 
-\noindent\textbf{Exercise \ref{exercise:modular:racetrack_displacements}:}\\
-a. Net displacement $=346-432+99=13$.\\
-b. Net displacement $=44+13.53=733$.\\
-\\
-\textbf{Exercise \ref{exercise:modular:racetrack_positions}:}\\
-a. Position: mod(13,5)=3.\\
-   Position: mod(733,5)=3.\\
-b. Both cases have the same position.\\
-\\
-\textbf{Exercise \ref{exercise:modular:equivdef}:}\\
-by m, of b, by m, $r>s$, $a=pm+r$, $b=qm+s$, $a-b=(p-q)m+(r-s)$, between 0 and m, $r-s>0$, $r-s<m$, between 0 and m, by m.\\
-\\
-\textbf{Exercise \ref{exercise:modular:eqproof}:}\\
-$a \equiv b$ (mod n) $\rightarrow n|(a-b)$ (Prop.\ref{proposition:modular:equivalence_alt})\\
-$b \equiv c$ (mod n) $\rightarrow n|(b-c)$\\
-$\rightarrow a-b=kn$ and $ b-c=ln$ (k,l are integers).\\
-$\rightarrow a-c=(k+l)n \rightarrow n|(a-c) \implies a \equiv c$ (mod n).\\
-\\
-\textbf{Exercise \ref{exercise:modular:jan25}:}\\
-a. 3 mod 7 = 3 and 25 mod 7 = 4 $\implies$  Jan 3 is not Thursday.\\
-b. 7 doesn't divide $(31 - 25) \implies 31 \not\equiv 25$ (mod 7). So Jan 31 is not a Thursday.\\
-\\
-\textbf{Exercise \ref{exercise:modular:22}:}\\
-c. $101 \equiv 29$ (mod 6): True\\
-e. True\\
-f. False. Can change it to $1476532 \equiv -71832772$ (mod 10)\\
-\\
-\textbf{Exercise \ref{exercise:modular:27}:}\\
-$b \le n$, $-b \ge -n$, $a-b \ge -n$, $a \le n$ and $b \ge 0$, $-b \le 0$, $a-b \le n$\\
-a - b is between -n and n, a-b is a multiple of n, n between -n and n is 0, a - b = 0, a = b\\
-\\
-\textbf{Exercise \ref{exercise:modular:28}:}\\
-Example 3: Thursday (total 113 days from Dec 24, 2011 to Apr 15, 2012 and 113 mod 7 = 1).\\
-Example 4: Feb 14, 2010 is Chinese New Year day. Feb 14, 2011 is 365 days after that.\\
+%section 3.1
+%\noindent\textbf{Exercise \ref{exercise:modular:}:}\\ 3.1.8 unnamed
+
+%\noindent\textbf{Exercise \ref{exercise:modular:modulus0}:}\\
+
+%\noindent\textbf{Exercise \ref{exercise:modular:modulus1}:}\\
+
+%section 3.2
+\noindent\textbf{Exercise \ref{exercise:modular:racetrack_displacements}:}
+%Compute the net displacement for the following multi-stage trips:
+\begin{enumerate}[(a)]
+\item
+%346 miles in the forward direction, then 432 miles in the backward direction, then 99 miles in the forward direction.
+Net displacement $=346-432+99=13$.
+
+\item 
+%A forward displacements of 44 miles, followed by 13 additional forward displacements of 53 miles (one after the other).
+Net displacement $=44+13.53=733$
+
+\item 
+%Repeat the following sequence 25 times: a forward displacement  of 17 miles, followed by a backward displacement of 9 miles, followed by a forward displacement of 22 miles.
+
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:racetrack_positions}:}
+\begin{enumerate}[(a)]
+\item
+%Compute the positions on the racetrack corresponding to each of the net displacements that you computed in Exercise~\ref{exercise:modular:racetrack_displacements}.
+Position: mod(13,5)=3\\
+Position: mod(733,5)=3
+
+\item
+%How are your answers in (a) related to the corresponding answers in Exercise~\ref{exercise:modular:racetrack_displacements}?
+Both cases have the same position
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:27}:} %KW noted, hidden until can come back
+%%This problem changed, the answer below does not fit the proof written.OLD answers: $b \le n$, $-b \ge -n$, $a-b \ge -n$, $a \le n$ and $b \ge 0$, $-b \le 0$, $a-b \le n$\\ a - b is between -n and n, a-b is a multiple of n, n between -n and n is 0, a - b = 0, a = b\\
+
+%Fill in the blanks in the following proof that the remainder is always unique.
+\begin{multicols}{4}
+\begin{enumerate}
+\item
+\noindent
+%We'll give a proof by contradiction. Suppose that $a$ has two different remainders when divided by $m$.  Let's call these two different remainders $r$ and $s$, where $r$ and $s$ are both between 0 and $\underline{~<1>~}$ and $r \neq s$.
+$m-1$
+\item
+%It follows that $a = q \cdot m + r$ and $a = p \cdot m + \underline{~<2>~}$, where $q$ and  $p$ are 
+$s$
+\item
+%$\underline{~<3>~}$. Setting these two expressions equal and rearranging enables us to obtain an expression for $r-s$, namely:
+integers
+\item
+%$r - s = (\underline{~<4>~})\cdot m$. Thus $r-s$ is an integer multiple of 
+$p-q$
+\item
+%$\underline{~<5>~}$.
+$m$
+\item
+%On the other hand, we  know that $r \ge 0$ and $s \le \underline{~<6>~}$, 
+$m-1$
+\item
+%so by arithmetic we obtain $r - s \ge \underline{~<7>~}$.
+$1-m$
+\item
+%Furthermore, $r \le \underline{~<8>~}$ and 
+$m-1$
+\item
+%$s \ge \underline{~<9>~}$, so 
+$0$
+\item
+%$r - s \le \underline{~<10>~}$. Combining these two results, we find that $r-s$ is an integer between
+$m-1$
+\item
+% $\underline{~<11>~}$ and 
+$1-m$
+\item
+%$\underline{~<12>~}$.
+$m-1$
+\item
+%Now, the only integer multiple of $m$ between $\underline{~<13>~}$ and 
+$1-m$
+\item
+%$\underline{~<14>~}$ is  
+$m-1$
+\item
+%$\underline{~<15>~}$.  It follows that 
+$0$
+\item
+%$r - s = \underline{~<16>~}$, or 
+$0$
+\item
+%$r = \underline{~<17>~}$. But this contradicts our supposition that 
+$s$
+\item
+%$\underline{~<18>~}$. So our supposition cannot be true: and $a$ cannot have 
+$r \neq s$
+\item
+two different remainders.
+%$\underline{~<19>~}$.
+%Thus the remainder when $a$ is divided by $m$ is unique, and the proof is complete.
+\end{enumerate}
+\end{multicols}
+
+\noindent\textbf{Exercise \ref{exercise:modular:equivdef}:} %KW made some changes, because online book different than .tex
+%Finish the proof of the contrapositive by filling in the blanks:
+\begin{multicols}{4}
+\begin{enumerate}
+%Suppose $a \not\equiv b \pmod{m}$. Let $r$ be the remainder of $a$ when divided by 
+\item
+%$\underline{~<1>~}$, and let $s$ be  the remainder of
+m
+
+\item
+%$\underline{~<2>~}$ when divided by
+b
+
+\item
+%$\underline{~<3>~}$. Since the remainders are unequal, it follows that one must be bigger than the other: let us choose $a$ to be the number with the larger remainder, so that $r > 
+m
+
+\item
+%\underline{~<4>~}$. By the definition of remainder, we may write $a = p\cdot m + 
+s
+
+\item
+%\underline{~<5>~}$, and we may also write $b = q\cdot
+r
+
+\item
+%\underline{~<6>~} + 
+m
+
+\item
+%\underline{~<7>~}$. Then by basic algebra, $a - b = (p-q)\cdot
+s
+
+\item
+%\underline{~<8>~} + (r - 
+m
+
+\item
+%\underline{~<9>~})$. 
+s
+
+\item
+%We want to show that $r-s$ is the remainder of $a-b$ when divided by $m$. To do this, we need to show that $r-s$ is between 0 and $\underline{~<10>~}$. Since $r>s$ it follows that $r-s >
+m - 1
+
+\item
+%\underline{~<11>~}$. Furthermore, Since $r < m$ and $s \ge 0$, it follows that $r - s <
+0
+
+\item
+%\underline{~<12>~}$.  So we have shown that $r-s$ is between
+m
+
+\item
+%$\underline{~<13>~}$ and
+0
+
+\item
+%$\underline{~<14>~}$, so by Proposition
+m - 1
+
+\item
+%$\underline{~<15>~}$ it follows that $r-s$ is the remainder of $a-b$ when divided by $m$. However, $r-s > 0$, which means that $a-b$ is not divisible by 
+Prop. \ref{proposition:modular:remThm} 
+
+\item
+%$\underline{~<16>~}$. This is exactly what we needed to prove, so the proof is complete. 
+m
+\end{enumerate}
+\end{multicols}
+
+\noindent\textbf{Exercise \ref{exercise:modular:eqproof}:}\\ %KW updated
+%Prove Proposition~\ref{proposition:modular:equivalence_transitive}. 
+Prove Proposition \ref{proposition:modular:equivalence_transitive}:
+\begin{enumerate}
+\item 
+(Showing $a \equiv c \pmod{n}$)\\
+By Proposition \ref{proposition:modular:equivalence_alt}, if $a \equiv b \pmod{n}$ and $c \equiv b \pmod{n}$, then $a = b + mk$ and $c = b + ml \implies b = c + m(-l)$ for some integers $k$ and $l$.
+		\begin{align*}
+		a&= (c + m(-l)) + mk &\text{(by substitution of b)}\\
+		&= c + m(k-l) &\text{(by basic algebra)}
+		\end{align*}
+$\therefore a \equiv c \pmod{m}$, by the definition of congruence $\pmod{m}$
+            
+\item
+(Showing $c \equiv a \pmod{n}$)\\
+Since $(i)$ showed that $a \equiv c \pmod{n}$, then for some k:
+		\begin{align*}
+		a&= c + mk &\text{(by Proposition \ref{proposition:modular:equivalence_alt})}\\
+		c&= a - mk &\text{(by~ basic algebra)}\\
+		&= a + m(-k) &\text{(by basic arithmetic)}
+		\end{align*}
+$\therefore c \equiv a \pmod{m}$, by the definition of congruence $\pmod{m}$\\
+            
+\item
+(Showing $b \equiv a \pmod{n}$)\\
+We are given that $a \equiv b \pmod{m}$, therefore, for some integer $k$,
+		\begin{align*}
+		a&= b + km &\text{(by Proposition \ref{proposition:modular:equivalence_alt})}\\
+		b&= a - mk &\text{(by basic algebra)}\\
+		&= a + m(-k) &\text{(by basic arithmetic)}
+		\end{align*}
+$\therefore b \equiv a \pmod{m}$, by the definition of congruence $\pmod{m}$\\
+            
+\item
+(Showing $b \equiv c \pmod{n}$)\\
+We are given that $c \equiv b \pmod{m}$, therefore, for some integer $k$,
+		\begin{align*}
+		c&= b + km &\text{(by Proposition \ref{proposition:modular:equivalence_alt})}\\
+		b&= c - mk &\text{(by basic algebra)}\\
+		&= c + m(-k) &\text{(by basic arithmetic)}
+		\end{align*}
+$\therefore b \equiv c \pmod{m}$, by the definition of congruence $\pmod{m}$\\
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:jan25}:} %KW update
+%Suppose January 25 is a Thursday. 
+\begin{enumerate}[(a)]
+\item
+%Use Definition~\ref{definition:modular:equivalence} to determine whether January 3 is a Thursday. Show your reasoning.
+$3\pmod{7} = 3$ and $25\pmod{7} = 4 \implies$ Jan 3 is not Thursday, it is a Wednesday.
+
+\item
+%Use Proposition~\ref{proposition:modular:equivalence_alt} to determine whether January 31 is a Thursday. Show your reasoning.
+$25\pmod{7} = 4$ and $31\pmod{7} = 3 \implies$ Jan 31 is not a Thursday, it is a Wednesday.
+
+\item
+%Find the nearest Thursday to January 15. Show your reasoning.
+$15\pmod{7} = 1$, so Jan 15 is a Monday.\\
+We know that 3 more days will make it a Thursday, so $18\pmod{7} = 4$.\\
+We know that 4 days prior to the 15th is also a Thursday, so $11\pmod{7} = 4$.\\
+Jan 18 is closer to Jan 15 than Jan 11.
+
+\item
+%Find the nearest Thursday to April 18. Show your reasoning.  (Note: the year is not a leap year.)
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:22}:}
+%Determine whether or not the following equivalences are true. Explain your reasoning. If the equivalence is not true, change one of the numbers to make it true.
+\begin{enumerate}[(a)]
+\item
+%$71 \equiv 13 \pmod{4}$
+ 
+ \item
+%$-23 \equiv 13 \pmod{6}$
+
+\item
+%$101 \equiv 29 \pmod{6}$
+$101 \equiv 29$ (mod 6): True
+
+\item
+%$50 \equiv 13 \pmod{7}$
+
+\item
+%$654321 \equiv 123456  \pmod{5}$
+True
+
+\item
+%$1476532 \equiv -71832778  \pmod{10}$
+False, $1476532 \equiv -71832772$ (mod 10)
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:28}:}
+%Now you're ready! Give answers for the seven examples at the beginning of this chapter.
+\begin{enumerate}
+\item
+
+\item
+
+\item
+%April 15, 2012 was on a Friday. What day of the week was December 24 of 2011? (Note 2012 is a leap year!)   
+Thursday (total 113 days from Dec 24, 2011 to Apr 15, 2012 and 113 mod 7 = 1).
+
+\item
+%A lunar year is 354 days. If Chinese New Year is determined according to the lunar year, and Chinese New Year is February 14 in 2010, then when is Chinese New Year in 2011? In 2012? In 2009? 
 365 mod 354 = 11 so Chinese New Year in 2011 is Feb 3.\\
 Chinese New Year in 2012 is Jan 23 (354 days after Feb 3).\\
 In 2009, Chinese New Year is Feb 25.\\
-\\
-\textbf{Exercise \ref{exercise:modular:UPCSymbols}:}\\
-a. It's a valid UPC because $30 \equiv 0$ (mod 10).\\
-b. Total sum is $33 \not\equiv 0$ (mod 10).\\
-d. Transposition will be detected because the sum is $24 \not\equiv 0$ (mod 10).\\
-Transposition error that can't be detected is 005000300426.\\
-e. Error is detectable.\\
-f. Suppose one code has the following digits: $d_1,d_2,d_3,...,d_{10}$ and the other code has the following digits: $e_1,e_2,e_3,...,e_{10}$ are both valid and suppose that the corresponding digits at each position are equal except for the $n^{th}$ digit $\implies d_n \neq e_n$ with $1 \le n \le 10$.\\
+
+\item
+
+\item
+
+\item
+\end{enumerate}
+
+%section 3.3
+\noindent\textbf{Exercise \ref{exercise:modular:UPCSymbols}:} %KW updated
+%\index{Code!UPC} symbols are now found on mostproducts in grocery and retail stores. The UPC symbol (see Figure~\ref{groups_figure_3}) is a 12-digit code which identifies the manufacturer of a product and the product itself. The first 11 digits contain the information, while the twelfth digit is used to check for errors that may occur while scanning. If $d_1 d_2 \cdots d_{12}$ is a valid UPC code, then \[ 3 \cdot d_1 + 1 \cdot d_2 + 3 \cdot d_3 + \cdots + 3 \cdot d_{11} + 1 \cdot d_{12} \equiv 0 \pmod{10}. \]
+%So the scanning device that cashiers use reads the code and adds up the numbers mod 10. If they don't add to zero, then the device knows it hasn't scanned properly. 
+\begin{enumerate}[(a)]
+\item
+%Show that the UPC number  0-50000-30042-6, which appears in Figure~\ref{groups_figure_3}, is a valid UPC number. 
+It's a valid UPC because $30 \equiv 0$ (mod 10).
+  
+\item
+%Show that the number 0-50000-30043-6 is not a valid UPC number.
+Total sum is $33 \not\equiv 0$ (mod 10).
+
+\item% (\emph{for geeks}) 
+%Write a program or Excel spreadsheet that will determine whether or not a UPC number is valid. 
+
+\item
+%One common scanning error occurs when two consecutive digits are accidentally interchanged. This is called a \term{transposition error}.\index{Transposition!error} 
+%The  UPC error detection scheme can catch most transposition errors.  Using the UPC in (a) as the correct UPC, show that the transposition error 0-50003-00042-6 is detected.  Find a transposition error that is not detected. 
+Transposition will be detected because the sum is $24 \not\equiv 0$ (mod 10).\\
+Transposition error that can't be detected is 005000300426.
+%KW need to clarify this problem:  How many transpositions are they allowed to do?  If only 1 then even the answer above is incorrect.  It would be 050030000426.
+
+\item
+% Using the UPC in (a) as the correct UPC, show that the single-digit error 0-50003-30042-6 is detected.  
+Error is detectable.
+
+\item
+%**Prove that the UPC error detection scheme detects all single digit errors. 
+Suppose one code has the following digits: $d_1,d_2,d_3,...,d_{10}$ and the other code has the following digits: $e_1,e_2,e_3,...,e_{10}$ are both valid and suppose that the corresponding digits at each position are equal except for the $n^{th}$ digit $\implies d_n \neq e_n$ with $1 \le n \le 10$.\\
 If n is even:\\
 $(sum + d_n) \equiv (sum + e_n)$ (mod 10)\\
 $\implies d_n \equiv e_n$ (mod 10) because $d_n, e_n \le 9$\\
@@ -57,87 +332,319 @@ $\implies 10|(sum+3d_n-sum-3e_n)$\\
 $\implies 10|3(d_n-e_n)$\\
 Since $d_n-e_n \le 10$, the only solution to make 10 divides $3(d_n-e_n)$ is $3(d_n-e_n)=0 \implies d_n=e_n$.\\
 It also contradicts to the original supposition.\\
-Therefore UPC error detection scheme detects all single digit errors.\\
-\\
-\textbf{Exercise \ref{exercise:modular:ISBNCodes}:}\\
-a. $3(1)+5(2)+4(3)+0(4)+9(5)+6(6)+0(7)+3(8)+5(9)+10(10) \equiv 0 \pmod{11}$\\
-$\implies 275 \equiv 0 \pmod{11}$\\
-c. The first 9 digits are arbitrary, and uniquely determine the 10th digit. So, $10^9$.\\
-\\
-\textbf{Exercise \ref{exercise:modular:mod_eq_1}:}\\
-b. $25+x \equiv 6 \pmod{12}$\\
+Therefore UPC error detection scheme detects all single digit errors.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:ISBNCodes}:}
+%Every book has an \emph{International Standard Book Number}\index{Code!ISBN} (ISBN-10) code\index{Error detection codes!ISBN}.  This is a 10-digit code indicating the book's language, publisher and title. The first digit indicates the language of the book; the next three identify the publisher; the next five denote the title; and the tenth digit is a check digit satisfying 
+%\[
+%(d_1, d_2, \ldots, d_{10} ) \cdot (1, 2, \ldots, 10 )  \equiv 0 \pmod{11}.
+%\]
+%ISBN-10 codes are nice in that all single-digit errors and most transposition errors can be detected.  One complication  is that $d_{10}$ might have to be a 10 to make the inner product zero; in this case, the character `X' is used in the last place to represent 10.
+\begin{enumerate}[(a)]
+\item
+%Show that 3-540-96035-X is a valid ISBN-10 code. 
+$3(1)+5(2)+4(3)+0(4)+9(5)+6(6)+0(7)+3(8)+5(9)+10(10) \equiv 0 \pmod{11}$\\
+$\implies 275 \equiv 0 \pmod{11}$
+
+\item
+%Is  0-534-91500-0 a valid ISBN-10 code?  What about 0-534-91700-0 and 0-534-19500-0? 
+ 
+ \item
+%How many different possible valid ISBN-10 codes are there?
+The first 9 digits are arbitrary, and uniquely determine the 10th digit. So, $10^9$.
+
+\item
+%Write a formula of the form $d_{10} \equiv \ldots \pmod{\ldots}$  to calculate the check digit in an ISBN-10 code. 
+
+\item
+%*Prove that any valid ISBN-10 code also satisfies:
+%\[
+%(d_1, d_2, \ldots, d_{10} ) \cdot (10, 9, \ldots, 1 )  \equiv 0 \pmod{11}.
+%\]
+
+\item
+%* Prove that if  $(d_1, d_2, \ldots,d_9,  d_{10} )$ is a valid ISBN-10 code, then $(d_{10}, d_9, \ldots, d_2, d_1 )$  is also a valid ISBN-10 code (as long as $d_{10}$ is not equal to X).
+  
+ \item
+%(\emph{for geeks}) Write a computer program or Excel spreadsheet that calculates the check digit for the first nine digits of an ISBN code. 
+ 
+ \item
+%A publisher has houses in Germany and the United States.  Its German prefix is 3-540.  Its United States prefix will be 0-{\it abc}.  Find four possibilities for {\it abc} such that the rest of the ISBN code will be the same for a book printed in Germany and in the United States.  
+
+\item
+%**Prove that the ISBN-10 code detects all single digit errors.
+
+\item
+%**Prove that the ISBN-10 code detects all transposition errors. 
+
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:check_digit}:}
+
+\noindent\textbf{Exercise \ref{exercise:modular:mod_eq_1}:}
+%Find all $x \in {\mathbb Z}$ satisfying each of the following equations.
+\begin{enumerate}[(a)]
+\item
+%$5 + x \equiv 1 \pmod{ 3}$
+
+\item
+%$25 + x \equiv 6 \pmod{ 12}$
+$25+x \equiv 6 \pmod{12}$\\
 $1+x \equiv 6 \pmod{12}$\\
 $x= 12k+6-1$\\
-$x=5+12k$\\
-\\
-\textbf{Exercise \ref{exercise:modular:mod_eq_2}:}\\
-g. $x=-1+7k$\\
-i. $5x+1 \equiv 13 \pmod{26}$\\
-$x= \displaystyle\frac{26k+12}{5}$\\
-Let $k=3+5n$\\
-$x=18+6n$\\
-h. $5x+1 \equiv 13 \pmod{23}$\\
+$x=5+12k$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:mod_eq_2}:}
+%Find all $x \in {\mathbb Z}$ satisfying each of the following equations. (If there's no solution, then you can say ``no solution''-- but show why!)
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item
+%$9x \equiv 3 \pmod{ 5}$
+\item
+%$5x \equiv 1 \pmod{ 6}$
+\item
+%$7x \equiv 9 \pmod{ 13}$
+\item
+%$8x \equiv 4 \pmod{ 12}$
+\item
+%$11x \equiv 2 \pmod{ 6}$
+\item
+%$27x \equiv 2 \pmod{ 9}$
+\item
+%$3 + x \equiv 2 \pmod{ 7}$
+$x=-1+7k$
+
+\item
+%$5x + 1 \equiv 13 \pmod{ 23}$
+$5x+1 \equiv 13 \pmod{23}$\\
 $x= \displaystyle\frac{23k+12}{5}$\\
 Let $k=1+5n$\\
-$x=7+23n$\\
-\\
-\textbf{Exercise \ref{exercise:modular:44}:}\\
-a. Since $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$\\
-then $a=b+sn$ and $c=d+tn$\\
-$\implies a.c =(b+sn)(d+tn)=bd+n(bt+sd+stn)$\\
-By definition of $\odot$: $b \odot d \pmod{n} \to$ there is some integer q such that $bd=(b \odot d) +qn$\\
-So we have: $ac=(b \odot d)+qn+n(bt+sd+stn)=b \odot d + n(q+bt+sd+stn)$\\
-$\implies ac \equiv b \odot d \pmod{n}$\\
-b. $x \ominus y=r iff x-y=r+sn$ and $r \in Z_n$\\
-c. We have $a=b+sn$ and $c=d+tn$\\
+$x=7+23n$
+
+\item
+%$5x + 1 \equiv 13 \pmod{ 26}$
+$5x+1 \equiv 13 \pmod{26}$\\
+$x= \displaystyle\frac{26k+12}{5}$\\
+Let $k=3+5n$\\
+$x=18+6n$
+
+\item
+%$3x + 2 \equiv 1 \pmod{ 6}$  
+\end{enumerate}
+\end{multicols}
+
+\noindent\textbf{Exercise \ref{exercise:modular:modeq3}:}
+
+%\noindent{Exercise \ref{exercise:modular: }:} 3.3.12 unnamed
+
+%section 3.4
+\noindent\textbf{Exercise \ref{exercise:modular:44}:} %KW updated a
+\begin{enumerate}[(a)]
+\item
+%Prove part (b) of Proposition~\ref{proposition:modular:number_remainder}.
+Proof:\\
+Since $\ell \equiv a\pmod{n}$ and $m \equiv b\pmod{n}$ then,
+\begin{align*}
+\ell &= a + sn \text{\ and\ } m = b + tn &\text{(definition of modular equivalence)}\\ 
+\therefore \ell \cdot m &= a \cdot b + atn + bsn +stn^{2} &\text{(subs. and basic algebra)}
+\end{align*}
+Now by definition of $\odot, \exists$ a $p\in {\mathbb{Z}}$ such that $a\cdot b = a\odot b + pn$; 
+\begin{align*}
+\therefore \ell \cdot m &= (a\odot b + pn) + atn + bs + stn^{2}& \\
+&= a\odot b  + (p + at + bs + stn)n &\text{(subs. and basic algebra)}
+\end{align*}
+Hence, by the definition of modular equivalence, by Proposition~\ref{proposition:modular:remThm} since $\ell \cdot m \in {\mathbb{Z}}$\\
+\begin{align*} 
+\ell \cdot m &\equiv a \odot b\pmod{n}.\\
+\therefore \bmod(l\cdot m, n) &= a\odot b.
+\end{align*}
+
+\item
+%Come up with a definition for modular subtraction (use the symbol $\ominus$).
+$x \ominus y=r iff x-y=r+sn$ and $r \in Z_n$
+
+\item
+%Using your definition, prove the following:
+%Given $\ell,m \in {\mathbb Z}$. If $a =\bmod(\ell,n)$ and $b=\bmod(m,n)$, then  $\bmod(\ell - m,n) = a\ominus b $.
+We have $a=b+sn$ and $c=d+tn$\\
 $\implies a-c=b+sn-d-tn=b-d+n(s-t)$\\
 By definition of $\ominus$: $b \ominus d \pmod{n} \to$ there is some integer k such that $b-d=b \ominus d +kn$\\
-Therefore $a-c=b \ominus d +n(k+s-t) \implies a-c=b \ominus d \pmod{n}$\\
-\\
-\textbf{Exercise \ref{exercise:modular:ops}:}\\
-a. $a+c \equiv b \oplus d \pmod{n}$ (Prop. 43)\\
+Therefore $a-c=b \ominus d +n(k+s-t) \implies a-c=b \ominus d \pmod{n}$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:diagram}:} 
+
+\noindent\textbf{Exercise \ref{exercise:modular:ModPower}:} 
+
+\noindent\textbf{Exercise \ref{exercise:modular:ops}:} %KW updated
+%Given $\ell,m,p \in {\mathbb Z}$ and $a=\bmod(\ell,n), b=\bmod(m,n),$ and $c=\bmod(p,n)$.  Show the  following equivalences using Proposition~\ref{proposition:modular:number_remainder}.
+\begin{enumerate}[(a)]
+\item
+%$\bmod( (\ell +m) + p,n) = (a \oplus b) \oplus c$.\qquad
+%\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
+$a+c \equiv b \oplus d \pmod{n}$ (Prop. 43)\\
 Let call $a+c=k$ and $b \oplus d=r$\\
 $\implies (a+c)+e=k+e$\\
 $\implies (a+c)+e \equiv r \oplus f \pmod{n}$ (Prop. 43)\\
-$\implies (a+c)+e \equiv (b \oplus d) \oplus f \pmod{n}$\\
-b. $ac \equiv b \odot d \pmod{n}$ (Prop. 43)\\
+$\implies (a+c)+e \equiv (b \oplus d) \oplus f \pmod{n}$
+
+\item
+%$\bmod( (\ell + (m + p),n) = a \oplus (b \oplus c)$.
+$ac \equiv b \odot d \pmod{n}$ (Prop. 43)\\
 Let $ac=k$ and $b \odot d =r$\\
 $\implies k \equiv r \pmod{n}$\\
 $\implies k+e \equiv r \oplus f \pmod{n}$ (Prop. 43)\\
-$\implies ac+e \equiv (b \odot d) \oplus f \pmod{n}$\\
-c. $a+c \equiv b \oplus d \pmod{n}$ (Prop. 43)\\
-Let $a+c=k$ and $b \oplus d =r$\\
-$k \equiv r \pmod{n}$\\
-$ke \equiv r \odot f \pmod{n}$ (Prop. 43)\\
-$\implies (a+c)e \equiv (b \oplus d) \odot f \pmod{n}$\\
-\\
+$\implies ac+e \equiv (b \odot d) \oplus f \pmod{n}$
 
-\textbf{Exercise \ref{exercise:modular:prove}:}\\
-b. $(5 \cdot 9)+7 \equiv (5 \cdot 9)+6 \pmod{10}$\\
-$\implies 2 \not\equiv 1 \pmod{10}$\\
+\item
+%$\bmod( (\ell \cdot m) \cdot p,n) = (a \odot b) \odot c .$
+Since $\ell, m, p \in {\mathbb Z}$ and $a = \bmod(\ell,n), b = \bmod(m,n)$, and $c = \bmod(p,n)$ then,
+\begin{align*}
+\bmod(\ell \cdot m, n) &= \bmod(\ell, n) \odot \bmod(m,n) &\text{(Prop.~\ref{proposition:modular:number_remainder})}\\
+\bmod(\ell \cdot m, n) &= a \odot b &\text{(substitution)}\\
+\bmod((\ell \cdot m)\cdot p, n) &= \bmod(\ell, n) \odot \bmod(m,n) \odot \bmod(p,n) &\text{(Prop.~\ref{proposition:modular:number_remainder})}\\
+\bmod((\ell \cdot m)\cdot p, n) &=  (a \odot b) \odot \bmod(p,n) &\text{(substitution)}\\
+\bmod((\ell \cdot m)\cdot p, n) &=  (a \odot b) \odot c &\text{(substitution)}
+\end{align*}
 
-\textbf{Exercise \ref{exercise:modular:49}:}\\
-a. $\equiv 1 \pmod{5}$\\
-b. $\equiv 2 \pmod{5}$\\
-c. $\equiv 1 \pmod{5}$\\
-d. $\equiv 0 \pmod{5}$\\
+\item
+%$ \bmod((\ell \cdot m) + p,n) = (a \odot b) \oplus c . $
+\item
+%$ \bmod((\ell + m) \cdot p,n) = (a \oplus b) \odot c. $
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:number_remainder}:}\\ %KW updated using 3.4.4 (as well as Adam's)
+%Use  Proposition~\ref{proposition:modular:number_remainder} twice and the first definition of modular equivalence to prove the following propostions.  (It is also possible to prove these propositions directly from the definitions, but the point of this exercise is to look at the proof from a different perspective.)
+\textbf{Proposition:} Given $\ell, m, x, y \in {\mathbb Z}$ where $\ell \equiv x\pmod{n}$ and $m \equiv y \pmod{n}$ then:\\
+\begin{enumerate}[(a)]
+\item 
+\begin{align*} 
+\ell + m &\equiv x + y\pmod{n}\\
+\ell = x + sn \text{\ and\ } m &= y + tn  &\text{(definition of modular equivalence)}\\
+\ell + m &= x + y + sn + tn &\text{(basic algebra/arithmetic)}\\
+&=(x + y) + (s + t)n &\text{(basic algrebra)}
+\end{align*}
+$\therefore\ $ by definition of modular equivalence $\ell + m \equiv x + y \pmod{n}$\\
 \\
-\textbf{Exercise \ref{exercise:modular:52}:}\\
+ALTERNATIVE USING 3.4.4
+\begin{align*} 
+\ell + m &\equiv x + y\pmod{n} &\text{(given)}\\
+\ell + m \pmod{n} &= x + y\pmod{n}  &\text{(definition of modular equivalence)}\\
+&= \bmod(x + y, n)  &\text{(change form)}\\
+&= a \oplus b &\text{(Proposition~\ref{proposition:modular:number_remainder})}\\
+\text{where\ } a = x\pmod{n} &\text{\ and\ } b = y\pmod{n}\\
+&= \ell \oplus m &\text{(substituting given)}\\
+&= \bmod(\ell + m, n) &\text{(Proposition~\ref{proposition:modular:number_remainder})}\\
+&= \ell + m\pmod{n} &\text{(change form)}
+\end{align*}
+$\therefore\ $ since the RHS and LHS sides are equal the proposition has been shown to be true.
+
+\item 
+\begin{align*}
+\ell \cdot m &\equiv x \cdot y \pmod{n}\\
+\ell = x + sn &\text{\ and\ } m = y + tn  &\text{(definition of modular equivalence)}\\
+\ell \cdot m &= x\cdot y + txn + syn + stn^{2} &\text{(basic algebra/arithmetic)}\\
+&=x\cdot y + (tx+sy+stn)n &\text{(basic algrebra)}
+\end{align*}
+$\therefore\ $ by definition of modular equivalence $\ell\cdot m \equiv x\cdot y \pmod{n}$\\
+\\
+ALTERNATIVE USING 3.4.4
+\begin{align*} 
+\ell \cdot m &\equiv x \cdot y\pmod{n} &\text{(given)}\\
+\ell \cdot m \pmod{n} &= x \cdot y\pmod{n}  &\text{(definition of modular equivalence)}\\
+&= \bmod(x \cdot y, n)  &\text{(change form)}\\
+&= a \odot b &\text{(Proposition~\ref{proposition:modular:number_remainder})}\\
+\text{where\ } a = x\pmod{n} &\text{\ and\ } b = y\pmod{n}\\
+&= \ell \odot m &\text{(substituting given)}\\
+&= \bmod(\ell \cdot m, n) &\text{(Proposition~\ref{proposition:modular:number_remainder})}\\
+&= \ell \cdot m\pmod{n} &\text{(change form)}
+\end{align*}
+$\therefore\ $ since the RHS and LHS sides are equal the proposition has been shown to be true.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:prove}:} 
+%Prove or disprove, using the proposition in Exercise~\ref{exercise:modular:number_remainder}:
+\begin{enumerate}[(a)]
+\item
+%$7787 \cdot 21005 \cdot 495 \equiv 56002 \cdot  492 \cdot 213 \pmod{7}$
+\item
+%$(12345 \cdot 6789) + 1357 \equiv (98765 \cdot 13579) + 9876 \pmod{10}$
+$(5 \cdot 9)+7 \equiv (5 \cdot 9)+6 \pmod{10} \implies 2 \not\equiv 1 \pmod{10}$
+
+\item
+%$(4545 \cdot 5239) + 1314 \equiv (7878 \cdot 3614) + 4647 \pmod{101}$
+\item
+%$765432121234567\cdot 234567878765432 \equiv 456456456456456456 \cdot 789789789789789789789 \pmod{10}$
+\item
+%$543254325432543254325432^3 \equiv 1212121212121212121212^7  \pmod{10}$
+\item
+%$786786786786786786786^3 \equiv 456456456456456456456^4  \pmod{10}$
+\item
+%$654321^87654321 \equiv 123456^12345678  \pmod{5}$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:49}:} 
+%Use the above Cayley tables for $\oplus$ and $\odot$  in $\integer_5$ to calculate each of the following.  (Remember, compute the remainders \emph{before} doing the arithmetic.)
+\begin{enumerate}[(a)]
+\item
+%$ \bmod(456 \cdot (252 + 54),5) $
+$\equiv 1 \pmod{5}$
+
+\item
+%$ \bmod(523 + \left( 4568 \cdot (43 + 20525) \right),5)$
+$\equiv 2 \pmod{5}$
+
+\item
+%$\bmod((456 \cdot 252) + (456 \cdot 54),5) $
+$\equiv 1 \pmod{5}$
+
+\item
+%$ \bmod(523 + \left( (4568 \cdot 43) + (4568 \cdot 20525) \right) ,5)$
+$\equiv 0 \pmod{5}$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:52}:}\\
+%Prove Proposition~\ref{proposition:modular:closed_property_Zn}. That is, show that the modular sum and modular product of two elements of  ${\mathbb Z}_n$ are also in ${\mathbb Z}_n$.
+%\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 Suppose $a,b \in Z_n$ then by the definition of modular multiplication (Def. 42), we have $a \odot b =r \pmod{n}$ where $r \in \{0,1,...,n-1\}$\\
 $\implies a \odot b \in Z_n$\\
 $\implies Z_n$ is closed under modular multiplication.\\
-\\
-\textbf{Exercise \ref{exercise:modular:53}:}\\
-b. Rational numbers: closed under addition, subtraction, multiplication.\\
-d. Positive rational numbers: closed under addition and multiplication.\\
-e. Positive real number: closed under addition, subtraction, multiplication, divison, and square root.\\
-\\
-\textbf{Exercise \ref{exercise:modular:54}:}\\
+
+\noindent\textbf{Exercise \ref{exercise:modular:53}:} 
+%For each of the following number systems, state whether or not they are closed under (i) addition (ii) subtraction (iii) multiplication (iv) division (v) square root. In cases where closure holds you can simply state the fact (no proof is necessary). In cases where closure doesn't hold, give a counterexample. For example, we know that the negative real numbers are not closed under square root because $\sqrt{-1}$ is not a negative real number.
+%\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}  
+\begin{enumerate}[(a)]
+\item
+%The integers 
+
+\item
+%The rational numbers
+closed under addition, subtraction, multiplication.
+
+\item
+%The real numbers
+
+\item
+%The positive rational numbers
+closed under addition and multiplication.
+
+\item
+%The positive real numbers
+closed under addition, subtraction, multiplication, divison, and square root.
+\item
+%The nonzero real numbers
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:54}:}\\
+%Prove that the complex numbers are closed under complex addition and multiplication.
 Let $z_1=a+bi$ and $z_2=c+di$, then:\\
 $z_1z_2=(a+bi)(c+di)=(ac-bd)+(ad+bc)i$ is a complex number\\
 $\implies$  Complex numbers are closed under multiplication.\\
-\\
-\textbf{Exercise \ref{exercise:modular:56}:}\\
+
+\noindent\textbf{Exercise \ref{exercise:modular:56}:}\\ 
+%Give a similar proof that $1$ is the multiplicative identity for ${\mathbb Z}_n$ when $n >1$. What is the multiplicative identity for ${\mathbb Z}_n$ when $n=1$?
 Given any a $\in Z_n, (n>1)$ then $a \odot 1$ is computed as follows:\\
 a. Compute $a.1$ using ordinary multiplication\\
 b. taking the remainder mod n \\
@@ -146,86 +653,371 @@ Hence $a \odot 1=a$.\\
 Similarly, we can show that $1 \odot a=a$.\\
 So, 1 satisfies the definition of multiplicative identity for $Z_n$ when $n>1$.\\
 When $n=1$, $Z_1=\{0\} \to$ multiplicative identity for $Z_1$ is 0.\\
-\\
-\textbf{Exercise \ref{exercise:modular:58}:}\\
-a. $0 \in Z_n$ and $0 \oplus 0=0 \to$ additive inverse of $0 \in Z_n$ is 0.\\
-b. Suppose $a \in Z_n \setminus \{0\}$ and let $a'=n-a$\\
-We have $0<a<n \implies n>a'>0 \implies a' \in Z_n$\\
-We also have $a \oplus a'=a+n-a \pmod{n}=n \pmod{n}=0 \pmod{n}$\\
-Similarly, we have $a' \oplus a=0 \pmod{n}$\\
-$\implies a'$ is the additive inverse of a.\\
-\\
-\textbf{Exercise \ref{exercise:modular:60}:}\\
-a. n = 3\\
-b. n = 7\\
-\\
-\textbf{Exercise \ref{exercise:modular:64}:}\\
-a. 0 has no multiplicative inverse under $\odot \implies Z_n$ is not a group.\\
-b. $Z_3 \setminus \{0\}$ is a group under $\odot$.\\
-\\
-\textbf{Exercise \ref{exercise:modular:stick_units}:}\\
-b. 1 ft\\
-\\
-\textbf{Exercise \ref{exercise:modular:m53}:}\\%name
-b. 12 in\\
-\\
-\textbf{Exercise \ref{exercise:modular:gcd}:}\\
-b. 11\\
-\\
-\textbf{Exercise \ref{exercise:modular:71}:}\\
-a. We have $r_2=b-r_1q_2$ (Prop. 68)\\
-We also have $r_1=a-bq_1$ (from previous step)\\
-$\implies r_2=b-(a-bq_1)q_2=b(1+q_1q_2)-aq_2$ where $q_1$ and $q_2$ are integers.\\
-$\implies r_2$ can also be written in the form $r_2=na+mb$ where n and m are integers.\\
-b. For $k>2$, we have:\\
-$r_{k-2}=na+mb$\\
-$r_{k-1}=sa+tb$\\
-We also have $r_k=r_{k-2}-r_{k-1}q_k$ (Prop. 68)\\
-$\implies r_k=na+mb-(sa+tb)q_k=a(n-sq_k)+b(m-tq_k)$\\
-$\implies r_k$ can also be written in the form $r_k=va+wb$ where $v$ and $w$ are integers.\\
-c. From Prop. 68, $r_k$ is the gcd of two numbers a and b.\\
-From b. we know that $r_k$ can be written in the form $na+mb$.\\
-$\implies$  the gcd of two numbers a and b can be written in the form $na+mb$ where $n$ and $m$ are integers.\\
-\\
-\textbf{Exercise \ref{exercise:modular:dio1}:}\\
-e. $m=7241k+1371$ $n=-3524k-151$\\
-\\
-\textbf{Exercise \ref{exercise:modular:diophant}:}\\
-b. 3 and 27 are divisible by 3. 2 is not divisible by 3.\\
-\\
-\textbf{Exercise \ref{exercise:modular:m518}:}\\%name
-a. $m=1590-119k$ $n=242k-3233$\\
-b. $x=m$\\
-c. $y=n$\\
-\\
-\textbf{Exercise \ref{exercise:modular:m519}:}\\%name
+
+\noindent\textbf{Exercise \ref{exercise:modular:58}:}
+\begin{enumerate}[(a)]
+\item
+%Show that  $0 \in {\mathbb Z}_n$ has an additive inverse in ${\mathbb Z}_n$.
+$0 \in Z_n$ and $0 \oplus 0=0 \to$ additive inverse of $0 \in Z_n$ is 0.
+
+\item
+%Suppose $a$ is a nonzero element of ${\mathbb Z}_n$  (in mathematical shorthand, we write this as: $a \in {\mathbb Z}_n \setminus \{0\}$), and let $a' = n-a$.
+	\begin{enumerate}[(i)]
+	\item
+	%Show that $a'$ is in ${\mathbb Z}_n$ .
+	%\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
+	Suppose $a \in Z_n \setminus \{0\}$ and let $a'=n-a$\\
+	We have $0<a<n \implies n>a'>0 \implies a' \in Z_n$
+	
+	\item
+	%Show that $a \oplus a' = a' \oplus a  = 0 \pmod{ n}$: that is, $a'$ is the additive inverse of $a$.
+	We also have $a \oplus a'=a+n-a \pmod{n}=n \pmod{n}=0 \pmod{n}$\\
+	Similarly, we have $a' \oplus a=0 \pmod{n}$\\
+	$\implies a'$ is the additive inverse of a.
+	\end{enumerate}
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:60}:}
+\begin{enumerate}[(a)]
+\item
+%Find an integer $n>2$ such that all \emph{nonzero} elements of ${\mathbb Z}_n$ have multiplicative inverses.
+n = 3
+
+\item
+%Find two additional values of $n>5$ such that all nonzero elements of ${\mathbb Z}_n$ have multiplicative inverses.
+n = 7
+
+\item
+%What do the three numbers you found in (a) and (b) have in common?
+\end{enumerate}
+
+%\noindent\textbf{Exercise \ref{exercise:modular:}:} 3.4.24 unnamed
+%\noindent\textbf{Exercise \ref{exercise:modular:}:} 3.4.25 unnamed
+%\noindent\textbf{Exercise \ref{exercise:modular:}:} 3.4.28 unnamed
+%\noindent\textbf{Exercise \ref{exercise:modular:}:} unnamed
+
+\noindent\textbf{Exercise \ref{exercise:modular:64_0}:}
+
+\noindent\textbf{Exercise \ref{exercise:modular:64}:} %KW updated
+\begin{enumerate}[(a)]
+\item
+%Show that the nonzero elements of ${\mathbb Z}_3$  is a group under $\odot$.
+\begin{center}
+$\mathbb{Z}_{3} \setminus \{0\}=\ $
+\begin{tabular}{c|c c c c}
+$\odot$ & $1$ & $2$ \\
+\hline
+$1$ & $1$ & $2$	\\
+$2$ & $2$ & $1$	\\
+\end{tabular}
+\end{center}
+Let's say that $G$ is the set $\{1,2\}$, then:
+\begin{itemize}
+\item 
+Multiplying any two numbers $\in G$, you always get another number $\in G$. Thus the nonzero elements of $Z_3$ is closed under $\odot$ 
+            
+\item 
+There exists an identity element, $e\in G$ such that  $\forall$ elements $a\in G$. $a\odot e =e\odot a= a$. The identity element is $1$ because when we operate it with $\odot$ by any $q\in G$ the result is the $a\in G$ that we $\odot$ by.
+
+\item 
+There exists an inverse element. For each $a\in G~~\exists$ an element $b\in G$ such that $a\odot b=b\odot a=e$. \\
+For, $a=1~and~b=1$ : $1\odot 1 =1\odot 1=1=e$\\
+For, $a=2~and~b=2$ : $2\odot 2=2\odot 2=1= e$
+            
+\item 
+We proved that $\odot$ was associative in Exercise \ref{exercise:modular:44}
+\end{itemize}    
+       
+Since the nonzero elements of $\mathbb Z_{3}$ form a group, has an identity element, has inverse elements, and is associative for all elements in the set, G, under $\odot$, $\mathbb Z_{3}$ is a group under $\odot$. 
+
+\item
+%Can you find an $n>3$ such that the nonzero elements of ${\mathbb Z}_n$ do \emph{not} form a group under $\odot$? If so, tell which $n$, and explain why ${\mathbb Z}_n$ fails to be a group in this case.
+\begin{center}
+$\mathbb{Z}_{4} \setminus \{0\}=\ $
+\begin{tabular}{c|c c c c}
+$\odot$ & $1$ & $2$ & $3$\\
+\hline
+$1$ & $1$ & $2$ & $3$	\\
+$2$ & $2$ & $0$ &	 $2$\\
+$3$ & $3$ & $2$ & $1$\\
+\end{tabular}
+\end{center}
+        
+If $n = 4$, then, $\mathbb Z_{4}$ does not form a group under $\odot$. $2\odot 2 = 0\neq2 = e\  \therefore$ it fails the inverse element for $2\odot 2$ because zero is not in the set of nonzero elements of $\mathbb Z_{4}$, nor is it the identity element for $\mathbb Z_{4}$
+\end{enumerate}
+
+
+%section 3.5
+\noindent\textbf{Exercise \ref{exercise:modular:stick_units}:} 
+%Using the method above, find the smallest measure given sticks of length:
+\begin{enumerate}[(a)]
+\item
+%30 cm and 77 cm.
+
+\item
+%7 feet and 41 feet (Pretty long sticks!).
+1 ft
+
+\item
+%33 in and 72 in.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:m53}:}
+%Using the method above:
+\begin{enumerate}[(a)]
+\item
+%Convert the measurements in Exercise~\ref{exercise:modular:stick_units} part (a) into millimeters, and solve the problem again. How is your result using millimeters related to your answer to part (a) in the previous exercise?
+
+\item
+%Convert the measurements in Exercise~\ref{exercise:modular:stick_units} part (b) into inches, and solve the problem again. How is your result using inches related to your answer to part (a) in the previous exercise?
+12 in
+
+\item
+%Use what you've discovered in part (b) to quickly find a solution to the two-sticks problem when one stick is 720 inches and the other is 600 inches.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:gcd}:}
+%What is the greatest common divisor of:
+\begin{enumerate}[(a)]
+\item
+%1168 and 2338?
+
+\item
+%2343 and 4697?
+11
+\item
+%1006 and 13581?
+
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:71}:} %KW update Adam
+\begin{enumerate}[(a)]
+\item  
+%Show that $r_2$ can also be written in the form: $r_2 = n \cdot a + m \cdot b$, where $n$ and $m$ are integers.
+\begin{align*}
+a = bq_{1} + r_{1}
+\end{align*}
+By the Euclidean Algorithm:
+\begin{align*}
+b = r_{1}q_{2} + r_{2} 
+\end{align*}
+Now, by solving for $r_{1}$ and $r_{2}$ respectively, we get:
+\begin{align*}
+r_{1} = a - q_{1}b\ and\ r_{2} = b - q_{2}r_{1}
+\end{align*}
+Now, by substitution we get:
+\begin{align*}
+r_{2} &= b - (a - bq_{1})q_{2} &\\ 
+&= -aq_{2} + b + bq_{1}q_{2} &\text{(basic algebra)}\\
+&= (-q_{2})a + (1 + q_{1}q_{2})b &\text{(basic algebra)}
+\end{align*}
+$\therefore$, $r_{2}$ is in the form of $r_{2} = n\cdot a + m\cdot b$
+
+\item
+%Show that for $k>2$, if $r_{k-2}$ and $r_{k-1}$ can both be written in the form  $n \cdot a + m \cdot b$ where $n$ and $m$ are integers, then $r_k$ can also be written in the same form.
+Given $r_{k-2} = n\cdot a_{1} + m\cdot b_{1}\ and\ r_{k-1} = n\cdot a_{2} + m\cdot b_{2}$ and by the Euclidean Algorithm, $r_{k-2} = r_{k-1}q_{k} + r_{k}$ by substitution we get:
+\begin{align*}
+n\cdot a_{1} + m\cdot b_{1} &= (n\cdot a_{2} + m\cdot b_{2})q_{k} + r_{k}
+\end{align*}
+by algebra we get:
+\begin{align*}
+r_{k} &= n\cdot a_{1} + m\cdot b_{1} - (n\cdot a_{2} + m\cdot b_{2})q_{k} &\\
+&= n\cdot(a_{1} - a_{2}q_{k}) + m\cdot (b_{1} - b_{2}q_{k}) &\text{(basic~algebra)}
+\end{align*}
+
+\item
+%Show that the gcd of two numbers $a$ and $b$ can always be written in the form $n \cdot a + m \cdot b$ where $n$ and $m$ are integers.
+%KW changed using Dr. Thron notes on homework.  But it says a) showed r_1 and b) showed r_2, which Adam actually showed a) r_2 and b) r_k....
+From parts (a) and (b), we can see that $r_{2}$ and $r_{k}$ are linear combinations of $a$ and $b$.\\
+Since we know that $r_{2} = (-q_{2})a + (1 + q_{1}q_{2})b$. We can use parts (a) and (b) again to solve for $r_{3}$:\\
+If $r_{2} = a - q_{2}b$ and $r_{3} = b - q_{3}r_{2}$:
+\begin{align*}
+r_{3} &= b - q_{3}(a - q_{2}b) &\text{(substitution)}\\
+&= b - q_{3}a - q_{2}q_{3}b &\text{(basic algebra)}\\
+&= (-q_{3})a + (1 + q_{2}q_{3})b &\text{(basic algebra)}\\
+\end{align*}
+If you continue applying parts (a) and (b), until you reach $r_{n}$, you will see that every $r_{n}$ is a linear combination of $a$ and $b$.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:Computer_exercise}:}
+
+\noindent\textbf{Exercise \ref{exercise:modular:dio1}:} 
+%Using the process above, find all integer solutions to the following equations.
+\begin{enumerate} [(a)]
+\item
+%$45m + 16n = 27$
+\item
+%$360m + 14n = 32$
+\item
+%$389m + 50n = 270$
+\item
+%$4801m + 500n = 1337$
+\item
+%$ 3524m + 7421n = 333$
+$m=7241k+1371$ $n=-3524k-151$
+\end {enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:DiophantineSS}:}
+
+\noindent\textbf{Exercise \ref{exercise:modular:diophant}:}
+%Explain why the following Diophantine equations have no integer solutions.
+\begin{enumerate} [(a)]
+\item
+%$2m + 4n = 1$
+%\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
+\item
+%$3m + 27n = 2$
+3 and 27 are divisible by 3. 2 is not divisible by 3.
+\end {enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:prop74}:} %KW updated
+%Prove the ``if'' part of Proposition~\ref{proposition:modular:74}. 
+\begin{itemize}
+\item 
+Proposition~\ref{proposition:modular:74}: Given the Diophantine equation $an + bm = c$, where $a,b,c$ are integers. Then the equation has integer solutions for $n$ and $m$ if and only if $c$ is a multiple of the $gcd$ of $a$ and $b$.\\
+\\     
+The "if" statement is: Given the Diophantine equations $an + bm = c$, where $a,b,c$ are integers. Then the equation has integer solutions for $n$ and $m$ if $c$ is a multiple of the $gcd$ of $a$ and $b$.\\
+\\   
+It can be re-arranged to say: if $c$ is a multiple of the $gcd$ of $a$ and $b$, then the equation has integer solutions for $n$ and $m$.
+        
+\item 
+Proof:\\
+If $c$ is a multiple of $gcd(c,d)$, then $c = dk$.\\
+We know that $d = ma + nb$ has a solution.\\
+$\therefore\ c = (mk)a + (nk)b$, so the diophantine equation has a solution. 
+\end{itemize}
+
+\noindent\textbf{Exercise \ref{exercise:modular:m518}:}%name 
+\begin{enumerate}[(a)]
+\item
+%Find the general integer solution to: $242m + 119n = 53$.
+$m=1590-119k$ $n=242k-3233$
+
+\item 
+%Use your solution to solve the modular equation: $242x \equiv 53 \pmod{119}$.
+$x=m$
+
+\item
+%Use your solution to solve the modular equation:  $119y \equiv 53 \pmod{242}$.
+$y=n$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:m519}:}\\%name 
+%Given that $(m,n)$ is a solution to $a \cdot m + b \cdot n  = c$, give (a) a modular equation with base $b$  involving the constants $a$ and $c$ which has $m$ as a solution; and (b) a modular equation with base $a$ involving the constants $b$ and $c$ which has $n$ as a solution.
 $am \equiv c \pmod{b}$\\
-\\
-\textbf{Exercise \ref{exercise:modular:m522}:}\\%name
-No solution. The gcd of 504 and 1002 is 3. 919 is not divisible by 3. Prop. 3.5.20\\
-\\
-\textbf{Exercise \ref{exercise:modular:90}:}\\
-a. $Z_5 \setminus \{0\}$ forms a group.\\
-b. $Z_7 \setminus \{0\}$ forms a group.\\
-c. $Z_9 \setminus \{0\}$ doesn't form a group because element 3 doesn't have multiplicative inverse.\\
-d. $Z_n \setminus \{0\}$ with n is a prime number will form a group under $\odot$.\\
-\\
-\textbf{Exercise \ref{exercise:modular:93}:}\\
-Let $a \in Z_n \setminus \{0\}$, we need to find $x$ is the multiplicative inverse of $a$\\
-$\implies ax \equiv 1 \pmod{n}$.
-According to Prop. 78, we can only find $x$ if 1 is an integer multiple of the gcd of $a$ and $n$\\
-$\implies$  1 is the gcd of $a$ and $n$ in order to find $x$, which is the multiplicative inverse of $a$.\\
-$\implies a$ is relatively prime to $n$ to make $x$ exist.\\
-If $a$ is not relatively prime to $n \to$ they have a gcd which is bigger than 1 $\implies$  1 is not an integer multiple of the gcd of $a$ and $n \to$ we can't find $x$ (Prop. 78) $\implies a$ doesn't have an inverse under multiplication (mod n).\\
-\\
-\textbf{Exercise \ref{exercise:modular:94}:}\\
+
+\noindent\textbf{Exercise \ref{exercise:modular:propiff}:} %KW update Adam & James
+%Prove both the ``if''  and the ``only if'' parts of Proposition~\ref{proposition:modular:mod_eq_solution}.
+\begin{itemize}
+\item
+Proposition~\ref{proposition:modular:mod_eq_solution}: Given a modular equation $ax\equiv c \pmod{b}$, where $a,b,c$ are integers. Then the equation has an integer solution for $x$ if and only if $c$ is an integer multiple of the greatest common divisor of $a$ and $b$.
+        
+\item 
+If statement:\\
+Given a modular equation $ax\equiv c \pmod{b}$, where $a,b,c$ are integers. If $c$ is an integer multiple of the $gcd(a,b)$, then the equation has an integer solution for x.\\
+We are given the modular equation $ax\equiv c \pmod{b}$, therefore $b|(ax-c)$, which means, for some integer $y,\ by = ax - c$. By basic algebra, we see that:
+\begin{align*}
+ax + b(-y) = c 
+\end{align*}
+Which is in the form of $an + bm = c$. Give that $c$ is an integer multiple of the $gcd$ of $a$ and $b$. By Proposition~\ref{proposition:modular:74}, if $c$ is a multiple of the $gcd(a,b)$, then the equation $an + bm = c$ has integer solutions for $n$ and $m$. Therefore, $ax\equiv c \pmod{b}$ has an integer solution for $x$.
+        
+\item 
+Only if statement:\\
+Given a modular equation $ax\equiv c \pmod{b}$, where $a, b, c$ are integers. If the equation has an integer solution for $x$, then $c$ is an integer multiple of the $gcd(a,b)$.\\
+        
+If $ax\equiv c \pmod{b}$ has an integer solution for $x$, then $ax + by = c$ has integer solutions for some $x$ and $y$ where $a,\ b$, and $c$ are integers. Proposition~\ref{proposition:modular:74} states that given the Diophantine equation $am + bn = c$, $c$ is a multiple of the $gcd(a,b)$ if $m$ and $n$ are integer solutions to the Diophantine equation. Since $x$ and $y$ are integer solutions to our Diophantine equation, $c$ is a integer multiple of $a$ and $b$.
+\end{itemize}
+
+
+\noindent\textbf{Exercise \ref{exercise:modular:m522}:}%name
+%Which of the following equations have integer solutions? If solutions exist, find them all. If no solutions exist, prove it!
+\begin{enumerate}[(a)]
+\item
+$15x \equiv 3 \pmod{12}$
+\item
+$4x \equiv 17 \pmod{23}$
+\item
+$503x \equiv 919 \pmod{1002}$
+\item
+$504x \equiv 919 \pmod{1002}$
+No solution. The gcd of 504 and 1002 is 3. 919 is not divisible by 3. Prop. 3.5.20
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:EuclidLemmaProof}:}
+
+\noindent\textbf{Exercise \ref{exercise:modular:90}:} 
+%Prove or disprove that the following sets form a group by either finding a multiplicative inverse for all members, or by finding a member that does not have a multiplicative inverse.
+\begin{enumerate}[(a)]
+\item
+%$\mathbb{Z}_5\setminus \{0\}$
+ $Z_5 \setminus \{0\}$ forms a group.
+ 
+\item
+%$\mathbb{Z}_7\setminus \{0\}$
+$Z_7 \setminus \{0\}$ forms a group.
+
+\item
+%$\mathbb{Z}_9\setminus \{0\}$
+$Z_9 \setminus \{0\}$ doesn't form a group because element 3 doesn't have multiplicative inverse
+
+\item
+%Make a conjecture for which sets $\mathbb{Z}_n \setminus \{0\}$ form a group under multiplication.
+$Z_n \setminus \{0\}$ with n is a prime number will form a group under $\odot$.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:93}:} %KW update Adam
+%Let $n>1$ be an integer, and let  $a$ be an element of  $\mathbb{Z}_n \setminus \{0\}$.
+\begin{enumerate}[(a)]
+\item  
+%Prove  the ``only if'' part  of Proposition~\ref{proposition:modular:Units}. That is, prove that if $a$ has an inverse in $\mathbb{Z}_n \setminus \{0\} $ then gcd($a,n$)=1.
+%\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
+If $a$ has an inverse in ${\mathbb{Z}_n} \setminus\{0\}$, then $\exists$ and integers $a, x$, and $n$ such that $ax\equiv 1 \pmod{n}$. By Proposition~\ref{proposition:modular:mod_eq_solution}, $1$ is an integer multiple of the $gcd(a,n)$. Which means,
+\begin{align*}
+1 = s(gcd(a,n))
+\end{align*}
+for some integer $s$.\\
+$\therefore gcd(a,n) = 1$
+
+\item 
+%Prove the ``if'' part   of Proposition~\ref{proposition:modular:Units}. That is, prove that if gcd($a,n$)=1 then $a$ has an inverse in $\mathbb{Z}_n \setminus \{0\}$ .
+%\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
+Since $gcd(a,n) = 1$, by Proposition~\ref{proposition:modular:mod_eq_solution}, $1$ is an integer multiple of the $gcd(a,n)$ and the congruency $ax\equiv 1 \pmod{n}$, for integers $a$ and $n$, has an integer solution for $x$. Therefore $x$ is a multiplicative inverse for $a$.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:94}:}
+%Show that if $n$ is not prime, then $\mathbb{Z}_n\setminus \{0\}$ is not a group under multiplication.
+%\hyperref[sec:modular_arithmetic:hints]{(*Hint*)}
 For $Z_n \setminus \{0\}$, if n is not prime, there is $1<a<n \in Z_n$ that $a|n$\\
 $\implies$  the gcd of $a$ and $n$ is bigger than 1 $\implies a$ does not have a multiplicative inverse (according to Exercise 86) $\implies Z_n \setminus \{0\}$ is not a group under $\odot$.\\
-\\
-\textbf{Exercise \ref{exercise:modular:91}:}\\
-a. $x=11 \pmod{12}$\\
-c. $x=237 \pmod{403}$\\
-\\
-\textbf{Exercise \ref{exercise:modular:m534}:}\\%name
-a. $x=59 \pmod{60}$\\
-\\
+
+\noindent\textbf{Exercise \ref{exercise:modular:91}:} 
+%Solve the following pairs of congruences or show that they have no common solution:
+\begin{enumerate}[(a)]
+\item
+%$x \equiv 2 \pmod{3}; \quad x \equiv 3 \pmod{4}.$
+$x=11 \pmod{12}$
+
+\item
+%$x \equiv 12 \pmod{23}; \quad x \equiv 7 \pmod{11}.$
+
+\item
+%$x \equiv 3 \pmod{13}; \quad x \equiv 20 \pmod{31}.$
+$x=237 \pmod{403}$
+
+\item
+%$x \equiv 2 \pmod{6}; \quad  x \equiv 56 \pmod{72}.$
+\end {enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:modular:congruence}:}
+
+\noindent\textbf{Exercise \ref{exercise:modular:m534}:}%name 
+%Solve the following sets of congruences or show that they do not have a solution:
+\begin{enumerate}[(a)]
+\item
+%$x \equiv 2 \pmod{3}; \quad x \equiv 3 \pmod{4}; \quad x \equiv 4 \pmod{5}.$
+$x=59 \pmod{60}$
+
+\item
+%$x \equiv 12 \pmod{23}; \quad x \equiv 7 \pmod{11}; \quad x \equiv 3 \pmod{4}.$
+\end {enumerate}
+

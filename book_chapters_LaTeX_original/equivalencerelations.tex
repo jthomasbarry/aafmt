@@ -20,7 +20,7 @@ There are however subsets of $A \times B$ that are not functions.
 
 
 \begin{example}{bbal}
-Let $P$ be the set of all professional basketball players in the NBA, and let $T$ be the set of NBA teams.  $f_T: P \to T$ as follows:
+Let $P$ be the set of all professional basketball players in the NBA\footnote{National Basketball Association, ``men's professional basketball league in North America $\ldots$ widely considered to be the premier men's professional basketball league in the world.'' (Wikipedia)}  and let $T$ be the set of NBA teams.  $f_T: P \to T$ as follows:
 $$f_T(p)=\text{the team that }p \text{ plays for}.$$
 Alternatively, $f_T$ can be represented as the set of ordered pairs:
 \[ f_T=\{\, (p,t)  \in  P \times T  \mid  p  \text{  is a member of } t\} .\]
@@ -296,8 +296,8 @@ In the following parts we will considering partitions of $\mathbb{R}$ and the as
 \begin{enumerate}[(a)]
 \item Let $\mathcal{P}=\{R_1, R_2\}$ where $R_1=\{x \mid x \in \mathbb{R}, x \geq 0\}$ and $R_2=\{x \mid x \in \mathbb{R}, x < 0\}$.
 \begin{enumerate}[(i)]
-\item Draw the real number line from $-5$ to 5, and indicate the sets $R_1, R_2 \in \mathcal{P}$ (similar to Figure~\ref{fig:partition_discrete}).
-\item Graph the associated binary relation $\rel_\mathcal{P}$. You only need to graph from $-5$ to 5. \hyperref[secEqRelChapHints]{(*Hint*)}
+\item Draw the real number line from $-5$ to 5, and indicate the sets $R_1, R_2 \in \mathcal{P}$ (you may indicate the two sets by circling them separately).
+\item Graph the associated binary relation $\rel_\mathcal{P}$. You only need to graph from $-5$ to 5. (Recall that the graph of a binary relation is a set in the Cartesian plane, as in Figure~\ref{fig:graphrelations}.)
 \end{enumerate}
 
 \item Let $\mathcal{P}=\{\ldots, R_{-2}, R_{-1}, R_0, R_1, R_2, \ldots \}$ where $R_n=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor = n \}$ for any integer $n$. \footnote{We will use these brackets, $\lfloor~\rfloor$, to represent the \term{floor function}\index{Floor function}, also known as the greatest integer function. The floor function takes a real number, $x \in \mathbb{R}$ as input and outputs the greatest integer that is less than or equal to $x$.  Mathematically we can express this as:
@@ -741,7 +741,7 @@ n & \mbox{if $a \in A_n$}
 In general: $f(a)=j$ iff $a \in A_j$.
 \begin{enumerate}[(a)]
 \item
-Show that $a \rel_\mathcal{P} a \iff f(a)=f(b)$.
+Show that $a \rel_\mathcal{P} b \iff f(a)=f(b)$.
 \item 
 Let $\rel_f$ be the equivalence relation defined from $f$ as in Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelFromFunc}. 
 Show that $\rel_\mathcal{P} = \rel_f$ by showing that $a \rel_\mathcal{P} b \iff a \rel_f b$.
@@ -763,7 +763,7 @@ In other words, whenever we have a partition, we can also define a function that
 %Notice that the previous proposition is not an if and only if proposition, because there could be an equivalence relation that can't be expressed as a function. But the good news about this proposition is that many relations can be expressed as a function as the previous examples and exercises have shown, including functions with arbitrary sets.
 
 \begin{exercise}{realfunction}
-From the relation $\rel_R$ in Examples~\ref{example:EquivalenceRelationsChap:partition1}(a) and~\ref{example:EquivalenceRelationsChap:relfrompart1}(a) (the $\mathbb{Q}$ and  $\mathbb{I}$ example) define a function such that $a_1 \sim a_2 \iff  f(a_1) = f(a_2)$ where $a_1, a_2 \in \mathbb{R}$. (Yes, we have already proved that $\rel_R$ is an equivalence relation by a different proposition, this is just for illustrative purposes.)
+From the relation $\rel_R$ in Examples~\ref{example:EquivalenceRelationsChap:partition1}(a) and~\ref{example:EquivalenceRelationsChap:relfrompart1}(a) (the $\mathbb{Q}$ and  $\mathbb{I}$ example) define a function such that $a_1 \sim a_2 \iff  f(a_1) = f(a_2)$ where $a_1, a_2 \in \mathbb{R}$.  (Note that we've already proved that $\rel_R$ is an equivalence relation by a different proposition, so this example is a particular case of Proposition~\ref{proposition:EquivalenceRelationsChap:PartToFunc}.) 
 \end{exercise}
 
 Exercise~\ref{exercise:EquivalenceRelationsChap:partitionfunction} starts with a partition, and constructs a function that gives the same equivalence relation.  We may go backwards as well: starting with a function, we may produce a partition with the same equivalence relation. The following exercise gives an example of this.
@@ -872,7 +872,7 @@ Let $C = \{1,2,3,4,5\}$ and define $\rel_C$ by
 \[ x \rel_C y \iff x + y \text{ is even.} \]
 Assume (without proof) that $\rel_C$ is an equivalence relation on~$C$. Find the equivalence class of each element of~$C$.
 \item
-Draw the arrow diagrams for $\rel_A, \rel_B,$ and $\rel_C$.
+Draw the arrow diagrams for the relations in $R$ in Example~\ref{example:EquivalenceRelationsChap:EquivClassEg}, and for the relations in parts ($a$) and ($b$) of this exercise.
 \end{enumerate}
 \end{exercise}
 
@@ -1037,7 +1037,7 @@ We know from Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel} th
 We also know from Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part} that any equivalence relation produces a partition.
 \begin{enumerate}[(a)]
 \item
-Suppose we begin with a partition $\mathcal{P}$ on the set $A$, and define an equivalence relation $\sim_{\mathcal{P}}$ as in Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel}. Next, suppose that following Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part} we define a partition   $\mathcal{P}'$  consisting of the equivalence classes of $\sim_{\mathcal{P}}$. Show that $\mathcal{P}=\mathcal{P}'$. 
+Suppose we begin with a partition $\mathcal{P}$ on the set $A$, and define an equivalence relation $\sim_{\mathcal{P}}$ as in Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel}. Next, suppose that following Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part} we define a partition   $\mathcal{P}'$  consisting of the equivalence classes of $\sim_{\mathcal{P}}$. Show that $\mathcal{P}=\mathcal{P}'$. (One way to do this is to show that every set in $\mathcal{P}$ is also a set in $\mathcal{P}$, and vice versa.)
 \item
 Suppose we begin with an equivalence relation $\sim$ on the set $A$, and define a partition of $A$ as in Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRel->Part}. Let's call this partition $\mathcal{Q}$.  Next, suppose that following Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel} we define an equivalence relation  $\mathcal{Q}$. Show that the relations$\sim$ and $\sim_{\mathcal{Q}}$ are identical:  that is, $a \sim b \iff a \sim_{\mathcal{Q}} b$..
 \end{enumerate}
@@ -1303,7 +1303,7 @@ Show that $\;^{\wedge}$ is not well-defined: that is, find $a, b, c, d \in \inte
 \begin{exercise}{WellDefEx}
 \begin{enumerate}[(a)]
 \item  \label{WellDefEx-AbsVal0}
- Show that absolute value does \emph{not} provide a well-defined function from~$\integer_7$ to~$\integer_7$. That is, show there exist $a,b \in \integer$, such that 
+ Show that absolute value does \emph{not} produce a well-defined function from~$\integer_7$ to~$\integer_7$. That is, show there exist $a,b \in \integer$, such that 
 \[ [a]_7 = [b]_7, \text{ but } \bigl[ |a| \bigr]_7 \neq \bigl[ |b| \bigr]_7.\]
 \item  \label{WellDefEx-AbsVal}
  Show that part (a) is true for \emph{every} $n > 2$. That is, show that  absolute value does \emph{not} provide a well-defined function from~$\integer_n$ to~$\integer_n$. 

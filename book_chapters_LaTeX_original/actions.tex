@@ -442,7 +442,7 @@ exists a $g$ in $G$ such that $g x = y$. Define $\phi$ by $\phi( y )
 Before we can show that $\phi$ is a bijection, we must first show that $\phi(y)$ is well-defined for any $y$, and does 
 not depend on our selection of $g$. Suppose that $g'$ is another 
 element in $G$ such that $g'x = y$. Then $g x = g' x$ or $x= g^{-1} g' x$. 
-By the definition of the stabilizer subgroup $G_x$, $g^{-1}g'\in G_x$. By Proposition~\ref{cosets_theorem_1} in Section \ref{sec:CosetsPartitions}, it follows that 
+By the definition of the stabilizer subgroup $G_x$, $g^{-1}g'\in G_x$. By Proposition~\ref{proposition:cosets:cosets_theorem_1} in Section \ref{sec:CosetsPartitions}, it follows that 
  $g G_x = g' G_x$. Thus, $y$ gets mapped to the same 
 coset regardless of the choice of group element.
 
@@ -455,7 +455,7 @@ Recall that $\phi(x_1)$ is defined as a coset of $G_x$ that contains an element 
 
 Now consider the expression $g_1(g_1^{-1}g_2)x$. On the one hand, by the associative law we get:
 $$(g_1g_1^{-1})g_2x=g_2x=x_2.$$ 
- On the other hand, by Proposition~\ref{cosets_theorem_1} in the Cosets chapter, it follows that $g_1^{-1}g_2$ is in $G_x$, so that $g_1^{-1}g_2x=x$.  This means that we also have:
+ On the other hand, by Proposition~\ref{proposition:cosets:cosets_theorem_1} in the Cosets chapter, it follows that $g_1^{-1}g_2$ is in $G_x$, so that $g_1^{-1}g_2x=x$.  This means that we also have:
 $$g_1(g_1^{-1}g_2)x=g_1x=x_1.$$
   Therefore $x_1=x_2$.  This completes the proof that $\phi$ is 1-1.
 
@@ -1187,7 +1187,7 @@ In this section we'll take a close look at a group action on a set of cosets.  T
 
 
 Let $G$ be the $xy$-plane under addition (that is, $G=(\mathbb {R}^2,+)$).  Let $H=\mathbb{Z}\times \mathbb{Z}$, which is a subgroup of $G$ ($H$ is called the \term{integer lattice}\index{Integer lattice}: see Figure~\ref{fig:HwithUnitSquare}).
-Cosets of $H$ in $G$ may be written as $a+H=\{(x+m, y+n):m,n \in\mathbb{ Z}\}$, where $a :=(x,y)$ can be any element of $G$. Recall from Proposition~\ref{cosets_theorem_2} that cosets form a partition, so $H$ and its cosets partition $\mathbb{R}^2$.
+Cosets of $H$ in $G$ may be written as $a+H=\{(x+m, y+n):m,n \in\mathbb{ Z}\}$, where $a :=(x,y)$ can be any element of $G$. Recall from Proposition~\ref{proposition:cosets:cosets_theorem_2} that cosets form a partition, so $H$ and its cosets partition $\mathbb{R}^2$.
 
 \begin{figure}[htpb]
 \begin{center}
@@ -1714,7 +1714,7 @@ In the next exercise you may practice creating a conjugacy table using both perm
 
 \begin{exercise}{Conj 19}
 \begin{enumerate}[(a)]
-\item Create a conjugacy table for $A_4$ (The subgroup of even permutations in $S_4$) See Definition~\ref{Alternating_Group} of Section~\ref{sec:AlternatingGroup}. We show one a table with one row.  How many rows to complete the conjugacy table? (Use the relabeling method to save time in creating your table.)
+\item Create a conjugacy table for $A_4$ (the subgroup of even permutations in $S_4$--see Section~\ref{sec:AlternatingGroup}). We show one a table with one row.  How many more rows are needed to complete the  table? (Use the relabeling method to save time in creating your table.)
 
 \begin{center}
 \begin{tabular}

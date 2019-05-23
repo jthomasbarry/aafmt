@@ -100,8 +100,6 @@ Describe the $21^{st}$ century as a set of sets of sets of sets of sets of sets 
 \hyperref[sec:set_chapter:hints]{(*Hint*)}
 \item
 (For you biologists out there)  Describe the animal kingdom as a set of sets of sets of sets of sets of sets of sets of sets
-\item
-Voters (in the U.S.) can be described as Democrat, Republican, or Independent.  Each voter in these groups can be described as liberal or conservative. Why does this division \emph{not} provide a description of  the set of American voters as a set of sets of sets? 
 \hyperref[sec:set_chapter:hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
@@ -568,10 +566,11 @@ $A \cup (B \cup C) = (A \cup B) \cup C$ and  $A \cap (B \cap C) = (A \cap B) \ca
 $A \cup B = B \cup A$ and $A \cap B = B \cap A$;
  
 \item
-$A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$;
+$A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ and $ (B \cap C) \cup A = (B \cup A) \cap (C \cup A)$;
+
  
 \item
-$A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+$A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ and $(B \cup C)  \cap A= (B \cap A) \cup (C \cap A)$.
  
 \end{enumerate}
 \end{prop}
@@ -699,7 +698,7 @@ Prove parts 4,6,8 of Proposition~\ref{proposition:sets:sets_theorem_set_ops} usi
 \noindent
 The following rules that govern the operations $\cap, \cup$ and $'$  follow from the definitions of these operations:
 
-\begin{thmprop}\index{De Morgan's laws for sets}\label{sets_de_morgan}\index{Set operations!De Morgan's laws for sets}(\emph{De Morgan's Laws}) 
+\begin{prop}{sets_de_morgan}\index{De Morgan's laws for sets}\index{Set operations!De Morgan's laws for sets}(\emph{De Morgan's Laws}) 
 Let $A$ and $B$ be sets. Then 
 \begin{enumerate}[(1)]
  \item
@@ -707,7 +706,7 @@ $(A \cup B)' = A' \cap B'$;
  \item
 $(A \cap B)' = A' \cup B'$.
  \end{enumerate}
-\end{thmprop}
+\end{prop}
  
  We will use the same strategy we used to prove Proposition~\ref{proposition:sets:sets_theorem_set_ops} part (7)-that is, we show that sets are equal by showing they are subsets of each other.
 \medskip{}
@@ -723,12 +722,12 @@ First we show that $(A \cup B)' \subset A' \cap B'$.  Let $x \in (A \cup B)'$.  
 \end{proof}
 
 \begin{exercise}{s27}
-Prove Proposition~\ref{sets_de_morgan} part (2).
+Prove Proposition~\ref{proposition:sets:sets_de_morgan} part (2).
 \end{exercise}
  
 \medskip{}
 \noindent
-Proposition~\ref{proposition:sets:sets_theorem_set_ops} and Proposition~\ref{sets_de_morgan} provide us with an arsenal of rules for set operations. You should consider these as your ``rules of arithmetic'' for sets: just as you used arithmetic rules in high school to solve algebraic equations, so now you can use these rules for set operations to solve set equations.  Here is an example of how to do this:
+Proposition~\ref{proposition:sets:sets_theorem_set_ops} and Proposition~\ref{proposition:sets:sets_de_morgan} provide us with an arsenal of rules for set operations. You should consider these as your ``rules of arithmetic'' for sets: just as you used arithmetic rules in high school to solve algebraic equations, so now you can use these rules for set operations to solve set equations.  Here is an example of how to do this:
 
 \begin{example}{other_relations}
 Prove that
@@ -800,9 +799,9 @@ A \cap A' \cap B \cap B'    &\mbox{[by Proposition~\ref{proposition:sets:sets_th
 %Prove  $(A \cup B) \times C = (A \times C ) \cup (B \times C)$.
  
 \begin{exercise}{30}
-Prove the following statements by mimicking the style of proof in Example~\ref{example:sets:other_relations}; that is use the definitions of $\cap, \cup, \setminus$, and $'$ as well as their properties listed in Proposition~\ref{proposition:sets:sets_theorem_set_ops} and  Proposition~\ref{sets_de_morgan}. This type of proof is called an ``algebraic'' proof.  Every time you use a property, remember to give a reference!
+Prove the following statements by mimicking the style of proof in Example~\ref{example:sets:other_relations}; that is use the definitions of $\cap, \cup, \setminus$, and $'$ as well as their properties listed in Proposition~\ref{proposition:sets:sets_theorem_set_ops} and  Proposition~\ref{proposition:sets:sets_de_morgan}. This type of proof is called an ``algebraic'' proof.  Every time you use a property, remember to give a reference!
 
-We should mention that the best strategy is usually to begin with the more complicated side of the equality, and try to simplify to the point where it agrees with the other side. if you can't get it to agree, then start working on the other side and simplify until the simplified versions of both sides finally agree.
+(You may find it easiest to begin with the more complicated side of the equality, and  simplify until it agrees with the other side. if you make that work, then start with the other side and simplify until the simplified versions of both sides finally agree.)
 
 \begin{enumerate}[(a)]
 \item
@@ -918,11 +917,11 @@ No doubt you're bitterly disappointed that neither $\cap$ nor $\cup$ can be used
 
 Although $\cap$ and $\cup$ didn't work, there is a consolation prize:
  
-\begin{exercise}{}
+\begin{exercise}{symm_diff}
  Besides $\cup$ and $\cap$, there is another set operation called \emph{symmetric difference},\index{Set operations!symmetric difference} which is sometimes denoted by the symbol $\Delta$ and is defined as:
 \begin{equation*}
 A \Delta B = (A \setminus B) \cup (B\setminus A).
 \end{equation*}
-Given a set $A$, let $G$ be the set of all subsets of $A$.  Repeat parts (a)--(f) of Exercise~\ref{exercise:sets:cap_group}, but this time for the set operation $\Delta$ instead of $\cap$.
+Given a set $U$, let $G$ be the set of all subsets of $U$.  Repeat parts (a)--(f) of Exercise~\ref{exercise:sets:cap_group}, but this time for the set operation $\Delta$ instead of $\cap$.
 \end{exercise} 
 

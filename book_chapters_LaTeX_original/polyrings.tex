@@ -181,7 +181,7 @@ So far we have been using polynomials with real (and occasionally complex) coeff
 
 \begin{defn}\label{def:sumPoly}  A polynomial may be written as
 
-\[f(x) = a_0 + a_1 x +a_2 x^2 + \cdots + a_N x^N = \sum^{N}_{n=0} a_i x^n, \]
+\[f(x) = a_0 + a_1 x +a_2 x^2 + \cdots + a_N x^N = \sum^{N}_{n=0} a_n x^n, \]
 
 Where $a_n$  is the \term{coefficient} \index{Polynomial!coefficients} of $x^n$,  $n=1,2, \ldots N$. It is possible for $a_n = 0$, in which case we usually omit the corresponding $x^n$ term (for instance, we write $-7 + x^2 $ rather than $-7 + 0x +  x^2  $). When we write a polynomial as a sum in this way we will \emph{assume} that $a_N \neq 0$ (here $a_N$ is called the \term{leading coefficient}\index{Polynomial! leading coefficient}.  Thus the largest power of $x$ that appears in the polynomial is $x^N$: this largest power is called the \term{degree}\index{Degree!of a polynomial} of the polynomial.
 \end{defn}
@@ -536,7 +536,7 @@ p(x,y)q(x,y)=& c_0+c_1y+c_2y^2+c_3y^3+c_4y^4\\
 \end{align*}
 
 \begin{exercise}{poly8}
-Compute the sum and product of $p(x)$ and $q(x)$ where:
+Compute the sum and product of $p(x,y)$ and $q(x,y)$ where:
 
 $p(x,y)=  (1+8x)+(3-2x)y^2$ and
 
@@ -667,7 +667,7 @@ Again, we will use the summation formula for the coefficients to compute the pro
 \end{bmatrix}. \]
 
 \begin{align*}
- c_1 = \sum_{i = 0}^1 a_i b_{0 - i} = a_0b_1+a_1b_0&=\begin{bmatrix} 
+ c_1 = \sum_{i = 0}^1 a_i b_{1 - i} = a_0b_1+a_1b_0&=\begin{bmatrix} 
 -1 & 5 \\
 -2 & 4
 \end{bmatrix} \cdot \begin{bmatrix} 
@@ -693,7 +693,7 @@ Again, we will use the summation formula for the coefficients to compute the pro
 \end{align*}
 
 \begin{align*}
- c_2 = \sum_{i = 0}^2 a_i b_{0 - i} = a_0b_2+a_1b_1+a_2b_0&= \begin{bmatrix} 
+ c_2 = \sum_{i = 0}^2 a_i b_{2 - i} = a_0b_2+a_1b_1+a_2b_0&= \begin{bmatrix} 
 -1 & 5 \\
 -2 & 4
 \end{bmatrix} \cdot \begin{bmatrix} 
@@ -729,7 +729,7 @@ Again, we will use the summation formula for the coefficients to compute the pro
 \end{align*}
 
 \begin{align*}
-c_3 = \sum_{i = 0}^3 a_i b_{0 - i} = a_1b_2+a_2b_1&= \begin{bmatrix} 
+c_3 = \sum_{i = 0}^3 a_i b_{3 - i} = a_1b_2+a_2b_1&= \begin{bmatrix} 
 4 & 3 \\
 2 & -4
 \end{bmatrix} \cdot \begin{bmatrix} 
@@ -754,7 +754,7 @@ c_3 = \sum_{i = 0}^3 a_i b_{0 - i} = a_1b_2+a_2b_1&= \begin{bmatrix}
 \end{bmatrix} .
 \end{align*}
 
-\[c_4 = \sum_{i = 0}^4 a_i b_{0 - i} = a_2b_2= \begin{bmatrix} 
+\[c_4 = \sum_{i = 0}^4 a_i b_{4 - i} = a_2b_2= \begin{bmatrix} 
 -1 & 0 \\
 2 & 1
 \end{bmatrix} \cdot \begin{bmatrix} 
@@ -825,7 +825,7 @@ $$q(x)=  \begin{bmatrix}
 
 Let's step back for a moment and see if we can make any generalizations based on the examples of polynomials in the previous section. Pause for a moment and consider: what do these examples have in common?
 
-In Section~\ref{DefOfGroup} we introduced the concept of a \term*{group}\index{Polynomial!coefficients properties}\index{Group!polynomial coefficients}. Recall that a group is a set with an operation that is closed, has identity, inverses, and is associative. Now, all of the sets of coefficients that we have looked at have two operations, addition and multiplication. So  it is natural for us to ask whether or not the different sets of coefficients that we have looked  are groups under either operation:  
+In Section~\ref{DefOfGroup} we introduced the concept of a \term*{group}\index{Polynomial!coefficients properties}\index{Group!polynomial coefficients}. Recall that a group is a set with an operation that is closed, has identity, inverses, and is associative. (The group operation is not necessarily commutative: a group with commutative operation is called an \term{abelian group}.) Now, all of the sets of coefficients that we have looked at have two operations, addition and multiplication. So  it is natural for us to ask whether or not the different sets of coefficients that we have looked  are groups under either operation:  
 
 \begin{exercise}{polyCoef10}
 \begin{enumerate}[(a)]
@@ -848,7 +848,7 @@ These additive and multiplicative properties define an algebraic structure known
 A set, $R$, with two closed binary operations $+$ and $\cdot$  is called a \term{ring} if 
 \begin{itemize}
 \item
-$R$ is an abelian group under the additive ($+$) operation;
+$R$ is an abelian (i.e. commutative) group under the additive ($+$) operation;
 \item
 The multiplicative operation $\cdot$ is associative;
 \item 
@@ -1670,7 +1670,10 @@ Use the Euclidean algorithm to compute the gcd of $a(x)=x^3+2x^2+2$ and  $b(x)=2
 
 \subsection{Polynomial roots and the FTOA (easy part) \quad                                      
 \sectionvideohref{Uh-czcHjyq4&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=50}}\label{FTOA}
-The Fundamental Theorem of Algebra asserts that a real polynomial of degree $n$ has at most $n$ roots. Actually, this is just the easy part of the theorem that you've probably heard before in previous math classes, but chances are you've probably never seen it proved. Seek no more: the proof is at hand! Not only that--our results will apply to  \emph{any} polynomial ring over a field, including $\RR[x]$, $\CC[x]$, $\QQ[x]$, and $\ZZ_p[x]$ (when $p$ is prime).  
+When you first learned about factoring polynomials with integer or real coefficients, you may have been told (or  noticed on your own) that a polynomial of degree $n$ has at most $n$ roots. This result is important enough that it has a name: it's part of the \term{Fundamental Theorem of Algebra}, or \term{FTOA}\ for short (sadly, it's only the easy part of FTOA--we'll discuss the hard part later). 
+
+ Most likely though you've never seen a proof of the FTOA. No worries--the proof is at hand!   Even better, we will show that this is true not just for garden-variety polynomials with integer or real coefficients, but also for   \emph{any} polynomial ring over a field, including $\RR[x]$, $\CC[x]$, $\QQ[x]$, and $\ZZ_p[x]$ (when $p$ is prime).  
+
 
 The following proposition gives us a way to relate polynomial values to polynomial remainders.
 
@@ -2215,7 +2218,7 @@ The quadratic formula expresses the roots of quadratic polynomials  in terms of 
 This result relates to field extensions because every solution to an equation that involves only roots and algebraic operations must belong to certain type of field extension of the rationals. This fact imposes conditions on the type of numbers that can be expressed in such a form. It can be shown that there are roots of 5th-degree equations that don't meet these conditions---hence they can't possibly satisfy such an equation.
 
 \item
-Beginning with the Greeks,  mathematicians tried for thousands of years to find a way to trisect an angle, using only straightedge and compass. In 1837, Pierre Wantzel finally showed that it is \emph{impossible}: his proof built on previous results of Galois. (Think of how many hours over how many centuries were spent on a futile quest!)
+Beginning with the Greeks,  mathematicians tried for thousands of years to find a way to trisect an angle, using only straightedge and compass. In 1837, Pierre Wantzel finally showed that it is \emph{impossible}. His proof built on previous results of Galois. (Think of how many hours over how many centuries were spent on a futile quest!)
 
 This result relates to field extensions in similar fashion as the previous one. Geometrical points in the plane are identified as complex numbers (as we described in Section~\ref{complex_roots}). Every point constructed based on a set of  points is an algebraic combination of the corresponding complex numbers, together with square roots. This means that every constructable point must be contained in a series of field extensions created by successively adding square roots to an existing field. It can be shown that trisecting an angle involves finding a cube root which cannot possibly belong to such a series of extensions.  You may consult:
 

@@ -3,6 +3,7 @@
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:mercedes}:}
 %List six different symmetries of the Mercedes logo.
+%\hyperref[sec:symmetries:hints]{(*Hint*)}
 \begin{multicols}{3}
 \begin{enumerate}
 \item
@@ -26,7 +27,7 @@ $s_{240^{\circ}}$
 \end{multicols}
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:hexagon}:}
-\begin{enumerate}[{a.}]
+\begin{enumerate}[(a)]
 \item
 %Is $r_{60}$ one-to-one?  Explain why or why not.
 Yes, $r_{60}$ is one-to-one, because each element of the domain goes to only one element of the codomain.
@@ -42,7 +43,7 @@ Yes, $r_{60}$ is it is one-to-one and onto it is a bijection.
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:bijectnotsym}:}\\
 %Create a bijection from $\{A,B,C,D,E,F\} \to \{A,B,C,D,E,F\}$ that does not correspond to a symmetry of the regular hexagon in  Figure~\ref{hex60rot}. \emph{Explain} why it is not a symmetry.
-It's not a symmetry because it doesn't preserve the length and position of corresponding side $\overline{AB}$.\\
+There are many answers, one is given below.  It's not a symmetry because it doesn't preserve the length and position of corresponding side $\overline{AB}$.\\
 \\
 $\begin{pmatrix}
 A & B & C & D & E & F\\
@@ -50,7 +51,7 @@ A & C & B & D & E & F
 \end{pmatrix}$\\
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:10}:}
-\begin{enumerate}[{a.}]
+\begin{enumerate}[(a)]
 \item
 %Explain why a $90^\circ$ rotation, a $270^\circ$ rotation, or reflection across a diagonal are not symmetries  of the rectangle $ABCD$.
 The two rotations and the reflection all change the final image so they are not symmetries.
@@ -61,7 +62,7 @@ square
 
 \item
 %What rotation angle does the identity symmetry correspond to? (Give the easiest answer.)
-$r_{360}$ or $\var{id}$
+0
 
 \item
 %Write each of the symmetries of a rectangle as a function (use either a table, ordered pairs, arrow diagram, etc.)
@@ -81,13 +82,12 @@ D & C & B & A
 $\qquad s_{h}: \begin{pmatrix}
 A & B & C & D\\
 B & A & D & C
-\end{pmatrix}$\\
+\end{pmatrix}$
 \end{enumerate}
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:SymmComposition}:}
-%With reference to the symmetries of a rectangle in Example~\ref{example:symmetries:rectsymmetries}, let  $r_{180}$ be the $180^\circ$ counterclockwise rotation and let $s_v$ be the reflection across the vertical axis.
-%(Note that reflection across the vertical axis is sometimes called ``horizontal reflection,'' since the figure ``flips'' from left to right. Admittedly this is confusing, but that's what people call it so what can you do?)
-\begin{enumerate}[{a.}]
+%With reference to the symmetries of a rectangle in Example~\ref{example:symmetries:rectsymmetries}, let  $r_{180}$ be the $180^\circ$ counterclockwise rotation and let $s_v$ be the reflection across the vertical axis. (Note that reflection across the vertical axis is sometimes called ``horizontal reflection,'' since the figure ``flips'' from left to right. Admittedly this is confusing, but that's what people call it so what can you do?)
+\begin{enumerate}[(a)]
 \item
 %Write the function $r_{180}$ in ordered pair notation.
 $r_{180} = \{(A, C), (B, D), (C, A), (D, B)\}$
@@ -112,11 +112,11 @@ It's the symmetry $s_h$.
 \item
 %Write the function $s_v \compose r_{180}$ in ordered pair notation. Is it a symmetry of the rectangle? If so, then which one?
 $s_v\circ r_{180}= \{(A,B), (B,A), (C,D), (D,C)\}$\\
-It's the symmetry $s_h$.\\
+It's the symmetry $s_h$.
 \end{enumerate}
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:CompSymm}:}
-\begin{enumerate}[{a.}]
+\begin{enumerate}[(a)]
 \item
 %Write $s_h$ in tableau form, where $s_h$ is reflection across the horizontal axis. (Note $s_h$ is sometimes referred to  as ``vertical reflection,'', since the two reflected halves are stacked on top of each other.)
 $s_h: \begin{pmatrix}
@@ -159,8 +159,7 @@ It's the symmetry $s_h$.
 %\noindent
 %Note ${\var id}$ denotes the identity symmetry, that is the symmetry that leaves all points unchanged.
 %\medskip
-
-\begin{enumerate}[{a.}]
+\begin{enumerate}[(a)]
 \item
 %$f=$ rotation by $240^\circ, g=$ rotation by $120^\circ$
 	\begin{enumerate}[(i)]
@@ -276,9 +275,9 @@ It's the symmetry $s_h$.
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:S3Table}:}
 %Verify the following entries in Table~\ref{S3_table} by (i) writing the symmetries in tableau form and (ii) computing the composition directly.
-\begin{enumerate}[{a.}]
+\begin{enumerate}[(a)]
 \item
-%row 2, column 4\\
+%Row 2, column 4\\
 $\rho_1 \circ \mu_1 = \begin{pmatrix}
 A & B & C\\
 B & C & A
@@ -291,7 +290,7 @@ B & A & C
 \end{pmatrix}=\mu_3$
 
 \item
-%row 4, column 2\\
+%Row 4, column 2\\
 $\mu_1\circ \rho_1=\begin{pmatrix}
 A & B & C\\
 A & C & B
@@ -304,7 +303,7 @@ C & B & A
 \end{pmatrix}=\mu_2$
 
 \item
-%row 3, column 6\\
+%Row 3, column 6\\
 $\rho_2\circ \mu_3=\begin{pmatrix}
 A & B & C\\
 C & A & B
@@ -315,11 +314,15 @@ B & A & C
 A & B & C\\
 A & C & B
 \end{pmatrix}=\mu_1$
+
+\item
+%Row 6, column 3\\
+
 \end{enumerate}
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:20}:}
 %Use Table~\ref{S3_table} to answer the following questions. 
-\begin{enumerate}[{a.}]
+\begin{enumerate}[(a)]
 \item
 %Explain why Table~\ref{S3_table} shows that ${\var id}$ satisfies the definition of an identity element.
 Any symmetry composes with $\var{id}$ leave that symmetry unchanged.\\
@@ -362,11 +365,62 @@ By definition of inverse, it follows that $s(A')=A$ and $s(B')=B$.\\
 Since $s$ is a symmetry, it follows that $\overline{A'B'}$ = $\overline{AB}$\\
 Since $A$ and $B$ were arbitrary points in the figure, we have shown that $s^{-1}$ leaves distance between points unchanged.
 
+\noindent\textbf{Exercise \ref{exercise:symmetries:group_proof}:}\\ 
+%Prove Proposition~\ref{proposition:symmetries:symcompinv} (make use of the propositions that we've proved previously.)
+We just need show that the set of symmetries with the operation of composition has closure, associativity, an identity element, and every element has an inverse.  
+\begin{itemize}
+\item
+Closure: Using Proposition~\ref{proposition:symmetries:symcompclosed} and Exercise \ref{exercise:symmetries:16}, you can see that if $f$ and $g$ are symmetries of a figure, then $f \compose g$ and $g \compose f$ are also symmetries of the figure.
+
+\item
+Associativity: Using Proposition~\ref{proposition:symmetries:symcompassoc} we know that the set of symmetries $S$ of any figure under composition is associative.
+
+\item
+Identity: Using Proposition~\ref{proposition:symmetries:symcompid} we know that all the set of symmetries $S$ of any figure has an identity.
+
+\item
+Inverse: Using Proposition~\ref{proposition:symmetries:symcompinv} we know that all elements of set $S$ have inverses.
+\end{itemize}
+Since the set has closure, associativity, an identity element, and every element has an inverse it is a group.\\
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:symm_rectangle}:}\\ 
+\begin{enumerate}[(a)]
+\item
+%Write the Cayley table for the symmetries of a rectangle.
+\begin{tabular}{c| c c c c c c c c }
+		o & $\var{id}$ & $r_{180}$ & $s_v$ & $s_h$ \\
+		\hline
+		$\var{id}$ & $\var{id}$ & $r_{180}$ & $s_v$ & $s_h$\\
+		$r_{180}$ & $r_{180}$ & $\var{id}$ & $s_h$ & $s_v$\\
+		$s_v$ & $s_v$ & $s_h$ & $\var{id}$ & $r_{180}$\\
+		$s_h$ & $s_h$ & $s_v$ & $r_{180}$ & $\var{id}$\\
+	\end{tabular}
+	
+\item
+%List the inverses of each symmetry of the symmetries of a rectangle.
+The inverses are as follows:
+	\begin{multicols}{2}
+	\begin{itemize}
+	\item
+	$\var{id} \leftrightarrow \var{id}$.
+	
+	\item
+	$r_{180} \leftrightarrow r_{180}$.
+	
+	\item
+	$s_v \leftrightarrow s_v$.
+	
+	\item
+	$s_h \leftrightarrow s_h$.
+	\end{itemize}
+	\end{multicols}
+\end{enumerate}
+
 \noindent\textbf{Exercise \ref{exercise:symmetries:symm_square}:}
-\begin{enumerate}[{a.}]
+\begin{enumerate}[(a)]
 \item
 %Describe all symmetries of a square  (for example: ``reflection about the vertical axis '' describes one symmetry: give similar descriptions of all symmetries of the square)
-$\var{id}, r_{90}, r_{180}, r_{270}, s_v, s_h, s_{45}, s_{135}$
+The identity; rotations of 90, 180, and 270 degrees; vertical and horizontal reflections; and reflections about the 45 and 135 degree lines.
 
 \item
 %Label the square's vertices as $A, B, C, D$, and write down each symmetry in tableau form. As in Figure~\ref{groups_s3_symmetry_fig}, denote each symmetry by a variable (you may use $\rho_1, \rho_2, \ldots$ for the rotations and $\mu_1, \mu_2, \ldots$ for the reflections).
@@ -495,6 +549,37 @@ $vi$
 \end{enumerate}
 \end{multicols}
 
+\noindent\textbf{Exercise \ref{exercise:symmetries:InverseRot}:}
+\begin{enumerate}[(a)]
+\item
+%Using the above definition of $r^k$, show that $r^k \compose r^m = r^{m+k}$ for any natural numbers $k,m$.
+Proof:
+\[
+r^k =  \underbrace{r \compose r \cdots \compose r}_{k \; {\rm times}}
+\]
+and
+\[
+r^m =  \underbrace{r \compose r \cdots \compose r}_{m \; {\rm times}}
+\]
+so
+\[
+r^{k+m} =  \underbrace{r \compose r \cdots \compose r}_{m \; {\rm times}} \compose 
+\underbrace{r \compose r \cdots \compose r}_{m \; {\rm times}}
+\]
+which is equal to
+\[
+r^{k+m} =  \underbrace{r \compose r \cdots \compose r}_{m+k \; {\rm times}}
+\]
+
+\item
+%Show that $r^k \compose r^{n-k} = r^{n-k} \compose r^k = {\var id}$ for $1 < k < n$.  
+From part (a), we get  $r^k \compose r^{n-k} = r^{n-k} \compose r^k = r^n$, which is equal to ${\var id}$ according to the text right above the exercise.
+
+\item
+%What does (b) tell us about the inverse of $r^k$?
+The inverse of $r^k$ is $r^{n-k}$.
+\end{enumerate}
+
 \noindent\textbf{Exercise \ref{exercise:symmetries:reflection_pentagon}:}
 \begin{enumerate}[{a.}]
 \item
@@ -546,49 +631,45 @@ $s^2 = s\circ s = \begin{pmatrix}
 %\medskip
 %
 %\begin{proof}
-%\begin{itemize}
-%\item
-% The proof is by contradiction. Given  $0< p,q < n$ and  $p \neq q$, and suppose that $s \compose r^p  \underline{~<1>~} s \compose r^q$
-%\item
-%Compose both sides of the equation with $s$, and obtain the equation:  $s \compose (s \compose r^p) =  \underline{~<2>~} $.
-%\item
-%By the associative property of composition, this can be rewritten: $(s \compose s) \compose \underline{~<3>~}  =  \underline{~<4>~}$
-%\item
-%Since $s \compose s = \underline{~<5>~}$, this can be rewritten: ${\var id} \compose \underline{~<6>~}  =  \underline{~<7>~}$.
-%\item
-%Since ${\var id}$ is a group identity, we have: $r^p = \underline{~<8>~}$.
-%\item
-%But we have already shown that $r^p$ and $r^q$ are distinct symmetries if $0< p,q < n$ and  $p \neq q$. This is a contradiction.
-%\item
-%Therefore we conclude that our supposition was incorrect, and $s \compose r^p  \underline{~<9>~} s \compose r^q$. This completes the proof.
-%\end{itemize}
 \begin{multicols}{3}
 \begin{enumerate}
 \item
+% The proof is by contradiction. Given  $0< p,q < n$ and  $p \neq q$, and suppose that $s \compose r^p  \underline{~<1>~}  s \compose r^q$
 $=$
 
 \item
+%Compose both sides of the equation with $s$, and obtain the equation:  $s \compose (s \compose r^p) =  \underline{~<2>~} $.
 $s \circ (s \circ r^q)$
 
 \item
+%By the associative property of composition, this can be rewritten: $(s \compose s) \compose \underline{~<3>~}  
 $r^p$
 
 \item
+%=  \underline{~<4>~}$
 $(s \circ s) \circ r^q$
 
 \item
+%Since $s \compose s = \underline{~<5>~}$,
 $\var{id}$
 
 \item
+%this can be rewritten: ${\var id} \compose \underline{~<6>~}  
 $r^p$
 
 \item
+%=  \underline{~<7>~}$.
 $\var{id} \circ r^q$
 
 \item
+%Since ${\var id}$ is a group identity, we have: $r^p = \underline{~<8>~}$.
 $r^q$
 
+%\item
+%But we have already shown that $r^p$ and $r^q$ are distinct symmetries if $0< p,q < n$ and  $p \neq q$. This is a contradiction.
+
 \item
+%Therefore we conclude that our supposition was incorrect, and $s \compose r^p  \underline{~<9>~} s \compose r^q$. This completes the proof.
 $\neq$
 \end{enumerate}
 \end{multicols}
@@ -603,57 +684,51 @@ $\neq$
 %\medskip
 %\hyperref[sec:symmetries:hints]{(*Hint*)}
 Suppose $0<q<n$ and $s=s\circ r^q$, we have:
-$s\circ s=s\circ(s\circ r^q)$ (compose s to the left of both sides)\\
+$s\circ s=s\circ(s\circ r^q)$ (compose $s$ to the left of both sides)\\
 $\implies s\circ s=(s\circ s)\circ r^q$ (associative property)\\
 $\implies id=id\circ r^q$ (because $s\circ s=id$)\\
 $\implies id=r^q$ ($id$ is group identity)\\
 It's a contradiction since we have shown that $id\neq r^q$ when $0<q<n$.\\
 Therefore, $s\neq s\circ r^q$.\\
-\\
 
-\noindent\textbf{Exercise \ref{exercise:symmetries:34}:}\\
+\noindent\textbf{Exercise \ref{exercise:symmetries:34}:}
 %Fill in the blanks to prove that given any integers $p,q$ with $0< p,q < n$, $s \compose r^p \neq r^q$ :
-%\begin{itemize}
-%\item
-%The proof is by contradiction: so given integers $p,q$ with $0< p,q < n$, we suppose $\underline{~<1>~}$.
-%\item
-%By multiplying both sides on the \emph{right} by $r^{n-p}$, we obtain $s \compose r^p \compose \underline{~<2>~} = r^q \compose \underline{~<3>~}$
-%\item
-%By associativity, we have $s \compose  \underline{~<4>~} =  \underline{~<5>~}$
-%\item
-%Using the fact that \underline{~<6>~} = ${\var id}$, we obtain $s = \underline{~<7>~}$
-%\item
-%The left side of this equation is a reflection, and the right side is a $\underline{~<8>~}$, which is a contradiction.
-%\item
-%This contradiction implies that our supposition is incorrect, so  given integers $p,q$ with $0< p,q < n$, we conclude $\underline{~<9>~}$.
-%\end{itemize}
 \begin{multicols}{3}
 \begin{enumerate}
 \item
+%The proof is by contradiction: so given integers $p,q$ with $0< p,q < n$, we suppose $\underline{~<1>~}$.
 $s\circ r^p=r^q$
 
 \item
+%By multiplying both sides on the \emph{right} by $r^{n-p}$, we obtain $s \compose r^p \compose \underline{~<2>~} 
 $r^{n-p}$
 
 \item
+%= r^q \compose \underline{~<3>~}$
 $r^{n-p}$
 
 \item
+%By associativity, we have $s \compose  \underline{~<4>~} 
 $(r^p\circ r^{n-p})$
 
 \item
+%=  \underline{~<5>~}$
 $(r^q\circ r^{n-p})$
 
 \item
+%Using the fact that \underline{~<6>~} 
 $r^p\circ r^{n-p}$
 
 \item
+%= ${\var id}$, we obtain $s = \underline{~<7>~}$
 $r^q\circ r^{n-p}$
 
 \item
+%The left side of this equation is a reflection, and the right side is a $\underline{~<8>~}$, which is a contradiction.
 rotation
 
 \item
+%This contradiction implies that our supposition is incorrect, so  given integers $p,q$ with $0< p,q < n$, we conclude $\underline{~<9>~}$.
 $s\circ r^p\neq r^q$
 \end{enumerate}
 \end{multicols}
@@ -746,6 +821,7 @@ $\mu = s_h \implies \mu \circ \mu = \var{id}$
 	\end{pmatrix}$
 	\end{itemize}
 	\end{multicols}
+	
 \item
 %Let $\mu$ be any of the reflections in part (a). What is $\mu \compose \mu$?
 $\mu = s_1 \implies \mu \circ \mu = \var{id}$
@@ -816,6 +892,13 @@ $\mu\circ\mu = \var{id}$
 \item
 %How many reflections have no fixed vertices?
 3 reflections have no fixed vertices.
+
+\item
+%How many reflections fix exactly one vertex?
+
+\item
+%How many reflections fix exactly two vertices?
+
 \end{enumerate}
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:nonagon}:}
@@ -850,7 +933,7 @@ $\mu_3\circ\mu_3 = \var{id}$
 \begin{enumerate}[{a.}]
 \item
 %Based on results we've shown, prove that $s \compose r^p$ must be a reflection, for $0 < p < n$.
-$s\circ r^p$ is either a rotation or a reflection. (Proposition 42)\\
+$s\circ r^p$ is either a rotation or a reflection. (Proposition~\ref{proposition:symmetries:dihReflRot}, part (a)\\
 Suppose $s\circ r^p$ is a rotation.\\
 Then $s\circ r^p=r^k$ $(k\in Z)$.\\
 Multiply both sides on the right by $r^{n-p}$\\
@@ -858,6 +941,16 @@ Then $s\circ r^p\circ r^{n-p}=r^k\circ r^{n-p}$\\
 $\implies s=r^{k+n-p}$\\
 This would mean $s$ is a rotation, which is a contradiction.\\
 Therefore, $s\circ r^p$ must be a reflection.
+
+\item
+%Using part (a) and other results we've shown, show that $(s \compose r^p) \compose (s \compose r^p) = {\var id}$.
+%\hyperref[sec:symmetries:hints]{(*Hint*)}
+From part (a), we have $s\circ r^p$ is a reflection, and Proposition~\ref{proposition:symmetries:dihReflRot} part (b) then implies 
+ $(s\circ r^p)\circ (s\circ r^p) = {\var id}$.
+ 
+\item
+%Using part (b) and composing on the left by $r^{n-p} \compose s$, show that $  r^{n-p} \compose s = s \compose r^p$  for $0< p < n$.
+Perform the composition and use the associative property.
 \end{enumerate}
 
 \noindent\textbf{Exercise \ref{exercise:symmetries:44}:}\\
@@ -876,9 +969,14 @@ Therefore, $s\circ r^p$ must be a reflection.
 	\end{tabular}
 \\
 
+\noindent\textbf{Exercise \ref{exercise:symmetries:D5}:}
+%Using only associativity and Proposition~\ref{proposition:symmetries:Dn_generator_theorem}, complete the entire Cayley table for $D_5$.  You don't need to show all your computations. \emph{(But don't use tableau form -- no cheating!)} 
+\\
+
 \noindent\textbf{Exercise \ref{exercise:symmetries:46}:}
 \begin{enumerate}[{a.}]
-\skipitems{1}
+\item
+%Give the Cayley table for the integers mod 4 under addition.
 
 \item 
 %Give the Cayley table for the four rotations of the square (4-sided polygon).  You may use $r$ to denote rotation by $90$ degrees, so that the rotations will be $\{ {\var id}, r, r^2, r^3  \}$.
@@ -901,4 +999,7 @@ Therefore, $s\circ r^p$ must be a reflection.
 		$z^2$ & $z^2$ & $z^3$ & $1$ & $z$\\
 		$z^3$ & $z^3$ & $1$ & $z$ & $z^2$
 	\end{tabular}
+	
+\item
+%Do you see any connection between your answers to (a), (b), and (c) above?
 \end{enumerate}

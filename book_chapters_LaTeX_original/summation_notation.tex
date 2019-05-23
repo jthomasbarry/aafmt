@@ -260,7 +260,7 @@ $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i \frac{1}{11-j}}$
 \item
 $\displaystyle{\sum_{i=1}^{10} \sum_{j=i}^{10} \frac{i}{j(j+1)}}$
 \item
-$\displaystyle{\sum_{i=1}^{20} \sum_{j=1}^i \frac{i}{400-j^2}}$ \hyperref[sec:sigma:hints]{(*Hint*)} 
+$\displaystyle{\sum_{i=1}^{20} \sum_{j=1}^i \frac{i}{(400-j^2)+j+20}}$ \hyperref[sec:sigma:hints]{(*Hint*)} 
 \item
 $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i (j+i)}$
 \end{enumerate}
@@ -315,7 +315,7 @@ All of the sums in Exercise~\ref{exercise:Sigma:common1} have a constant differe
 \]
 We can evaluate this sum using an algebraic trick.  Let $S$ be the value of this sum.  We can solve for $S$  by multiplying $S$ term-by-term by 1/2 and subtracting:
 \[ S=1+\frac{1}{2}+ \cdots + \frac{1}{2^n} \quad \text{and} \quad
-{1}{2}S=\frac{1}{2}+ \cdots + \frac{1}{2^{n+1}},
+\frac{1}{2}S=\frac{1}{2}+ \cdots + \frac{1}{2^{n+1}},
 \]
 so that
 \[
@@ -743,27 +743,18 @@ Give a formula for $(ABC)^T$, and prove your formula using summation notation.
 \end{exercise}
 
 \begin{exercise}{}
-We know that the transpose of a $n \times n$ matrix is a $n \times n$ matrix.  So we can consider transpose as a function from $M_n(\mathbb{R})$ to $M_n(\mathbb{R})$, where (as before)  $M_n(\mathbb{R})$  is the additive group of $n \times n$ matrices. Prove or disprove the following:
+We know that the transpose of a $n \times n$ matrix is a $n \times n$ matrix.  So we can consider transpose as a function from $M_n(\mathbb{R})$ to $M_n(\mathbb{R})$, where   $M_n(\mathbb{R})$  is the set of $n \times n$ matrices with real-number entries. Prove or disprove the following:
 \begin{enumerate}[(a)]
 \item
 Transpose defines an invertible function from $M_n(\mathbb{R})$ to $M_n(\mathbb{R})$.
 \item
-Transpose defines an isomorphism from $M_n(\mathbb{R})$ to $M_n(\mathbb{R})$.
+Transpose preserves addition, i.e. $A^T + B^T) = (A+B)^T$ for any matrices $A,B \in M_n(\mathbb{R})$.
+\item
+Transpose preserves multiplication, i.e. $A^T \cdot B^T) = (A\cdot B)^T$ for any matrices $A,B \in M_n(\mathbb{R})$.
+
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
-Recall that $GL_n(\mathbb{R})$  is the multiplicative group of $n \times n$ real invertible matrices.
- Prove or disprove the following:
-\begin{enumerate}[(a)]
-\item
-Prove that the transpose of a matrix in $GL_n(\mathbb{R})$  is also in $GL_n(\mathbb{R})$ .  Hence, transpose defines a function from $GL_n(\mathbb{R})$  to $GL_n(\mathbb{R})$. 
-\item
-Prove or disprove: transpose defines an invertible function from $GL_n(\mathbb{R})$ to $GL_n(\mathbb{R})$.
-\item
-Prove or disprove: transpose defines an isomorphism from $GL_n(\mathbb{R})$ to $GL_n(\mathbb{R})$.
-\end{enumerate}
-\end{exercise}
 
 
 \subsubsection*{Matrix inverse}
@@ -867,12 +858,6 @@ The next exercise covers some basic properties of traces:
 Prove that if $A$ and $B$ are square matrices of the same size, then $\text{Tr} \left( A + B \right) = \text{Tr} \left( A \right) + \text{Tr} \left( B \right)$.
 \item
 Prove that if $A$ is a square matrix with real entries and $k$ is a real number, then $\text{Tr} \left(k A  \right) = k\text{Tr} \left( A \right)$.
-\item
-Prove or disprove: trace defines an isomorphism between $\mathbb{M}_2$ (the additive group of $2 \times 2$ matrices with real entries) and $\mathbb{R}$ .
-\item
-Prove or disprove: trace defines a homomorphism from $\mathbb{M}_2$ to $\mathbb{R}$ .
-\item
-Prove or disprove: trace defines a homomorphism from $GL_2(\mathbb{R})$ (invertible $2 \times 2$ matrices under multiplication)  to $\mathbb{R}$ .
 \end{enumerate}
 \end{exercise}
 
@@ -883,7 +868,7 @@ In the above exercise, we have considered the trace of the sum of two matrices. 
 
 All we've done here is take the matrix product formula, and set the second index of the second  matrix entry equal to first index of the first matrix entry.  Now to make things interesting, let's find the trace for the reverse order:
 
-\[ \text{Tr} \left({B} {A}\right) = \sum_{i} [BA]_{i,i} = \sum_{i} \left( \sum_{k} b_{i,k}a_{k,i} \right) = \sum_{i,k}a_{k,i}. \]
+\[ \text{Tr} \left({B} {A}\right) = \sum_{i} [BA]_{i,i} = \sum_{i} \left( \sum_{k} b_{i,k}a_{k,i} \right) = \sum_{i,k}a_{k,i}b_{i,k}. \]
 
 Let's play with this last equation a bit. As we mentioned before, we can change the sum over $i,k$ to a sum over $i,k$ without changing anything. Furthermore, since $b_{i,k}$ and $a_{k,i}$ are numbers, they commute under multiplication:
 

@@ -255,7 +255,7 @@ Give a bijection from $X$ to $Y$, and the corresponding bijection from $S_X$ to 
 \item
 *How many possible bijections from $X$ to $Y$ produce isomorphisms from $S_X$ to $S_Y$?
 \item
-*Now let $X =\{A, B, \ldots M\}$ and $Y = \{N, O, \ldots Z\}$. How many different bijections from $X$ to $Y$ produce isomorphsims from $S_X$ to $S_Y$?
+*Now let $X =\{A, B, \ldots M\}$ and $Y = \{N, O, \ldots Z\}$. How many different bijections from $X$ to $Y$ produce isomorphisms from $S_X$ to $S_Y$?
 
 \end{enumerate}
 \end{exercise}
@@ -415,7 +415,7 @@ Write the following permutation of $S_6$ in cycle notation:
 \end{exercise}
 
 \begin{exercise}{long_cycle_perm2}
-Given the permutation in $S_6$ $\mu = (152634)$:
+Given the permutation $\mu = (152634)$ in $S_6$ :
 \begin{enumerate}[(a)]
 \item
 Write $\mu$ in tableau form.
@@ -425,7 +425,7 @@ Write $\mu$ as a figure similar to Figure~\ref{fig:cycle}
 \end{exercise}
 
 \begin{exercise}{long_cycle_perm3}
-Given the permutation in $S_6$ $\mu = (165432)$:
+Given the permutation $\mu = (165432)$ in $S_6$ :
 \begin{enumerate}[(a)]
 \item
 Write $\mu$ in tableau form.
@@ -656,7 +656,7 @@ Notice right away that every number affected by $\tau$ is unaffected by $\sigma$
 
 Now since $S_7$ is closed under function composition, it follows that $\sigma \tau = (135)(27)$ must be a permutation in $S_7$.
 
-\begin{exercise}{}
+\begin{exercise}{permute_disjoint}
 Write the permutation $\sigma \tau$ from Example~\ref{example:permute:cycles_disjoint_comp} in tableau form.
 \end{exercise}
 
@@ -816,7 +816,7 @@ In all three cases we have $\sigma \tau (x)$ = $\underline{ ~<25>~}$, so therefo
 \noindent
 What we've discovered about products of two disjoint cycles is also true for products of any number of disjoint cycles. Since disjoint cycles act independently, they all commute.
 
-\begin{exercise}{}
+\begin{exercise}{disjoint_commute_tableau}
 Write each of the following permutations on $X = \{1,2,\ldots,9\}$ in tableau form.
 \begin{enumerate}[(a)]
 \begin{multicols}{3}
@@ -832,7 +832,7 @@ Which of the above permutations are the same? Which are different? \emph{Explain
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{disjoint_commute_cycle}
 Write each of the following permutations 2 different ways using cycle notation.
 \begin{enumerate}[(a)]
 \begin{multicols}{3}
@@ -1081,7 +1081,7 @@ Now recall case (i) above. In this case,  $\sigma = \sigma_1$.  Hence, $\sigma$ 
 
 Let's move on to (b).  To show uniqueness of the disjoint cycles, we suppose that $\sigma = \sigma_1 \ldots \sigma_s$ and also$\sigma = \rho_1 \ldots \rho_r$.  The proof may be accomplished by showing that $S = R$, where $S := \{sigma_1,\ldots \sigma_s \}$ and $R  := \{\rho_1,\ldots,\rho_r\}$. To do this, we may show every element of $S$ is an element of $R$, and vice versa. So take $\sigma_j \in S$, and write $\sigma_j =(a_1 \, a_2 \, \ldots \, a_J)$. Since $\sigma_j(a_1) = a_2$, it follows that $\sigma(a_1) = a_2$. But this means that there must be a cycle $rho_\ell \in R$ such that $\rho_\ell(a_1) = a_2$.  In the same way we may show that $\rho(a_2) = a_3, \ldots \rho(a_J)=a_1$.: In other words, $sigma_j = \rho_\ell$.  Thus every element of $S$ is also an element of $R$.  The proof is then completed by the following exercise:
 
-\begin{exercise}{}
+\begin{exercise}{uniqueness_proof}
 Complete the proof of Proposition~\ref{proposition:permute:perm_simple_notation} by showing that every $\rho_j$ in $R$ is also in the set $S$.
 \end{exercise}  
 
@@ -1125,7 +1125,7 @@ two disjoint cycles of lengths 2 and 3;  and two disjoint cycles of lengths 2 an
 \end{example}
 
 \begin{exercise}{cycle_types}
-Following Example~\ref{example:permute:S5_cycle_types}, list  all possible cycle structures of permutations in the following:
+Following Example~\ref{example:permute:S5_cycle_types}, list all possible cycle structures of permutations in the following:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
 \item
@@ -1138,8 +1138,8 @@ $S_8$
 \end{multicols}
 \end{exercise}
 
-\section{Algebraic properties of cycles\quad \label{algebraic_props}
-\sectionvideohref{WWd8yzA91xg&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=22}}
+\section{Algebraic properties of cycles \quad 
+\sectionvideohref{WWd8yzA91xg&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=22}}\label{algebraic_props}
 \subsection{Powers of cycles: definition of order}
 
 Let's revisit the product of cycles.  We will look at what happens when you compose a cycle with itself multiple times.\index{Cycle!powers of}
@@ -1892,7 +1892,7 @@ transpositions.
 %
 %%%% Should leverage permutation matrices
 %%%% Also can prove by induction on the number of elements being permuted. Move the transposition involving (n) to the far left. Process results in # transpositions differ by even. 
-\begin{exercise}{}
+\begin{exercise}{id_odd_trans}
 ***** Write ${\var id} $ as a product of an odd number of transpositions (If you succeed, you automatically get an $A$ in this course!)
 \end{exercise}
 
@@ -1998,7 +1998,7 @@ We may  summarize our argument so far as follows:
 Given a permutation $\sigma$ and a transposition $(ab)$, then the parity of $(ab)\sigma$ is different from the parity of $\sigma$.
 \end{prop}
 
-\begin{exercise}{}
+\begin{exercise}{parity_right}
 How does the conclusion of Proposition~\ref{proposition:permute:multByTrans} change if the permutation $\sigma$ is multiplied on the \emph{right} by $(ab)$ instead of on the left?  \emph{Explain} your answer.
 \end{exercise}
 
@@ -2357,12 +2357,12 @@ The set $A_n$ is a group.
 \end{prop}
 
 
-\begin{defn} \label{Alternating_Group}
+\begin{defn} \label{def:Alternating_Group}
 The group $A_n$\label{alternatinggroup} of even permutations is called the \term{
 alternating group on $n$ numbers}\index{Group!alternating}. 
 \end{defn}
 
-\begin{exercise}{}
+\begin{exercise}{B_nGroupProps}
 Prove or disprove: the set of odd permutations $B_n$ is also a group.
 \end{exercise}
 
@@ -2462,7 +2462,7 @@ List all the permutations of $A_4$ (Write them in cycle notation. Make sure you 
 \end{exercise}
 
 \begin{exercise}{A6_A7_A8}
-Give all possible cycle structures for elements in each of the following sets.
+Give all possible cycle structures for elements in each of the following sets. (You don't need to list all the permutations, just the cycle configurations e.g. ``pair of 2-cycles''.)
 \begin{enumerate}[(a)]
 \begin{multicols}{3}
 \item

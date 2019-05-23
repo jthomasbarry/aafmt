@@ -593,11 +593,11 @@ By condition … this implies that $a$ and $b$ are in the same coset.
 \item
 %Show that $G$ has subgroups of order 5 and 7.
 %\\
-Proof: Given a finite group with $g \in G, h \in G$ such that $|g| = 5, |h| = 7$, then by Theorem~\ref{OrbitIsSubgroup}, $\langle g \rangle$ is a subgroup of $G$.
+Proof: Given a finite group with $g \in G, h \in G$ such that $|g| = 5, |h| = 7$, then by Proposition~\ref{proposition:groups:OrbitIsSubgroup}, $\langle g \rangle$ is a subgroup of $G$.
 \\
 By Proposition~\ref{proposition:groups:OrderEltCyclic}, $|\langle g \rangle| = |g|$, so $|\langle g \rangle| = 5$, where $\langle g \rangle$ is a subgroup of $G$ of order 5.
 \\
-Also by Theorem~\ref{OrbitIsSubgroup}, $\langle h \rangle$ is a subgroup of $G$.
+Also by Proposition~\ref{proposition:groups:OrbitIsSubgroup}, $\langle h \rangle$ is a subgroup of $G$.
 \\
 So by Proposition~\ref{proposition:groups:OrderEltCyclic}, $|\langle h \rangle| = |h|$, so $|\langle h \rangle| = 7$, where $\langle h \rangle$ is a subgroup of $G$ of order 7.
 \\
@@ -606,7 +606,7 @@ Therefore, if $g, h \in G$ such that $|g| = 5, |h| = 7, G$ has subgroups of orde
 \item
 %Why must $|G| \geq 35$?
 %\\
-$|G|$ must be $\geq$ based on LaGrange's Theorem.
+$|G|$ must be $\geq$ based on Lagrange's Theorem.
 \\
 Since $\langle g \rangle$ is a subgroup of $G, |\langle g \rangle|$ must divide $|G|$, so $|G|$ is a multiple of 5.
 \\
@@ -619,7 +619,7 @@ Since $\lcm(5, 7) = 35, |G|$ must be $\geq 35$.
 %Suppose that $G$ is a finite group with 60 elements.  What are the possible orders for subgroups of $G$?
 %\\
 \\
-Theorem~\ref{LagrangeTheorem} tells us that $G$ is evenly divided by $H$ and we know that $|G| = 60$.
+Proposition~\ref{proposition:cosets:LagrangeTheorem} tells us that $|G|$ is evenly divided by $|H|$ and we know that $|G| = 60$.
 \\
 $\implies |H| = \{1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60\}$.
 \\
@@ -754,7 +754,7 @@ $\mod \left( \left( \frac{p+1}{2} \right)^p,p\right) \equiv 1 \pmod{p} \cdot \le
 %Suppose that $p$ is a prime number, and $a$ is a natural number which is relatively prime to $p$. Show that  $a^{p-1} \equiv 1 \bmod{p}$.
 %\\
 \\
-Let gcd$(a, p) = 1$.  Then we know that $a^{\phi(p)} \equiv 1 \pmod{p}$, by Theorem~~\ref{cosets:Eulers_theorem}.
+Let gcd$(a, p) = 1$.  Then we know that $a^{\phi(p)} \equiv 1 \pmod{p}$, by Proposition~\ref{proposition:cosets:cosets:Eulers_theorem}.
 \\
 By Exercise~\ref{exercise:cosets:phivals}f we know that $\phi(p) = p - 1$. So, $a^{p - 1} \equiv 1 \pmod{p}$.
 \\
@@ -956,7 +956,7 @@ Let $g \in G, h \in H$.
 \\
 Since $H$ is a normal subset, we can say that 
 \begin{align*}
-gHg^{-1} \subset H \text{\ and\ } gHg^{-1} &= H &\text{(by Theorem~\ref{normal:normalequivalents})}
+gHg^{-1} \subset H \text{\ and\ } gHg^{-1} &= H &\text{(by Proposition~\ref{proposition:cosets:normal:normalequivalents})}
 \\
 ghg^{-1} &= h' &h' \in H
 \\

@@ -53,7 +53,7 @@ You also learned how to solve them either by hand, or using the \texttt{SQRT} bu
 \end{itemize}
  But what about equations like:
 \[x^2 = -1 \]
-Your simple calculator can't help you with that one!\footnote{It's true that the fancier graphing calculators can handle it, but that's beside the point.}  If you try to take the square root of -1, the calculator will choke out \texttt{ERROR} or some similar message of distress.  But why does it do this? Doesn't $-1$ have a square root? 
+Your simple calculator can't help you with that one!\footnote{It's true that the fancier graphing calculators can handle it, but that's beside the point.}  If you try to take the square root of -1, the calculator will choke out \texttt{ERR OR} or some similar message of distress.  But why does it do this? Doesn't $-1$ have a square root? 
 
 In fact, we can prove mathematically that $-1$ does not have a \emph{real} square root. As proofs will play a very important part in this course, we'll spend some extra time and care explaining this first proof.
 
@@ -168,7 +168,7 @@ But how can you cancel something that doesn't exist?
 
 Since mathematicians couldn't completely avoid those embarrassing 
 $\sqrt{-1}$'s, they decided to put up with them as best they could. They
-called $\sqrt{-1}$ an \emph{imaginary }number\index{Imaginary number}, just to emphasize
+called $\sqrt{-1}$ an \emph{imaginary} number\index{Imaginary number}, just to emphasize
 that it wasn't up to par with the \emph{real} numbers. They also used the symbol $i$ to represent $\sqrt{-1}$, to make it less
 conspicuous (and easier to write). Finally, they created a larger
 set of numbers that included both real and imaginary numbers, called
@@ -214,7 +214,7 @@ the history of mathematics. Mathematicians were forced to recognize
 that their beloved ``real'' numbers just weren't good enough to
 deal with the mathematical problems they were encountering. So they
 had to create a \emph{new} \emph{number system} (the complex numbers)
-with\emph{ new} symbols ($i$) and \emph{new} arithmetic rules
+with\emph{ new}  symbols ($i$) and \emph{new} arithmetic rules
 (like $i\cdot i=-1$).
 
 In fact, this was not the first time that a controversial new number
@@ -415,7 +415,7 @@ $z + w = (a + bi) + (c + di)$ &substitution\\
 
 Notice how we started in this proof with one side of the equality, and through a series of steps ended up with the other side. This is a good method to follow, when you're trying to prove two things are equal.
 
-\begin{exercise}{}
+\begin{exercise}{complex_associative}
 Prove that addition on complex numbers is associative.
 \end{exercise}
 
@@ -451,7 +451,7 @@ Prove the distributive law for complex arithmetic: that is, if $u,w,$ and $z$ ar
 
 Two arithmetic operations down, two to go!  Let's consider subtraction of complex numbers. We may define $z - w$ using complex addition and multiplication as:  $z - w = z + (-1)\cdot w$.\index{Complex numbers!subtraction}
 
-\begin{exercise}{}
+\begin{exercise}{complex_subtraction}
  Given that  $z = a + bi$ and $w = c + di$ use the above definition of subtraction to derive an  expression for  $z - w$  in terms of $a,b,c,d$.  Express your answer as (Real part)  + (Imaginary part)$i$.
 \end{exercise}
 
@@ -791,6 +791,10 @@ $|z^{-1}| = \dfrac{1}{|z|}$
 
 \item
 $(\overline{z})^{-1} = \overline { z^{-1} }$
+
+\item
+$(zw)^{-1} =  w^{-1} z^{-1}$
+
 \end{enumerate}
 \end{multicols}
 \end{exercise}
@@ -807,8 +811,13 @@ In view of part (a), complete the following statement:  ``The complex number $z=
 Now that we have proved properties of complex numbers in the previous two exercises, we may make use of these properties to prove facts about complex numbers  without having to write everything out as $a + bi$.  
 
 \begin{exercise}{abs2}
-* Use appropriate properties from Exercise~\ref{exercise:complex:cxprops} to prove the following:  If $|z| = 1$ and $z \neq 1$, then $\frac{z - 1}{z+1}$ is a pure imaginary number. 
+\begin{enumerate}[(a)]
+\item
+Prove that  If $|z| = 1$ and $z \neq 1$, then $\frac{z - 1}{z+1}$ is a pure imaginary number. 
 \hyperref[sec:complex:hints]{(*Hint*)}
+\item
+Prove that  If $|z| = 1$ and $z \neq i$, then $\frac{z - i}{z+i}$ is a pure imaginary number. 
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}{abs3}
@@ -939,9 +948,9 @@ The distance  $r$ is the absolute value or modulus defined previously, while the
 \end{figure}
 
 
-\subsection{Converting between rectangular and polar form}
+\subsection{Converting between rectangular and polar form}\label{subsec:convertRecPolar}
 
-We can see from the figure that \[
+We can see from the Figure~\ref{polarcoord} that \[
 z=a+bi=r\cos\theta+( r\sin\theta) i,\]
 where
 \begin{align*}
@@ -974,7 +983,7 @@ r=\sqrt{a^{2}+b^{2}}=\sqrt{36}=6.\]
  
  In general, for the complex number $a + b\,i$ we have
  \[\theta=\arctan\left(\frac{b}{a}\right),\]
-where we must be careful to choose the value of $\theta$ corresponding to the quadrant where $a + b\,i$ is located. 
+where we must be careful to choose the value of $\theta$ corresponding to the quadrant where $a + b\,i$ is located. The best way to make sure you've chosen the right $\theta$ is to \emph{draw a picture} (like Figure~\ref{fig:complex:polar_to_cart}).
  \end{example} 
 \begin{figure}[htb]
 	   \center{\includegraphics[width=2.5in]
@@ -1039,8 +1048,22 @@ $-\sqrt{50} - \sqrt{50}i$
 \end{exercise}
 
 %%% Amplify this exercise
+Pictures are essential for gaining an intuitive grasp of how complex numbers work. They're also a lot more fun to draw than mathematical symbols. 
+
+\begin{exercise}{cos form2}
+\begin{enumerate}[(a)]
+\item
+Figure~\ref{polarcoord} shows  polar and Cartesian representations of a complex number $z$  in the complex plane.  Redraw the figure, and put $\overline{z}$ in the picture as well. Show the Cartesian coordinates of $\overline{z}$, as well as the modulus and the complex argument (angle).
+\item
+Use your picture to obtain the polar representation of $\bar{z}$ in terms of the modulus and complex argument of $z$.
+\end{enumerate}
+\end{exercise}
+
+
+
+The close interrelationship between plane geometry and complex numbers is a rich source of mathematical insight.  The following exercise explores some aspects of this relationship. 
+
 \begin{exercise}{23}
-There is a very close relationship between plane geometry and complex numbers.
 \begin{enumerate}[(a)]
 \item
 Consider the following set of complex numbers:
@@ -1087,6 +1110,11 @@ z \cdot w &= r\cis\theta \cdot \underline{~<1>~} \\
 \end{align*}
 \end{exercise}
 \end{proof}
+
+\begin{exercise}{}
+Use Proposition~\ref{proposition:complex:polar_mult} and the polar expression for $\bar{z}$ that was given in Section~\ref{subsec:convertRecPolar} to give a simple proof of the following identity:
+\[ z \bar{z} = |z|^2. \]
+\end{exercise}
 
 We will also want to divide complex numbers in polar form. But first, we need to characterize multiplicative inverses. Note for example that $\left[2 \cis (3\pi / 4)\right]^{-1} = (1/2) \cis (-3 \pi/4)$ since
 \[ 2 \cis (3\pi / 4) \cdot (1/2) \cis (-3 \pi/4) = 2 \cdot (1/2) \cdot \cis( 3\pi/4 -3 \pi /4) = \cis(0) = 1, \]
@@ -1370,18 +1398,6 @@ Using part (a), find a formula for $\cos 3 \theta$ in terms of $\cos \theta$.
 * Show that for any \emph{even} $n$, it is always possible to find a formula for $\cos n\theta$ in terms of \emph{even} powers of $\cos \theta$.
 \end{enumerate}
 \end{exercise}
-
-We also wish to emphasize the importance of representations using \emph{pictures}.  These are essential for developing an intuitive grasp of how complex numbers work. They're also a lot more fun to draw than mathematical symbols. 
-
-\begin{exercise}{cos form2}
-\begin{enumerate}[(a)]
-\item
-Figure~\ref{polarcoord} shows  polar and Cartesian representations of a complex number $z$  in the complex plane.  Redraw the figure, and put $\overline{z}$ in the picture as well. Show the Cartesian coordinates of $\overline{z}$, as well as the modulus and the complex argument (angle).
-\item
-Use your picture to obtain the polar representation of $\bar{z}$ in terms of the modulus and complex argument of $z$.
-\end{enumerate}
-\end{exercise}
-
 \section{Complex numbers and roots of algebraic equations}\label{complex_roots}
 
 \subsection{Roots of unity and regular polygons\quad\sectionvideohref{c5WbBwp5av4&index=6&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{sec:RootsOfUnity}
@@ -1556,7 +1572,7 @@ Prove (using geometry) that the 4th roots of unity form a square. (\emph{Hint}: 
 *Prove (using geometry) that the 6th roots of unity form a regular hexagon. (\emph{Hint}: Draw lines from each point to the origin, forming 6 triangles. What can you say about these triangles?)
 \end{exercise}
 
-Incredibly as it seems, apparently complex numbers are closely related to geometry! Let us explore this relationship a little further.
+Once again, we see an interesting relationship between complex numbers and plane geometry.  Let us explore this relationship a little further.
 
 \begin{exercise}{hexagon_rotate}
 \begin{enumerate}[(a)]
@@ -1692,7 +1708,7 @@ where $AC,OA$, and $OC$ denote the lengths of segments $\overline{AC}, \overline
 \end{enumerate}
 \end{exercise}
 
-In fact, many intricate theorems in plane geometry that require long proofs using conventional methods can be proven much more easily using complex numbers. We will not be exploring this further; but we hope these examples will whet your appetite!
+In fact, many intricate theorems in plane geometry that require long proofs using conventional methods can be proven much more easily using complex numbers. We will not be exploring this further; but we hope these examples will stimulate your imagination!
 
 
 \subsection{Complex $n$th roots in general 
@@ -1732,8 +1748,8 @@ Next, let us consider the case of cube roots. Consider for example the cube root
 \[ z^3 = 1 + i. \]
 We  may rewrite this in polar form as
 \[ (r \cis \theta)^3 = \sqrt{2} \cis\left(\frac{\pi}{4}\right), \]
-where $r \cos \theta$ is $z$ in polar form. De Moivre's theorem then gives us:
-\[ r^3 \cos 3\theta = \sqrt{2} \cis\left(\frac{\pi}{4}\right). \]
+where $r \cis \theta$ is $z$ in polar form. De Moivre's theorem then gives us:
+\[ r^3 \cis 3\theta = \sqrt{2} \cis\left(\frac{\pi}{4}\right). \]
 One solution for $r$ and $\theta$ which satisfies this equation is:
 \[ r^3 = \sqrt{2} \implies r=2^{1/6} \quad \textrm{ and } \quad 3\theta = \pi/4 \implies \theta = \pi/12, \]
 so that
@@ -1760,8 +1776,8 @@ This takes care of cube roots. But let's not stop there! We can use a similar pr
 \item Multiply your result by all $n$ roots of unity to obtain $n$ distinct roots.
 \end{itemize}
 
-\begin{exercise}{}
-Show that the 2-step procedure above gives \emph{all} $n$th roots of a given complex number. That is, show that any complex $n$th root of $z$ can be obtained as an $n$th root of unity times any other complex $n$th root of $z$. You may proceed as follows. Suppose $z$ is a complex number, and $w$ and $y$ are $n$th roots of $z$. Show that there exists an $n$th root of unity $u$ such that $w$ is the product of $u$ and $y$, i.e. $w=u \cdot y$. 
+\begin{exercise}{59}
+Show that the 2-step procedure above gives \emph{all} $n$th roots of a given complex number. That is, show that any complex $n$th root of $z$ can be obtained as an $n$th root of unity times any other complex $n$th root of $z$. You may proceed as follows. Suppose $z$ is a complex number, and $w_1$ and $w_2$ are $n$th roots of $z$. Show that there exists an $n$th root of unity $u$ such that $w_1$ is the product of $u$ and $w_2$, i.e. $w_1=u \cdot w_2$. 
 \end{exercise}
 
 \begin{exercise}{60}
@@ -1814,7 +1830,7 @@ Using (d), show that if $z$ is a solution to $z^3 + pz^2 + qz = r$ then $\overli
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{conjugate_root2}
+\begin{exercise}{conjugate_root2a}
 Suppose the cubic equation $z^3 + pz^2 + qz = r$ has an odd number of solutions. Show that at least one of the solutions must be real.
 \end{exercise}
 
@@ -1863,13 +1879,13 @@ Using the Fundamental Theorem of Algebra and Exercise~\ref{exercise:complex:conj
 Given an equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n>0$ and $a_0, a_1, \ldots. a_{n-1}$ are real numbers. Suppose the equation has no real solutions. Then the equation has at least two distinct solutions.
 \end{exercise}
 
-\begin{exercise}{72}
+\begin{exercise}{72a}
 Using the Fundamental Theorem of Algebra and Exercise~\ref{exercise:complex:conjugate_root2}, prove the following proposition: 
 Given an equation of the form $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $n$ is a positive odd number and $a_0, a_1, \ldots. a_{n-1}$ are real numbers.  Then the equation has at least one real solution.
 \end{exercise}
 
 
-\begin{exercise}{}
+\begin{exercise}{72b}
 Give an example of a polynomial of the form  $z^6 + a_{5}z^{5} + a_{4} z^{4} + \ldots + a_1 z =a_0,$ that has no real solutions, and exactly two distinct complex solutions.
 \end{exercise}
 

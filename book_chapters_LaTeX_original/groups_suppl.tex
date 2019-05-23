@@ -181,6 +181,11 @@ $(3 + 2, 6 + 4) = (5, 10) = (5, 3)$
 %Consider $(3,6)$ and $(2,4)$ as elements of ${\mathbb R}^{\ast} \times {\mathbb Z}_{10}$. Compute $(3,6) \circ (2,4)$.
 $(g_1 g_2, h_1 h_2) \in {\mathbb R}^{\ast} \times {\mathbb Z_{10}}$ ($^\ast$ so exclude 0 and do multiplication) \\
 $(3 \cdot 2, 6 + 4) = (6, 10) = (6, 0)$
+
+\item 
+%Consider $(3,6)$ and $(2,4)$ as elements of ${\mathbb Q}^{\ast} \times {\mathbb Q}^{\ast}$. Compute $(3,6) \circ (2,4)$.
+$(g_1 g_2, h_1 h_2) \in {\mathbb Q}^{\ast} \times {\mathbb Q}^{\ast}$ ($^\ast$ so exclude 0 and do multiplication) \\
+$(3 \cdot 2, 6 \cdot 4) = (6, 24)$
 \end{enumerate}
 
 \noindent\textbf{Exercise \ref{exercise:groups:prod_group}:}
@@ -975,7 +980,7 @@ which implies $cd = dc$ for all $c,d \in G$, \quad (by substitution)\\
 which was the statement to be proved.
 \\
 
-\noindent\textbf{Exercise \ref{exercise:groups:48}:}
+\noindent\textbf{Exercise \ref{exercise:groups:48}:}  KW update the solution it's incomplete
 \begin{enumerate}[(a)]
 \item 
 %Complete the proof that $ax=b$ has a unique solution by filling in the blanks:
@@ -1097,6 +1102,9 @@ $5x \equiv 8 \pmod{9}$
 $\implies 5x = 9k + 8$ \quad \quad (mod equiv)\\
 $x = \frac{9k + 8}{5} = 2k + 1 + \frac{-k+3}{5}$ \quad \quad (by algebra)\\
 Since $x$ must be an integer $-k+3$ must be a multiple of 5,or $k = 5n + 3$. Substituting back in gives $x = 10n+6+1-n$, or $x = 7+9n$.  since $x \in U(9)$, we have $x=7$.
+
+\skipitems{1}
+
 
 \item
 $8x=5$\\
@@ -1445,6 +1453,13 @@ Not commutative: there are many counterexamples.
 $Q^*$ is a subgroup of $R^*$ (Proposition 69)\\
 \end{enumerate}
 
+\noindent\textbf{Exercise \ref{exercise:groups:gen_3_Rstar}:}
+%List the set $\langle 3 \rangle$ for $3 \in {\mathbb R}^*$.
+\begin{align*}
+\langle 3 \rangle &= \{ \ldots, 3^{-3}, 3^{-2}, 3^{-1}, 1, 3, 3^2, 3^3, \ldots \}\\
+&= \{ \ldots, \frac{1}{27}, \frac{1}{9}, \frac{1}{3}, 1, 3, 9, 27, \ldots \}
+\end{align*}
+
 \noindent\textbf{Exercise \ref{exercise:groups:Z_construct_-1}:}\\
 %Show that $-1$ is a generator of $\mathbb Z$; that is that $\mathbb Z = \langle -1 \rangle$.
 $\langle-1\rangle=\{...,-2,-1,0,1,-1,-2\}=\{n(-1):n\in Z\}=Z$\\
@@ -1595,27 +1610,40 @@ $|a|= n \implies a^n = e \implies a^na^{-1}=ea^{-1}\implies a^{n-1}=a^{-1}$\\
 Let $m=n-1 \implies a^{-1}=a^m$\\
 \\
 
+\noindent\textbf{Exercise \ref{exercise:groups:not_cyclic}:}
+\begin{enumerate}[(a)]
+\item
+%Show that ${\mathbb Q}$ is not cyclic. 
+Proof:
+Suppose that $a$ is a generator of $\mathbb{Q}$, i.e. $\langle a \rangle = \mathbb{Q}$.  Then since $a/2 \in  \mathbb{Q}$, it follows that  $a/2 \in \langle a \rangle$. This means $a/2 =ka$ for some integer k.  Rearranging this equation, we find that $a(1/2-k)=0$.  By the zero-divisor property of rational numbers, this implies that either $a=0$ or $1/2-k = 0$ (or both). But $a$ cannot be 0, because $\langle \frac{0}{1} \rangle = \langle 0 \rangle = 0$.  Also, $1/2-k \neq 0$, since $k$ is an integer.  This contradiction shows that  our assumption that ${\mathbb Q} = \langle a \rangle$ is false. Therefore ${\mathbb Q} \neq \langle a \rangle$ for any rational number $a$, and ${\mathbb Q}$ is not cyclic.
+
+\item
+%Show that ${\mathbb C}$ is not cyclic.
+\end{enumerate}
+
+ 
+\subsection{Subgroups of cyclic groups}
 \subsection{Answers for additional group and subgroup exercises}
-\textbf{Exercise \ref{ex:eoc:9}:}\\
-Let $A=\begin{pmatrix}
-x & y\\
-u & v
-\end{pmatrix}$ and $B=\begin{pmatrix}
-m & n\\
-o & p
-\end{pmatrix}$\\
-We have $\det(A)=xv-yu$ and $\det(B)=mp-on$\\
-We also have $AB=\begin{pmatrix}
-xm+yo & xn+yp\\
-um+vn & un+vp
-\end{pmatrix}$\\
-So we have $\det(AB)=...=xmvp+youn-umyp-voxn=\det(A).\det(B)$ in $GL_2(R)$.\\
-$A\in GL_2(R) \to$ A is invertible $\implies \det(A)\neq 0$\\
-$B\in GL_2(R) \to$ B is invertible $\implies \det(B)\neq 0$\\
-$\det(AB)=\det(A).\det(B)\implies \det(AB)\neq 0$\\
-$\implies AB$ is invertible $\implies AB\in GL_2(R)$\\
-So $GL_2(R)$ is closed under binary operation.\\
-\\
+%\textbf{Exercise \ref{ex:eoc:9}:}\\
+%Let $A=\begin{pmatrix}
+%x & y\\
+%u & v
+%\end{pmatrix}$ and $B=\begin{pmatrix}
+%m & n\\
+%o & p
+%\end{pmatrix}$\\
+%We have $\det(A)=xv-yu$ and $\det(B)=mp-on$\\
+%We also have $AB=\begin{pmatrix}
+%xm+yo & xn+yp\\
+%um+vn & un+vp
+%\end{pmatrix}$\\
+%So we have $\det(AB)=...=xmvp+youn-umyp-voxn=\det(A).\det(B)$ in $GL_2(R)$.\\
+%$A\in GL_2(R) \to$ A is invertible $\implies \det(A)\neq 0$\\
+%$B\in GL_2(R) \to$ B is invertible $\implies \det(B)\neq 0$\\
+%$\det(AB)=\det(A).\det(B)\implies \det(AB)\neq 0$\\
+%$\implies AB$ is invertible $\implies AB\in GL_2(R)$\\
+%So $GL_2(R)$ is closed under binary operation.\\
+%\\
 \textbf{Exercise \ref{ex:eoc:10}:}\\
 Let $x,y\in Z_2=\{0,1\}$\\
 $\implies x\oplus y\in Z_2$ (because $Z_2$ closed under modular addition) (1)\\

@@ -395,10 +395,14 @@ For example, suppose
 and
 \item $f = \{ (\var{a},1), (\var{b}, 3), (\var{c}, 4), (\var{d},4), (\var{e}, 3) \}$.
 \end{itemize}
-Here is an arrow diagram of~$f$:
+An arrow diagram of~$f$ is shown in Figure~\ref{fig:arrowDiag}
+\begin{figure}[h]
 \begin{center}
-\includegraphics{images/arrowdiageg.pdf}
+\includegraphics[scale=0.55]{images/arrowdiageg.png}
+\caption{Arrow diagram for function $f$.}
+\label{fig:arrowDiag}
 \end{center}
+\end{figure}
 Notice that:
 \begin{enumerate}
 \item There is exactly one arrow coming out of each element of~$A$. This is true for the arrow diagram of any function.
@@ -567,14 +571,11 @@ $\{(\var{w},1), (\var{h},2), (\var{o},3)\}$
 \end{exercise}
 
 \begin{exercise}{27}
- For the given sets $A$ and~$B$:
-\begin{enumerate}[(a)] 
-\item Write each function from~$A$ to~$B$ as a set of ordered pairs. (It turns out that if $|A| = m$
+ For the given sets $A$ and~$B$,
+write each function from~$A$ to~$B$ as a set of ordered pairs. (It turns out that if $|A| = m$
 and $|B| = n$, then the number of functions from~$A$ to~$B$ is~$n^m$. Do you see why?)
-\item Find the range of each function.
-\end{enumerate}
 \begin{multicols}{2}
-\begin{enumerate}[i.]
+\begin{enumerate}
 \item \label{FunctionsChapExers-FindAll-abc,d}
 $A = \{\var{a},\var{b},\var{c}\}$, $B = \{\var{d}\}$
 \item \label{FunctionsChapExers-FindAll-ab,cd}
@@ -583,7 +584,7 @@ $A = \{\var{a},\var{b}\}$, $B = \{\var{c},\var{d}\}$
 $A = \{\var{a}\}$, $B = \{\var{b},\var{c},\var{d}\}$
 \item \label{FunctionsChapExers-FindAll-ab,cde}
 $A = \{\var{a},\var{b}\}$, $B = \{\var{c},\var{d},\var{e}\}$
-%\item $A = \{\var{a},\var{b},\var{c}\}$, $B = \{\var{d},\var{e}\}$
+\item $A = \{\var{a},\var{b},\var{c}\}$, $B = \{\var{d},\var{e}\}$
 \end{enumerate}
 \end{multicols}
 \end{exercise}
@@ -641,13 +642,13 @@ If you have an arrow diagram of a function, then it is easy to tell whether or n
 
 \begin{enumerate}
 \item The function~$f$ in Figure~\ref{arrow11}(a) is \emph{not} one-to-one. This is because the arrow from~$\var{b}$ and the arrow from~$\var{c}$ go to the same place, so $f(\var{b}) = f(\var{c})$. In general, if arrows from two different elements of the domain go to the same element of the range, then the function is not one-to-one. 
-\item The function~$g$ of \ref{arrow11}(b) is one-to-one. This is because the arrows from two different elements of the domain never go to the same element of the range.  In short, there is only \emph{one} element of the domain that goes \emph{to} any \emph{one} element of the range.  
+\item The function~$g$ of Figure \ref{arrow11}(b) is one-to-one. This is because the arrows from two different elements of the domain never go to the same element of the range.  In short, there is only \emph{one} element of the domain that goes \emph{to} any \emph{one} element of the range.  
 %(This is the reason for the terminology ``one-to-one." A function is ``two-to-one" if there are two elements of the domain mapping to each element of the range, as is true of the function~$h$ in \cref{arrow11}(c).)
 \end{enumerate}
 \end{rem}
 %\begin{center}
 \begin{figure}[h]
-\includegraphics{images/arrow11.pdf}
+\includegraphics{images/arrow11.png}
 \caption{Arrow diagrams of three functions $f$, $g$, and~$h$.}
 \label{arrow11}
 \end{figure}
@@ -1005,7 +1006,8 @@ For each function, either prove that it is one-to-one, or prove that it is not.
 \item \label{modular_m2}
  $g \colon {\mathbb Z}_{11} \to {\mathbb Z}_{11}$ defined by $g(n) =  n \odot 2$ .
 \item 
- $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(n)= n \odot x$ .
+ $g_x \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(n)= n \odot x$ , where $x$ can be any 
+fixed element of ${\mathbb Z}_7$.
 \item 
  $g \colon {\mathbb Z}_8 \to {\mathbb Z}_8$ defined by $g(x)= n \odot n \odot n$ .
 \item 
@@ -1059,7 +1061,7 @@ $i$ is one-to-one, but not onto.
 
 \begin{center}
 \begin{figure}[h]
-\includegraphics[scale=0.6]{images/arrowonto.pdf}
+\includegraphics[scale=0.6]{images/arrowonto.png}
 \caption{Arrow diagrams for various functions}
 \label{arrowontofig}
 \end{figure}
@@ -1313,8 +1315,6 @@ For each of the following  functions, either prove that it is onto, or prove tha
  $g \colon {\mathbb C}\setminus \{0\}  \to {\mathbb C} $ defined by $g(z) =  z^{-1}$ .
 \item
  $g \colon {\mathbb C}\setminus \{1\}  \to {\mathbb C}\setminus \{0\} $ defined by $g(z) =  (z-1)^{-1}$ .
-\item
- $g \colon {\mathbb R} \times [0,1]  \to {\mathbb C} $ defined by $g(\,(x,y)\,) =  |x| \cis ( 2\pi y)$.
 \item
  $g \colon {\mathbb R} \times [0,1]  \to {\mathbb C} $ defined by $g(\,(x,y)\,) =  |x| \cis ( 2\pi y)$.
 \end{enumerate}
@@ -1654,7 +1654,7 @@ From these facts it follows that $f(x)$ is one-to-one, because no matter whether
 Prove statements (a)$-$(e) in Example~\ref{example:functions:piecewise}.  For example, you can prove (a)  as follows. Given $y>1$, setting $x = \ln(y)$ gives $f(x) = y$ since $f(x) = e^x$ in this case. 
 \end{exercise}
 
-\begin{exercise}{} \label{OntoCasesExer}
+\begin{exercise}{OntoCasesExer} \label{OntoCasesExer}
  Define a function $f$  from~$\mathbb{R}$ to~$\mathbb{R}$ by:
 $$ f(x) = 
 \begin{cases}
@@ -1672,7 +1672,7 @@ Prove or disprove:
 \end{multicols}
 \end{exercise}
 
-\begin{exercise}{} \label{OntoCasesExer2}
+\begin{exercise}{OntoCasesExer2} \label{OntoCasesExer2}
  Define function~$g$ from~$\mathbb{R}$ to~$\mathbb{R}$ by:
 $$ g(x) = 
 \begin{cases}
@@ -1690,7 +1690,7 @@ Prove or disprove:
 \end{multicols}
 \end{exercise}
 
-\begin{exercise}{} \label{OntoCasesExer3}
+\begin{exercise}{OntoCasesExer3} \label{OntoCasesExer3}
  Define function~$h$ from~$\mathbb{R}$ to~$\mathbb{R}$ by:
 $$ h(x) = 
 \begin{cases}
@@ -1782,7 +1782,7 @@ Prove or disprove: $g$ is a bijection.
  \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
+\begin{exercise}{ZxZ}
 Define $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ by $g(m,n) = (m + n, m - n)$. 
  \begin{enumerate}[(a)]
  \item  \label{NxNBijection-mpmn-notonto}  
@@ -1795,7 +1795,7 @@ Prove or disprove: $g$ is a bijection.
 \end{exercise}
 
 
-\begin{exercise}{} \label{AxBxCBijectionEx}
+\begin{exercise}{AxBxCBijectionEx} \label{AxBxCBijectionEx}
 Suppose $A$, $B$, and~$C$ are sets. Define 
 \[
  f \colon (A \times B) \times C \to A \times (B \times C)  \text{ by } 
@@ -1916,7 +1916,7 @@ Figure \ref{arrowcomposefig} provides an arrow diagram to illustrate the composi
 For example, the $f$-arrow from~$a$ leads to~$m$ and the $g$-arrow from~$m$ leads to~$u$. So $g \compose f(a) = u$.
 \begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.55]{images/arrowcompose.pdf}
+\includegraphics[scale=0.55]{images/arrowcompose.png}
 \caption{Arrows for the composition $g \circ f$ are dotted.}
 \label{arrowcomposefig}
 \end{center}
@@ -2217,9 +2217,9 @@ Which of the functions depicted  in Figure~\ref{arrowontofig} have inverses?
 
 From the previous exercise, you may have guessed the following rule:
 
- \begin{thmprop} \label{InverseBijection}
+ \begin{prop}{InverseBijection}
  Suppose $f\colon X \to Y$. Then $f$ has an inverse $g \colon Y \to X$ if and only if $f$ is a bijection.\index{Function!as a bijection}\index{Bijection!relation to inverse functions}\index{Inverse function!relation to bijection}
- \end{thmprop}
+ \end{prop}
  
  This is another ``if and only if" proof, so it must be proved in both directions. We will prove the forward direction of this proposition.  You will prove the reverse direction.  The forward direction says that if $f \colon X \to Y$ has an inverse $g \colon Y \to X$, then $f$ is a bijection.  In other words we must assume the first statement, and from that prove that $f$ is one-to-one and onto.
 
@@ -2242,7 +2242,7 @@ So $f$ is both one-to-one and onto: thus $f$ is a bijection.
  \end{proof}
 
 \begin{exercise}{InverseBijection2}
-Prove the reverse direction of Proposition~\ref{InverseBijection}.
+Prove the reverse direction of Proposition~\ref{proposition:functions:InverseBijection}.
 \hyperref[sec:functions:hints]{(*Hint*)} 
 \end{exercise}
 
@@ -2289,7 +2289,7 @@ This is simply a restatement of the fact that
 \end{enumerate}
 \end{rem}
 
-\begin{defn}\label{identityMap}
+\begin{defn}\label{def:identityMap}
 For any set~$A$, define the \terminology{identity map} $\Id_A \colon A \to A$ by $\Id_A(a) = a$ for every $a \in A$.
 \end{defn}\index{Identity map} 
 
@@ -2345,7 +2345,7 @@ Given that $f: A \rightarrow A$ and $g: A \rightarrow A$, show that $f \compose 
 \end{exercise}
 
 Exercise~\ref{exercise:functions:AAclosed} confirms that  the set of functions from $A$ to $A$ is closed under the operation of composition.
-So far, so good--but we still have more fish to fry. We still need to find an identity for our set.  This one's not hard: Definition~\ref{identityMap} gives us the identity map $\Id_A$. 
+So far, so good--but we still have more fish to fry. We still need to find an identity for our set.  This one's not hard: Definition~\ref{def:identityMap} gives us the identity map $\Id_A$. 
 
 That takes care of two group properties--we have two more to go. Let's look at inverses. We've seen that not all functions have inverses under composition. So to make this part work, we'll have to further restrict ourselves to the set of \emph{invertible} functions from $A$ to $A$.
 

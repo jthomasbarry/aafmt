@@ -255,9 +255,9 @@ Let $a$ be a nonzero real number, and consider the function $\phi_a : \mathbb{R}
 
 Some important properties of isomorphisms follow directly from the above definition. First we have:
 
-\begin{thmprop}\label{IsoId}
+\begin{prop}{IsoId}
 Given that  $\phi : G \rightarrow H$ is an  isomorphism, then $\phi$ takes the identity to the identity: that is, if $e$ is the identity of $G$, then  $\phi(e)$ is the identity of $H$ (see Figure \ref{fig:isomorph:isomId}).
-\end{thmprop}
+\end{prop}
 
 
 \begin{figure}[htb]
@@ -268,7 +268,7 @@ Given that  $\phi : G \rightarrow H$ is an  isomorphism, then $\phi$ takes the i
 
 
 \begin{exercise}{phi_id}
-Fill in the blanks in the following proof of Proposition~\ref{IsoId}:
+Fill in the blanks in the following proof of Proposition~\ref{proposition:isomorph:IsoId}:
 \medskip
 
 \noindent
@@ -287,7 +287,7 @@ It follows from the definition of identity that $\underline{~<11>~}$ is the iden
 \end{exercise}
 
 
-Another important property of isomorphisms is illustrated in Figure~\ref{fig:isomorph:isomInv}, and stated in Proposition~\ref{IsoInv}:
+Another important property of isomorphisms is illustrated in Figure~\ref{fig:isomorph:isomInv}, and stated in Proposition~\ref{proposition:isomorph:IsoInv}:
 
 \begin{figure}[htb]
 	   \center{\includegraphics[width=3.5in]
@@ -295,15 +295,15 @@ Another important property of isomorphisms is illustrated in Figure~\ref{fig:iso
 	  \caption{\label{fig:isomorph:isomInv} Isomorphic image of an  identity element is an identity element. }
 \end{figure}
 
-\begin{thmprop}\label{IsoInv}
+\begin{prop}{IsoInv}
 Given that  $\phi : G \rightarrow H$ is an  isomorphism, then $\phi$ preserves the operation of inverse: that is, for any $g \in G$ we have
 \begin{equation*}
 \phi(g^{-1}) = (\phi(g))^{-1}.
 \end{equation*}
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{phi_inverse}
-Fill in the blanks in the following proof of Proposition~\ref{IsoInv}:
+Fill in the blanks in the following proof of Proposition~\ref{proposition:isomorph:IsoInv}:
 \medskip
 
 \noindent
@@ -338,12 +338,12 @@ Given that  $\phi : G \rightarrow H$ and $\psi : H \rightarrow K$ are  isomorphi
 
 We said in the previous section that isomorphic groups are ``equivalent'' in some sense. This fact has a formal mathematical statement as well:
 
-\begin{thmprop}\label{GpEquivRel}
+\begin{prop}{GpEquivRel}
 Isomorphism is an equivalence relation on groups. 
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{GpEquivRel}
-Prove Proposition~\ref{GpEquivRel}.
+Prove Proposition~\ref{proposition:isomorph:GpEquivRel}.
 \hyperref[sec:isomorph:hints]{(*Hint*)}
 \end{exercise}
 
@@ -666,28 +666,28 @@ We've seen several examples where  Cayley tables were used to show that two grou
 
 Suppose  that if $T$ is a Cayley table of a group $G$. Then $g \in G$  appears on the diagonal of $T$ if and only if there is an element $g' \in G$ such that $g' \cdot g' = g$.  It turns out that this property is preserved under isomorphism:
 
-\begin{thmprop}\label{Cayleydiag2}
+\begin{prop}{Cayleydiag2}
 Given a Cayley table $T$ for a finite group $G$, and let $g \in G$  appears on the diagonal of $T$. Let $\phi:G \rightarrow H$ be an isomorphism, and let $T'$ be a Cayley table of $H$. Then $\phi(g)$ appears on the diagonal of $T'$.
-\end{thmprop}
+\end{prop}
 
 \begin{proof}
 As stated above, $g$ appears on the diagonal of $T$ if and only if there exists $g' \in G$ such that $g' \cdot g' = g$.  Since $\phi$ is an isomorphism, this implies $\phi(g') \cdot \phi(g') = \phi(g)$, which in turn implies that $\phi(g)$ appears on the diagonal of $T'$.
 \end{proof}
 
-\begin{thmprop}\label{CayleyDiagNum2}
+\begin{prop}{CayleyDiagNum2}
 Given a Cayley table $T$ for a finite group $G$, and suppose the element $g \in G$ appears $m$ times on the diagonal of $T$.  Let $\phi:G \rightarrow H$ be an isomorphism, and let $T'$ be a Cayley table of $H$. Then $\phi(g)$ appears $m$ times  on the diagonal of $T'$.
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{CayleyDiagNumProof2}
-Prove Proposition~\ref{CayleyDiagNum2}.
+Prove Proposition~\ref{proposition:isomorph:CayleyDiagNum2}.
 \end{exercise}
 
-\begin{thmprop}\label{CayleyDiagNum}
+\begin{prop}{CayleyDiagNum}
 Given a Cayley table $T$ for a finite group $G$, and suppose $n$ distinct elements of $G$ appear on the diagonal of $T$.  Let $\phi:G \rightarrow H$ be an isomorphism, and let $T'$ be a Cayley table of $H$. Then $n$ distinct elements of $H$ appear on the diagonal of $T'$.
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{CayleyDiagNumProof}
-Prove Proposition~\ref{CayleyDiagNum}.
+Prove Proposition~\ref{proposition:isomorph:CayleyDiagNum}.
 \end{exercise}
 
 
@@ -777,12 +777,12 @@ which contradicts the fact that $a$ and $b$ do not commute.
 Although we have only proven the non-isomorphicity of abelian and non-abelian groups for one particular case, the same  method of proof can be used to prove the following general result.
 %Notice that in the general method for proving $D_3 \ncong {\mathbb Z}_6$, the elements $a, b, m$ and $n$ used were completely general and could have been picked from any two groups, one abelian and one not.  Therefore, that proof would work just as well for proving that any abelian group couldn't be isomorphic to a non-abelian group.  Hence 
 
-\begin{thmprop}\label{abelian_non-abelian}
+\begin{prop}{abelian_non-abelian}
 If $G$ is an abelian group and $H$ is a non-abelian group, then $G \ncong H$.
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{}
-Prove Proposition ~\ref{abelian_non-abelian} by imitating the proof in Example ~\ref{example:isomorph:not_isomorph_abelian}.
+Prove Proposition ~\ref{proposition:isomorph:abelian_non-abelian} by imitating the proof in Example ~\ref{example:isomorph:not_isomorph_abelian}.
 \end{exercise}
 
 \begin{exercise}{iso_prac7}
@@ -796,9 +796,9 @@ Prove  ${\mathbb Z}/ 6 {\mathbb Z} \ncong S_3$.
 
 Finally, let's look at ${\mathbb Z}$ and ${\mathbb R}$.  We know ${\mathbb Z}$ is a cyclic group with $1$ as the generator, while ${\mathbb R}$ is not cyclic. (Do you remember why?)  We might suspect  that  ${\mathbb Z} \ncong {\mathbb R}$, since one group is cyclic and the other isn't.  This is in fact true, and we'll prove it.   Since ${\mathbb Z}$ and ${\mathbb R}$ are infinite groups we can't use Cayley tables, so we have to use another method (three guesses as to what it is):
 
-\begin{thmprop}\label{not_isomorph_cyclic}
+\begin{prop}{not_isomorph_cyclic}
 ${\mathbb Z}$ is not isomorphic to ${\mathbb R}$.
-\end{thmprop}
+\end{prop}
 \begin{proof}
 We will use a proof by contradiction.   Suppose that there exists an isomorphism $\phi: {\mathbb Z} \rightarrow {\mathbb R}$.  Choose any $x \in {\mathbb R}$, and let $m \in {\mathbb Z}$ be the pre-image of $x$, so that $\phi(m) = x$.  It follows that: 
 
@@ -835,13 +835,25 @@ Prove that  $D_4 \ncong {\mathbb Z}_{24} / \langle 8 \rangle$
 \end{enumerate}
 \end{exercise}
 
+In the foregoing examples, the reader might develop the impression that isomorphisms must be functions between two different groups. But such is not the case!  It is quite possible for a group to be isomorphic to itself.
+
+\begin{exercise}{autoMorph}
+\begin{enumerate}[(a)]
+\item
+Given any group $G$, let $\var{Id}:G \rightarrow G$ be the identity map, that is, $\var{Id}(g)=g$ for all $g \in G$.  show that $\var{Id}$ is an isomorphism.
+\item
+Let $\mathbb{M}_n(\mathbb{R})$ be the group of $n\times n$ matrices with real entries under the addition operation. Prove that the transpose function $M \rightarrow M^T$ is an isomorphism from  $\mathbb{M}_n(\mathbb{R})$ to $\mathbb{M}_n(\mathbb{R})$.
+\end{enumerate}
+\end{exercise}
+
+An isomorphism from a group to itself is called an \emph{automorphism}\index{Automorphism!of a group}\index{Group!automorphism}.
 
 
 \section{More properties of isomorphisms\quad
 \sectionvideohref{AI2JXYaaV8U&index=31&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{iso_properties}
 In the last two sections we  proved several properties of isomorphic groups and their corresponding isomorphisms.  We collect these properties (and add a few more) in the following proposition:
 
-\begin{thmprop}\label{isomorph_theorem_1}
+\begin{prop}{isomorph_theorem_1}
 Let $\phi : G \rightarrow H$ be an isomorphism of two groups.  Then the following statements are true. 
 \begin{enumerate}[(1)]
  
@@ -866,7 +878,7 @@ $\phi(g) \in H$ is also an element of order $n$.
 If $G'$  is a subgroup of $G$, then $\phi(G') $ is a subgroup of  $H$ and $G' \cong \phi(G')$  (Recall that $\phi(G') = \{ \phi(g), g \in G'\}$.)
  
 \end{enumerate}
-\end{thmprop}
+\end{prop}
 
 \begin{proof}
 Assertion (1) follows from the fact that $\phi$ is a bijection.  The proofs of (2)--(6) are indicated in the following exercises.
@@ -874,20 +886,20 @@ Assertion (1) follows from the fact that $\phi$ is a bijection.  The proofs of (
 \begin{exercise}{PhiBij}
 \begin{enumerate}[(a)]
 \item 
-Show part (2) of Proposition~\ref{isomorph_theorem_1}.
+Show part (2) of Proposition~\ref{proposition:isomorph:isomorph_theorem_1}.
 \hyperref[sec:isomorph:hints]{(*Hint*)}
 \item
-Show part (3) of Proposition~\ref{isomorph_theorem_1}.
+Show part (3) of Proposition~\ref{proposition:isomorph:isomorph_theorem_1}.
 \hyperref[sec:isomorph:hints]{(*Hint*)}
 \item
-Show part (4) of Proposition~\ref{isomorph_theorem_1}.
+Show part (4) of Proposition~\ref{proposition:isomorph:isomorph_theorem_1}.
 \hyperref[sec:isomorph:hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise} 
 
 \begin{exercise}{}
-Suppose, $G, H, \phi$ are as given  in Proposition~\ref{isomorph_theorem_1}, and suppose $g \in G$ is an element of order $n$, where $n>1$ . Show that 
-$\phi(g)^k \neq {\var id}_H$ for $k=1,\ldots n-1$ , where ${\var id}_H$ is the identity of $H$.  Use your result to prove part (5) of  Proposition~\ref{isomorph_theorem_1}.
+Suppose, $G, H, \phi$ are as given  in Proposition~\ref{proposition:isomorph:isomorph_theorem_1}, and suppose $g \in G$ is an element of order $n$, where $n>1$ . Show that 
+$\phi(g)^k \neq {\var id}_H$ for $k=1,\ldots n-1$ , where ${\var id}_H$ is the identity of $H$.  Use your result to prove part (5) of  Proposition~\ref{proposition:isomorph:isomorph_theorem_1}.
 \end{exercise}
 
 \noindent
@@ -1149,20 +1161,20 @@ If $(G,\cdot)$ and $(H, \circ)$ are groups, then we can make the Cartesian produ
 \]
 that is, we just multiply elements in the first coordinate as we do in $G$ and elements in the second coordinate as we do in $H$.  We have specified the particular operations $\cdot$ and $\circ$ in each group here for the sake of clarity; we usually just write $(g_1, h_1)(g_2, h_2) = (g_1  g_2, h_1 h_2)$.  
 
-\begin{thmprop}\label{isomorph_theorem_7}
+\begin{prop}{isomorph_theorem_7}
 Let $G$ and $H$ be groups. The set $G \times H$ is a group under the operation $(g_1, h_1)(g_2, h_2) = (g_1  g_2, h_1 h_2)$ where $g_1, g_2 \in G$ and $h_1, h_2 \in H$. 
-\end{thmprop}
+\end{prop}
 The proof is outlined in the following exercise. 
 
 \begin{exercise}{proof_thm_7}
 \hyperref[sec:isomorph:hints]{(*Hint*)}
 \begin{enumerate}[(a)]
 \item
-Show that the set $G \times H$ is closed under the binary operation defined in Proposition~\ref{isomorph_theorem_7}. 
+Show that the set $G \times H$ is closed under the binary operation defined in Proposition~\ref{proposition:isomorph:isomorph_theorem_7}. 
 \item Show that $(e_G, e_H)$ is the identity of $G \times H$,
 where $e_G$ and $e_H$ are the identities of the groups $G$ and $H$ respectively.
 \item Show that the inverse of $(g, h) \in G \times H$ is $(g^{-1}, h^{-1})$.  
-\item Show that the operation defined in Proposition~\ref{isomorph_theorem_7} is associative.
+\item Show that the operation defined in Proposition~\ref{proposition:isomorph:isomorph_theorem_7} is associative.
 \end{enumerate}
 \end{exercise}
 
@@ -1212,37 +1224,37 @@ Show that for any groups $G$ and $H$,  $G \times H \cong H \times G$.
 
 By extending this same idea, we find that we can rearrange the groups in a direct product arbitrarily and still end up with the ``same'' group:
 
-\begin{thmprop}\label{isomorph:DPorder}
+\begin{prop}{isomorph:DPorder}
 Let $G_1,G_2, \ldots G_n$ be arbitrary groups, and let  $\sigma \in S_n$ be any permutation on $\{1,2,\ldots n\}$. Then
 \[ G_1 \times G_2 \times \ldots \times G_n \cong G_{\sigma(1)} \times G_{\sigma(2)} \times \ldots \times G_{\sigma(n)}.\]
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{}
-What isomorphism would you need to define in order to prove Proposition~\ref{isomorph:DPorder}? (We won't ask you to give a complete proof of the proposition, but you can if you want to!)
+What isomorphism would you need to define in order to prove Proposition~\ref{proposition:isomorph:isomorph:DPorder}? (We won't ask you to give a complete proof of the proposition, but you can if you want to!)
 \end{exercise}
 
 Suppose you start out with groups that are isomorphic, and take direct products of them.  Are the direct products also isomorphic? It just so happens that they are:
 
-\begin{thmprop}\label{isomorph:dp_isom}
+\begin{prop}{isomorph:dp_isom}
 Suppose that $G_1 \cong H_1, G_2 \cong H_2, \ldots, G_n \cong H_n$. Then $G_1 \times \ldots \times G_n  \cong H_1 \times \ldots \times H_n$.
-\end{thmprop}
+\end{prop}
 
 \noindent
 We won't give the full proof, but you can get the idea of how it goes by doing the following exercise.
 
 \begin{exercise}{}
-Prove Proposition~\ref{isomorph:dp_isom} for the case where $n=2$. (Remember that the default method for proving that groups are isomorphic is to define a suitable function and prove that it's an isomorphism.)
+Prove Proposition~\ref{proposition:isomorph:isomorph:dp_isom} for the case where $n=2$. (Remember that the default method for proving that groups are isomorphic is to define a suitable function and prove that it's an isomorphism.)
 \end{exercise}
 
 \subsection{Classifying finite abelian groups by factorization}
 
-We have used isomorphisms to classify cyclic groups (Proposition~\ref{proposition:isomorph:isomorph_theorem_2}) and general groups (Cayley's theorem, Proposition~\ref{proposition:isomorph: isomorph_theorem_6}). In this section, we will make use of direct products to prove a classification of finite abelian groups up to isomorphism. The bottom line is that every finite abelian group is isomorphic to a direct product of cyclic groups. To get to this bottom line, we'll have to establish some more properties of direct products, especially in relation to cyclic groups.  The following  proposition characterizes the order of the elements in a direct product.
+We have used isomorphisms to classify cyclic groups (Proposition~\ref{proposition:isomorph:isomorph_theorem_2}) and general groups (Cayley's theorem, Proposition~\ref{proposition:isomorph:isomorph_theorem_6}). In this section, we will make use of direct products to prove a classification of finite abelian groups up to isomorphism. The bottom line is that every finite abelian group is isomorphic to a direct product of cyclic groups. To get to this bottom line, we'll have to establish some more properties of direct products, especially in relation to cyclic groups.  The following  proposition characterizes the order of the elements in a direct product.
 
-\begin{thmprop}\label{isomorph:lcm_theorem}
+\begin{prop}{isomorph:lcm_theorem}
 Let $(g, h) \in G \times H$. If $g$ and $h$ have finite orders $r$ and
 $s$ respectively, then the order of $(g, h)$ in $G \times H$ is the
 least common multiple of $r$ and $s$. \index{Isomorphism!least common multiple theorem}
-\end{thmprop}
+\end{prop}
 
  
 \begin{proof}
@@ -1258,7 +1270,7 @@ multiple of $r$ and $s$. Since $m$ is the {\em least common multiple}
 of $r$ and $s$, $m \leq n$.  Consequently, $m$ must be equal to~$n$.
 \end{proof}
 
-By applying Proposition~\ref{isomorph:lcm_theorem} inductively, it is possible to prove an analogous result for direct products of more than two groups. We'll leave it to you to fill in the details of the proof.
+By applying Proposition~\ref{proposition:isomorph:isomorph:lcm_theorem} inductively, it is possible to prove an analogous result for direct products of more than two groups. We'll leave it to you to fill in the details of the proof.
 
 \begin{corollary}
 Let $(g_1, \ldots, g_n) \in \prod G_i$. If $g_i$ has finite order
@@ -1323,10 +1335,10 @@ The next proposition tells us exactly when the direct product of two
 cyclic groups is cyclic. 
  
 
-\begin{thmprop}\label{Z_pq_theorem}
+\begin{prop}{Z_pq_theorem}
 The group ${\mathbb Z}_m \times {\mathbb Z}_n$ is isomorphic to ${\mathbb
 Z}_{mn}$ if and only if $\gcd(m,n)=1$. 
-\end{thmprop}
+\end{prop}
  
 
 \begin{proof}
@@ -1345,7 +1357,7 @@ Therefore, no $(a, b)$ can generate all of ${\mathbb Z}_m \times {\mathbb
 Z}_n$. 
 
  
-The converse follows directly from Proposition~\ref{isomorph:lcm_theorem} since
+The converse follows directly from Proposition~\ref{proposition:isomorph:isomorph:lcm_theorem} since
 $\lcm(m,n) = mn$ if and only if $\gcd(m,n)=1$. 
 \end{proof}
 \medskip 
@@ -1353,21 +1365,21 @@ $\lcm(m,n) = mn$ if and only if $\gcd(m,n)=1$.
 This idea extends directly to arbitrary direct products: a product of cyclic groups is cyclic if and only if the 
 orders of the groups in the product are all relatively prime.
 
-\begin{thmprop}\label{RelativelyPrime}
+\begin{prop}{RelativelyPrime}
 Let $n_1, \ldots, n_k$ be positive integers. Then
 \[
 \prod_{i=1}^k {\mathbb Z}_{n_i} \cong {\mathbb Z}_{n_1 \cdots n_k}
 \]
 if and only if $\lcm( n_1, \ldots, n_k) =\prod_{i=1}^k n_i$ (in other words, $n_1, \ldots, n_k$ are all relatively prime).
-\end{thmprop}
+\end{prop}
 
 \begin{proof}
-Use the argument in Proposition~\ref{Z_pq_theorem} first with $n_1$ and $n_2$, then with $n_1n_2$ and $n_3$,
+Use the argument in Proposition~\ref{proposition:isomorph:Z_pq_theorem} first with $n_1$ and $n_2$, then with $n_1n_2$ and $n_3$,
 then with $n_1n_2n_3$ and $n_4$, and so on. (The best way to do this proof is using induction.)
 \end{proof}
 
 \begin{exercise}{}
-Prove Proposition~\ref{RelativelyPrime} using induction.
+Prove Proposition~\ref{proposition:isomorph:RelativelyPrime} using induction.
 \end{exercise}
 
 A special case of this proposition is:
@@ -1386,7 +1398,7 @@ Z}_{p_k^{e_k}}.
  
  
 \begin{proof}
-Since  $\gcd(p_i^{e_i},p_j^{e_j}) = 1$ for $i \neq j$, the proof follows from Corollary~\ref{RelativelyPrime}.
+Since  $\gcd(p_i^{e_i},p_j^{e_j}) = 1$ for $i \neq j$, the proof follows from the Corollary to~\ref{proposition:isomorph:RelativelyPrime}.
 \end{proof}
 
 \begin{exercise}{}
@@ -1396,17 +1408,17 @@ Find three non-isomorphic abelian groups of order 8, and show that they are not 
 
 Remember that in the Permutations chapter we showed that every permutation can be ``factored''  as the product of disjoint cycles. (At that time, we compared this to the factorization of integers into prime factors).  It turns out that finite abelian groups can also be ``factored''.  This beautiful and general result is summarized in the following proposition. We will not give a complete proof of the proposition (which uses induction), but we hope that it makes sense to you in light of the foregoing discussion.\footnote{Many proofs can be found on the web: search for ``structure of finite abelian groups''.}
 
-\begin{thmprop}\label{FactorabelianGroup} \term{(Factorization of finite abelian groups)}~~
+\begin{prop}{FactorabelianGroup} \term{(Factorization of finite abelian groups)}~~
 If $G$ is a finite abelian group, then there exist prime numbers $p_1 \ldots p_k$ and exponents $e_1 \ldots e_k$ such that
 \[
 G \cong {\mathbb Z}_{p_1^{e_1}} \times \cdots \times {\mathbb
 Z}_{p_k^{e_k}}
 \]
 Note that the prime numbers $p_1, \ldots, p_k$  may not necessarily be distinct.
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{prodfacabel}
-Show that the primes  $p_1 \ldots p_k$ and exponents $e_1 \ldots e_k$ in Proposition~ \ref{FactorabelianGroup} must satisfy
+Show that the primes  $p_1 \ldots p_k$ and exponents $e_1 \ldots e_k$ in Proposition~ \ref{proposition:isomorph:FactorabelianGroup} must satisfy
 $|G| = p_1^{e_1} \cdots p_k^{e_k}$.
 \end{exercise}
 
@@ -1460,9 +1472,9 @@ $U(p)$ is cyclic for every prime $p$.
 \begin{proof}
 First, notice that Proposition~\ref{proposition:poly:FTOA} says that there are at most $m$ solutions to the equation $x^m = 1$ in $\ZZ_p$. Since 0 is not a solution, it follow that all of these solutions are also in $U(p)$.
 
-Also, according to the factorization of Abelian groups (Proposition~\ref{FactorabelianGroup}), there exists an isomorphism $\phi$:
+Also, according to the factorization of Abelian groups (Proposition~\ref{proposition:isomorph:FactorabelianGroup}), there exists an isomorphism $\phi$:
 \[\phi: U(p)  \rightarrow {\mathbb{Z}_{{p_1}^{e_1}}}  \times   {\mathbb{Z}_{{p_2}^{e_2}}}  \times  ... \times   {\mathbb{Z}_{{p_k}^{e_k}}}, \]
-where $p_1, p_2, \ldots, p_k$ are all primes.  It's not necessarily true a priori  that all of the $p_j$'s are distinct: but if they are, then Proposition~\ref{RelativelyPrime} tells us that $U(p)$ must be cyclic. 
+where $p_1, p_2, \ldots, p_k$ are all primes.  It's not necessarily true a priori  that all of the $p_j$'s are distinct: but if they are, then Proposition~\ref{proposition:isomorph:RelativelyPrime} tells us that $U(p)$ must be cyclic. 
 
 So it all comes down to proving that all of the $p_j$'s are distinct. We will prove this by contradiction.We begin as usual by supposing the opposite of what we want to prove: namely, that $p_i = p_j$ for some $i \neq j$. 
 Now consider the following two elements of the direct product:
@@ -1476,12 +1488,12 @@ It is then possible to prove that (recall that ``$|g|$ '' is the order of the gr
 Given the above definitions of $g_i$ and $g_j$, show that   $|g_i| = p_i$ and  $|g_j| = p_j$.
 \hyperref[sec:polyrings:hints]{(*Hint*)} 
 \end{exercise}
-As a result of the above exercise, Proposition~\ref{cosets_theorem_7}  enables us to conclude that 
+As a result of the above exercise, Proposition~\ref{proposition:cosets:cosets_theorem_7}  enables us to conclude that 
 \[
 |g_i^n| = p_i \mathrm{~ and ~} |g_j^n| = p_j \mathrm{~ for~~} (n = 1,...,p_j-1).
 \]
 Since $p_i = p_j$, we have at least $2(p_i-1)$ elements in ${\mathbb{Z}_{{p_1}^{e_1}}}  \times   {\mathbb{Z}_{{p_2}^{e_2}}}  \times  ... \times   {\mathbb{Z}_{{p_k}^{e_k}}}$ of order $p_i$. By 
-Proposition~\ref{isomorph_theorem_1}, this means there are  $2(p_i-1)$ elements of $U(p)$ which have order $p_i$, and all of these elements are solutions of the equation $x^{p_i}-1=0$ (Why?). 
+Proposition~\ref{proposition:isomorph:isomorph_theorem_1}, this means there are  $2(p_i-1)$ elements of $U(p)$ which have order $p_i$, and all of these elements are solutions of the equation $x^{p_i}-1=0$ (Why?). 
 But at the beginning of this proof, we demonstrated that there can only be at most $p_i$ solutions. This contradiction shows us our supposition is false, so all of the $p_i$'s in the direct product must be unequal.
 \end{proof}
 
@@ -1493,12 +1505,12 @@ Show that $U(6),U(8), $  and $U(9)$ are cyclic.
 \item
 Give an example of a positive integer $n$ for which $U(n)$ is \emph{not} cyclic.
 \item
-Is it possible to specify exactly the positive integers $n$ for which $U(n)$ is cyclic?  (You may do some internet research to answer this one.  Hint: the answer has something to do with the name ``Gauss''.)
+Is it possible to specify exactly the positive integers $n$ for which $U(n)$ is cyclic?  (You'll probably have to  do some internet research to answer this one. )
 \end{enumerate}
 \end{exercise}
 
 
-\subsection{Internal Direct Products}
+\subsection{Internal direct products}
  
 
 The external direct product of two groups builds a large group out of
@@ -1558,10 +1570,10 @@ will never be satisfied for $h \in H$ and $k \in K$.
 \end{example}
 
  
-\begin{thmprop}\label{IntDirProd}
+\begin{prop}{IntDirProd}
 Let $G$ be the internal direct product of  subgroups $H$ and $K$. Then
 $G$ is isomorphic to $H \times K$. 
-\end{thmprop}
+\end{prop}
  
 
 \begin{proof}
@@ -1590,7 +1602,7 @@ and $g_2 = h_2 k_2$ and observe that
 We will leave the proof that $\phi$ is a bijection as an exercise:
 
 \begin{exercise}{}
-Prove that  $\phi$ defined in the proof of Proposition~\ref{IntDirProd} is a bijection, thus completing the proof of the proposition.
+Prove that  $\phi$ defined in the proof of Proposition~\ref{proposition:isomorph:IntDirProd} is a bijection, thus completing the proof of the proposition.
  \end{exercise}
 
 
@@ -1627,14 +1639,14 @@ Show that $S_n$ is isomorphic to a subgroup of $A_{n+2}$.
 \end{enumerate}
 \end{exercise}
 
-A (sort of) converse of Proposition~\ref{IntDirProd} is also true:
+A (sort of) converse of Proposition~\ref{proposition:isomorph:IntDirProd} is also true:
 
-\begin{thmprop}\label{ConvIntDirProd}
+\begin{prop}{ConvIntDirProd}
 Let $H$ and $K$ be subgroups of $G$, and define the map $\phi:H \times K \rightarrow G$  by $\phi(\, (h,k)\,) = hk$.  Suppose that $\phi$ is an isomorphism.  Then $G$ is the internal direct product of  $H$ and $K$.
-.\end{thmprop}
+.\end{prop}
 
 \begin{exercise}{}
-Prove Proposition~\ref{ConvIntDirProd}.
+Prove Proposition~\ref{proposition:isomorph:ConvIntDirProd}.
 \end{exercise}
 
 \begin{exercise}{}
@@ -1666,13 +1678,13 @@ $h_i h_j = h_j h_i$ for all $h_i \in H_i$ and $h_j \in H_j$.
 \end{itemize}
 We will leave the proof of the following proposition as an exercise. 
  
-\begin{thmprop}\label{isomorph:mult_dir_prod}
+\begin{prop}{isomorph:mult_dir_prod}
 Let $G$ be the internal direct product of subgroups $H_i$, where $i =
 1, 2, \ldots, n$. Then $G$ is isomorphic to $\prod_i H_i$. 
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{}
-Prove Proposition~\ref{isomorph:mult_dir_prod}.
+Prove Proposition~\ref{proposition:isomorph:isomorph:mult_dir_prod}.
 \end{exercise}
  
 
