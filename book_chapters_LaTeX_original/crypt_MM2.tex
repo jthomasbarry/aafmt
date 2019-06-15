@@ -25,7 +25,7 @@ In order to share a private message over a public domain a sender must  "lock" o
 
   If a symmetric key is used, then both parties must share their key before they can begin communicating securely. The requirement of establishing a key exchange is so essential that it is embedded into almost every technology we use today.  Some examples of key exchange can be seen in media applications, cell phones, banking, online purchasing, and emails.  
 
- But what if the only way the two parties have to communicate is via a public network (such as the Internet), where eavesdroppers can listen in?  Under these conditions how can they possibly establish a shared key in such a way that no one else can find out?  The Diffie Hellman key exchange (DHKE) is one possible solution to the problem of creating a secret key over an insecure communication channel.  Note that the DHKE is not used for encryption/decryption of messages, but only to establish a key that can be used to encrypt/decrypt subsequent messages.  Follow the steps below to see the DHKE process.  
+ But what if the only way the two parties have to communicate is via a public network (such as the Internet), where eavesdroppers can listen in?  Under these conditions how can they possibly establish a shared key in such a way that no one else can find out?  The Diffie Hellman key exchange (DHKE) is one possible solution to the problem of creating a secret key over an insecure communication channel.  Note that the DHKE is not used for encryption/decryption of messages, but only to establish a key that can be used to encrypt/decrypt subsequent messages.  Follow the steps below to see the DHKE process used by Moses and Rachael to communicate securely.  
 
  \begin{enumerate}[Step 1.]
  \item First, Moses and Rachael agree upon a pair of numbers $p$ and $g$. $p$ is called the \term{modulus},while $g$ is called the \term{base}. These numbers are not secret, but Moses and Rachael do not care if eavesdroppers find out what $p$ and $g$ are. In practice, $p$ and $g$ are required to have certain properties (as explained below) to maximize secrecy.  However, the DHKE procedure still works for any values of $p$ and $g$.
@@ -290,7 +290,7 @@ Additionally, ECs are not allowed to have double or triple roots in the variable
 \end {enumerate} 
 \end{exercise}
 
-All of the cryptosystems that we have studied so far have been based on group operations associated with a particular group. For example, Diffie-Hellman used discrete exponentiation (which is repeated multiplication in $U(p)$) to construct a one-way function. In order to  use elliptic curves to construct cryptosystems, we'll need to show that we can associate a group with each elliptic curve. In the following sections we'll define an arithmetic operation on the points of  any  elliptic curve, an  show that this operation is in fact a group operation.
+All of the cryptosystems that we have studied so far have been based on group operations associated with a particular group. For example, Diffie-Hellman used discrete exponentiation (which is repeated multiplication in $U(p)$) to construct a one-way function. In order to  use elliptic curves to construct cryptosystems, we'll need to show that we can associate a group with each elliptic curve. In the following sections we'll define an arithmetic operation on the points of  any  elliptic curve, and  show that this operation is in fact a group operation.
 
 \subsection{Elliptic curve arithmetic}\label{sec:ECA}
 In this section, we show how to do arithmetic on elliptic curves. Specifically, we define an operation (denoted by `+') which acts on two points of an elliptic curve, to give another point on the same curve. 
@@ -457,7 +457,7 @@ We may then calculate (remember we're doing arithmetic in  $\mathbb{Z}_{17}$!)
                      &\equiv 81 \\
                     &\equiv 13 \pmod{17}
 		\end{align*}
-Next we use the following formulas (which we used before for reall elliptic curves) to find $x_3$ and $y_3$: \[ x_3 = m^2 - 2x_1  , \text{and~} y_3 =-(  m(x_3 - x_1)+y_1)\]
+Next we use the following formulas (which we used before for reall elliptic curves) to find $x_3$ and $y_3$: \[ x_3 = m^2 - 2x_1  , \text{ and } y_3 =-(  m(x_3 - x_1)+y_1)\]
 where once again, arithmetic is in $\mathbb{Z}_{17}$:
 \begin{align*}
 		x_3 &\equiv  (13^2 - 5 - 5 ) \\
