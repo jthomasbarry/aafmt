@@ -648,7 +648,7 @@ If you have an arrow diagram of a function, then it is easy to tell whether or n
 \end{rem}
 %\begin{center}
 \begin{figure}[h]
-\includegraphics{images/arrow11.png}
+\includegraphics[width=4.5in]{images/arrow11.png}
 \caption{Arrow diagrams of three functions $f$, $g$, and~$h$.}
 \label{arrow11}
 \end{figure}
@@ -999,26 +999,51 @@ For each function, either prove that it is one-to-one, or prove that it is not.
  $A =\{x \in \mathbb{R} \text{ and }x >1 \}$~~(requires calculus).
 \item \label{IsIt11?-abs}
  $g \colon \real \to \real$ defined by $g(x)= \left|(x+1)/2 \right|$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{40modular} 
+For each function, either prove that it is one-to-one, or prove that it is not.
+\begin{enumerate}[(a)]
 \item \label{modular_g}
  $g \colon {\mathbb Z}_6 \to {\mathbb Z}_6$ defined by $g(n)= n \oplus 2$ .
+ \item \label{modular_g1}
+$g \colon {\mathbb Z}_6 \to {\mathbb Z}_{6}$ defined by $g(x) =  x \oplus x$ .
 \item \label{modular_m}
  $g \colon {\mathbb Z}_8 \to {\mathbb Z}_8$ defined by $g(n) = n \odot 2 $ .
 \item \label{modular_m2}
  $g \colon {\mathbb Z}_{11} \to {\mathbb Z}_{11}$ defined by $g(n) =  n \odot 2$ .
 \item 
- $g_x \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(n)= n \odot x$ , where $x$ can be any 
+ $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(n)= n \odot x$ , where $x$ can be any 
 fixed element of ${\mathbb Z}_7$.
+\item
+ $f \colon {\mathbb Z}_{32} \to {\mathbb Z}_{32}$ defined by $f(n)= n \odot b$ ,  $b \in {\mathbb Z}_a$, and $b$ is odd. 
+\item
+ $f \colon {\mathbb Z}_{188} \to {\mathbb Z}_{188}$ defined by $f(n)= n \odot b$ ,  $b \in {\mathbb Z}_a$, and $b$ is even. 
 \item 
  $g \colon {\mathbb Z}_8 \to {\mathbb Z}_8$ defined by $g(x)= n \odot n \odot n$ .
 \item 
  $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(x)= n \odot n \odot n$ .
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{40complex} 
+For each function, either prove that it is one-to-one, or prove that it is not.
+\begin{enumerate}[(a)]
 \item
  $g \colon {\mathbb C}\setminus \{0\}  \to {\mathbb C}\setminus \{0\} $ defined by $g(z) =  z^{-1}$ .
 \item
  $r \colon A  \to {\mathbb R} $ defined by  
 $r(z) = \text{Re}[z] + \text{Im}[z]$, where \\
  $A = \{ z \in  \mathbb{C}: \text{Im}[z] > 0 \}$. 
-
+\item
+$f: {\mathbb C} \to {\mathbb C}$ defined by $g(z) = az + b$ where $a$ and $b$ are fixed complex numbers and $a \neq 0$.
+\item
+$g: {\mathbb C} \to {\mathbb C}$ defined by $g(z) = z^3$.
+\item
+Let $n \in {\mathbb Z}$ and let $h: \mathbb{C} \setminus \{0\} \to \mathbb{C} \setminus \{0\}$ be defined by $h(z) = z^n$.  For which values of $n$ is 
+the function $h(z)$ a one-to-one function?  \emph{Prove} your answer.
  \end{enumerate}
 \end{exercise}
 
@@ -1317,6 +1342,9 @@ For each of the following  functions, either prove that it is onto, or prove tha
  $g \colon {\mathbb C}\setminus \{1\}  \to {\mathbb C}\setminus \{0\} $ defined by $g(z) =  (z-1)^{-1}$ .
 \item
  $g \colon {\mathbb R} \times [0,1]  \to {\mathbb C} $ defined by $g(\,(x,y)\,) =  |x| \cis ( 2\pi y)$.
+ \item
+ $g \colon {\mathbb C}  \to {\mathbb R} $ defined by $g(z) = |z|$.
+ 
 \end{enumerate}
 \end{exercise}
 
@@ -1324,6 +1352,8 @@ For each of the following  functions, either prove that it is onto, or prove tha
 \begin{exercise}{OntoExers3}
 For each of the following  functions, either prove that it is onto, or prove that it is not.
 \begin{enumerate}[(a)]
+\item \label{modular_m30}
+ $g \colon {\mathbb Z}_6 \to {\mathbb Z}_{6}$ defined by $g(x) =  x \oplus x$ .
 \item \label{modular_m3}
  $g \colon {\mathbb Z}_5 \to {\mathbb Z}_{5}$ defined by $g(x) =  (x \odot 2) \oplus 3$ .
 \item 
@@ -1332,6 +1362,14 @@ For each of the following  functions, either prove that it is onto, or prove tha
  $g \colon {\mathbb Z}_9 \to {\mathbb Z}_9$ defined by $g(x)= x \odot x \odot x$ .
 \item 
  $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(x)= x \odot x \odot x$ .
+\item 
+ $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(n)= n \odot x$ , where $x$ can be any 
+fixed element of ${\mathbb Z}_7$.
+\item
+ $f \colon {\mathbb Z}_{32} \to {\mathbb Z}_{32}$ defined by $f(n)= n \odot b$ ,  $b \in {\mathbb Z}_a$, and $b$ is odd. 
+\item
+ $f \colon {\mathbb Z}_{188} \to {\mathbb Z}_{188}$ defined by $f(n)= n \odot b$ ,  $b \in {\mathbb Z}_a$, and $b$ is even. 
+
 \end{enumerate}
 \end{exercise}
 
@@ -1725,6 +1763,8 @@ $B =  \{ r \cis \theta \in \mathbb{C}: r \ge 0 \text{ and } 0 \le \theta \le \pi
 \item
  $f \colon A   \to \mathbb{C} $ defined by $f(z) =  z^4$, where $A =  \{ r \cis \theta \in \mathbb{C}: r \ge 0 \text{ and } 0 \le \theta < \pi/2 \}$.
 \item
+ $f \colon A   \to \mathbb{C} $ defined by $f(z) =  z^k$, where $A =  \{ r \cis \theta \in \mathbb{C}: r \ge 0 \text{ and } 0 \le \theta < 2\pi/k \}$, where $k>1$ is an integer.  (Is it a bijection for all possible values of $k$? If so then prove it, and if not find a counterexample.
+\item
  $p \colon [0,1]   \to \mathbb{T} $ defined by $f(\theta) =  \cis \theta$, where $\mathbb{T} =  \{ z \in \mathbb{C}: |z|=1 \}$.
  \end{enumerate}
 \end{exercise}
@@ -1745,6 +1785,9 @@ For each function, either prove that it is a bijection, or prove that it is not.
  $g \colon {\mathbb Z}_8 \to {\mathbb Z}_8$ defined by $g(x)= x \odot x \odot x$ .
 \item 
  $h \colon {\mathbb Z}_5 \to {\mathbb Z}_5$ defined by $h(x)= (3 \odot x \odot x \odot x) \oplus 2$ .
+\item 
+ $h \colon {\mathbb Z}_4 \to {\mathbb Z}_4$ defined by $h(x)= x \odot x \odot x \odot x$ .
+
  \end{enumerate}
 \end{exercise}
 
@@ -1942,7 +1985,7 @@ Is it possible to define $g \compose f$? \emph{Explain} your answer.
 \end{exercise}
 
 \begin{exercise}{ComposeExers-form} 
- The formulas define functions $f$ and~$g$ from~$\mathbb{R}$ to~$\mathbb{R}$. Find formulas for $f \compose g(x)$ and $g \compose f(x)$.
+ The following formulas define functions $f$ and~$g$ from~$\mathbb{R}$ to~$\mathbb{R}$. Find formulas for $f \compose g(x)$ and $g \compose f(x)$.
 \begin{enumerate}[(a)]
 \item \label{ComposeExers-form-(3x+1)(x2+2)}
  $f(x) = 3x + 1$ and $g(x) = x^2 + 2$ 
@@ -1982,6 +2025,41 @@ Is it possible to define $g \compose f$? \emph{Explain} your answer.
  \\ $g = \{(\var{a},\clubsuit), (\var{b},\clubsuit), (\var{c}, \heartsuit), (\var{d}, \spadesuit) \}$
 %\item $f = \{(1,\var{a}), (2,\var{b}), (3,\var{c}), (4,\var{d})\}$,
 % \\ $g = \{(\var{a},\heartsuit), (\var{b},\clubsuit), (\var{c},\heartsuit), (\var{d},\heartsuit) \}$
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{ComposeExers-form2} 
+ The folllowing formulas define functions $f$ and~$g$ from~$\mathbb{C}$ to~$\mathbb{C}$. Find formulas for $f \compose g(x)$ and $g \compose f(x)$.
+\begin{enumerate}[(a)]
+\item \label{composeC1}
+ $f(r \cis \theta) = (r+3)\cis(\theta - \pi/6)$ and $g(r \cis \theta) = (r \cis \theta)^2$ 
+\item \label{composeC2}
+ $f(a + bi) = 3a + 4bi$ and $g(a + bi) = (a+bi)^2$ 
+\item \label{composeC3}
+ $f(r \cis \theta) = \log r + i \theta$ and $g(a+bi) = e^a \cis b$  (Note the domain of $f$ is $\mathbb{C} \setminus \{0\}$).
+\item \label{composeC4}
+ $f(r \cis \theta) = r^3 \cis (\theta + 2)$ and $g(r \cis \theta) = 2r \cis (\theta + 4)$ 
+\item \label{composeC5}
+ $f(z) = |z|$ and $g(z) = -z$ 
+\end{enumerate}
+\end{exercise}
+
+
+
+\begin{exercise}{ComposeExers-form3} 
+ The folllowing formulas define functions $f$ and~$g$ from~$\mathbb{Z}_k$ to~$\mathbb{Z}_k$ for different values of $k$. Find formulas for $f \compose g(x)$ and $g \compose f(x)$.
+\begin{enumerate}[(a)]
+\item \label{composeZ1}
+$f,g:\mathbb{Z}_{15} \rightarrow \mathbb{Z}_{15}$, where  $f(n) = 7 \odot n \oplus 6$ and $g(m) = 6\odot m \oplus 2$ 
+\item \label{composeZ2}
+$f,g:\mathbb{Z}_{25} \rightarrow \mathbb{Z}_{25}$, where  $f(n) = n \odot n$ and $g(m) = m \oplus 3$ 
+\item \label{composeZ3}
+$f,g:\mathbb{Z}_{7} \rightarrow \mathbb{Z}_{7}$, where  $f(n) = 3\odot n \oplus 5$ and $g(m) =4 \odot m \oplus 6$ 
+\item \label{composeZ4}
+$f,g:\mathbb{Z}_{20} \rightarrow \mathbb{Z}_{20}$, where  $f(n) = 4\odot n \oplus 19$ and $g(m) =5 \odot m \oplus 9$ 
+\item
+$f,g:\mathbb{Z}_{q} \rightarrow \mathbb{Z}_{q}$, where  $f(n) = a\odot n \oplus b$ and $g(m) =c \odot m \oplus d$ 
+
 \end{enumerate}
 \end{exercise}
 
@@ -2084,8 +2162,45 @@ Show that if $f$ and $g\compose f$ are bijections, then $g$ is a bijection.
 Show that if $g$ and~$g \compose f$ are bijections, then $f$ is a bijection.
  \end{enumerate}
  \end{exercise}
- 
- 
+  
+We have shown that various properties of $f \compose g$ follow based on properties of $f$ and $g$.  It is also important to show some ``negative'' properties, i.e. $f \compose g$ fails to have certain properties if either $f$ or $g$ fails to have the corresponding property.
+
+\begin{example}{composeNotProps}
+ Suppose $f \colon A \to B$ and $g \colon B \to C$ and $g$ is \emph{not} onto.  Then $g \compose f$ is \emph{not} onto.
+
+\begin{proof}
+We will prove by contradiction.  Suppose on the contrary that $g \compose f$ is onto.  Then given any $c \in C$, there exists a $a \in A$ such that
+$g \compose f(a)=c$.  By the definition of composition, it follows that $g(b) = c$ where $b \ f(a)$.  Since $c$ was an arbitrary element of $C$, this implies that $g$ is onto, which contradicts our original condition that $g$ is not onto.  This is a contradiction. Therefore our supposition must be false, and $g \compose f$ is not onto.
+\end{proof}
+\end{example}
+
+ \begin{exercise}{BijectionComposeExer2}
+ Suppose $f \colon A \to B$ and $g \colon B \to C$.
+ \begin{enumerate}[(a)]
+  \item  \label{BijectionComposeExer-g2}
+Show that if $f$ is not one-to-one, then $g \compose f$ is not one-to-one.
+\item
+Show that $g \compose f$ is a bijection if and only if both $g$ and $f$ are bijections.
+ \end{enumerate}
+ \end{exercise}
+
+\begin{exercise}{}
+Using part (d) from the previous exercise, which of the following are bijections? \emph{explain} your reasoning.
+\begin{enumerate}[(a)]
+\item
+$f \compose g$ in  Exercise \ref{exercise:functions:ComposeExers-form} parts (a)-(e).
+\item
+$f \compose g$ in  Exercise \ref{exercise:functions:ComposeExers-form2} parts (a)-(e).
+\item
+$f \compose g$ in  Exercise \ref{exercise:functions:ComposeExers-form3} parts (a)-(e).
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+ Suppose $f \colon A \to B$, $g \colon B \to A$ and $f \compose g$ is a bijection. prove that $g \compose f$ is also a bijection.
+\end{exercise}
+
+The following exercise leads into the next section:
 
  \begin{exercise}{InverseMakesBijectionExer}
  Suppose 

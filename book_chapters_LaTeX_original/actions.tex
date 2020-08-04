@@ -1,4 +1,4 @@
-\chap{Group Actions, with Applications }{actions}
+\chap{Group Actions }{actions}
 We've defined a  ``group'' as as set with an operation defined on it.  From this point of view, group elements are ``objects'' in a set. We have many examples of this: like the integers with addition, the integers mod $n$, the group of units $U(n)$, groups of matrices, and so on.
 
 Later on we introduced the idea that permutations form a group. Permutations are actually bijections (1-1, onto functions) that map a set of objects to itself.  Another way of saying this is that permutations ``act on'' a set by moving the elements around.  Similarly, we saw in Figure~\ref{groups_s3_symmetry_fig} in Section~\ref{SymmetryGroup} that the symmetries of an equilateral triangle (which are elements of the group $S_3$) move the vertices of the triangle from one position to another.  As a third example, in the group $\mathbb {Q}^*$ of non-zero rational numbers we can think of left multiplying by $2$ as ``moving''  $-5$ over to $-10$.  Left multiplying again by $2$ ``moves'' $-10$ to $-20$: and so on.   
@@ -104,8 +104,7 @@ Moving forward in this chapter we'll focus just on left group actions.\index{Act
 Consider $GL_2(\mathbb{R})$ (the group of invertible $2 \times 2$ matrices) and $\mathbb{R}^2$. Show that $GL_2(\mathbb{R})$ acts on $\mathbb{R}^2$ by left multiplication on vectors which means that $\mathbb{R}^2$ is a $GL_2(\mathbb{R})$-set. To check we must show identity and compatibility:
 \begin{enumerate}[(1)]
 \item Check identity: If $v\in \mathbb{R}^2$ and $I$ is the identity matrix, then $I.v = v$. 
-\item Check compatibility: If $A$ and $B$ are $2 \times 2$ invertible matrices, then $(AB).v = A.(B.v)$ since matrix multiplication is associative (see exercise below). Using the associative property is okay here because $\mathbb{R}^2$ vectors can be written as a $2 \times 1$ matrix, so the group operation and the group action are both cases of matrix multiplication. 
-\end{enumerate}
+\item Check compatibility: If $A$ and $B$ are $2 \times 2$ invertible matrices, then $(AB).v = A.(B.v)$ (see Exercise~\ref{exercise:actions:Action4} below\end{enumerate}
 Therefore, by definition, $\mathbb{R}^2$ is a $GL_2(\mathbb{R})$-set.
 \end{example}
 
@@ -117,7 +116,7 @@ a&b\\c&d\end{array}\right]; \quad
 B=\left[\begin{array}{cc} e& f\\ g & h\end{array}\right]; \quad 
 v=\left[\begin{array}{c}x\\ y\end{array}\right].
 \end{equation*}
-Verify the previous example by showing the associative property of matrix and vector multiplication. 
+Verify the compatibility condition $(AB).v = A.(B.v)$  by using the properties  of matrix  multiplication. 
 \end {exercise}
 
 \begin{example}{Action6}
@@ -276,10 +275,10 @@ Similarly, the rotations about the axis through $y_+$ and $y_-$ form a subgroup 
 
 \begin{defn}\label{StabilizerSubgroups} 
 Given that $X$ is a $G$-set and  $x \in X$, let $G_x$ be the set of  group elements $g$ that fix $x$:  in other words, $g.x=x$.  Then $G_x$ is called the \term{stabilizer subgroup}\index{Subgroup!stabilizer} or \term{isotropy 
-subgroup}\index{Subgroup!isotropy} of $x$.
+subgroup}\index{Subgroup!isotropy} for the element $x$.
 \end{defn}
 
-The above definition presumes that $G_x$ is in fact a subgroup, which up until now we haven't proved. The following exercise remedies this deficiency:
+The above definition presumes that $G_x$ is in fact a subgroup of $G$, which up until now we haven't proved. The following exercise remedies this deficiency:
 
 \begin{exercise}{Stabilizer1}
 Given any $x$ in $X$, prove that the stabilizer subgroup $G_x$  is indeed a subgroup of $G$.  (Recall this involves proving closure under composition and inverse.)
@@ -425,7 +424,7 @@ $$|G|=|H|\cdot [G:H], $$
 where $H$ is any subgroup of $G$.  If we replace $H$ with $G_x$, this becomes $$|G|=|G_x|\cdot [G:G_x]. $$
 Comparing with our previous formula, we get
  $$|{\cal O}_x|=[G:G_x].$$
-Let's give a real mathematical proof of this.
+Let's give a bona fide mathematical proof of this.
 
 \begin{prop}{CountingFormula}(\emph{Counting formula}):~~
 Let $G$ be a group and $X$ a $G$-set. If $x\in X$,
@@ -464,12 +463,23 @@ that the map $\phi$ is onto: that is, every coset of $G_x$ is in the range of $\
 Let $g G_x$ be any  left coset. If $g x =y$, then $\phi(y) = g G_x$.  Thus $gG_x$ is in the range of $\phi$, and the proof is finished.
 \end{proof}
 
-This proposition enables us to quickly find some nifty relationships among numbers of faces, vertices, and edges:
+At this point, it is straightforward to  put Proposition~\ref{proposition:actions:CountingFormula} together with Lagrange's Theorem to obtain:
+
+\begin{prop}{OrbStab}(\emph{Orbit-Stabilizer Theorem}):~~
+Let $G$ be a group and $X$ a $G$-set. Given $x\in X$, let ${\cal O}_x$ be the orbit of $x$ under $G$, and let $G_x$ be the stabilizer subgroup for the element $x$. then $|G| = |{\cal O}_x|||G_x|$. 
+\end{prop}
+
+\begin{exercise}{proofOrbStab}
+Prove Proposition~\ref{proposition:actions:OrbStab}.
+\end{exercise}
+
+
+The Orbit-Stabilizer Theorem enables us to quickly find some nifty relationships among numbers of faces, vertices, and edges:
 
 \begin{exercise}{CubeCounts}
 \begin{enumerate}[(a)]
 \item
-Show using Proposition~\ref{proposition:actions:CountingFormula} that for the cube, the ratio (number of edges / (number of  faces) = 4/2. 
+Show using Proposition~\ref{proposition:actions:OrbStab} that for the cube, the ratio (number of edges / (number of  faces) = 4/2. 
 \item Use the same method to find the ratio (number of edges) / (number of vertices) for the cube.
 \item For the dodecahedron (regular polyhedron with 12-sided faces), find the ratio of (number of faces) / (number of vertices).
 \hyperref[sec:actions:hints]{(*Hint*)}
@@ -616,10 +626,7 @@ $G_{A},  G_{B}$, $G_{C}$, $G_{D}$, $G_{a}$, $G_{b}$, $G_{c}$, $G_{d}$. Which sub
 \end{exercise}
 
 Let's use the stabilizer subgroups above to determine the total number of rotational symmetries of a tetrahedron.  
-
-\begin{exercise}{Tetra6} 
-Let $G$ be the rotational symmetries of a tetrahedron.  As in Example~\ref{example:actions:CountingFormula1} construct a formula for $|G|$ in terms of $| G_{A}|$ and $|{\cal O}_{A}|$.  \end {exercise}
-So far we've found 4 rotational axes and two rotations around each axis (besides the identity). This gives nine rotations.  As we can see there must be more rotational symmetries of a tetrahedron than we've discovered so far.  Let's try to find them. 
+So far we've found 4 rotational axes and two rotations around each axis. Together with the identity, this gives nine rotations. But there are more rotational symmetries of a tetrahedron than we've discovered so far.  Let's try to find them. 
 
 \begin{exercise}{Tetra7}
 \begin{enumerate}[(a)]
@@ -631,7 +638,7 @@ So far we've found 4 rotational axes and two rotations around each axis (besides
 \end{exercise}	
 
 \begin{exercise}{Tetra8}
-In Exercise~\ref{exercise:actions:Tetra6} we constructed a formula for $|G|$ in terms of$| G_{A}|$ and $|{\cal O}_{A}|$. Do the same thing using $| G_{\overline{AB}}|$ and $|{\cal O}_{\overline{AB}}|$, and show that you get the same answer for $|G|$.
+The Orbit-Stabilizer Theorem gives us a formula for $|G|$ in terms of$| G_{A}|$ and $|{\cal O}_{A}|$. Alternatively, it also gives a formula for$|G|$ in terms of  $| G_{\overline{AB}}|$ and $|{\cal O}_{\overline{AB}}|$. Show that both formulas give the same answer for $|G|$.
 \end{exercise}
 
 \begin{exercise}{Tetra9}
@@ -971,7 +978,7 @@ dodecahedron &  --&--\\ \hline
 \end{tabular}
 \item Based on the table, guess an equation for $|G|$ in terms of ${\cal O}_e$.
 \item 
-Prove your equation using Proposition~\ref{proposition:actions:CountingFormula}.
+Prove your equation using Proposition~\ref{proposition:actions:OrbStab}.
 % $|G|=2\cdot |{\cal O}_e|\$
 \end{enumerate}
 \end {exercise}
@@ -986,7 +993,7 @@ So since every rotational symmetry (besides the identity) stabilizes \emph{exact
 (note that we use $|G|-1$ and $|G_x|-1$  because we're not counting the identity symmetry). 
 
 
-Let's apply this formula to a regular polyhedron with $|{\cal O}_f|$ faces, $|{\cal O}_v|$ vertices and $|{\cal O}_e|$ edges.  Applying Proposition~\ref{proposition:actions:CountingFormula} to faces, edges, and vertices gives:
+Let's apply this formula to a regular polyhedron with $|{\cal O}_f|$ faces, $|{\cal O}_v|$ vertices and $|{\cal O}_e|$ edges.  Applying Proposition~\ref{proposition:actions:OrbStab} to faces, edges, and vertices gives:
 \[ |G_f|=\frac{|G|}{|{\cal O}_f|}; \qquad |G_e|=\frac{|G|}{|{\cal O}_e|}; \qquad |G_v|=\frac{|G|}{|{\cal O}_v|}.\]
 Now for the sum.  Since there are ${\cal O}_f$ faces, ${\cal O}_e$ edges, and ${\cal O}_v$ vertices we have:
 \begin{align*}
@@ -1005,11 +1012,11 @@ This powerful equation is called \term*{Euler's formula}\index{Euler's formula!F
 A certain regular polyhedron has 20 triangular faces. 
 \begin{enumerate}[(a)]
 \item
-Using Proposition~\ref{proposition:actions:CountingFormula}, find the number of edges.
+Using Proposition~\ref{proposition:actions:OrbStab}, find the number of edges.
 \item
 Using Euler's formula, find the number of vertices.
 \item
-Using Proposition~\ref{proposition:actions:CountingFormula}, find the number of edges which meet at each vertex.
+Using Proposition~\ref{proposition:actions:OrbStab}, find the number of edges which meet at each vertex.
 \end{enumerate}
 \end {exercise}
 
@@ -1052,7 +1059,7 @@ There are two types of vertices, and two types of edges.
 \end{itemize}
 \begin{enumerate}[(a)]
 \item 
-Use the Counting Formula (Proposition~\ref{proposition:actions:CountingFormula}) to express the number of Type I vertices, Type I  edges, and Type II edges in terms of $|G|$.
+Use the Orbit-Stabilizer Theorem  (Proposition~\ref{proposition:actions:OrbStab}) to express the number of Type I vertices, Type I  edges, and Type II edges in terms of $|G|$.
 \item 
 Prove that $|G|$ is divisible by 10.
 \item
@@ -1109,7 +1116,7 @@ The set of all possible rotations in 3 dimensions forms a group, which is called
 
 In Chapter~\ref{symmetries} we encountered another class of finite subgroups of $SO_3$, namely the dihedral groups $D_n$ which consist of rotations and flips (we should be careful to include $D_2$, which is generated by  a single 180-degree rotation and a flip). Although a flip is not a 2-d rotation, it is a rotation in 3-dimensions (as we indicated in  Section~\ref{subsec:reflSym}). Naturally, the rotation groups for the different $n$-gons (which are subgroups of the $D_n$ form another class of finite subgroups of $SO_3$.
 
-Are there any other finite subgroups of $SO_3$.  The answer is \emph{no} For a proof, the reader may consult: \url{homepages.math.uic.edu/~kauffman/FiniteRot.pdf}.
+Are there any other finite subgroups of $SO_3$.  The answer is \emph{no} For a proof, the reader may consult ``Classifying Finite Subgroups of $SO_3$'' by Hannah Mark, which (as of April 1 2020) can be found at: \url{homepages.math.uic.edu/~kauffman/FiniteRot.pdf}  (if the link doesn't work, you may try a Google search).
 
 Once again, note the amazing power of mathematics. Mathematics tells reality what it can and cannot do. Mathematics commands the universe, and the universe must obey. 
 

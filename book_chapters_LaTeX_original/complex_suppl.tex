@@ -802,7 +802,13 @@ $\theta+\phi$
 \end{enumerate}
 \end{multicols}
 
-%\noindent\textbf{Exercise \ref{exercise:complex:}:}  unnamed exercise %KW
+\noindent\textbf{Exercise \ref{exercise:complex:proof_of_mod2}:} 
+%Use Proposition~\ref{proposition:complex:polar_mult} and the polar expression for $\bar{z}$ that was given in Section~\ref{subsec:convertRecPolar} to give a simple proof of the following identity:  \[ z \bar{z} = |z|^2. \]
+\begin{align}
+z \bar{z} &= r \cis (\theta) \cdot r \cis (-\theta) & (\textrm{polar form of conjugate}) \\
+ &= (r \cdot r) \cis(\theta + (-\theta))  & (\textrm{polar muiltiplication rule}) \\
+ &= r^2 \cis(0) = r^2 = |z|^2  & (\textrm{algebra and definition of r})
+ \end{align}
 
 \noindent\textbf{Exercise \ref{exercise:complex:polar_z_inv}:}
 \begin{enumerate}[(a)]
@@ -900,7 +906,7 @@ $\frac{5}{2}\cis\left(\frac{\pi}{3}\right)$
 
 \item
 %$\dfrac{27\cis\left(\frac{7\pi}{12}\right)}{6\cis\left(\frac{5\pi}{3}\right)}$
-$9\cis\left(\frac{11\pi}{12}\right)$
+$\frac{9}{2}\cis\left(\frac{11\pi}{12}\right)$
 
 \item
 %$\dfrac{2\sqrt{2} + 2\sqrt{2}i}{\frac{\sqrt{3}}{4} + \frac{1}{4}i}$
@@ -1039,6 +1045,14 @@ If $n$ is even, we know that the real terms all have even powers of $\sin$ from 
 $1, -\displaystyle\frac{1}{2}+\displaystyle\frac{\sqrt{3}}{2}i, \displaystyle\frac{1}{2}-\displaystyle\frac{\sqrt{3}}{2}i$
 \item
 %Using Proposition~\ref{proposition:complex:nth_roots_of_1}, write six 6th roots of unity in polar form. Convert to the form $a+bi$.
+$1, 
+\displaystyle\frac{1}{2}+\displaystyle\frac{\sqrt{3}}{2}i
+-\displaystyle\frac{1}{2}+\displaystyle\frac{\sqrt{3}}{2}i,
+-1, 
+-\displaystyle\frac{1}{2}-\displaystyle\frac{\sqrt{3}}{2}i
+\displaystyle\frac{1}{2}-\displaystyle\frac{\sqrt{3}}{2}i
+-\displaystyle\frac{1}{2}+\displaystyle\frac{\sqrt{3}}{2}i
+$
 \end{enumerate}
 
 \noindent\textbf{Exercise \ref{exercise:complex:50}:} %KW added
@@ -1432,7 +1446,7 @@ Flip around the imaginary axis.
 \item 
 %What geometrical motion corresponds to the following algebraic operation:
 %``Multiply all 6th roots by $C$, then take the complex conjugates.''
-Flip around the $\theta = \frac{\pi}{3}$ axis.
+Flip around the $\theta = \frac{2\pi}{3}$ axis.
 
 \item 
 %What geometrical motion corresponds to the following algebraic operation:
@@ -1455,49 +1469,19 @@ Flip around the $\theta = \frac{\pi}{3}$ axis.
 \begin{enumerate}[(a)]
 \item
 %Find all fifth roots of $-i$.
-	\begin{multicols}{3}
-	\begin{itemize}	
-	\item
-	$\cis(\frac{3\pi}{10})$
-	
-	\item
-	$\cis(\frac{7\pi}{10})$
-	
-	\item
-	$\cis(\frac{11\pi}{10})$
-	
-	\item
-	$\cis(\frac{3\pi}{2})$
-	
-	\item
-	$\cis(\frac{19\pi}{10})$
-	\end{itemize}
-	\end{multicols}
-	
+	$\cis(\frac{(3+4k)\pi }{10})$
 \item
 %Find all fourth roots of $-1 + \sqrt{3}i$.
-
+$2^{1/4} \cis (\frac{\pi(1+3k)}{6})$
 \item
 %Find all fourth roots of $ \sqrt{1/2 + \sqrt{2}/4} + i\sqrt{1/2 - \sqrt{2}/4}$. 
 %\hyperref[sec:complex:hints]{(*Hint*)}
-	\begin{multicols}{2}
-	\begin{itemize}	
-	\item
-	$\cis(\frac{\pi}{16})$
-	
-	\item
-	$\cis(\frac{9\pi}{16})$
-	
-	\item
-	$\cis(\frac{17\pi}{16})$
-	
-	\item
-	$\cis(\frac{25\pi}{16})$
-	\end{itemize}
-	\end{multicols}
-	
+	$\cis(\frac{\pi(1+8k)}{16})$
 \item
 %Find all sixth roots of $-16i$.
+\item
+$2^{1/3} \cis ( \frac{\pi}{4} + \frac{k\pi}{3} )$
+
 \end{enumerate}
 
 \noindent\textbf{Exercise \ref{exercise:complex:60a}:} 

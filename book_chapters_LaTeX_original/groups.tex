@@ -1,3 +1,5 @@
+%% When is product of Z_n groups cyclic. I have begun writing this below.
+
 %%%%(c)
 %%%%(c)  This file is a portion of the source for the textbook
 %%%%(c)
@@ -8,8 +10,21 @@
 %%%%(c)
 %%%%(c)
 
-\chap{Abstract Groups: Definitions and Basic Properties\quad
+\chap{Introduction to Groups\quad
 \sectionvideohref{IvNQQuG2ngY&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=25}}{groups}
+
+
+\begin{quote}
+``There are more groups in heaven and earth, Horatio, than are dreamt of in your philosophy.'' Shakespeare, \emph{Hamlet}, Act 1 Scene V (paraphrase by J. Hill)
+\end{quote}
+
+\begin{quote}
+``Groups tend to be more extreme than individuals.'' (Daniel Kahneman, 2002 Nobel Prize winner in Economics)
+\end{quote}
+
+\begin{quote}
+``I am rarely bored alone; I am often bored in groups.'' (Dr. Laurie Helgoe, psychologist)
+\end{quote}
 
 You may have noticed that we have been voyaging deeper and deeper into unfamiliar mathematical territory. We're using more symbols and fewer numbers. We introduce unfamiliar terminology and strange notation. We deal with outlandish mathematical objects that are harder and harder to visualize. 
 
@@ -62,7 +77,7 @@ What are the four properties a set $G$ and a binary operation must exhibit in or
 Building on our previous discussion, we now  proudly present the following formal definition.
 
 \begin{defn}\label{group_definition}
- A \term{group}\index{Group!definition of} $(G, \circ )$ is a set $G$ together with a law of composition $(a,b) \mapsto a \circ b$ that satisfies the following axioms. 
+ A \term{group}\index{Group!definition} $(G, \circ )$ is a set $G$ together with a law of composition $(a,b) \mapsto a \circ b$ that satisfies the following axioms. 
 \begin{enumerate}
 \item
 The set $G$ is \term{closed} under the law of composition.  That is, 
@@ -292,7 +307,7 @@ Define a binary operation $\circ$ on $G$ by $(a,m) \circ (b,n) = (ab, m+n)$.  Is
 The previous two exercises follow a pattern that we may generalize:
 
 \begin{defn}\label{def:ProductOfGroups}
-Given two groups $G$ and $H$, we define the \term{product} of groups $G$ and $H$ (denoted by $G \times H$) as the set of pairs $\left\{(g,h), g \in G, h \in H \right\}$. If $(g_1, h_1)$ and $(g_2,h_2)$ are two elements of $G \times H$, then we define the group operation  $(g_1, h_1) \circ (g_2, h_2)$ as follows:\index{Product!of groups} 
+Given two groups $G$ and $H$, we define the \term*{product}\index{Product!of groups} of groups $G$ and $H$ (denoted by $G \times H$) as the set of pairs $\left\{(g,h), g \in G, h \in H \right\}$. If $(g_1, h_1)$ and $(g_2,h_2)$ are two elements of $G \times H$, then we define the group operation  $(g_1, h_1) \circ (g_2, h_2)$ as follows: 
 \[ (g_1, h_1) \circ (g_2, h_2) := (g_1g_2, h_1h_2),\]
 where $g_1g_2$ uses the group operation in $G$ and $h_1h_2$ uses the group operation in $H$.
 \end{defn}
@@ -313,6 +328,22 @@ $(3,6) \circ (2,4)$.
 
 \begin{exercise}{prod_group}
 Show that the product of two groups is a group.
+\end{exercise}
+
+
+\begin{exercise}{Z_2_n}
+Let ${\mathbb Z}_2^n = \{ (a_1, a_2, \ldots, a_n) : a_i \in {\mathbb Z}_2
+\}$. Define a binary operation on ${\mathbb Z}_2^n$ (which we will denote as `+') by
+\[
+(a_1, a_2, \ldots, a_n)
++
+(b_1, b_2, \ldots, b_n)
+=
+(a_1 \oplus  b_1, a_2 \oplus b_2, \ldots, a_n+b_n),
+\]
+where $\oplus$ denotes addition in ${\mathbb Z}_2$.
+Prove that ${\mathbb Z}_2^n$ is a group under this operation. This group
+is important in algebraic coding theory. 
 \end{exercise}
 
 In previous chapters we've used Cayley tables\index{Cayley table} to describe group operations.  With Cayley tables we can prove a set and operation are a group even when we don't know what the elements in the set really are or what the binary operation is.
@@ -1277,7 +1308,7 @@ Using Proposition \ref{proposition:groups:subgroup_prove} above, prove that ${\m
 \item
 What is $| {\mathbb T} |$?
 \item
-Prove or disprove that ${\mathbb T}$ is commutative.
+Prove or disprove that ${\mathbb T}$ is abelian.
 \end{enumerate}
 \end{exercise}
 
@@ -1289,7 +1320,7 @@ Using Proposition \ref{proposition:groups:subgroup_prove}, prove that $H_4$ is a
 \item  
 What is $| H_4 |$?
 \item
-Prove or disprove that $H_4$ is commutative.
+Prove or disprove that $H_4$ is abelian.
 \end{enumerate}
 \end{exercise}
 
@@ -1306,7 +1337,7 @@ Using Proposition \ref{proposition:groups:subgroup_prove}, prove that $H$ is a s
 \item  
 What is $| H_n |$?
 \item
-Prove or disprove that $H_n$ is commutative.
+Prove or disprove that $H_n$ is abelian.
 \end{enumerate}
 \end{exercise}
 
@@ -1322,9 +1353,44 @@ In other words ${\mathbb Q}^*$ is the set of non-zero rational numbers (${\mathb
 \item
 Using Proposition \ref{proposition:groups:subgroup_prove}, prove that ${\mathbb Q}^*$ is a subgroup of ${\mathbb R}^*$.
 \item
-Prove or disprove that ${\mathbb Q}^*$ is commutative.
+Prove or disprove that ${\mathbb Q}^*$ is abelian.
 \end{enumerate}
 \end{exercise}
+
+
+\begin{exercise}{}
+Prove that
+\[
+G =
+\{ a + b \sqrt{2} : \mbox{$a, b \in {\mathbb
+Q}$ and $a$ and $b$ are not both zero}  \}
+\]
+is a subgroup of ${\mathbb R}^{\ast}$ under the group operation of
+multiplication. 
+\end{exercise} 
+
+\begin{exercise}{}
+Let $G$ be the group of $2 \times 2$ matrices under addition and
+\[
+H
+=
+\left\{
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+:
+a + d = 0
+\right\}.
+\]
+\begin{enumerate}[(a)]
+\item
+Prove that $H$ is a subgroup of $G$.
+\item
+Prove or disprove that $H$ is abelian
+\end{enumerate}
+\end{exercise}
+
 
 \begin{exercise}{70}
 We define $SL_2( {\mathbb R})$\label{speciallinear} to be the set of $2 \times 2$ matrices of determinant one; that is, a matrix
@@ -1342,9 +1408,30 @@ linear $(SL_n(\mathbb{R}))$}\label{speciallinear}.
 \item
 Using Proposition \ref{proposition:groups:subgroup_prove}, prove that $SL_2( {\mathbb R})$ is a subgroup of $GL_2( {\mathbb R})$.
 \item
-Prove or disprove that $SL_2( {\mathbb R})$ is commutative.
+Prove or disprove that $SL_2( {\mathbb R})$ is abelian.
 \end{enumerate}
 \end{exercise}
+
+\begin{exercise}{}
+Let $G$ consist of the $2 \times 2$ matrices of the form
+\[
+\begin{pmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{pmatrix}
+\]
+where $\theta \in {\mathbb R}$. 
+\begin{enumerate}[(a)]
+\item
+Prove that $G$ is a subgroup of $SL_2(
+{\mathbb R})$.  (Recall your angle addition formulas from trigonometry!)
+
+\item
+Prove or disprove that $G$ is abelian.  
+\end{enumerate} 
+($G$ is called the set of $2 \times 2$ \term{rotation matrices}\index{Matrix!rotation}.)
+\end{exercise} 
+ 
 
 There is an alternative way to prove a subset $H$ of $G$ is a subgroup of $G$ that  can save some time.  It turns out that the three conditions in Proposition~\ref{proposition:groups:subgroup_prove} can be combined into a single statement:
 
@@ -1360,7 +1447,7 @@ To prove the ``only  if''' direction, we may assume that $H$ is a subgroup of $G
 \end{proof}
 
 \begin{example}{prov}
-Using the proposition above, let's reprove that ${\mathbb T}$ is a subgroup of ${\mathbb C}^{\ast}$.
+Using the proposition above, let's re-prove that ${\mathbb T}$ is a subgroup of ${\mathbb C}^{\ast}$.
 
 \begin{proof}
 Based on the proposition, there are four things we need to show:
@@ -1390,14 +1477,15 @@ $\implies |xy^{-1}| \in {\mathbb T}$
 \end{example} 
 
 \begin{exercise}{73}
-Use Proposition \ref{proposition:groups:subgroup_prove_2} to reprove the following:
+Use Proposition \ref{proposition:groups:subgroup_prove_2} to re-prove the following:
 \begin{enumerate}[(a)]
 \item
-${\mathbb Q}^*$ is a subgroup of ${\mathbb R}^*$
+${\mathbb Q}^*$ is a subgroup of ${\mathbb R}^*$.
 \item
-$SL_2( {\mathbb R})$ is a subgroup of $GL_2( {\mathbb R})$
+$SL_2( {\mathbb R})$ is a subgroup of $GL_2( {\mathbb R})$.
 \end{enumerate}
 \end{exercise}
+
 
 \section{Cyclic groups\quad
 \sectionvideohref{tcNl9iS0KJc&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=27}}\label{cyclic_groups}
@@ -1498,12 +1586,29 @@ So $\langle 1 \rangle = \{1, 2, 3, 4, 5, 0 \} = {\mathbb Z}_6$.
 Therefore ${\mathbb Z}_6$ is a cyclic group generated by $1$.
 \end{example}
 
+We've just seen that $1$ is a generator of ${\mathbb Z}_6$,  but that doesn't mean it's the \emph{only} generator.  A cyclic group can have more than one generator:
+
 \begin{exercise}{Z6_construct_5}
+\begin{enumerate}[(a)]
+\item
 In the group ${\mathbb Z}_6$, show that $\langle 5 \rangle = {\mathbb Z}_6$.
+\item
+Find all generators of ${\mathbb Z}_6$: that is, find all numbers $a \in {\mathbb Z}_6$ such that $\langle a \rangle = {\mathbb Z}_6$. 
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}{82}
 Given a group $G$, suppose that $G = \langle a \rangle$.  Prove that $G = \langle a^{-1} \rangle$.
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Show that  ${\mathbb Z}_n$ is cyclic for any integer $n > 1$ by identifying a number $a$ such that $\langle a \rangle = {\mathbb Z}_n$.
+\item
+For $n>2$, show that ${\mathbb Z}_n$ has at least 2 generators by finding a number $b_n$ such that 
+$\langle b_n \rangle = {\mathbb Z}_n$.
+\end{enumerate}
 \end{exercise}
 
 \begin{example}{Cyclic_U9}
@@ -1685,12 +1790,11 @@ Let $G$ be a finite group, and let $a \in G$ such that $|a| = n$ for $n>0$. Show
  
 \begin{example}{Not_Cyclic_S3}
 Not every group is a cyclic group.  Consider the symmetry group of an
-equilateral triangle $S_3$.  $S_3$ has 6 elements: we saw the Cayley table for $S_3$ in the Symmetries chapter.  You may verify by using the table that no single element generates the entire group.
-The subgroups of $S_3$ are shown in
-Figure~\ref{subgrpsS3}.  You may verify  that every subgroup is cyclic.
+equilateral triangle $D_3$ (which is the same as $S_3$).  $D_3$ has 6 elements: we saw the Cayley table for $D_3$ in Chapter~\ref{symmetries} (see Table~\ref{S3_table}.  You may verify by using the table that no single element generates the entire group, so $D_3$ is not cyclic..
+The cyclic subgroups of $S_3$ are shown in
+Figure~\ref{subgrpsS3}. 
 \hspace*{1in}
 \end{example}
-
 
 \begin{figure}[htb] %Replaced figure with tikz figure - TWJ 5/6/2010
 \begin{center}
@@ -1711,16 +1815,44 @@ Figure~\ref{subgrpsS3}.  You may verify  that every subgroup is cyclic.
 \node at (2, 0) {$\{{\var  id}, \mu_1\}$};
 \node at (4, 0) {$\{  {\var  id}, \mu_2 \}$};
 \node at (6, 0) {$\{  {\var  id}, \mu_3 \}$};
-\node at (3, 1.5) {$S_3$};
+\node at (3, 1.5) {$D_3$ (a.k.a. $S_3$)};
 \node at (3,-1.5) {$\{ {\var  id} \}$};
 \end{tikzpicture}
 \end{center}
-\caption{Subgroups of $S_3$}
+\caption{Subgroups of $D_3 (a.k.a. S_3)$}
 \label{subgrpsS3}
 \end{figure}
- 
-\noindent
-However, we can prove that:
+
+Although not every group  (and not every subgroup) is cyclic, we may use cyclic subgroups to help us
+enumerate all possible subgroups of a given group, with the benefit of the following result:
+
+\begin{prop}{orbit_sgp}
+Given a group $G$ and a subgroup $H \subset G$, and suppose that $a \in H$.  Then $\langle a \rangle \subset H$.
+\end{prop}
+
+\begin{exercise}{prove_orbit_sgp}
+Prove Proposition~\ref{proposition:groups:orbit_sgp}
+\end{exercise}
+
+Proposition~\ref{proposition:groups:orbit_sgp} makes it much easier to find subgroups of a given group, because it greatly cuts down
+on the possibilities.
+
+\begin{example}{S3_subgroups}
+We showed in Example~\ref{example:groups:Not_Cyclic_S3} that $D_3$ has 4 cyclic subgroups, and that every element of $D_3$ is in at least one of these subgroups.  Proposition~\ref{proposition:groups:orbit_sgp} shows that, for example, any subgroup containing $\rho_1$ must also contain $id$ and  $\rho_2$, since $\langle \rho_1 \rangle = \{id, \rho_1, \rho_2\}$.  Let's try to find a larger subgroup $H \subset D_3$ that contains $\rho_1$.  If we add any other element  (which must be  $\mu_k$ for some $k=1,2$ or $3$), then we must also add $\rho_1 \mu_k$ and $\rho_2 \mu_k$, which means that $H$ contains  all 6 elements of $D_3$. It follows that $H=D_3$. Similarly, if we try to find a subgroup $K$ that contains $\mu_k$ by adding another reflection $\mu_j (j \neq k)$, we find that $\mu_j \mu_k$ and $\mu_j \mu_k$  must also be in $K$, which means that $\rho_1$ must also be in $K$. But we've just finished shown that if $\rho_1 \in K$ and $\mu_k \in K$, then  $K=G$.  It follows that the only proper nontrivial subgroups of $D_3$ are the four cyclic subgroups shown in Figure~\ref{subgrpsS3}.
+\end{example}
+
+\begin{exercise}{d_4subgroups}
+\begin{enumerate}[(a)]
+\item
+Find all cyclic subgroups of  the symmetry group of the square (i.e. $D_4$)  by finding $\langle a \rangle$ for every element $a \in D_4$.
+\item
+Find all nontrivial proper subgroups of $D_4$  (You may follow the procedure used in Example~\ref{example:groups:S3_subgroups} if you wish.) 
+\item
+Show that at least one of the subgroups in (a)  is abelian and not cyclic.
+\end{enumerate}
+\end{exercise}      
+
+It is not true that every abelian group is cyclic (see Exercise~\ref{exercise:groups:d_4subgroups}.  However, we can prove the converse, namely:
  
 \begin{prop}{cyclic_abelian}
 Every cyclic group is abelian.
@@ -1756,6 +1888,12 @@ Show that ${\mathbb C}$ is not cyclic.
 \end{enumerate}
 \end{exercise}
  
+%%%Back in Section~\ref{Examples} we defined the \term*{product of groups}\index{Product!of groups} (see Definition~\ref{def:ProductOfGroups}).  The product of groups $G$ and $H$ is denoted by $G \times H$) and consists of pairs $\left\{(g,h), g \in G, h \in H \right\}$.The group operation on $G \times H$ is defined by $ (g_1, h_1) \circ (g_2, h_2) := (g_1g_2, h_1h_2),$
+%%%where $g_1g_2$ uses the group operation in $G$ and $h_1h_2$ uses the group operation in $H$.
+
+
+
+  
 \subsection{Subgroups of cyclic groups}
  
  
@@ -1766,7 +1904,7 @@ subgroups does $G$ possess?
  
  
  
-\begin{prop}
+\begin{prop}{}
 Every subgroup of a cyclic group is cyclic.
 \end{prop}
  
@@ -1800,10 +1938,18 @@ and $H$ is generated by $h$.
 \end{proof}
  
  
-\begin{corollary}
+\begin{prop}{nZ_sgp}
 The subgroups of ${\mathbb Z}$ are exactly $n{\mathbb Z}$ for $n = 0, 1, 2,
 \ldots$. 
-\end{corollary}
+\end{prop}
+
+\begin{exercise}{}
+Prove Proposition~\ref{proposition:groups:nZ_sgp}
+\end{exercise}
+
+\begin{exercise}{}
+Let $H = \{2^k : k \in {\mathbb Z} \}$. We know that $H$ is a subgroup of $\mathbb{Q}$.  Find all subgroups of $H$. 
+\end{exercise}
  
  
 \begin{prop}{Cyclic_subgrp_order}
@@ -1843,7 +1989,7 @@ r < n$ and $\text{gcd}(r,n) =  1$.
 Let us examine the group ${\mathbb Z}_{16}$.  The numbers 1, 3, 5, 7, 9,
 11, 13, and 15 are the elements of ${\mathbb Z}_{16}$ that are relatively
 prime to 16.  Each of these elements generates ${\mathbb Z}_{16}$. For
-example, 
+example, 9 is a generator because:
 \begin{alignat*}{3}
 1 \cdot 9  & =  9  & \qquad 2 \cdot 9  & = 2  & \qquad 3 \cdot 9  & = 11 \\
 4 \cdot 9  & =  4  & \qquad 5 \cdot 9  & = 13 & \qquad	6 \cdot 9 & = 6  \\
@@ -1856,30 +2002,28 @@ example,
 
 
 \markright{EXERCISES}
-\section{Additional group and subgroup exercises}
+\section{Additional group and subgroup exercises}\label{sec:addGpEx}
 
 
-\begin{enumerate}
- 
-\item   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}{} 
 Write out Cayley tables for groups formed by the symmetries of a
 rectangle and for $({\mathbb Z}_4, +)$. How many elements are in each
 group? Are the groups the same? Why or why not? 
+\end{exercise} 
  
- 
-\item %3
+\begin{exercise}{} 
 Describe the symmetries of a rhombus and prove that the set of
 symmetries forms a group. Give Cayley tables for both the symmetries
 of a rectangle and the symmetries of a rhombus. Are the symmetries of
 a rectangle and those of a rhombus the same?
+\end{exercise} 
  
- 
-\item
+\begin{exercise}{} 
 Give a multiplication table for the group $U(12)$.
- 
+\end{exercise} 
  
   
-\item
+\begin{exercise}{} 
 Prove that the set of matrices of the form
 \[
 \begin{pmatrix}
@@ -1890,7 +2034,8 @@ Prove that the set of matrices of the form
 \]
 where $x,y,z \in \mathbb{C}$ is a group under matrix multiplication.  This group, known as the
 \term{Heisenberg group},\index{Group!Heisenberg} is important in
-quantum physics.  
+quantum physics.
+\end{exercise}  
 %Matrix multiplication in the Heisenberg group is
 %defined by  
 %\[
@@ -1911,108 +2056,35 @@ quantum physics.
 %0 & 0 & 1
 %\end{pmatrix}.
 %\]
- 
- 
- 
-\item\label{ex:eoc:10}
-Let ${\mathbb Z}_2^n = \{ (a_1, a_2, \ldots, a_n) : a_i \in {\mathbb Z}_2
-\}$. Define a binary operation on ${\mathbb Z}_2^n$ (which we will denote as `+') by
-\[
-(a_1, a_2, \ldots, a_n)
-+
-(b_1, b_2, \ldots, b_n)
-=
-(a_1 \oplus  b_1, a_2 \oplus b_2, \ldots, a_n+b_n),
-\]
-where $\oplus$ denotes addition in ${\mathbb Z}_2$.
-Prove that ${\mathbb Z}_2^n$ is a group under this operation. This group
-is important in algebraic coding theory. 
- 
+  
 
- 
-\item
-\begin{enumerate}[(a)]
-\item
-Find all the subgroups of the symmetry group of an equilateral
-triangle. 
-\item
-Find all the subgroups of the symmetry group of a square.
-\end{enumerate} 
- 
-
- 
- 
-\item
-Let $H = \{2^k : k \in {\mathbb Z} \}$. We know that $H$ is a subgroup of $\mathbb{Q}$.  Find all subgroups of $H$. 
-
- 
-\item
-Let $G$ consist of the $2 \times 2$ matrices of the form
-\[
-\begin{pmatrix}
-\cos \theta & -\sin \theta \\
-\sin \theta & \cos \theta
-\end{pmatrix}
-\]
-where $\theta \in {\mathbb R}$. Prove that $G$ is a subgroup of $SL_2(
-{\mathbb R})$. 
- 
- 
-\item
-Prove that
-\[
-G =
-\{ a + b \sqrt{2} : \mbox{$a, b \in {\mathbb
-Q}$ and $a$ and $b$ are not both zero}  \}
-\]
-is a subgroup of ${\mathbb R}^{\ast}$ under the group operation of
-multiplication. 
- 
- 
-\item
-Let $G$ be the group of $2 \times 2$ matrices under addition and
-\[
-H
-=
-\left\{
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}
-:
-a + d = 0
-\right\}.
-\]
-Prove that $H$ is a subgroup of $G$.
-
-
-\item \label{ex:groups:quat}
+\begin{exercise}{}\label{ex:groups:quat}
 List all subgroups of the quaternion group $Q_8$. \hyperref[sec:groups:hints]{(*Hint*)}
+\end{exercise} 
  
- 
-\item
+\begin{exercise}{}
 Prove or disprove: $SL_2( {\mathbb Z} )$, the set of $2 \times 2$
 matrices with integer entries and determinant one, is a subgroup of
 $SL_2( {\mathbb R} )$. 
+\end{exercise}
  
-  
-\item\label{ex:eoc:31}
+\begin{exercise}{}\label{ex:eoc:31}
 Prove that the intersection of two subgroups of a group $G$ is also a
 subgroup of $G$. 
+ \end{exercise}
  
- 
-\item
+\begin{exercise}{}
 Prove or disprove:  If $H$ and $K$ are subgroups of a group $G$, then
 $H \cup K$ is a subgroup of $G$. 
+\end{exercise} 
  
- 
-\item
+\begin{exercise}{}
 Prove or disprove: If $H$ and $K$ are subgroups of a group $G$, then
 $H K = \{hk : h \in H \text{ and } k \in K \}$ is a subgroup of $G$.
 What if $G$ is abelian? 
+\end{exercise} 
  
- 
-\item
+\begin{exercise}{}
 Let $G$ be a group. Show that
 \[
 Z(G) = \{ x \in G : gx = xg \mbox{ for all $g \in G$}
@@ -2020,52 +2092,55 @@ Z(G) = \{ x \in G : gx = xg \mbox{ for all $g \in G$}
 \]
 is a subgroup of $G$. This subgroup is called the \term{
 center}\index{Center!of a group} of $G$. 
+\end{exercise} 
  
  
- 
-\item
+\begin{exercise}{}
 Give an example of an infinite group in which every nontrivial
 subgroup is infinite.
+\end{exercise}
  
-\item
+\begin{exercise}{}
 Prove or disprove: Every nontrivial subgroup of an non-abelian group is
 non-abelian.
-  
+\end{exercise}  
 
-\item\label{ex:eoc:11}
+\begin{exercise}{}\label{ex:eoc:11}
 \begin{enumerate}[(a)]
 \item
 Recall the discussion of Section~\ref{sec:miracle}, which explains how two apparently different groups can in fact be essentially the ``same" group. Find two groups of order eight that we have studied are not the ``same'' in this sense, and explain why they can't be considered as examples of the ``same'' group.  
 \item
 Using the previous exercise (which introduces ${\mathbb Z}_2^n$), give an example of a third group that is not the ``same'' as the two groups you found in (a), and explain why it is not the ``same''.
 \end{enumerate}
-
+\end{exercise}
  
-\item
+\begin{exercise}{}
 Give a specific example of some group $G$ and elements $g, h \in G$
 where $(gh)^n \neq g^nh^n$, for some natural number $n$. 
- 
+\end{exercise} 
  
 
   
-\item
+\begin{exercise}{}
 Let $a$ and $b$ be elements in a group $G$.  Prove that $ab^na^{-1} =
 (aba^{-1})^n$. 
+\end{exercise}
 
-\item\label{ex:eoc:15}
+\begin{exercise}{}\label{ex:eoc:15}
 Given a group $G$ which includes elements $g_1,\ldots g_n$. Prove that the inverse of $g _1 g_2 \cdots g_n$ is $g_n^{-1}
 g_{n-1}^{-1} \cdots g_1^{-1}$. 
+\end{exercise} 
  
- 
-\item
+\begin{exercise}{}
 Let $U(n)$ be the group of units in ${\mathbb Z}_n$. If $n>2$, prove that
 there is an element $k \in U(n)$ such that $k^2 = 1$ and $k \neq 1$.
+\end{exercise}
  
-\item\label{ex:eoc:evenInv}
+\begin{exercise}{}\label{ex:eoc:evenInv}
 Show that if $G$ is a finite group of even order, then there is an $a
 \in G$ such that $a$ is not the identity and $a^2 = e$.
 \hyperref[sec:groups:hints]{(*Hint*)} 
- 
+\end{exercise} 
  
  
 %\item
@@ -2074,36 +2149,34 @@ Show that if $G$ is a finite group of even order, then there is an $a
 %implies $b = c$ for elements $a, b, c \in G$.  
  
 
-\item \label{ex:eoc:abelian1}
+\begin{exercise}{}\label{ex:eoc:abelian1}
 Let $G$ be a group and suppose that $(ab)^2 = a^2b^2$ for all $a$ and
 $b$ in $G$.  Prove that $G$ is an abelian group.
 \hyperref[sec:groups:hints]{(*Hint*)}  
+\end{exercise}
 
-\item \label{ex:eoc:abelian2}
+\begin{exercise}{}\label{ex:eoc:abelian2}
 Show that if $a^2 = e$ for all $a \in G$, then $G$ must be an abelian group. 
 \hyperref[sec:groups:hints]{(*Hint*)} 
-
+\end{exercise}
  
-\item \label{ex:groups:2elt}
+\begin{exercise}{}\label{ex:groups:2elt}
 If $(xy)^2 = xy$ for all $x$ and $y$ in $G \setminus {e}$, prove that $G$ must be
 abelian.
 \hyperref[sec:groups:hints]{(*Hint*)}
+\end{exercise}
 
-\item \label{ex:groups:abelian_proof}
+\begin{exercise}{}\label{ex:groups:abelian_proof}
 If $xy = x^{-1} y^{-1}$ for all $x$ and $y$ in $G \setminus {e}$, prove that $G$
 must be abelian.
+\end{exercise} 
  
- 
- 
- 
-\item
+\begin{exercise}{}
 Let $H$ be a subgroup of $G$ and
 \[
 N(H) = \{ g \in G : gh = hg \mbox{ for all $h \in H$}  \}.
 \]
 Prove $N(H)$ is a subgroup of $G$.  This subgroup is called the \term{
 normalizer}\index{Normalizer} of $H$ in $G$. 
- 
-\end{enumerate}
-
+\end{exercise}
  

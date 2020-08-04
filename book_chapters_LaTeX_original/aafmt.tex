@@ -246,58 +246,62 @@
 %
 \begin{titlepage}
 \title{Elementary Abstract Algebra: Examples and Applications}
-\author{Justin Hill, Chris Thron (eds), Thomas Judson, Dave Witte Morris, Joy Morris, A. J. Hildebrand (sources), Jennifer Lazarus, Mark Leech, Moses Marmolejo, Johnny Watts,David Weathers, Holly Webb  (chapter authors), Semi Harrison, Khoi Tran, Rachel McCoy (contributors)}
+\author{Justin Hill, Chris Thron (eds), Thomas Judson, Dave Witte Morris, Joy Morris, A. J. Hildebrand (sources), Christy Douglass, Jennifer Lazarus,  Mark Leech,  David Weathers, Moses Marmolejo, Adam McDonald, Katrina Smith, Johnny Watts, Holly Webb(chapter authors), Semi Harrison, Khoi Tran, Rachel McCoy (contributors)}
 \begin{center}
 \vspace{3.5cm}
 {\huge \textbf{ Elementary Abstract Algebra: Examples and Applications}}\\[1cm]
-Contributing editors: \\ [0.5 cm]
+Supervising editors: \\ [0.5 cm]
 { \textbf{Justin Hill, Chris Thron } } \\
-Temple College~/~Texas A\&M University-Central Texas \\[0.4cm]
+St. Philip's College~/~Texas A\&M University-Central Texas \\[0.4cm]
 Incorporating source materials by\\[0.4cm]
 \textbf{Thomas Judson} (Stephen F. Austin State University) \\
 \textbf{Dave Witte  Morris and Joy Morris} (University of Lethbridge) \\
 \textbf{A. J. Hildebrand} (University of Illinois Urbana-Champaign) \\
 [0.4cm]
 With chapters by\\[0.4cm]
-\textbf {Jennifer Lazarus, Mark Leech, Moses Marmolejo, Johnny Watts,David Weathers, Holly Webb  } (TAMU-CT)\\
+\textbf {Christy Douglass, Jennifer Lazarus, Mark Leech, Moses Marmolejo, Adam McDonald, Katrina Smith, Johnny Watts,  David Weathers, Holly Webb} (TAMU-CT)\\
 [0.4cm]
 and additional contributions by\\[0.4cm]
-\textbf{Rachel McCoy, Khoi Tran, Semi Harrison } (TAMU-CT)
+\textbf{Semi Harrison,Rachel McCoy, Khoi Tran } (TAMU-CT)
 \vfill
 
 % Bottom of the page
 {\large \today}\\ [1 cm]
-This book is offered under the Creative Commons license (Attribution-NonCommercial-ShareAlike 2.0).
+This book is offered under the GNU Free Documentation License, Version 1.2, or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the appendix, entitled ``GNU Free Dcoumentation License''. The  Set Theory and Functions chapters are licensed under   Creative Commons license (Attribution-NonCommercial-ShareAlike 2.0).
 
 \end{center}
 \end{titlepage}
 \vspace{4cm}
 
 \noindent
-Material from "Abstract Algebra, Theory and Applications" by Thomas Judson may be found throughout much of the  book. 
-A current version of "Abstract Algebra, Theory and Applications" may be found at: 
+Material from the 2012 version of "Abstract Algebra, Theory and Applications" by Thomas Judson may be found throughout much of the  book.  Attributions are found at the beginning of each chapter.
+Judson's book is covered by the GFDL license, and all chapters of the current book containing his work are covered by the same license. A current version of "Abstract Algebra, Theory and Applications" may be found at: 
 \begin{center}
  \url{abstract.ups.edu}.
 \end{center}
+
+
 The Set Theory and Functions chapters are largely based on material from  "Proofs and Concepts"(version 0.78, May 2009) by Dave Witte Morris and Joy Morris, which may be found online at:
 \begin{center}
 \url{https://archive.org/details/flooved3499}, or \\
 \url{http://people.uleth.ca/~dave.morris/books/proofs+concepts.html}
 \end{center}
+Their book is covered by the Creative Commons license (Attribution-NonCommercial-ShareAlike 2.0), and the two chapters containing their work are covered by the same license.
+
 The material on induction was modified from \LaTeX code originally obtained from A. J. Hildebrand, whose course web page is at:
 \begin{center}
 \url{http://www.math.uiuc.edu/~hildebr/}
 \end{center}
 \noindent
 Justin and  Chris would like to express their deepest gratitude to Tom, Dave and Joy, and  A. J.  for generously sharing their original material. They were not involved in the preparation of this manuscript, and are not responsible for any errors or other shortcomings.\\[0.3cm]
-Please send comments and corrections to: thron@tamuct.edu. You may also request the \LaTeX source code from this same email address.
+Please send comments and corrections to: thron@tamuct.edu. You may also request the solutions manual and  \LaTeX~source code  from this same email address.
 \begin{center}
 Course web page: \url{http://abstractalgebra.altervista.org/}\\
 Online book: \url{http://sl2x.aimath.org/book/aafmt/}
 \end{center}
 
 \vfill
-\copyright 2013,2014, 2015, 2018 by Justin Hill and Chris Thron. Some rights reserved.\\
+\copyright 2013,2014, 2015, 2018, 2020 by Justin Hill and Chris Thron. Some rights reserved.\\
 Portions \copyright 1997 by Thomas Judson. Some rights reserved.\\
 Portions \copyright 2006-2009 by Dave Witte Morris and Joy Morris. Some rights reserved.
 
@@ -320,6 +324,7 @@ ISBN:  978-0-359-04211-1
 \include{complex_study_guide}
 \include{modular_arithmetic}
 \input{modular_arithmetic_hints}
+\input{ modular_arithmetic_divisibility}
 \include{modular_arithmetic_study_guide}
 \include{set_chapter}
 \input{set_chapter_hints}
@@ -351,12 +356,14 @@ ISBN:  978-0-359-04211-1
 \input{algcodes_hints}
 \include{isomorph}
 \input{isomorph_hints}
-\include{PolyVec}
-\input{polyvec_hints}
+%\include{PolyVec}
+%\input{polyvec_hints}
 \include{homomorph}
 \input{homomorph_hints}
 \include{actions}
 \input{actions_hints}
+\include{intro_to_rings}
+\include{intro_to_rings_hints}
 %\include{poly_codes}
 \include{induction_appendix}
 
@@ -373,8 +380,8 @@ ISBN:  978-0-359-04211-1
 \backmatter
 %
 %\include{solution}
-%\addcontentsline{toc}{chapter}{GNU Free Documentation License}
-%{\small\include{gfdl}}
+\addcontentsline{toc}{chapter}{GNU Free Documentation License}
+{\small\include{gfdl}}
 % \clearpage
 \addcontentsline{toc}{chapter}{Index}
 \printindex

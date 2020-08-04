@@ -125,7 +125,7 @@ Since the result of any symmetry acting on $S$ must be all of $S$, then every po
 \end{proof}
 \medskip
 
-Proposition~\ref{proposition:symmetries:SymmBijection} says that all symmetries are bijections, but the \emph{converse} is not true: all bijections are not symmetries. 
+Proposition~\ref{proposition:symmetries:SymmBijection} says that all symmetries are bijections, but the \emph{converse} is not true: not all bijections are symmetries. 
 
 \begin{exercise}{bijectnotsym}
  Create a bijection from $\{A,B,C,D,E,F\} \to \{A,B,C,D,E,F\}$ that does not correspond to a symmetry of the regular hexagon in  Figure~\ref{hex60rot}. \emph{Explain} why it is not a symmetry.
@@ -577,14 +577,14 @@ Write out the proof of Proposition \ref{proposition:symmetries:symcompinv} part 
 \hyperref[sec:symmetries:hints]{(*Hint*)}
 \end{exercise}
 
-And finally, as the grand culmination of this series of propositions, we have:
+And finally, as the grand finale for this series of propositions, we have:
 
-\begin{prop}{symcompinv}
+\begin{prop}{symcomp_group}
 The set $S$ of symmetries of any figure forms a group.
 \end{prop}
 
 \begin{exercise}{group_proof}
-Prove Proposition~\ref{proposition:symmetries:symcompinv} (make use of the propositions that we've proved previously.)
+Prove Proposition~\ref{proposition:symmetries:symcomp_group} (make use of the propositions that we've proved previously.)
 \end{exercise}
 
 \bigskip
@@ -1032,7 +1032,7 @@ In $D_5$, to compute $(s \compose r^3) \compose (s \compose r^4)$ we have (using
 &= r
 \end{align*}
 \end{example}
-In fact, following the method of Example\ref{example:symmetries:compref} it is possible to derive a general formula for the composition of two reflections. Such a formula may be very useful in certain situations: for instance, in the following exercises.
+In fact, following the method of Example \ref{example:symmetries:compref} it is possible to derive a general formula for the composition of two reflections. Such a formula may be very useful in certain situations: for instance, in the following exercises.
 
  \begin{exercise}{44}
 Using only associativity and Proposition~\ref{proposition:symmetries:Dn_generator_theorem}, complete the entire Cayley table for $D_4$.  Remember, there is a row and a column for each element of $D_4$. List the elements as indicated in Proposition~\ref{proposition:symmetries:D_elts}. You don't need to show all your computations. \emph{(But don't use tableau form--no cheating!)} 
@@ -1042,8 +1042,52 @@ Using only associativity and Proposition~\ref{proposition:symmetries:Dn_generato
 Using only associativity and Proposition~\ref{proposition:symmetries:Dn_generator_theorem}, complete the entire Cayley table for $D_5$.  You don't need to show all your computations. \emph{(But don't use tableau form -- no cheating!)} 
 \end{exercise}
 
+ \begin{exercise}{D8}
+ Consider an 8-gon with vertices labeled counterclockwise as $1,2, \ldots 8$. Let $s$ be the reflection that leaves vertex 1 fixed, and let $r$ be counterclockwise rotation by $2\pi/8$. 
+Using only associativity and Proposition~\ref{proposition:symmetries:Dn_generator_theorem}, compute the following. Express your answers in the form $s^m r^n$, where $m,n$ are positive integers.
+\begin{enumerate}[(a)]
+\item
+$r^3sr^{3}$
+\item
+$s r^3 s$
+\item
+$r^m s r^m$, where $0 \le m < 8$.
+\item
+$s r^m s$, where $0 \le m <8$.
+\item
+$rsr^2sr^3sr^4$
+\item
+$s r^4 s r^4 $
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{D8_2}
+For each of the computations in Exercise~\ref{exercise:symmetries:D8}, determine whether the result is a rotation or reflection. If the result is a rotation, give the angle of rotation; and if it's a reflection, give the line of reflection.  For example, the symmetry $sr$ is a reflection about the line which passes through the midpoints of segments $\overline{12}$ and $\overline{56}$.
+\end{exercise}
+
+\begin{exercise}{Darb}
+\begin{enumerate}[(a)]
+\item
+In the group $D_n$, let $r$ be counterclockwise rotation by $2\pi/n$  and let $s$ be the reflection that leaves vertex 1 fixed. We have shown that $r^ks = sr^{n-k}$. Let $\sigma$ be an arbitrary reflection in $D_n$. Show that a similar equation holds for $r$ and $\sigma$:  namely,  $r^k \sigma = \sigma r^{n-k}$.  (\emph{Hint}: we've shown that $\sigma$ can be written as $s r^m$ for some integer $m$.)
+\item
+Let $\rho$ be an arbitrary rotation in $D_n$, and let $\sigma$ be an arbitrary reflection in $D_n$.  Show that $\rho \sigma = \sigma \rho^{-1}.$  (\emph{Hint}:  Look at the hint for (a), and consider that $\rho$ can be written in terms of $r$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{Darb}
+\begin{enumerate}[(a)]
+\item
+In the group $D_n$, let $r$ be counterclockwise rotation by $2\pi/n$  and let $s$ be the reflection that leaves vertex 1 fixed. Is $r^4 s^3 r^2 s$ a reflection or rotation? \emph{Prove} your answer.  
+\item
+Let $\rho$ be an arbitrary rotation in $D_n$, and let $\sigma$ be an arbitrary reflection in $D_n$.  Is $\rho^4 \sigma^3 \rho^2 \sigma$ a reflection or rotation? \emph{Prove} your answer.  
+\item
+Let $k,\ell,m,n$ be integers. Given the symmetry $\rho^k s^{\ell} \rho^m s^n$, under what conditions is this symmetry a reflection? Under what conditions is  this symmetry a rotation? \emph{Prove} your answers.
+\end{enumerate}
+\end{exercise}
+
+
 \section{For further investigation}
-In this chapter, we have looked at the groups involved with symmetries of plane figures. But really, there is no need to restrict ourselves to two dimensions. Three-dimensional regular figures (such as the tetrahedron, cube, icosahedron, and dodecahedron) also have symmetry groups associated with them. These symmetry groups also make for fascinating study.
+In this chapter, we have looked at the groups involved with symmetries of plane figures. But really, there is no need to restrict ourselves to two dimensions. Three-dimensional regular figures (such as the tetrahedron, cube, icosahedron, and dodecahedron) also have symmetry groups associated with them.We will say more about the symmetries of regular polyhedra in Chapter~\ref{actions}. 
 
 Neither do we need to restrict ourselves to symmetries of objects. The symmetries of \emph{patterns} also play an important role in art and architecture.  For instance, every possible regular repeating pattern that can be put on wallpaper (or used as floor tiling) is associated with a symmetry group. It turns out that there are exactly 17 of these symmetry groups: they are called the \emph{wallpaper groups}.\index{Wallpaper groups}\index{Group!wallpaper} For an excellent elementary reference on this subject, I highly recommend ``17 Plane Symmetry Groups" by Anna Nelson, Holli Newman, and Molly Shipley, available on the web (as of January 2014) at \url{http://caicedoteaching.files.wordpress.com/2012/05/nelson-newman-shipley.pdf}. 
 

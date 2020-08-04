@@ -208,21 +208,32 @@ f(0) = 1,~~
  \item
 $ g: {\mathbb Z_4}  \longrightarrow R_4$ defined by 
 \[ 
-g(0) = \var{id},~~
+g(0) = {\var id},~~
  g(1) = r_{270},~~
  g(2) = r_{90} ,~~
  g(3) = r_{180}. 
  \]
-
+ 
  \item
- $ h: \langle i \rangle \longrightarrow R_4$ defined by 
+ $ h: R_4 \longrightarrow \langle i \rangle$ defined by 
 \[ 
- h(1) = \var{id},~~ 
+ h(1) = {\var id},~~ 
 h(i) = r_{270},~~
 h(-1) = r_{180},~~
  h(-i) = r_{90}.
 \]
- \end{enumerate}
+
+
+ \item
+ $ h: R_4 \longrightarrow \langle i \rangle$ defined by 
+\[ 
+ h({\var id}) = 1,~~ 
+h(r_{270}) = i,~~
+h(r_{180}) = -i,~~
+ h(r_{90}) =-1.
+\]
+
+\end{enumerate}
  \end{exercise}
 
  \begin{exercise}{iso_6}
@@ -244,6 +255,11 @@ for all $a$ and $b$ in $G$. If $G$ is isomorphic to $H$, we write $G \cong H$. T
 We'll often use Greek letters ($\phi$ (`phi'), $\gamma$ ('gamma'), $\psi$('psi'), etc.) to denote isomorphisms--partially because `phi' is reminiscent of isomor$\,$`phi'$\,$sm, and partially because we don't want to confuse isomorphisms with group elements  (which are denoted by $g,h,$ and so on.)
 \end{rem}
 
+\begin{rem}
+Definition~\ref{isomorph_defn} specifies that any isomorphism must be a bijection, i.e. a function that is 1-1 and onto.  Proposition~\ref{proposition:functions:InverseBijection} tells us that any function that has an inverse is a bijection, and vice versa. You'll find that often the easiest way to show that a function is a bijection is to show it has an inverse.   
+\end{rem}
+
+
 \begin{exercise}{iso_8}
 \begin{enumerate}[(a)]
 \item
@@ -262,7 +278,7 @@ Given that  $\phi : G \rightarrow H$ is an  isomorphism, then $\phi$ takes the i
 
 \begin{figure}[htb]
 	   \center{\includegraphics[width=3.5in]
-	         {images/isomInv.png}}
+	         {images/isomId.png}}
 	  \caption{\label{fig:isomorph:isomId} Isomorphic image of   inverse elements are  inverse elements. }
 \end{figure}
 
@@ -276,7 +292,7 @@ Given that $e$ is the identity of \underline{$~<1>~$} and $h$ is an arbitrary el
 \begin{align*}
 \phi(e) \circ h &= \phi(e) \circ \phi(\underline{~<5>~}) & \textrm{(substitution)}\\
 &= \phi( e \cdot \underline{~<6>~}) & \textrm{(definition of~} \underline{~<7>~})\\
-&= \phi( \underline{~<8>~}) & \textrm{(definition of \underline{~<9>~})}\\
+&= \phi( \underline{~<8>~}) & \textrm{(definition of~} \underline{~<9>~})\\
 &= h & \textrm{(substitution)}
 \end{align*}
 Following the same steps, we can also show
@@ -347,8 +363,9 @@ Prove Proposition~\ref{proposition:isomorph:GpEquivRel}.
 \hyperref[sec:isomorph:hints]{(*Hint*)}
 \end{exercise}
 
-\section{More Examples}\label{iso_more_ex}
+\section{Examples and generalizations}\label{iso_more_ex}
 
+\subsection{Examples of isomorphisms}
 Now that we have a formal definition of what it means for two groups to be isomorphic, let's look at some more examples, in order to get a good feel for identifying groups that are isomorphic and those that aren't.
 %In the previous examples we only looked at isomorphisms between finite groups.  This simplified our proof process in a couple ways.  One, in showing that the isomorphism was a bijection, all we had to do was verify it visually with the arrow diagram we created, because the arrow diagram contained all the information needed to show that the function was one-to-one and onto.  Two, to show that the function preserved the operations of the respective groups, all we needed was to verify it visually with the Cayley tables, since again the Cayley tables contained all the information needed.
 
@@ -611,7 +628,7 @@ order~6.
 
 \begin{example}{factor_S3_iso}
 In Example~\ref{example:cosets:factor_S3} of the Cosets chapter, we looked at  the normal subgroup  $N = \{ (1), (123), (132)  \}$ of $S_3$.
-The cosets of $N$ in $S_3$ were $N$ and $(12) N$; and the factor group $S_3
+The cosets of $N$ in $S_3$ were $N$ and $(12) N$; and the quotient group $S_3
 / N$ had the following multiplication table.
 \begin{center}
 \begin{tabular}{c|cc}
@@ -632,7 +649,7 @@ permutation yields an odd permutation. This suggests a possible isomorphism to $
 %Let's look at an interesting example of isomorphic groups that was brought up and hinted at in the Cosets chapter %(Example~\ref{example:cosets:factor_S3}. 
 
 \begin{exercise}{factor_S3}
-Prove that the factor group $S_3/A_3 \cong {\mathbb Z}_2$.
+Prove that the quotient group $S_3/A_3 \cong {\mathbb Z}_2$.
 \end{exercise}
 
 In Section~\ref{sec:factor_groups} of the Cosets chapter we hinted at several examples of possible isomorphisms,  which we'll have you prove now:
@@ -849,7 +866,7 @@ Let $\mathbb{M}_n(\mathbb{R})$ be the group of $n\times n$ matrices with real en
 An isomorphism from a group to itself is called an \emph{automorphism}\index{Automorphism!of a group}\index{Group!automorphism}.
 
 
-\section{More properties of isomorphisms\quad
+\subsection{General properties of isomorphisms\quad
 \sectionvideohref{AI2JXYaaV8U&index=31&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{iso_properties}
 In the last two sections we  proved several properties of isomorphic groups and their corresponding isomorphisms.  We collect these properties (and add a few more) in the following proposition:
 
@@ -1077,13 +1094,31 @@ For example, the second row of the Cayley table is obtained as $(1\oplus 0~~1\op
 0 & 1 & 2 \\
 1 & 2 & 0
 \end{pmatrix}$ 
-that is the isomorphic image of 1 is actually the function from ${\mathbb Z}_3 \rightarrow {\mathbb Z}_3$ that takes $n$ to $1 \oplus n$.   The following proposition is basically a generalization of this simple observation.
-
+that is the isomorphic image of 1 is actually the function from ${\mathbb Z}_3 \rightarrow {\mathbb Z}_3$ that takes $n$ to $1 \oplus n$.   
 \end{example}
 
+In Example~\ref{example:isomorph:cayley_isomorph} it was fairly easy to obtain permutations directly from the Cayley table, because the elements of the group were $0,1,2$.  But what if the group has different elements? No problem--we can just relabel the elements, and then read off the permutations in the same way, as the following exercise shows:  
+
+\begin{exercise}{cayley_ex}
+\begin{enumerate}[(a)]
+\item
+Give the Cayley table for $U(8)$.
+\item
+Rewrite the table you gave in (a) except make the following replacements:  $1 \rightarrow 1$, $3 \rightarrow 2$, $5 \rightarrow 3$, $7 \rightarrow 4$. 
+\item
+From the table you created in (b), obtain 4 permutations from the 4 rows of the Cayley table (just as we did in  Example~\ref{example:isomorph:cayley_isomorph}). 
+\item
+Give the Cayley table for the four permutations that you obtained in (c).
+\item
+Explain how your result shows that $U(8)$ is isomorphic to a subgroup of the permutation group $S(4)$.
+\end{enumerate}
+\end{exercise}
+
+What we've discovered in Example~\ref{example:isomorph:cayley_isomorph} and Exercise~\ref{exercise:isomorph:cayley_ex}
+can be generalized to any finite group of any size, whether abelian or nonabelian:
 
 \begin{prop}{isomorph_theorem_6} (\emph{Cayley's theorem})\index{Cayley's Theorem} 
-Every group is isomorphic to a group of permutations.
+Every finite group is isomorphic to a group of permutations.
 \end{prop}
 
 \begin{proof}
@@ -1119,7 +1154,18 @@ Complete the proof of Proposition~\ref{proposition:isomorph:isomorph_theorem_6} 
 \end{enumerate}
 \end{exercise}
 
-The isomorphism $\Phi: G \rightarrow S_{|G|}$ defined in the proof is known as the \term{left regular representation}\index{Left regular representation}\index{Regular representation!left} of~$G$. This is not the only possible isomorphism between $G$ and $S_{G}$. Another isomorphism is presented in the following exercise.
+The isomorphism $\Phi: G \rightarrow S_{|G|}$ defined in the above proof is known as the \term{left regular representation}\index{Left regular representation}\index{Regular representation!left} of~$G$. 
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Using the left regular representation, find a subgroup of $S(6)$ that is isomorphic to $U(7)$.
+\item
+Using the left regular representation, find a subgroup of $S(8)$ that is isomorphic to $U(16)$.
+\end{enumerate}
+\end{exercise}
+
+Thie isomorphism $\Phi$ defined in Proposition~\ref{proposition:isomorph:isomorph_theorem_6}  is not the only possible isomorphism between $G$ and $S_{G}$. Another isomorphism is presented in the following exercise.
 
 \begin{exercise}{r_reg}
 The \term{right regular representation}\index{Right regular representation}\index{Regular representation!right}  $\tilde{\Phi}: G \rightarrow S_{|G|}$  is defined as follows. For any $g \in G$ define the  function $\tilde{\phi}_g : G \rightarrow G$ by 
@@ -1139,21 +1185,42 @@ Show that $\tilde{\phi}_g : G \rightarrow G$ defined in the above proof is a per
 Show that $\tilde{\Phi}:G \rightarrow \tilde{P}$ is one-to-one and onto. 
  \item
 Complete the proof that $G \cong \tilde{P}$ by showing that $\tilde{\Phi}$ preserves the group operation, that is: $\tilde{\Phi}(gh) = \tilde{\Phi}(g) \circ \tilde{\Phi}(h)$ for any elements $g, h \in G$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
 \item
-Give the isomorphism  $\tilde{\Phi}$ for the group $\mathbb{Z}_3$.  Is this isomorphism different from $\Phi$ defined on the same group?
+Give the isomorphism  based on the right regular representation for the group $\mathbb{Z}_3$.  Is this isomorphism different from the isomorphism in Example~\ref{example:isomorph:cayley_isomorph}?
+\item
+Give the isomorphism  based on the right regular representation for the group $\mathbb{Z}_3$.  Is this isomorphism different from the isomorphism in Exercise~\ref{exercise:isomorph:cayley_ex}?
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Using the right regular representation, find a subgroup of $S(6)$ that is isomorphic to $U(7)$.
+\item
+Using the right regular representation, find a subgroup of $S(8)$ that is isomorphic to $U(16)$.
 \end{enumerate}
 \end{exercise}
 
 \begin{rem} (\emph{historical background})  Arthur Cayley\index{Cayley, Arthur} was born in England in 1821, though he spent much of the first part of his life in Russia, where his father was a merchant.  Cayley was educated at Cambridge, where he took the first Smith's Prize in mathematics.  A lawyer for much of his adult life, he wrote several papers in his early twenties before entering the legal profession at the age of 25.  While practicing law he continued his mathematical research, writing more than 300 papers during this period of his life.  These included some of his best work.  In 1863 he left law to become a professor at Cambridge.  Cayley wrote more than 900 papers in fields such as group theory, geometry, and linear algebra. His legal knowledge was very valuable to Cambridge; he participated in the writing of many of the university's statutes.  Cayley was also one of the people responsible for the admission of women to Cambridge. 
 \end{rem} 
 
-\section{Direct Products\quad
+\section{Direct products and classification of abelian groups\quad
 \sectionvideohref{k6LaGUiHhMk&index=32&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{isomorph_section_2}
 
-Given two groups $G$ and $H$, it is possible to construct a new group from the Cartesian product of $G$ and $H$, $G \times H$.  Conversely, given a large group, it is sometimes possible to decompose the group; that is, a group is sometimes isomorphic to the direct product of two smaller groups. In this case, all of the properties of the large group can be derived from the properties of the smaller groups, which can lead to tremendous simplification.
+In Section~\ref{cartesian} we introduced the notion of the Cartesian product of sets . The formal definition is given in Definition~\ref{cartesianprod}--the basic idea is is to take the set of all pairs of elements $(a,b)$ where $a$ is an element of the first set and $b$ is an element of the second. A simple example to keep in mind is ${\mathbb R} \times {\mathbb R}$, which is the plane with Cartesian coordinates $(x,y)$. Notice that ${\mathbb R} \times {\mathbb R}$ is an additive group, where the addition is defined by performing addition separately on both coordinates. 
+
+It turns out that this example can be generalized. Given two groups $G$ and $H$, it is possible to construct a new group based on the Cartesian product $G \times H$.  Even more exciting,  it is sometimes possible to ``factor'' a large group by expressing it as the Cartesian product of smaller groups. In this case, all of the properties of the large group can be derived from the properties of the smaller groups, which can lead to tremendous simplification. This  process of factoring groups into simpler groups can be compared to the factorization of integers into primes. (We will in fact see some deep connections between these two processes.)
+
+We begin by showing that the Cartesian product of groups does inded yield a group.  
  
  
-\subsection{External Direct Products}
+\subsection{ Direct Products}
 
 If $(G,\cdot)$ and $(H, \circ)$ are groups, then we can make the Cartesian product of $G$ and $H$ into a new group.  As a set, our group is just the ordered pairs $(g, h) \in G \times H$ where $g \in G$ and $h \in H$. We can define a binary operation on $G \times H$ by 
 \[
@@ -1167,7 +1234,6 @@ Let $G$ and $H$ be groups. The set $G \times H$ is a group under the operation $
 The proof is outlined in the following exercise. 
 
 \begin{exercise}{proof_thm_7}
-\hyperref[sec:isomorph:hints]{(*Hint*)}
 \begin{enumerate}[(a)]
 \item
 Show that the set $G \times H$ is closed under the binary operation defined in Proposition~\ref{proposition:isomorph:isomorph_theorem_7}. 
@@ -1176,11 +1242,58 @@ where $e_G$ and $e_H$ are the identities of the groups $G$ and $H$ respectively.
 \item Show that the inverse of $(g, h) \in G \times H$ is $(g^{-1}, h^{-1})$.  
 \item Show that the operation defined in Proposition~\ref{proposition:isomorph:isomorph_theorem_7} is associative.
 \end{enumerate}
+\hyperref[sec:isomorph:hints]{(*Hint*)}
 \end{exercise}
 
-\begin{example}{R2_prodiuct}
+The group $G \times H$ is called the \term{ direct product}\index{Direct product! of groups}\index{ direct product} of  $G$ and $H$. Notice the important difference between `Cartesian product' and ' direct product': the  direct product is a group whose underlying set is a Cartesian product; but in addition, the  direct product has a group operation, which generic off-the-shelf Cartesian products don't ordinarily have. 
+
+\begin{example}{R2_product}
 Let ${\mathbb R}$ be the group of real numbers under addition.  The Cartesian product of ${\mathbb R}$ with itself, ${\mathbb R} \times {\mathbb R} = {\mathbb R}^2$, is also a group, in which the group operation is just addition in each coordinate; that is, $(a, b) + (c, d) = (a + c, b + d)$.  The identity is $(0,0)$ and the inverse of $(a, b)$ is $(-a, -b)$.
 \end{example}
+
+\begin{example}{Rstar_product}
+Let ${\mathbb R}^*$ be the group of real numbers under multiplication.  The Cartesian product of ${\mathbb R}^*$ with itself, ${\mathbb R}^* \times {\mathbb R}^* $, is also a group, in which the group operation is given by $(a, b) \cdot  (c, d) = (a \cdot  c, b \cdot  d)$.  \end{example}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Find the identity of the group ${\mathbb R}^* \times {\mathbb R}^* $ that was introduced in Example~\ref{example:isomorph:Rstar_product}
+\item
+Find the inverse of the element  $(a,b) \in {\mathbb R}^* \times {\mathbb R}^* $.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+Consider the function $f: {\mathbb R} \times {\mathbb R} \rightarrow {\mathbb C}$ defined by $f( (a,b) ) = a + bi$.  Prove or disprove whether $f$ is an isomorphism. 
+\item
+Consider the function $g: {\mathbb R}^* \times {\mathbb R}^* \rightarrow {\mathbb C}^* $ defined by $f( (a,b) ) = a + bi$.  Prove or disprove whether $g$ is an isomorphism. (Note that the function $g$ 
+is almost identical to $f$ as far as sets are concerned, but the group operations behave quite differently. 
+\end{enumerate}
+\end{exercise}
+
+\begin{example}{D5}
+We have previously seen that the elements of the dihedral group $D_4$ can be listed as $\{id, r,r^2, r^3, sr,sr^2, sr^3 \}$ where $r$ is counterclockwise rotation by $\pi/2$ and $s$ is a reflection. We also know that$S=\{1,s\}$ and  $R_4 = \{id, r, r^2, r^3 \}$ are subgroups of $D_4$ and thus groups in their own right. It is very tempting to conjecture that $D_4$ can be written as $S \times R_4$,  where the notation $(s^j,r^k)$ is just another way of writing $s^j r^k$ for $j=0,1$ and $k = 0,1,2,3$.  But as it happens, this doesn't work out: things are not so simple (and much more interesting!), as you will show in the following exercise.
+\end{example}
+
+\begin{exercise}{}
+Consider the function $f: S \times R_r \rightarrow D_4$ defined by $f( (s^j,r^k) ) =s^j r^k$ for $j=0,1$ and $k=0,1,2,3$.  Give an example of two elements for which the operation preserving property fails. 
+\end{exercise}
+
+One may notice from Example~\ref{example:isomorph:D5} that $S$ and $R_4$ were abelian groups, and $D_4$ is not. Our experience with this example suggests that this may be a recipe for failure--perhaps it's not possible to take the direct product of abelian groups
+and get a nonabelian group.  This time our conjecture is correct, as you will show in the following exercise.
+
+\begin{exercise}{dirProdAbel}
+\begin{enumerate}[(a)]
+\item
+Suppose that the groups $G$  and $H$ are abelian. Prove that $G \times H$ is also abelian.
+\item
+* Show the \emph{converse} of part (a): that is, given that $G \times H$ is abelian, then $G$ and $H$ must both be abelian. \hyperref[sec:isomorph:hints]{(*Hint*)}
+\end{enumerate}
+\end{exercise}
+
+So that takes care of abelian groups. Another important type of group is cyclic groups. We'll talk a lot more later about direct products of cyclic groups. For now, let's consider first of all whether the product of cyclic groups is always cyclic: 
 
 \begin{example}{Z2xZ2}
 Consider
@@ -1190,9 +1303,22 @@ Consider
 Although ${\mathbb Z}_2 \times {\mathbb Z}_2$ and ${\mathbb Z}_4$ both contain four elements,  they are not isomorphic. We can prove this by noting that ${\mathbb Z}_4$ is cyclic, while  every element $(a,b)$ in ${\mathbb Z}_2 \times {\mathbb Z}_2$ has order 2 (verify this).	
 \end{example}
 
-The group $G \times H$ is called the \term{external direct product}\index{Direct product of groups!external}\index{External direct product} of  $G$ and $H$. Notice the difference between `Cartesian product' and 'external direct product': the external direct product is a group whose underlying set is a Cartesian product; but in addition, the external direct product has a group operation, which generic off-the-shelf Cartesian products don't ordinarily have. 
+So we've shown that the direct product of cyclic groups is not necessarily cyclic. How about the converse:  that is, if a direct product is cyclic, are the factor groups necessarily cyclic?  This time, the answer is yes:
 
-In the previous example, we used two groups to build a new group. But there's no reason to stop with two! The direct product
+\begin{exercise}{prodCycProp}
+Prove  the following statement: Suppose $G$ and $H$ are groups, and $G \times H$ is cyclic. Then $G$ and $H$ are both cyclic. 
+\hyperref[sec:isomorph:hints]{(*Hint*)}
+\end{exercise}	
+
+Let's now consider a different type of question. What's the difference between $G \times H$ and $H \times G$?  Not much, as the following exercise shows:
+ 
+\begin{exercise}{direct_commute}
+Show that for any two groups $G$ and $H$,  $G \times H \cong H \times G$.
+\hyperref[sec:isomorph:hints]{(*Hint*)}
+\end{exercise}
+
+
+So far we've been considering the products of two groups. But there's no reason to stop with two! The direct product
 \[
 \prod_{i = 1}^n G_i = G_1 \times G_2 \times \cdots \times G_n
 \]
@@ -1202,35 +1328,59 @@ of the groups $G_1, G_2, \ldots, G_n$ may be defined in a similar way.
 How would you write an element in $\prod_{i = 1}^n G_i$? Write two different elements of $\prod_{i = 1}^n G_i$, and show how you would define the group operation in terms of these two elements. (You may denote the group operation on each group $G_i$ by the symbol `$\cdot$'.
 \end{exercise}	
 
-If $G = G_1 = G_2 = \cdots = G_n$, we often write $G^n$ instead of $G_1 \times G_2 \times \cdots \times G_n$.
+If  we're taking the direct product of copies of the same group, we may use power notation: $G \times G = G^2,  G \times G \times G = G^3$, and so on.
  
 \begin{example}{Z2^n}
 The group ${\mathbb Z}_2^n$, considered as a set, is just the set of all
 binary $n$-tuples. The group operation is the ``exclusive or'' of two
-binary $n$-tuples. For example, 
+binary $n$-tuples. For example, the following equation is true in ${\mathbb Z}_2^8$:
 \[
 (01011101) + (01001011) = (00010110).
 \]
-This group is important in coding theory, in cryptography, and in many
+The groups $\{ {\mathbb Z}_2^n, n=1,2,3,\ldots\}$  are important in coding theory and cryptography, as well as other 
 areas of computer science.  
 \end{example}
 
-What is the difference between $G \times H$ and $H \times G$?  Not much, as the following exercise shows:
+The result of Exercise~\ref{exercise:isomorph:dirProdAbel} is generalized in the following proposition:
+
+\begin{prop}{dirProdAbel2}
+Let $G_1, G_2, \ldots G_n$ be groups.  Then $\prod_{i = 1}^n G_i$ is abelian if and only if all of the groups $G_1$, $G_2$, \ldots $G_n$ are abelian.  
+\end{prop}
  
-\begin{exercise}{direct_commute}
-Show that for any groups $G$ and $H$,  $G \times H \cong H \times G$.
-\hyperref[sec:isomorph:hints]{(*Hint*)}
+\begin{exercise}{dirProdAbel2}
+Use induction and the results of Exercise~\ref{exercise:isomorph:dirProdAbel} to prove Proposition~\ref{proposition:isomorph:dirProdAbel2}
 \end{exercise}
 
-By extending this same idea, we find that we can rearrange the groups in a direct product arbitrarily and still end up with the ``same'' group:
+
+The result of Exercise~\ref{exercise:isomorph:prodCycProp} may be similarly generalized:
+
+\begin{prop}{prodCycProp}
+Suppose $G_1, \ldots G_n$ are groups, and $\prod_{i = 1}^n G_i$ is cyclic. Then all of the groups $G_1$, $G_2 \ldots G_n$ are cyclic. 
+\end{prop}	
+ 
+\begin{exercise}{prodCycProp}
+Prove Proposition~\ref{proposition:isomorph:prodCycProp}
+\end{exercise}
+
+
+By extending the results of Exercise~\ref{exercise:isomorph:direct_commute}, we find that we can rearrange the groups in a direct product arbitrarily and still end up with the ``same'' group:
 
 \begin{prop}{isomorph:DPorder}
 Let $G_1,G_2, \ldots G_n$ be arbitrary groups, and let  $\sigma \in S_n$ be any permutation on $\{1,2,\ldots n\}$. Then
 \[ G_1 \times G_2 \times \ldots \times G_n \cong G_{\sigma(1)} \times G_{\sigma(2)} \times \ldots \times G_{\sigma(n)}.\]
 \end{prop}
 
+The following exercise outlines the proof of Proposition~\ref{proposition:isomorph:isomorph:DPorder}.
+
 \begin{exercise}{}
-What isomorphism would you need to define in order to prove Proposition~\ref{proposition:isomorph:isomorph:DPorder}? (We won't ask you to give a complete proof of the proposition, but you can if you want to!)
+\begin{enumerate}[(a)]
+\item
+What function would you define in order to prove Proposition~\ref{proposition:isomorph:isomorph:DPorder}?
+\item
+Prove that the function that you defined in (a) is a bijection by showing that it has an inverse.
+\item
+Prove that the function that you defined in (a) preserves group operations, and hence is an isomorphism.
+\end{enumerate}
 \end{exercise}
 
 Suppose you start out with groups that are isomorphic, and take direct products of them.  Are the direct products also isomorphic? It just so happens that they are:
@@ -1248,12 +1398,12 @@ Prove Proposition~\ref{proposition:isomorph:isomorph:dp_isom} for the case where
 
 \subsection{Classifying finite abelian groups by factorization}
 
-We have used isomorphisms to classify cyclic groups (Proposition~\ref{proposition:isomorph:isomorph_theorem_2}) and general groups (Cayley's theorem, Proposition~\ref{proposition:isomorph:isomorph_theorem_6}). In this section, we will make use of direct products to prove a classification of finite abelian groups up to isomorphism. The bottom line is that every finite abelian group is isomorphic to a direct product of cyclic groups. To get to this bottom line, we'll have to establish some more properties of direct products, especially in relation to cyclic groups.  The following  proposition characterizes the order of the elements in a direct product.
+We have used isomorphisms to classify cyclic groups (Proposition~\ref{proposition:isomorph:isomorph_theorem_2}), as well as to characterize  groups in general (Cayley's theorem, Proposition~\ref{proposition:isomorph:isomorph_theorem_6}). In this section, we will make use of direct products to prove a classification of finite abelian groups up to isomorphism. The bottom line is that every finite abelian group is isomorphic to a direct product of cyclic groups of prime power oders. To get to this bottom line, we'll have to establish some more properties of direct products, especially in relation to cyclic groups.  The following  proposition characterizes the order of the elements in a direct product.\index{Abelian group!classification}\index{Classification!abelian groups}
 
 \begin{prop}{isomorph:lcm_theorem}
 Let $(g, h) \in G \times H$. If $g$ and $h$ have finite orders $r$ and
 $s$ respectively, then the order of $(g, h)$ in $G \times H$ is the
-least common multiple of $r$ and $s$. \index{Isomorphism!least common multiple theorem}
+least common multiple of $r$ and $s$. \index{Order!of group elements!in product group}\index{Direct product! of groups!order of elements}
 \end{prop}
 
  
@@ -1266,19 +1416,24 @@ $n = |(g,h)|$. Then
 \end{gather*}
 Hence, $n$ must divide $m$, and $n \leq m$.  However, by the second
 equation, both $r$ and $s$ must divide $n$; therefore, $n$ is a common
-multiple of $r$ and $s$. Since $m$ is the {\em least common multiple}
+multiple of $r$ and $s$. Since $m$ is the {\em least} common multiple
 of $r$ and $s$, $m \leq n$.  Consequently, $m$ must be equal to~$n$.
 \end{proof}
 
 By applying Proposition~\ref{proposition:isomorph:isomorph:lcm_theorem} inductively, it is possible to prove an analogous result for direct products of more than two groups. We'll leave it to you to fill in the details of the proof.
 
-\begin{corollary}
-Let $(g_1, \ldots, g_n) \in \prod G_i$. If $g_i$ has finite order
-$r_i$ in $G_i$, then the order of $(g_1, \ldots, g_n)$ in $\prod G_i$
+\begin{prop}{lcm_general}
+Let $(g_1, \ldots, g_n) \in \prod_{i=1}^n  G_i$. If $g_i$ has finite order
+$r_i$ in $G_i$, then the order of $(g_1, \ldots, g_n)$ 
 is the least common multiple of $r_1, \ldots, r_n$.
-\end{corollary}
+\end{prop}
  
- For the rest of the section, we will be dealing with direct products of $\ZZ_n$ (we know that any cyclic group is isomorphic to $\ZZ_n$ for some $n$). 
+\begin{exercise}{}
+Prove Proposition~\ref{proposition:isomorph:lcm_general} using induction.
+\end{exercise}
+
+ 
+ For the rest of the section, we'll be dealing with direct products of $\ZZ_n$ (keep in mind that any cyclic group is isomorphic to $\ZZ_n$ for some $n$). 
 
 \begin{example}{Z12xZ60}
 Let $(8, 56) \in {\mathbb Z}_{12} \times  {\mathbb Z}_{60}$. Since
@@ -1299,9 +1454,9 @@ The group ${\mathbb Z}_2 \times {\mathbb Z}_3$ consists of the pairs
 In this case, unlike that of ${\mathbb Z}_2 \times {\mathbb Z}_2$ and
 ${\mathbb Z}_4$, it 
 is true that ${\mathbb Z}_2  \times {\mathbb Z}_3 \cong {\mathbb Z}_6$. We need
-only show that ${\mathbb Z}_2  \times {\mathbb Z}_3$ is cyclic.  It is
-easy to see that $(1,1)$ is a generator for ${\mathbb Z}_2  \times {\mathbb
-Z}_3$. 
+only show that ${\mathbb Z}_2  \times {\mathbb Z}_3$ is cyclic.  By trial and error, 
+we may find that  $(1,1)$ is a generator for ${\mathbb Z}_2  \times {\mathbb
+Z}_3$, so that  ${\mathbb Z}_2  \times {\mathbb Z}_3 = \langle (1,1)\rangle$. 
 \end{example}
 
 \begin{exercise}{}
@@ -1328,12 +1483,12 @@ Z}_{80}$
 Show that $\mathbb{Z}_4 \times \mathbb{Z}_9$ is cyclic, and find 6 different generators for the group. 
 \item
 Show that $\mathbb{Z}_3 \times \mathbb{Z}_5$ is cyclic. How many different generators does it have?
+\item
+Show that $\mathbb{Z}_4 \times \mathbb{Z}_6$ is  \emph{not} cyclic by showing that none of its elements is a generator (i.e. all elements have order less than 24).
 \end{enumerate} 
 \end{exercise}
  
-The next proposition tells us exactly when the direct product of two
-cyclic groups is cyclic. 
- 
+The next proposition tells us exactly when the direct product of two cyclic groups is cyclic. 
 
 \begin{prop}{Z_pq_theorem}
 The group ${\mathbb Z}_m \times {\mathbb Z}_n$ is isomorphic to ${\mathbb
@@ -1360,6 +1515,8 @@ Z}_n$.
 The converse follows directly from Proposition~\ref{proposition:isomorph:isomorph:lcm_theorem} since
 $\lcm(m,n) = mn$ if and only if $\gcd(m,n)=1$. 
 \end{proof}
+
+Recall that Proposition~\ref{proposition:isomorph:isomorph_theorem_3} says that a group of order $mn$ is cyclic if and only if  it is isomorphic to ${\mathbb Z_{mn}}$.  So Proposition~\ref{proposition:isomorph:Z_pq_theorem} tells us that the product of two cyclic groups is cyclic if and only if their orders are relatively prime.
 \medskip 
 
 This idea extends directly to arbitrary direct products: a product of cyclic groups is cyclic if and only if the 
@@ -1406,7 +1563,7 @@ Find three non-isomorphic abelian groups of order 8, and show that they are not 
 \end{exercise}
 
 
-Remember that in the Permutations chapter we showed that every permutation can be ``factored''  as the product of disjoint cycles. (At that time, we compared this to the factorization of integers into prime factors).  It turns out that finite abelian groups can also be ``factored''.  This beautiful and general result is summarized in the following proposition. We will not give a complete proof of the proposition (which uses induction), but we hope that it makes sense to you in light of the foregoing discussion.\footnote{Many proofs can be found on the web: search for ``structure of finite abelian groups''.}
+Remember that in the Permutations chapter we showed that every permutation can be ``factored''  as the product of disjoint cycles. (At that time, we compared this to the factorization of integers into prime factors).  It turns out that finite abelian groups can also be ``factored''.  This beautiful and general result is summarized in the following proposition. We will not give a complete proof of the proposition (which uses induction), but we hope that it makes sense to you in light of what we've seen so far.\footnote{Many proofs can be found on the web: search for ``structure of finite abelian groups''.}
 
 \begin{prop}{FactorabelianGroup} \term{(Factorization of finite abelian groups)}~~
 If $G$ is a finite abelian group, then there exist prime numbers $p_1 \ldots p_k$ and exponents $e_1 \ldots e_k$ such that
@@ -1417,10 +1574,31 @@ Z}_{p_k^{e_k}}
 Note that the prime numbers $p_1, \ldots, p_k$  may not necessarily be distinct.
 \end{prop}
 
+\begin{rem}  Proposition~\ref{proposition:isomorph:isomorph:DPorder} informs us that these factors can be written in any order, because all rearrangements of a direct product are isomorphic to each other.
+\end{rem}
+
+
+\begin{exercise}{prodfacabel0}
+\begin{enumerate}[(a)]
+\item
+It turns out that for each $k$, the number$ p_k^{e_k}$  in Proposition~ \ref{proposition:isomorph:FactorabelianGroup}  is the largest power of $p_k$ that divides $|G|$.  How do we know this?
+\item
+For the group $G$ in Proposition~ \ref{proposition:isomorph:FactorabelianGroup}, if $q$ is any prime number that is not equal to any of the primes $p_1, \ldots p_n$, then $G$ has no element of order $q$.  How do we know this?
+\end{enumerate}
+\end{exercise}
+
 \begin{exercise}{prodfacabel}
 Show that the primes  $p_1 \ldots p_k$ and exponents $e_1 \ldots e_k$ in Proposition~ \ref{proposition:isomorph:FactorabelianGroup} must satisfy
 $|G| = p_1^{e_1} \cdots p_k^{e_k}$.
 \end{exercise}
+
+Proposition~\ref{proposition:isomorph:FactorabelianGroup} shows that abelian groups are essentially a souped-up versions of modular addition.  (Now do you see why we spent a whole chapter on modular arithmetic?) From this proposition, we may derive a host of consequences.  Following are just a few examples.
+
+First, we can tell quite a lot about when abelian groups must be cyclic, depending on their orders:
+
+\begin{example}{}  All abelian groups $G$ of order 21 are isomorphic and cyclic. This is because $21 = 3^1 \times 7^1$, so by Proposition~\ref{proposition:isomorph:FactorabelianGroup} it must be the case that $G \cong {\mathbb Z}_3 \times {\mathbb Z}_7$. In particular,
+ $Z_{21}  \cong {\mathbb Z}_3 \times {\mathbb Z}_7$. So all groups of order 21 are isomorphic to the cyclic group 
+\end{example}
 
 \begin{exercise}{prodfacabel2}
 \begin{enumerate}[(a)] 
@@ -1429,23 +1607,85 @@ Prove or disprove: There is an abelian group of order 22 that is \emph{not} cycl
 \item
 Prove or disprove: There is an abelian group of order 24 that is \emph{not} cyclic. 
 \item
-Prove or disprove: There is an abelian group of order 30 that is \emph{not} cyclic. 
+Prove or disprove: There is an abelian group of order 30 that is \emph{not} cyclic.
+\item
+*Prove or disprove:  If $G$ is an abelian group and the order of $G$ is a product of distinct primes, then $G$ must be cyclic.
 \end{enumerate}
 \end{exercise}
+
+We know from Euler's theorem (Proposition~\ref{proposition:cosets:cosets:Eulers_theorem}) that the order of a group element $g \in G$ must divide the order of the group. However, this does not necessarily imply that every divisor of $|G|$ has a group element of that order.  For abelian groups though, 
+thanks to  Proposition~\ref{proposition:isomorph:FactorabelianGroup} we can actually guarantee that for certain divisors of $|G|$
+
+\begin{example}{elementOrders}  Any group $G$ of order 54 must have an element of order 3. This is because $54 =  3^3 \cdot 2$, and according to     
+Proposition~\ref{proposition:isomorph:FactorabelianGroup} it must be the case that either $G \cong {\mathbb Z}_{27} \times {\mathbb Z}_2$, or  $G \cong {\mathbb Z}_9 \times {\mathbb Z}_3 \times {\mathbb Z}_2$, or 
+$G \cong {\mathbb Z}_{3} \times {\mathbb Z}_{3} \times {\mathbb Z}_{3} \times {\mathbb Z}_2$.  In the first case, then the isomorphic image of $(9,0) \in {\mathbb Z}_{27} \times {\mathbb Z}_2$ has order 3 (verify this).  In the second case, the isomorphic image of $(3,0,0) \in {\mathbb Z}_{9} \times {\mathbb Z}_3 \times {\mathbb Z}_2$ has order 3 (verify this also). In the third case, the isomorphic image of $(1,0,0,0) \in {\mathbb Z}_{3} \times {\mathbb Z}_3 \times {\mathbb Z}_3 \times {\mathbb Z}_2$ has order 3 (verify this too!) 
+\end{example}
 
 \begin{exercise}{exel}
 \begin{enumerate}[(a)]
 \item
-Show that $\mathbb{Z}_{3^n}$ contains an element of order 3, for any positive integer $n$.
+Show that $\mathbb{Z}_{5^n}$ contains an element of order 5, for any positive integer $n$.
 \item
-Show that every abelian group of order divisible by 3 contains an element of order 3.  
-\item
-Show that every abelian group of order divisible by 9 contains a subgroup of order 9. 
-\hyperref[sec:isomorph:hints]{(*Hint*)}
-\item
-Prove or disprove: for any prime $p$, every abelian group of order divisible by $p^2$  contains a subgroup of order $p^2$. 
+Show that every abelian group of order divisible by 7 contains an element of order 7.  
 \end{enumerate}
 \end{exercise}
+
+What we've shown for specific primes in Example~\ref{example:isomorph:elementOrders} and Exercise~\ref{exercise:isomorph:exel} is  true in general: groups with orders divisible by $p$ always contain elements of order $p$. This is true for nonabelian as well as abelian groups:  this fact is known as \term{Cauchy's theorem}.  At this point we're not able to prove Cauchy's theorem for nonabelian groups, but Cauchy's theorem for abelian groups can be proved using methods similar to those above.  We'll state the theorem formally, then ask you to prove it.
+
+\begin{prop}{Cauchy} \term{(Cauchy's theorem for abelian groups)}~~Let $G$ be an abelian  group such that $|G|$ is divisible by the prime $p$. Then $G$ has an element of order $p$.  
+\end{prop}
+
+\begin{exercise}{Cauchy}
+Prove Cauchy's theorem for abelian groups.
+\end{exercise}
+
+\begin{exercise}{}
+(All of the exercises below assume that $G$ is an abelian group.)
+\begin{enumerate}[(a)]
+\item
+Show that if the prime $p$ divides $|G|$, then $G$ has at least $p-1$ elements of order $p$.
+\item
+Show that if $p^2$ divides $|G|$, then $G$ has at least $p^2 - p$ elements of order $p$.
+\item
+Show that if $p^n$ divides $|G|$, then $G$ has at least $p^n - p$ elements of order $p$.
+\item
+Suppose that $p^n$ is the largest power of $p$ that divides $G$. Show that there are at most $p-1$ element in $G$ with order $p^n$. 
+\end{enumerate}
+\end{exercise}
+
+We may also recall that Lagrange's theorem  (Proposition~\ref{proposition:cosets:LagrangeTheorem})  enables us to conclude that the order of any subgroup $H \in G$ must divide $|G|$.   Proposition~\ref{proposition:isomorph:FactorabelianGroup} enables us to go one better.
+
+\begin{example}{}
+ Suppse that $|G| = 125.$  Let us show that $G$ has a subgroup of order 25.  From Proposition~\ref{proposition:isomorph:FactorabelianGroup}, we know that there are 3 possible cases for $G$:  (i) $G \cong {\mathbb Z}_{125}$; (ii) $G \cong {\mathbb Z}_{25} \times {\mathbb Z}_5$; (iii) $G \cong {\mathbb Z}_5 \times {\mathbb Z}_5 \times {\mathbb Z}_5$.  In case (i), then the isomorphic image of $\langle 5 \rangle$ is a subgroup of order 25.  In case (ii), then the isomorphic image of $\langle (1,0) \rangle$ is a subgroup of order 25.  In case (iii), then the isomorphic image of ${\mathbb Z}_5 \times {\mathbb Z}_5 \times \{0\}$ is a subgroup of order 25.
+ \end{example}
+
+\begin{example}{subgpsAllOrders}
+ Suppse that $7^2$ divides $|G|$.  Let us show that $G$ has a subgroup of order 49.  From Proposition~\ref{proposition:isomorph:FactorabelianGroup}, we know that either(i) $G$ has a factor ${\mathbb Z}_{7^k}$ where $k \ge 2$;  or (ii) $G$ has at least two factors of ${\mathbb Z}_7$. In case (i), then $G$ can be written as ${\mathbb Z}_{7^k} \times H$, where $k \ge 2$ and $H$ is a direct product of copies of ${\mathbb Z_n}$ for different values of $n$.  In this case, then the isomorphic image of $\langle (7^{k-2},id_H) \rangle$ is a subgroup of order $7^2$ (verify this). In case (ii), then $G$ can be written as ${\mathbb Z}_7 \times {\mathbb Z}_7 \times  H$, where once again $H$  is a direct product of copies of ${\mathbb Z_n}$ for different values of $n$. In this case, the isomorphic image of 
+ ${\mathbb Z}_7 \times {\mathbb Z}_7 \times  id_H$ is a subgroup of order 49 (verify this).  So in either case, $G$ has a subgroup of order 49.
+ \end{example}
+
+\begin{exercise}{subgpsAllOrders}
+\begin{enumerate}[(a)]
+\item
+Let $p$ be a prime. Show that if $p^2$ divides the order of the abelian group $G$, then $G$ has a subgroup of order $p^2$.
+\item
+* Let $p$ be a prime, and let $k$ be a positive integer. Show that if $p^k$ divides the order of the abelian group $G$, then $G$ has a subgroup of order $p^k$.
+\item
+Let $p_1, p_2$ be primes such that $p_1 \neq p_2$.  Show that if $p_1p_2$ divides the order of the abelian group $G$, then $G$ has a subgroup of order $p_1p_2$.
+\item
+Let $p_1, p_2$ be primes such that $p_1 \neq p_2$, and let $k_1,k_2$ be positive integers.  Show that if $p_1^{k_1}p_2^{k_2}$ divides the order of the abelian group $G$, then $G$ has a subgroup of order $p_1^{k_1}p_2^{k_2}$.
+\end{enumerate}
+\end{exercise}
+
+The following proposition is the culmination of the train of thought expressed in Example~\ref{example:isomorph:subgpsAllOrders} and Exercise~\ref{exercise:isomorph:subgpsAllOrders}
+
+\begin{prop}{subgpsAllOrders} Let $G$ be an abelian group and suppose $G$ is divisible by the positive integer $n$.  Then $G$ has a subgroup of order $n$.
+\end{prop}
+
+\begin{exercise} *prove Proposition~\ref{proposition:isomorph:subgpsAllOrders}.
+\end{exercise} 
+
+
  
 \section{Proof that $U(p)$ is cyclic}
 
@@ -1513,7 +1753,7 @@ Is it possible to specify exactly the positive integers $n$ for which $U(n)$ is 
 \subsection{Internal direct products}
  
 
-The external direct product of two groups builds a large group out of
+The  direct product of two groups builds a large group out of
 two smaller groups.   We would like to be able to reverse this process
 and conveniently break down a group into its direct product
 components; that is, we would like to be able to say when a group is
@@ -1550,8 +1790,8 @@ H  = \{1, 3 \} \quad \text{and} \quad K  = \{1, 5 \}.
 The dihedral group $D_6$ is an internal direct product of its two
 subgroups 
 \[
-H  = \{\var{id}, r^3  \} \quad \textrm{and} \quad
-K  = \{\var{id}, r^2, r^4, s, r^2s, r^4 s   \}.
+H  = \{{\var id}, r^3  \} \quad \textrm{and} \quad
+K  = \{{\var id}, r^2, r^4, s, r^2s, r^4 s   \}.
 \]
 It can  be shown that $K \cong S_3$; consequently, $D_6 \cong
 {\mathbb Z}_2 \times S_3$. 
@@ -1566,7 +1806,6 @@ say $H$, would have to have order 3. In this case $H$ is the subgroup $\{
 (1), (123), (132) \}$. The subgroup $K$ must have order 2, but no
 matter which subgroup we choose for $K$, the condition that $hk = kh$
 will never be satisfied for $h \in H$ and $k \in K$.
-\mbox{\hspace{1in}}
 \end{example}
 
  
@@ -1742,7 +1981,7 @@ isomorphic to the multiplicative group of nonzero real numbers.
   
 \item
 Find all the subgroups of $D_4$. Which subgroups are normal? What are
-all the factor groups of $D_4$ up to isomorphism?
+all the quotient groups of $D_4$ up to isomorphism?
 
 
 \item
@@ -1761,7 +2000,7 @@ make a conjecture about $D_{2n}$? Prove your conjecture.
 
 \item
 Find all the subgroups of the quaternion group, $Q_8$. Which subgroups
-are normal? What are all the factor groups of $Q_8$ up to isomorphism?
+are normal? What are all the quotient groups of $Q_8$ up to isomorphism?
 
 
 %\item

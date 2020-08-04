@@ -1,11 +1,12 @@
 %%% Additions / Corrections
-%%%  Add a problem that relates geometry to complex numbers -- perhaps the median
+%%%  Add a problem that relates geometry to complex numbers -- perhaps the median concurrency
 %%% Use complex numbers to get the double angle formulas
 %%% In problem 84, use the half-angle formula to figure out what the number is.
 
 %%% Or, the perpendicular bisector
 %%% Phasors still need some clarification %%%
 %%% Make complex diagram %%%
+
 %%%%(c)
 %%%%(c)  This file is a portion of the source for the textbook
 %%%%(c)
@@ -442,7 +443,7 @@ $(a + bi)(c + di) = (c + di)(a + bi)$.
 Similar proofs can be given for other multiplicative properties:
 
 \begin{exercise}{16}
-Prove the associative law for multiplication of nonzero complex numbers. (Follow the style of Example~\ref{example:complex:complex_commute}).
+Prove the associative law for multiplication of `complex numbers. (Follow the style of Example~\ref{example:complex:complex_commute}).
 \end{exercise}
 
 \begin{exercise}{17}
@@ -551,6 +552,8 @@ $(1 + i)^{41}$
 $(1 + \sqrt{3}i)^{11}$
 \item
 $i^{1001} + i^{1003}$
+\item
+$\left(\frac{i}{3 + 4i} \right) +  \left(\frac{2}{4 + 3i} \right) $
 \end{enumerate}
 \end{multicols}
 \end{exercise}
@@ -743,6 +746,10 @@ $\left( \overline{\left({\overline{4 -9i}}\right)^{-1}} \right) ^{-1}$
 $(a + bi)\overline{(a+bi)}$
 \item
 $(a + bi) + \overline{(a+bi)}$
+\item
+$\frac{ \overline{3 + 8i} }{7 + 6i}$.
+\item
+$( \overline{4 -7i} ) \cdot (\overline{3 + 3i})^{-1}$
 \end{enumerate}
 \end{multicols}
 \end{exercise}
@@ -799,10 +806,26 @@ $(zw)^{-1} =  w^{-1} z^{-1}$
 \end{multicols}
 \end{exercise}
 
+\begin{exercise}{simpl}
+Simplify the following expression: $(z + i\bar{z})(z - i\bar{z}) + \overline{(z + \bar{z})(z - \bar{z})}$.
+\end{exercise}
+
+\begin{exercise}{simp2}
+Suppose that $z$ is a complex number such that $z^{-1} = \bar{z}$.
+\begin{enumerate}[(a)]
+\item
+Find the modulus of $z$.
+\item
+How many solutions does this equation have?
+\end{enumerate}
+\end{exercise}
+
 \begin{exercise}{abs1}
 \begin{enumerate}[(a)]
 \item
 Show that the complex number $z=a+bi$ is a pure real number if and only if $\overline{z} = z$.  (\emph{Note} that you actually need to prove two things here: (i) If $z$ is real, then $\overline{z} = z$; (ii) If $\overline{z} = z$, then $z$ is real).
+\item
+Prove that $i(z + \bar{z})(z - \bar{z})$ is real for any complex number $z$. 
 \item
 In view of part (a), complete the following statement:  ``The complex number $z=a+bi$ is a pure imaginary number if and only if $\overline{z} = \ldots \ldots.$'' \emph{Prove} your statement.
 \end{enumerate}
@@ -1111,7 +1134,7 @@ z \cdot w &= r\cis\theta \cdot \underline{~<1>~} \\
 \end{exercise}
 \end{proof}
 
-\begin{exercise}{}
+\begin{exercise}{proof_of_mod2}
 Use Proposition~\ref{proposition:complex:polar_mult} and the polar expression for $\bar{z}$ that was given in Section~\ref{subsec:convertRecPolar} to give a simple proof of the following identity:
 \[ z \bar{z} = |z|^2. \]
 \end{exercise}
@@ -1356,6 +1379,10 @@ $(-\sqrt{2} - \sqrt{2}\, i)^{12}$
 $(-2+2i)^{-5}$
 \item
 $(\sqrt{2 + \sqrt{2}} - i\sqrt{2 - \sqrt{2}})^{16}$
+\item 
+$\frac{(\sqrt{15} -3 \sqrt{5})^5}{60^2}$
+\item
+$\frac{(1-i)^{10}}{(-\sqrt{3} + i)^6}$
 \end{enumerate}
 \end{multicols}
 \end{exercise}
@@ -1792,6 +1819,8 @@ Find all fourth roots of $ \sqrt{1/2 + \sqrt{2}/4} + i\sqrt{1/2 - \sqrt{2}/4}$.
 \hyperref[sec:complex:hints]{(*Hint*)}
 \item
 Find all sixth roots of $-16i$.
+\item
+Find all seventh roots of $5 - 5i$.
 \end{enumerate}
 \end{exercise}
 
@@ -1841,12 +1870,23 @@ The proof in Exercise~\ref{exercise:complex:cubic_conj} can be straightforwardly
 \end{prop}
 
 \begin{exercise}{62} 
+Given that $3 - 7i$ and $-2+i$ are solutions to an equation of the form $z^4 + a_{3}z^{3} + a_{2} z^{2}+ a_1 z + a_0 = 0$ where $a_0, a_1, a_2, a_3$ are real. 
 \begin{enumerate}[(a)]
 \item
-Given that $3 - 7i$ and $-2+i$ are solutions to an equation of the form $z^4 + a_{3}z^{3} + a_{2} z^{n-2}+ a_1 z + a_0 = 0$ where $a_0, a_1, a_2, a_3$ are real. Find two other solutions to the same equation.
+Find two other solutions to the same equation.
 \item
 *Find $a_0, a_1, a_2, a_3$. 
 \hyperref[sec:complex:hints]{(*Hint*)}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{62a} 
+Given that  $p(z) =z^3 +  a_{2} z^{2}+ a_1 z + a_0 = 0$, where $a_0, a_1, a_2$ are real numbers. Suppose $p(1) = 16$, and suppose that $1 + 2i$ is a root of $p(z)$.  
+\begin{enumerate}[(a)]
+\item
+Find two other solutions to the same equation.
+\item
+Find $a_0, a_1, a_2$. 
 \end{enumerate}
 \end{exercise}
 
@@ -1854,6 +1894,17 @@ Given that $3 - 7i$ and $-2+i$ are solutions to an equation of the form $z^4 + a
 Given the equation  $z^n + a_{n-1}z^{n-1} + a_{n-2} z^{n-2} + \ldots + a_1 z =a_0,$ where $a_0, a_1, \ldots a_{n-1}$ are real numbers. Let $N$ be the number of solutions of the equation that are \emph{not} real. Prove that either $N=0$ or $N$ is divisible by 2. 
 \hyperref[sec:complex:hints]{(*Hint*)}
 \end{exercise}
+
+\begin{exercise}{cr2}
+Suppose that $p(z)$ is a fourth degree polynomial with real coefficients. Suppose that $p(z) = p(-z)$. Suppose also that $3+4i$ is a root of $p(z)$  and that $p(0) = 1$.  
+\begin{enumerate}[(a)]
+\item
+Find three other roots of $p(z)$.
+\item
+Find $p(z)$. 
+\end{enumerate}
+\end{exercise}
+
 
 The most famous result concerning complex roots of polynomials is known as the {\bf \emph{Fundamental Theorem of Algebra}}:
 

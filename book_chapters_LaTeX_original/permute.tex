@@ -315,7 +315,7 @@ permutation ${\var id}$ and the permutations
 \end{align*}
 \begin{enumerate}[(a)]
 \item
-Write the Cayley table for $G$ (Label your rows and columns as: ${\var id}, \sigma, \tau, \mu$).
+Write the Cayley table for $G$. Label your rows and columns as: ${\var id}, \sigma, \tau, \mu$.
 \item
 Use the Cayley table to explain whether $G$ is a subgroup of $S_5$ or not.  
 
@@ -1002,7 +1002,7 @@ $(1254)^2 (123)(45)$
 % CPT it would be good to provide a proof.
 %We state these facts about disjoint cycles in the following proposition, without general proof. 
 
-\subsection{Cycle structure of permutations}
+\subsection{Cycle structure of permutations}\label{sec:cycle_structure}
 
 Over the last several subsections, we've seen permutations represented as no cycles (${\var id}$), a single cycle, or the product of any number of disjoint cycles.  This worked because both a single cycle and a product of disjoint cycles can't be reduced to a simpler form in cycle notation.  Are there any other possibilities?   Are there permutations that can't be represented as either a single cycle or a product of disjoint cycles?  The answer to this compelling question is given in the following proposition. This type of proposition is called an ``existence and uniqueness'' statement, and for convenience we'll divide the statement into two parts:
 
@@ -1113,7 +1113,7 @@ It's not possible to have three or more disjoint cycles, because that would requ
 
 %Finally, can we have three-cycle permutations in $S_5$. No.  A three-cycle of lengths 2, 2, and 1 is really just a two-cycle of lengths 2 and 2 with a fixed element.
 \noindent
-To summarize then, the types of permutations in $S_5$ are:
+To summarize then, the possible cycle structures for  permutations in $S_5$ are:
 \begin{itemize}
 \item
 The identity
@@ -1345,7 +1345,7 @@ The \term{order} of a permutation $\tau$ is the smallest positive integer $k$ su
 
 
 \noindent
-{\bf Proposition}: Let $\tau$ be a permutation, and let $k = |\tau|$. Then $\tau^{\ell} = {\var id}$ if and only if $\ell \equiv 0 \bmod{k}$.
+{\bf Proposition}: Let $\tau$ be a permutation, and let $k = |\tau|$. Then $\tau^{\ell} = {\var id}$ if and only if $\pmod(\ell,k)=0$.
 \medskip
 
 \begin{exercise}{64}
@@ -1356,7 +1356,7 @@ Fill in the blanks with the appropriate variables in the following proof of the 
 \noindent
 {\bf Proof:} For any integer $\ell$ we may write $\ell = ak + b$, where $b \in \mathbb{Z}_{\underline{~<1>~}} $. It follows that
 \[ \tau^{\ell} = \tau^{<\underline{2}> \cdot k + <\underline{3}>} = (\tau^{<\underline{4}> \cdot k})\tau^{<\underline{5}>} =   (\tau^k)^{<\underline{6}>}\tau^{<\underline{7}>} = ({\var id})^{<\underline{8}>}\tau^{<\underline{9}>} = \tau^{<\underline{10}>} . \]
-Therefore $\tau^{\ell} = {\var id}$ if and only if $\tau^{<\underline{11}>} = {\var id}$. However, we know that $\underline{~<12>~} < k$, and we also know that $\underline{~<13>~}$ is the smallest positive integer such that  $\tau^{<\underline{14}>} = {\var id}$. Hence it must be the case that $b \equiv \underline{~<15>~} \bmod{k}$, which is the same thing as saying that  $\ell \equiv \underline{~<16>~} \bmod{\underline{~<17>~}}$.
+Therefore $\tau^{\ell} = {\var id}$ if and only if $\tau^{<\underline{11}>} = {\var id}$. However, we know that $\underline{~<12>~} < k$, and we also know that $\underline{~<13>~}$ is the smallest positive integer such that  $\tau^{<\underline{14}>} = {\var id}$. Hence it must be the case that $b= \underline{~<15>~}$, which is the same thing as saying that  $\pmod(\ell,\underline{~<17>~})=0$.
 \end{exercise}
 
 
@@ -1396,7 +1396,7 @@ Associativity and commutativity are powerful tools for rearranging products of d
 \begin{exercise}{k_power_disjoint_cycles}
 \begin{enumerate}[(a)]
 \item
-Let $\sigma$ and $\tau$ be \emph{any} disjoint cycles. By following the format of Example~\ref{example:permute:disjoint_squared}, show that $(\sigma \tau)^2 = \sigma^2 \tau^2$ (write out each step, and cite the property used).
+Let $\sigma$ and $\tau$ be \emph{any} disjoint cycles. using associative and commutative properties (see Proposition~\ref{proposition:permute:disjoint_cycles_commute}, show that $(\sigma \tau)^2 = \sigma^2 \tau^2$ (write out each step, and cite the property used).
 \item
 If $\sigma$ and $\tau$ are disjoint cycles and $k$ is a natural number, what may you conclude about $(\sigma \tau)^k$ in terms of powers of $\sigma$ and $\tau$? (You don't need to give a proof).
 \end{enumerate}
@@ -1691,7 +1691,7 @@ from this expression we may see that $a_1 \rightarrow a_n$, $a_n \rightarrow a_{
 corresponds to the cycle we want.
 \end{proof}
 
-We can now find the inverse of any product of cycles, by taking the inverses of the cycles in reverse order:\index{Inverse!of a cycle}\index{Cycle!inverse of}
+Because the product of permutations is an associative operation, we may find the inverse of any product of cycles by taking the inverses of the cycles in reverse order.\index{Inverse!of a cycle}\index{Cycle!inverse of} (Actually, this is just a special case of the inverse of function composition: $(f_1 \circ f_2 \circ \ldots \circ f_{n-1}\circ f_n)^{-1}= f_n^{-1} \circ f_{n-1}^{-1} \circ \ldots  \circ f_2 \circ f_1 $.)
 
 \begin{example}{}
 $\left[ ( 1 4 9 8 )( 2 4 6 8 ) \right] ^{-1} = ( 2 4 6 8 )^{-1}( 1 4 9 8 )^{-1} = ( 2 8 6 4 )(1 8 9 4) = ( 1 6 4)( 2 8 9)$. 
@@ -1721,6 +1721,10 @@ $( 7 4 2 )^{-7} ( 2 8 6)^{-13}$
 
  \end{enumerate}
 \end{multicols}
+\end{exercise}
+
+\begin{exercise}{cycleSTructureOfInverse}
+In Section~\ref{sec:cycle_structure} we introduced the notion of the ``cycle structure'' of a permutation. Using some of the ideas that we have introduced in this section, prove that if $\sigma$ is any permutation, then $\sigma^{-1}$ has the \emph{same} cycle structure as $\sigma$.
 \end{exercise}
 
 %\begin{example}{transpositions_not_unique}
@@ -1998,8 +2002,19 @@ We may  summarize our argument so far as follows:
 Given a permutation $\sigma$ and a transposition $(ab)$, then the parity of $(ab)\sigma$ is different from the parity of $\sigma$.
 \end{prop}
 
+So far we have considered multiplying permutations on the \emph{left} by a transposition. What about multiplying them on the \emph{right}? It turns out we can use the ``direction-reversing'' property of permutation inverses to answer this very elegantly.
+
 \begin{exercise}{parity_right}
-How does the conclusion of Proposition~\ref{proposition:permute:multByTrans} change if the permutation $\sigma$ is multiplied on the \emph{right} by $(ab)$ instead of on the left?  \emph{Explain} your answer.
+\begin{enumerate}
+\item
+Considerthe ``necklace'' diagrams  (a)-(f) of permutations shown in Figure~\ref{fig:abC2}. If  we take the \emph{inverse} of each permutation, how does its diagram change? What happens to the arrows? How do the shapes of the cycles change (if at all)? 
+\item 
+In Exercise~\ref{exercise:permute:trans_perm2} you multiplied each of the permutations (a)-(f) in Figure~\ref{fig:abC2} on the left by $(ab)$.  How do the results change if you multiply the \emph{inverses} of each permutation on the left by $(ab)$?
+\item
+Prove that $\left( (ab) \sigma^{-1} \right)^{-1} = \sigma(ab)$.
+\item
+Using (a-c) above, prove the following statement:  For any permutation $\sigma$ and any transposition $(ab)$, $(ab) \sigma$ and $\sigma (ab)$ have the same cycle structure.
+\end{enumerate}
 \end{exercise}
 
 Now here's the punch line. We know that \emph{every} permutation can be written as a product of transpositions. 

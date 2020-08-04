@@ -246,7 +246,7 @@ We've defined binary relations in general. In this section we present one very i
 
 Given any set $A$ with 2 or more elements, it's possible to split up the elements of $A$ into disjoint subsets. We call such a division a \term{partition}. The mathematical definition is:
 
-\begin{defn} A \label{Partition}\term{partition}\index{Partition} $\mathcal{P}$ of a set~$A$ is a collection of nonempty subsets of~$A$, such that each element of~$A$ is in exactly one of the subsets in $\mathcal{P}$. In other words:
+\begin{defn}\label{def:Partition} A \term{partition}\index{Partition} $\mathcal{P}$ of a set~$A$ is a collection of nonempty subsets of~$A$, such that each element of~$A$ is in exactly one of the subsets in $\mathcal{P}$. In other words:
 \begin{enumerate}[(a)]
 \item the union of the subsets in $\mathcal{P}$ is all of~$A$,
 and
@@ -268,7 +268,7 @@ Note that $\mathcal{P}$ is defined as a set of subsets of $A$. This means that t
 \end{enumerate}
 \end{example}
 
-From the previous example you can see how partitions of sets of numbers are collections of subsets that divide up bigger sets. You could imagine it's like a little kid with a bucket of LEGO\textsuperscript{\textregistered} bricks who's sorting them out into different piles. The LEGOs could be sorted by color, shape, number of studs, or the original set in which they were bought. Similarly there are lots of different ways to sort out sets of numbers, mathematical objects, or any arbitrary sets with elements of any kind. Each different way of sorting gives rise to a different partition.
+From the previous example you can see how partitions of sets of numbers are collections of subsets that divide up bigger sets. You could imagine it's like a little kid with a bucket of LEGO\textsuperscript{\textcircled{{\scriptsize R}}} bricks who's sorting them out into different piles. The LEGOs could be sorted by color, shape, number of studs, or the original set in which they were bought. Similarly there are lots of different ways to sort out sets of numbers, mathematical objects, or any arbitrary sets with elements of any kind. Each different way of sorting gives rise to a different partition.
 
 \begin{example}{partition2}
 \begin{enumerate}[(a)]
@@ -300,18 +300,16 @@ In the following parts we will considering partitions of $\mathbb{R}$ and the as
 \item Graph the associated binary relation $\rel_\mathcal{P}$. You only need to graph from $-5$ to 5. (Recall that the graph of a binary relation is a set in the Cartesian plane, as in Figure~\ref{fig:graphrelations}.)
 \end{enumerate}
 
-\item Let $\mathcal{P}=\{\ldots, R_{-2}, R_{-1}, R_0, R_1, R_2, \ldots \}$ where $R_n=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor = n \}$ for any integer $n$. \footnote{We will use these brackets, $\lfloor~\rfloor$, to represent the \term{floor function}\index{Floor function}, also known as the greatest integer function. The floor function takes a real number, $x \in \mathbb{R}$ as input and outputs the greatest integer that is less than or equal to $x$.  Mathematically we can express this as:
-$$\lfloor x \rfloor=\max \{ m\in \mathbb{Z} ~|~m\leq x \}.$$
-
-For example: $\lfloor 4 \rfloor = 4$, $\lfloor \pi \rfloor = 3$, and $\lfloor -2.3 \rfloor = -3$.}
+\item Let $\mathcal{P}=\{\ldots, R_{-2}, R_{-1}, R_0, R_1, R_2, \ldots \}$ where $R_n=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor = n \}$ for any integer $n$. \footnote{The `L' brackets $\lfloor \cdots \rfloor$,  represent the \term{floor function}\index{Floor function}, also known as the greatest integer function. The floor function takes a real number, $x \in \mathbb{R}$ as input and outputs the greatest integer that is less than or equal to $x$.  For example: $\lfloor 4 \rfloor = 4$, $\lfloor \pi \rfloor = 3$, and $\lfloor -2.3 \rfloor = -3$.}
 \begin{enumerate}[(i)]
 \item Draw the real number line from $-5$ to 5, and indicate the visible sets in $\mathcal{P}$.
 \item Graph the associated binary relation $\rel_\mathcal{P}$. You only need to graph from $-5$ to 5.
 \end{enumerate}
 
-\item Let $\mathcal{P}=\{R_E, R_O\}$ where $R_E=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor \text{ is even}\}$ and $R_O=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor \text{ is odd}\}$.
+\item Let $\mathcal{P}=\{\mathbb{E},\mathbb{O}\}$ where $\mathbb{E}=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor \text{ is even}\}$ and $\mathbb{O}=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor \text{ is odd}\}$.
 \begin{enumerate}[(i)]
-\item Draw the real number line from $-5$ to 5, and indicate the sets $R_1, R_2 \in \mathcal{P}$.
+\item Draw the real number line from $-5$ to 5, and indicate the sets $\mathbb{E},\mathbb{O}  \in \mathcal{P}$  (a good way to do this is to color the intervals belonging to 
+$\mathbb{E}$ and $\mathbb{O}$ with different colors).
 \item Graph the associated binary relation $\rel_\mathcal{P}$. You only need to graph from $-5$ to 5.
 \end{enumerate}
 %\item possible exam question: x~y iff floor(abs(x)) = floor(abs(y)) or abs(floor(x)) = abs(floor(y))
@@ -509,9 +507,10 @@ Let's think about binary relations on $\{1,2,3\}$ as seen in Figure~\ref{fig:tra
 \end{center}
 \end{figure}
 
-The relation in digraph A is transitive. Notice how transitivity is defined: \emph{if} $a \rel b$ and $b \rel c$ then  $a \rel c$; in other words, if there's an indirect route (one arrow following another) to get from one element to another by going through a third element, then there must also be a direct route (single arrow).  Notice there's an indirect route from 3 to 2 by going through 1, but there's also a direct route from 3 to 2 (or more formally, $3 \rel 1$, $1 \rel 2$, and $3 \rel 2$). Furthermore this is the only example in A of an indirect route. Therefore this relation is transitive. If $3 \rel 2$ is removed from this binary relation, then the relation isn't transitive because it's still be possible to get from 3 to 2 via 1, but there's no longer a direct route.
-so 
-The relation in digraph B is also transitive. This is true because the \emph{if} clause $\bigl((a \rel b)$ and $(b \rel c)\bigr)$ never holds, since there's no case of an indirect route. In other words, if you can \emph{prove} that there's no counterexample to a mathematical statement, then the statement must be true! Even if $3 \rel 1$ is removed from this relation and the digraph is just three dots, the relation is still transitive.
+Is  the relation in A transitive? Let's consider Remember how transitivity is defined:  if $a \rel b$ and $b \rel c$ then  $a \rel c$. In more prosaic terms, if there's an arrow from $a$ to $b$ and another arrow from $b$ to $c$, then there's an arrow directly from $a$ to $c$. We may conceptualize this as follows. Suppose $a$, $b$, and $c$ represent airports, and arrows represent flights between airports.  In terms of this example, transitivity means that whenever there's an indirect route between airports (with multiple stops), then there's also a direct route. So in the case of relation A, we may notice there's an indirect route from 3 to 2 by going through 1, but there's also a direct route from 3 to 2 (or more formally, $3 \rel 1$, $1 \rel 2$, and $3 \rel 2$). Furthermore this is the only example in A of an indirect route. Therefore this relation is transitive. If $3 \rel 2$ is removed from this binary relation, then the relation isn't transitive because it's still be possible to get from 3 to 2 via 1, but there's no longer a direct route.
+
+How about the relation in digraph B?  This may be the most confusing of the bunch. One might think that B is not transitive, since there's only a single arrow--but think again. The definition of transitive says : \underline{\emph{ if}}  $a \rel b$ and $b \rel c$ then  $a \rel c$.  You may also read the ``if'' as ``whenever'':  \emph{Whenever}  $a \rel b$ and $b \rel c$ then it's also true that $a \rel c$.  But in relation B, the ``whenever'' \emph{never holds}, because there are no cases of $a \rightarrow b$ and $b\rightarrow c$  (i.e. there are no indirect routes).    This being the case, the ``if'' statement is considered true by default, so B is transitive.  This is an important point worth remembering: in mathematical logic, a statement is considered true if no counterexample exists. In other words, if you can \emph{prove} that there's no counterexample to a mathematical statement, then the statement is true! \footnote{Here are some ``true statements'', according to this rule :  (i) If you see a rainbow in the sky and follow it to where it touches the ground, you will find a leprechaun with a pot of gold; (ii) If you pick up an ordinary guinea pig by its tail, then its eyes will fall out. (iii) If you give a correct proof that 1=0, then Bill Gates will give you his entire fortune. }    
+ 
 
 Lastly, the relation in digraph C is \emph{not} transitive. At first glance it seems like it should be transitive because so many transitivity conditions are satisfied (e.g. $1 \rel 2$ and $2 \rel 3 \Rightarrow 1 \rel 3$, etc), however we can also find transitivity conditions that fail (see part (a) of the following exercise)--and it only takes one counterexample to disprove a statement. 
 \end{example}
@@ -614,7 +613,8 @@ How can you tell from looking at a digraph whether or not the corresponding rela
 %\end{enumerate}
 %\end{exer}
 
-\section{Examples of equivalence relations\quad\sectionvideohref{PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}  \label{exampleEquivRel}
+\section{Examples of equivalence relations\quad\sectionvideohref{ZtqFETtGm6o&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=19}} 
+ \label{exampleEquivRel}
 
 Let's take a look at some examples of equivalence relations (recall Definition~\ref{defn:equivalencerelation}). We will see shortly that they all have something in common.
 
@@ -689,16 +689,31 @@ The binary relation $\sim$ on the collection of all finite sets defined by
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{}
-Do you see anything that all of the above examples have in common? (\emph{Spoiler Alert}: if you can't think of an answer, just keep reading.)
+
+Equivalence relations are often defined in terms of \emph{functions}.  For instance,  Example~\ref{example:EquivalenceRelationsChap:binrelsquare}  involves the function $f: \mathbb{R} \rightarrow 
+\mathbb{R}$ defined by $f(x)=x^2$, and $x \sim y$ if and only if $f(x) = f(y)$.  Similarly, Exercise~\ref{exercise:EquivalenceRelationsChap:EquivRelShowEx} involves the function 
+$g: \mathbb{R} \rightarrow 
+\mathbb{R}$ defined by $f(x)=x^2-3x$, and $x \sim y$ if and only if $g(x) = g(y)$.
+Both of these cases follow the following pattern:
+
+\begin{equation*}
+\mbox{Given a function $f: A \rightarrow B$, define a binary relation on $A$ by: $a_1 \rel a_2$ iff $f(a_1) = f(a_2)$.}
+\end{equation*}
+
+Other examples that we've seen also follow this same pattern:
+
+\begin{exercise}{pattern}
+Following the pattern that we've shown for Example~\ref{example:EquivalenceRelationsChap:binrelsquare}  and Exercise~\ref{exercise:EquivalenceRelationsChap:EquivRelShowEx},
+define the following equivalence relations in terms of functions.
+\begin{enumerate}[(a)]
+\item
+Exercise~\ref{exercise:EquivalenceRelationsChap:EquivRelShowEx} part (d) 
+\item
+Exercise~\ref{exercise:EquivalenceRelationsChap:EquivRelShowEx} part (e) 
+\item
+The binary relation in   Example~\ref{example:EquivalenceRelationsChap:NxNEquivRelEg}.
+\end{enumerate}
 \end{exercise}
-
-The above equivalence relations can all be defined in terms of \emph{functions}. More specifically, they can all be defined according to the following pattern:
-
-Given a function $f: A \rightarrow B$, define a binary relation on $A$ by: $a_1 \rel a_2$ iff $f(a_1) = f(a_2)$.
-
-\noindent
-Definitions of this form seem to always produce equivalence relations. (We should say that in some cases, the definition we provided must be slightly massaged to bring it into this form.  For example, the equivalence relation in Example~\ref{example:EquivalenceRelationsChap:NxNEquivRelEg} follows the pattern if we use the function $f: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{Z}$ defined by $f(\, (a,b)\, ) = a-b$. )
 
 
 The previous examples have all involved sets of numbers, but we may see that the same thing happens even when we consider functions on other types of sets.
@@ -712,7 +727,7 @@ The previous examples have all involved sets of numbers, but we may see that the
 \end{enumerate}
 \end{example}
 
-We've seen enough examples to convince us that functions produce equivalence relations. But examples are never enough! The bottom line is that we need a proof--and here it is.
+We've given enough examples to (hopefully) convince you that functions always produce equivalence relations. But examples are never enough! The bottom line is that we need a proof--and here it is.
 
 \begin{prop}{EquivRelFromFunc}
 Suppose $f \colon A \to B$. If we define a binary relation~$\sim$ on~$A$ by
@@ -766,7 +781,7 @@ In other words, whenever we have a partition, we can also define a function that
 From the relation $\rel_R$ in Examples~\ref{example:EquivalenceRelationsChap:partition1}(a) and~\ref{example:EquivalenceRelationsChap:relfrompart1}(a) (the $\mathbb{Q}$ and  $\mathbb{I}$ example) define a function such that $a_1 \sim a_2 \iff  f(a_1) = f(a_2)$ where $a_1, a_2 \in \mathbb{R}$.  (Note that we've already proved that $\rel_R$ is an equivalence relation by a different proposition, so this example is a particular case of Proposition~\ref{proposition:EquivalenceRelationsChap:PartToFunc}.) 
 \end{exercise}
 
-Exercise~\ref{exercise:EquivalenceRelationsChap:partitionfunction} starts with a partition, and constructs a function that gives the same equivalence relation.  We may go backwards as well: starting with a function, we may produce a partition with the same equivalence relation. The following exercise gives an example of this.
+Exercise~\ref{exercise:EquivalenceRelationsChap:partitionfunction} starts with a partition, and constructs a function that gives the same equivalence relation as the partition.  We may go backwards as well: starting with a function, we may produce a partition with the same equivalence relation. The following exercise gives an example of this.
 
 \begin{exercise}{66}
 Let $f\colon \{-3,-2,-1,0,1,2,3\} \to \mathbb{Z}$ be defined by $f(x) =  x^2$.
@@ -806,7 +821,7 @@ Then the collection of sets $ \mathcal{P} :=\{A_b \, |\,  b \in B\}$ form a part
 \end{exercise}
 \end{proof}
 
-\section{Obtaining partitions from equivalence relations\quad\sectionvideohref{PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=20}} \label{EquivalenceRelationsDefnSect}
+\section{Obtaining partitions from equivalence relations\quad\sectionvideohref{LGU0Dhcozr8&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=20}} \label{EquivalenceRelationsDefnSect}
 
 Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel} tells us that given any partition $\mathcal{P}$ of a set $S$, we can define an equivalence relation which says that two elements of $S$ are equivalent iff they belong to the same set in the partition. We'll see in this section that we can go the other way as well: namely, given any equivalence relation on $S$ we can construct a partition on $S$ which divided all the elements of $S$ among disjoint subsets.
 
@@ -850,18 +865,15 @@ Suppose $A = \{1,2,3,4,5\}$ and
 \right\}
 \end{align*}
 One can verify that $R$ is an equivalence relation on~$A$. The equivalence classes are:
-$$ [1] = \{1,3,4\},
-\quad [2] = \{2,5\} ,
-\quad [3] = \{1,3,4\} 
-\quad[4] = \{1,3,4\} ,
-\quad [5] = \{2,5\} .$$
+$$ [1] = [3] = [4] = \{1,3,4\},
+\quad [2] = [5] = \{2,5\}.$$
 \end{example}
 
 \begin{exercise}{EquivClassEasyEx}
 \begin{enumerate}[(a)]
 \item \label{EquivClassEasyEx-set}
 Let $B = \{1,2,3,4,5\}$ and 
-	$$S = \left\{ (1,1),\, (1,4),\, (2,2),\, (2,3),\, (3.2),\, 
+	$$S = \left\{ (1,1),\, (1,4),\, (2,2),\, (2,3),\, (3,2),\, 
 		(3,3),\, (4,1),\, (4,4),\, (5,5)
 		 \right\} .$$
 Assume (without proof) that $S$ is an equivalence relation on~$B$. Find the equivalence class of each element of~$B$.
@@ -1045,7 +1057,7 @@ Suppose we begin with an equivalence relation $\sim$ on the set $A$, and define 
 
 
 \section{Modular arithmetic redux\quad
-\sectionvideohref{DsGQvzpUb1Q&index=16&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{EquivalenceRelationsModArithSect}
+\sectionvideohref{DsGQvzpUb1Q&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=22&t=0s}} \label{EquivalenceRelationsModArithSect}
 
 Abstract algebra often involves looking at familiar concepts and structures in a more general more abstract and ``elegant" way. As an example of this, we will now revisit modular arithmetic and describe it from an entirely different point of view, with the benefit of the concepts we have been developing in previous sections.
 
@@ -1274,15 +1286,15 @@ Suppose $\class{a_1} = \class{a_2}$ and $\class{b_1} = \class{b_2}$.
 From the definition of equivalence class, it follows that  $a_1 \equiv \underline{~<1>~} \pmod{n}$ and $b_1 \equiv \underline{~<2>~} \pmod{n}$. 
 \item  
 By Definition~\ref{mod_eqiv_def_2}, it follows that 
-$a_1 - a_2 = k_1 \cdot \underline{~<3>~}$ and $b_1 - b_2 = k_2 \cdot \underline{~<4>~}$, where $k_1$ and $k_2$ are $\underline{~<5>~}$. 
+$a_1  = a_2 + k_1 \cdot \underline{~<3>~}$ and $b_1  = b_2 + k_2 \cdot \underline{~<4>~}$, where $k_1$ and $k_2$ are $\underline{~<5>~}$. 
 \item
-By integer arithmetic it follows that $(a_1 + b_1) - (a_2 + b_2) =  \underline{~<6>~}$
+By substitution and integer arithmetic,  it follows that $(a_1 + b_1) - (a_2 + b_2) =  \underline{~<6>~}$
 \item
 Since $k_1 + k_2$ is an integer it follows from Definition~\ref{mod_eqiv_def_2} that $(a_1 + b_1) \equiv \underline{~<7>~} \pmod{\underline{~<8>~}}$.
 \item 
 It follows from Proposition~\ref{proposition:EquivalenceRelationsChap:EquivRelProps}(d) that $\underline{~<9>~}$.
 \item
-By Definition~\ref{integ_mod_n} (c) then $\class{a_1} \mathbin{+} \class{b_1} =  \underline{~<10>~}$ and $\class{a_2} \mathbin{+} \class{b_2} =  \underline{~<11>~}$.
+From Definition~\ref{integ_mod_n} (c) we have $\class{a_1} \mathbin{+} \class{b_1} =  \underline{~<10>~}$ and $\class{a_2} \mathbin{+} \class{b_2} =  \underline{~<11>~}$.
 \item
 By substitution we obtain that $\class{a_1} + \class{b_1} = \class{a_2} + \class{b_2}$, which implies that  $\mathbin{+}$ is well-defined on equivalence classes.
 \end{enumerate}
@@ -1297,7 +1309,7 @@ Actually, finding operations that are well-defined on equivalence classes is som
 Suppose we try to define an exponentiation operation on $\integer_3$ by:
 \[
  {[a]_3}^{\,\wedge} \, [b]_3 = [a^b]_3 \quad \text{ for } [a]_3, [b]_3 \in \integer_3. \]
-Show that $\;^{\wedge}$ is not well-defined: that is, find $a, b, c, d \in \integer$, such that $[a]_3 = [c]_3$ and $[b]_3 = [d]_3$, but $\left[a^b \right]_3 \neq \left[c^d \right]_3$.
+Show that $\;^{\wedge}$ is not well-defined: that is, find $a_1, b_1, a_2, b_2 \in \integer$, such that $[a_1]_3 = [a_2]_3$ and $[b_1]_3 = [b_2]_3$, but $\left[a_1^{b_1} \right]_3 \neq \left[a_2^{b_2} \right]_3$.
 \end{exercise}
 
 \begin{exercise}{WellDefEx}

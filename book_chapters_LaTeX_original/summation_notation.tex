@@ -21,7 +21,7 @@ David Weathers wrote the original version of Sections~\ref{sec:sigmaExamples}-\r
 \section{Lots of examples\quad
 \sectionvideohref{W9vTsHE5SJE&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=43}}\label{sec:sigmaExamples}
 
-It's unavoidable that in mathematics, one often encounters sums.  Sometimes these sums have very few terms, but occasionally the sums can reach hundreds, thousands or even an infinite number of terms.  In these cases, rather than listing each and every term or listing the first several terms and assuming the pattern is obvious, one can represent a sum using \term{summation notation}, often referred to as \term{sigma notation}. 
+In mathematics one often encounters sums everywhere.  Sometimes these sums have very few terms, but occasionally the sums can reach hundreds, thousands or even an infinite number of terms.  In these cases, rather than listing each and every term or listing the first several terms and assuming the pattern is obvious, one can represent a sum using \term{summation notation}, often referred to as \term{sigma notation}. 
 
  Sigma notation has four main parts:  the \emph{index variable}, the \emph{starting value}, the \emph{final value} and the \emph{formula}.
 These parts are illustrated in the following example.
@@ -76,103 +76,219 @@ $\displaystyle{ \sum_{k=0}^{100} \left(\frac{1}{k+2} - \frac{1}{k+1}\right)}$
 \end {enumerate}
 \end{exercise}
 
-\section{Sigma notation properties} \label{sec:sigmaProperties}
+\section{Algebraic rules for Sigmas} \label{sec:sigmaProperties}
 
 % Sigma, as with any other math notation, is designed not only to offer control and concise notation, but to offer the ability to change the representation of that notation without changing the value.  There are some circumstances where numbers can be moved or removed from the sum and yet the sum maintains the same value.  
-As with any algebraic notation, there are rules that allow us to do algebraic manipulations with expressions that involve sigmas. 
-Take for example:
+As with any algebraic notation, there are rules that allow us to do algebraic manipulations with expressions that involve sigmas. In this section, we explore some of these rules.
+
+\subsection{Constant multiples, sums, and products of sums}
+
+Many of the rules for manipulating sigmas follow from the commutative law of addition and the associative and distributive laws for addition and multiplication. To motivate these rules, we will look at simple examples and then generalize.
+
+Let's first consider the example:
 \[\sum_{i=0}^{5}2i\]
 We know this is the sigma notation for $2\cdot1+2\cdot2+2\cdot3+2\cdot4+2\cdot5$. Using the distributive property of addition and multiplication of integers, we know this sum is the same as $2\cdot(1+2+3+4+5)$.  Now we convert the sum in the parenthesis to sigma notation to yield
 \[2\cdot\sum_{i=0}^{5}i.\]
 The same argument could be used for any sum  multiplied by any constant. We can write this rule as:
-\[\sum_{i=a}^{b} c \cdot d_i = c \cdot \sum_{i=a}^{b}  d_i,\]
+\begin{equation}
+\sum_{i=a}^{b} c \cdot d_i = c \cdot \sum_{i=a}^{b}  d_i,
+\end{equation}
 where $c$ denotes an arbitrary constant and $d_i$ represents the term of the sum corresponding to index $i$.
 %If one were to substitute any real number for 2, the same math could be shown.  The only exception is in the case of $0$ being the constant multiple in which case the sum is $0$ and the distribution would require division by $0$. 
 %%% Need to give additional sum rules:  sum (x_i + y_i), sum (c*x_i + d*y_i)
-Some additional sum rules:
-\[ \sum_{i=0}^n \left(x_i +y_i \right) = \sum_{i=0}^n x_i + \sum_{i=0}^n y_i \]
-\[ \sum_{i=0}^n \left(c \cdot x_i + d \cdot y_i \right) = c \cdot \sum_{i=0}^n x_i + d \cdot \sum_{i=0}^n y_i \]
+Suppose next we take the sum of two sums and combine them into a single sum using the commutative law:
+\begin{align*}
+\sum_{i=0}^4 i + \sum_{j=0}^4 2^j &=  (0+1+2+3+4) + (2^0 + 2^1 + 2^2 + 2^3 + 2^4)\\
+&= (0+2^0) + (1+2^1) + (2+2^2) + (3+2^3) + (4+2^4) \\
+&= \sum_{i=0}^4 (i + 2^i).
+\end{align*}
+Applying the same process to an arbitrary sum of two sums gives:
+\begin{equation}\label{eq:combineSums}
+    \sum_{i=0}^n x_i + \sum_{j=0}^n y_j
+    =\sum_{i=0}^n (x_i + y_i)
+\end{equation}
 
-It is also possible to shift 
-%some addition and subtraction from the formula to 
-the starting and final values without changing the value of the formula. Take the following sum:
+Now let's look at an example of a product of two sums. 
+Using the commutative law of addition and the distributive law repeatedly, we have:
+\begin{align*}
+& \left(\sum_{i=1}^4 i\right)\left(\sum_{j=1}^3 \frac{1}{j}\right)  = (1+2+3+4)(1 + 1/2 + 1/3) \\
+&\quad = 1(1 + 1/2 + 1/3) + 2(1 + 1/2 + 1/3) + 3(1 + 1/2 + 1/3) + 4(1 + 1/2 + 1/3) \\
+&\quad = 1\cdot 1 + 1\cdot (1/2) + 1 \cdot (1/3) + 2 \cdot 1 + 2 \cdot (1/2) + 2 \cdot (1/3) + 3 \cdot 1 + 3 \cdot (1/2) + 3 \cdot (1/3) \\
+& \qquad + 4 \cdot 1 + 4 \cdot (1/2) + 4 \cdot (1/3).
+\end{align*}
+We see that the product of a sum of 4 terms with a sum of 3 terms gives a sum of $4\cdot 3 = 12$ terms. Furthermore, the 12 terms consist of all possible products of (a term from the first sum) times (a term from the second sum). We introduce the following notation to describe this:
+\[ \left(\sum_{i=1}^4 i\right)\left(\sum_{j=1}^3 \frac{1}{j}\right) = \sum_{i=1}^4\sum_{j=1}^3 \frac{i}{j}. \]
+We may generalize the above example to the product of two arbitrary sums as follows:
+\begin{equation}\label{eq:prodSums}
+\begin{aligned}
+\left(\sum_{i=1}^n x_i\right)\left(\sum_{j=1}^m y_j\right)  &= \sum_{i=1}^n \left( x_i\left(\sum_{j=1}^m y_j\right)\right) \\
+&=  \sum_{i=1}^n \sum_{j=1}^m x_i y_j
+\end{aligned}    
+\end{equation}
+
+\begin{exercise}{}
+In view of Equation~\eqref{eq:combineSums}, one might suppose that the following is true:
+\[ \left(\sum_{i=0}^n x_i \right) \cdot  \left(  \sum_{i=0}^n y_i \right)
+\stackrel{?}{=} \sum_{i=0}^n x_i y_i 
+\]
+\begin{enumerate}[(a)]
+\item
+Is this statement always true? If not, give an example of sequences $\{x_i\}$ and $\{y_i\}$ such that the equality does not hold.
+\item
+Is this statement \emph{ever} true? If possible, give an example of sequences $\{x_i\}$ and $\{y_i\}$ such that the equality \emph{does} hold.
+\end{enumerate}
+\end{exercise}
+
+We may now use Equations \eqref{eq:combineSums} and \eqref{eq:prodSums} to break down complicated multiple sums into simpler parts which may be evaluated more easily:
+
+\begin{exercise}{}
+Given that $\sum_{i=1}^{20} i = 210$ and $\sum_{i=1}^{20} i^2 = 2870$, Evaluate the following double sums:
+\begin{enumerate}[(a)]
+\item
+\[ \sum_{i=1}^{20} \sum_{j=1}^{20} (i+j)^2 \] 
+\item
+\[ \sum_{i=1}^{20} \sum_{j=1}^{20} (i-j)^2 \] 
+\item
+\[ \sum_{i=1}^{20} \sum_{j=1}^{20} (3i-4j)^2 \] 
+\end{enumerate}
+\end{exercise}
+
+
+\section{Change of variable and  rearrangement of sums\quad
+\sectionvideohref{cVfYaB4Gn4M&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=44}} \label{sec:sigmaNested}
+
+Change of variable (a.k.a. substitution) is an extremely powerful technique in mathematics. We've used change of variable in previous chapters, and most likely you've seen change of variable when doing integrals in calculus.  Change of variable can also be used to simplify sums (in fact, there is a very close relationship between integrals and sums, so it's no surprise that the same techniques are useful in both regimes).
+
+Consider for example the following sum:
 \[\sum_{i=2}^{7}(i-1)\] 
-In this case, the sum is
+If we write this out term by term, we get
 %index $i$ starts at 2 and ranges to 7 with each value being subtracted by 1.  This in effect gives us 
-$1+2+3+4+5+6$, which can be represented as:
-\[\sum_{i=1}^{6}i\] 
-%This can even be used when the index in the formula is being affected by another function.
-%Or in general, \sum_{n=j}^k f(n) = \sum_{n=j+p}^{k+p} f(n-p) JW
+$1+2+3+4+5+6$ which has a very easy representation as a sigma, namely 
+$\sum_{j=1}^{6}j$. It follows that
+\[\sum_{i=2}^{7}(i-1) = \sum_{j=1}^{6}j. \] 
+Writing it this way, we can see how we got from one some to the other by making the replacement $j = i-1$. We also had to change the limits of the sum accordingly (just like you have to change integral limits when you change variable).
+
 A similar example is:
 \begin{align*}
-\sum_{i=2}^{4}(i+1)(i+2)&=(2+1)(2+2) + (3+1)(3+2)+(4+1)(4+2) \\
- &=(3+0)(3+1) + (4+0)(4+1)+(5+0)(5+1) \\
-&= \sum_{j=3}^{5}j(j+1).
+\frac{1}{8}\sum_{j=5}^{9} 2^{j-2} &= \sum_{j=5}^{9} 2^{j-2} \cdot 2^{-3}\\
+ &=\sum_{j=5}^{9} 2^{j-5}.
 \end{align*}
- 
-%Notice that whenever the index and ending condition change, it must change all instance of the index in the formula. Another way to think about it, is substituting a new index into the whole summation. Given:
-Changing the starting and final values in this way can be thought of as a change of variable. For instance, in the previous example we had
-\[\sum_{i=2}^{i=4}(i+1)(i+2).\]
-Let $j = i+1$, and solve for $i$: $i = j-1$. We then replace all $i$'s in the formula with $j-1$ to obtain
-% Then with $i=2$ add 1 to each side to get $ i+1 = 3$ with $i=4$ add 1 to each side to get $ i+1 = 5$ with $i+2$ separate into $i+1+1$ then substitue $j$ for each $i+1$ to yield.
-\[\sum_{(j-1)=2}^{(j-1)=4}((j-1)+1)((j-1)+2),\]
-and after algebraic simplification we get
-\[\sum_{j=3}^{5}j(j+1),\]
-as before.
-
-Occasionally, it may be necessary to add or remove a single term from the sum.  This can be done by changing the start value or end condition. The following example illustrates this, as well as demonstrating some of our summation manipulation rules:
-\[\sum_{i=1}^{10}i = 1 + \sum_{i=2}^{10} i = 1+ \sum_{i=1}^9 ( i+1) = 1 +  \sum_{i=1}^9  i +  \sum_{i=1}^9  1 = 1+ \sum_{i=1}^9  i + 9 =  \sum_{i=1}^9  i + 10.\]
-When removing a term from the middle, it may be necessary to split the sum into two separate sums.
-\[\sum_{i=1}^{10}i = \sum_{i=1}^{3}i + 4 + \sum_{i=5}^{10}i.\]
-%However adding a term to a sum can be quite difficult.  The formula has to account for the new term which is not always possible.  Take for example the sum off odd numbers from 1 to 51.
-%\[\sum_{i=0}^{25}(2i+1)  \]
-%If it were necessary to add the number 2 to the sum, it would not be possible to merely change the parameters of the sigma to include 2.  In this case it is better to leave the notation as :
-%\[2 + \sum_{i=0}^{25}(2i+1)  \]
+We may substitute $i = j-5$.  Noticing that $j=5 \implies i=0$ and $j=9 \implies i=4$, we obtain
+\[
+\frac{1}{8}\sum_{j=5}^{9} 2^{j-2}
+=\sum_{i=0}^4 2^i.
+\]
 
 %insert exercises for sigma notation modification
 \begin{exercise}{sum1}
 Take the following sigma notation examples and change the formula and final value so that the starting value becomes 0 and the sum maintains the same value.  Calculate the value of both the listed sum and the resulting sum to show that the value is the same.
 \begin{enumerate} [(a)]
  \item
-$\displaystyle{\sum_{i=3}^{46}2i}$
+$\displaystyle{\sum_{i=3}^{7}2i}$
 \item
-$\displaystyle{\sum_{j=7}^{20}\cos(j\pi )}$
+$\displaystyle{\sum_{j=7}^{21}\cos(j\pi )}$
 \item
-$\displaystyle{\sum_{j=20}^{40}(j-20)}$
+$\displaystyle{\sum_{j=20}^{24}(j-20)}$
 \end {enumerate}
 \end{exercise}
 
+
+Breaking up sums and re-indexing can sometimes make things a lot simpler. Consider the following example:
+\[ S = \sum_{k=1}^{21} \text{cis} \left(\frac{2\pi k}{20} \right). \]
+Let's break this up into two sums, from $k = 1$ to $10$ and from $k=11$ to $21$:
+\[ S = \sum_{k=1}^{10} \text{cis} \left(\frac{2\pi k}{20} \right)
++ \sum_{k=11}^{21} \text{cis} \left(\frac{2\pi k}{20} \right). \]
+It would be nice to combine these two sums into one.  But to do this, we need to make the summation limits the same. So we'll change variable:  $j = k-10$ in the second sum. Then the sum from $k=11$ to $21$ becomes a sum from $j=1$ to $11$:
+\[ S = \sum_{k=1}^{10} \text{cis} \left(\frac{2\pi k}{20} \right)
++ \sum_{j=1}^{11} \text{cis} \left(\frac{2\pi (j+10)}{20} \right). \]
+Now let's massage the sum  over $j$ a little bit.  Using the properties of $\text{cis}$, the summand can be rewritten:
+\begin{align*}
+\text{cis} \left(\frac{2\pi (j+10)}{20} \right) &= \text{cis} \left(\frac{2\pi j}{20} + \pi \right) \\
+&= \text{cis}\left(\frac{2\pi j}{20} + \pi \right)\\
+&= \text{cis}\left(\frac{2\pi j}{20}\right)\text{cis}(\pi)\\
+& = -\text{cis}\left(\frac{2\pi j}{20}\right).
+\end{align*}
+Furthermore, we don't change anything if we replace the $j$ with $k$, since it's just a sum index anyway. Making these substitutions, we have:
+\[ S = \sum_{k=1}^{10} \text{cis} \left(\frac{2\pi k}{20} \right)
++ \sum_{k=1}^{11} -\text{cis} \left(\frac{2\pi k}{20} \right). \]
+Now we can split the 11'th term off from the second sum, and combine the two sums from 1 to 10:
+\begin{align*}
+S &= \sum_{k=1}^{10} \text{cis} \left(\frac{2\pi k}{20} \right)
++ \sum_{k=1}^{10} -\text{cis} \left(\frac{2\pi k}{20} \right) -
+\text{cis} \left(\frac{2\pi \cdot 11}{20} \right) \\
+&= \sum_{k=1}^{10} \left(\text{cis} \left(\frac{2\pi k}{20} \right)
+ -\text{cis} \left(\frac{2\pi k}{20} \right) \right) -
+\text{cis} \left(\frac{2\pi \cdot 11}{20} \right) \\
+&= \sum_{k=1}^{10} (0) -
+\text{cis} \left(\frac{2\pi \cdot 11}{20} \right) \\
+&= -\text{cis} \left(\frac{2\pi \cdot 11}{20} \right). \\
+&= \text{cis} \left(\frac{\pi }{10} \right). \\
+\end{align*}
+
 \begin{exercise}{}
-We have shown that a ``sum rule'' holds for sigma notation.  Is there a corresponding ``product rule''? That is: is it true that
-\[ \sum_{i=0}^n x_i y_i \stackrel{?}{=} \left(\sum_{i=0}^n x_i \right) \cdot  \left(  \sum_{i=0}^n y_i \right). \]
-If true then prove it; if not, give a counterexample.
+By splitting up the sums and rearranging, evaluate the following sums:
+\begin{enumerate}[(a)]
+\item
+$\sum_{k=1}^{14} \text{cis} \left(\frac{6\pi k}{7} \right)$
+\item
+$\sum_{k=1}^{15} \text{cis} \left(\frac{6\pi k}{5} \right)$
+\end{enumerate}
 \end{exercise}
 
+We've already seen cases where one sigma is inside another, when taking the product of two sums. Nested sums like this can often be rearranged to obtain useful formulas.
 
-\section{Nested sigmas\quad
-\sectionvideohref{cVfYaB4Gn4M&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=44}} \label{sec:sigmaNested}
-Since any  sufficiently patterned summation can be replaced with sigma notation, it's quite possible for one sigma to end up inside another:
+\begin{example}{}
+Consider the product of the sums $\sum_{i=0}^{2} 3^i$ and $\sum_{j=0}^{2}3^{-j}$.
+By the distributive law and additive commutivity we have:
 
-\[\sum_{i=0}^{3}\left( \sum_{j=0}^{2}1\right)\]
+\begin{align*}
+\left(\sum_{i=0}^{2} 3^i\right) \left( \sum_{j=0}^{2}3^{-j}\right) &= 
+\sum_{i=0}^{2} \left(3^i \left( \sum_{j=0}^{2}3^{-j}\right) \right)\\
+&= \sum_{i=0}^{2}  \left( \sum_{j=0}^{2}3^{i-j}\right)\\
+&= \sum_{i=0}^{2}  \sum_{j=0}^{2}3^{i-j}.
+\end{align*}
+This sum has 9 terms, where each term corresponds to a pair $(i,j)$ as shown in Figure~\ref{fig:productOfSums}. These terms can be arranged along diagonal lines (as shown in the figure) so that all terms on each diagonal have the same value. So we can add the terms diagonal-by-diagonal as follows:
 
-This means that for each value of the index of the outside sigma, the entire sum of the inside sigma must be calculated.  In this case, $\sum_{j=0}^{2}(1)=3$, so we have
+\begin{align*}
+\sum_{i=0}^{2}  \sum_{j=0}^{2}3^{i-j} &= 3^{-2} + 2\cdot 3^{-1}
++3 \cdot 3^0 + 2 \cdot 3^{1} + 3^{2} \\
+&= 1/9 + 2/3 + 3 + 6 + 9\\
+&= 18\, \frac{5}{9}.
+\end{align*}
 
-\[\sum_{i=0}^{3}\sum_{j=0}^{2}1 =  \sum_{i=0}^{3}\ 3  = 3+3+3+3 = 12. \]
-(Note that this time we didn't put a parenthesis around the inner sum--when two sums are written next to each other, it's understood that the second sum is nested inside the first.)
+\begin{figure}[htb]
+\begin{center}
+	\includegraphics[width=3.0in]{images/productOfSums.png}
+\caption{\label{fig:productOfSums} Grid points corresponding to the terms in the sum: $ \sum_{i=0}^{2}  \sum_{j=0}^{2} 5^{i-j} $.}
+\end{center}
+\end{figure} 
+\end{example}
 
-The situation becomes more interesting when the sum inside depends on the the index variable of the outside sigma:
+\begin{exercise}{}
+By following the above argument backwards, write the following expressions as a product of sums:
+\begin{enumerate}[(a)]
+\item
+\[\sum_{n=1}^3 n3^{3-n} + \sum_{n=1}^2 n3^{n-3}\]
+\item
+\[\sum_{n=1}^{10} n5^{10-n} + \sum_{n=1}^{9} n5^{n-10}\]
+%\item
+%\[\sum_{n=1}^3 n5^{n-1} + \sum_{n=3}^4 (5-n)5^n\]
+\end{enumerate}
+\end{exercise}
+
+The situation becomes interesting when the sum inside depends on the the index variable of the outside sigma:
 
 \[\sum_{i=0}^{3}\sum_{j=0}^{i}1\]
 
-Unlike the previous case, the inside sum will change depending on what $i$ is.  When $i=0$ then $\sum_{j=0}^{i}1=\sum_{j=0}^{0}1=1$ so 1 would be the first term in the outside sum.  When $i=1$ then $\sum_{j=0}^{i}1=\sum_{j=0}^{1}1=1+1=2$ so 2 would be the next term.  With each successive term, the inside sum increases by 1, so the result is $1+2+3+4 = 10$.
+Unlike previous double sums, the inside sum will change depending on what $i$ is.  When $i=0$ then $\sum_{j=0}^{i}1=\sum_{j=0}^{0}1=1$ so 1 would be the first term in the outside sum.  When $i=1$ then $\sum_{j=0}^{i}1=\sum_{j=0}^{1}1=1+1=2$ so 2 would be the next term.  With each successive term, the inside sum increases by 1, so the result is $1+2+3+4 = 10$.
 
  Note that the index of the outer sum may appear in any or all parts of the inner sum. Here are some examples:  
 
 \[\sum_{i=0}^{3} \sum_{j=i}^{10}1; \qquad
-\sum_{i=0}^{3} \sum_{j=1}^{10}i ; \qquad
+\sum_{i=0}^{3} \sum_{j=1}^{10i}i ; \qquad
 \sum_{i=0}^{3}\sum_{j=i}^{2i}(3i+x^j).\]
 
-When using nested sums, it is possible to rearrange the order of summation.  Take for example:
+In some cases, nested sums may be simplified by exchanging the order of summation.  Take for example:
 \[\sum_{i=0}^{2}  \sum_{j=0}^{i}1 \]
 The first term has $i=0$ and $j=0$: we write this as $(i,j)=(0,0)$. When $i=1$, then we have two terms:  $j=0$ and $j=1$. Finally, when $i=2$, we have $j=0,1,$ or 2.  Altogether we have the index pairs: $(0,0), (1,0), (1,1), (2,0), (2,1), (2,2)$. These index pairs may be displayed on a grid, as shown in Figure~\ref{fig:summation1}.
 \begin{figure}[htb]
@@ -206,8 +322,6 @@ $\displaystyle{\sum_{i=m}^{n}\sum_{j=i}^{2n}jx^i }$~~(Write as the sum of two su
 $\displaystyle{\sum_{i=m}^{n}\sum_{j=0}^{i}(i-j)^2 }$~~(You may assume $m>0$.  Write as the sum of two summations.)
 \end {enumerate}
 \end{exercise}
-Another useful fact: in a nested sum, the outer summation index can be treated as a constant in the inner summation.  So for example:
-\[ \sum_{i=1}^{9} \sum_{j=1}^7 ij = \sum_{i=1}^{9} i \sum_{j=1}^7 j = \sum_{i=1}^{9} i\sum_{j=1}^7 j = \left(\sum_{i=1}^{9} i\right) \left(\sum_{j=1}^7 j\right) = 45\cdot 28=1260. \]
 
 \begin{exercise}{interchangeSum}
 \begin{enumerate}[(a)]
@@ -333,7 +447,8 @@ S = \sum_{i=0}^{n} ar^i,
 \]
 where both $a$ and $r$ are complex numbers, and $n$ is a positive integer.
 Use the ``sum subtraction'' technique (used above for the geometric sum with base 1/2) to derive the the following general formula:\index{Geometric series!sum of}
-\[ \sum_{i=0}^{n} ar^i = a \dfrac{1-r^{n+1}}{1-r}. \]
+\[ \sum_{i=0}^{n} ar^i = a \dfrac{1-r^{n+1}}{1-r} \]
+(Note the formula can also be written:  $ \sum_{i=0}^{n} ar^i = a \dfrac{r^{n+1}-1}{r-1} $.)
 \end{exercise}
 
 \begin{exercise}{}
@@ -443,7 +558,7 @@ The above formula makes it possible to calculate individual matrix elements, wit
 \item
 Let the entries of $A$ be given by $a_{i,j} = \sqrt{i+j}$ for $1 \le i,j \le 100$. Let $C = A\cdot A$ (we can also write $C=A^2$). Compute $c_{10,10}$.
 \item
-Let the entries of $A$ and $B$ be given by $a_{i,j} = (i+j)^2$ and $b= \frac{1}{i+j}$ for $1 \le i,j \le 27$. Let $C = A\cdot B$ Compute $c_{8,8}$.
+Let the entries of $A$ and $B$ be given by $a_{i,j} = (i+j)^2$ and $b_{i,j} = \frac{1}{i+j}$ for $1 \le i,j \le 27$. Let $C = A\cdot B$ Compute $c_{8,8}$.
 \item
 For the matrices $A$ and $B$ in part (b), give a general formula for $c_{k,k}, 1 \le k \le 27$ where $C=AB$.
 \end{enumerate}
@@ -499,7 +614,9 @@ Using parts (b) and (c), show that matrix multiplication is \emph{associative}.
 \end{enumerate}
 \end{exercise}
 
-The \term{identity matrix}\index{Matrix!identity ($I$)} $I$ often comes up when working with matrices. You may remember that an identity matrix has 1's on its diagonal and 0's everywhere else:
+\subsection{The identity matrix and the Kronecker delta}
+
+ex{Matrix!identity ($I$)} $I$ often comes up when working with matrices. You may remember that an identity matrix has 1's on its diagonal and 0's everywhere else:
 
 \[I = \left[ \begin{array}{ccccc}
 1 & 0  & \cdots & 0 & 0 \\
@@ -748,9 +865,9 @@ We know that the transpose of a $n \times n$ matrix is a $n \times n$ matrix.  S
 \item
 Transpose defines an invertible function from $M_n(\mathbb{R})$ to $M_n(\mathbb{R})$.
 \item
-Transpose preserves addition, i.e. $A^T + B^T) = (A+B)^T$ for any matrices $A,B \in M_n(\mathbb{R})$.
+Transpose preserves addition, i.e. $A^T + B^T = (A+B)^T$ for any matrices $A,B \in M_n(\mathbb{R})$.
 \item
-Transpose preserves multiplication, i.e. $A^T \cdot B^T) = (A\cdot B)^T$ for any matrices $A,B \in M_n(\mathbb{R})$.
+Transpose preserves multiplication, i.e. $A^T \cdot B^T = (A\cdot B)^T$ for any matrices $A,B \in M_n(\mathbb{R})$.
 
 \end{enumerate}
 \end{exercise}
@@ -1399,12 +1516,12 @@ Using some facts from the discussion above, show that  $S_{ijmn} :=  \sum_k \eps
 
 \subsection{Proof of Euler's Rotation Theorem}\label{subsec:EulerRot}
 
-In Section~\ref{sec:actions:Euler} we proved Euler's formula for regular polyhedra. Our proof was not complete, because we assumed the following proposition:
+In Section~\ref{sec:actions:Euler} we prove Euler's formula for regular polyhedra. Our proof depends on the following proposition:
 
 \begin{prop}{EulerRotThm}(\term{Euler's Rotation Theorem}): Any rotation (besides the identity) in three dimensions has exactly one axis which is fixed by the rotation.
 \end{prop}
 
-In this section, we'll prove this beautiful theorem!
+In this section, we'll prove this beautiful theorem!  (\emph{Note} the proof requires familiarity with properties of eigenvalues and determinants, which is a topic that is covered in most undergraduate Linear Algebra classes.)
 
 First, we need to establish a general identity involving three-dimensional Levi-Civita symbols.
 
@@ -1555,8 +1672,8 @@ grouped terms either by row (above the line) or by column (below the line). You'
 
 
 Now let's go back and express the sum of all these terms a different way. We'll introduce the notation:
-\[ A_{m}= \sum_{k=1}^{m}a_{k} \text{ and } B_{m}= \sum_{k=1}^{m}b_{k}. \]
-$A_m$ and $B_m$ are the $m$th \term{partial sums} for the series $\sum a_k$ and $\sum b_k$, respectively.
+\[ A_{k}= \sum_{j=1}^{k}a_{j} \text{ and } B_{k}= \sum_{j=1}^{k}b_{j}. \]
+$A_k$ and $B_k$ are the $k$th \term{partial sums} for the series $\sum a_j$ and $\sum b_j$, respectively.
 The product of sums that we started with can be written succinctly as $A_{5}B_{5}$. 
 
 We may use this new notation to 
@@ -1612,13 +1729,13 @@ In order to use the summation by parts formula, we need to define $a_k$ and $B_k
 Note that $B_{k}$  is a partial sum of $k$ terms, and that $k = 1 + \ldots + 1$. So it's natural to choose $B_{k}=k$, which means that $a_{k}=2^{k-1}$.
  
 Based on our choice of $B_{k}$ and  $a_{k}$, we can now figure out $b_{k}$ and $A_{k}$.  As we noted above, $B_{k}$ is the sum of $k$ 1's, so that $b_k=1$. This leaves us with $a_k = 2^{k-1}$, so that 
-\[A_{n}=\sum_{k=1}^{n}2^{k-1}.\]
+\[A_{k}=\sum_{j=1}^{k}a_j.\]
  As we've seen before, we may rewrite this by shifting the starting value of the index, so that 
-\[A_{n}=\sum_{k=0}^{n-1}2^k =  \frac{2^k-1}{2-1} = 2^k-1,\]
+\[A_{k}=\sum_{j'=0}^{k-1}2^{j'} =  \frac{2^k-1}{2-1} = 2^k-1,\]
 where we've used our standard formula for the sum of geometric series.
 
 Summarizing our progress so far, we have:
-\[ a_k=2^{k-1};\quad B_k=k;\quad  b_k=1; \quad A_n=\frac{2^k-1}{1}. \]
+\[ a_k=2^{k-1};\quad B_k=k;\quad  b_k=1; \quad A_k=2^k-1. \]
 Plugging the above values into the summation by parts formula, we find:
 \[ \sum_{k=1}^{n}2^{k-1}k= \left (2 ^{n}-1 \right )n-\sum_{k=1}^{n-1}\left ( 2^{k}-1 \right ). \]
 The summation on the far right can be evaluated by breaking it into two separate parts:
@@ -1650,6 +1767,8 @@ Prove the following equation using summation by parts:
  Evaluate $\sum_{k=1}^{n}3^{k}k$.
 \item
  Evaluate $\sum_{k=1}^{n}3^{k}k^2$.
+\item
+Evaluate $\sum_{k=1}^{7n} \cis(2\pi k/7)\cdot k$.
 \end{enumerate}
 \end{exercise}
 

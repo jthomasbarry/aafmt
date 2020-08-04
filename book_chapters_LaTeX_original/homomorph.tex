@@ -12,10 +12,6 @@
 %%%%(c)
 \chap{Homomorphisms of Groups}{homomorph}
 
-%% TWJ, 2010/03/31
-%% The chapter HOMOMORPHISMS AND FACTOR GROUPS is now
-%% two chapters: (10) NORMAL SUBGROUPS AND FACTOR GROUPS
-%% (11) HOMOMORPHISMS
 
 In this chapter we will introduce homomorphisms, which are a powerful tool in the study of the structure of abstract groups. Our brief treatment only gives the reader a taste of this important topic, and the reader wanting to go deeper is encouraged to look at other algebra texts.
 \bigskip
@@ -156,7 +152,7 @@ A bijection that preserved group operations was called an isomorphism.  So what 
 We see some interesting things in  Example~\ref{example:homomorph:Z_8_i homomorph}. 
 The elements in ${\mathbb Z}_8$ that map to 1 are  $0$ and $4$. The set $\{0,4\}$ is a subgroup of ${\mathbb Z}_8$.  Naturally it's a normal subgroup, since $\mathbb{Z}_8$ is abelian.
 On the other hand, the sets $\{1,5\}, \{2,6\},$ and $\{3,7\}$ which map to $i, -1,$ and $-i$ respectively are \emph{not} subgroups of ${\mathbb Z}_8$. Instead, we may recognize them as the \emph{cosets} of $\{0,4\}$ in ${\mathbb Z}_8$. We saw in Section~\ref{cosets:normal} 
-that the cosets of a normal subgroup themselves form a group called the \emph{factor group}. You may want
+that the cosets of a normal subgroup themselves form a group called the \emph{quotient group}. You may want
 to go back and refresh your memory on the contents of that section before attempting the following exercise. 
 
 %\begin{table}[H]
@@ -297,7 +293,7 @@ We may use the homomorphism $q$ to construct an isomorphism, as you will show in
 \begin{exercise}{Z8/0246_1-1_iso}
 \begin{enumerate}[(a)]
 \item
-Create the Cayley Table for the factor group ${\mathbb Z}_8/ H$.
+Create the Cayley Table for the quotient group ${\mathbb Z}_8/ H$.
 \item
 Show that the function from ${\mathbb Z}_8/ H$  to $\langle i \rangle$  which maps
 \begin{align*}
@@ -452,9 +448,12 @@ So $f$ is indeed a homomorphism from ${\mathbb C}^\ast$ to ${\mathbb R}^\ast$.
 Once again, we may compare this example to the remarks of the previous section.
 
 \begin{exercise}{Cstar_modulus_cosets}
+With reference to the function $f$ defined in Example~\ref{example:homomorph:homo_C*}:
 \begin{enumerate}[(a)]
 \item
 What is the homomorphic image of $f$?
+\item
+Prove that the homomorphic image of $f$ is a subgroup of ${\mathbb R}^\ast$.
 \item
 Find all the elements in ${\mathbb C}^\ast$ that map  to the identity in ${\mathbb R}^\ast$; that is, find all $r \cis \theta \in {\mathbb C}^\ast$ such that $f(r \cis \theta) = 1$.
 \item
@@ -462,7 +461,7 @@ Is the set from part (b) a normal subgroup of ${\mathbb C}^\ast$?  Prove or disp
 \item
 What are the cosets in ${\mathbb C}^\ast$ of the set in part (b)?
 \item
-Define the factor group created by the normal subgroup in (e), and prove that it's isomorphic to  ${\mathbb R}^\ast$.
+Define the quotient group created by the normal subgroup in (e), and prove that it's isomorphic to  the homomorphic image of $f$.
 \end{enumerate}
 \end{exercise}
  
@@ -496,7 +495,7 @@ Describe the cosets of $SL_2( {\mathbb R })$ in $GL_2( {\mathbb R })$.
 Prove that $SL_2( {\mathbb R })$ is a normal subgroup of $GL_2( {\mathbb R })$. 
 \hyperref[sec:homomorph:hints]{(*Hint*)} 
 \item
-Prove that the factor group $GL_2( {\mathbb R }) / SL_2( {\mathbb R })$ is isomorphic to ${\mathbb R}^\ast$.
+Prove that the quotient group $GL_2( {\mathbb R }) / SL_2( {\mathbb R })$ is isomorphic to ${\mathbb R}^\ast$.
 \end{enumerate}  
 \end{exercise}
 
@@ -505,16 +504,14 @@ This last exercise wasn't as easy to visualize as the previous ones.  So we had 
 \end{rem}
 
 \begin{exercise}{homo_GL2_a}
-Define a function $g: \RR \rightarrow GL_2( {\mathbb R }$ as follows:
-\[
-g(a) = \left(
-\begin{array}{cc}
-1 & 0 \\
-0 & a
-\end{array}
-\right).
-\]
-Prove that $g$ is a homomorphism.
+\begin{enumerate}[(a)]
+\item
+Define a function $f: {\mathbb C} \rightarrow {\mathbb R }$ as follows: $f(a+bi) = a$.  Prove or disprove:  $f$ is a  homomorphism.
+\item
+Define a function $g: {\mathbb C} \rightarrow {\mathbb R }$ as follows: $g(a+bi) = b$.  Prove or disprove:  $g$ is a homomorphism.
+\item
+Define a function $h: {\mathbb C}^* \rightarrow {\mathbb R }^*$ as follows: $h(a+bi) = a$.  Prove or disprove:  $h$ is a  homomorphism. (\emph{Note} this is a different situation from part (a)!) 
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}{2x2_add}
@@ -543,7 +540,7 @@ What are the cosets in ${\mathbb Z}$ of the set in part (c)?
 \item
 Show the set in part (c) is a normal subgroup in ${\mathbb Z}$.
 \item
-Define the factor group created by the normal subgroup in (g), and prove that it's isomorphic to  the homomorphic image of $f$.
+Define the quotient group created by the normal subgroup in (g), and prove that it's isomorphic to  the homomorphic image of $f$.
 \end{enumerate}
 \end{exercise}
 
@@ -604,7 +601,7 @@ For any  homomorphism $f$ with domain $G$ and the codomain $H$, it seems that:
 \item
 The elements in $G$ that map under $f$ to the identity of $H$ are in fact a normal subgroup of $G$.
 \item
-The factor group created by that normal subgroup is then isomorphic to the image of the homomorphism.
+The quotient group created by that normal subgroup is then isomorphic to the image of the homomorphism.
 \item
 If $f$ maps $g$ to $h$, then $f$ also maps $g^{-1}$ to $h^{-1}$.
 \end{itemize}
@@ -612,7 +609,7 @@ If $f$ maps $g$ to $h$, then $f$ also maps $g^{-1}$ to $h^{-1}$.
 These properties are indeed true for all homomorphisms, and we'll take the next two sections to prove these as well as other properties of homomorphisms.  
 We begin with 
  
-\begin{thmprop}\label{HomorphismSubgroupProp}
+\begin{prop}{HomorphismSubgroupProp}
 Let $f : G \rightarrow H$ be a homomorphism of groups. Then 
 \begin{enumerate}
  
@@ -633,7 +630,7 @@ f(g) \in T \}$ is a subgroup of $G$. Furthermore, if $T$ is
 normal in $H$, then $f^{-1}(T)$ is normal in $G$. 
  
 \end{enumerate}
-\end{thmprop}
+\end{prop}
  
  
 \begin{proof}
@@ -711,21 +708,21 @@ One of the patterns we saw in our examples that we haven't verified yet was that
  
 \begin{defn}\label{def:kernel} 
 Let $f : G \rightarrow H$ be a  homomorphism and suppose that
-$e'$ is the identity of $H$. 
-The set  $f^{-1} ( \{ e \})$ is  called the \term{
+$e_H$ is the identity of $H$. 
+The set  $f^{-1} ( \{ e_H \})$ is  called the \term{
 kernel}\index{Kernel!of a
 homomorphism}\index{Homomorphism!kernel} of $f$, and will
 be denoted by $\ker f$\label{kernelofphi}. 
 \end{defn}
  
  
-\begin{thmprop}\label{homo_ker_normal}
+\begin{prop}{homo_ker_normal}
 Let $f : G \rightarrow H$ be a group homomorphism. Then the kernel
 of $f$ is a normal subgroup of $G$.\index{Kernel!as a normal subgroup} 
-\end{thmprop}
+\end{prop}
 
 \begin{exercise}{hker}
-Prove Proposition~\ref{homo_ker_normal}. 
+Prove Proposition~\ref{proposition:homomorph:homo_ker_normal}. 
 \hyperref[sec:homomorph:hints]{(*Hint*)} 
 \end{exercise}
 
@@ -897,7 +894,7 @@ Which of these are isomorphisms?
  
 \section{The First Isomorphism Theorem}
  
-There's one property that we observed in earlier sections of this chapter that we haven't proven so far, namely,  the factor group created by the kernel of a homomorphism is isomorphic to the image of the homomorphism.  In order to do this, we'll need a clearer idea of how homomorphisms actually work. Figure~\ref{fig:homomorph3} gives a schematic diagram of a general homomorphism $f$ with kernel $K$. 
+There's one property that we observed in earlier sections of this chapter that we haven't proven so far, namely,  the quotient group created by the kernel of a homomorphism is isomorphic to the image of the homomorphism.  In order to do this, we'll need a clearer idea of how homomorphisms actually work. Figure~\ref{fig:homomorph3} gives a schematic diagram of a general homomorphism $f$ with kernel $K$. 
 \begin{figure}[htb]
 	   \center{\includegraphics[width=4.in]
 	         {images/homomorph3.png}}
@@ -905,7 +902,7 @@ There's one property that we observed in earlier sections of this chapter that w
 \end{figure}
 
 
-The figure shows the cosets of $K$, which form a partition of $G$ as we showed in the Cosets chapter. These cosets can be thought of as elements of the factor group $G/K$. 
+The figure shows the cosets of $K$, which form a partition of $G$ as we showed in the Cosets chapter. These cosets can be thought of as elements of the quotient group $G/K$. 
 
 The arrangement of arrows in the figure indicate that any two points in the same coset $gK$ map to the same element of $H$.  
 This is true because
@@ -949,14 +946,14 @@ So what's the point? It turns out that this function $F$ is exactly the isomorph
 %describe the relationships among group homomorphisms, normal 
 %subgroups, and factor groups.\index{Group!factor groups}\index{Factor groups} 
 % 
- 
- 
-\begin{thmprop}~(\emph{First Isomorphism Theorem}\label{FirstIsoTheorem}\index{First Isomorphism
-Theorem!for groups} 
+  
+\begin{prop}{FirstIsoTheorem}(\emph{First Isomorphism Theorem})
+\index{First Isomorphism Theorem!for groups} 
+
 Suppose $f : G \rightarrow H$ is a homomorphism with $K =\ker
 f$. Let the function $F: G/K \rightarrow f(G)$
  be defined according to $F(gK) = f(g)$. Then $F$ is an isomorphism. 
-\end{thmprop}
+\end{prop}
  
 \begin{proof}
 As mentioned above, we only need to show that $F$ is 1-1, onto, and preserves the operation.

@@ -230,9 +230,11 @@ $\therefore g\colon \mathbb{R}\times [0,1]\to \mathbb{C}$ defined by $g(x,y)=|x|
 \noindent\textbf{Exercise \ref{exercise:functions:OntoExers3}:} %kw updated
 %For each of the following  functions, either prove that it is onto, or prove that it is not.
 \begin{enumerate}[(a)]
+\item
+Not onto
 \item \label{modular_m3}
 % $g \colon {\mathbb Z}_5 \to {\mathbb Z}_{5}$ defined by $g(x) =  (x \odot 2) \oplus 3$ .
-
+Onto
 \item 
 % $g \colon {\mathbb Z}_7 \to {\mathbb Z}_7$ defined by $g(x)= (x \odot x) \oplus 1 $ .
 The elements in the domain and co-domain are $\{0,1,2,3,4,5,6,7,8\}$\\
@@ -442,6 +444,62 @@ $(g\circ f)(x)=cax+cb+d$\\
 \noindent\textbf{Exercise \ref{exercise:functions:ComposeExers-pairs}:}\\
 a. $g\circ f=\{(1,\clubsuit),(2,\diamondsuit),(3,\heartsuit),(4,\spadesuit)\}$\\
 b. $g\circ f=\{(1,\clubsuit),(2,\clubsuit),(3,\clubsuit),(4,\clubsuit)\}$\\
+
+
+%\begin{exercise}{ComposeExers-form2} 
+% The folllowing formulas define functions $f$ and~$g$ from~$\mathbb{C}$ to~$\mathbb{C}$. Find formulas for $f \compose g(x)$ and $g \compose f(x)$.
+%\begin{enumerate}[(a)]
+%\item \label{composeC1}
+% $f(r \cis \theta) = (r+3)\cis(\theta - \pi/6)$ and $g(r \cis \theta) = (r \cis \theta)^2$ 
+%\item \label{composeC2}
+% $f(a + bi) = 3a + 4bi$ and $g(a + bi) = (a+bi)^2$ 
+%\item \label{composeC3}
+% $f(r \cis \theta) = \log r + i \theta$ and $g(a+bi) = e^a \cis b$ 
+%\item \label{composeC4}
+% $f(r \cis \theta) = r^3 \cis (\theta + 2)$ and $g(r \cis \theta) = 2r \cis (\theta + 4)$ 
+%\item \label{composeC5}
+% $f(z) = |z|$ and $g(z) = -z$ 
+%\end{enumerate}
+%\end{exercise}
+\noindent\textbf{Exercise \ref{exercise:functions:ComposeExers-form2}:}\\
+\begin{enumerate}[(a)]
+\item 
+ $f\circ g(r \cis \theta) = (r^2+3)\cis(2\theta - \pi/6)$ and $g \circ f(r \cis \theta) = (r+3)^2 \cis (2\theta - \pi/3)$ 
+\item \label{composeC2}
+ $f\circ g(a + bi) = 3(a^2-b^2) + 8abi$ and $g\circ f (a + bi) = (3a+4bi)^2 = (9a^2 - 16b^2) + 24abi$ 
+\item \label{composeC3}
+ $f \circ g (a+bi) = a + bi$ and $g \circ f(r \cis \theta) = r \cis \theta$ 
+\item \label{composeC4}
+ $f \circ g(r \cis \theta) = 8r^3 \cis (\theta + 6)$  and $g \circ f(r \cis \theta) = 2r^3 \cis (\theta + 6)$ 
+\item \label{composeC5}
+ $f\circ g(z) = |z|$ and $g \circ f(z) = -|z|$ 
+\end{enumerate}
+
+%\begin{exercise}{ComposeExers-form3} 
+% The folllowing formulas define functions $f$ and~$g$ from~$\mathbb{Z}_k$ to~$\mathbb{Z}_k$ for different values of $k$. Find formulas for $f \compose g(x)$ and $g \compose f(x)$.
+%\begin{enumerate}[(a)]
+%\item \label{composeZ1}
+%$f,g:\mathbb{Z}_{15} \rightarrow \mathbb{Z}_{15}$, where  $f(n) = 7 \odot n \oplus 6$ and $g(m) = 6\odot m \oplus 2$ 
+%\item \label{composeZ2}
+%$f,g:\mathbb{Z}_{25} \rightarrow \mathbb{Z}_{15}$, where  $f(n) = n \odot n$ and $g(m) = m \oplus 3$ 
+%\item \label{composeZ3}
+%$f,g:\mathbb{Z}_{7} \rightarrow \mathbb{Z}_{7}$, where  $f(n) = 3\odot n \oplus 5$ and $g(m) =4 \odot m \oplus 6$ 
+%\item \label{composeZ4}
+%$f,g:\mathbb{Z}_{20} \rightarrow \mathbb{Z}_{20}$, where  $f(n) = 4\odot n \oplus 19$ and $g(m) =5 \odot m \oplus 9$ 
+%\end{enumerate}
+%\end{exercise}
+\noindent\textbf{Exercise \ref{exercise:functions:ComposeExers-form3}:}\\
+\begin{enumerate}[(a)]
+\item 
+$f\compose g(m) = 12 \odot m \oplus 5$ and $g \compose f(n) = 12\odot n \oplus 8$
+\item 
+$f\compose g(m) = m \odot m \oplus 6 \odot m \oplus 9$ and $g \compose f(n) = n\odot n \oplus 3$
+\item 
+$f\compose g(m) = 5 \odot m \oplus 2$ and $g \compose f(n) = 5\odot n \oplus 5$
+\item 
+$f\compose g(m) = 15$ and $g \compose f(n) = 4$
+\end{enumerate}
+
 
 \noindent\textbf{Exercise \ref{exercise:functions:CompositionTheoryExers}:} %KW updated
 \begin{enumerate}[(a)]

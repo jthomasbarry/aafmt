@@ -5,25 +5,22 @@
 \noindent\textbf{Exercise \ref{exercise:groups:trivial}:}
 %Prove that the trivial group is in fact a group according to Definition~\ref{group_definition}.
 \\
-A trivial group $(T, \circ )$, containing only the element $e$, is a set $T$ under the law of composition if it satisfies the following axioms. 
+A trivial group $(T, \circ )$, containing only the element $e$, is a group $T$ under the law of composition because it satisfies the four group axioms: 
 
 \begin{itemize}
 \item
-The set $T$ is closed under the law of composition.  That is, $e \circ e = e$.
+The set $T$ is closed under the law of composition because $e \circ e $ is equal to $e$ which is also in $T$.
 
 \item
-There exists an element $e \in T$, called the identity element, such that $e \circ e = e$.
+The element $e \in T$ is the identity element of $T$ since $e \circ e = e$.
 
 \item
-For each element $e \in T$, there exists an inverse element in $T$, denoted by $e^{-1}$, such that $e \circ e^{-1} = e^{-1} \circ e = e$.
+For each element $e \in T$, there exists an inverse element in $T$, because $e \circ e = e$.
 
 \item
-The law of composition is associative. That is, $(e \circ e) \circ e = e \circ (e \circ e) = e$.
+The law of composition is associative because $(e \circ e) \circ e = e \circ (e \circ e) = e$.
 \end{itemize}
-
-Therefore, since the set $T$ meets the criteria for each axiom set $T$ is a group.
-\\
-\\
+\medskip
 
 \noindent\textbf{Exercise \ref{exercise:groups:Rstar_group}:}
 \begin{enumerate}[(a)]
@@ -85,7 +82,7 @@ $|({\mathbb C}^{\ast}, \cdot)|$ has infinite order.
 
 \item
 %Is $({\mathbb C}^{\ast}, \cdot)$ an abelian group?  Justify your answer.
-Yes, by Excercise \ref{exercise:complex:15} complex numbers are abelian (commutative).
+Yes, by Exercise \ref{exercise:complex:15} complex numbers are abelian (commutative).
 \end{enumerate} 
 
 \noindent\textbf{Exercise \ref{exercise:groups:15}:}
@@ -207,6 +204,29 @@ $= (g_1 g_2 g_3, h_1 h_2 h_3)$\\
 $= (g_1 (g_2 g_3), h_1 (h_2 h_3))$\\
 $= (g_1, h_1) \circ (g_2 g_3, h_2 h_3)$
 \end{itemize}
+
+\textbf{Exercise \ref{exercise:groups:Z_2_n}:}\\
+Let $x,y\in Z_2=\{0,1\}$\\
+$\implies x\oplus y\in Z_2$ (because $Z_2$ closed under modular addition) (1)\\
+Let $Z_2^n=\{(a_1,a_2,...,a_n):a_i\in Z_2\}$\\
+Let $a=\{(a_1,a_2,...,a_n):a_i\in Z_2^n\}$ and $b=\{(b_1,b_2,...,b_n):b_i\in Z_2^n\}$\\
+Then we have $a+b=(a_1,a_2,...,a_n)+(b_1,b_2,...,b_n)=(a_1+b_1,a_2+b_2,...,a_n+b_n)$\\
+According to (1), we have $a_1+b_1\in Z_2$, $a_2+b_2\in Z_2$,...,$a_n+b_n\in Z_2$\\
+$\implies a+b\in Z_2^n$\\
+$\implies Z_2^n$ is closed under this operation.\\
+(i) identity element is $(0,0,...,0)\in Z_2^n$\\
+(ii) We have $(a_1,a_2,...,a_n)+(a_1,a_2,...,a_n)=(0,0,...,0)$\\
+$\implies$  each element has its own inverse in $Z_2^n$\\
+(iii) Associative: Let $a,b,c\in Z_2^n$, then we have:\\
+$(a+b)+c =[(a_1,a_2,...,a_n)+(b_1,b_2,...,b_n)]+(c_1,c_2,...,c_n)$\\
+$=(a_1+b_1,a_2+b_2,...,a_n+b_n)+(c_1,c_2,...,c_n)$\\
+$=(a_1+b_1+c_1,a_2+b_2+c_2,...,a_n+b_n+c_n)$\\
+$=(a_1,a_2,...,a_n)+(b_1+c_1,b_2+c_2,...,b_n+c_n)$\\
+$=(a_1,a_2,...,a_n)+[(b_1,b_2,...,b_n)+(c_1,c_2,...,c_n)]$\\
+$=a+(b+c)$\\
+Therefore, $Z_2^n$ is a group under the defined operation.\\
+\\
+
 
 \noindent\textbf{Exercise \ref{exercise:groups:ident}:}
 %Given two elements $g,h$  of a group ($G,\circ$). Show that $g$ is the identity element of $G$ if and only if  $g \circ h = h$.
@@ -980,7 +1000,7 @@ which implies $cd = dc$ for all $c,d \in G$, \quad (by substitution)\\
 which was the statement to be proved.
 \\
 
-\noindent\textbf{Exercise \ref{exercise:groups:48}:}  KW update the solution it's incomplete
+\noindent\textbf{Exercise \ref{exercise:groups:48}:} 
 \begin{enumerate}[(a)]
 \item 
 %Complete the proof that $ax=b$ has a unique solution by filling in the blanks:
@@ -1004,19 +1024,7 @@ which was the statement to be proved.
 %\end{align*} 
 %
 %This completes the proof that the solution both exists, and is unique.
-	\begin{multicols}{2}
-	\begin{enumerate}
-	\item
-	associative
-	
-	\item
-	def. of inverse
-	
-	\item
-	def. of identity
-	\end{enumerate}
-	\end{multicols}
-	
+associative;  	def. of inverse;  def. of identity; associative; def. of inverse; def. of identity
 \item
 %Prove now the existence and uniqueness of the solution of $xa = b$ (similar to part (a)).
 Suppose that $xa = b$. Since, $a \in G$ and $G$ is a group, it follow that $a^{-1}$ exists.\\
@@ -1644,27 +1652,6 @@ Suppose that $a$ is a generator of $\mathbb{Q}$, i.e. $\langle a \rangle = \math
 %$\implies AB$ is invertible $\implies AB\in GL_2(R)$\\
 %So $GL_2(R)$ is closed under binary operation.\\
 %\\
-\textbf{Exercise \ref{ex:eoc:10}:}\\
-Let $x,y\in Z_2=\{0,1\}$\\
-$\implies x\oplus y\in Z_2$ (because $Z_2$ closed under modular addition) (1)\\
-Let $Z_2^n=\{(a_1,a_2,...,a_n):a_i\in Z_2\}$\\
-Let $a=\{(a_1,a_2,...,a_n):a_i\in Z_2^n\}$ and $b=\{(b_1,b_2,...,b_n):b_i\in Z_2^n\}$\\
-Then we have $a+b=(a_1,a_2,...,a_n)+(b_1,b_2,...,b_n)=(a_1+b_1,a_2+b_2,...,a_n+b_n)$\\
-According to (1), we have $a_1+b_1\in Z_2$, $a_2+b_2\in Z_2$,...,$a_n+b_n\in Z_2$\\
-$\implies a+b\in Z_2^n$\\
-$\implies Z_2^n$ is closed under this operation.\\
-(i) identity element is $(0,0,...,0)\in Z_2^n$\\
-(ii) We have $(a_1,a_2,...,a_n)+(a_1,a_2,...,a_n)=(0,0,...,0)$\\
-$\implies$  each element has its own inverse in $Z_2^n$\\
-(iii) Associative: Let $a,b,c\in Z_2^n$, then we have:\\
-$(a+b)+c =[(a_1,a_2,...,a_n)+(b_1,b_2,...,b_n)]+(c_1,c_2,...,c_n)$\\
-$=(a_1+b_1,a_2+b_2,...,a_n+b_n)+(c_1,c_2,...,c_n)$\\
-$=(a_1+b_1+c_1,a_2+b_2+c_2,...,a_n+b_n+c_n)$\\
-$=(a_1,a_2,...,a_n)+(b_1+c_1,b_2+c_2,...,b_n+c_n)$\\
-$=(a_1,a_2,...,a_n)+[(b_1,b_2,...,b_n)+(c_1,c_2,...,c_n)]$\\
-$=a+(b+c)$\\
-Therefore, $Z_2^n$ is a group under the defined operation.\\
-\\
 \textbf{Exercise \ref{ex:eoc:11}:}\\
 Let $G$ is a group with 6 elements. We have:\\
 $e\in G$\\

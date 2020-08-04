@@ -1154,7 +1154,7 @@ From parts (h) and (i) of Exercise \ref{exercise:modular:modeq3} we see that eve
 %Later on (in the Equivalence Relations chapter) we'll give the ``correct'' mathematical definition of the integers mod $n$. 
 
 
-\section{The integers mod $n$ (also known as ${\mathbb Z}_n$)\quad
+\section{The integers mod $n$ (a.k.a. ${\mathbb Z}_n$)\quad
 \sectionvideohref{EwMbFYQCpfs&index=10&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{sec:intMod_n}
 
 \subsection{Remainder arithmetic}\label{ArithWithRems}
@@ -1515,7 +1515,7 @@ $\odot$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 
 %\medskip{}
 There is an important feature exhibited in both Table~\ref{groups_Z8_add_table} and Table ~\ref{groups_Z8_mult_table} that is easy to overlook.
-Notice that every entry in the table is also an element of ${\mathbb Z}_8$. You can think of the set $\{0,...,7\}$ as a closed box, and when you add or multiply any two numbers in that box mod $8$, you always get another number in that box, never outside of it (indeed because addition and multiplication mod $8$ return a remainder that is some number $0-7$). We express this mathematically by saying that ${\mathbb Z}_8$ is \term{closed} \index{Closure!integers mod n} under addition and multiplication mod $8$. It seems reasonable that the same should be true for any ${\mathbb Z}_n$, and we state this formally as a proposition (as mathematicians are wont to do):
+Notice that every entry in the table is also an element of ${\mathbb Z}_8$. You can think of the set $\{0,...,7\}$ as a closed box, and when you add or multiply any two numbers in that box mod $8$, you always get another number in that box, never outside of it (indeed because addition and multiplication mod $8$ return a remainder that is some number 0-7). We express this mathematically by saying that ${\mathbb Z}_8$ is \term{closed} \index{Closure!integers mod n} under addition and multiplication mod $8$. It seems reasonable that the same should be true for any ${\mathbb Z}_n$, and we state this formally as a proposition (as mathematicians are wont to do):
 
 %While we understand why the entries in the tables below are all integers in ${\mathbb Z}_8$, doesn't it seem a bit fortuitous, even a miracle, that this is true?  How many groups of objects in life can you pick any two out of, combine them in some way, and from that process generate another object in that group, never generating any object outside of it?  You can think of the set $\{0,...,7\}$ as a closed box, and when you add or multiply any two numbers in that box mod $8$, you always get another number in that box, never outside of it.  This fact, this happenstance is a property we call \term{closure} \index{Closure!definition}.  We would say that ${\mathbb Z}_8$ is closed under addition and multiplication mod $8$.
 
@@ -1728,7 +1728,7 @@ Prove  part (\ref{distrib}) of Proposition \ref{proposition:modular:Zn_comm_asso
 \subsection{Group: a central concept in abstract algebra}\label{DefOfGroup}
 It's time for us to make a confession. We have an ulterior motive. We've been spending lots of time and effort discussing modular arithmetic because it provides good examples of one of the central concepts in abstract algebra, namely the notion of a \emph{group}.
 
-Notice that the set ${\mathbb Z}_n$ with the operation of $\oplus$ has an identity, and inverses, and the property of closure. Furthermore, ${\mathbb Z}_n$ is associative under $\oplus$, as we just showed.  Any combination of a set and an operation that has those three properties, as well as the associative property, is called a \emph{group}\index{Group!definition}
+Notice that the set ${\mathbb Z}_n$ with the operation of $\oplus$ has an identity, and inverses, and the property of closure. Furthermore, ${\mathbb Z}_n$ is associative under $\oplus$, as we just showed.  Any combination of a set and an operation that has those three properties, as well as the associative property, is called a \emph{group}. Here's the formal definition:
 
 \begin{defn} \label{definition:modular:group} A \textbf{\textit{group}}\index{Group!definition} is a set combined with an operation that has the following properties:
 \begin{itemize}
@@ -1740,7 +1740,7 @@ Notice that the set ${\mathbb Z}_n$ with the operation of $\oplus$ has an identi
 \end{defn}
 
 \noindent
-Notice that we do  \emph{not} include the commutative property in this list. Later on we'll see examples of groups that are \emph{not} commutative. 
+Notice that we do  \emph{not} include the commutative property in this list. Later on we'll see examples of groups that are \emph{not} commutative. Groups that do have the commutative property are called \term{abelian groups}. 
 
 Now that we've defined groups, in retrospect we may look back and see that we've encountered groups before. In fact, we've been working with groups since the very beginning of the book! 
 
@@ -2084,7 +2084,7 @@ This second example is also in C++, but uses recursion.
 Let's look now at another type of  problem, which has played a key role in the history of mathematics.
 
 \begin{defn}\label{definition:modular:dioequiv}  %%KW changed label it duplicated one used previously.  I checked for other uses in hints & study_guide and found none.
-A \term{Diophantine equation} in the variables $m, n$ is an equation of the form
+A \term{Diophantine equation}\index{Diophantine equation}\index{Equation,Diophantine} in the variables $m, n$ is an equation of the form
 \[ a \cdot m + b \cdot n = c\]
 where $a,b,c$ are integers, and $m$ and $n$  are assumed to have integer values.
  \end{defn}
@@ -2197,6 +2197,8 @@ $389m + 50n = 270$
 $4801m + 500n = 1337$
 \item
 $ 3524m + 7421n = 333$
+\item
+$20m + 17n = 12$
 \end {enumerate}
 \end {exercise}
 
@@ -2288,6 +2290,8 @@ $4x \equiv 17 \pmod{23}$
 $503x \equiv 919 \pmod{1002}$
 \item
 $504x \equiv 919 \pmod{1002}$
+\item
+$423x + 60 \equiv 720 \pmod(101)$
 \end{enumerate}
 
 \end{exercise}

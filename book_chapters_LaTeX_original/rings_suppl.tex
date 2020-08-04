@@ -1,0 +1,551 @@
+
+\section{Solutions for ``Rings''}
+\noindent\textbf{\textit{ (Chapter \ref{rings}})}\bigskip
+
+\noindent\textbf{Exercise \ref{exercise:rings:threeTermsofQring}}
+\begin{enumerate}[(a)]
+\item Suppose we include four terms of ${\mathbb Q}[\sqrt[3]{2}]$ in the polynomial expansion.  Then an arbitrary element can be written as $d_0+d_1\sqrt[3]{2}+d_2\sqrt[3]{4}+d_3(\sqrt[3]{2})^3$, where $d_0,d_1,d_2,d_3\in{\mathbb Q}$. This can be rewritten as $d_0+d_1\sqrt[3]{2}+d_2\sqrt[3]{4}+2d_3=(d_0+2d_3)+d_1\sqrt[3]{2}+d_2\sqrt[3]{4}$.  Let $a_0=d_0+2d_3$, $a_1=d_1$, and $a_2=d_2$, so that the element can be written as $a_0+a_1\sqrt[3]{2}+a_2\sqrt[3]{4}$, where $a_0,a_1,a_2\in {\mathbb Q}$.  This shows that adding another term does not add any new elements.
+\item Suppose we include five terms of ${\mathbb Q}[\sqrt[3]{2}]$ in the polynomial expansion.  We can continue our work from part $(a)$ and let our fifth term be $d_4(\sqrt[3]{2})^4=2d_4\sqrt[3]{2}$.  If we let $a_1=d_1+2d_4\in{\mathbb Q}$, then ${\mathbb Q}[\sqrt[3]{2}]=a_0+a_1\sqrt[3]{2}+a_2\sqrt[3]{4}\in{\mathbb Q}[\sqrt[3]{2}]$.
+\item If we add additional terms, then each additional term will have the form $d_n(\sqrt[3]{2})^n$, where $n\ge 3$.  This term can be rewritten as an integer multiple of either $\sqrt[3]{2}$, $\sqrt[3]{4}$, or $1$.  So the new term can always be included in one of the previous terms. So nothing new is added.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:rings:addClosureNotInherited}}
+One example is the following. Consider the set of even numbers, $2{\mathbb Z}$.  This set is closed under addition (even + even = even).  Now consider the set $S=\{2,4,6\}\subset 2{\mathbb Z}$.  We know that $4+6=10\notin S$, so the additive closure property is \emph{not} inherited from $2{\mathbb Z}$.
+
+\noindent\textbf{Exercise \ref{exercise:rings:identityQcuberoot2}}
+To show that $1$ is the identity element of ${\mathbb Q}[\sqrt[3]{2}]$, we must show that $1\in{\mathbb Q}[\sqrt[3]{2}]$ and $a\cdot 1=1\cdot a=a$, for all $a\in{\mathbb Q}[\sqrt[3]{2}]$. We can say that $1=1+0\sqrt[3]{2}+0\sqrt[3]{4}\in{\mathbb Q}[\sqrt[3]{2}]$. Also, we know that  $a\cdot1=1\cdot a=a$ is an inherited property of ${\mathbb Q}[\sqrt[3]{2}]\subset{\mathbb R}$.
+
+\noindent\textbf{Exercise \ref{exercise:rings:comm/distPropsQcuberoot2}}
+
+Since all of the numbers in ${\mathbb Q}[\sqrt[3]{2}]$ are real numbers, and the real numbers commutative under addition and uphold the distributive property, then it follows automatically that numbers in ${\mathbb Q}[\sqrt[3]{2}]$ also commute under addition and uphold the distributive property.  In other words, ${\mathbb Q}[\sqrt[3]{2}]$ inherits these properties from the real numbers.
+
+\noindent\textbf{Exercise \ref{exercise:rings:Qsqrt2ring}}
+Since ${\mathbb Q}[2^\frac{1}{2}]\subset{\mathbb R}$, we can say that ${\mathbb Q}[2^\frac{1}{2}]$ inherits the associative property, commutative property of addition, and the distributive property from ${\mathbb R}$.  Now we must show the remaining properties:  closure, zero, one, and additive inverse.
+\begin{enumerate}
+    \item Closure:  Let $a+b\cdot 2^\frac{1}{2}$ and $c+d\cdot 2^\frac{1}{2}$ be arbitrary elements of ${\mathbb Q}[2^\frac{1}{2}]$.  Then $(a+b\cdot 2^\frac{1}{2})+(c+d\cdot 2^\frac{1}{2})=(a+c)+(b+d)\cdot 2^\frac{1}{2}\in{\mathbb Q}[2^\frac{1}{2}]$,  Also, $(a+b\cdot 2^\frac{1}{2})\cdot (c+d\cdot 2^\frac{1}{2})=(ac+2bd)+(ad+bc)\cdot 2^\frac{1}{2}\in{\mathbb Q}[2^\frac{1}{2}]$.  So, ${\mathbb Q}[2^\frac{1}{2}]$ is closed.
+    \item Zero:  $0=0+0\cdot 2^\frac{1}{2}\in{\mathbb Q}[2^\frac{1}{2}]$ so the zero property is inherited from ${\mathbb R}$.
+    \item One:  $1=1+0\cdot 2^\frac{1}{2}\in{\mathbb Q}[2^\frac{1}{2}]$ so the multiplicative identity property is inherited from ${\mathbb R}$.
+    \item Additive inverse:  Consider the arbitrary element $a+b\cdot 2^\frac{1}{2}\in{\mathbb Q}[2^\frac{1}{2}]$.  Then $-(a+b\cdot 2^\frac{1}{2})=-a-b\cdot 2^\frac{1}{2}$ is also in ${\mathbb Q}[2^\frac{1}{2}]$  since $-a,-b\in{\mathbb Q}$.  Once again the additive inverse property is inherited from ${\mathbb R}$.
+\end{enumerate}
+We have shown that ${\mathbb Q}[2^\frac{1}{2}]$ has all seven ring properties, so ${\mathbb Q}[2^\frac{1}{2}]$ is a ring.
+
+\noindent\textbf{Exercise \ref{exercise:rings:ringMatrices}}
+\begin{enumerate}[(a)]
+\item We will show that ${\mathbb M}_2$ with elements in ${\mathbb R}$ has all seven ring properties:
+\begin{enumerate}[(1)]
+    \item Closure:  Let $X,Y$ be arbitrary elements in ${\mathbb M}_2$ such that\\
+    $X=
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}$
+and $Y=
+\begin{bmatrix}
+e & f\\
+g & h
+\end{bmatrix}$
+where $a,b,c,d\in{\mathbb R}$.  Then\\
+$X+Y=
+\begin{bmatrix}
+a+e & b+f\\
+c+g & d+h
+\end{bmatrix}
+\in{\mathbb M}_2$ and $XY=
+\begin{bmatrix}
+ae+bg & af+bh\\
+ce+dg & cf+dh
+\end{bmatrix}
+\in{\mathbb M}_2$.  So ${\mathbb M}_2$ is closed under matrix addition and multiplication.
+\item Associativity:  Let $X,Y\in{\mathbb M}_2$ as defined above and let $Z\in{\mathbb M}_2$ such that $Z=
+\begin{bmatrix}
+i & j\\
+k & l
+\end{bmatrix}$.\\  
+Then $(X+Y)+Z=
+\begin{bmatrix}
+a+e+i & b+f+j\\
+c+g+k & d+h+l
+\end{bmatrix}
+=X+(Y+Z)$.\\  
+So ${\mathbb M}_2$ is associates over matrix addition.\\
+
+For multiplication,
+\begin{align*}
+(X\cdot Y)\cdot Z&=\left(
+\begin{bmatrix}
+ac+bg & af+bh\\
+ce+dg & cf+dh
+\end{bmatrix}
+\right)\cdot
+\begin{bmatrix}
+i & j\\
+k & l
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+aci+bgi+afk+bhk & acj+bgj+afl+bhl\\
+cei+dgi+cfk+dhk & cej+dgj+cfl+dhl
+\end{bmatrix}.
+\end{align*}
+Also, 
+\begin{align*}
+X\cdot(Y\cdot Z)&=
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+\cdot\left(
+\begin{bmatrix}
+ei+fk & ej+fl\\
+gi+hk & gj+hl
+\end{bmatrix}
+\right)\\
+&=
+\begin{bmatrix}
+aei+afk+bgi+bhk & aej+afl+bgj+bhl\\
+cei+cfk+dgi+dhk & cej+cfl+dgj++dhl
+\end{bmatrix}.
+\end{align*}
+Since these are the same, we can say that ${\mathbb M}_2$ associates over matrix multiplication.
+
+Alternatively, Exercise~\ref{exercise:Sigma:sigmaAssoc} shows that matrix multiplication is associative in general.
+\item Zero:  $0=
+\begin{bmatrix}
+0 & 0\\
+0 & 0
+\end{bmatrix}$
+is in ${\mathbb M}_2$ and $X+0=0+X=X$ for all $X\in{\mathbb M}_2$. 
+\item One:  $I=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}$
+is in ${\mathbb M}_2$ and $X\cdot I=I\cdot X=X$ for all $X\in{\mathbb M}_2$.
+\item Commutativity of addition:  Let $X,Y\in{\mathbb M}_2$ as defined earlier.  Then $X+Y=
+\begin{bmatrix}
+a+e & b+f\\
+c+g & d+h
+\end{bmatrix}=
+\begin{bmatrix}
+e+a & f+b\\
+g+c & h+d
+\end{bmatrix}
+=Y+X$.\\  
+So ${\mathbb M}_2$ commutes over addition.
+\item Additive inverse:  For every $X=
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+\in{\mathbb M}_2$ there exists some $-X=
+\begin{bmatrix}
+-a & -b\\
+-c & -d
+\end{bmatrix}
+\in{\mathbb M}_2$ such that $X+-X=-X+X=0$.\\  
+So the additive inverse property holds for ${\mathbb M}_2$.
+\item Distributive Property:  Let $X,Y,Z\in{\mathbb M}_2$ as defined earlier.  Then 
+\begin{align*}
+X\cdot(Y+Z)&=
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+\cdot\left(
+\begin{bmatrix}
+e+i & f+j\\
+g+k & h+l
+\end{bmatrix}
+\right)\\
+&=
+\begin{bmatrix}
+ae+ai+bg+bk & af+aj+bh+bl\\
+ce+ci+dg+dk & cf+cj+dh+dl
+\end{bmatrix} and
+\end{align*}
+\begin{align*}
+XY+XZ&=
+\begin{bmatrix}
+ae+bg & af+bh\\
+ce+dg & cf+dh
+\end{bmatrix}+
+\begin{bmatrix}
+ai+bk & aj+bl\\
+ci+dk & cj+dl
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+ae+bg+ai+bk & af+bh+aj+bl\\
+ce+dg+ci+dk & cf+dh+cj+dl
+\end{bmatrix}.
+\end{align*}
+But these are equal, so $X(Y+Z)=XY+XZ$ for all $X,Y,Z\in{\mathbb M}_2$.\\  
+Also,
+\begin{align*}
+(Y+Z)\cdot X&=\left(
+\begin{bmatrix}
+e+i & f+j\\
+g+k & h+l
+\end{bmatrix}
+\right)\cdot
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+ae+ai+cf+cj & be+bi+df+dj\\
+ag+ak+ch+cl & bg+bk+dh+dl
+\end{bmatrix} and
+\end{align*}
+\begin{align*}
+YX+ZX&=
+\begin{bmatrix}
+ae+cf & be+df\\
+ag+ch & bg+dh
+\end{bmatrix}+
+\begin{bmatrix}
+ai+cj & bi+dj\\
+ak+cl & bk+dl
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+ae+cf+ai+cj & be+df+bi+dj\\
+ag+ch+ak+cl & bg+dh+bk+dl
+\end{bmatrix}.
+\end{align*}
+These are also equal, so $(Y+Z)X=YX+ZX$ for all $X,Y,Z\in{\mathbb M}_2$ and the distributive property holds for all $X,Y,Z\in{\mathbb M}_2$.
+\end{enumerate}
+We have shown that ${\mathbb M}_2$ satisfies all seven ring properties, so ${\mathbb M}_2$ is a ring.
+\item Consider for example $X,Y\in{\mathbb M}_2$ such that $X=
+\begin{bmatrix}
+1 & 2\\
+3 & 4
+\end{bmatrix}$ and $Y=
+\begin{bmatrix}
+4 & 3\\
+2 & 1
+\end{bmatrix}$.  Then $XY=
+\begin{bmatrix}
+8 & 5\\
+20 & 13
+\end{bmatrix}$
+but $YX=
+\begin{bmatrix}
+13 & 20\\
+5 & 8
+\end{bmatrix}$.
+Clearly, $XY\neq YX$, so matrix mulitplication does not commute.
+\item Take a look at part(a)(7) above.  Here we said that\\ 
+$X\cdot(Y+Z)=
+\begin{bmatrix}
+ae+ai+bg+bk & af+aj+bh+bl\\
+ce+ci+dg+dk & cf+cj+dh+dl
+\end{bmatrix}$ but\\ $(Y+Z)\cdot X=
+\begin{bmatrix}
+ae+cf+ai+cj & be+df+bi+dj\\
+ag+ch+ak+cl & bg+dh+bk+dl
+\end{bmatrix}$.\\
+These are not the same, so $X\cdot(Y+Z)\neq(Y+Z)\cdot X$.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:rings:circulant_matrices}}
+For this proof, we will define $A,B,C\in C_3({\mathbb R})$ such that\\
+$A=
+\begin{bmatrix}
+a_1 & c_1 & b_1\\
+b_1 & a_1 & c_1\\
+c_1 & b_1 & a_1
+\end{bmatrix},
+B=
+\begin{bmatrix}
+a_2 & c_2 & b_2\\
+b_2 & a_2 & c_2\\
+c_2 & b_2 & a_2
+\end{bmatrix}$ 
+and $C=
+\begin{bmatrix}
+a_3 & c_3 & b_3\\
+b_3 & a_3 & c_3\\
+c_3 & b_3 & a_3
+\end{bmatrix}$.
+
+\underline{Closure}: 
+$A+B=
+\begin{bmatrix}
+a_1+a_2 & c_1+c_2 & b_1+b_2\\
+b_1+b_2 & a_1+a_2 & c_1+c_2\\
+c_1+c_2 & b_1+b_2 & a_1+a_2
+\end{bmatrix}$,
+which is also a circulant matrix in $C_3({\mathbb R})$.  So, $C_3({\mathbb R})$ is closed under addition.
+
+Also, $A\cdot B=
+\begin{bmatrix}
+a_1a_2+b_1b_2+b_2c_1 & a_1c_2+a_2c_1+b_1b_2 & a_1b_2+a_2b_1+c_1c_2\\
+a_1b_2+a_2b_1+c_1c_2 & a_1a_2+b_1b_2+b_2c_1 & a_1c_2+a_2c_1+b_1b_2\\
+a_1c_2+a_2c_1+b_1b_2 & a_1b_2+a_2b_1+c_1c_2 & a_1a_2+b_1b_2+b_2c_1
+\end{bmatrix}$.  Close inspection will show that $A\cdot B$ is also a circulant matrix.  So $A\cdot B\in C_3({\mathbb R})$ and $C_3({\mathbb R})$ is closed under multiplication.
+
+\underline{Associativity}:  We have shown that matrix addition and multiplication are associative.
+
+\underline{Zero}:  $0=
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{bmatrix}\in C_3({\mathbb R})$.
+
+\underline{One}:  $I=
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}\in C_3({\mathbb R})$.
+
+\underline{Commutativity of addition}:  We know that matrix addition is commutative.
+
+\underline{Additive inverse}:  Given $A\in C_3({\mathbb R})$ as defined above, we can define the additive inverse of $A$ as $-A=
+\begin{bmatrix}
+-a_1 & -c_1 & -b_1\\
+-b_1 & -a_1 & -c_1\\
+-c_1 & -b_1 & -a_1
+\end{bmatrix} \in C_3({\mathbb R})$.  Then $A+(-A)=-A+A=0$.
+
+\underline{Distributive Law}:  We know that matrices obey the left and right distributive laws.  In other words:  $A(B+C)=AB+AC$ and $(B+C)A=BA+CA$.
+
+We have shown that $C_3({\mathbb R})$ has all seven ring properties, so $C_3({\mathbb R})$ is a ring.
+
+
+
+\noindent\textbf{Exercise \ref{exercise:rings:addIdenUnique}}
+We need to show that if $x$ is an additive identity, then $x=0$.
+\begin{align*}
+&\text{x is an additive identity} & \text{Given}\\
+&x+0=0+x=0 & \text{Definition of Additive Identity}\\
+&\text{0 is an additive identity} & \text{Given}\\  
+&0+x=x+0=x & \text{Definition of Additive Identity} \\
+&x=0 & \text{Substitution}
+\end{align*}
+
+\noindent\textbf{Exercise \ref{exercise:rings:ModZeroProducts}}
+\begin{enumerate}[(a)]
+    \item $2\odot 3=0$ in ${\mathbb Z}_6$.
+    \item If $n$ is not prime then there exists at least one pair of nonzero factors $a,b\in{\mathbb Z}_n$ such that $ab=n$.  So we can say that $\bmod(a,n)\odot\bmod(b,n)=\bmod(n,n)=0$.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:rings:MultZeroRing}}
+\begin{align*}
+&0=0+0 & \text{Definiton of Additive Identity}\\
+&x\cdot0=x\cdot(0+0) & \text{Substitution}\\
+&x\cdot0=x\cdot0+x\cdot0 & \text{Distributive Property}\\
+&-(x\cdot 0)+x\cdot0=-(x\cdot 0)+(x\cdot0+x\cdot0) & \text{Substitution}\\
+&-(x\cdot0)+x\cdot0=(-(x\cdot 0)+x\cdot0)+x\cdot0 & \text{Associativity of Addition}\\
+&0=(0)+x\cdot0 & \text{Additive Inverse}\\
+&0=x\cdot 0 & \text{Additive Identity}
+\end{align*}
+
+
+\noindent\textbf{Exercise \ref{exercise:rings:phi_iso}}
+%%Answer: $f_1(p(x,y))=p(x,y)$ and $f_2(p(x,y))=p(x,y)$. In this case, $f_1$ is called the identity isomorphism
+
+
+
+
+
+
+
+\noindent\textbf{Exercise \ref{exercise:rings:kernel_props}}
+\begin{enumerate}
+\item If $a,b\in f^{-1}(0)$, then $a+b\in f^{-1}(0)$.
+\begin{align*}
+&a,b\in f^{-1}(0) & \text{given}\\
+&f(a)=0,f(b)=0 & \text{def. of $f^{-1}(0)$}\\
+&f(a+b)=f(a)+f(b) & \text{def. of homomorphism}\\
+&f(a+b)=0+0=0 & \text{sub. and properties of 0}
+\end{align*}
+\item If $a\in f^{-1}(0)$ and $b\in R_1$ then $ab\inf^{-1}(0)$.
+\begin{align*}
+&a\in f^{-1}(0),~b\in R_1 & \text{given}\\
+&f(a)=0 & \text{definition of $f^{-1}(0)$}\\
+&f(ab)=f(a)f(b) & \text{def. of homomorphism}\\
+&f(ab)=0f(b)=0 & \text{sub. and properties of 0(pg 6)}\\
+&ab\in f^{-1}(0) & \text{def. of $f^{-1}(0)$}
+\end{align*}
+\item $0\in f^{-1}(0)$
+\begin{align*}
+f(a)&=f(a+0) & \text{Def. of additive identity}\\
+f(a+0)&=f(a)+f(0) & \text{def. of homomorphism}\\
+f(a)&=f(a)+f(0) & \text{substitution}\\
+f(0+a)&=f(0)+f(a) & \text{def. of homomorphism}\\
+f(a)&=f(0)+f(a) & \text{substitution}\\
+f(0)&=0 & \text{def. of additive identity}\\
+0&\in f^{-1}(0) & \text{def. of $f^{-1}(0)$}
+\end{align*}
+\item If $a\in f^{-1}(0)$, then $-a\in f^{-1}(0)$
+\begin{align*}
+f(a+(-a))&=f(0) & \text{def. of additive inverse}\\
+f(a)+f(-a)&=f(0) & \text{homomorphism property}\\
+0+f(-a)&=0 & \text{given and (3)}\\
+f(-a)&=0 & \text{additive identity}\\
+-a&\in f^{-1}(0) & \text{def. of $f^{-1}(0)$}
+\end{align*}
+\end{enumerate}
+
+
+\noindent\textbf{Exercise \ref{exercise:rings:matrixIso}}
+First, we must show that $\phi$ is a bijection.  To do this, we need to show that $\phi$ is invertible.  In other words, we must show that for every matrix $Y\in R_2$, there exists some $p\in R_1$, such that $\phi^{-1}(Y)=p$.  Let's consider an arbitrary element $Y=
+\begin{bmatrix}
+a & b \sqrt{2}\\
+b \sqrt{2} & a
+\end{bmatrix}
+\in R_2$.  We can certainly find the element, $p=a+b\sqrt{2}\in R_1$, such that $\phi^{-1}(Y)=p$.  So, $\phi$ is a bijection.
+
+Next, we need to show that Equations \eqref{iso_add} and \ref{iso_mult} hold true for our function.  For our task, let's define two arbitrary elements of $R_1$, $p=a+b\sqrt{2}$ and $q=c+d\sqrt{2}$. Also, remember that, in this case, $+_1$ and $\cdot_1$ represent addition and multiplication of polynomials and $+_2$ and $\cdot_2$ represent addition and multiplication of matrices.  Let's look at addition first:
+\begin{align*}
+\phi(p+_1q)&=\phi((a+b\sqrt{2})+_1(c+d\sqrt{2}))\\
+&=\phi((a+c)+_1(b+d)\sqrt{2})\\
+&=
+\begin{bmatrix}
+a+c & b+d \sqrt{2}\\
+b+d \sqrt{2} & a+c
+\end{bmatrix}.
+\end{align*}
+Also,
+\begin{align*}
+\phi(p)+_2\phi(q)&=\phi(a+b\sqrt{2})+_2(c+d\sqrt{2})\\
+&=
+\begin{bmatrix}
+a & b \sqrt{2}\\
+b \sqrt{2} & a
+\end{bmatrix} +_2
+\begin{bmatrix}
+c & c \sqrt{2}\\
+c \sqrt{2} & c
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+a+c & b+d \sqrt{2}\\
+b+d \sqrt{2} & a+c
+\end{bmatrix}.
+\end{align*}
+So $\phi(p+_1q)=\phi(p)+_2\phi(q)$ and the first equation is satisfied.  Let's move on to multiplication:
+\begin{align*}
+\phi(p\cdot_1q)&=\phi((a+b\sqrt{2})\cdot_1(c+c\sqrt{2}))\\
+&=\phi((a+c_2bd)+_1(ad+bc))\sqrt{2})\\
+&=
+\begin{bmatrix}
+a+c+2bd & (ad+bc) \sqrt{2}\\
+(ad+bc) \sqrt{2} & a+c+2bd
+\end{bmatrix}.
+\end{align*}
+Also, 
+\begin{align*}
+\phi(p)\cdot_2\phi(q)&=\phi(a+b\sqrt{2})\cdot_2(c+d\sqrt{2})\\
+&=
+\begin{bmatrix}
+a & b \sqrt{2}\\
+b \sqrt{2} & a
+\end{bmatrix} \cdot_2
+\begin{bmatrix}
+c & c \sqrt{2}\\
+c \sqrt{2} & c
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+a+c+2bd & (ad+bc) \sqrt{2}\\
+(ad+bc) \sqrt{2} & a+c+2bd
+\end{bmatrix}.
+\end{align*}
+So $\phi(p\cdot_1q)=\phi(p)\cdot_2\phi(q)$ and the second equation is satisfied.  We have shown that $\phi$ is indeed an isomorphism.
+
+
+\noindent\textbf{Exercise \ref{exercise:rings:kernelClosures}}
+Let's begin with two arbitrary elements of $Ker(f)$, $a=7n$ and $b=7m$, where $n,m\in{\mathbb Z}$ and show that all three ideal properties hold.
+\begin{enumerate}
+\item $a+b=7n+7m=7(n+m)$.  Since ${\mathbb Z}$ is closed under addition, then $n+m\in{\mathbb Z}$ and $a+b=7(n+m)\in Ker(f)$.  So we have additive closure.
+\item $a\cdot b=7n\cdot 7m=7(7nm)$.  Since ${\mathbb Z}$ is closed under multiplication, then $7nm\in{\mathbb Z}$ and $a\cdot b=7(7n\cdot m)\in Ker(f)$.  So we have multiplicative closure.
+\item Consider $a=7n\in Ker(f)$.  We can define $-a$ as $7(-n)$.  If $n\in{\mathbb Z}$, then $-n\in{\mathbb Z}$.  So, $-a=7(-n)\in Ker(f)$ and we have additive inverse closure.
+\end{enumerate}
+
+
+\noindent\textbf{Exercise \ref{exercise:rings:complexHomoKer}}
+\begin{enumerate}[(a)]
+\item Let's look at a specific case:
+\begin{align*}
+f((4+7i)+(\frac{1}{2}+\frac{1}{3}i))&=f(\frac{9}{2}+\frac{22}{3}i)=\frac{9}{2}\\
+f(4+7i)+f(\frac{1}{2}+\frac{1}{3}i)&=4+\frac{1}{2}=\frac{9}{2}
+\end{align*}
+They agree! it seems that the additive relation hold. We must also try the multiplicative relation.
+\begin{align*}
+f((4+7i)\cdot(\frac{1}{2}+\frac{1}{3}i))&=f(-\frac{1}{3}+\frac{29}{6}i)=-\frac{1}{3}\\
+f(4+7i)\cdot f(\frac{1}{2}+\frac{1}{3}i)&=4*\frac{1}{2}=2
+\end{align*}
+The multiplication does not agree. Since Equation \eqref{eq:homo_mult} is not satisfied, $f$ is not a ring homomorphism.
+\item Remember that the kernel is the set $\{x\in R: f(x)=0\}$. Here $f(x)=0$ whenever $a=0$, therefore the $Ker(f)=\{a+bi\in{\mathbb C}: a=0\}$.
+\item To show that $Ker(f)$ is an ideal, we must show that $Ker(f)$ is closed under addition, multiplication, and additive inverse.
+You will find that multiplicative closure does \emph{not} hold for $Ker(f)$, which we will show with a counterexample:
+Consider, for example, $z,w\in Ker(f)$ such that $z=0+2i$ and $w=0+3i$. We have $z\cdot w=6i^2=6(-1)=-6+0i$ which is \emph{not} in $Ker(f)$.  So $Ker(f)$ is \emph{not} an ideal.
+\end{enumerate}
+
+
+\noindent\textbf{Exercise \ref{exercise:rings:int_ideal}}
+We know from set theory that $J_1\cap J_2\subset J_1,J_2$.  We need to show that $J_1\cap J_2$ also satisfies the three properties of an ideal:  additive closure, multiplicative closure, and additive inverse.
+
+Additive closure: Show that $a,b\in J_1\cap J_2$ implies $a+b\in J_1\cap J_2$.
+\begin{align*}
+&a,b\in J_1\cap J_2 & \text{given}\\
+&a,b\in J_1\text{ and }a,b\in J_2& \text{definition of $\cap$}\\
+&\text{$a+b\in J_1$ and $a+b\in J_2$} & \text{definition of ideal}\\
+&a+b\in J_1\cap J_2 & \text{Definition of $\cap$}
+\end{align*}
+
+%%% Move to solutions\begin{align*}
+%%%% &a\in J_1\cap J_2 & \text{given}\\
+%%%% &a\in J_1 \text{ and } a\in J_2 & %%%% \text{definition of $\cap$}\\
+%%%% &-a\in J_1 \text{ and }-a\in J_2 & \text{definition of ideal}\\
+%%%%% &-a\in J_1\cap J_2 & \text{definition of $\cap$}
+%%%% \end{align*}
+
+\noindent\textbf{Exercise \ref{exercise:rings:1inIdeal}}
+Suppose $J$ is an ideal of $R$ and $1\in J$.  Then:
+\begin{align*}
+&J \text { is an ideal of } R & \text{Given}\\
+&J\subset R & \text{Def. of ideal}\\
+&1\in J & \text{Given}\\
+&1\cdot r=r\in J \text{ for any r }\in R & \text{Def. of ideal}\\
+\end{align*}
+Since $r\in R$ implies $r\in J$, then $R\subset J$.  Also, $J\subset R$, so $J=R$.
+
+\noindent\textbf{Exercise \ref{exercise:rings:idealField}}
+\begin{align*}
+&a\in R & \text{Given}\\
+&aR \text{ is an ideal} & \text{Proposition }\ref{proposition:rings:Ra}\\
+&1\in Ra & \text{by hypothesis}\\
+&b\cdot a=1, \text{ for some } b\in R. & \text{Definition of $aR$}\\
+&\text{$a\cdot b=1$} & \text{$R$ is commutative}\\
+&\text{$b$ is the multiplicative inverse of $a$} & \text{Def. of multiplicative inverse}\\
+\end{align*}
+Since $a$ was an arbitrary element of $R$, then we can say that every element of $R$ has a multiplicative inverse in $R$.  So, $R$ is a field.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

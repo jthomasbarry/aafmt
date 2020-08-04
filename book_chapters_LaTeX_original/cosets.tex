@@ -8,7 +8,7 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Cosets and Factor Groups\quad
+\chap{Cosets and Quotient Groups (a.k.a. Factor Groups)\quad
 \sectionvideohref{L19Zo2BOFBQ&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=28}}{cosets}
 
 \begin{dialogue}
@@ -28,7 +28,7 @@
 Source: \emph{Shrek} (movie), 2001.
 \vspace{0.75 in}
 
-Groups, like onions and ogres, also have layers. As we've seen, many groups have subgroups inside them. These subgroups can be used to define ``layers'' which are called \emph{cosets}. And in some cases, the ``layers'' (cosets) themselves form groups, which are called \emph{factor groups}. 
+Groups, like onions and ogres, also have layers. As we've seen, many groups have subgroups inside them. These subgroups can be used to define ``layers'' which are called \emph{cosets}. And in some cases, the ``layers'' (cosets) themselves form groups, which are called \emph{quotient groups} (or \emph{factor groups}). 
 
 Our examination of cosets will give us deep insight into the nature and structure of groups. We will be leaning heavily on the material from Chapter~\ref{modular}  (which will furnish us with motivating examples), Chapter~\ref{EquivalenceRelationsChap} (which will aid us in our characterization of cosets), and of course Chapter~\ref{groups}.  In the course of reading this chapter, you may want to review these chapters.   So, here we go!
 \medskip
@@ -435,7 +435,7 @@ We first show that the map $\phi$ is one-to-one.  Suppose that $\phi(h_1)  = \ph
 
 Given this proposition Lagrange's theorem falls right out:
 
-\begin{prop}{LagrangeTheorem}[Lagrange's theorem]\index{Lagrange's theorem}
+\begin{prop}{LagrangeTheorem}(\term{Lagrange's theorem})
 Let $G$ be a finite group and let $H$ be a subgroup of $G$.  Then $|G|/|H| = [G : H]$ is the number of distinct left cosets of $H$ in $G$.  In particular, the number of elements in $H$ must divide the number of elements in $G$. 
 \end{prop}
 
@@ -715,7 +715,7 @@ Exercise~\ref{exercise:cosets:prime_simple} shows that groups of prime order (su
  
 \section{Normal subgroups and factor groups}\label{cosets:normal}
  
-We saw in Section~\ref{cosets:def} that if $H$ is a subgroup of a group $G$, then right cosets of $H$ in $G$ are not always the same as left cosets. The \emph{number} of right cosets and left cosets are always equal, and the number of elements in the left and right cosets match; but the right and left cosets \emph{themselves} may not equal each other (it is not always the case that $gH = Hg$ for all $g \in G$).  But as we saw sometimes they do equal each other. The subgroups for which this property holds play a critical role in group theory: they allow for the construction of a new class of groups, called factor or quotient groups. 
+We saw in Section~\ref{cosets:def} that if $H$ is a subgroup of a group $G$, then right cosets of $H$ in $G$ are not always the same as left cosets. The \emph{number} of right cosets and left cosets are always equal, and the number of elements in the left and right cosets match; but the right and left cosets \emph{themselves} may not equal each other (it is not always the case that $gH = Hg$ for all $g \in G$).  But as we saw sometimes they do equal each other. The subgroups for which this property holds play a critical role in group theory: they allow for the construction of a new class of groups, called  \emph{quotient groups} (or \emph{factor groups}. 
 % Factor groups may be studied by using homomorphisms, a generalization of isomorphisms. 
 
 \subsection{Normal subgroups}
@@ -725,7 +725,7 @@ First, let's give a name to these nice subgroups:
 \begin{defn}\label{normal_sub}
 A subgroup $H$ of a group $G$ is \term{normal}\index{Subgroup!normal}\index{Normal subgroup} in G if $gH =
 Hg$ for all $g \in G$. That is, a normal subgroup of a group $G$ is
-one in which the right and left cosets are precisely the same. 
+one in which the right and left cosets for every group element are precisely the same. 
 \end{defn}
  
 \begin{example}{normal_S3}
@@ -738,7 +738,7 @@ $(12)$. Since
 \quad
 H (123) = \{ (123), (23) \},
 \]
-$H$ cannot be a normal subgroup of $S_3$.  However, the subgroup $K$,
+$H$ cannot be a normal subgroup of $S_3$.  However, the subgroup $N$,
 consisting of the permutations $(1)$, $(123)$, and $(132)$, is normal
 since the cosets of $N$ are 
 \[
@@ -843,7 +843,7 @@ $gn = n' g$ or $gN \subset Ng$. Similarly, $Ng \subset gN$.
 
 \begin{defn}\label{normal_alt}
  Given a group $G$, a subgroup $H \subset G$ is called a 
-\term{normal subgroup}\index{Subgroup!normal} if for every $g \in G$ and for every $h \in H$, we have that $ghg^{-1} \in H$.  (Alternatively, we can write this condition as: $gHg^{-1} = H$.)
+\term{normal subgroup}\index{Subgroup!normal} if for every $g \in G$ and for every $h \in H$, we have that $ghg^{-1} \in H$  (alternatively, we can write this condition as: $gHg^{-1} = H$).
 \end{defn}
 
 \begin{exercise}{ghg-1_prove}
@@ -981,15 +981,15 @@ Proposition~\ref{proposition:cosets:norm_comp} also gives us that $g^{-1}N \circ
 Let's define a special notation for our new discovery.
 
 \begin{defn}\label{factor_group} 
-If $N$ is a normal subgroup of a group $G$, then the group of cosets of $N$ under the operation of set composition is denoted as $G/N$\label{notefactor} This group is called the \term{factor}\index{Group!factor} or \term{quotient group}\index{Group!quotient} of $G$ and $N$. 
+If $N$ is a normal subgroup of a group $G$, then the group of cosets of $N$ under the operation of set composition is denoted as $G/N$\label{notefactor} This group is called the  \term{quotient group}\index{Group!quotient} or \term{factor group}\index{Group!factor} of $G$ and $N$. 
 \end{defn} 
 Note that the order of $G/N$ is $[G:N]$, the number of cosets of $N$ in $G$. 
 
  
 
 \begin{rem}
-In Example~\ref{example:cosets:factor_Z3} above, the factor group would have been labeled ${\mathbb Z}/ 3 {\mathbb Z}$. In general, the subgroup $n {\mathbb Z}$ of ${\mathbb Z}$ is normal. The
-cosets of the factor group ${\mathbb Z } / n {\mathbb Z}$ then are 
+In Example~\ref{example:cosets:factor_Z3} above, the quotient  group would have been labeled ${\mathbb Z}/ 3 {\mathbb Z}$. In general, the subgroup $n {\mathbb Z}$ of ${\mathbb Z}$ is normal. The
+cosets of the quotient  group ${\mathbb Z } / n {\mathbb Z}$ then are 
 \[
 n {\mathbb Z};\quad 1 + n {\mathbb Z}; \quad 2 + n {\mathbb Z}; \quad \cdots \quad
 (n-1) + n {\mathbb Z}.
@@ -1000,12 +1000,12 @@ because the group operation is integer addition.
 \end{rem}
 
 
-It is very important to remember that the elements in a factor group are not the elements of the original group, but \emph{sets of elements} in the original group. As well then, the operation for the factor group is not the original operation of the group (which was used to compose elements), but a convenient derivative of it that we use to compose sets together.  Both of these facts take a second to get use to, so let's practice:
+It is very important to remember that the elements in a quotient group are not the elements of the original group, but \emph{sets of elements} in the original group. As well then, the operation for the quotient group is not the original operation of the group (which was used to compose elements), but a convenient derivative of it that we use to compose sets together.  Both of these facts take a second to get use to, so let's practice:
 
  
 \begin{example}{factor_S3}
 Consider the normal subgroup of $S_3, H = \{ (1), (123), (132)  \}$ which we started exploring in Example~\ref{example:cosets:S3_Cosets}.
-The cosets of $H$ in $S_3$ were $H$ and $(12) N$. Using the group operation from Defintion~\ref{factor_group} to compose these cosets together, the factor group $S_3
+The cosets of $H$ in $S_3$ were $H$ and $(12) N$. Using the group operation from Defintion~\ref{factor_group} to compose these cosets together, the quotient group $S_3
 / N$ then has the following Cayley table.
 \begin{center}
 \begin{tabular}{c|cc}
@@ -1017,13 +1017,13 @@ $(12) N$ & $(12) N$ & $N$
 \end{center}
 %This group is isomorphic to ${\mathbb Z}_2$
 
-Notice that  $S_3 / N$ is a smaller group than $S_3$ ($2$ elements compared to $6$ eleemnts). So the factor group then displays a pared down amount of
+Notice that  $S_3 / N$ is a smaller group than $S_3$ ($2$ elements compared to $6$ eleemnts). So the quotient group then displays a pared down amount of
 information about $S_3$.  Actually, $N = A_3$, the group of even
 permutations, and $(12) N = \{ (12), (13), (23) \}$ is the set of odd
 permutations. The information captured in $G/N$ is parity; that is,
 multiplying two even or two odd permutations results in an even
 permutation, whereas multiplying an odd permutation by an even
-permutation yields an odd permutation.  This information, as well as the Cayley table above, might suggest to you that the factor group is equivalent to another group we know.  Again, we'll pick up on this in the Isomorphisms chapter. 
+permutation yields an odd permutation.  This information, as well as the Cayley table above, might suggest to you that the quotient group is equivalent to another group we know.  Again, we'll pick up on this in the Isomorphisms chapter. 
 \end{example}
  
  
@@ -1032,7 +1032,7 @@ permutation yields an odd permutation.  This information, as well as the Cayley 
 Now it's your turn:
 
 \begin{exercise}{factor_cayley_prac}
-Give the Cayley tables for the following factor groups:
+Give the Cayley tables for the following quotient groups:
 
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
