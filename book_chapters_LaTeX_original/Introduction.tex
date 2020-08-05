@@ -1,11 +1,15 @@
-\chapter*{Forward}
+\chapter*{Forward}\label{chap:forward}
+\addcontentsline{toc}{chapter}{\nameref{chap:forward}}
+
 
 \begin{quote}
 All truths are easy to understand once they are discovered; the point is to discover them.
 \emph{(Source:  Galileo Galilei, ``Dialogue on the Two Chief World Systems'')}
 \end{quote}
 
-\section*{To the student:}
+\section*{To the student:}\label{sec:toStudent}
+\addcontentsline{toc}{section}{\nameref{sec:toStudent}}
+
 \medskip
 
 Many students start out liking math. Some like it well enough that they even want to teach it. However, when they reach advanced math classes (such as abstract algebra), they become bewildered and frustrated. Their textbooks talk about strange mathematical thingamabobs they've never heard of, which have nonsensical properties that come from who knows where. In lectures, the professor/oracle  makes pronouncements (a.k.a ``theorems'') and utters long incantations (a.k.a ``proofs'') , but it's hard to see the point of either. 
@@ -25,7 +29,8 @@ On the other hand,  many if not most of the great advances in  physics in the pa
 
 We hope you enjoy the book. Send us your comments!
 
-\section*{To the instructor}
+\section*{To the instructor}\label{sec:toInstructor}
+\addcontentsline{toc}{section}{\nameref{sec:toInstructor}}
 
 This book  is not intended for budding mathematicians. It was created for a math program in which most of the students in upper-level math classes are planning to become secondary school teachers. For such students, conventional abstract algebra texts are practically  incomprehensible, both in style and in content. Faced with this situation, we decided to create a book that our students could actually read for themselves. In this way we have been able to dedicate class time to problem-solving and personal  interaction rather than rehashing the same material in lecture format.
 
@@ -37,7 +42,8 @@ Whenever possible we have introduced applications, which may be omitted at the i
 
 
 
-\section*{Additional resources}
+\section*{Additional resources}\label{sec:additionalResources}
+\addcontentsline{toc}{section}{\nameref{sec:additionalResources}}
 \
 This is the Information Age, and a mere textbook is somewhat limited in its ability to convey information.  Accordingly, as we continue to use the book in our classes, we are continuing to build an ecosystem  to support the book's use:
 \begin{itemize}
@@ -59,8 +65,8 @@ Any instructor wishing to customize the material or extract certain portions may
 \medskip
 
 \noindent
-\emph{Acknowledgements}
-\smallskip
+\section*{Acknowledgements}\label{sec:ack}
+\addcontentsline{toc}{section}{\nameref{sec:ack}}
 
 In our preparation of this text, we were fortunate to find via the web  some extraordinarily generous authors (Tom Judson, Dave Witte Morris and Joy Morris, A. J. Hildebrand) who freely shared their material with us. Thanks to them, we were able to put the first version of this  textbook together within the span of a single semester (not that we're finished -- this is a living book, not a dead volume). We hope that other instructors will similarly benefit from the material offered here.  
 
@@ -73,10 +79,11 @@ Our very special thanks to Meghan DeWitt for her thorough critical reading of th
 Unless the LORD builds the house, the builders labor in vain. Unless the LORD keeps the city, the watchman is wakeful in vain.  It is vanity to rise up early, stay up late, and eat the bread of sorrows, for He gives sleep to those He loves."  (Psalm 127:1-2)
 \end{quote}
 
-\section*{Organization plan of the book}
+\chapter*{Organization plan of the book}\label{chap:Org}
+\addcontentsline{toc}{chapter}{\nameref{chap:Org}}
 A chapter organization diagram is given in Figure~\ref{fig:organization}. Brief descriptions of the chapters and their dependencies are as follows:
 \begin{figure}[htb]
-	   \center{\includegraphics[width=\textwidth]
+	   \center{\includegraphics[width=1.1\textwidth]
 	         {images/chapterdependence.png}}
 	  \caption{\label{fig:organization} Interdependence of chapters}
 \end{figure}
@@ -109,7 +116,7 @@ Introduction to Groups: This chapter introduced basic properties of groups, subg
 \item
 Further topics in cryptography.  Diffie-Hellman key exchange, elliptic curve cryptography over ${\mathbb R}$ and over ${\mathbb Z}_p$
 \item
-Equivalence relations and equivalence classes. This is necessary for understanding cosets. This chapter may be skipped if studentshave seen them before.  Used in:  Cosets and Factor Groups (15)
+Equivalence relations and equivalence classes. This material is necessary for understanding cosets. This chapter may be skipped if studentshave seen them before.  Used in:  Cosets and Factor Groups (15)
 \item
 Cosets and Factor Groups: Introductory properties, Lagrange’s theorem, Fermat’s Theorem, simple groups.  Used in: all subsequent chapters.
 \item
@@ -126,7 +133,8 @@ Introduction to Rings:  Includes definitions and examples; subrings and product 
 Appendix: Induction Proofs—patterns and examples.  Some proofs in the book require induction. This section gives the background needed for students to write formal induction proofs. 
 \end{enumerate}
 
-\chapter*{Glossary of symbols}
+\chapter*{Glossary of symbols}\label{glossaryOfSymbols}
+\addcontentsline{toc}{chapter}{\nameref{glossaryOfSymbols}}
 
 \begin{itemize}
 \item[]
@@ -142,15 +150,15 @@ $a | b$:\quad $a$ divides $b$.
 \item[]
 $a \equiv b \pmod n $: \quad $a$ is equvalent to $b$ mod $n$
 \item[]
+gcd, lcm: \quad Greatest common divisior, least common multiple
+\item[]
 $a \in S$: \quad $a$ is an element of the set $S$
 \item[]
-$\exists; \forall$: \quad There exists; for all
-\item[]
-iff: \quad If and only if
+$\exists; \forall$, iff: \quad There exists; for all; if and only if
 \item[]
 $:=$ \quad Defined as
 \item[]
-$\emptyset, \cup, \cap, \setminus$: \quad Empty set, union, intersection, set difference
+$\emptyset, \cup, \cap, \setminus, \subset$: \quad Empty set, union, intersection, set difference, subset
 \item[]
 $A\times B, \vec{a} \times \vec{b}$ \quad Cartesian product of sets $A,B$ or vector cross product of vectors $\vec{a},\vec{b}$ (depending on context)
 \item[]
@@ -161,8 +169,6 @@ $\epsilon_{ijk}$: \quad Levi-Civita (totally antisymmetric tensor) symbol
 ${\var Id}$: \quad Identity function
 \item[]
 ${\var id}, e$: \quad Identity element of a group
-\item[]
-gcd, lcm: \quad Greatest common divisior, least common multiple
 \item[]
 $\begin{pmatrix} 1 & 2 & \ldots & n\\ a_1 & a_2 & \ldots & a_n \end{pmatrix}$:\quad Permutation in tableau format
 \item[]
