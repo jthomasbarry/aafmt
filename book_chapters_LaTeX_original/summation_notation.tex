@@ -507,12 +507,169 @@ e^x &= \sum_{i=0}^{\infty}\dfrac{x^i}{i!} =1+\dfrac{x^1}{1!}+\dfrac{x^2}{2!}+\df
 
 Although we won't be talking about infinite series, the same summation notation that we've been using also applies to sums with an infinite number of terms. 
 
-\section{Sigma notation in linear algebra\quad
+
+\section{Summation by parts}\label{sec:sumByParts}
+
+Those who have studied integrals in calculus may be familiar with the process of integration by parts.  This is used when you need to find the integral of the product of two terms.  While this process is used for continuous situations, there is a version of this process for discrete situations called \term{summation by parts}.  
+
+To show how summation by parts works, we'll look at a particular case. Consider the following product of sums:
+\[\left( \sum_{n=1}^{5}a_{n} \right) \left( \sum_{n=1}^{5}b_{n} \right). \] 
+If we broke this up into individual terms, we'd obtain $n \cdot n = n^2$ terms of the form $a_j b_k$.  Figure~\ref{fig:IBP}
+shows the terms arranged on a grid. We've separated these terms into two parts using  a diagonal line, and we've further
+grouped terms either by row (above the line) or by column (below the line). You'll see in a minute why we've arranged things like this.
+
+\begin{figure}[htb]
+\begin{center}
+	\includegraphics[width=3.0in]{images/IBP.png}
+\caption{\label{fig:IBP} Arrangements of terms in the product of sums $\left( \sum_{n=1}^{5}a_{n} \right) \left( \sum_{n=1}^{5}b_{n} \right)$.}
+\end{center}
+\end{figure} 
+
+
+Now let's go back and express the sum of all these terms a different way. We'll introduce the notation:
+\[ A_{k}= \sum_{j=1}^{k}a_{j} \text{ and } B_{k}= \sum_{j=1}^{k}b_{j}. \]
+$A_k$ and $B_k$ are the $k$th \term{partial sums} for the series $\sum a_j$ and $\sum b_j$, respectively.
+The product of sums that we started with can be written succinctly as $A_{5}B_{5}$. 
+
+We may use this new notation to 
+re-express the grouped terms in the figure. 
+Consider first the terms below the diagonal line. These terms are grouped by column, and each group is encircled by an oval:
+\begin{itemize}
+\item
+The sum of the first oval(column on far left) is: $a_{1}b_{1}= a_{1}B_{1}$;
+ \item
+The sum of the second oval(column second from the left) is: $a_{2}\left ( b_{1}+b_{2} \right )= a_{2}B_{2}$;
+\item
+The sum the third oval(column third from the left) is: $a_{3}\left ( b_{1}+b_{2}+b_{3} \right )= a_{3}B_{3}$;
+\item
+The sum of the fourth oval(column fourth from left) is: $a_{4}\left ( b_{1}+b_{2}+b_{3}+b_{4} \right )= a_{4}B_{4}$;
+\item 
+The sum of the fifth oval(column on the far right) is: $a_{5}\left (b _{1}+b_{2}+b_{3}+b_{4}+b_{5} \right )=a _{5}B_{5}$.
+\end{itemize}
+Adding these five sums together accounts for all the terms below the diagonal line:
+\[ a_1B_1 + a_2B_2 + \ldots + a_5B_5 = \sum_{k=1}^{5}a_kB_k,\]
+where we've used summation notation to make the expression more compact.
+
+Now let's repeat this process for the horizontal ovals above the diagonal line:
+\begin{itemize}
+\item
+The sum for the first oval(bottom row above line) is: $a_{1}b_{2}= A_{1}b_{2}$;
+\item
+The sum for the second oval( second row from bottom) is: $\left ( a_{1}+a_{2} \right)b_{3}= A_{2}b_{3}$;
+\item
+The sum for the third oval(second row from the top) is: $\left ( a_{1}+a_{2}+a_{3} \right )b_{4}= A_{3}b_{4}$;
+\item
+The sum for the fourth oval(top row) is: $\left ( a_{1}+a_{2}+a_{3}+a_{4} \right)b_{5}= A_{4}b_{5}$.
+\end{itemize}
+Adding these five sums together accounts for all the terms below the diagonal line:
+\[ A_1b_2 +  \ldots + A_4b_5 = \sum_{k=1}^{5-1}A_kb_{k+1}.\]
+Since we've now accounted for terms both above and below the line, we obtain the sum of all terms by adding together:
+\[ A_{5}B_{5}= \sum_{k=1}^{5}a_{k}B_{k}+\sum_{k=1}^{5-1}A_{k}b_{k+1}. \]
+By rearranging this equation, we find:
+\[ \sum_{k=1}^{5}a_{k}B_{k}= A_{5}B_{5}-\sum_{k=1}^{5-1}A_{k}b_{k+1}. \]
+
+There's really nothing special about the number `5' in our above expression--we just chose it because 
+this was a relatively simple case that we could illustrate. To get the general formula, we simply replace '5' with '$n$':
+\[\sum_{k=1}^{n}a_{k}B_{k}= A_{n}B_{n}-\sum_{k=1}^{n-1}A_{k}b_{k+1}. \]
+Notice the striking similarity between this formula and the formula for integration by parts:
+\[ \int_a^b u dv =\left. uv\right|_a^b - \int_a^b v du. \] 
+The resemblance makes a lot of sense, since integration is essentially a kind of summation (more precisely,
+a summation taken to a limit.)
+
+Now let's look at some examples to see how we can make use of this formula.
+
+\begin{example}{} Evaluate $\sum_{k=1}^{n}2^{k-1}k$.
+ 
+In order to use the summation by parts formula, we need to define $a_k$ and $B_k$ so that the summand $2^{k-1}k$ is the product of $a_k$ and $B_k$. Just as in integration by parts, we want to make our choice based on what makes the calculations easiest. 
+Note that $B_{k}$  is a partial sum of $k$ terms, and that $k = 1 + \ldots + 1$. So it's natural to choose $B_{k}=k$, which means that $a_{k}=2^{k-1}$.
+ 
+Based on our choice of $B_{k}$ and  $a_{k}$, we can now figure out $b_{k}$ and $A_{k}$.  As we noted above, $B_{k}$ is the sum of $k$ 1's, so that $b_k=1$. This leaves us with $a_k = 2^{k-1}$, so that 
+\[A_{k}=\sum_{j=1}^{k}a_j.\]
+ As we've seen before, we may rewrite this by shifting the starting value of the index, so that 
+\[A_{k}=\sum_{j'=0}^{k-1}2^{j'} =  \frac{2^k-1}{2-1} = 2^k-1,\]
+where we've used our standard formula for the sum of geometric series.
+
+Summarizing our progress so far, we have:
+\[ a_k=2^{k-1};\quad B_k=k;\quad  b_k=1; \quad A_k=2^k-1. \]
+Plugging the above values into the summation by parts formula, we find:
+\[ \sum_{k=1}^{n}2^{k-1}k= \left (2 ^{n}-1 \right )n-\sum_{k=1}^{n-1}\left ( 2^{k}-1 \right ). \]
+The summation on the far right can be evaluated by breaking it into two separate parts:
+\[ \sum_{k=1}^{n-1}\left ( 2^{k}-1 \right )= \sum_{k=1}^{n-1}2^{k}-\sum_{k=1}^{n-1}1 = (2^{n}-1)- (n-1).\]
+\end{example}
+We can put this into our equality and do some further algebraic puttering to obtain the final result:
+\begin{align*}
+\sum_{k=1}^{n}2^{k-1}k &= (2 ^{n}-1)n- (2^{n}-1)+(n-1)\\
+&=  2^{n}n-n-(2^{n}-1)+(n-1)\\
+&=  2^{n}n-2^{n}\\
+&=  2^{n}(n-1).
+\end{align*}	
+
+\begin{exercise}{}
+Evaluate $\sum_{k=1}^{n}k^{2}$ by taking $B_k=k$ and $a_k = k$. You will need the expression for the sum $1 + 2 + \ldots + m$ that we derived previously.
+\end{exercise}
+
+From the preceding examples we may see that $B_k = k$ is a frequent choice. This is closely related to the fact that $u=x$ is a frequent choice when applying  the integration by parts formula.
+
+
+\begin{exercise}{}
+Prove the following equation using summation by parts:
+\[ \sum_{k=1}^n k^3 = \frac{n^4}{4} + \frac{n^3}{2} + \frac{n^2}{4} \]
+\end{exercise}
+
+\begin{exercise}{}
+\begin{enumerate}[(a)]
+\item
+ Evaluate $\sum_{k=1}^{n}3^{k}k$.
+\item
+ Evaluate $\sum_{k=1}^{n}3^{k}k^2$.
+\item
+Evaluate $\sum_{k=1}^{7n} \cis(2\pi k/7)\cdot k$.
+\end{enumerate}
+\end{exercise}
+
+%Example 2
+%Evaluate: 
+%\sum_{k=1}^{n}k^{2}
+%Using our formula, we need to identify A_{l}, a_{l},  b_{l}, and B_{l} from our given summation, remembering to make choices that make calculations easiest.  At first glance, this does not appear to be a summation of a product of two amounts.  Remember, though, that k^{2}=kk. Given that both elements of the product are the same, our choice is easy and we will choose B_{l}=k and a_{l}=k.  
+%By the previous example, we know that if B_{l}=k, then it follows that b_{l}=1. If a_{l}=k, then A_{l}=\sum_{l=1}^{k}a_{l}, which by substitution, A_{l}=\sum_{l=1}^{k}l which simplifies to \frac{\left ( k+1 \right )k}{2}.
+%Again summarizing what we have done:
+%B_{l}= k; a_{l}=k; b_{l}= 1; A_{l}= \frac{\left ( k+1 \right )k}{2}
+%Plugging into the formula: \sum_{l=1}^{n}a_{l}B_{l}= A_{n}B_{n}-\sum_{l=1}^{n-1}A_{l}b_{l+1}
+%\sum_{k=1}^{n}k\cdot k= \frac{n\left ( n+1 \right )n}{2}-\sum_{k=1}^{n-1}\left ( 1 \right )\frac{\left ( k+1 \right )k}{2}
+%Breaking down the summation on the right,
+%=\sum_{k=1}^{n-1}\left ( 1 \right )\frac{\left ( k+1 \right )k}{2}
+%By factoring out \frac{1}{2}, we have the right side:
+%= \frac{1}{2}\left ( \sum_{k=1}^{n-1}k^{2}+k \right )
+%Breaking the summation into two parts produces:
+%= \frac{1}{2}\sum_{k=1}^{n-1}k^{2}+\frac{1}{2}\sum_{k=1}^{n-1}k
+%Our equation now looks like this:
+%\sum_{k=1}^{n}k\cdot k= \frac{n\left ( n+1 \right )n}{2}-\frac{1}{2}\sum_{k=1}^{n-1}k^{2}-\frac{1}{2}\sum_{k=1}^{n-1}k
+%Adding the summation of k^{2} to the left produces:
+%\sum_{k=1}^{n}k^{2}+\frac{1}{2}\sum_{k=1}^{n-1}k^{2}= \frac{n^{2}\left ( n+1 \right )}{2}-\frac{1}{2}\sum_{k=1}^{n-1}k
+%Which further simplifies on the right by replacing the summation of k with its value and separating the fraction:
+%\sum_{k=1}^{n}k^{2}+\frac{1}{2}\sum_{k=1}^{n-1}k^{2}= \frac{n^{2}}{2}+\frac{n^{2}\left ( n+1 \right )}{2}-\frac{1}{2}\frac{\left ( n-1 \right )n}{2}
+%Simplifying further, we can add like terms on the left (1 summation + \frac{1}{2} = \frac{3}{2}) and factor our  \frac{n}{2} on the right:
+%\frac{3}{2}\sum_{k=1}^{n}k^{2}= \frac{n}{2}\left ( n+n\left ( n+1 \right )-\frac{n-1}{2} \right )
+%By factoring out \frac{n}{2} on the right gives us:
+%\frac{3}{2}\sum_{k=1}^{n}k^{2}= \frac{n}{2}\left ( n\left ( n+1 \right )+\frac{n+1}{2} \right )
+%And finally, adding terms in the parenthesis and factoring the quadratic it produces, you are left with:
+%\frac{3}{2}\sum_{k=1}^{n}k^{2}= \left ( \frac{n}{2} \right )\left ( n+1 \right )\left ( n+\frac{1}{2} \right )
+
+
+\chap{Application:  Sigma Notation in Linear Algebra}{SigmaApp}
+
+\section{Introduction to sigma notation in linear algebra\quad
 \sectionvideohref{M0jHrubtHBA&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=45}}\label{sec:sigmaLinAlg}
+
+Linear algebra is the algebra of real space: not just 3-dimensional space, but $n$-dimensional generalizations. The important mathematical objects in linear algebra are vectors and matrices: You may remember that matrices represent functions (transformations) that act  on vectors.  Although linear algebra is a relatively recent field of mathematics (which got its start in the mid-1800's), since the advent of computers it has risen to the `top of the heap' so to speak, so that  most modern applications of mathematics to real-world problems are built on linear algebra.
+
+Sigma notation is a powerful notational tool for expressing relations and proving identities in linear algebra. In this chapter, we will look at some of the ways that sigma notation can be used to prove properties of vectors and matrices in three-dimensional space. These properties are basic to in the physics of moving objects and fields.  
+
+This chapter ties together material from several chapters in the book. Besides sigma notation, we need concepts from sets, functions, and just a little bit from permutations (we'll give the background you need in this chapter). To understand the chapter, the reader should already have seen vectors and matrices (up to size $3\times 3$) and know a little bit about how they work.
 
 In the following discussions, we will assume that all matrices have real entries.  However, all of the results that we will prove also apply (in some cases, with slight modifications)  for matrices with \emph{complex} entries, or matrices with entries in $\mathbb{Z}_p$.
 
-\subsection{Matrix multiplication}
+\section{Matrix multiplication}
 It should come as no surprise that summation notation commonly shows up when working with matrices. 
 In the following discussion, we will follow the common practice of denoting a matrix with a capital 
 letter in italics, and the entries of the matrix with the same letter in lowercase. 
@@ -614,9 +771,9 @@ Using parts (b) and (c), show that matrix multiplication is \emph{associative}.
 \end{enumerate}
 \end{exercise}
 
-\subsection{The identity matrix and the Kronecker delta}
+\section{The identity matrix and the Kronecker delta}
 
-ex{Matrix!identity ($I$)} $I$ often comes up when working with matrices. You may remember that an identity matrix has 1's on its diagonal and 0's everywhere else:
+The identity matrix $I$ often comes up when working with matrices. You may remember that an identity matrix has 1's on its diagonal and 0's everywhere else:
 
 \[I = \left[ \begin{array}{ccccc}
 1 & 0  & \cdots & 0 & 0 \\
@@ -775,7 +932,7 @@ Compute $BF$.
 
 
 It turns out that matrices defined using Kronecker deltas play a prominent role in numerical analysis, and in particular the numerical solution of ordinary and partial differential equations.
-\subsection{Abbreviated matrix notations}
+\section{Abbreviated matrix notations}
 In the following discussion, we will be seeing lots of sums involving matrices. This being the case, it's worth our while to try to simplify our notation. In our expression for $C=AB$, we had:
 \[ {c}_{i,j}= \sum_{k=1}^n a_{i,k} b_{k,j} \]
 Now, notice that the index $k$ runs over all columns of $A$ and all rows of $B$  (recall that matrix multiplication is only defined if the number of columns of $A$ is equal to the number of rows of $B$). This being the case, we don't really need to mention that $k$ runs from 1 to $n$--we should simply understand that the index $k$ runs over all possible values. We can therefore convey the same information by simply writing:
@@ -818,9 +975,9 @@ $d_{i,j}a_{k,\ell}b_{j,k}b_{i,\ell}$
 In the following sections we will use the first type of abbreviated notation (not Einstein notation).
 
 
-\subsection{Matrix transpose and matrix inverse}
+\section{Matrix transpose and matrix inverse}
 
-\subsubsection*{Matrix transpose}
+\subsection{Matrix transpose}
 Transpose is another operation on matrices that lends itself to summation notation.  Recall that the transpose of a matrix changes the rows to columns,so that the first row becomes the first column, the second row becomes the second column, and so on.  The transpose of matrix $A$ is denoted as $A^{\text{T}}$.\index{Transpose!of a matrix}\index{Matrix!transpose} Using indices and recalling that first index is the row and the second is the column, we can express this as:
 
 \[ \left[ {A}^{\text{T}} \right]_{i,j} = \left[ A \right]_{j,i}, \]
@@ -874,7 +1031,7 @@ Transpose preserves multiplication, i.e. $A^T \cdot B^T = (A\cdot B)^T$ for any 
 
 
 
-\subsubsection*{Matrix inverse}
+\subsection{Matrix inverse}
 
 We can also express matrix inverse equations in summation notation.  Recall that the inverse of a matrix $A$ is a matrix $A^{-1}$ such that $AA^{-1}=I$ and $A^{-1}A=I$.
 
@@ -887,7 +1044,7 @@ Suppose that $A$ and $B$ are invertible square matrices of the same size (so tha
 \end{enumerate}
 \end{exercise}
 
-\subsection{Rotation matrices (in 3 dimensions)}\label{subsec:rotMx3}
+\section{Rotation matrices (in 3 dimensions)}\label{subsec:rotMx3}
 In three-dimensional space, the \term{dot product} (or \term{scalar product}) of two vectors $v:=[v_1,v_2,v_3]^{\text{T}}$ and $w:=[w_1,w_2,w_3]^{\text{T}}$ is defined as
 \[ v \cdot w :=  v_1w_1 + v_2w_2 + v_3w_3 = \sum_j v_j w_j ,\]
 where we have made use of summation notation to shorten the expression. If we also define the \term*{length}\index{Length!of a vector} of the vector $v$ (denoted by $||v||$) as
@@ -961,7 +1118,7 @@ We summarize these results in a proposition:
 \end{prop}
 We will pick up on rotation matrices in Section~\ref{subsec:LeviCivitaDet} when we talk about determinants, and again in Section~\ref{subsec:EulerRot} when we prove Euler's rotation theorem.
 
-\subsection{Matrix traces}
+\section{Matrix traces}
 Another cool application of summation notation with matrices is to prove things about the \term{trace}\index{Trace!of a matrix} of a matrix.  The trace only applies to square matrices (equal number of rows and columns) and is the sum of all the entries on the diagonal--that is,  the sum of all entries with the same column and row number.  In summation notation, the trace of an $n \times n$ matrix as:
 
 \[ \text{Tr} \left( A \right)= a_{1,1} + a_{2,2} + \ldots + a_{n,n} = \sum_{i} a_{i,i} \] 
@@ -1034,24 +1191,6 @@ This formula is actually quite general, and applies to many non-diagonal matrice
 \end{exercise}
 
 %%% This problem is an orphan that needs a good home.
-%\begin{exercise}{}
-%Suppose $\sigma$ is a permutation in $S_4$. We can define a $4 \times 4$ matrix $P_{\sigma}$ using index notation as follows\index{Permutation!matrix}:  
-%\[ [P_{\sigma}]_{ij} = \begin{cases} 1 &\text{if } j = \sigma(i), \\ 
-% 0 &\text{if } j \neq  \sigma(i).  \end{cases} \]
-%(Here $i$ and $j$ can take any values from 1 to 4.)  The matrix $P_{\sigma}$ is in fact known as the \term{permuation matrix} associated with the permutation $\sigma$.
-%\begin{enumerate}[(a)]
-%\item
-%Write down the matrix $P_{\sigma}$ when: (i) $\sigma = (13)$; (ii) $\sigma = (132)$; (iii) $\sigma = (12)(34)$; (iv)  $\sigma = (1234)$.
-%\item
-%Using the formula that you guessed in the previous problem, evaluate $\det P_{\sigma}$ when: (i) $\sigma = (24)$; (ii) $\sigma = (143)$; (iii) $\sigma = (14)(23)$; (iv)  $\sigma = (1423)$. Check your answer using the row (or column) expansion method for computing determinants.
-%\item
-%How is the value of $\det P_{\sigma}$  related to the ``evenness'' or ``oddness'' of the permutation $\sigma$\index{Permutation matrix!determinant}?
-%\item
-%For the 4 permutations in part (a), show that when you multiply the $4 \times 1$ column vector $[1,2,3,4]^T$ times the matrix $P_{\sigma}$, you obtain the second row of the tableau for $\sigma$.  In other words, the matrix $P_{\sigma}$ ``performs'' the permutation $\sigma$ on column vector entries.
-%\item
-%Show that the result in (b) is true in general: namely, that  $P_{\sigma}[1,2,3,4]^T = [\sigma(1),\sigma(2),\sigma(3),\sigma(4)]^T.$ 	
-%\end{enumerate}
-%\end{exercise}
 
 
 \section{Levi-Civita symbols and applications}\label{sec:LeviCivita}
@@ -1076,8 +1215,11 @@ For an epsilon with three indices, each index can be either 1,2,or 3. The values
 0 ~ \text{where} ~  i=j, i=k, ~ \text{or} ~ j=k, ~ \text{i.e., if any index is repeated.}
 \end{cases} \]
 
-What's the rule behind this definition?  Every permutation of $(1,2,3)$.  corresponds to one possible rearrangement of the indices. For instance the permutation 
-$ \left( \begin{smallmatrix}  1 & 2 & 3  \\ 2 & 3 & 1  \end{smallmatrix} \right)$ (in tableau notation) corresponds to the rearrangement $(2,3,1)$.  Whenever this permutation $\left( \begin{smallmatrix} 1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right) $ is \emph{even} (that is, it can be written as the product of an even number of transpositions), then the corresponding value of $\epsilon_{ijk}$ is 1. Whenever this permutation $\left( \begin{smallmatrix} 1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right)$ is \emph{odd} , then the corresponding value of $\epsilon_{ijk}$ is -1. Whenever any of the indices $i,j,k$  are repeated, then  $\left( \begin{smallmatrix} 1 & 2 & 3  \\ i & j & k  \end{smallmatrix} \right) $ does not correspond to a permutation, and the value of $\epsilon_{ijk}$ is 0.
+What's the rule behind this definition?  
+The six possible rearrangements of $(1,2,3)$ in the definition of $\epsilon_{ijk}$ are called \emph{permutations}\index{Permutation}.  
+The three arrangements $(2,1,3)$, $(1,3,2)$, and $(3,2,1)$  can all be obtained from $(1,2,3)$ by a single exchange of two numbers.  For example, $(2,1,3)$ is obtained from $(1,2,3)$ by exchanging $1 \leftrightarrow 2$; and the other two rearrangements exchange $2 \leftrightarrow 3$ and $1 \leftrightarrow 3$ respectively.  On the other hand, to get $(2,3,1)$ or $(3,1,2)$ from $(1,2,3)$ requires \emph{two} exchanges.  Since the number of exchanges for $(2,1,3), (1,3,2), and (3,2,1)$ is odd, these are called \emph{odd permutations}\index{Permutation!odd and even}, while the others (including $(1,2,3)$  are called \emph{even  permutations}.   So the definition of   $\epsilon_{ijk}$ may be summarized as follows:  it's equal to 1 if $(i,j,k)$ is an even permutation, $-1$ if  $(i,j,k)$ is an odd permutation, and 0 if $(i,j,k)$ is not a permutation (i.e. there are repeated indices.
+
+You may wonder, Why this strange definition?  We'll see more reasons later, but for now we can relate the definition of  $\epsilon_{ijk}$  to rotations of the $x,y,z$ axes in 3-dimensional space. Let's call these axes 1,2,3 instead of $x,y,z$ Now, if it is possible to rotate the axes so that 1 moves to 2, 2 moves to 3, and 3 moves to 1: in other words $(1,2,3)$ has moved to $(2,3,1)$. It's also possible to move $(1,2,3)$ to $(3,1,2)$.  Notice that these two  are exactly the even permutations!  On the other hand, it is not possible to move $(1,2,3)$ to $(1,3,2)$:  To do so would require turning one of the axes around  (this is called a \emph{reflection}\index{Reflection}). So the sign of   $\epsilon_{ijk}$  distinguishes rotations from reflections. Besides this geometrical interpretation, we'll have a lot more to say about even and odd permutations in Section~\ref{other_groups}.)  
 
 We may simplify the notation somewhat if we define the \term*{sign} of a permutation as follows:
 
@@ -1303,7 +1445,7 @@ We may use some of the facts which we've established in this section to prove so
 Recall from Section~\ref{subsec:rotMx3} that a rotation matrix $R$ must satisfy $R^{\text{T}} R = I$ and $\det R \ge 0$.
 \begin{enumerate}[(a)]
 \item
-Using Exercise~\ref{exercise:Sigma:detTrans} and the determinant product formula $\det A \det B = \det(AB)$, show that $\det R = 1$ and $\det R^{\text{T}}=1$. 
+Using Exercise~\ref{exercise:SigmaApp:detTrans} and the determinant product formula $\det A \det B = \det(AB)$, show that $\det R = 1$ and $\det R^{\text{T}}=1$. 
 \item
 Since $\det R = 1$ it follows that $R \in SL_3(\mathbb{R})$ and hence $R$ is invertible. Use this fact to show that $R^{\text{T}} = R^{-1}$.
 \end{enumerate}
@@ -1357,7 +1499,7 @@ Or we can write the last line in a more familiar fashion:
 \[ [-14, ~ 2, ~ 6]. \] 
 So all we have to do to define a cross product using the Levi-Civita symbol is to simply plug these terms into the formula for the $3 \times 3$ determinant from earlier:
 \[\textbf{a} \times \textbf{b} = \,\text{det} A = \sum_{i=1}^3 \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} \textbf{e}_i  a_j b_k. \]
-If you compare this formula with our original definition of $3 \times 3$ determinant (just before Exercise~\ref{exercise:Sigma:rowExp}), you'll see  that we have dropped the first index on each term.  The reason is that the $\textbf{e}$ terms will always be on the first row, $a$ on the second, and $b$ on the third.  
+If you compare this formula with our original definition of $3 \times 3$ determinant (just before Exercise~\ref{exercise:SigmaApp:rowExp}), you'll see  that we have dropped the first index on each term.  The reason is that the $\textbf{e}$ terms will always be on the first row, $a$ on the second, and $b$ on the third.  
 
 We can actually shorten this up a little bit more, by rewriting the formula to find the $i^{\text{th}}$ component of $\textbf{a} \times \textbf{b}$.  In other words, we don't want the summation of all three $\textbf{e}_i$ terms, just one particular $\textbf{e}_i$ term.  That means we remove the summation over $i$, which leaves us with:
 \[ (\textbf{a} \times \textbf{b})_i = \sum_{j=1}^3 \sum_{k=1}^3 \epsilon_{ijk} a_j b_k. \]
@@ -1385,7 +1527,7 @@ $(\textbf{a} \times \textbf{b})_i$ as
 \[ (\textbf{a} \times \textbf{b})_i = \sum_{j,k} \epsilon_{ijk} a_j b_k. \]
 Note that we do not bother to indicate that the indices $i,j,k$ run from 1 to 3: this is understood by the nature of $\epsilon_{ijk}$.
 
-\subsection{Proof of the BAC-CAB Rule}
+\subsection{Proof of the vector BAC-CAB Rule}
 As another example, suppose we want to prove what is known as the $BAC-CAB$ rule\index{BAC-CAB@$BAC-CAB$ rule}, which states:
 \[ \textbf{a} \times \left( \textbf{b} \times \textbf{c} \right) = \textbf{b} \left( \textbf{a} \cdot \textbf{c} \right) - \textbf{c} \left( \textbf{a} \cdot \textbf{b} \right). \]
 We'll arrive at this formula this by two different routes: the brute-force method or the symmetry method.  Let's start with the brute force method.
@@ -1549,12 +1691,12 @@ while adding all right-hand side terms gives
 \[a_{21}a_{31} - a_{21}a_{13} + a_{31}a_{12} - a_{31}a_{21} = - a_{21}a_{13} + a_{31}a_{12}.\]
 Miraculously, these turn out to be equal.
 
-\begin{exercise}{} Complete the proof of Proposition~\ref{proposition:Sigma:crazyEq} by showing equality for the cases $i=2,3$.
+\begin{exercise}{} Complete the proof of Proposition~\ref{proposition:SigmaApp:crazyEq} by showing equality for the cases $i=2,3$.
 \end{exercise}
 \end{proof}
 
 No doubt this formula seems entirely unmotivated and somewhat useless (although you have to admit it's kind of cute.)  However, it becomes incredibly useful when we apply it to rotation matrices. To this end, suppose $R$ is a rotation matrix whose $(j,k)$ entry is denoted by $r_{jk}$. 
-Then the equality in Proposition~\ref{proposition:Sigma:crazyEq} applied to matrix $R$  becomes:
+Then the equality in Proposition~\ref{proposition:SigmaApp:crazyEq} applied to matrix $R$  becomes:
 \[ \sum_{j,k,\ell}\epsilon_{jk\ell} r_{ij}r_{k\ell} =  \sum_{j,k,\ell}\epsilon_{jk\ell} r_{ji}r_{k\ell}, \]
 which implies (by rearranging terms)
 \[ \sum_{j}r_{ij} \left( \sum_{k,\ell} \epsilon_{jk\ell} r_{k\ell} \right) 
@@ -1563,7 +1705,7 @@ The expressions in parentheses on the left and right are identical. So let's def
 \[ z_j :=  \sum_{k,\ell}\epsilon_{jk\ell} r_{k\ell}, \]
 and we can replace the parenthetical expressions in our equality by $z_j$:
 \[ \sum_{j}r_{ij} z_j=  \sum_{j}r_{ji} z_j. \]
-Rewriting this in matrix notation gives $Rz = R^{\text{T}}z$. Using the fact that $R^{\text{T}} = R^{-1}$ (see Proposition~\ref{proposition:Sigma:detRotMx}) and a series of algebraic manipulations,  we find:
+Rewriting this in matrix notation gives $Rz = R^{\text{T}}z$. Using the fact that $R^{\text{T}} = R^{-1}$ (see Proposition~\ref{proposition:SigmaApp:detRotMx}) and a series of algebraic manipulations,  we find:
 \begin{align*}
  Rz = R^{-1}z &\implies  Rz - R^{-1}z = 0 \\
 &\implies R^2z - Iz = 0\\
@@ -1572,7 +1714,7 @@ Rewriting this in matrix notation gives $Rz = R^{\text{T}}z$. Using the fact tha
 Now, there are two cases to consider:
 \begin{itemize}
 \item
-In the case where $(R-I)z \neq 0$, then it must be true that $y := (R-I)z$ is a nonzero vector which satisfies $(R+I)y=0$. This implies that $y$ is an eigenvector of $R$ with eigenvalue $-1$. Now since $R$ is $3 \times 3$, it must have 3 eigenvalues in total. Let $\lambda_1$ and $\lambda_2$ be the 2 remaining eigenvalues.  We know from linear algebra that the product of the eigenvalues is equal to the determinant of $R$, which is equal to 1 by Proposition~\ref{proposition:Sigma:detRotMx}.  This imples that $-1 \cdot \lambda_1 \cdot \lambda_2 = 1$ or 
+In the case where $(R-I)z \neq 0$, then it must be true that $y := (R-I)z$ is a nonzero vector which satisfies $(R+I)y=0$. This implies that $y$ is an eigenvector of $R$ with eigenvalue $-1$. Now since $R$ is $3 \times 3$, it must have 3 eigenvalues in total. Let $\lambda_1$ and $\lambda_2$ be the 2 remaining eigenvalues.  We know from linear algebra that the product of the eigenvalues is equal to the determinant of $R$, which is equal to 1 by Proposition~\ref{proposition:SigmaApp:detRotMx}.  This imples that $-1 \cdot \lambda_1 \cdot \lambda_2 = 1$ or 
 $ \lambda_1 \cdot \lambda_2 = -1$. 
 
 Now, the $\lambda$'s could be complex, or they could be real. If complex, then they must be complex conjugates of each other (since $R$ is a real matrix), but then their product would be positive (why is this?). Since their product is negative, this is not possible. 
@@ -1597,7 +1739,7 @@ Now we may compute $Rw$  using summation notation as:
 &= \sum_{i,j,k,m,n}\epsilon_{ijk}r_{\ell i}r_{mj}r_{nk} y_m  z_n \\
 &= \sum_{m,n} \left( \sum_{i,j,k}\epsilon_{ijk}r_{\ell i}r_{mj}r_{nk} \right) y_m  z_n.
 \end{align*}
-It looks like we're venturing deeper and deeper into mathematical muck. But lo! The expression in parentheses is something that we've seen  before, in Exercise~\ref{exercise:Sigma:detId}:
+It looks like we're venturing deeper and deeper into mathematical muck. But lo! The expression in parentheses is something that we've seen  before, in Exercise~\ref{exercise:SigmaApp:detId}:
 \[ \sum_{i,j,k}\epsilon_{ijk}r_{\ell i}r_{mj}r_{nk}= \sum_{i,j,k} \epsilon_{\ell m n} \epsilon_{ijk}r_{1 i}r_{2j}r_{3k},\]
 and we may further simplify using other facts we've picked up here and there:
 \begin{align*}
@@ -1621,7 +1763,7 @@ To show that the vectors are linearly independent, it's enough to show that $\de
 &= \sum_{i,j,k,m,n} \epsilon_{ijk} \epsilon_{imn}  y_j z_ky_mz_n \\
 &=  \sum_{j,k,m,n} \left( \sum_{i} \epsilon_{ijk} \epsilon_{imn}\right)  y_j y_m z_k z_n
 \end{align*}
-(note that in the third line when we substituted in the expression for $w_i$, we had to change the summation indices from $j,k$ to $m,n$ to avoid conflict with the $j,k$ indices that we were already using for a different summation.) In the final line, we've separated out the summation over $i$ for a reason.  Exercise~\ref{exercise:Sigma:2epsIdent} tells us that:
+(note that in the third line when we substituted in the expression for $w_i$, we had to change the summation indices from $j,k$ to $m,n$ to avoid conflict with the $j,k$ indices that we were already using for a different summation.) In the final line, we've separated out the summation over $i$ for a reason.  Exercise~\ref{exercise:SigmaApp:2epsIdent} tells us that:
 \[\sum_k \epsilon_{ijk} \epsilon_{kmn} = \delta_{im} \delta_{jn} - \delta_{in} \delta_{jm}. \]
 Assuming this is true (you really should try to prove it, if you haven't already), this enables us to evaluate our expression quite nicely.
 
@@ -1651,152 +1793,4 @@ Once we've shown (b), we have that $(R+I)(R-I)v=0$ and we're back to the two cas
 \end{exercise}
 
 Now we're \emph{really} done!
-
-
-\section{Summation by parts}\label{sec:sumByParts}
-
-Those who have studied integrals in calculus may be familiar with the process of integration by parts.  This is used when you need to find the integral of the product of two terms.  While this process is used for continuous situations, there is a version of this process for discrete situations called \term{summation by parts}.  
-
-To show how summation by parts works, we'll look at a particular case. Consider the following product of sums:
-\[\left( \sum_{n=1}^{5}a_{n} \right) \left( \sum_{n=1}^{5}b_{n} \right). \] 
-If we broke this up into individual terms, we'd obtain $n \cdot n = n^2$ terms of the form $a_j b_k$.  Figure~\ref{fig:IBP}
-shows the terms arranged on a grid. We've separated these terms into two parts using  a diagonal line, and we've further
-grouped terms either by row (above the line) or by column (below the line). You'll see in a minute why we've arranged things like this.
-
-\begin{figure}[htb]
-\begin{center}
-	\includegraphics[width=3.0in]{images/IBP.png}
-\caption{\label{fig:IBP} Arrangements of terms in the product of sums $\left( \sum_{n=1}^{5}a_{n} \right) \left( \sum_{n=1}^{5}b_{n} \right)$.}
-\end{center}
-\end{figure} 
-
-
-Now let's go back and express the sum of all these terms a different way. We'll introduce the notation:
-\[ A_{k}= \sum_{j=1}^{k}a_{j} \text{ and } B_{k}= \sum_{j=1}^{k}b_{j}. \]
-$A_k$ and $B_k$ are the $k$th \term{partial sums} for the series $\sum a_j$ and $\sum b_j$, respectively.
-The product of sums that we started with can be written succinctly as $A_{5}B_{5}$. 
-
-We may use this new notation to 
-re-express the grouped terms in the figure. 
-Consider first the terms below the diagonal line. These terms are grouped by column, and each group is encircled by an oval:
-\begin{itemize}
-\item
-The sum of the first oval(column on far left) is: $a_{1}b_{1}= a_{1}B_{1}$;
- \item
-The sum of the second oval(column second from the left) is: $a_{2}\left ( b_{1}+b_{2} \right )= a_{2}B_{2}$;
-\item
-The sum the third oval(column third from the left) is: $a_{3}\left ( b_{1}+b_{2}+b_{3} \right )= a_{3}B_{3}$;
-\item
-The sum of the fourth oval(column fourth from left) is: $a_{4}\left ( b_{1}+b_{2}+b_{3}+b_{4} \right )= a_{4}B_{4}$;
-\item 
-The sum of the fifth oval(column on the far right) is: $a_{5}\left (b _{1}+b_{2}+b_{3}+b_{4}+b_{5} \right )=a _{5}B_{5}$.
-\end{itemize}
-Adding these five sums together accounts for all the terms below the diagonal line:
-\[ a_1B_1 + a_2B_2 + \ldots + a_5B_5 = \sum_{k=1}^{5}a_kB_k,\]
-where we've used summation notation to make the expression more compact.
-
-Now let's repeat this process for the horizontal ovals above the diagonal line:
-\begin{itemize}
-\item
-The sum for the first oval(bottom row above line) is: $a_{1}b_{2}= A_{1}b_{2}$;
-\item
-The sum for the second oval( second row from bottom) is: $\left ( a_{1}+a_{2} \right)b_{3}= A_{2}b_{3}$;
-\item
-The sum for the third oval(second row from the top) is: $\left ( a_{1}+a_{2}+a_{3} \right )b_{4}= A_{3}b_{4}$;
-\item
-The sum for the fourth oval(top row) is: $\left ( a_{1}+a_{2}+a_{3}+a_{4} \right)b_{5}= A_{4}b_{5}$.
-\end{itemize}
-Adding these five sums together accounts for all the terms below the diagonal line:
-\[ A_1b_2 +  \ldots + A_4b_5 = \sum_{k=1}^{5-1}A_kb_{k+1}.\]
-Since we've now accounted for terms both above and below the line, we obtain the sum of all terms by adding together:
-\[ A_{5}B_{5}= \sum_{k=1}^{5}a_{k}B_{k}+\sum_{k=1}^{5-1}A_{k}b_{k+1}. \]
-By rearranging this equation, we find:
-\[ \sum_{k=1}^{5}a_{k}B_{k}= A_{5}B_{5}-\sum_{k=1}^{5-1}A_{k}b_{k+1}. \]
-
-There's really nothing special about the number `5' in our above expression--we just chose it because 
-this was a relatively simple case that we could illustrate. To get the general formula, we simply replace '5' with '$n$':
-\[\sum_{k=1}^{n}a_{k}B_{k}= A_{n}B_{n}-\sum_{k=1}^{n-1}A_{k}b_{k+1}. \]
-Notice the striking similarity between this formula and the formula for integration by parts:
-\[ \int_a^b u dv =\left. uv\right|_a^b - \int_a^b v du. \] 
-The resemblance makes a lot of sense, since integration is essentially a kind of summation (more precisely,
-a summation taken to a limit.)
-
-Now let's look at some examples to see how we can make use of this formula.
-
-\begin{example}{} Evaluate $\sum_{k=1}^{n}2^{k-1}k$.
- 
-In order to use the summation by parts formula, we need to define $a_k$ and $B_k$ so that the summand $2^{k-1}k$ is the product of $a_k$ and $B_k$. Just as in integration by parts, we want to make our choice based on what makes the calculations easiest. 
-Note that $B_{k}$  is a partial sum of $k$ terms, and that $k = 1 + \ldots + 1$. So it's natural to choose $B_{k}=k$, which means that $a_{k}=2^{k-1}$.
- 
-Based on our choice of $B_{k}$ and  $a_{k}$, we can now figure out $b_{k}$ and $A_{k}$.  As we noted above, $B_{k}$ is the sum of $k$ 1's, so that $b_k=1$. This leaves us with $a_k = 2^{k-1}$, so that 
-\[A_{k}=\sum_{j=1}^{k}a_j.\]
- As we've seen before, we may rewrite this by shifting the starting value of the index, so that 
-\[A_{k}=\sum_{j'=0}^{k-1}2^{j'} =  \frac{2^k-1}{2-1} = 2^k-1,\]
-where we've used our standard formula for the sum of geometric series.
-
-Summarizing our progress so far, we have:
-\[ a_k=2^{k-1};\quad B_k=k;\quad  b_k=1; \quad A_k=2^k-1. \]
-Plugging the above values into the summation by parts formula, we find:
-\[ \sum_{k=1}^{n}2^{k-1}k= \left (2 ^{n}-1 \right )n-\sum_{k=1}^{n-1}\left ( 2^{k}-1 \right ). \]
-The summation on the far right can be evaluated by breaking it into two separate parts:
-\[ \sum_{k=1}^{n-1}\left ( 2^{k}-1 \right )= \sum_{k=1}^{n-1}2^{k}-\sum_{k=1}^{n-1}1 = (2^{n}-1)- (n-1).\]
-\end{example}
-We can put this into our equality and do some further algebraic puttering to obtain the final result:
-\begin{align*}
-\sum_{k=1}^{n}2^{k-1}k &= (2 ^{n}-1)n- (2^{n}-1)+(n-1)\\
-&=  2^{n}n-n-(2^{n}-1)+(n-1)\\
-&=  2^{n}n-2^{n}\\
-&=  2^{n}(n-1).
-\end{align*}	
-
-\begin{exercise}{}
-Evaluate $\sum_{k=1}^{n}k^{2}$ by taking $B_k=k$ and $a_k = k$. You will need the expression for the sum $1 + 2 + \ldots + m$ that we derived previously.
-\end{exercise}
-
-From the preceding examples we may see that $B_k = k$ is a frequent choice. This is closely related to the fact that $u=x$ is a frequent choice when applying  the integration by parts formula.
-
-
-\begin{exercise}{}
-Prove the following equation using summation by parts:
-\[ \sum_{k=1}^n k^3 = \frac{n^4}{4} + \frac{n^3}{2} + \frac{n^2}{4} \]
-\end{exercise}
-
-\begin{exercise}{}
-\begin{enumerate}[(a)]
-\item
- Evaluate $\sum_{k=1}^{n}3^{k}k$.
-\item
- Evaluate $\sum_{k=1}^{n}3^{k}k^2$.
-\item
-Evaluate $\sum_{k=1}^{7n} \cis(2\pi k/7)\cdot k$.
-\end{enumerate}
-\end{exercise}
-
-%Example 2
-%Evaluate: 
-%\sum_{k=1}^{n}k^{2}
-%Using our formula, we need to identify A_{l}, a_{l},  b_{l}, and B_{l} from our given summation, remembering to make choices that make calculations easiest.  At first glance, this does not appear to be a summation of a product of two amounts.  Remember, though, that k^{2}=kk. Given that both elements of the product are the same, our choice is easy and we will choose B_{l}=k and a_{l}=k.  
-%By the previous example, we know that if B_{l}=k, then it follows that b_{l}=1. If a_{l}=k, then A_{l}=\sum_{l=1}^{k}a_{l}, which by substitution, A_{l}=\sum_{l=1}^{k}l which simplifies to \frac{\left ( k+1 \right )k}{2}.
-%Again summarizing what we have done:
-%B_{l}= k; a_{l}=k; b_{l}= 1; A_{l}= \frac{\left ( k+1 \right )k}{2}
-%Plugging into the formula: \sum_{l=1}^{n}a_{l}B_{l}= A_{n}B_{n}-\sum_{l=1}^{n-1}A_{l}b_{l+1}
-%\sum_{k=1}^{n}k\cdot k= \frac{n\left ( n+1 \right )n}{2}-\sum_{k=1}^{n-1}\left ( 1 \right )\frac{\left ( k+1 \right )k}{2}
-%Breaking down the summation on the right,
-%=\sum_{k=1}^{n-1}\left ( 1 \right )\frac{\left ( k+1 \right )k}{2}
-%By factoring out \frac{1}{2}, we have the right side:
-%= \frac{1}{2}\left ( \sum_{k=1}^{n-1}k^{2}+k \right )
-%Breaking the summation into two parts produces:
-%= \frac{1}{2}\sum_{k=1}^{n-1}k^{2}+\frac{1}{2}\sum_{k=1}^{n-1}k
-%Our equation now looks like this:
-%\sum_{k=1}^{n}k\cdot k= \frac{n\left ( n+1 \right )n}{2}-\frac{1}{2}\sum_{k=1}^{n-1}k^{2}-\frac{1}{2}\sum_{k=1}^{n-1}k
-%Adding the summation of k^{2} to the left produces:
-%\sum_{k=1}^{n}k^{2}+\frac{1}{2}\sum_{k=1}^{n-1}k^{2}= \frac{n^{2}\left ( n+1 \right )}{2}-\frac{1}{2}\sum_{k=1}^{n-1}k
-%Which further simplifies on the right by replacing the summation of k with its value and separating the fraction:
-%\sum_{k=1}^{n}k^{2}+\frac{1}{2}\sum_{k=1}^{n-1}k^{2}= \frac{n^{2}}{2}+\frac{n^{2}\left ( n+1 \right )}{2}-\frac{1}{2}\frac{\left ( n-1 \right )n}{2}
-%Simplifying further, we can add like terms on the left (1 summation + \frac{1}{2} = \frac{3}{2}) and factor our  \frac{n}{2} on the right:
-%\frac{3}{2}\sum_{k=1}^{n}k^{2}= \frac{n}{2}\left ( n+n\left ( n+1 \right )-\frac{n-1}{2} \right )
-%By factoring out \frac{n}{2} on the right gives us:
-%\frac{3}{2}\sum_{k=1}^{n}k^{2}= \frac{n}{2}\left ( n\left ( n+1 \right )+\frac{n+1}{2} \right )
-%And finally, adding terms in the parenthesis and factoring the quadratic it produces, you are left with:
-%\frac{3}{2}\sum_{k=1}^{n}k^{2}= \left ( \frac{n}{2} \right )\left ( n+1 \right )\left ( n+\frac{1}{2} \right )
 
