@@ -353,6 +353,30 @@ Take any number with an even number of digits, reverse the number, and add the t
 Take any number with any number of digits. Write the digits in reverse order and append them to the end of the original number (for example, if the original number is 2834, the end result is the number 28344382). Show that the result is divisible by $11$.(Hint: Think about Exercise~\ref{exercise:bases:reverse even number digits}). 
 \end{exercise}
 
+\begin{exercise}{}**
+\begin{itemize}
+\item
+Factor the number 1001, and use your result to design a procedure that does the following.  Given a number $n$ with $m$ digits, using a single subtraction (and no multiplication)  construct a number $n'$ with $m-3$ digits such that $ \mod(n,7) = \mod(n',7), \mod(n,11) = \mod(n',11)$, and $\mod(n,13) = \mod(n',13)$.  
+\item
+Explain how it is possible to use your procedure to take an arbitrarily large number $n$ and obtain a number with three or fewer digits which has the same divisibility with respect to 7, 11, and 13 as $n$ does.
+\item
+Use your procedure to test (by hand)  the numbers 14142131356237 and 314159653589 for divisibility by 7,11, and 13, using only subtraction and 3 final divisiions of a 3-digit number.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}{}**
+\begin{itemize}
+\item
+Prove that the following rule works for divisibility by 7.  Given a $m$-digit number, remove the last digit $d_0$ to obtain a $m-1$-digit number, then subtract $2d_0$ from the $m-1$-digit number.  Then the new number has the same divisibility by 7 as the original number.
+\item
+Use the result in (a) to test the number 27182818284590 for divisibiilty by 7.
+\item
+Obtain similar rules for divisibility by 13 and 19.
+\item Use your rules from (c) to test 27182818284590 for divisibility by 13 and 19.
+\end{itemize}
+\end{exercise}
+
+
 \section{Decimal representations in other bases}
 
 We've mentioned above that we can express numbers in other bases besides base 10.  First we should explain what 

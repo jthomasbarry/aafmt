@@ -65,7 +65,7 @@ We assume the following properties of arithmetic operations on the integers, rat
 \item
 \term*{Multiplication is commutative }: $a\cdot b = b\cdot a$  (Same comment applies as in previous property.)
 \item
-\term*{Multiplication distributes over addition}\index{Distributive!in ordinary arithmetic}:   $a\cdot (b + c) = (a\cdot b) + (a \cdot c)$ and $(a+b)\cdot c = a \cdot c + b \cdot c$.  (Technically, these are called the  \emph{left distributive} and \emph{right distributive} properties respectively.
+\term*{Multiplication distributes over addition}\index{Distributive!in ordinary arithmetic}:   $a\cdot (b + c) = (a\cdot b) + (a \cdot c)$ and $(a+b)\cdot c = (a \cdot c) + (b \cdot c)$.  (Technically, these are called the  \emph{left distributive} and \emph{right distributive} properties respectively.
 \item \term*{Zero divisor property}\index{Zero divisors!in ordinary arithmetic}
 $a \cdot 0 = 0$ and $0 \cdot a = 0$.
 \end {enumerate}
@@ -99,8 +99,14 @@ $((a \cdot b) \cdot c + b \cdot c) + c \cdot a = c \cdot ((a+b) + a \cdot b)$
 
 Note that the associative property allows us to write expressions without putting in so many parentheses.  So instead of writing $(a+b)+c$, we may simply write $a+b+c$. By the same reasoning, we can remove parentheses from any expression that involves only addition, or any expression that involves only multiplication: so for instance, $(a \cdot (b \cdot c) \cdot d) \cdot e = a \cdot b \cdot c \cdot d \cdot e$. Using the associative and distributive property, it is possible to write any arithmetic expression without parentheses. So for example, $(a \cdot b) \cdot (c + d)$ can be written as $a \cdot b \cdot c + a \cdot b \cdot d$.  (Remember that according to operator precedence rules, multiplication is always performed before addition: thus $3 \cdot 4 + 2$ is evaluated by first taking $3 \cdot 4$ and then adding 2.)
 
+There properties can be used to prove arithmetic statements that ordinarily we take for granted.  For example, we automatically replace $-1 \cdot a$ with $-a$, but this really needs to be justified. In fact, this requires one of the other properties in the above list:
+
 \begin{exercise}{}
-Rewrite the following expressions without any parentheses, using \emph{only} the  associative and distributive properties  (don't use commutative in this exercise!)
+Show that $a + (-1 \cdot a) = 0 and (-1 \cdot a)=0$  (this is the same thing as showing that  $-1 \cdot a$ is the additive inverse of $a$, or $-1 \cdot a = -a$).  Which of the above properties did you use?
+\end{exercise}
+
+\begin{exercise}{}
+Rewrite the following expressions without any parentheses and simplify as much as possible, but \emph{without using the commuitative property}.
 \begin{enumerate}[(a)]
 \item
 $(((x + y) + (y+z))\cdot w) - 2y \cdot w$
@@ -120,11 +126,11 @@ Given the expression:~
  $(((a-b)+b)+b)(a-b) + b^2$
 \begin{enumerate}[(a)]
 \item
-Simplify the expression using the associative law ONLY.
+Simplify the expression \emph{without using distributive or commutative property}.
 \item
-Simplify the expression using the associative and distributive laws ONLY.
+Simplify the expression\emph{without using the commutative property}.
 \item
-Simplify the expression using the associative, distributive, and commutative laws.
+Simplify the expression using all laws.
 \end{enumerate}
 \end{exercise}
 
@@ -133,11 +139,11 @@ Given the expression:~
  $(r+p)(s+q) - (p+s)(q+r)$
 \begin{enumerate}[(a)]
 \item
-Simplify the expression using the associative law ONLY.
+Simplify the expression \emph{without using distributive or commutative property}.
 \item
-Simplify the expression using the associative and distributive laws ONLY.
+Simplify the expression \emph{without using the commutative property}.
 \item
-Simplify the expression using the associative, distributive, and commutative laws.
+Simplify the expression using all laws.
 \end{enumerate}
 \end{exercise}
 
@@ -490,7 +496,7 @@ Given that $m=2019^2 + 2020^2$, evaluate $\sqrt{2m-1}$. (use the fact that 2020 
 Solve for $x$: $\sqrt{x^2 + 9} + \sqrt{x^2-9} = 5 + \sqrt{7}$. (To avoid squaring twice, use difference of squares to obtain a second equation, then use the two equations together to eliminate one of the square roots.)
 \item
 Given $a = 4^{1/3} + 2^{1/3} + 1$, evaluate $\frac{3}{a} + \frac{3}{a^2} + \frac{1}{a^3}$. (Write out the expressions for  
-$\frac{1 + x^3}{1+x}$ and $(1+x)^3$, and see if you can relate them to the given expressions)
+$\frac{1 - x^3}{1-x}$ and $(1+y)^3$, and see if you can relate them to the given expressions)
 \item
 Solve for $x$: $x = \sqrt{x - \frac{1}{x}} + \sqrt{1 - \frac{1}{x}}$.  (To avoid squaring twice, use difference of squares to obtain a second equation, then use the two equations together to eliminate one of the square roots.)
 \item
@@ -508,7 +514,7 @@ Given $x= 2 + \sqrt{2}$, find $x^4 - 4x^3+7x^2 - 20x + 16$.(Find a quadratic equ
 \item
 Given $4x^{-4} - 2x^{-2}=3$ and $x^4 + y^2 = 3$, find $4x^{-4} + y^4$.
 \item
-Given $30^x = 2020$ and $67^y = 2020$, find $x^{-1} + y^{-1}$.
+Given $30^x = 2010$ and $67^y = 2010$, find $x^{-1} + y^{-1}$.
 \item
 Given $a+b=6$ and $ab + (c-a)^2 + 9=0$, find $a+b+c$  (Try to find a particular solution for $a,b,c$.  Look at the signs of the terms.)
 \item
