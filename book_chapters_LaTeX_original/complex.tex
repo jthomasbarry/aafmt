@@ -686,6 +686,9 @@ of \emph{nonzero} rationals, reals, and complex numbers.\index{Complex numbers!a
 Prove FOIL for complex numbers: that is, if $u,v,w,$ and $z$ are complex numbers, then $(u+v)(w+z) = uw + uz+vw+vz$.
 \end{exercise}
 
+Tables~\label{additive_table}-\label{multiplicative_table} show that complex numbers also follow the same fundamental algebraic  rules that real numbers do. This makes life a lot simpler! From now on,
+in our proofs we may freely apply these properties to complex numbers, just like with real numbers. But it's important to realize that we had to go through the process first of establishing the properties specifically for complex numbers, because there are number systems in which these basic properties do not hold--be forewarned! 
+
 \subsection{Modulus and complex conjugate}
 
 We are familiar with the absolute value of a real number: for instance,
@@ -754,7 +757,7 @@ $( \overline{4 -7i} ) \cdot (\overline{3 + 3i})^{-1}$
 \end{multicols}
 \end{exercise}
 
-Here is an example of a proposition involving complex conjugates.
+In order to use the complex conjugate and modulus operations effectively, we need to know how they interact with the arithmetic operations of addition, multiplication, subtraction, and division. In the following, we prove several propositions that estabish important properties of these two operations. 
 
 \begin{prop}{conj_add} Given $z$ and $w$ are complex numbers, then $\overline{z} + \overline{w} = \overline{z + w}$.
 \end{prop}
@@ -763,14 +766,14 @@ We may write $z$ as $a + bi$ and $w$ as $c + di$. Then
 \begin{align*}
 \overline{z} + \overline{w} &= \overline{a + bi} + \overline{c + di} \\
 & = (a - bi) + (c - di) & \textrm{by~definition~of~conjugate}\\
-& = (a + c) - (b + d)i & \textrm{by~basic algebra}\\
+& = (a + c) - (b + d)i & \textrm{commutative, associative }\\
 & = \overline{(a + c) + (b + d)i} & \textrm{by~definition~of~conjugate}\\
 & = \overline{z + w} & \textrm{by~definition~of~complex~addition}
 \end{align*}
 \end{proof}
 
 \begin{exercise}{cxprops}
-Prove each of the following statements (follow the style of Proposition~\ref{proposition:complex:conj_add}).
+Prove each of the following propositions (follow the style of Proposition~\ref{proposition:complex:conj_add}).
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
 \item
@@ -1282,7 +1285,7 @@ The third statement (for $n=3$) can be proved using the statement for $n=2$:
 
 \begin{exercise}{28} Fill in the blanks to complete the proof:
 \begin{align*}
-(r\cis\theta)^{3} &= r\cis\theta \cdot (\underline{~<1>~})^{2} & \text{(by basic algebra)} \\
+(r\cis\theta)^{3} &= r\cis\theta \cdot (\underline{~<1>~})^{2} & \text{(associative)} \\
  &=  r\cis\theta \cdot (r^{2} \cdot\underline{~<2>~}) & \text{(by the previous exercise)}\\
  &=  r^{3} \cdot \cis( \theta +  \underline{~<3>~})) & \mbox{(by Proposition \ref{proposition:complex:polar_mult})}\\
  &=   \underline{~<4>~}) & \mbox{(by basic algebra)}\\
@@ -2136,10 +2139,10 @@ First consider $c=1$, so $f(z) = z^2 + 1$. We start with $z=0$, which gives $f(0
 
 On the other hand, if we use $c=i$ and start with $z=0$, we get $f(0) = i$ at first, and repeated iteration gives $f(i) = -1+i, f(-1+i) =- i, f(-i) = -1 + i, \ldots$ so that this time $|f(z)|$ doesn't continue to grow indefinitely after repeated iterations. 
 
-The Mandelbrot set is defined to be the set of values $c$ for which the iterations do \emph{not} grow indefinitely upon iteration. Thus $i$ is in the Mandelbrot set, while $1$ is not. 
+The Mandelbrot set is defined to be the set of values $c$ for which the iterations of $f(z) = z^2 + c$ starting from $z=0$ do \emph{not} grow indefinitely upon iteration. Thus $i$ is in the Mandelbrot set, while $1$ is not. 
 
 \begin{exercise}{mandelbrot}
-Which of the following numbers is in the Mandelbrot set? \emph{Demonstrate} your answer.
+Which of the following numbers is in the Mandelbrot set? \emph{Demonstrate} your answers.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
 \item
@@ -2154,22 +2157,43 @@ $c = 1+i$
 \end{multicols}
 \end{exercise}
 
+\begin{exercise}{mandel2}
+In the definition of the Mandelbrot set, we mentioned that you have to check whether the iterations ``grow indefinitely''. The question, is, How far do you have to check? We can actually give an answer:
+\begin{enumerate}[(a)]
+\item
+Given any two complex numbers $z,w$, show that:
+\begin{equation*}
+|z + w| \le |z| + |w|.
+\end{equation*}
+This is called the \emph{triangle inequality}\index{triangle inequality! for complex numbers} for complex numbers (it is closely related to the `triangle inequality' for vectors). \hyperref[sec:complex:hints]{(*Hint*)}
+\item
+Prove the following variation of the triangle inequality:  Given two complex numbers $z,w$ then $|z| \ge |z-w| - |w|$.
+\item
+Suppose that $|c| < 2$, and suppose that $z \ge 2$. Use (b) to show  that $|z^2 + c| > |z|$.
+\item
+In order to guarantee that a number $c$ is in the Mandelbrot set, all we have to do is show that one of the iterates of the function $f(z) = z^2 + c$ is larger than a given positive number $r$.  What is the value of $r$?  
+\end{enumerate}
+\end{exercise}
+
 \begin{figure}[hbt]  
 \center{\includegraphics[width=5.in]
 	         {images/mandelbrot.png}}
 \caption{(\emph{Left}) The Mandelbrot set: the set itself is colored in maroon. The  set has delicate filaments that extend from the different bulb-shaped areas, which are outlined in lighter color.(\emph{Right}) Detail of the Mandelbrot set, along the top edge of the heart-shaped region shown in the figure at left. \label{mandelbrot}}
 \end{figure}
 
-\begin{exercise}{excel} (\emph{for geeks})
+\begin{exercise}{excel}(\emph{Programming exercise})
 \begin{enumerate}[(a)]
 \item
 Write an Excel spreadsheet that can multiply two complex numbers. Put the real and imaginary parts of the first number in cells A1 and B1; Put the real and imaginary parts of the second number in cells C1 and D1; Put the real and imaginary parts of the result in cells E1 and F1. Use your sheet to compute $(3 + 4i)(7 - 8i)$.
 \item
-Modify your Excel sheet to compute the square of a complex number. Put the real and imaginary parts of the first number in cells A1 and B1; Put the real and imaginary parts of the result in cells C1 and D1. Use your sheet to compute $(12 - 5i)^2$.
+Copy your Excel sheet, and modify it to compute the square of a complex number. Put the real and imaginary parts of the first number in cells A1 and B1; Put the real and imaginary parts of the result in cells C1 and D1. Use your sheet to compute $(12 - 5i)^2$.
 \item 
-(\emph{for ubergeeks}) Modify your Excel sheet to compute $z^2, (z^2)^2,((z^2)^2)^2, \ldots$ (10 number altogether) for a given complex number $z$. Put the real and imaginary parts of $z$ in cells A1 and B1; Put the real and imaginary parts of the results in columns C and D. Use your sheet with $z = 1 + 0.25 i$. Plot the results as 10 points in the plane (use Scatter Plot).
+Copy and modify your Excel sheet to compute $z^2, (z^2)^2,((z^2)^2)^2, \ldots$ (20 number altogether) for a given complex number $z$. Put the real and imaginary parts of $z$ in cells A1 and B1; Put the real and imaginary parts of the results in columns C and D. Use your sheet with $z = 0.8 + 0.6i$. Plot the results as 20 points in the plane (use Scatter Plot). What do you notice about your numbers?
 \item
-(\emph{for super-ubergeeks}) Modify your Excel sheet to compute the first 100 iterates of the function $f(z) = z^2 + c$ for given complex numbers $z,c$ (see Exercise~\ref{exercise:complex:mandelbrot}). Put the real and imaginary parts of $z$ in cells A1 and B1; Put the real and imaginary parts of $c$ in cells A2 and B2; put the results in columns C and D. Using your sheet, determine which of the following numbers is in the Mandelbrot set: (i) $z = -1.04039 + 0.2509294i$; (ii) $z=-0.1155989 + 0.7639405$.
+ Modify your Excel sheet to compute the first 100 iterates of the function $f(z) = z^2 + c$ for given complex numbers $z,c$ (see Exercise~\ref{exercise:complex:mandelbrot}). Put the real and imaginary parts of $z$ in cells A1 and B1; Put the real and imaginary parts of $c$ in cells A2 and B2; put the results in columns C and D. Using your sheet, determine which of the following numbers is in the Mandelbrot set: (i) $z = -1.04039 + 0.2509294i$; (ii) $c=-0.1155989 + 0.7639405i$.
 \end{enumerate}
 \end{exercise} 
 
+\begin{exercise}
+Using $c = -3/4 + 0.01$ compute the sequence for 100 iterations, and note the iteration at which the value exceeds 2.  Do the same thing for $c = -3/4 + 0.001$, but for 1000 iterations.  Do you see any relationship between your results and the value of $\pi$?
+\end{exercise}

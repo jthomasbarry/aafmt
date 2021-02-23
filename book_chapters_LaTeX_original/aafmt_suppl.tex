@@ -52,6 +52,9 @@
 \input{macros}
 
 
+% Remove video links from chapter headings
+\newcommand{\sectionvideohref}[1]{} 
+
 % Per-chapter items
 \newcommand{\chaplabel}{\relax}
 \newcounter{example}[chapter]
@@ -281,7 +284,8 @@ ISBN:  978-1-312-85635-6
 \mainmatter
 %
 \chap{Answer Key}{AnswerKey}
-\input{complex_suppl}
+\input{first_chap_suppl}
+%\input{complex_suppl} % something is wrong in here ( LEVT)
 \input{modular_arithmetic_suppl}
 \input{set_chapter_suppl}
 \input{functions_suppl}

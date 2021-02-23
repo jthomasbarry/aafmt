@@ -1320,7 +1320,7 @@ We can use similar methods as in Exercise~\ref{exercise:modular:ops}, to show th
 This completes our discussion showing that arithmetic mod $n$ can be reduced to arithmetic in ${\mathbb Z}_n$.  What we've shown can simplify other modular arithmetic arguments as well:
 
 \begin{exercise}{number_remainder}
-Use  Proposition~\ref{proposition:modular:number_remainder} twice and the first definition of modular equivalence to prove the following propostions.  (It is also possible to prove these propositions directly from the definitions, 
+Use  Proposition~\ref{proposition:modular:number_remainder} twice and the first definition of modular equivalence (Definition~\ref{definition:modular:equivalence}) to prove the following propostions.  (It is also possible to prove these propositions directly from the definitions, 
 but the point of this exercise is to look at the proof from a different perspective.)
 
 \noindent {\bf Proposition}: Given $\ell,m,x,y \in {\mathbb Z}$ where $\ell \equiv x \pmod{n}$ and $m \equiv y \pmod{n}$, then 
@@ -1343,7 +1343,7 @@ We may notice that $80056 \equiv 80000 \pmod{56}$ and $69944 \equiv 70000 \pmod{
 \]
 By noticing some patterns we were able to save ourselves quite a bit of work.
 
-Note that we were careful to specify that this replacement works for added and multiplied. It does \emph{not} work for integer exponents. for example, it is not true that $2^1 \equiv 2^4 (\text{mod} 3)$, even though $1 \equiv 4  (\text{mod} 3)$. It turns out that exponents can be replaced with simpler exponents in modular equivalences, but we won't find out how this works until  Section~\ref{sec:Fermat} (if you want to look ahead!) 
+Note that we were careful to specify that replacement with modular equivalents works in modular equations that involve addition and/or multiplication. It does \emph{not} work for integer exponents. for example, it is not true that $2^1 \equiv 2^4 (\text{mod} 3)$, even though $1 \equiv 4  (\text{mod} 3)$. It turns out that exponents can be replaced with simpler exponents in modular equivalences, but we won't find out how this works until  Section~\ref{sec:Fermat} (if you want to look ahead!) 
   
 \begin{exercise}{prove}
 Prove or disprove, using the proposition in Exercise~\ref{exercise:modular:number_remainder}:
@@ -1516,7 +1516,7 @@ $\odot$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 
 %\medskip{}
 There is an important feature exhibited in both Table~\ref{groups_Z8_add_table} and Table ~\ref{groups_Z8_mult_table} that is easy to overlook.
-Notice that every entry in the table is also an element of ${\mathbb Z}_8$. You can think of the set $\{0,...,7\}$ as a closed box, and when you add or multiply any two numbers in that box mod $8$, you always get another number in that box, never outside of it (indeed because addition and multiplication mod $8$ return a remainder that is some number 0-7). We express this mathematically by saying that ${\mathbb Z}_8$ is \term{closed} \index{Closure!integers mod n} under addition and multiplication mod $8$. It seems reasonable that the same should be true for any ${\mathbb Z}_n$, and we state this formally as a proposition (as mathematicians are wont to do):
+Notice that every entry in the table is also an element of ${\mathbb Z}_8$. You can think of the set $\{0,...,7\}$ as a closed box, and when you add or multiply any two numbers in that box mod $8$, you always get another number in that box, never outside of it (indeed because addition and multiplication mod $8$ return a remainder that is some number 0-7). We express this mathematically by saying that ${\mathbb Z}_8$ is \term{closed} \index{Closure!integers mod n} under addition and multiplication mod $8$. (Alternatively we may say: addition and multiplcation mod $8$ have the property of \term{closure}.) It seems reasonable that the same should be true for any ${\mathbb Z}_n$, and we state this formally as a proposition (as mathematicians are wont to do):
 
 %While we understand why the entries in the tables below are all integers in ${\mathbb Z}_8$, doesn't it seem a bit fortuitous, even a miracle, that this is true?  How many groups of objects in life can you pick any two out of, combine them in some way, and from that process generate another object in that group, never generating any object outside of it?  You can think of the set $\{0,...,7\}$ as a closed box, and when you add or multiply any two numbers in that box mod $8$, you always get another number in that box, never outside of it.  This fact, this happenstance is a property we call \term{closure} \index{Closure!definition}.  We would say that ${\mathbb Z}_8$ is closed under addition and multiplication mod $8$.
 
@@ -1745,7 +1745,7 @@ Notice that we do  \emph{not} include the commutative property in this list. Lat
 
 Now that we've defined groups, in retrospect we may look back and see that we've encountered groups before. In fact, we've been working with groups since the very beginning of the book! 
 
-\begin{exercise}{}
+\begin{exercise}{groupAdd}
 For each of the following sets of numbers, determine which of the four group properties holds, using the operation of addition. If a property does \emph{not} hold, give a specific counterexample which shows that the property is false. State also whether or not each set is a group.
 
 \noindent (a) Integers;~~(b)Positive integers;~~(c) Rational numbers;~~(d) Real numbers; ~~(e) Complex numbers.
@@ -1755,8 +1755,8 @@ For each of the following sets of numbers, determine which of the four group pro
 We've shown several examples of group under the operation of addition (+ or $\oplus$). But what about multiplication? With multiplication, things turn out quite differently.
 
 
-\begin{exercise}{}
-For each of the following sets of numbers, determine which of the four group properties holds, using the operation of addition. If a property does \emph{not} hold, give a specific counterexample which shows that the property is false. State also whether or not each set is a group.
+\begin{exercise}{groupMult}
+For each of the following sets of numbers, determine which of the four group properties holds, using the operation of multiplication. If a property does \emph{not} hold, give a specific counterexample which shows that the property is false. State also whether or not each set is a group.
 
 \noindent (a) Integers;~~(b)Positive integers;~~(c) Rational numbers;~~(d) Real numbers; ~~(e) Complex numbers.
 \end{exercise}
