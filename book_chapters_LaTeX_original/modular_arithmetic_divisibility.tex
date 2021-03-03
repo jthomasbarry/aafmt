@@ -186,7 +186,7 @@ Let $n>2$ be an integer such that $\gcd(n,10)=1$. Then there exist a positive in
 \begin{proof}
 Consider the infinite sequence: $\bmod(10,n)$, $\bmod(10^{2},n)$, $\bmod(10^{3},n),\dots$. All of these numbers are between $1$ and $n-1$. Since the sequence is infinite and only can take at most $n-1$ values, it follows there must be at least two values that are equal, so $\bmod(10^{k},n)=\bmod(10^{j},n)$, where $k>j$. But,
 \begin{align*}
-\bmod(10^{k},n)&=\bmod(10^{j}\cdot 10^{k-j},n) & \text{[basic arithmetic]}\\
+\bmod(10^{k},n)&=\bmod(10^{j}\cdot 10^{k-j},n) & \text{[exponent rules]}\\
 &=\bmod(10^{j},n)\odot \bmod(10^{k-j},n) &\text{[Proposition~\ref{proposition:modular:number_remainder}]}.
 \end{align*}
 
@@ -260,15 +260,19 @@ Since $\bmod(10,3)=1$, we get
 &=\bmod(2\cdot(1)^2+3\cdot(1)+4,3) & [\textrm{Props.~\ref{proposition:modular:remThm} and ~\ref{proposition:modular:number_remainder}}]\\
 &=\bmod(9,3)=0 & [\textrm{arithmetic}]
 \end{align*}
-
 \end{proof}
 
 Let's generalize Example~\ref{example:bases:234divby3}. Suppose we have a decimal number, $n$, with digits $d_{0}\dots d_{m}$  so that the number can be written as $d_{m}d_{m-1}\dots d_{0}$. Then we can write 
-\begin{equation}
+\begin{equation*}
 n=d_{m}\cdot 10^{m}+d_{m-1}\cdot 10^{m-1}+\dots +d_{0}\cdot 10^{0}
-\end{equation}
+\end{equation*}
 
-It follows that $\bmod(n,3)=\bmod(d_m\cdot 10^m+d_{m-1}\cdot 10^{m-1}+\dots +d_{0}\cdot 10^0,3)=\bmod(d_{m}+d_{m-1}+\dots+d_{0},3)=0$. Which leads to the following proposition.
+It follows that 
+\begin{align*}
+\bmod(n,3)&=\bmod(d_m\cdot 10^m+d_{m-1}\cdot 10^{m-1}+\dots +d_{0}\cdot 10^0,3) \\
+&=\bmod(d_{m}+d_{m-1}+\dots+d_{0},3)=0.
+\end{align*} 
+This observation leads to the following proposition.
 
 \begin{prop}{divisibility by 3}
 An integer is divisible by 3 if and only if the sum of its digits is divisible by 3.
