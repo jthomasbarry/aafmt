@@ -35,7 +35,8 @@ Our examination of cosets will give us deep insight into the nature and structur
 
 Thanks to Tom Judson for material used in this chapter.
 
-\section{Definition of cosets}\label{cosets:def}
+\section{Definition of cosets}
+\label{sec:cosets:def}
 
 The concept of ``coset'' brings together two ideas that we've seen before, namely \emph{subgroups} and \emph{equivalence classes}. We'll see how cosets arise from this mix by using a familiar example.
 
@@ -234,7 +235,8 @@ Show that if $G$ is an abelian group and $H$ is a subgroup of $G$, then any left
 
 But abelian groups are not the only groups in which left cosets are equal to right cosets--see for example the first case in Example~\ref{example:cosets:S3_Cosets}. So we still haven't answered the question of what is the most general situation in which left cosets and right cosets are equal. We'll take this issue up again in Section~\ref{cosets:normal}.
 
-\section{Cosets and partitions of groups}\label{sec:CosetsPartitions}
+\section{Cosets and partitions of groups}
+\label{sec:CosetsPartitions}
 
 In Example~\ref{example:cosets:ModArith}, the cosets that we described were equivalence classes. We saw in Chapter~\ref{EquivalenceRelationsChap} that equivalence classes form a \emph{partition} which divides up the containing set into disjoint subsets.
 This is actually a general fact that is true for all cosets, and we will prove this below. In the proof, we will need the following proposition, which shows that there are several different ways to characterize the situation when  two cosets are equal.  
@@ -405,7 +407,8 @@ Consider the left cosets of $SL_2( {\mathbb R} )$ in $GL_2( {\mathbb R})$.  Show
 %\end{enumerate}
 %\end{exercise}
  
-\section{Lagrange's theorem, and some consequences}\label{sec:LagThm}
+\section{Lagrange's theorem, and some consequences}
+\label{sec:LagThm}
 
 \subsection{Lagrange's theorem}
 At the beginning of the chapter, we compared cosets to layers of an onion.  Indeed, as we saw in the last section, this is a good analogy because the cosets of a subgroup partition the group.  However, an even better analogy is to slices of a loaf of sandwich bread--because as we'll see in this section, every coset of a particular subgroup within a given group has exactly the same size. 
@@ -618,7 +621,7 @@ Finally, we can use Lagrange's theorem to show that groups of prime order have a
 Let $G$ be a group of prime order. Use Proposition~\ref{proposition:cosets:cosets_theorem_7} to show that the only proper subgroup of $G$ is the trivial subgroup $\{e\}$.
 \end{exercise}
 
-Exercise~\ref{exercise:cosets:prime_simple} shows that groups of prime order (such as ${\mathbb Z}_p$)  are ``simple'' in the sense that they don't contain any nontrivial subgroups. In Section~\ref{normal:section:simplealternating} we will talk more about ``simple'' groups.
+Exercise~\ref{exercise:cosets:prime_simple} shows that groups of prime order (such as ${\mathbb Z}_p$)  are ``simple'' in the sense that they don't contain any nontrivial subgroups. In Section~\ref{sec:FactoringSimpleGroup} we will talk more about ``simple'' groups.
 
 
 %%% CPT the following proof is incorrect, because it confuses conjugacy in S_n with conjugacy in A_n
@@ -713,7 +716,8 @@ Exercise~\ref{exercise:cosets:prime_simple} shows that groups of prime order (su
 %\end{proof}
 %
  
-\section{Normal subgroups and factor groups}\label{cosets:normal}
+\section{Normal subgroups and factor groups}
+\label{sec:cosets:normal}
  
 We saw in Section~\ref{cosets:def} that if $H$ is a subgroup of a group $G$, then right cosets of $H$ in $G$ are not always the same as left cosets. The \emph{number} of right cosets and left cosets are always equal, and the number of elements in the left and right cosets match; but the right and left cosets \emph{themselves} may not equal each other (it is not always the case that $gH = Hg$ for all $g \in G$).  But as we saw sometimes they do equal each other. The subgroups for which this property holds play a critical role in group theory: they allow for the construction of a new class of groups, called  \emph{quotient groups} (or \emph{factor groups}. 
 % Factor groups may be studied by using homomorphisms, a generalization of isomorphisms. 
@@ -1084,7 +1088,9 @@ Construct the Cayley table for  $D_n / R_n$.
 
 
  
-\section{Factoring of groups and simple groups}\label{normal:section:simplealternating}
+\section{Factoring of groups and simple groups}
+\label{sec:FactoringSimpleGroups}
+% \label{normal:sec:simplealternating}
  
 \subsection{Concepts, definitions, and examples}
  In the previous section we talked about how a normal subgroup enables us to ``factor'' a group to obtain two groups with fewer elements (i.e. the group of cosets, and the normal subgroup). This seems quite similar to the idea of factoring positive integers as a product of smaller numbers. In fact, just as with positive integers, the process can be continued. To be precise: suppose that $G$ is a group, and $N_1$ is a normal subgroup. Suppose further that $N_2$ is a normal subgroup of $N_1$.  Then we can ``factor'' $G$ into three groups, namely $G/N_1$, $N_1/N_2$, and $N_2$. Evidently the process can be continued: if $N_2$ has a normal subgroup $N_3$, then we can ``factor'' $G$ into four groups: $G/N_1$, $N_1/N_2$, $N_2/N_3$, and $N_3$.  When does this process end? Eventually, we will reach a group in which the only normal subgroup is the trivial subgroup  $\{e\}$.  But factoring by $\{e\}$ doesn't give a group with fewer elements, because the number of cosets of the identity in any group $G$ is (by Lagrange's theorem)
@@ -1393,6 +1399,7 @@ After this breakthrough, mathematicians redoubled their efforts to complete the 
  
 \markright{EXERCISES}
 \section*{Additional exercises}
+\label{sec:AdditionalExercises}
 
 \begin{enumerate}
  
