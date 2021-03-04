@@ -15,15 +15,16 @@ arises in many areas of communications, including radio, telephone, television, 
 \medskip
 
 \noindent
-\underline{\bf Prerequisites}: In this chapter we will make extensive use of the group $\mathbb{Z}^{n}_{2}$, which is the direct product of $n$ copies of $\mathbb{Z}_{2}$ (direct products were introduced in Section~\ref{isomorph_section_2}.  
+\underline{\bf Prerequisites}: In this chapter we will make extensive use of the group $\mathbb{Z}^{n}_{2}$, which is the direct product of $n$ copies of $\mathbb{Z}_{2}$ (direct products were introduced in Section~\ref{sec:isomorph_section_2}.  
 %Section~\ref{sec:MaximumLikelihood} on maximum-likelihood decoding uses some probability theory--this section is independent of the rest of the chapter, and may be omitted if desired. 
-The discussion of linear block codes (Section~\ref{section:algcodes:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:efficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{cosets}.  
+The discussion of linear block codes (Section~\ref{sec:algcodes:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:efficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{cosets}.  
 \bigskip
 
 Thanks to Tom Judson for material used in this chapter.
   
  
-\section{Definitions and basic properties}\label{section:algcodes:1}
+\section{Definitions and basic properties}
+\label{sec:algcodes:1}
   
 Let's examine a simple model of a communications system for
 transmitting and receiving coded messages (Figure~\ref{encoding}).  
@@ -312,6 +313,7 @@ all single errors, but it's not very efficient (just imagine having to repeat ev
 %\end{exercise}
  
 \section{Block Codes}
+\label{sec:BlockCodes}
  
 In the examples we've seen so far,  all message words are the same size, and all codewords are the same size (but message words and code words could be of different sizes, as in Example~\ref{example:algcodes:bit3}). This is certainly not the only possibility. For instance, we could encode different message words with codewords of differing sizes. Alternatively, we could use some kind of scheme which doesn't break the message into words at all. Such coding schemes have extremely important practical uses. Nonetheless, we will focus on the simple case where message words all have equal size, and all codewords also have equal size. These are called  ``block codes'', because both the original and encoded message are divided into ``blocks'' (e.g. codewords) of fixed size, and encoding /decoding proceeds block by block.  We shall see shortly that group
 theory  can be used to design block codes with very nice properties. 
@@ -724,6 +726,7 @@ error-correction capabilities of your code.
  
 \section{Group codes\quad
 \sectionvideohref{t9DFd_1BWis&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=41}}
+\label{sec:GroupCodes}
 
 So far in this book, we've tried to relate everything we've talked about to groups. Codes are no exception to this rule!  In fact, we know that all codewords of length $n$ are elements of $\mathbb{Z}_2^n$, which in fact turns out to be a group. To show this, we must first define a group operation:
 
@@ -784,7 +787,7 @@ Prove part (b) of Proposition~\ref{proposition:algcodes:norm} by using part (a) 
 \item Prove part (c) \hyperref[sec:algcodes:hints]{(*Hint*)} 
 \end{enumerate}
 \end{exercise}
-The codes we discussed in Section~\ref{section:algcodes:1} were all subsets of $\mathbb{Z}_2^n$, for some positive integer $n$. We shall now see that codes that are also \emph{subgroups} have special properties that enable efficient encoding and decoding. Accordingly, we define:
+The codes we discussed in Section~\ref{sec:algcodes:1} were all subsets of $\mathbb{Z}_2^n$, for some positive integer $n$. We shall now see that codes that are also \emph{subgroups} have special properties that enable efficient encoding and decoding. Accordingly, we define:
 
 \begin{defn}
  A \term{group
@@ -865,7 +868,8 @@ d_{\min} &= & \min \{ d({\bold x},{\bold y}) : {\bold x}
  Proposition~\ref{proposition:algcodes:GroupCodeMinDist}  \emph{only} applies to \emph{group codes}, and not to codes in general.
  \end{warn}
  
-\section{Linear Block Codes \label{section:algcodes:BlockCodes}}
+\section{Linear Block Codes}
+\label{sec:algcodes:BlockCodes}
   
 Using Proposition~\ref{proposition:algcodes:GroupCodeMinDist}, it is now a simple matter to find the error detection and correction capabilities of a group code. However, so far we don't have a good method  for creating group codes. In this section, we will use some techniques from linear algebra to give one such method. This method is widely used in digital information processing: for instance, in CDs, DVDs, and satellite communications.
 
@@ -880,7 +884,7 @@ $n$-tuples is
 For example, $(011001) \cdot (110101) = 0+1+0+0+0+1 \equiv 0$ (mod $2$). 
 
 \noindent
-(The astute reader will recognize this definition from our discussion of UPC codes in Section~\ref{section:modular:ModularEquations}).
+(The astute reader will recognize this definition from our discussion of UPC codes in Section~\ref{sec:modular:ModularEquations}).
 \end{defn}
 \emph{Note} the difference between inner product and weight. When computing the weight of a codeword, the entries are added using ordinary addition. However, when computing the inner product  in ${\Bbb Z_2^n}$, the terms are added  with mod 2 addition.
 
@@ -1313,6 +1317,7 @@ $(1,0,1,0,1,0)$
 
  
 \section{Code words and encoding in block linear codes}
+\label{sec:EncodingBlockLinearCodes}
  
 We have shown how to define a set of codewords for a block linear code. But so far we don't understand too well what code words look like, and we haven't considered encoding and decoding. One of the great advantages of linear codes is that they enable  very efficient methods of encoding and decoding.  It's easiest to see how this works in the case where $H$ has a special form, which we will now define.
 
@@ -1922,7 +1927,8 @@ What is the smallest possible codeword size for a single error-correcting code w
 \end{enumerate}
 \end{exercise}
 
-\section{Efficient Decoding}\label{sec:efficientDecoding}
+\section{Efficient Decoding}
+\label{sec:efficientDecoding}
  
  
 We are now at the stage where we are able to generate linear codes
@@ -2374,7 +2380,8 @@ possible.
 \end{exercise}
  
 
-\section{Additional algebraic coding exercises}\label{AlgCodeEx}
+\section{Additional algebraic coding exercises}
+\label{sec:AlgCodeEx}
  
 
 \begin{exercise}{lincode0}  
@@ -2506,6 +2513,7 @@ codes, which are heavily dependent on algebraic geometry.
 \end{rem}
  
 \section{References and Suggested Readings}
+\label{sec:References}
  
 {\small
 \begin{itemize}
