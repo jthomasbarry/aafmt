@@ -19,7 +19,8 @@ We're about to start looking at polynomials, which means we'll be working with s
 David Weathers wrote the original version of Sections~\ref{sec:sigmaExamples}-\ref{sec:CommonSums}. Johnny Watts started Sections~\ref{sec:sigmaLinAlg}-\ref{sec:sumByParts}, while  Rachel McCoy made significant improvements to Section~\ref{sec:sumByParts}.
 
 \section{Lots of examples\quad
-\sectionvideohref{W9vTsHE5SJE&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=43}}\label{sec:sigmaExamples}
+\sectionvideohref{W9vTsHE5SJE&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=43}}
+\label{sec:sigmaExamples}
 
 In mathematics one often encounters sums everywhere.  Sometimes these sums have very few terms, but occasionally the sums can reach hundreds, thousands or even an infinite number of terms.  In these cases, rather than listing each and every term or listing the first several terms and assuming the pattern is obvious, one can represent a sum using \term{summation notation}, often referred to as \term{sigma notation}. 
 
@@ -76,7 +77,8 @@ $\displaystyle{ \sum_{k=0}^{100} \left(\frac{1}{k+2} - \frac{1}{k+1}\right)}$
 \end {enumerate}
 \end{exercise}
 
-\section{Algebraic rules for Sigmas} \label{sec:sigmaProperties}
+\section{Algebraic rules for Sigmas} 
+\label{sec:sigmaProperties}
 
 % Sigma, as with any other math notation, is designed not only to offer control and concise notation, but to offer the ability to change the representation of that notation without changing the value.  There are some circumstances where numbers can be moved or removed from the sum and yet the sum maintains the same value.  
 As with any algebraic notation, there are rules that allow us to do algebraic manipulations with expressions that involve sigmas. In this section, we explore some of these rules.
@@ -155,7 +157,8 @@ Given that $\sum_{i=1}^{20} i = 210$ and $\sum_{i=1}^{20} i^2 = 2870$, Evaluate 
 
 
 \section{Change of variable and  rearrangement of sums\quad
-\sectionvideohref{cVfYaB4Gn4M&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=44}} \label{sec:sigmaNested}
+\sectionvideohref{cVfYaB4Gn4M&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=44}}
+ \label{sec:sigmaNested}
 
 Change of variable (a.k.a. substitution) is an extremely powerful technique in mathematics. We've used change of variable in previous chapters, and most likely you've seen change of variable when doing integrals in calculus.  Change of variable can also be used to simplify sums (in fact, there is a very close relationship between integrals and sums, so it's no surprise that the same techniques are useful in both regimes).
 
@@ -382,7 +385,9 @@ $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i (j+i)}$
 \end{exercise}
 
 \section{Common Sums\quad
-\sectionvideohref{i5RI-Ssnwps&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=54}}\label{sec:CommonSums}
+\sectionvideohref{i5RI-Ssnwps&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=54}}
+\label{sec:CommonSums}
+
 There are several sums, even a few infinite sums, for which the total value is known. One very basic example is:
 \[\sum_{i=1}^{k}1.\]
 
@@ -508,7 +513,8 @@ e^x &= \sum_{i=0}^{\infty}\dfrac{x^i}{i!} =1+\dfrac{x^1}{1!}+\dfrac{x^2}{2!}+\df
 Although we won't be talking about infinite series, the same summation notation that we've been using also applies to sums with an infinite number of terms. 
 
 
-\section{Summation by parts}\label{sec:sumByParts}
+\section{Summation by parts}
+\label{sec:sumByParts}
 
 Those who have studied integrals in calculus may be familiar with the process of integration by parts.  This is used when you need to find the integral of the product of two terms.  While this process is used for continuous situations, there is a version of this process for discrete situations called \term{summation by parts}.  
 
@@ -659,7 +665,8 @@ Evaluate $\sum_{k=1}^{7n} \cis(2\pi k/7)\cdot k$.
 \chap{Application:  Sigma Notation in Linear Algebra}{SigmaApp}
 
 \section{Introduction to sigma notation in linear algebra\quad
-\sectionvideohref{M0jHrubtHBA&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=45}}\label{sec:sigmaLinAlg}
+\sectionvideohref{M0jHrubtHBA&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=45}}
+\label{sec:sigmaLinAlg}
 
 Linear algebra is the algebra of real space: not just 3-dimensional space, but $n$-dimensional generalizations. The important mathematical objects in linear algebra are vectors and matrices: You may remember that matrices represent functions (transformations) that act  on vectors.  Although linear algebra is a relatively recent field of mathematics (which got its start in the mid-1800's), since the advent of computers it has risen to the `top of the heap' so to speak, so that  most modern applications of mathematics to real-world problems are built on linear algebra.
 
@@ -670,6 +677,9 @@ This chapter ties together material from several chapters in the book. Besides s
 In the following discussions, we will assume that all matrices have real entries.  However, all of the results that we will prove also apply (in some cases, with slight modifications)  for matrices with \emph{complex} entries, or matrices with entries in $\mathbb{Z}_p$.
 
 \section{Matrix multiplication}
+\label{sec:MatrixMultiplication}
+
+
 It should come as no surprise that summation notation commonly shows up when working with matrices. 
 In the following discussion, we will follow the common practice of denoting a matrix with a capital 
 letter in italics, and the entries of the matrix with the same letter in lowercase. 
@@ -772,6 +782,7 @@ Using parts (b) and (c), show that matrix multiplication is \emph{associative}.
 \end{exercise}
 
 \section{The identity matrix and the Kronecker delta}
+\label{sec:IdentityMatrixKroneckerDelta}
 
 The identity matrix $I$ often comes up when working with matrices. You may remember that an identity matrix has 1's on its diagonal and 0's everywhere else:
 
@@ -932,7 +943,10 @@ Compute $BF$.
 
 
 It turns out that matrices defined using Kronecker deltas play a prominent role in numerical analysis, and in particular the numerical solution of ordinary and partial differential equations.
+
 \section{Abbreviated matrix notations}
+\label{sec:AbbrevMatrixNotations}
+
 In the following discussion, we will be seeing lots of sums involving matrices. This being the case, it's worth our while to try to simplify our notation. In our expression for $C=AB$, we had:
 \[ {c}_{i,j}= \sum_{k=1}^n a_{i,k} b_{k,j} \]
 Now, notice that the index $k$ runs over all columns of $A$ and all rows of $B$  (recall that matrix multiplication is only defined if the number of columns of $A$ is equal to the number of rows of $B$). This being the case, we don't really need to mention that $k$ runs from 1 to $n$--we should simply understand that the index $k$ runs over all possible values. We can therefore convey the same information by simply writing:
@@ -976,6 +990,7 @@ In the following sections we will use the first type of abbreviated notation (no
 
 
 \section{Matrix transpose and matrix inverse}
+\label{sec:MatrixTransposeInverses}
 
 \subsection{Matrix transpose}
 Transpose is another operation on matrices that lends itself to summation notation.  Recall that the transpose of a matrix changes the rows to columns,so that the first row becomes the first column, the second row becomes the second column, and so on.  The transpose of matrix $A$ is denoted as $A^{\text{T}}$.\index{Transpose!of a matrix}\index{Matrix!transpose} Using indices and recalling that first index is the row and the second is the column, we can express this as:
@@ -1044,7 +1059,10 @@ Suppose that $A$ and $B$ are invertible square matrices of the same size (so tha
 \end{enumerate}
 \end{exercise}
 
-\section{Rotation matrices (in 3 dimensions)}\label{subsec:rotMx3}
+\section{Rotation matrices (in 3 dimensions)}
+\label{sec:rotMx3}
+
+
 In three-dimensional space, the \term{dot product} (or \term{scalar product}) of two vectors $v:=[v_1,v_2,v_3]^{\text{T}}$ and $w:=[w_1,w_2,w_3]^{\text{T}}$ is defined as
 \[ v \cdot w :=  v_1w_1 + v_2w_2 + v_3w_3 = \sum_j v_j w_j ,\]
 where we have made use of summation notation to shorten the expression. If we also define the \term*{length}\index{Length!of a vector} of the vector $v$ (denoted by $||v||$) as
@@ -1119,6 +1137,8 @@ We summarize these results in a proposition:
 We will pick up on rotation matrices in Section~\ref{subsec:LeviCivitaDet} when we talk about determinants, and again in Section~\ref{subsec:EulerRot} when we prove Euler's rotation theorem.
 
 \section{Matrix traces}
+\label{sec:MatrixTraces}
+
 Another cool application of summation notation with matrices is to prove things about the \term{trace}\index{Trace!of a matrix} of a matrix.  The trace only applies to square matrices (equal number of rows and columns) and is the sum of all the entries on the diagonal--that is,  the sum of all entries with the same column and row number.  In summation notation, the trace of an $n \times n$ matrix as:
 
 \[ \text{Tr} \left( A \right)= a_{1,1} + a_{2,2} + \ldots + a_{n,n} = \sum_{i} a_{i,i} \] 
@@ -1193,7 +1213,9 @@ This formula is actually quite general, and applies to many non-diagonal matrice
 %%% This problem is an orphan that needs a good home.
 
 
-\section{Levi-Civita symbols and applications}\label{sec:LeviCivita}
+\section{Levi-Civita symbols and applications}
+\label{sec:LeviCivita}
+
 \subsection{Levi-Civita symbols: definitions and examples}\label{subsec:LeviCivita}
 When dealing with vectors and matrices in physics, one often finds lurking  the Levi-Civita symbol,\footnote{Levi-Civita actually refers to one person, not two: the Italian mathematician Tullio Levi-Civita, (1873-1941), who worked on mathematical physics (including relativity).} which is written as an epsilon (the Greek letter $\epsilon$) with various numbers of subscripts.  The possible values it can take are 1, -1, or 0, depending on the values of the subscripts (we refer to these subscripts as ``indices'').  This might not seem too useful since it can only take three different values, but you will see that it does a great job of simplifying expressions that ordinarily would be much more complicated.  
 
