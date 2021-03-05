@@ -2139,7 +2139,9 @@ Give an example of functions $f \colon A \to B$ and $g \colon B \to C$, such tha
  \item \label{CompositionTheoryExers-fonto} 
 Suppose $f \colon A \to B$ and $g \colon B \to C$. Show that if $g \compose f$ is onto, 
  and $g$~is one-to-one, then $f$ is onto.
- \item  \label{CompositionTheoryExers-gNot11} 
+\item \label{CompositionTheoryExers-fonto} 
+Suppose $f \colon A \to B$ and $g \colon B \to C$. Show that if $f$ is onto and $g \compose f$  is 1-1, then $g$ is 1-1.
+\item  \label{CompositionTheoryExers-gNot11} 
 Define $f \colon [0,\infty) \to \real$ by $f(x) = x$. Find a function $g \colon \mathbb{R} \to \mathbb{R}$ such that 
 $g \compose f$ is one-to-one, but $g$ is \emph{not} one-to-one.
 % and $g \colon \mathbb{R} \to \mathbb{R}$ by $g(x) = |x|$. Show that $g \compose f$ is one-to-one, but $g$ is \emph{not} one-to-one.
@@ -2148,14 +2150,11 @@ Suppose $f$ and~$g$ are functions from~$A$ to~$A$. If $f(a) = a$ for every $a \i
 \end{enumerate}
 \end{exercise}
  
-The preceding exercises and examples can be used to prove the following:
-
  \begin{exercise}{BijectionComposeExer}
- Suppose $f \colon A \to B$ and $g \colon B \to C$.
+ Suppose $f \colon A \to B$ and $g \colon B \to C$. Use the properties from Exercise~\ref{exercise:functions:CompositionTheoryExers} to prove the following:
  \begin{enumerate}[(a)]
  \item \label{BijectionComposeExer-gf}
  Show that if $f$ and~$g$ are bijections, then $g \compose f$ is a bijection.
- \hyperref[sec:functions:hints]{(*Hint*)}
  \item  \label{BijectionComposeExer-g}
 Show that if $f$ and $g\compose f$ are bijections, then $g$ is a bijection.
  \item \label{BijectionComposeExer-f}
@@ -2163,14 +2162,13 @@ Show that if $g$ and~$g \compose f$ are bijections, then $f$ is a bijection.
  \end{enumerate}
  \end{exercise}
   
-We have shown that various properties of $f \compose g$ follow based on properties of $f$ and $g$.  It is also important to show some ``negative'' properties, i.e. $f \compose g$ fails to have certain properties if either $f$ or $g$ fails to have the corresponding property.
+We have shown that various properties of $f \compose g$ follow based on properties of $f$ and $g$. We can also show corresponding ``negative'' properties as the contrapositives of these properties.
 
 \begin{example}{composeNotProps}
  Suppose $f \colon A \to B$ and $g \colon B \to C$ and $g$ is \emph{not} onto.  Then $g \compose f$ is \emph{not} onto.
 
 \begin{proof}
-We will prove by contradiction.  Suppose on the contrary that $g \compose f$ is onto.  Then given any $c \in C$, there exists a $a \in A$ such that
-$g \compose f(a)=c$.  By the definition of composition, it follows that $g(b) = c$ where $b \ f(a)$.  Since $c$ was an arbitrary element of $C$, this implies that $g$ is onto, which contradicts our original condition that $g$ is not onto.  This is a contradiction. Therefore our supposition must be false, and $g \compose f$ is not onto.
+This is just the contrapositive of   Exercise~\ref{exercise:functions:CompositionTheoryExers}(\ref{CompositionTheoryExers-gonto}) , which says that  $g \compose f$ is  onto implies that $g$ is onto.
 \end{proof}
 \end{example}
 
@@ -2180,12 +2178,12 @@ $g \compose f(a)=c$.  By the definition of composition, it follows that $g(b) = 
   \item  \label{BijectionComposeExer-g2}
 Show that if $f$ is not one-to-one, then $g \compose f$ is not one-to-one.
 \item
-Show that $g \compose f$ is a bijection if and only if both $g$ and $f$ are bijections.
+Prove or disprove: $g \compose f$ is a bijection if and only if both $g$ and $f$ are bijections.
  \end{enumerate}
  \end{exercise}
 
 \begin{exercise}{}
-Using part (d) from the previous exercise, which of the following are bijections? \emph{explain} your reasoning.
+Using properties from Exercises~\ref{exercise:functions:CompositionTheoryExers} and \ref{exercise:functions:BijectionComposeExer} (or their contrapositives), determine which of the following are bijections.
 \begin{enumerate}[(a)]
 \item
 $f \compose g$ in  Exercise \ref{exercise:functions:ComposeExers-form} parts (a)-(e).
