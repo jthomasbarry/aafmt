@@ -110,6 +110,7 @@ So far we've been talking about finding decimal digits of integers. What about o
 Numbers between 0 and 1 have a decimal expansion like integers do:
 \begin{equation}
 x=d_{-1}10^{-1}+d_{-2}10^{-2}+\cdots+d_{-k}10^{-k}+\cdots  \text{ where } d_{-j}\in \mathbb{Z}_{10}
+x=d_{-1}10^{-1}+d_{-2}10^{-2}+\cdots+d_{-k}10^{-k}+\cdots,  \text{  where } d_{-j}\in \mathbb{Z}_{10}
 \end{equation}
 Fractional numbers differ from integer in that the decimal expansion may be \emph{infinite}, that is to say it may go on forever.\footnote{In fact it is true that ``almost all'' numbers between 0 and 1 have infinite decimal expansions--and yes,``almost all''  has a mathematically precise definition!}
 
@@ -247,12 +248,8 @@ How do we know if a decimal integer, $m$, is divisible by an decimal integer, $n
 
 \begin{example}{234divby3}
 Is $234$ divisible by $3$?
-\end{example}
-For 234 to be divisible by 3, we need to show that $\bmod(234,3)=0$. Let's first write the decimal representation of $234$. 
- 
-\begin{proof}
-
-\begin{align*}
+Answering this question is equivalent to showing whether or not $\bmod(234,3)=0$. Let's first write the decimal representation of $234$: 
+ \begin{align*}
 234=200+30+4=2\cdot 10^{2}+3\cdot 10+4
 \end{align*}
 
@@ -263,7 +260,7 @@ Since $\bmod(10,3)=1$, we get
 &=\bmod(2\cdot(1)^2+3\cdot(1)+4,3) & [\textrm{Props.~\ref{proposition:modular:remThm} and ~\ref{proposition:modular:number_remainder}}]\\
 &=\bmod(9,3)=0 & [\textrm{arithmetic}]
 \end{align*}
-\end{proof}
+\end{example}
 
 Let's generalize Example~\ref{example:bases:234divby3}. Suppose we have a decimal number, $n$, with digits $d_{0}\dots d_{m}$  so that the number can be written as $d_{m}d_{m-1}\dots d_{0}$. Then we can write 
 \begin{equation*}
