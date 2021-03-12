@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+  <docinfo>
+<macros>
+\newcommand{\tikzpreface}[1]{\relax}
+\def\arraystretch{1.3}
+\newcommand{\sectionvideohref}[2][4mm]{\href{https://www.youtube.com/watch?v=#2}{[0pt]{\includegraphics[height=#1]{images/video_camera}}}}
+\newcommand{\mat}[4]{\begin{pmatrix}#1 \amp  #2 \\ #3 \amp  #4\end{pmatrix}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\exrule}{\vspace{-0.3in}  }
+\newcommand{\drawbox}{\hspace{1in}}
+\def\topfraction{.7}
+\def\bottomfraction{.3}
+\def\textfraction{.15}
+\def\floatpagefraction{.7}
+\newcommand{\chaplabel}{\relax}
+\newcommand{\chapterletter}[1]{#1}
+\newcommand{\var}[1]{{#1}}
+\newcommand{\hint}[1]{\emph{#1}}
+\newcommand{\autoref}[1]{{\terminology{ #1}}}
+\newcommand{\autoref}[1]{{\terminology{ #1}}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\rational}{\mathbb{Q}}
+\newcommand{\integer}{\mathbb{Z}}
+\newcommand{\univ}{\mathbb{U}}
+\newcommand{\factoidbox}[1]{#1}
+\newcommand{\eif}{\Rightarrow}
+\newcommand{\eiff}{\Leftrightarrow}
+\newcommand{\qedhere}{\Box}
+\newcommand{\compose}{\circ}
+\newcommand{\bigset}[1]{ \left\{ #1 \right\}}
+\newcommand{\Id}{\textsf{Id}}
+\newcommand{\rel}{\sim}
+\newcommand{\class}[1]{\overline{#1}}
+\newcommand{\divides}{\mbox{|}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Quote}[2]{\begin{quote}
+\slshape #1 \hfill{\hbox{\slshape ---#2}}\end{quote}}
+\newcommand{\seq}[1]{\langle #1\rangle}
+\newcommand{\aaa}{\langle a\rangle}
+\newcommand{\bbb}{\langle b\rangle}
+\newcommand{\cc}{\langle c\rangle}
+\newcommand{\liminfty}{\lim\limits_{n\to\infty}}
+\renewcommand{\ul}[1]{\underline{#1}}
+\renewcommand{\pts}[1]{}
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\equivalent}{\Leftrightarrow}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dprod}{\displaystyle\prod}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+\renewcommand{\dblfloatpagefraction}{0.7}
+</macros>
+<latex-image-preamble>
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{tkz-euclide}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{through,intersections,decorations,shadows,fadings}
+\usepackage{pgfplots}
+</latex-image-preamble>
+  </docinfo>
+  <book>
+    <title>Elementary Abstract Algebra: Examples and Applications</title>
+    <frontmatter>
+      <titlepage>
+        <author>
+          <personname>Justin Hill, Chris Thron (eds), Thomas Judson, Dave Witte Morris, Joy Morris, A. J. Hildebrand (sources), Christy Douglass, Jennifer Lazarus,  Mark Leech,  David Weathers, Moses Marmolejo, Adam McDonald, Katrina Smith, Johnny Watts, Holly Webb(chapter authors), Semi Harrison, Khoi Tran, Rachel McCoy (contributors)</personname>
+        </author>
+      </titlepage>
+    </frontmatter>
+    <xi:include href="./introduction.ptx"/>
+    <xi:include href="./GlossaryofSymbols.ptx"/>
+    <xi:include href="./BeforeWeBegin.ptx"/>
+    <xi:include href="./complex.ptx"/>
+    <xi:include href="./modular.ptx"/>
+    <xi:include href="./bases.ptx"/>
+    <xi:include href="./sets.ptx"/>
+    <xi:include href="./functions.ptx"/>
+    <xi:include href="./crypt.ptx"/>
+    <xi:include href="./Sigma.ptx"/>
+    <xi:include href="./SigmaApp.ptx"/>
+    <xi:include href="./poly.ptx"/>
+    <xi:include href="./symmetries.ptx"/>
+    <xi:include href="./permute.ptx"/>
+    <xi:include href="./groups.ptx"/>
+    <xi:include href="./further_crypt.ptx"/>
+    <xi:include href="./EquivalenceRelationsChap.ptx"/>
+    <xi:include href="./cosets.ptx"/>
+    <xi:include href="./algcodes.ptx"/>
+    <xi:include href="./isomorph.ptx"/>
+    <xi:include href="./homomorph.ptx"/>
+    <xi:include href="./actions.ptx"/>
+    <xi:include href="./rings.ptx"/>
+    <backmatter>
+      <xi:include href="./bibliography.ptx"/>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+    </backmatter>
+  </book>
+</pretext>
