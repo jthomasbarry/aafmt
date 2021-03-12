@@ -1,0 +1,150 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="GlossaryofSymbols">
+  <title>Glossary of symbols</title>
+  <ul>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>{\mathbb N, Z,Q,R,C}</m>:
+        natural numbers
+        (positive integers),
+        integers, rationals, real numbers, complex numbers
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>{\mathbb Q^{\ast},R^{\ast},C^{\ast}}</m>:
+        rationals, real numbers, complex numbers without <m>0</m>
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>{\mathbb Z}_n</m>: Integers mod <m>n</m>
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>Q_8</m>: Quaternion group (<m>\{ \pm 1, \pm i, \pm j, \pm j \pm k \}</m>)
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>\oplus, \odot</m>: Modular addition and multiplication
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>{\mathbb M}_n({\mathbb Z,R,C}\ldots)</m>:
+        <m>n \times n</m> matrices with entries in <m>{\mathbb Z,R,C}\ldots</m>.
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>\exists; \forall</m>: There exists; for all
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>\cis \theta</m>: <m>\cos \theta + i \sin \theta</m>
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>|x|,|z|,|S|,|G|,|g|</m>: Absolute value of the real number <m>x</m>;
+        modulus of the complex number <m>z</m>;
+        number of elements in the set <m>S</m> or the group <m>G</m>;
+        order of the group element <m>g</m>.
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>a \div b</m>: <m>a</m> divides <m>b</m>.
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>GL_n({\mathbb R})</m>: General linear group of invertible
+        <m>n \times n</m> matrices with coefficients in <m>{\mathbb R}</m>.
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>\bmod(m,n)</m>: Remainder of <m>m</m> when divided by <m>n</m>
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>a \equiv b \pmod n</m>: <m>a</m> is equvalent to <m>b</m> mod <m>n</m>
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>a \in S</m>: <m>a</m> is an element of the set <m>S</m>
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>:=</m>: Defined as
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>U(n)</m>: Group of units
+        (elements with multiplicative inverses)
+        mod <m>n</m>.
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>, \cup, \cap, \setminus</m>: Empty set,
+        union, intersection, set difference
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <times/>: Cartesian product or vector cross product (depending on context)
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        iff: If and only if
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>f \circ g</m>: Composition of <m>f</m> and <m>g</m> (apply <m>g</m> first,
+        then <m>f</m>
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>\epsilon_{ijk}</m>: Levi-Civita
+        (totally antisymmetric tensor)
+        symbol
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>{\var Id}</m>: Identity function
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>{\var id}, e</m>: Identity element of a group
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        gcd, lcm: Greatest common divisior, least common multiple
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>\begin{pmatrix}1 \amp 2 \amp \ldots \amp n\\ a_1 \amp a_2 \amp \ldots \amp a_n \end{pmatrix}</m>: Permutation in tableau format
+      </p>
+    </li>
+    <li class="custom-list-style-type" label="">
+      <p>
+        <m>(a_1 \cdots a_{n_1})(b_1 \cdots b_{n_2}) \ldots</m>: Permutation in cycle notation
+      </p>
+    </li>
+  </ul>
+</chapter>
