@@ -76,7 +76,7 @@ Let's find the digit $d_6$ for the number $n=1928307465$ (we may note in this ca
 \end{equation*}
 On the other hand, we can obtain all digits below $d_6$ by taking $n$ modulo $10^7$:
 \begin{equation*}
-\bmod(n,10^{6})=307465
+\bmod(n,10^{7})=307465
 \end{equation*}
 Now subtracting the two we get:
 \begin{equation*}
@@ -348,11 +348,11 @@ Amazing!  But we have the mathematical tools to see why it works:
 There are many variations on this theme--maybe you can come up with one yourself.
 
 \begin{exercise}{reverse even number digits}
-Take any number with an even number of digits, reverse the number, and add the two together. Show that the result is divisible by $11$.
+Take any number with an even number of digits, reverse the number, and add the two together. Show that the result is always divisible by $11$.
 \end{exercise}
 
 \begin{exercise}{append reverse order}
-Take any number with any number of digits. Write the digits in reverse order and append them to the end of the original number (for example, if the original number is 2834, the end result is the number 28344382). Show that the result is divisible by $11$.(Hint: Think about Exercise~\ref{exercise:bases:reverse even number digits}). 
+Take any number with any number of digits. Write the digits in reverse order and append them to the end of the original number (for example, if the original number is 2834, the end result is the number 28344382). Show that the result is always divisible by $11$.(Hint: Think about Exercise~\ref{exercise:bases:reverse even number digits}). 
 \end{exercise}
 
 \begin{exercise}{}**
