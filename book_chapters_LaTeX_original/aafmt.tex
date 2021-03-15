@@ -83,8 +83,8 @@
   {\refstepcounter{equation}{\bigskip\noindent\bf Exercise~\arabic{chapter}.\arabic{section}.\arabic{equation}.}\label{exercise:\chaplabel:#1}}
   {\hspace\fill$\lozenge$\par\medskip}
 
-\newenvironment{defn}
-  {\refstepcounter{equation}{\bigskip\noindent\bf Definition~\arabic{chapter}.\arabic{section}.\arabic{equation}.}}
+\newenvironment{defn}[1]
+  {\refstepcounter{equation}{\bigskip\noindent\bf Definition~\arabic{chapter}.\arabic{section}.\arabic{equation}.}\label{definition:\chaplabel:#1}}
   {\hspace\fill$\triangle$\par\medskip}
 
 \newenvironment{rem}
@@ -317,17 +317,17 @@ ISBN:  978-0-359-04211-1
 %
 \mainmatter
 %
-\include{Introduction}
-\include{Preliminaries}
-%
+%\include{Introduction}
+%\include{Preliminaries}
+%%
 %\include{complex}
 %\input{complex_hints}
 %\include{complex_study_guide}
 %
-%\include{modular_arithmetic}
-%\input{modular_arithmetic_hints}
-%\include{modular_arithmetic_study_guide}
-%\input{ modular_arithmetic_divisibility}
+\include{modular_arithmetic}
+\input{modular_arithmetic_hints}
+\include{modular_arithmetic_study_guide}
+\input{ modular_arithmetic_divisibility}
 %
 %\include{set_chapter}
 %\input{set_chapter_hints}

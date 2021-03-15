@@ -1085,7 +1085,7 @@ Prove Proposition~\ref{proposition:poly:polyadditiveinverse} by showing that $p(
 %Therefore, the additive inverse of $p(x)$ is $q(x)$.
 %\end{proof}
 
-If we compare our results with the definition of group (Definition~\ref{definition:modular:group}, we make an important discovery: 
+If we compare our results with the definition of group (Definition~\ref{definition:ModularArithmetic:group}, we make an important discovery: 
 
 \begin{prop}{polyadditivegroup} Let $R[x]$ be the  set of polynomials over a set $R$ that satisfies properties (I)-(V). Then $R[x]$ is an abelian group under addition (recall that ``abelian'' means that the group's operation is commutative). 
 \end{prop}
@@ -1532,13 +1532,13 @@ We may also restate Proposition~\ref{proposition:poly:polydivides} as:  $a$ is a
 %It is possible for a polynomial to always have a remainder regardless of which polynomial is used to divide it.  A polynomial that cannot be evenly divided cannot be further factored.  A polynomial that cannot be further factored we call an \term{irreducible polynomial}.  \index{Irreducible Polynomial} These polynomials serve a similar function for polynomials as prime numbers do for integers.  Since these polynomials cannot be reduced, we can make deductions as to the behavior of a product of irreducible polynomials.  For example the polynomial $(x+a)$ where $a$ is a real number cannot be factored any further, and the polynomial $mx+b$ where $m$ and $b$ are reals can only be factored into $(x+b/m)(m)$.  A like with real numbers, if we know that $f(x) \cdot g(x) = 0$ then either $f(x) = 0$ or $g(x) = 0$.  Now it is possible to get a higher degree polynomial to be irreducible, but the number set that is used can affect the irreducibility of a polynomial.  For example $x^2 + 1$ is irreducible over the reals, but could be factored over the complex numbers into $(x-i)(x+i)$.  
 
 We will need to take care of some preliminaries in order to prove (the easy part of) the Fundamental Theorem of Algebra. From basic algebra with real numbers, we know that if $ab=0$ then either $a=0$ or $b=0$ (see also 
-Proposition~\ref{proposition:complex:nonzero_complex_product} of Chapter~\ref{complex}). Actually, this \term{zero-divisor property} hold for any set $R$ that satisfies (I)-(VII):
+Proposition~\ref{proposition:ComplexNumbers:nonzero_complex_product} of Chapter~\ref{ComplexNumbers}). Actually, this \term{zero-divisor property} hold for any set $R$ that satisfies (I)-(VII):
 
 \begin{prop}{noZeroDiv} Suppose that $F$ satisfies properties (I)-(VII). Given $a,b \in F$ and $ab = 0$, then either $a=0$ or $b=0$. 
 \end{prop}
 
 \begin{exercise}{}
-Prove Proposition~\ref{proposition:poly:noZeroDiv}.  (\emph{Hint}: you may follow the steps given in Exercise~\ref{exercise:complex:12} 
+Prove Proposition~\ref{proposition:poly:noZeroDiv}.  (\emph{Hint}: you may follow the steps given in Exercise~\ref{exercise:ComplexNumbers:12} 
 \end{exercise}
 
 It turns out that if $F$ satisfies the zero-divisor property, then $F[x]$ satisfies the same property:

@@ -73,15 +73,15 @@ Prove that ${\mathbb Z}_n$ is a ring for any integer $n \ge 2$.
 \begin{proof}
 Recall that ${\mathbb Z}_n=\{0,1,2,\ldots,n-1\}$.  It is also important to note that the operations of addition and multiplication will be defined as \emph{modular sum} and \emph{modular product}, notated as $\oplus$ and $\odot$, respectively.  We should address each of the seven properties listed above to show that we have a ring.  It turns out that we have already shown each of these properties in the chapter on modular arithmetic, Chapter \ref{modular}.  Let's divide our proof into seven steps, one for each required ring property.
 \begin{enumerate}[(I)]
-\item First we must show that ${\mathbb Z}_n$ is closed under $\oplus$ and $\odot$.  In Proposition \ref{proposition:modular:closed_property_Zn}, we showed that the modular sum and modular product of two elements of  ${\mathbb Z}_n$ are also in ${\mathbb Z}_n$. In other words, $a\oplus b \in{\mathbb Z}_n$ and $a\odot b\in{\mathbb Z}_n$, for all $a,b\in{\mathbb Z}_n$.  So ${\mathbb Z}_n$ is closed under $\oplus$ and $\odot$.
+\item First we must show that ${\mathbb Z}_n$ is closed under $\oplus$ and $\odot$.  In Proposition \ref{proposition:ModularArithmetic:closed_property_Zn}, we showed that the modular sum and modular product of two elements of  ${\mathbb Z}_n$ are also in ${\mathbb Z}_n$. In other words, $a\oplus b \in{\mathbb Z}_n$ and $a\odot b\in{\mathbb Z}_n$, for all $a,b\in{\mathbb Z}_n$.  So ${\mathbb Z}_n$ is closed under $\oplus$ and $\odot$.
 %%%% Help with reference of the proposition.
-\item Second, we must show that the associative property holds for ${\mathbb Z}_n$.  In Proposition \ref{proposition:modular:Zn_comm_assoc} (b), we show that $(a \oplus b) \oplus c  =  a \oplus (b \oplus c)$ and $(a \odot b) \odot c    =  a \odot (b \odot c)$.  So the associative property holds for ${\mathbb Z}_n$.
-\item Third, we will show that the zero property holds for ${\mathbb Z}_n$. In Proposition \ref{proposition:modular:id_property_Zn}, we show that $0 \in {\mathbb Z}_n$ and $a\oplus 0=0\oplus a=a$, for any $a\in{\mathbb Z}_n$, so $0$ is the additive identity of ${\mathbb Z}_n$ and the zero property holds.
-\item Our next step is to show that ${\mathbb Z}_n$ has the multiplicative identity property (one).  Again, we will refer to Section \ref{ArithWithRems}.  In particular, Exercise \ref{exercise:modular:56} showed us that $1\in{\mathbb Z}_n$ and $1\odot a=a\odot 1=a$, for any $a\in{\mathbb Z}_n$.  So, the identity property of multiplication holds for ${\mathbb Z}_n$.
-\item The commutative property of $\oplus$ for ${\mathbb Z}_n$ must be proven next.  Proposition \ref{proposition:modular:Zn_comm_assoc} (a) shows us that $a \oplus b   =  b \oplus a$ and
+\item Second, we must show that the associative property holds for ${\mathbb Z}_n$.  In Proposition \ref{proposition:ModularArithmetic:Zn_comm_assoc} (b), we show that $(a \oplus b) \oplus c  =  a \oplus (b \oplus c)$ and $(a \odot b) \odot c    =  a \odot (b \odot c)$.  So the associative property holds for ${\mathbb Z}_n$.
+\item Third, we will show that the zero property holds for ${\mathbb Z}_n$. In Proposition \ref{proposition:ModularArithmetic:id_property_Zn}, we show that $0 \in {\mathbb Z}_n$ and $a\oplus 0=0\oplus a=a$, for any $a\in{\mathbb Z}_n$, so $0$ is the additive identity of ${\mathbb Z}_n$ and the zero property holds.
+\item Our next step is to show that ${\mathbb Z}_n$ has the multiplicative identity property (one).  Again, we will refer to Section \ref{ArithWithRems}.  In particular, Exercise \ref{exercise:ModularArithmetic:56} showed us that $1\in{\mathbb Z}_n$ and $1\odot a=a\odot 1=a$, for any $a\in{\mathbb Z}_n$.  So, the identity property of multiplication holds for ${\mathbb Z}_n$.
+\item The commutative property of $\oplus$ for ${\mathbb Z}_n$ must be proven next.  Proposition \ref{proposition:ModularArithmetic:Zn_comm_assoc} (a) shows us that $a \oplus b   =  b \oplus a$ and
 $a \odot b    =  b \odot a$, for all $a,b\in{\mathbb Z}_n$.  Note that for a set to be a ring, we only need to show that commutativity of \emph{addition} holds.  Because commutativity of \emph{multiplication} also holds for ${\mathbb Z}_n$, we may also have a \emph{commutative} ring.  Let's continue with our proof that ${\mathbb Z}_n$ is a ring before we jump to that conclusion.
-\item The sixth property that we must show is that of the additive inverse.  We will refer back to Proposition \ref{proposition:modular:addinv_property_Zn}.  Here we let $a' = n-a$, for any $a\in{\mathbb Z}_n$.  We show that $a'\in{\mathbb Z}_n$ and $a \oplus a' = a' \oplus a  = 0 \pmod{ n}$: that is, $a'$ is the additive inverse of $a$.
-\item For our last step, we will show that the distributive property holds true for ${\mathbb Z}_n$. Once again, we have already shown that this is true.  In Proposition \ref{proposition:modular:Zn_comm_assoc} (c), we show that $a \odot (b \oplus c)  = (a \odot b)\oplus (a \odot c)$.  Since $\odot$ commutes in ${\mathbb Z}_n$, it follows that $a \odot (b \oplus c)  = (b \oplus c) \odot a= (a \odot b)\oplus (a \odot c)$ and the distributive property holds.
+\item The sixth property that we must show is that of the additive inverse.  We will refer back to Proposition \ref{proposition:ModularArithmetic:addinv_property_Zn}.  Here we let $a' = n-a$, for any $a\in{\mathbb Z}_n$.  We show that $a'\in{\mathbb Z}_n$ and $a \oplus a' = a' \oplus a  = 0 \pmod{ n}$: that is, $a'$ is the additive inverse of $a$.
+\item For our last step, we will show that the distributive property holds true for ${\mathbb Z}_n$. Once again, we have already shown that this is true.  In Proposition \ref{proposition:ModularArithmetic:Zn_comm_assoc} (c), we show that $a \odot (b \oplus c)  = (a \odot b)\oplus (a \odot c)$.  Since $\odot$ commutes in ${\mathbb Z}_n$, it follows that $a \odot (b \oplus c)  = (b \oplus c) \odot a= (a \odot b)\oplus (a \odot c)$ and the distributive property holds.
 \end{enumerate}
 We have shown that all seven ring properties hold true in ${\mathbb Z}_n$ over $\oplus$ and $\odot$. Additionally, we have shown that ${\mathbb Z}_n$ commutes over $\odot$.  So, ${\mathbb Z}_n$ is a \emph{commutative} ring and our proof is complete.
 \end{proof}
@@ -917,7 +917,7 @@ Consider the function $f((a,b,c))=(a,-b,c)$, where $a,b,c\in{\mathbb R}$.
 As we have seen above, ring isomorphisms are functions that are bijections and preserve the additive and multiplicative operations. It is possible to have functions that are not bijections but still preserve the additive and multiplicative operations.  One important example is a function that we are very familiar with: 
 
 \begin{example}{ring_homo}
-Define the function $f:{\mathbb Z}\rightarrow {\mathbb Z}_n$ defined by $f(x)=\bmod(x,n)$, where $n$ is a fixed integer $> 1$.  In Proposition~\ref{proposition:modular:number_remainder} we showed that for any $\ell,m \in {\mathbb Z}$ we have:
+Define the function $f:{\mathbb Z}\rightarrow {\mathbb Z}_n$ defined by $f(x)=\bmod(x,n)$, where $n$ is a fixed integer $> 1$.  In Proposition~\ref{proposition:ModularArithmetic:number_remainder} we showed that for any $\ell,m \in {\mathbb Z}$ we have:
 \begin{enumerate}[(a)]
 \item
 $\bmod(\ell+ m,n) = \bmod(\ell,n) \oplus \bmod(m,n)$, 
@@ -1184,7 +1184,7 @@ Show that $Ker(f)$ is closed under addition, multiplication, and additive invers
 
 
 \begin{exercise}{}
-Look back at Proposition~\ref{proposition:modular:number_remainder}.   What is the relationship between this proposition and part(a) of Example \ref{example:rings:ZtoZ7}?
+Look back at Proposition~\ref{proposition:ModularArithmetic:number_remainder}.   What is the relationship between this proposition and part(a) of Example \ref{example:rings:ZtoZ7}?
 \end{exercise}
 
 \begin{exercise}{complexHomoKer}
@@ -1496,7 +1496,7 @@ We have shown in Example \ref{example:rings:Zn_ring} that ${\mathbb Z}_p$ is a c
 Suppose ${\mathbb Z}_p$ has a zero divisor $a\in{\mathbb Z}_p$ such that $a\neq 0$.  Then by Definition~\ref{zero_divisor}, there is some $b\in{\mathbb Z}_p$ such that $b\neq 0$ and $a\odot b=0$.  So:
 \begin{align*}
 &a\odot b=\bmod(ab,p)=0 & \text{Def. of }\odot\\
-&p \text{ divides } ab & \text{Proposition }\ref{proposition:modular:equivalence_alt}\\
+&p \text{ divides } ab & \text{Proposition }\ref{proposition:ModularArithmetic:equivalence_alt}\\
 &p \text{ divides } a \text{ or } b & \text{Euclid's Lemma}\\
 \end{align*}
 But how can $p$ divide $a$ or $b$ when $p>a$ and $p>b$?  It is not possible.  So our assumption that ${\mathbb Z}_p$ has a zero divisor $a$ is false.  So ${\mathbb Z}_p$ has no zero divisors and ${\mathbb Z}_p$ is an integral domain.
@@ -2330,7 +2330,7 @@ Given that $a \in \mathbb{C}$ is algebraic over $\mathbb{Q}$, show that $a^{1/n}
 
 
 \begin{rem}\label{remark:poly:transcendental}
-It's not so easy to show that elements are transcendental. This is because to show that $a$ is transcendental over $F$, you need to show that there's no polynomial whatsoever in $F[x]$  which has $a$ as a root. Let's consider in particular the case $F = \mathbb{Q}$. We saw in Chapter~\ref{complex} that $\mathbb{R}$ has lots of \emph{irrational} numbers, but so far we haven't definitely identified any real number that is transcendental over $\mathbb{Q}$. 
+It's not so easy to show that elements are transcendental. This is because to show that $a$ is transcendental over $F$, you need to show that there's no polynomial whatsoever in $F[x]$  which has $a$ as a root. Let's consider in particular the case $F = \mathbb{Q}$. We saw in Chapter~\ref{ComplexNumbers} that $\mathbb{R}$ has lots of \emph{irrational} numbers, but so far we haven't definitely identified any real number that is transcendental over $\mathbb{Q}$. 
 
 In 1844, Joseph Liouville gave the first proof that a transcendental number exists.  Liouville constructed a number (using infinite series) with special properties, and was able to show that it's impossible to construct a polynomial in $\mathbb{Q}[x]$ that has that number as a root. Hermite showed about 30 years later that $e$ was transcendental, and $\pi$ was added to the list (by Lindemann) 10 years after that. 
 

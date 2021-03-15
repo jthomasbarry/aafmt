@@ -231,7 +231,7 @@ Such a decoding function exists when we can solve the equation
 $$
 m \equiv an + b \pmod{26}\qquad \textrm{or}\qquad a \odot n = m \ominus  b
 $$
-for $n$ in $\mathbb{Z}_{26}$. By Proposition~\ref{proposition:modular:mod_eq_solution} in Chapter~\ref{modular}, this is possible exactly when $a$ has an
+for $n$ in $\mathbb{Z}_{26}$. By Proposition~\ref{proposition:ModularArithmetic:mod_eq_solution} in Chapter~\ref{modular}, this is possible exactly when $a$ has an
 inverse in $\mathbb{Z}_{26}$, which means that $\gcd( a, 26) =1$. 
 Such a cryptosystem is called an \term{affine
 cryptosystem}\index{Cryptosystem!affine}. 
@@ -993,7 +993,7 @@ On the web, find two four-digit primes
 \item
 Use these primes to compute $n$ and $m$.
 \item
-Choose a value of $E$ which is less than $m$, and use you Diophantine Equation spreadsheet (Exercise~\ref{exercise:modular:DiophantineSS} in the Modular Arithmetic chapter) to find the inverse $D$ under multiplication mod $m$.  If it turns out that $E$ is not relatively prime to $m$, try again.
+Choose a value of $E$ which is less than $m$, and use you Diophantine Equation spreadsheet (Exercise~\ref{exercise:ModularArithmetic:DiophantineSS} in the Modular Arithmetic chapter) to find the inverse $D$ under multiplication mod $m$.  If it turns out that $E$ is not relatively prime to $m$, try again.
 \item
 Test your cryptosystem by encoding `123', and then decoding it. To encode, use the spreadsheet that you 
 created in Exercise~\ref{exercise:crypt:powerplus} earlier in this chapter. To decode, make another copy of the same sheet.
@@ -1172,7 +1172,7 @@ Use this spreadsheet to factor $n=16394854313$. Then, use your result to find th
 In practice, neither the brute force nor the Fermat method is used to verify large prime numbers. Instead, 
 \emph{probabilistic methods} are used: these methods can show that it's very, very likely that $n$ is a prime, but they don't prove for certain. The principal test of this type is the  \term{Miller-Rabin test} for primality. \index{Prime!Miller-Rabin test for} This test uses some of the principles described  below.	 
  
-In Exercise~\ref{exercise:cosets:FermatLittle} in Section~\ref{sec:Fermat}, we will prove the following fact (which is widely known as \emph{Fermat's little theorem}\index{Fermat!little theorem}): 
+In Exercise~\ref{exercise:cosets:FermatLittle} in Section~\ref{sec:Cosets:Fermat}, we will prove the following fact (which is widely known as \emph{Fermat's little theorem}\index{Fermat!little theorem}): 
 \medskip
 
 If  $p$ is any prime number and $a$ is any nonzero integer, then $a^{p-1} \equiv 1 \pmod{p}$.  
