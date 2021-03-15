@@ -1,4 +1,4 @@
-\chap{Group Actions }{actions}
+\chap{Group Actions }{chap:GroupActions}
 We've defined a  ``group'' as as set with an operation defined on it.  From this point of view, group elements are ``objects'' in a set. We have many examples of this: like the integers with addition, the integers mod $n$, the group of units $U(n)$, groups of matrices, and so on.
 
 Later on we introduced the idea that permutations form a group. Permutations are actually bijections (1-1, onto functions) that map a set of objects to itself.  Another way of saying this is that permutations ``act on'' a set by moving the elements around.  Similarly, we saw in Figure~\ref{groups_s3_symmetry_fig} in Section~\ref{SymmetryGroup} that the symmetries of an equilateral triangle (which are elements of the group $S_3$) move the vertices of the triangle from one position to another.  As a third example, in the group $\mathbb {Q}^*$ of non-zero rational numbers we can think of left multiplying by $2$ as ``moving''  $-5$ over to $-10$.  Left multiplying again by $2$ ``moves'' $-10$ to $-20$: and so on.   
@@ -10,7 +10,7 @@ This chapter  is by Holly Webb, with numerous additions by Mark Leech. Thanks to
 
 \section{Basic definitions\quad
 \sectionvideohref{1KOUEx-IEkg&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=37}}
-\label{sec:DefActions}
+\label{sec:GroupActions:Definitions}
 
 We'll get to definitions momentarily, but first it's helpful to look at an example.
 
@@ -152,7 +152,7 @@ Let $G = 2\mathbb{Z}$ and let $X =\mathbb{Z}$. Show that $X$ is a $G$-set.
 %Add two exercises: (1) Let $X$ and $Y$ be sets and  $x \in X$ and $y \in Y$, and given an operation (.); why is $x.y$ NOT considered $x$ acting on $y$. Why must one of these sets be a group? (2) Are actions invertable? (bijective map)
 
 \section{Symmetries of regular polyhedra}
-\label{sec:ActionsOnPolyhedra}
+\label{sec:GroupActions:SymmetryOfPolyhedra}
 
 We want to apply our new ideas to gain insight about the groups of rotational symmetries of \term{regular polyhedra}\index{Polyhedron!regular}  In general, a \emph{polyhedron} can be thought of as a collection of faces, edges and vertices: for example, a cube has 6 faces, 12 edges and 8 vertices. A \emph{regular polyhedron} is a polyhedron in which all faces are congruent regular polygons, and the same number of edges meet at every vertex. The group of rotational symmetries of a polyhedron act on the faces, edges and vertices.  Any rotational symmetry will always take faces to faces, edges to edges and vertices to vertices. 
 
@@ -1125,7 +1125,7 @@ Once again, note the amazing power of mathematics. Mathematics tells reality wha
 
 
 \section{Group actions associated with subgroups and cosets}
-\label{sec:SubgroupsAndCosets}
+\label{sec:GroupActions:SubgroupsAndCosets}
 
 It turns out that if the set $X$ is also a group, then it's always possible to define a group action of $X$ on itself, where the group action is identical to the group operation: $g.x:=gx$.
 
@@ -1354,7 +1354,7 @@ The previous exercise shows that we can't always do the same thing with right co
 
 
 \section{Conjugation}
-\label{sec:Conjugation}
+\label{sec:GroupActions:Conjugation}
 
 \subsection{Commutative diagrams and the definition of conjugation}
 When we talked about permutations, we saw that the objects we were permuting didn't really change the situation.  For example, we saw that permuting $\{1,2,3,4\}$ was the ``same thing'' as permuting $\{A,B,C,D\}$. Now what do we really mean by the ``same thing''? Well for example, if we take any permutation of $\{1,2,3,4\}$ and replace $1$ with $A$, $2$ with $B$ and so on, then we'll get a permutation of $\{A,B,C,D\}$. To be specific let's take $\sigma=(123)$ and $f=\begin{pmatrix} 1&2&3&4\\A&B&C&D\end {pmatrix}$.  It's possible to represent this situation with diagram in Figure~\ref{fig:Commutative1}. This type of diagram is called a \term{commutative diagram}.\index{Commutative!diagram}

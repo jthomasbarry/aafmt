@@ -7,8 +7,8 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Further topics in Cryptography}{Crypto}
-\section{Diffie-Hellman Key Exchange}\label{sec:DHKE:1}
+\chap{Further topics in Cryptography}{chap:FurtherTopicsCryptography}
+\section{Diffie-Hellman Key Exchange}\label{sec:FurtherTopicsCryptography:DHKE1}
 
 In order to share a private message over a public domain a sender must  "lock" or encrypt their message using a \emph{key}\index{key! in cryptogaphy}.  Recall from Section \ref{sec:crypt:overview}, that in cryptography a  key is a special piece of information (usually a number)  that is required to encrypt and decrypt data which is shared between the sender and receiver. There are generally three types of keys used: public, private and symmetric keys. A \emph{public key}\index{Public Key! in cryptography} can be widely distributed, and is typically used for encrypting messages.  For a public key to be effective, there must be a matching \emph{private key}\index{Private Key! in cryptography} which is known only to the receiver. The privat key can be used to decrypt the messages created using the public key.  Finally, a \emph{symmetric key}\index{Symmetric Key! in cryptography} is known by the sender and receiver, and is used to both encypt and decrypt messages.  Not all cryptosystems require all three kinds of keys, but every cryptosystem must have either a private key or a symmetric key.
 
@@ -240,7 +240,7 @@ DHKE is vulnerable to this type of MiM attack since Moses cannot verify that Rac
 
  Diffie-Hellman is just one of many key exchange algorithms you can use. In the next section, we will talk about a different way to exchange keys that is even more secure.
 
-\section{Elliptic Curve Cryptography}\label{sec:ECC:2}
+\section{Elliptic Curve Cryptography}\label{sec:FurtherTopicsCryptographyECC2}
 
 In the previous section we saw that the longer the key, the greater the security. The disadvantage to long keys is they require sending more information, thus slowing down communication.  Elliptic Curve Cryptography (ECC) is one approach to the public key sharing dilemma that offers greater security with smaller keys. The table in Figure~\ref{fig:DH:DHKE_9} shows the relationship between key length and security for three different cryptosystems: RSA, Diffie-Hellman, and ECC.  In the table, 'key length' refers to the number of binary bits in the key: for comparison, a 160 bit key has 49 decimal digits, while a 1024 bit key has 309 decimal digits. The 'security level' is also measured in bits (80, 128, 192, 256) where these bits refer to the size of the number of computational steps necessary to break the code.  For example, a security level of 80 means that $2^{80}$ computations are required to break the code (from reference(\ref{Certicom})). To give you an idea of what this means practically, in 2002 it took $10,000$ computers (mainly PCs) running 24 hours a day for 549 days to break an ECC system with a 109 bit key length. A 160-bit ECC would be $2^{25}$ times more secure: which means that (with 2002 technology) it would take one billion computers over 500 years to crack it.
 \begin{figure} [H]

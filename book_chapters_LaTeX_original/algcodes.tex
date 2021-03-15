@@ -8,7 +8,7 @@
 %%%%(c)
 %%%%(c)
 \chap{Error-Detecting and Correcting Codes\quad
-\sectionvideohref{EOKgMvWuBpc&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=39}}{algcodes}
+\sectionvideohref{EOKgMvWuBpc&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=39}}{chap:ErrorAndCorrectionCode}
  
 In Chapter~\ref{crypt} we looked at  cryptography, which is concerned with the encoding of  information to make it secret. But coding is used for other purposes as well.  When data is transmitted, it is often subject to processes which may corrupt the data and produce transmission errors. This situation
 arises in many areas of communications, including radio, telephone, television, computer communications, and even compact disc player technology. In order to guarantee accurate communication, the data must be encoded (before transmission) and decoded (after transmission) so that transmission errors can be detected and, if possible, corrected. As you may imagine,  some of the world's leading high-tech companies are heavily involved in this area--and breakthroughs can mean big bucks for the discoverers!
@@ -24,7 +24,7 @@ Thanks to Tom Judson for material used in this chapter.
   
  
 \section{Definitions and basic properties}
-\label{sec:algcodes:1}
+\label{sec:ErrorAndCorrectionCode:Definitions}
   
 Let's examine a simple model of a communications system for
 transmitting and receiving coded messages (Figure~\ref{encoding}).  
@@ -313,7 +313,7 @@ all single errors, but it's not very efficient (just imagine having to repeat ev
 %\end{exercise}
  
 \section{Block Codes}
-\label{sec:BlockCodes}
+\label{sec:ErrorAndCorrectionCode:BlockCodes}
  
 In the examples we've seen so far,  all message words are the same size, and all codewords are the same size (but message words and code words could be of different sizes, as in Example~\ref{example:algcodes:bit3}). This is certainly not the only possibility. For instance, we could encode different message words with codewords of differing sizes. Alternatively, we could use some kind of scheme which doesn't break the message into words at all. Such coding schemes have extremely important practical uses. Nonetheless, we will focus on the simple case where message words all have equal size, and all codewords also have equal size. These are called  ``block codes'', because both the original and encoded message are divided into ``blocks'' (e.g. codewords) of fixed size, and encoding /decoding proceeds block by block.  We shall see shortly that group
 theory  can be used to design block codes with very nice properties. 
@@ -726,7 +726,7 @@ error-correction capabilities of your code.
  
 \section{Group codes\quad
 \sectionvideohref{t9DFd_1BWis&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=41}}
-\label{sec:GroupCodes}
+\label{sec:ErrorAndCorrectionCode:GroupCodes}
 
 So far in this book, we've tried to relate everything we've talked about to groups. Codes are no exception to this rule!  In fact, we know that all codewords of length $n$ are elements of $\mathbb{Z}_2^n$, which in fact turns out to be a group. To show this, we must first define a group operation:
 
@@ -869,7 +869,7 @@ d_{\min} &= & \min \{ d({\bold x},{\bold y}) : {\bold x}
  \end{warn}
  
 \section{Linear Block Codes}
-\label{sec:algcodes:BlockCodes}
+\label{sec:ErrorAndCorrectionCode:BlockCodes}
   
 Using Proposition~\ref{proposition:algcodes:GroupCodeMinDist}, it is now a simple matter to find the error detection and correction capabilities of a group code. However, so far we don't have a good method  for creating group codes. In this section, we will use some techniques from linear algebra to give one such method. This method is widely used in digital information processing: for instance, in CDs, DVDs, and satellite communications.
 
@@ -1317,7 +1317,7 @@ $(1,0,1,0,1,0)$
 
  
 \section{Code words and encoding in block linear codes}
-\label{sec:EncodingBlockLinearCodes}
+\label{sec:ErrorAndCorrectionCode:EncodingBlockLinearCodes}
  
 We have shown how to define a set of codewords for a block linear code. But so far we don't understand too well what code words look like, and we haven't considered encoding and decoding. One of the great advantages of linear codes is that they enable  very efficient methods of encoding and decoding.  It's easiest to see how this works in the case where $H$ has a special form, which we will now define.
 
@@ -1928,7 +1928,7 @@ What is the smallest possible codeword size for a single error-correcting code w
 \end{exercise}
 
 \section{Efficient Decoding}
-\label{sec:efficientDecoding}
+\label{sec:ErrorAndCorrectionCode:EfficientDecoding}
  
  
 We are now at the stage where we are able to generate linear codes
@@ -2381,7 +2381,7 @@ possible.
  
 
 \section{Additional algebraic coding exercises}
-\label{sec:AlgCodeEx}
+\label{sec:ErrorAndCorrectionCode:AdditionalCodingExercises}
  
 
 \begin{exercise}{lincode0}  

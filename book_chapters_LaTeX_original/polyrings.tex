@@ -1,7 +1,7 @@
 % Important results -- Gauss lemma, solution by radicals
 % Matrices -- similarity of multiplication with matrix multiplication.  Shows associativity immediately. Matrices also form a ring (not commutative)
 
-\chap{Polynomials}{poly}
+\chap{Polynomials}{chap:Polynomials}
  
 
  In this chapter we'll be looking at  polynomials from an algebraic point of view. First we'll review basic  polynomial arithmetic that you've seen in high school; then we'll jump off from there and see how far we can generalize. We'll look at polynomial long division, and show that there are many striking resemblances with integer division. Finally, we'll say something about factoring of polynomials.
@@ -10,7 +10,7 @@
 This chapter is by Jennifer Lazarus, based on preliminary work by David Weathers, Johnny Watts, and Semi Harrison (edited by C.T.). Thanks to Tom Judson for the original chapter source.
 
 \section{Why study polynomials?}
-\label{sec:WhyStudyPolynomials}
+\label{sec:Polynomials:WhyStudyPolynomials}
 Undoubtedly you've seen polynomials quite a bit in high school math. You've added and multiplied them; you've graphed them; you've factored them; you've found roots. Let's take a moment to remind ourselves why polynomials and their operations are important.	
 
 Polynomials are used to express relationships between variables. For example, we may consider the situation  of a vehicle that is moving on a straight road. We'll use $x$ to denote the position, and $t$ to denote time.   If (for example) the vehicle has an initial displacement of 100 meters, initial velocity equal to 40 m/sec, and constant acceleration $-5$ $\text{m/sec}^2$, then we may write the following relationship between position ($x$) and time ($t$):
@@ -66,7 +66,7 @@ The above discussion gives just one example of an application of polynomials to 
 
 \section{Review of polynomial arithmetic\quad
 \sectionvideohref{2FuGOJ3kHTU&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=47}}
-\label{sec:polyStripe}
+\label{sec:Polynomials:PolynomialArithmetic}
 
 %	A tennis player hits a ball with an initial velocity of 95 ft/s, at a height of 3.5 feet and an angle of $30^{\circ}$. The general equation for the height of a projectile, $y(t)$  as a function of time is as follows:
 %$$y(t)=\frac{1}{2}gt^2+v_0 \sin(\theta)t+y_0, $$ 
@@ -167,7 +167,7 @@ Let $p(x)=3x^2+8x-2$ and $q(x)=2x^2-5x+9$. Using polynomial arithmetic, compute 
 
 
 \section{Polynomial operations in summation notation}
-\label{Polysum}
+\label{sec:Polynomials:OperationsAndSigmaNotation}
 
 In the preceding section, we discussed familiar polynomial operations. In this section we give general formulas for these operations in terms of summation notation. These formulas are important both theoretically and practically: theoretically, because they give us a way to express general polynomial operations in proofs; and practically, because they provide instructions for programming polynomial operations on computers.
 
@@ -388,7 +388,7 @@ $p(x) \cdot q(x)$, where  $p(x) = \sum_{n=1}^{33} \frac{x^n}{n}$ and  $q(x) = \s
 \end {exercise}
 
 \section{More exotic polynomials}
-\label{exoticPolynomials}
+\label{sec:Polynomials:ExoticPolynomials}
 
 So far we've performed algebraic operations on polynomials with integer, rational, real, or complex coefficients. We may identify different sets of polynomials according to the type of coefficient used. For instance we may define:
 \begin{itemize}
@@ -820,7 +820,7 @@ $$q(x)=  \begin{bmatrix}
 \end{exercise}
 
 \section{ Polynomial properties and summation notation}
-\label{polycoefficients}
+\label{sec:Polynomials:PropertiesAndSigmaNotation}
 
 In the past several sections, we have looked at polynomials with different types of coefficients. These different types of polynomials have a lot in common. In this section, we will look more deeply into just what it is that is common to all. 
 
@@ -1204,7 +1204,7 @@ Prove that polynomials in $R[x]$ have left distributivity across addition.
 %Throughout this book, we have encountered various mathematical structures and shown that in many cases they possess group properties. Let's now give polynomials that same treatment. Since we have two operations, addition and multiplication, it is possible that polynomials are groups under either or both of these operations. Of course, it's possible that polynomials may have different properties depending on what type of coefficients they have, so all of the following proofs will depend \emph{only} on the coefficient properties listed in Definition 5.  
 
 \section{Polynomials and division}
-\label{sec:PolynomialsAndDivision}
+\label{sec:Polynomials:PolynomialsAndDivision}
 
 So far, we have looked at addition and multiplication of polynomials. We've also dealt with subtraction, because subtraction is simply addition of additive inverses. So it's only natural to consider the question of polynomial division.
 

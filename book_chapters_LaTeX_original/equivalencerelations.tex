@@ -1,6 +1,6 @@
 %!TEX root = proofs+concepts.tex
 
-\chap{Equivalence Relations and Equivalence Classes}{EquivalenceRelationsChap}
+\chap{Equivalence Relations and Equivalence Classes}{chap:EquivalenceRelations}
 
 
 \medskip\noindent
@@ -13,7 +13,8 @@ In this chapter we introduce another generalization:  the idea of a mathematical
 This chapter  is based on material by  D. and J. Morris, which was extensively revised and expanded by Mark Leech.
 
 \section{Binary relations \quad
-\sectionvideohref{nAFxMRkIBNE&index=17&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{sec.relation}
+\sectionvideohref{nAFxMRkIBNE&index=17&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} 
+\label{sec:EquivalenceRelations:BinaryRelation}
 
 Recall that according to Definition~\ref{functionDef}, any function $f \colon A \to B$ can be represented as a set of ordered pairs. More precisely, each element of~$f$ is an ordered pair $(a,b)$, such that $a \in A$ and $b \in B$. Therefore, every element of~$f$ is an element of $A \times B$, so $f$~is a subset of $A \times B$.
 There are however subsets of $A \times B$ that are not functions.
@@ -240,7 +241,8 @@ We will use the symbol $\rel$ (which may be read as ``is related to", ``tilde", 
 We have shown that comparison symbols give rise to relations: the reverse is also true. Given a relation $R$ defined on the set $A$, we can define a comparison symbol $\rel$ applied to $a,b \in A$ as follows:
 $ a \rel b$ iff $(a,b) \in R$.
 
-\section{Partitions and properties of binary relations  \quad\sectionvideohref{SFk--oSOzfg&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=18}} \label{Partitions1}
+\section{Partitions and properties of binary relations  \quad\sectionvideohref{SFk--oSOzfg&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=18}} 
+\label{sec:EquivalenceRelations:PartitionsAndProperties}
 
 We've defined binary relations in general. In this section we present one very important situation where binary relations are very useful. It turns out that the binary relations which arise in this situation have some very special properties, which will become very important later.
 
@@ -557,7 +559,8 @@ How can you tell from looking at a digraph whether or not the corresponding rela
 \end{enumerate}
 \end{exercise}
 
-%\section{Equivalence relations OLD} \label{EquivalenceRelationsOLD}
+%\section{Equivalence relations OLD} 
+%\label{sec:EquivalenceRelations:EquivalenceRelationsOLD}
 
 %\begin{rem}
 %Each of the properties in \cref{RefSymmTransDefn} corresponds to a property of the digraph that we can draw of the relation. 
@@ -614,7 +617,7 @@ How can you tell from looking at a digraph whether or not the corresponding rela
 %\end{exer}
 
 \section{Examples of equivalence relations\quad\sectionvideohref{ZtqFETtGm6o&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=19}} 
- \label{exampleEquivRel}
+ \label{sec:EquivalenceRelations:ExampleEquivRel}
 
 Let's take a look at some examples of equivalence relations (recall Definition~\ref{defn:equivalencerelation}). We will see shortly that they all have something in common.
 
@@ -821,7 +824,7 @@ Then the collection of sets $ \mathcal{P} :=\{A_b \, |\,  b \in B\}$ form a part
 \end{exercise}
 \end{proof}
 
-\section{Obtaining partitions from equivalence relations\quad\sectionvideohref{LGU0Dhcozr8&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=20}} \label{EquivalenceRelationsDefnSect}
+\section{Obtaining partitions from equivalence relations\quad\sectionvideohref{LGU0Dhcozr8&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=20}} \label{sec:EquivalenceRelations:ObtainingPartitions}
 
 Proposition~\ref{proposition:EquivalenceRelationsChap:parteqrel} tells us that given any partition $\mathcal{P}$ of a set $S$, we can define an equivalence relation which says that two elements of $S$ are equivalent iff they belong to the same set in the partition. We'll see in this section that we can go the other way as well: namely, given any equivalence relation on $S$ we can construct a partition on $S$ which divided all the elements of $S$ among disjoint subsets.
 
@@ -1057,7 +1060,7 @@ Suppose we begin with an equivalence relation $\sim$ on the set $A$, and define 
 
 
 \section{Modular arithmetic redux\quad
-\sectionvideohref{DsGQvzpUb1Q&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=22&t=0s}} \label{EquivalenceRelationsModArithSect}
+\sectionvideohref{DsGQvzpUb1Q&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=22&t=0s}} \label{sec:EquivalenceRelations:ModularArithmetic}
 
 Abstract algebra often involves looking at familiar concepts and structures in a more general more abstract and ``elegant" way. As an example of this, we will now revisit modular arithmetic and describe it from an entirely different point of view, with the benefit of the concepts we have been developing in previous sections.
 
