@@ -8,16 +8,16 @@
 %%%%(c)
 %%%%(c)
 \chap{Error-Detecting and Correcting Codes\quad
-\sectionvideohref{EOKgMvWuBpc&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=39}}{chap:ErrorAndCorrectionCode}
+\sectionvideohref{EOKgMvWuBpc&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=39}}{ErrorAndCorrectionCode}
  
-In Chapter~\ref{crypt} we looked at  cryptography, which is concerned with the encoding of  information to make it secret. But coding is used for other purposes as well.  When data is transmitted, it is often subject to processes which may corrupt the data and produce transmission errors. This situation
+In Chapter~\ref{Cryptography} we looked at  cryptography, which is concerned with the encoding of  information to make it secret. But coding is used for other purposes as well.  When data is transmitted, it is often subject to processes which may corrupt the data and produce transmission errors. This situation
 arises in many areas of communications, including radio, telephone, television, computer communications, and even compact disc player technology. In order to guarantee accurate communication, the data must be encoded (before transmission) and decoded (after transmission) so that transmission errors can be detected and, if possible, corrected. As you may imagine,  some of the world's leading high-tech companies are heavily involved in this area--and breakthroughs can mean big bucks for the discoverers!
 \medskip
 
 \noindent
 \underline{\bf Prerequisites}: In this chapter we will make extensive use of the group $\mathbb{Z}^{n}_{2}$, which is the direct product of $n$ copies of $\mathbb{Z}_{2}$ (direct products were introduced in Section~\ref{sec:isomorph_section_2}.  
 %Section~\ref{sec:MaximumLikelihood} on maximum-likelihood decoding uses some probability theory--this section is independent of the rest of the chapter, and may be omitted if desired. 
-The discussion of linear block codes (Section~\ref{sec:algcodes:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:efficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{cosets}.  
+The discussion of linear block codes (Section~\ref{sec:ErrorAndCorrectionCode:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:ErrorAndCorrectionCode:EfficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{Cosets}.  
 \bigskip
 
 Thanks to Tom Judson for material used in this chapter.
@@ -150,7 +150,7 @@ all single errors, but it's not very efficient (just imagine having to repeat ev
 %skipped without loss of continuity.} 
 %\end{quote}
 %
-%The coding scheme presented in Example~\ref{example:algcodes:bit3} is not a complete solution to
+%The coding scheme presented in Example~\ref{example:ErrorAndCorrectionCode:bit3} is not a complete solution to
 %the problem because it does not account for the possibility of
 %multiple errors. For example, either a (000) or a (111) could be sent
 %and a (001) received. We have no means of deciding from the received
@@ -315,12 +315,12 @@ all single errors, but it's not very efficient (just imagine having to repeat ev
 \section{Block Codes}
 \label{sec:ErrorAndCorrectionCode:BlockCodes}
  
-In the examples we've seen so far,  all message words are the same size, and all codewords are the same size (but message words and code words could be of different sizes, as in Example~\ref{example:algcodes:bit3}). This is certainly not the only possibility. For instance, we could encode different message words with codewords of differing sizes. Alternatively, we could use some kind of scheme which doesn't break the message into words at all. Such coding schemes have extremely important practical uses. Nonetheless, we will focus on the simple case where message words all have equal size, and all codewords also have equal size. These are called  ``block codes'', because both the original and encoded message are divided into ``blocks'' (e.g. codewords) of fixed size, and encoding /decoding proceeds block by block.  We shall see shortly that group
+In the examples we've seen so far,  all message words are the same size, and all codewords are the same size (but message words and code words could be of different sizes, as in Example~\ref{example:ErrorAndCorrectionCode:bit3}). This is certainly not the only possibility. For instance, we could encode different message words with codewords of differing sizes. Alternatively, we could use some kind of scheme which doesn't break the message into words at all. Such coding schemes have extremely important practical uses. Nonetheless, we will focus on the simple case where message words all have equal size, and all codewords also have equal size. These are called  ``block codes'', because both the original and encoded message are divided into ``blocks'' (e.g. codewords) of fixed size, and encoding /decoding proceeds block by block.  We shall see shortly that group
 theory  can be used to design block codes with very nice properties. 
 
 We begin with a formal definition of block code, which generalizes the examples discussed in the previous section. In the following, the notation $\mathbb{Z}^{m}_{2}$ denotes the set of  binary $m$-tuples.
 
-\begin{defn}{algcodes:BlockCode}
+\begin{defn}{BlockCode}
 a $(n, m)$ \term{block code} \index{Block code}  consists of a one-to-one \term{encoding function} \index{Function!encoding}
 \[
 E:\mathbb{Z}^{m}_{2} \rightarrow \mathbb{Z}^{n}_{2}
@@ -335,7 +335,7 @@ We refer to the elements of the domain of $E$ as \term{message words}, and eleme
 \end{defn}
 
 \begin{rem}
-In Definition~\ref{definition:algcodes:BlockCode}, the encoding function $E$ for a block code is required to be one-to-one so that two different message words are never assigned to the same codeword (which would make decoding impossible). On the other hand, the decoding function $D$  is required to be onto so that any encoded message can be decoded (although the decoded message may have errors).
+In Definition~\ref{definition:ErrorAndCorrectionCode:BlockCode}, the encoding function $E$ for a block code is required to be one-to-one so that two different message words are never assigned to the same codeword (which would make decoding impossible). On the other hand, the decoding function $D$  is required to be onto so that any encoded message can be decoded (although the decoded message may have errors).
 \end{rem}
 
 \begin{exercise}{DEstuff}
@@ -345,7 +345,7 @@ Explain why the definition requires that $D \compose E$ is the identity function
 \item
 Show that the condition $D \compose E = \var{id}$ implies that $D$ is onto  (in other words, to prove that $D$ is a decoding function it's enough to prove that $D \compose E = \var{id}$, and you don't have to prove onto-ness separately).
 \item
-Show that in Example~\ref{example:algcodes:bit3}, it is not true that $E \compose D$ is the identity function on the domain of $D$.
+Show that in Example~\ref{example:ErrorAndCorrectionCode:bit3}, it is not true that $E \compose D$ is the identity function on the domain of $D$.
 \item
 Suppose that  $E$ and $D$ are  encoding and decoding functions for an error-correcting code. Prove that $E \compose D$ is \emph{not} equal to the identity function on the domain of $D$.
 \item
@@ -354,7 +354,7 @@ Prove that for an error-correcting code, $E$ and $D$ are not inverse of each oth
 \end{exercise}
 
 \begin{exercise}{}
-According to Definition~\ref{definition:algcodes:BlockCode}, is it possible to have a $(n,m)$ block code where $n > m$? Is $m > n$ possible? \emph{Explain} your answer.
+According to Definition~\ref{definition:ErrorAndCorrectionCode:BlockCode}, is it possible to have a $(n,m)$ block code where $n > m$? Is $m > n$ possible? \emph{Explain} your answer.
 \end{exercise}
  
 \begin{example}{evenparity}
@@ -375,7 +375,7 @@ There are several other possible decoding functions as well.
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
-Show that the function $D(x)$ given above is a decoding function (remember that based on Exercise~\ref{exercise:algcodes:DEstuff}(b) it's enough to prove that $D \compose E = \var{id}$). 
+Show that the function $D(x)$ given above is a decoding function (remember that based on Exercise~\ref{exercise:ErrorAndCorrectionCode:DEstuff}(b) it's enough to prove that $D \compose E = \var{id}$). 
 \item
 Prove that the following function is also a decoding function for the even parity code:
 \[
@@ -401,7 +401,7 @@ Give two possible decoding functions.
 
 In order to characterize error detection and correction properties of codes, we need to quantify the degree of ``similarity'' between code words, since two code words that are similar are liable to be mistaken for each other. This leads naturally to the idea of ``distance'' between code words, defined as follows.
 
-\begin{defn}{defn:algcodes:weight} 
+\begin{defn}{weight} 
 Let ${\bold x} = (x_1, \ldots, x_n)$ and ${\bold y} = (y_1, \ldots,
 y_n)$ be binary $n$-tuples. The \term{Hamming distance}\index{Hamming
 distance} or \term{distance}, $d({\bold x}, {\bold
@@ -583,10 +583,10 @@ z}, {\bold y})$.
 \end{enumerate}
 \end{prop}
 
-In higher mathematics, any function that satisfies the properties listed in Proposition~\ref{proposition:algcodes:Metric} is called a \term{metric}.\index{Metric!definition}
+In higher mathematics, any function that satisfies the properties listed in Proposition~\ref{proposition:ErrorAndCorrectionCode:Metric} is called a \term{metric}.\index{Metric!definition}
 
  \begin{exercise}{}
- Using the formula in Proposition~\ref{proposition:algcodes:HammingDistFormula}, prove the statements in Proposition~\ref{proposition:algcodes:Metric}.
+ Using the formula in Proposition~\ref{proposition:ErrorAndCorrectionCode:HammingDistFormula}, prove the statements in Proposition~\ref{proposition:ErrorAndCorrectionCode:Metric}.
  \end{exercise}
 In order to see how distance relates to error correction, consider the case where ${\bold x} = (1101)$ and ${\bold y} = (1100)$ are
 codewords in some code. If we transmit (1101) and an error occurs in
@@ -601,7 +601,7 @@ and ${\bold y} = (1010)$ then $d({\bold x}, {\bold y})
 ${\bold y}$ to be received. If for example the third bit is mistransmitted and received word is $(1110)$, then we can tell something is wrong -- that is, we can detect that an error has taken place. In general, single-bit errors are detectable in any code where the distance between any two codewords is bigger than 1.
 
 \begin{example}{} Consider the $(4,3)$ code in which the first three bits carry
-information and the fourth is an even parity check bit. (Note that now we're putting the parity bit on the \emph{right} instead of on the \emph{left} as we did in Example~\ref{example:algcodes:evenParity}. This will turn out to be more useful in the development of the general theory.)
+information and the fourth is an even parity check bit. (Note that now we're putting the parity bit on the \emph{right} instead of on the \emph{left} as we did in Example~\ref{example:ErrorAndCorrectionCode:evenParity}. This will turn out to be more useful in the development of the general theory.)
 Table~\ref{algcodes:table1} gives the distances
 between all codewords in this code.  We can see
 that the minimum distance here is 2; hence, the code is suitable as
@@ -711,7 +711,7 @@ single error-correcting code.
 \end{table}
  
  \begin{exercise}{MinDist2}
-What are the error detection and correction capabilities for the codes given in Exercise~\ref{exercise:algcodes:MinDist}? 
+What are the error detection and correction capabilities for the codes given in Exercise~\ref{exercise:ErrorAndCorrectionCode:MinDist}? 
 \end{exercise} 
  
 \begin{exercise}{}
@@ -730,14 +730,14 @@ error-correction capabilities of your code.
 
 So far in this book, we've tried to relate everything we've talked about to groups. Codes are no exception to this rule!  In fact, we know that all codewords of length $n$ are elements of $\mathbb{Z}_2^n$, which in fact turns out to be a group. To show this, we must first define a group operation:
 
-\begin{defn}{defn:algcodes:group}
+\begin{defn}{group}
 The group $\mathbb{Z}_2^n$ consists of the set of all binary $n$-tuples, together with an operation ``+'' defined as follows:
 \[ (x_1, \ldots, x_n) +  (y_1, \ldots, y_n) = (x_1 \oplus y_1, \ldots, x_n \oplus y_n), \]
 where ``$\oplus$'' means addition mod 2.
 \end{defn}
 
 \begin{rem}
-Please note  that in the following, if  ${\bold x}$ and ${\bold y}$ are binary $n$-tuples then the expression ${\bold x}$ + ${\bold y}$ \emph{always} refers to the operation ``+'' defined in Definition~\ref{defn:algcodes:group} rather than ordinary addition. This is just one more example of the fact that in mathematics, the meaning of symbols is determined by the context.
+Please note  that in the following, if  ${\bold x}$ and ${\bold y}$ are binary $n$-tuples then the expression ${\bold x}$ + ${\bold y}$ \emph{always} refers to the operation ``+'' defined in Definition~\ref{definition:ErrorAndCorrectionCode:group} rather than ordinary addition. This is just one more example of the fact that in mathematics, the meaning of symbols is determined by the context.
 \end{rem}
 
 So it's time to get our hands dirty and verify that 
@@ -777,17 +777,17 @@ $d({\bold x},{\bold y}) = w({\bold x}+{\bold y})$
 $d({\bold x},{\bold y}) = d({\bold x}+{\bold z},{\bold y}+{\bold z})$
 \end{enumerate}
 \end{prop}
-We have already shown (a) in the definition of weight (Definition~\ref{defn:algcodes:weight}).
+We have already shown (a) in the definition of weight (Definition~\ref{definition:ErrorAndCorrectionCode:weight}).
 Parts (b) and (c) are for you to prove:
 
 \begin{exercise}{hamming}
 \begin{enumerate}[(a)]
 \item
-Prove part (b) of Proposition~\ref{proposition:algcodes:norm} by using part (a) of Proposition~\ref{proposition:algcodes:norm} and the formula in Proposition~\ref{proposition:algcodes:HammingDistFormula}.
-\item Prove part (c) \hyperref[sec:algcodes:hints]{(*Hint*)} 
+Prove part (b) of Proposition~\ref{proposition:ErrorAndCorrectionCode:norm} by using part (a) of Proposition~\ref{proposition:ErrorAndCorrectionCode:norm} and the formula in Proposition~\ref{proposition:ErrorAndCorrectionCode:HammingDistFormula}.
+\item Prove part (c) \hyperref[sec:ErrorAndCorrectionCode:Hints]{(*Hint*)} 
 \end{enumerate}
 \end{exercise}
-The codes we discussed in Section~\ref{sec:algcodes:1} were all subsets of $\mathbb{Z}_2^n$, for some positive integer $n$. We shall now see that codes that are also \emph{subgroups} have special properties that enable efficient encoding and decoding. Accordingly, we define:
+The codes we discussed in Section~\ref{sec:ErrorAndCorrectionCode:Definitions} were all subsets of $\mathbb{Z}_2^n$, for some positive integer $n$. We shall now see that codes that are also \emph{subgroups} have special properties that enable efficient encoding and decoding. Accordingly, we define:
 
 \begin{defn}
  A \term{group
@@ -865,13 +865,13 @@ d_{\min} &= & \min \{ d({\bold x},{\bold y}) : {\bold x}
 \end{proof}
  
  \begin{warn}
- Proposition~\ref{proposition:algcodes:GroupCodeMinDist}  \emph{only} applies to \emph{group codes}, and not to codes in general.
+ Proposition~\ref{proposition:ErrorAndCorrectionCode:GroupCodeMinDist}  \emph{only} applies to \emph{group codes}, and not to codes in general.
  \end{warn}
  
 \section{Linear Block Codes}
 \label{sec:ErrorAndCorrectionCode:BlockCodes}
   
-Using Proposition~\ref{proposition:algcodes:GroupCodeMinDist}, it is now a simple matter to find the error detection and correction capabilities of a group code. However, so far we don't have a good method  for creating group codes. In this section, we will use some techniques from linear algebra to give one such method. This method is widely used in digital information processing: for instance, in CDs, DVDs, and satellite communications.
+Using Proposition~\ref{proposition:ErrorAndCorrectionCode:GroupCodeMinDist}, it is now a simple matter to find the error detection and correction capabilities of a group code. However, so far we don't have a good method  for creating group codes. In this section, we will use some techniques from linear algebra to give one such method. This method is widely used in digital information processing: for instance, in CDs, DVDs, and satellite communications.
 
 To understand this section, readers should familiar with basic notions of linear algebra such as systems of linear equations, vectors, linear combination, matrix multiplication, and transpose. Readers may find a brief refresher on matrix multiplication in Chapter~\ref{SigmaNotation}.
  
@@ -940,7 +940,7 @@ x_4
 \right) = 0.
 \]
 \end{example} 
-Example~\ref{example:algcodes:ParityCheck0} shows that an even-parity codeword can be verified by an inner product, which is a special case of a matrix multiplication. We will now show that codewords in other types of group codes can also be verified by matrix multiplication. But first, as usual, a definition:
+Example~\ref{example:ErrorAndCorrectionCode:ParityCheck0} shows that an even-parity codeword can be verified by an inner product, which is a special case of a matrix multiplication. We will now show that codewords in other types of group codes can also be verified by matrix multiplication. But first, as usual, a definition:
 
 \begin{defn} 
 Let ${\Bbb M}_{k \times n}(\mathbb{Z}_2)$ denote the set
@@ -1238,7 +1238,7 @@ In cases (a) and (b), show that the result is a group code.
 \end{exercise}
  
 
-Example~\ref{example:algcodes:FirstGroupCode} shows a case where the null space of a matrix with entries in $\mathbb{Z}_2$ turns out to be a group code. In fact, the null space of such a matrix  is \emph{always} a group code: 
+Example~\ref{example:ErrorAndCorrectionCode:FirstGroupCode} shows a case where the null space of a matrix with entries in $\mathbb{Z}_2$ turns out to be a group code. In fact, the null space of such a matrix  is \emph{always} a group code: 
  
 \begin{prop}{}
 Let $H$ be in $\mathbb{M}_{k \times n}(\mathbb{Z}_2)$. Then the null space of
@@ -1303,7 +1303,7 @@ correct the word or request that it be transmitted again.
 \end{example}
 
 \begin{exercise}{}
-Which of the following are codewords for the code in Example~\ref{example:algcodes:SevenTuple}?
+Which of the following are codewords for the code in Example~\ref{example:ErrorAndCorrectionCode:SevenTuple}?
 \begin{enumerate}[(a)]
 \item
 $(1,1,1,1,1,0)$
@@ -1323,6 +1323,7 @@ We have shown how to define a set of codewords for a block linear code. But so f
 
 \subsection{Canonical Parity-check matrices\quad
 \sectionvideohref{1eCIhwdnJLU&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=42}}
+\label{subsec:ErrorAndCorrectionCode:EncodingBlockLinearCodes:ParityCheck}
 
 \begin{defn}
   Suppose that $H$ is a $k \times n$ matrix with entries in
@@ -1355,7 +1356,7 @@ and $I_k$ is the $k \times k$ identity matrix
 \end{defn}
 
 \begin{exercise}{}
-Only one of the matrices in Exercise~\ref{exercise:algcodes:LinearCodes} is a canonical parity-check matrix. Which one is it?
+Only one of the matrices in Exercise~\ref{exercise:ErrorAndCorrectionCode:LinearCodes} is a canonical parity-check matrix. Which one is it?
 \end{exercise}
 
 Readers who have had a class in linear algebra may notice the similarity between canonical parity-check matrices and reduced row-echelon form. The only difference is that reduced row-echelon matrices have the identity submatrix on the \emph{left}, while the canonical parity-check matrix has it on the \emph{right}.
@@ -1429,7 +1430,7 @@ $x_4$, $x_5$, and $x_6$ must be chosen to ensure parity. By following this metho
 \]
 \end{example}
 
-The following proposition generalizes some of our findings from Example~\ref{example:algcodes:ParityCheck}.
+The following proposition generalizes some of our findings from Example~\ref{example:ErrorAndCorrectionCode:ParityCheck}.
 
 \begin{prop}{RowEchelon}
 Let $H \in \mathbb{M}_{k \times n}(\mathbb{Z}_2)$ be a canonical
@@ -1438,18 +1439,18 @@ ${\bold x} \in {\Bbb
 Z}_2^n$ whose first $n-k$ bits are arbitrary but whose last $k$ bits
 are determined by $H{\bold x}^{\mathrm{T}} = {\bold 0}$. Each of
 the last $k$ bits serves as an even parity check bit for some of the
-first $n-k$ bits. Hence, $H$ gives rise to an $(n, n-k)$-block code\index{Block code} \index{Code! block code} (according to the notation that we introduced in Definition~\ref{definition:algcodes:BlockCode}). 
+first $n-k$ bits. Hence, $H$ gives rise to an $(n, n-k)$-block code\index{Block code} \index{Code! block code} (according to the notation that we introduced in Definition~\ref{definition:ErrorAndCorrectionCode:BlockCode}). 
 \end{prop}
 
-The proof of Proposition~\ref{proposition:algcodes:RowEchelon} simply follows the same steps as in Example~\ref{example:algcodes:ParityCheck}, except that instead of 3 equations in 6 unknowns we have $k$ equations in $n$ unknowns. Readers who've had linear algebra may recognize that this is exactly the same as the method for solving linear equations using row-echelon form: the $k$ equations in $n$ unknowns give rise to $n-k$ free variables, that determine the other variables in the solution.
+The proof of Proposition~\ref{proposition:ErrorAndCorrectionCode:RowEchelon} simply follows the same steps as in Example~\ref{example:ErrorAndCorrectionCode:ParityCheck}, except that instead of 3 equations in 6 unknowns we have $k$ equations in $n$ unknowns. Readers who've had linear algebra may recognize that this is exactly the same as the method for solving linear equations using row-echelon form: the $k$ equations in $n$ unknowns give rise to $n-k$ free variables, that determine the other variables in the solution.
 
- Proposition~\ref{proposition:algcodes:RowEchelon} motivates the following definitions.
+ Proposition~\ref{proposition:ErrorAndCorrectionCode:RowEchelon} motivates the following definitions.
  
  \begin{defn}
  Let $H$ be a canonical parity-check matrix, and let ${\bold x}$ be a codeword in Null($H$). Then the first $n-k$ bits of ${\bold x}$ are called \term{
 information bits} \index{Bits!information bits} \index{Information bits}and the last $k$ bits are called \term{check bits}\index{Bits!check bits}\index{Check bits}.
 \end{defn}
-In Example~\ref{example:algcodes:ParityCheck}, the first three bits are the information bits
+In Example~\ref{example:ErrorAndCorrectionCode:ParityCheck}, the first three bits are the information bits
 and the last three are the check bits.
  
 \begin{exercise}{}
@@ -1464,7 +1465,8 @@ Is it possible to implement the odd parity-check code using a parity-check matri
 \end{exercise}
 
  
- \subsection{Standard Generator Matrices}
+\subsection{Standard Generator Matrices}
+\label{subsec:ErrorAndCorrectionCode:EncodingBlockLinearCodes:StandardGeneratorMatrix}
  
 We now have a relatively straightforward way to generate the codewords in Null($H$), if $H$ is a canonical parity-check matrix. But there's an even easier way -- and one that gives us an encoding function in the bargain. 
 
@@ -1490,8 +1492,8 @@ A
 In order to explore the connection between parity-check and generator matrices, we continue our previous example of a particular $3 \times 3$ matrix $A$.
 
 \begin{example}{}
-(\emph{Example~\ref{example:algcodes:ParityCheck} continued})
-For the matrix $A$ used in Example~\ref{example:algcodes:ParityCheck}, you may check that the associated generator matrix is:
+(\emph{Example~\ref{example:ErrorAndCorrectionCode:ParityCheck} continued})
+For the matrix $A$ used in Example~\ref{example:ErrorAndCorrectionCode:ParityCheck}, you may check that the associated generator matrix is:
 \[
 G=
 \left(
@@ -1515,10 +1517,10 @@ x_1H {\bold g}_1 + x_2H{\bold g}_2 + x_3H{\bold g}_3
 \[x_1 {\bold g}_1 + x_2{\bold g}_2 + x_3{\bold g}_3 = G{\bold x} 
 \]
 This gives us another way to generate codewords that are in Null($H$)--namely, take any element in $\mathbb{Z}_2^3$ and multiply it by $G$. In fact, this gives us our long-sought encoding function! For any message word in $\mathbb{Z}_2^3$ we multiply on the left by $G$ and voil\`{a}! The result is a codeword.
-Table~\ref{table:algcodes:generator} shows the results of this procedure. From the table, we find that this method of generating codewords gives us all of the vectors in Null(\emph{H}). Furthermore, each different message word produces a different codeword, as a proper encoding function should.
+Table~\ref{table:ErrorAndCorrectionCode:generator} shows the results of this procedure. From the table, we find that this method of generating codewords gives us all of the vectors in Null(\emph{H}). Furthermore, each different message word produces a different codeword, as a proper encoding function should.
  
 \begin{table}[htb]
-\caption{A matrix-generated code}\label{table:algcodes:generator}{\small
+\caption{A matrix-generated code}\label{table:ErrorAndCorrectionCode:generator}{\small
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
@@ -1540,7 +1542,7 @@ ${\bold x}$ & $G {\bold x}$ \\ \hline
 \end{example}
 
 \begin{exercise}{StandardGenerator}
-For each of the following canonical parity-check matrices, find the corresponding standard generator matrix. Use the standard generator matrix to compute codewords (make a table similar to Table~\ref{table:algcodes:generator}), and verify that the codewords are in the null space of the canonical parity-check matrix.
+For each of the following canonical parity-check matrices, find the corresponding standard generator matrix. Use the standard generator matrix to compute codewords (make a table similar to Table~\ref{table:ErrorAndCorrectionCode:generator}), and verify that the codewords are in the null space of the canonical parity-check matrix.
  
 \begin{enumerate}[(a)]
  \item
@@ -1699,7 +1701,7 @@ canonical parity-check matrix $H$.
  
 \begin{proof}
 First suppose that ${\bold y} \in C$. Then $G {\bold x} = {\bold y}$
-for some ${\bold x} \in \mathbb{Z}_2^{n-k}$. By Proposition~\ref{proposition:algcodes:HGEquals0}, $H {\bold y} = HG
+for some ${\bold x} \in \mathbb{Z}_2^{n-k}$. By Proposition~\ref{proposition:ErrorAndCorrectionCode:HGEquals0}, $H {\bold y} = HG
 {\bold x} = {\bold 0}$. 
  
  
@@ -1733,7 +1735,8 @@ A
 so that ${\bold y}$ is in $C$.
 \end{proof}
  
- \subsection{Error detection and correction}
+\subsection{Error detection and correction}
+\label{subsec:ErrorAndCorrectionCode:EncodingBlockLinearCodes:DetectCorrectError}
  
 In this section, we will show how to  obtain the error correction and detection properties of a code directly from its matrix $H$. First, we will look at detection and correction of single errors.
 
@@ -1774,7 +1777,7 @@ coordinate and $0$'s elsewhere and suppose that $H \in \mathbb{M}_{m
 \times n}(\mathbb{Z}_2)$. Then $H{\bold e}_i$ is the $i$th column of
 the matrix $H$.  
 \end{prop}
- Proposition~\ref{proposition:algcodes:BasisVectors} is a well-known fact in linear algebra, so we refer the reader to a linear algebra textbook for proof.\footnote{See for example: David C. Lay, ``Linear Algebra and its Applications'' (Third Edition), Section 1.4.}
+ Proposition~\ref{proposition:ErrorAndCorrectionCode:BasisVectors} is a well-known fact in linear algebra, so we refer the reader to a linear algebra textbook for proof.\footnote{See for example: David C. Lay, ``Linear Algebra and its Applications'' (Third Edition), Section 1.4.}
  
  This result leads immediately to a simple rule for single error detection.
  
@@ -1796,7 +1799,7 @@ column of $H$ were all zeros, which is impossible; hence, the code must have
 the capability to detect at least single errors.
  
  Conversely, suppose that no column of $H$ is the zero column. By 
-Proposition~\ref{proposition:algcodes:BasisVectors}, $H{\bold e}_i \neq {\bold 0}$.
+Proposition~\ref{proposition:ErrorAndCorrectionCode:BasisVectors}, $H{\bold e}_i \neq {\bold 0}$.
 \end{proof}
  
 \begin{exercise}{}
@@ -1836,13 +1839,13 @@ H =
 \end{array}
 \right)
 \]
-The corresponding code is single error-correcting if all nonzero codewords have weight greater than two. Since there are no zero columns, Proposition~\ref{proposition:algcodes:SingleErrorDetect} tells us that no codewords have weight 1. We thus only need to check that  ${\rm Null}(H)$ does not contain any 4-tuples of weight
+The corresponding code is single error-correcting if all nonzero codewords have weight greater than two. Since there are no zero columns, Proposition~\ref{proposition:ErrorAndCorrectionCode:SingleErrorDetect} tells us that no codewords have weight 1. We thus only need to check that  ${\rm Null}(H)$ does not contain any 4-tuples of weight
 2, so that $(1100)$, $(1010)$, $(1001)$, $(0110)$, $(0101)$, and
 $(0011)$ must not be in ${\rm Null}(H)$.
 \end{example}
 
 \begin{exercise}{}
-Does the code in Example~\ref{example:algcodes:DoubleError} correct single errors? \emph{Explain} your answer.
+Does the code in Example~\ref{example:ErrorAndCorrectionCode:DoubleError} correct single errors? \emph{Explain} your answer.
 \end{exercise}
 
 For larger codewords, the task of checking all tuples of weight 2 can be tedious. Fortunately, there is a much easier way that avoids exhausting checking:
@@ -1868,7 +1871,7 @@ null space of $H$ is a single error-correcting code.
 \end{proof}
  
  \begin{exercise}{}
- Which of the parity-check matrices in Exercise~\ref{exercise:algcodes:StandardGenerator} produce codes that can correct single errors?
+ Which of the parity-check matrices in Exercise~\ref{exercise:ErrorAndCorrectionCode:StandardGenerator} produce codes that can correct single errors?
  \end{exercise}
  
 Suppose now that we have a canonical parity-check matrix $H$ with
@@ -1911,7 +1914,7 @@ but also to correct single errors.
  \item
  In order to \emph{detect} single-bit errors, what is the smallest possible codeword size?
 \item
- In order to \emph{correct} single-bit errors, what is the smallest possible codeword size?  \hyperref[sec:algcodes:hints]{(*Hint*)}
+ In order to \emph{correct} single-bit errors, what is the smallest possible codeword size?  \hyperref[sec:ErrorAndCorrectionCode:Hints]{(*Hint*)}
 
 \item
 Redo parts (a), (b), (c) if we want instead to encode the extended ASCII character set of 256 characters.
@@ -1940,6 +1943,7 @@ If the code is large, this may be very time-consuming.
 In the following subsections, we will explore two different decoding methods which are much efficient and practical.
  
 \subsection{Decoding using syndromes}
+\label{subsec:ErrorAndCorrectionCode:EfficientDecoding:DecodeSyndromes}
 
 The following example introduces the notion of \emph{syndrome}.
  
@@ -2006,7 +2010,7 @@ $H{\bold x} = H({\bold c} +{\bold e}) = H{\bold c} + H{\bold e} =
  
 This proposition tells us that the syndrome of a received word depends
 solely on the error and not on the transmitted codeword. The proof of the
-following proposition follows immediately from Proposition~\ref{proposition:algcodes:syndrome} and from
+following proposition follows immediately from Proposition~\ref{proposition:ErrorAndCorrectionCode:syndrome} and from
 the fact that $H{\bold e}_j$ is the $j$th column of the matrix $H$.
  
  \begin{prop}{}
@@ -2111,14 +2115,14 @@ if possible.
   
 \begin{exercise}{}
 List all possible syndromes for the codes associated with each the parity
-matrices in Exercise~\ref{exercise:algcodes:StandardGenerator}. 
+matrices in Exercise~\ref{exercise:ErrorAndCorrectionCode:StandardGenerator}. 
 \end{exercise} 
  
 \subsection{Coset Decoding}
- 
+\label{subsec:ErrorAndCorrectionCode:EfficientDecoding:CosetDecode}
  
 We can use group theory to obtain another way of decoding messages that makes use of \emph{cosets}. (If you've 
-forgotten what cosets are, you may look back at Chapter~\ref{cosets} to refresh your memory.) 
+forgotten what cosets are, you may look back at Chapter~\ref{Cosets} to refresh your memory.) 
 
 Since the
 linear code $C$ is a subgroup of $\mathbb{Z}_2^n$, it follows that $\mathbb{Z}_2^n$ 
@@ -2148,12 +2152,12 @@ The code consists of the codewords
 \end{array}
 \]
 There are $2^{5-2} = 2^3$ cosets of $C$ in $\mathbb{Z}_2^5$, each with
-order $2^2 =4$.  These cosets are listed in Table~\ref{table:algcodes:cosets}. 
+order $2^2 =4$.  These cosets are listed in Table~\ref{table:ErrorAndCorrectionCode:cosets}. 
 \end{example}
  
  
 \begin{table}
-\caption{Cosets of $C$\label{table:algcodes:cosets}}{\small
+\caption{Cosets of $C$\label{table:ErrorAndCorrectionCode:cosets}}{\small
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
@@ -2189,7 +2193,7 @@ of calculating ${\bold r} + {\bold e}$ to obtain ${\bold x}$.
  
  
 \begin{example}{}
-In Table~\ref{table:algcodes:cosets}, notice that we have chosen a representative of the least
+In Table~\ref{table:ErrorAndCorrectionCode:cosets}, notice that we have chosen a representative of the least
 possible weight for each coset.  These representatives\index{Representatives!as coset leaders} are coset
 leaders. Now suppose that ${\bold r} = (01111)$ is the received word.
 To decode ${\bold r}$, we find that it is in the coset $(00010) + C$;
@@ -2232,7 +2236,7 @@ To facilitate step (b) of this process, we may make a lookup table that displays
 with each syndrome. Such a table is called a \term{decoding table}\index{Decoding table}. 
  
 \begin{example}{}
-Table~\ref{table:algcodes:DecodingTable} is a decoding table for the code $C$ given in Example~\ref{example:algcodes:SyndromeExample}. If
+Table~\ref{table:ErrorAndCorrectionCode:DecodingTable} is a decoding table for the code $C$ given in Example~\ref{example:ErrorAndCorrectionCode:SyndromeExample}. If
 ${\bold x} = (01111)$ is received, then its syndrome can be computed
 to be
 \[
@@ -2257,7 +2261,7 @@ number of codewords, $2^{24}$, yet there are only $2^{32-24} = 2^{8} =
 256$ cosets.  
  
 \begin{table}[htb]
-\caption{Syndromes for each coset \label{table:algcodes:DecodingTable}}{\small
+\caption{Syndromes for each coset \label{table:ErrorAndCorrectionCode:DecodingTable}}{\small
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
@@ -2386,18 +2390,18 @@ possible.
 
 \begin{exercise}{lincode0}  
 Let $C$ be a linear code. Show that either the $i$th coordinates in the
-codewords of $C$ are all zeros or exactly half of them are zeros. \hyperref[sec:algcodes:hints]{(*Hint*)}
+codewords of $C$ are all zeros or exactly half of them are zeros. \hyperref[sec:ErrorAndCorrectionCode:Hints]{(*Hint*)}
 \end{exercise} 
 
 \begin{exercise}{linlin}
 Show that the codewords of even weight in a linear code $C$ are also a
-linear code.  \hyperref[sec:algcodes:hints]{(*Hint*)}
+linear code.  \hyperref[sec:ErrorAndCorrectionCode:Hints]{(*Hint*)}
 \end{exercise}	 
 
 
 \begin{exercise}{lineven}
 Let $C$ be a linear code. Show that either every codeword has even
-weight or exactly half of the codewords have even weight.  \hyperref[sec:algcodes:hints]{(*Hint*)}
+weight or exactly half of the codewords have even weight.  \hyperref[sec:ErrorAndCorrectionCode:Hints]{(*Hint*)}
 \end{exercise} 
  
  
@@ -2513,7 +2517,7 @@ codes, which are heavily dependent on algebraic geometry.
 \end{rem}
  
 \section{References and Suggested Readings}
-\label{sec:References}
+\label{sec:ErrorAndCorrectionCode:References}
  
 {\small
 \begin{itemize}
