@@ -114,8 +114,8 @@ codeword must have been (111). 	This method will detect and correct
 all single errors. 
  
  
-In Table~\ref{algcodes:table0}, we present all possible words that might be received
-for the transmitted codewords (000) and (111). Table~\ref{algcodes:table0} also shows 
+In Table~\ref{ErrorAndCorrectionCode:table0}, we present all possible words that might be received
+for the transmitted codewords (000) and (111). Table~\ref{ErrorAndCorrectionCode:table0} also shows 
 the number of bits by which each received 3-tuple differs from each
 original codeword. 
 
@@ -542,7 +542,7 @@ where ``$\oplus$'' denotes addition mod 2 and ``+'' denotes ordinary addition. U
 \end{prop}
 
 \begin{proof}
-For each $j$, we have the 4 possibilities for $x_j$ and $y_j$ shown in Table~\ref{algcodes:table3}. The table shows that $x_j\oplus y_j = 0$ when $x_j = y_j$, and $x_j\oplus y_j = 1$ when $x_j \neq y_j$. So if we sum these terms for all $j$, we obtain the number of bit positions where ${\bold x}$ and ${\bold y}$ differ, which by definition is $d({\bold x},{\bold y})$.
+For each $j$, we have the 4 possibilities for $x_j$ and $y_j$ shown in Table~\ref{ErrorAndCorrectionCode:table3}. The table shows that $x_j\oplus y_j = 0$ when $x_j = y_j$, and $x_j\oplus y_j = 1$ when $x_j \neq y_j$. So if we sum these terms for all $j$, we obtain the number of bit positions where ${\bold x}$ and ${\bold y}$ differ, which by definition is $d({\bold x},{\bold y})$.
 \end{proof}
 
 \begin{table}[htb]
@@ -602,7 +602,7 @@ ${\bold y}$ to be received. If for example the third bit is mistransmitted and r
 
 \begin{example}{} Consider the $(4,3)$ code in which the first three bits carry
 information and the fourth is an even parity check bit. (Note that now we're putting the parity bit on the \emph{right} instead of on the \emph{left} as we did in Example~\ref{example:ErrorAndCorrectionCode:evenParity}. This will turn out to be more useful in the development of the general theory.)
-Table~\ref{algcodes:table1} gives the distances
+Table~\ref{ErrorAndCorrectionCode:table1} gives the distances
 between all codewords in this code.  We can see
 that the minimum distance here is 2; hence, the code is suitable as
 a single error-detecting code. 
@@ -689,7 +689,7 @@ detect between 1 and $2n$ errors.
 \end{proof}
  
  \begin{example}{}
-In Table~\ref{algcodes:table2}, the codewords ${\bold c}_1 = (00000)$, ${\bold c}_2 = (00111)$,
+In Table~\ref{ErrorAndCorrectionCode:table2}, the codewords ${\bold c}_1 = (00000)$, ${\bold c}_2 = (00111)$,
 ${\bold c}_3 = (11100)$, and ${\bold c}_4 = (11011)$ determine a
 single error-correcting code.  
 \end{example}
