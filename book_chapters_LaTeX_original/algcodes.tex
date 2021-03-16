@@ -873,7 +873,7 @@ d_{\min} &= & \min \{ d({\bold x},{\bold y}) : {\bold x}
   
 Using Proposition~\ref{proposition:algcodes:GroupCodeMinDist}, it is now a simple matter to find the error detection and correction capabilities of a group code. However, so far we don't have a good method  for creating group codes. In this section, we will use some techniques from linear algebra to give one such method. This method is widely used in digital information processing: for instance, in CDs, DVDs, and satellite communications.
 
-To understand this section, readers should familiar with basic notions of linear algebra such as systems of linear equations, vectors, linear combination, matrix multiplication, and transpose. Readers may find a brief refresher on matrix multiplication in Chapter~\ref{Sigma}.
+To understand this section, readers should familiar with basic notions of linear algebra such as systems of linear equations, vectors, linear combination, matrix multiplication, and transpose. Readers may find a brief refresher on matrix multiplication in Chapter~\ref{SigmaNotation}.
  
  \begin{defn}
 The \term{inner product}\index{Inner product} of two binary
@@ -1644,7 +1644,7 @@ corresponding $n \times (n-k)$ standard generator matrix. Then $HG =
 \end{prop}
   
 \begin{proof}
-It is possible to prove this by writing out the matrix product $HG$ using summation notation (see Chapter~\ref{Sigma}). This is however somewhat long-winded. A much easier way is to multiply $H$ and $G$ as \emph{block matrices}.\footnote{see for example \url{mathworld.wolfram.com/BlockMatrix.html}.} Since the block sizes are compatible, we have
+It is possible to prove this by writing out the matrix product $HG$ using summation notation (see Chapter~\ref{SigmaNotation}). This is however somewhat long-winded. A much easier way is to multiply $H$ and $G$ as \emph{block matrices}.\footnote{see for example \url{mathworld.wolfram.com/BlockMatrix.html}.} Since the block sizes are compatible, we have
 \[ HG = (A \mid I_k )\left(
  \begin{array}{c}
  I_{n-k} \\
