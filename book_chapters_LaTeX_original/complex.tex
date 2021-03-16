@@ -39,6 +39,7 @@ Thanks to Tom Judson for material used in this chapter.
 \label{sec:ComplexNumbers:Origin}
 
 \subsection{A number that can't be real (and we can prove it!)}
+\label{subsec:ComplexNumbers:Origin:WeCanProveIt}
 
 Way back in your first algebra class, you saw equations like:
 \begin{itemize}
@@ -210,6 +211,7 @@ Write down a complex number that is also a real number.
 \end{exercise}
 
 \subsection{A mathematical revolution}
+\label{subsec:ComplexNumbers:Origin:MathRevolution}
 
 The creation of complex numbers was a revolutionary event in
 the history of mathematics. Mathematicians were forced to recognize
@@ -394,6 +396,7 @@ two or three sentences to express your opinion.\footnote{There is no ``right'' a
 \label{sec:ComplexNumbers:Arithmetic}
 
 \subsection{Complex arithmetic}
+\label{subsec:ComplexNumbers:Arithmetic:ComplexArithmetic}
 
 To add \index{Complex numbers!addition}two complex numbers $z=a+bi$ and $w=c+di$, we just add the
 corresponding real and imaginary parts: 
@@ -596,6 +599,7 @@ Since our supposition has led to a false conclusion, it follows that our supposi
 
 
 \subsection{Comparison of integer, rational, real and complex addition properties}
+\label{subsec:ComplexNumbers:Arithmetic:ComparisonAddition}
 
 It is obvious that addition with integers, rational numbers, and
 real numbers have very similar properties. In this section, we explore some of these properties.
@@ -641,8 +645,8 @@ rationals, reals, and complex numbers.\index{Complex numbers!additive properties
 
 \end{exercise}
 
-\subsection{Comparison of integer, rational, real and complex
-multiplication properties}
+\subsection{Comparison of integer, rational, real and complex multiplication properties}
+\label{subsec:ComplexNumbers:Arithmetic:ComparisonMultiplication}
 
 Just as we've talked about the \emph{additive} identity and inverse
 for different number systems, in the same way we can talk about the
@@ -871,6 +875,8 @@ value for $|z + z^{-1}|$.
 
 
 \subsection{Cartesian representation of complex numbers}
+\label{subsec:ComplexNumbers:Graphical:CartesianRepresentation}
+
 There are several ways to represent complex numbers, that have different conceptual advantages.
 For instance, a complex number $z=a+bi$ can be considered simply as a pair of real numbers $(a,b)$, where the first number is the real part and the second number is the imaginary part. We are used to plotting ordered pairs $(a,b)$  on an $xy$ plane, where $a$ is the $x$ coordinate and $b$
 is the $y$ coordinate. Representing a complex number in this way as an ordered pair $(a,b)$  is called the 
@@ -909,6 +915,7 @@ Mathematicians naturally think of complex numbers as points on a plane -- in fac
 \end{figure}
 
 \subsection{Vector representation of complex numbers}
+\label{subsec:ComplexNumbers:Graphical:VectorRepresentation}
 
 You should already know that a point in a plane can also be considered as a \emph{vector}: in other words, the ordered pair $(a,b)$ can be identified with the vector $a$\textbf{i} + $b$\textbf{j}, where \textbf{i} and \textbf{j} are the unit vectors in the $x+$ and $y+$ directions, respectively. So complex numbers can also be considered as two-dimensional vectors.\index{Complex numbers!vector representation} 
 
@@ -948,6 +955,7 @@ to get the gist of the idea consider two mathematicians (Stan and Ollie) with ve
 Of course this correspondence between complex numbers and vectors breaks down when we consider multiplication, because we have never seen multiplication of 2-D vectors before. But it works perfectly well if we stick with addition.
 
 \subsection{Polar representation of complex numbers}
+\label{subsec:ComplexNumbers:Graphical:PolarRepresentation}
 
 Nonzero complex numbers can also be represented using \term{polar
 coordinates}\index{Polar coordinates}. To specify any nonzero point on the plane, it suffices
@@ -981,7 +989,8 @@ The distance  $r$ is the absolute value or modulus defined previously, while the
 \end{figure}
 
 
-\subsection{Converting between rectangular and polar form}\label{subsec:convertRecPolar}
+\subsection{Converting between rectangular and polar form}
+\label{subsec:ComplexNumbers:Graphical:RectToPolar}
 
 We can see from the Figure~\ref{polarcoord} that \[
 z=a+bi=r\cos\theta+( r\sin\theta) i,\]
@@ -1114,6 +1123,7 @@ Describe the following as a set of complex numbers:  the set of all points on a 
 \end{exercise}
 
 \subsection{Multiplication and powers in complex polar form}
+\label{subsec:ComplexNumbers:Graphical:MultPowerComplexPolar}
 
 The polar representation of a complex number makes it easy to find
 products, quotients, and powers of complex numbers. 
@@ -1145,7 +1155,7 @@ z \cdot w &= r\cis\theta \cdot \underline{~<1>~} \\
 \end{proof}
 
 \begin{exercise}{proof_of_mod2}
-Use Proposition~\ref{proposition:ComplexNumbers:polar_mult} and the polar expression for $\bar{z}$ that was given in Section~\ref{subsec:convertRecPolar} to give a simple proof of the following identity:
+Use Proposition~\ref{proposition:ComplexNumbers:polar_mult} and the polar expression for $\bar{z}$ that was given in Section~\ref{subsec:ComplexNumbers:Graphical:RectToPolar} to give a simple proof of the following identity:
 \[ z \bar{z} = |z|^2. \]
 \end{exercise}
 
@@ -1398,7 +1408,8 @@ $\frac{(1-i)^{10}}{(-\sqrt{3} + i)^6}$
 \end{exercise}
 
 
-\subsection{A Remark on representations of complex numbers}\label{remRepComplex}
+\subsection{A Remark on representations of complex numbers}
+\label{subsec:ComplexNumbers:Graphical:remRepComplex}
 
 We have seen that a complex number \emph{z} can be expressed in a
 number of different ways: 
@@ -1440,7 +1451,9 @@ Show that for any $n$, it is always possible to find a formula for $\cos n\theta
 \section{Complex numbers and roots of algebraic equations}
 \label{sec:ComplexNumbers:ComplexRoots}
 
-\subsection{Roots of unity and regular polygons\quad\sectionvideohref{c5WbBwp5av4&index=6&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{sec:RootsOfUnity}
+\subsection{Roots of unity and regular polygons\quad\sectionvideohref{c5WbBwp5av4&index=6&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
+\label{subsec:ComplexNumbers:ComplexRoots:RootsOfUnity}
+
 As we mentioned before, complex numbers got their start when mathematicians started considering the solutions to algebraic  equations. One particularly important equation is
 \[z^{n}=1, \qquad \text{ where } n \in \mathbb{N}.\]
 For example, when $n=4$ the complex numbers which solve $z^4=1$ are $z=1$, $-1$, $i$, and $-i$. In general, the complex numbers that satisfy the
@@ -1753,7 +1766,7 @@ In fact, many intricate theorems in plane geometry that require long proofs usin
 
 \subsection{Complex $n$th roots in general 
 \quad\sectionvideohref{o5wpaYsDU4o&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=7}}
-\label{subsec:ComplexNumbers:RootsGeneral}
+\label{subsec:ComplexNumbers:ComplexRoots:RootsGeneral}
 
 In the previous section, we characterized all complex solutions of the equation $z^n = 1$; we called these solutions the $n$th roots of unity. A natural question to ask then is, What about the $n$th roots of any complex number? That is, given a complex number $a + bi$, can we find all solutions to the equation $z^n = a + bi$? Let's explore some simple cases first.
 
@@ -1851,7 +1864,8 @@ Explain the relationship between the complex arguments of the roots you found in
 \end{exercise}
 
 \subsection{Complex roots of polynomial equations\quad
-\sectionvideohref{HKtljwos03o&index=8&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{sec:FTOA}
+\sectionvideohref{HKtljwos03o&index=8&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
+\label{subsec:ComplexNumbers:ComplexRoots:FTOA}
 
 Next we consider more general algebraic equations than the basic $n$th root equations we've been looking at so far.\index{Roots! of polynomial equations}  As a first example, consider the equation $z^2 + pz = q$, where $p$ and  $q$ are real numbers. Using  the quadratic formula, it is not too hard to show that if $a + bi$ is a solution of $z^2 + pz = q$ then the complex conjugate $a - bi$ is also a solution. This is because  $z^2 + pz = q$ can also be written as  $z^2 + pz - q = 0$, and the quadratic formula tells us that there are two solutions, given by:
 $$ z = \frac{-p \pm \sqrt{p^2 - (4)(1)(-q)}}{2} = \frac{-p}{2}  \pm \frac{\sqrt{p^2 + 4q}}{2}.$$
@@ -1964,6 +1978,7 @@ Give an example of a polynomial of the form  $z^6 + a_{5}z^{5} + a_{4} z^{4} + \
 \label{sec:ComplexNumbers:Application}
 
 \subsection{General remarks on the usefulness of complex numbers}
+\label{subsec:ComplexNumbers:Application:GeneralRemarks}
 
 We have already discussed that it took some time for complex numbers to be generally accepted by mathematicians, who tended to have a preference for ``pure'' numbers such as the integers. But complex numbers have had their revenge. Today the ``purest'' form of mathematics, namely number theory, is heavily dependent on complex numbers. The famous Fermat's Last Theorem\index{Fermat!last theorem} was proved using techniques that involved complex numbers.\footnote{See \url{http://www-history.mcs.st-and.ac.uk/HistTopics/Fermat's_last_theorem.html} for some of the long and sordid history of Fermat's Last Theorem.}
 
@@ -1980,6 +1995,7 @@ Complex numbers give a powerful way to express complicated functions
 of sine and cosine in a very simple way. We will give an introduction of this in the next section--you may see it again, or have already seen it, in your differential equations course.
 
 \subsection{Complex numbers in electrical engineering: phasors}
+\label{subsec:ComplexNumbers:Application:Phasors}
 
 We have already seen there is a close relationship between complex numbers and the trigonometric functions sine and cosine. This relationship is the basis for much of the usefulness of complex numbers -- as we shall explain in this section.
 
@@ -2143,7 +2159,9 @@ What is the phase shift of the sum of the three signals?
 We hope that from the examples in this section, you may get some idea of how important complex numbers are in the study of signals. In fact, for many electrical engineers complex numbers are their ``bread and butter''. 
 
 
-\subsection{Complex numbers and fractals: the Mandelbrot set} \label{sec:mandelbrot}
+\subsection{Complex numbers and fractals: the Mandelbrot set} 
+\label{subsec:ComplexNumbers:Application:Mandelbrot}
+
 The intricate \emph{Mandelbrot set}\index{Mandelbrot set} (see Figure~\ref{mandelbrot}) is a beautiful application of complex numbers.
 The Mandelbrot set is defined by means of \emph{iteration} of the function $f(z) = z^2 + c$. The definition is a little complicated: we show how it works using a couple of examples.
 

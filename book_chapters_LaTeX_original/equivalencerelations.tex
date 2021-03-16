@@ -248,7 +248,7 @@ We've defined binary relations in general. In this section we present one very i
 
 Given any set $A$ with 2 or more elements, it's possible to split up the elements of $A$ into disjoint subsets. We call such a division a \term{partition}. The mathematical definition is:
 
-\begin{defn}\label{def:Partition} A \term{partition}\index{Partition} $\mathcal{P}$ of a set~$A$ is a collection of nonempty subsets of~$A$, such that each element of~$A$ is in exactly one of the subsets in $\mathcal{P}$. In other words:
+\begin{defn}{def:Partition} A \term{partition}\index{Partition} $\mathcal{P}$ of a set~$A$ is a collection of nonempty subsets of~$A$, such that each element of~$A$ is in exactly one of the subsets in $\mathcal{P}$. In other words:
 \begin{enumerate}[(a)]
 \item the union of the subsets in $\mathcal{P}$ is all of~$A$,
 and
@@ -287,7 +287,7 @@ Let $A=\{1,2,3,4,5,6\}$ and partition these six numbers into evens and odds. The
 
 We generalize the previous example in the following definition. 
 
-\begin{defn}\label{partitionrelation}
+\begin{defn}{partitionrelation}
 Given a partition $\mathcal{P}$ on $A$, we may define a binary relation $\rel_\mathcal{P}\,\subset A \times A$ as follows: for $a,b \in A$, $a \rel_\mathcal{P} b$ iff $a$ and $b$ are both contained in the same subset in the partition.
 \end{defn}
 
@@ -409,7 +409,7 @@ We'll be using this symbolism in later propositions, e.g. Proposition~\ref{propo
 
 These properties  are so important that we have a special term for binary relations that satisfy all three properties:
 
-\begin{defn}\label{defn:equivalencerelation}
+\begin{defn}{defn:equivalencerelation}
 An \term{equivalence relation}\index{Equivalence relation} on a set~$A$ is a binary relation on~$A$ that is reflexive, symmetric, and transitive.
 \end{defn}
 
@@ -840,7 +840,7 @@ Suppose we're studying a set of people, and we're only interested in their given
 
 Let's generalize this example. Essentially, the only fact about given names that we used to define equivalence classes was that given name defines an equivalence relation on the set of interest. So it stands to reason that we can do something similar with any equivalence relation:
  
- \begin{defn}\label{DefEquivRel}
+ \begin{defn}{DefEquivRel}
  Suppose $\sim$ is an equivalence relation on a set~$A$. For each $a \in A$, the \term{equivalence class}\index{Equivalence class} of~$a$ is the following subset of~$A$:
  	$$ [a] = \{\, s \in A \mid s \sim a \,\} .$$
 That is, the equivalence class of the element $a \in A$ is the set of all elements of $A$ that are equivalent to $a$.
@@ -1066,7 +1066,7 @@ Abstract algebra often involves looking at familiar concepts and structures in a
 
 In the Modular Arithmetic chapter we defined the concept of ``modular equivalence".  You may recall that we actually gave two definitions, which we repeat here: 
 
-\begin{defn}\label{mod_eqiv_def_1} \emph{(Modular Equivalence, first definition)}
+\begin{defn}{mod_eqiv_def_1} \emph{(Modular Equivalence, first definition)}
 
 \medskip
 $a \equiv b \pmod{n}$ if and only if $a$ and $b$ have the same remainder when divided by $n$.
@@ -1074,7 +1074,7 @@ $a \equiv b \pmod{n}$ if and only if $a$ and $b$ have the same remainder when di
 
 
 
-\begin{defn}\label{mod_eqiv_def_2} \emph{(Modular Equivalence, second definition)}
+\begin{defn}{mod_eqiv_def_2} \emph{(Modular Equivalence, second definition)}
 
 \medskip
 $a \equiv b \pmod{n}$ iff $a - b = k \cdot n$, where $k$ is an integer (that is, $k \in  {\mathbb Z}$). 
@@ -1114,7 +1114,7 @@ In the Modular Arithmetic chapter we defined the integers mod 3 as the set of re
 What do we really mean by, ``basically the same thing''? Hold that thought--we'll come back to this point later(in Section~\ref{sec:theSameThing}).
  \end{rem}
 
-\begin{defn}\label{mod_eqiv_def_3} \emph{(Integers mod 3, equivalence class definition)}
+\begin{defn}{mod_eqiv_def_3} \emph{(Integers mod 3, equivalence class definition)}
 The set of equivalence classes $\{ [0]_3, [1]_3, [2]_3 \}$ is identified as the set of \term{integers mod 3}, and is represented by the symbol~$\integer_3$.\index{Integers mod $n$! as equivalence classes}
 
 We may also use the simpler notation $\class{k}$ to represent the equivalence class  $[k]_3$. So we may write either  
@@ -1125,7 +1125,7 @@ Take a moment to appreciate the difference between this definition of $\mathbb{Z
 
 To complete the connection with our previous definition of  $\mathbb{Z}_3$, we need to define arithmetic operations on $\integer_3$, using our new characterization in terms of equivalence classes. Note the additional level of abstraction here: these arithmetic operations are defined on equivalence classes, which are \emph{sets} rather than numbers. But we've seen this before: recall that in the Sets chapter we defined operations on sets. So you're old hands at this!
 
-\begin{defn}\label{RulesOfModArith} (Rules of modular arithmetic)
+\begin{defn}{RulesOfModArith} (Rules of modular arithmetic)
 The \term{arithmetic operations modulo~$3$} are defined as follows:\index{Modular arithmetic!on equivalence classes}
 \begin{itemize}
 \item $[a]_3 + [b]_3 = [a+b]_3$ \qquad (or $\class{a} + \class{b} = \class{a + b}$),
@@ -1252,7 +1252,7 @@ Make profound comments about what you observe.
 \end{enumerate}
 \end{exercise}
 
-Whether we think of $\integer_n$ as a subset of $\integer$ with operations $\oplus$ and $\odot$, or whether we think of $\integer_n$ as a set of equivalence classes, as far as practical computation is concerned it really makes no difference. The operations give the same result. Any equation that holds for the one version, also hold for the other. Mathematically we describe this situation as saying that the two versions of $\integer_n$ are \term{isomorphic}. We've encountered isomorphism before (in Section~\ref{remRepComplex}), and later on we'll denote an entire chapter to this concept (Chapter~\ref{isomorph}).
+Whether we think of $\integer_n$ as a subset of $\integer$ with operations $\oplus$ and $\odot$, or whether we think of $\integer_n$ as a set of equivalence classes, as far as practical computation is concerned it really makes no difference. The operations give the same result. Any equation that holds for the one version, also hold for the other. Mathematically we describe this situation as saying that the two versions of $\integer_n$ are \term{isomorphic}. We've encountered isomorphism before (in Section~\ref{subsec:ComplexNumbers:Graphical:remRepComplex}), and later on we'll denote an entire chapter to this concept (Chapter~\ref{isomorph}).
 
 We should hasten to add that although the two versions work the same computationally, the conceptual differences between the two are important. Looking at the ``same thing'' in different ways can inspire new ideas that may bring deep insights and breakthroughs in understanding.  In fact, this is one of the most powerful tools in the mathematican's toolbox. 
 

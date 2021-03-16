@@ -71,7 +71,7 @@ x_{85}&\stackrel{\checkmark}{=}x_{85}
 
 These ideas motivate the following definitions of action and $G$-Set:
 
-\begin{defn}\label{def:action}
+\begin{defn}{def:action}
 Let $G$ be a group and $X$ be a set. A \term{(left) action}\index{Actions!group} of $G$ on $X$ is a map $G\times X\rightarrow X$ given by $(g, x)\rightarrow g.x$, such that
 \begin{enumerate}[(1)]
 \item Identity: $e.x = x$ for all $x\in X$, and $e$ is the identity element of the group $G$;
@@ -143,7 +143,7 @@ Usually the easiest way to show one of the above items is by a counterexample.
 Let $G = 2\mathbb{Z}$ and let $X =\mathbb{Z}$. Show that $X$ is a $G$-set.
 \item Let $X = 2\mathbb{Z}$. Show that $X$ is \emph{not} a $\mathbb{Z}$-set.
 \hyperref[sec:actions:hints]{(*Hint*)}
-\item Let $G = H_6$ (the complex $6$-th roots of unity (see Section~\ref{sec:RootsOfUnity} in Chapter~\ref{ComplexNumbers}) and let $X =\mathbb{C}$. Show that $X$ is a $G$-set.
+\item Let $G = H_6$ (the complex $6$-th roots of unity (see Section~\ref{subsec:ComplexNumbers:ComplexRoots:RootsOfUnity} in Chapter~\ref{ComplexNumbers}) and let $X =\mathbb{C}$. Show that $X$ is a $G$-set.
 \item Let $X = H_8$.  Is $X$ a $\mathbb{C}$-set? Explain.
 \hyperref[sec:actions:hints]{(*Hint*)}
 \end{enumerate}
@@ -208,7 +208,7 @@ The figure shows three possible rotation axes. We will denote the $90^{\circ}$ c
 %In part (a) of the previous exercise, we saw that we could rotate the bottom face of the cube ($z_-$) to any other face.  We can use this information to rotate between any two faces.  For example, if we want to rotate the top face ($z_+$) to $x_+$, we can do this in two stages as follows.  First, we can rotate $z_+$ to $z_-$ using $r_x^{-1}\compose r_x^{-1}$ (which is the \emph{inverse} of the rotation that we used to take $z_-$ to $z_+$).  Second, we follow this by a rotation that takes $z_-$ to $x_+$ (such as $r_y^{-1}$).  In summary, we then have that 
 From the previous exercise it's pretty clear that for any two faces of a cube there is at least one symmetry that takes the first face to the second.  In other words, if $A$ and $B$ represent faces then there always exists a symmetry $g$ such that $gA=B$.  This example motivates the following definition.
 
-\begin{defn}\label{GEquivalent}
+\begin{defn}{GEquivalent}
 If a group $G$ acts on a set $X$ and $x, y \in X$, then $x$ is said to be
 \term{$G$-equivalent}\index{G-equiv@$G$-equivalent} to $y$ if there exists a
 $g \in G$ such that $g.x =y$. We write $x \sim_Gy$ or $x \sim y$ if
@@ -276,7 +276,7 @@ Similarly, the rotations about the axis through $y_+$ and $y_-$ form a subgroup 
 
  These are all examples of \emph{stabilizer subgroups}. The general definition is as follows.
 
-\begin{defn}\label{StabilizerSubgroups} 
+\begin{defn}{StabilizerSubgroups} 
 Given that $X$ is a $G$-set and  $x \in X$, let $G_x$ be the set of  group elements $g$ that fix $x$:  in other words, $g.x=x$.  Then $G_x$ is called the \term{stabilizer subgroup}\index{Subgroup!stabilizer} or \term{isotropy 
 subgroup}\index{Subgroup!isotropy} for the element $x$.
 \end{defn}
@@ -1136,8 +1136,8 @@ Consider the group $\mathbb{Z}_5$ which as we know is a group under addition. We
 \begin{exercise}{SubgroupAction2}
 \begin{enumerate} [(a)]
 \item Recall $\mathbb{ Q}^* $ is the nonzero rational numbers under multiplication. Show that $\mathbb{ Q}^* $ is a $\mathbb{ Q}^* $-set.
-\item Recall $H_5$ is the complex 5th roots of unity under complex multiplication (see Section~\ref{sec:RootsOfUnity}). Show that $H_5$ is an $H_5$-set.
-\item Let $T$ be the unit circle in the complex numbers under multiplication (see Figure~\ref{rtsunity} in Section~\ref{sec:RootsOfUnity}).  Find a group $G$ such that $T$ is a $G$-set, and prove the statement.
+\item Recall $H_5$ is the complex 5th roots of unity under complex multiplication (see Section~\ref{subsec:ComplexNumbers:ComplexRoots:RootsOfUnity}). Show that $H_5$ is an $H_5$-set.
+\item Let $T$ be the unit circle in the complex numbers under multiplication (see Figure~\ref{rtsunity} in Section~\ref{subsec:ComplexNumbers:ComplexRoots:RootsOfUnity}).  Find a group $G$ such that $T$ is a $G$-set, and prove the statement.
 \end{enumerate}
 \end {exercise}
 We can generalize the results of the preceding exercise in the following proposition:
@@ -1594,7 +1594,7 @@ Suppose that $\tilde{g}$ is conjugate to $g$. This means that there exists an $x
 &=\underline{~<10>~}\quad\text{(identity and inverse properties)}
 \end{align*}
 \noindent
-From Proposition~\ref{proposition:groups:Cyclic_subgrp_order}, it follows that  $| \tilde{g}|$ divides $|\underline{~<11>~}|$. On the other hand, \[(\underline{~<12>~})\tilde{g}(\underline{~<13>~})=g\qquad\text{(inverse property)}.\]  
+From Proposition~\ref{proposition:Groups:Cyclic_subgrp_order}, it follows that  $| \tilde{g}|$ divides $|\underline{~<11>~}|$. On the other hand, \[(\underline{~<12>~})\tilde{g}(\underline{~<13>~})=g\qquad\text{(inverse property)}.\]  
 The same proof  with $g$ and $\tilde{g}$ interchanged shows that $|g|$ divides $|\underline{~<14>~}|$ Therefore,  $|g|=\underline{~<15>~}$ 
 \end {exercise}
 \end{proof}

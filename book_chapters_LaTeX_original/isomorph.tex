@@ -39,7 +39,7 @@ and then if we add the resulting  coordinate pairs, we obtain
 \end{align*}
 which is the same as before. So we get the same result whether we add the complex numbers or their corresponding ordered pairs.  
 
-What we've shown  is illustrated in Figure~\ref{fig:groups:CommDiag}. If we start with the complex numbers $z,w$, we get the same result whether we follow first the arrow to the right (``translation'' to ${\mathbb R} \times {\mathbb R}$) and then go down (addition in ${\mathbb R} \times {\mathbb R}$), or whether we follow first the down arrow (addition in ${\mathbb C}$) and then go right (``translation'' to ${\mathbb R} \times {\mathbb R}$).
+What we've shown  is illustrated in Figure~\ref{fig:Groups:CommDiag}. If we start with the complex numbers $z,w$, we get the same result whether we follow first the arrow to the right (``translation'' to ${\mathbb R} \times {\mathbb R}$) and then go down (addition in ${\mathbb R} \times {\mathbb R}$), or whether we follow first the down arrow (addition in ${\mathbb C}$) and then go right (``translation'' to ${\mathbb R} \times {\mathbb R}$).
 %The ``translation map'' we are using is the function 
 %\begin{center}
 %$f : {\mathbb C} \longrightarrow {\mathbb R} \times {\mathbb R}$ such that $f(a + bi) = (a,b)$.
@@ -48,13 +48,13 @@ What we've shown  is illustrated in Figure~\ref{fig:groups:CommDiag}. If we star
 \begin{figure}[htb]
 	   \center{\includegraphics[width=4.in]
 	         {images/CommDiag.png}}
-	  \caption{\label{fig:groups:CommDiag} Addition is the ``same'' for complex numbers and real ordered pairs. }
+	  \caption{\label{fig:Groups:CommDiag} Addition is the ``same'' for complex numbers and real ordered pairs. }
 \end{figure}
 
 \end{example}
 
 \begin{rem}
-Readers with an eidetic memory may recognize the similarity between Figure~\ref{fig:groups:CommDiag} and Figure~\ref{fig:commDiagModular}. In fact, this type of diagram pops up a lot in higher mathematics, so much so that it has a special name: \term{commutative diagram}.
+Readers with an eidetic memory may recognize the similarity between Figure~\ref{fig:Groups:CommDiag} and Figure~\ref{fig:commDiagModular}. In fact, this type of diagram pops up a lot in higher mathematics, so much so that it has a special name: \term{commutative diagram}.
 \end{rem}
 
 \begin{exercise}{iso_1}
@@ -68,7 +68,7 @@ Prove that the function $f$ defined in Example~\ref{example:isomorph:chap1_ex}  
 \end{exercise}
 
 \begin{exercise}{iso_3} 
-Draw a diagram similar to Figure~\ref{fig:groups:CommDiag}  for the function $g: {\mathbb C} \rightarrow {\mathbb R} \times {\mathbb R}$ defined by $g(a + bi) = (3a, 3b)$. Show that the same ``arrow-following'' property holds: that is, you can follow the arrows from the upper left to lower right in either order, and still end up with the same result.
+Draw a diagram similar to Figure~\ref{fig:Groups:CommDiag}  for the function $g: {\mathbb C} \rightarrow {\mathbb R} \times {\mathbb R}$ defined by $g(a + bi) = (3a, 3b)$. Show that the same ``arrow-following'' property holds: that is, you can follow the arrows from the upper left to lower right in either order, and still end up with the same result.
 \end{exercise} 
 
 \begin{exercise}{iso_4}
@@ -246,7 +246,7 @@ h(r_{180}) = -i,~~
 
 So let's buckle down and get mathematical. We start with a rigorous definition of isomorphism:
 
-\begin{defn}\label{isomorph_defn}
+\begin{defn}{isomorph_defn}
 Two groups $(G, \cdot)$ and $(H, \circ)$ are \term{isomorphic}\index{Group!isomorphic} if there exists a bijection $\phi : G \rightarrow H$ such that the group operation is preserved;  that~is, 
 \[
 \phi( a \cdot b) = \phi( a) \circ \phi( b)
@@ -935,7 +935,7 @@ $\phi(G')$ is isomorphic to $G'$.
 \begin{exercise}{phigprime_subgroup_H} Fill in the blanks of the following proof of Step (I)  (that is, $\phi(G')$ is a subgroup of $H$):
 \medskip
 
-Let us suppose that $G'$ is a subgroup of $G$. We claim that $\phi(G')$ is actually a subgroup of \underline{$~<1>~$}.  To show this, by Proposition~\ref{proposition:groups:subgroup_prove_2} it's enough to show that if $h_1$ and $h_2$ are elements of  $\phi(G')$, then $h_1 h_2^{-1}$ is also an element of \underline{$~<2>~$}.
+Let us suppose that $G'$ is a subgroup of $G$. We claim that $\phi(G')$ is actually a subgroup of \underline{$~<1>~$}.  To show this, by Proposition~\ref{proposition:Groups:subgroup_prove_2} it's enough to show that if $h_1$ and $h_2$ are elements of  $\phi(G')$, then $h_1 h_2^{-1}$ is also an element of \underline{$~<2>~$}.
 
 Now given that  $h_1, h_2 \in \phi(G')$, by the definition of $\phi(G')$ it must be true that there exist $g_1, g_2 \in \underline{~<3>~}$ such that $\phi(g_1) = h_1, \phi(g_2) = h_2$. But then we have 
 \begin{align*}
@@ -968,7 +968,7 @@ Prove $A_4$ is not isomorphic to $D_{6}$. (Recall that $A_4$ is the alternating 
 \end{exercise}
 
 \begin{exercise}{}
-The \emph{quaternion group}\index{Quaternion group ($Q_8$)} (denoted by $Q_8$) was introduced in Example~\ref{example:groups:quaternions} and Exercise~\ref{exercise:groups:QuatEx}. Show that the quaternion group is not isomorphic to $D_4$.
+The \emph{quaternion group}\index{Quaternion group ($Q_8$)} (denoted by $Q_8$) was introduced in Example~\ref{example:Groups:quaternions} and Exercise~\ref{exercise:Groups:QuatEx}. Show that the quaternion group is not isomorphic to $D_4$.
 \end{exercise}
 
 \section{Classification up to isomorphism}

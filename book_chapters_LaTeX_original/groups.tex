@@ -11,7 +11,7 @@
 %%%%(c)
 
 \chap{Introduction to Groups\quad
-\sectionvideohref{IvNQQuG2ngY&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=25}}{chap:Groups}
+\sectionvideohref{IvNQQuG2ngY&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=25}}{Groups}
 
 
 \begin{quote}
@@ -57,7 +57,7 @@ What operation is the set $S_3$ a group under?
 \end{exercise}
 The following definition formalizes the notion of ``operation''.
 
-\begin{defn} \label{group_op}
+\begin{defn}{group_op}
  A \term{binary operation}\index{Binary!operation}\index{Operation!binary} or \term{law of composition}\index{Composition!law of}\index{Operation!binary} on a set $G$ is a function $G \times G \rightarrow G$ that assigns to each pair $(a,b) \in G \times G$ a unique element $a \circ b$, or $ab$ in $G$, called the \term{composition} of $a$ and $b$.
 \end{defn}
 
@@ -77,7 +77,7 @@ What are the four properties a set $G$ and a binary operation must exhibit in or
 \end{exercise}
 Building on our previous discussion, we now  proudly present the following formal definition.
 
-\begin{defn}\label{group_definition}
+\begin{defn}{group_definition}
  A \term{group}\index{Group!definition} $(G, \circ )$ is a set $G$ together with a law of composition $(a,b) \mapsto a \circ b$ that satisfies the following axioms. 
 \begin{enumerate}
 \item
@@ -111,13 +111,13 @@ When the group operation is obvious or has been previously specified, we may den
 
 One very important class of groups is the commutative groups, which are given their own special designation:
 
-\begin{defn} \label{abelian_group} 
+\begin{defn}{abelian_group} 
 A group $(G,\circ)$ with the property that $a \circ b = b \circ a$ for all $a, b \in G$ is called \term{abelian}\index{Abelian group}\index{Group!abelian}\footnote{In honor of Neils Henrik Abel (1802-1829), an astounding mathematician who sadly died very young of tuberculosis. There is some discussion among mathematicians over whether `abelian' should be capitalized. The word has become so common in mathematics that it's usually treated as a regular word and not a proper name. This should be considered as a special honor to Abel, since his name has become part of the fundamental language of mathematics.}  or \term{commutative}\index{Group!commutative}.  Groups not satisfying this property are said to be  \term{non-abelian}\index{Group!non-abelian} or \term{noncommutative}\index{Group!noncommutative}. 
 \end{defn}
 
 Finally, based on our discussion before about the order of sets, we have:
 
-\begin{defn} \label{group_order}
+\begin{defn}{group_order}
 A group is \term{finite}\index{Group!finite}, or has \term{finite
 order}, if it contains a finite number of elements The \term*{order}\index{Group!order of}\index{Order!of a group}
 of a finite group is the number of elements that it contains. If $G$
@@ -130,12 +130,12 @@ The group ${\mathbb Z}_5$ is a finite group of order
 5, so $|{\mathbb Z}|_5=5$; while the integers ${\mathbb Z}$ form an infinite group under addition, and
 we sometimes write $|{\mathbb Z}| = \infty$.
 
-\begin{defn} \label{trivial_group}
+\begin{defn}{trivial_group}
 The \term{trivial group}\index{Group!trivial}, consists of the single element $e$  (or ${\var id}$, in our previous notation).
 \end{defn} 
 
 \begin{exercise}{trivial}
-Prove that the trivial group is in fact a group according to Definition~\ref{group_definition}.
+Prove that the trivial group is in fact a group according to Definition~\ref{definition:Groups:group_definition}.
 \end{exercise}
 
 \section{Examples}
@@ -159,13 +159,13 @@ $ab \in {\mathbb R}$ and (ii) $ab \neq 0$:
 
 \medskip{}
 \noindent
-(ii):  Suppose $ab = 0$.  Then as we  noted in Section~\ref{OpsAndRels}, we know either $a = 0$ or $b = 0$.  But $a, b \in {\mathbb R}^{\ast}$; i.e. $a, b \neq 0$.  So we have a contradiction.  Hence $ab \neq 0$.
+(ii):  Suppose $ab = 0$.  Then as we  noted in Section~\ref{subsec:Preliminaries:OpsAndRels}, we know either $a = 0$ or $b = 0$.  But $a, b \in {\mathbb R}^{\ast}$; i.e. $a, b \neq 0$.  So we have a contradiction.  Hence $ab \neq 0$.
 
 \medskip{}
 \noindent
 Therefore $ab \in {\mathbb R}^{\ast}$; and so ${\mathbb R}^{\ast}$  is closed under multiplication.
 \end{enumerate}
-To finish the proof that ${\mathbb R}^{\ast}$ is a group, we must establish axioms (2) through (4) in Definition~\ref{group_definition}. We leave this up to you in the following exercise:
+To finish the proof that ${\mathbb R}^{\ast}$ is a group, we must establish axioms (2) through (4) in Definition~\ref{definition:Groups:group_definition}. We leave this up to you in the following exercise:
 
 \begin{exercise}{Rstar_group} 
 \begin{enumerate}[(a)]
@@ -308,7 +308,7 @@ Define a binary operation $\circ$ on $G$ by $(a,m) \circ (b,n) = (ab, m+n)$.  Is
 \end{exercise}
 The previous two exercises follow a pattern that we may generalize:
 
-\begin{defn}\label{def:ProductOfGroups}
+\begin{defn}{def:ProductOfGroups}
 Given two groups $G$ and $H$, we define the \term*{product}\index{Product!of groups} of groups $G$ and $H$ (denoted by $G \times H$) as the set of pairs $\left\{(g,h), g \in G, h \in H \right\}$. If $(g_1, h_1)$ and $(g_2,h_2)$ are two elements of $G \times H$, then we define the group operation  $(g_1, h_1) \circ (g_2, h_2)$ as follows: 
 \[ (g_1, h_1) \circ (g_2, h_2) := (g_1g_2, h_1h_2),\]
 where $g_1g_2$ uses the group operation in $G$ and $h_1h_2$ uses the group operation in $H$.
@@ -355,12 +355,12 @@ The next two exercises are very useful in the  subsequent exercises.
 
 \begin{exercise}{ident}
 Given two elements $g,h$  of a group ($G,\circ$). Show that $g$ is the identity element of $G$ if and only if  $g \circ h = h$.
-\hyperref[sec:groups:hints]{(*Hint*)} 
+\hyperref[sec:Groups:Hints]{(*Hint*)} 
 \end{exercise}
 
 \begin{exercise}{cayley}
 Show that if $G$ is a group, then for every row of the Cayley table for $G$ no two entries are the same. Show also that for every column of the Cayley table no two entries are the same.
-\hyperref[sec:groups:hints]{(*Hint*)}  
+\hyperref[sec:Groups:Hints]{(*Hint*)}  
 \end{exercise}
 
 
@@ -600,7 +600,7 @@ Is the group in Table ~\ref{CayleyU8} abelian?  Justify your answer.
 \end{exercise}
 For convenience, let's define some notation:
 
-\begin{defn}\label{DefnOfUnits}
+\begin{defn}{DefnOfUnits}
 The set of nonzero numbers in ${\mathbb Z}_n$ that are relatively prime to $n$ is called the \term{set of units of ${\mathbb Z}_n$}, denoted by \term{$U(n)$}\index{Units! group of ($U(n)$)}\index{Group!of units $U(n)$}.
 \end{defn}
 
@@ -615,7 +615,7 @@ Fill in the blanks to show that $U(n)$ is closed under modular multiplication:
 Let $k,m$ be arbitrary elements of  $U(n)$. It follows that both $k$ and \underline{$~<1>~$} are relatively prime to \underline{$~<2>~$}. So neither $k$ nor \underline{$~<3>~$} has any prime factors in common with \underline{$~<4>~$}. It follows that the product \underline{$~<5>~$} also has no prime factors in common with \underline{$~<6>~$}. Furthermore, the remainder of \underline{$~<7>~$} under division by \underline{$~<8>~$} also has no prime factors in common with \underline{$~<9>~$}. Therefore the product of \underline{$~<10>~$} and \underline{$~<11>~$} under modular multiplication is also an element of \underline{$~<12>~$}, so \underline{$~<13>~$} is closed under modular multiplication.
 \item
 It remains to show that $U(n)$ is closed under inverse. Suppose that $m \in U(n)$ and $x$ is the inverse of $m$. What modular equation must $x$ satisfy?
-\hyperref[sec:groups:hints]{(*Hint*)}
+\hyperref[sec:Groups:Hints]{(*Hint*)}
 \item Show that the equation in $x$ that you wrote in part (b) has a solution as long as $m$ is relatively prime to $n$.
 \end{enumerate}
 \end{exercise}  
@@ -656,7 +656,7 @@ Let  ${\mathbb M}_n ( {\mathbb C})$ \label{notematrices} be the set of all $n\ti
 
 There are multiplicative groups of $2 \times 2$ matrices as well, but not all matrices can be included. To specify those which are included, we need the following definition
 
-\begin{defn}  
+\begin{defn}{MatDet}  
 For the $2\times 2$ matrix  $A =
 \begin{pmatrix}
 a & b \\
@@ -683,7 +683,7 @@ This is known as the \term{determinant product formula}.
 
 We're now ready to define a set of $2\times 2$ matrices which is suitable to form a multiplicative group.
 
-\begin{defn}
+\begin{defn}{GL2}
 Let $GL_2({\mathbb C})$ be the subset of ${\mathbb M}_2 ( {\mathbb C})$ consisting of matrices $A$ such that
 \[
 A =
@@ -710,7 +710,7 @@ d & -b \\
  satisfies
 \[ AB = BA = I.\]
 \item
-Using  Exercise~\ref{exercise:groups:detMult}, show that $GL_2(\mathbb{C})$ is closed under matrix multiplication.
+Using  Exercise~\ref{exercise:Groups:detMult}, show that $GL_2(\mathbb{C})$ is closed under matrix multiplication.
 \item
 Show that  matrix multiplication in $GL_2(\mathbb{C})$ is associative.
 \item
@@ -726,7 +726,7 @@ Prove or disprove: $GL_2(\mathbb C)$ is abelian.
 
 It turns out that we can define a multiplicative group of $n \times n$ matrices for any positive integer $n$, in similar fashion as we defined $GL_2(\mathbb{C})$.  Rather than using determinant, we present an alternative way of characterizing the $n \times n$ matrices that are suitable members of a multiplicative group.
 
-\begin{defn} 
+\begin{defn}{inversibleMatrix} 
 An $n \times n$ matrix $A$ is called \term*{invertible}\index{Matrix!nvertible} if there exists a $n \times n$ matrix $B$ such that $AB = BA = I_n$, where $I_n$ is the $n \times n$ identity matrix.
 \end{defn}
 
@@ -737,7 +737,7 @@ Show that the set of  $n \times n$  invertible matrices with complex entries for
 matrix multiplication is associative (this is proved  in another chapter). 
 \end{exercise}
 
-\begin{defn} 
+\begin{defn}{Gln}
 The set of $n \times n$ invertible matrices is called the $n$ dimensional \term{general linear group}, and is denoted by $GL_n(\mathbb{C})$.
 \end{defn}
 
@@ -764,7 +764,7 @@ is the identity, then $ee' = e$. Combining these two equations, we
 have $e = ee' = e'$. 
 \end{proof}
  
- Proposition~\ref{proposition:groups:id_unique} shows that group identities are unique -- it turns out that inverses in a group are also unique:
+ Proposition~\ref{proposition:Groups:id_unique} shows that group identities are unique -- it turns out that inverses in a group are also unique:
  
 \begin{prop}{inv_unique}
 If $g$ is any element in a group $G$, then the inverse of $g$  is unique. 
@@ -772,7 +772,7 @@ If $g$ is any element in a group $G$, then the inverse of $g$  is unique.
 
 
 \begin{exercise}{inverse_unique}
-Fill in the blanks to complete the following proof of Proposition~\ref{proposition:groups:inv_unique}.
+Fill in the blanks to complete the following proof of Proposition~\ref{proposition:Groups:inv_unique}.
 \begin{enumerate}[(a)]
 \item
 By the definition of inverse, if $g'$ is an inverse of an element $g$ in a group $G$, then 
@@ -826,7 +826,7 @@ $(\sigma \tau)^{-1} = \tau^{-1} \sigma^{-1}.$
 
 \begin{proof}
 By the inverse property, $ \exists a^{-1}, b^{-1} \in G$. By the closure property, $ab \in G$ and $b^{-1}a^{-1} \in G$. So
-we only need to verify that $b^{-1}a^{-1}$ satisfies the definition of inverse (from Proposition~\ref{proposition:groups:inv_unique}, we know the inverse is unique). First, we have:    
+we only need to verify that $b^{-1}a^{-1}$ satisfies the definition of inverse (from Proposition~\ref{proposition:Groups:inv_unique}, we know the inverse is unique). First, we have:    
 \begin{align*}
 (ab)(b^{-1}a^{-1}) & = a(bb^{-1})a^{-1}  \text{ (associative property of group G) } \\
  & = aea^{-1}  \text{ (def. of inverse) } \\
@@ -838,7 +838,7 @@ we only need to verify that $b^{-1}a^{-1}$ satisfies the definition of inverse (
 The remainder of the proof is left as an exercise:
 
 \begin{exercise}{42}
-Fill in the blanks to complete the proof of Proposition~\ref{proposition:groups:group_inv_reverse}
+Fill in the blanks to complete the proof of Proposition~\ref{proposition:Groups:group_inv_reverse}
 \begin{align*}
 (b^{-1}a^{-1})(ab) & = b^{-1}(a^{-1}a)b  &(\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_) \\
  & = b^{-1}eb  &(\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_) \\
@@ -848,16 +848,16 @@ Fill in the blanks to complete the proof of Proposition~\ref{proposition:groups:
 \end{exercise}
 \end{proof}
 
-By repeated application of Proposition~\ref{proposition:groups:group_inv_reverse}, we may find the inverse of the product of multiple group elements, for example: $(abcd)^{-1} = d^{-1}c^{-1}b^{-1}a^{-1}$.
+By repeated application of Proposition~\ref{proposition:Groups:group_inv_reverse}, we may find the inverse of the product of multiple group elements, for example: $(abcd)^{-1} = d^{-1}c^{-1}b^{-1}a^{-1}$.
 
-Proposition~\ref{proposition:groups:group_inv_reverse} shows that in general, when finding inverses of products it is necessary to take the products of inverses in reverse order. One might ask, Is it ever the case that it's not necessary to reverse the order? Glad you asked! We address this question in the following exercise: 
+Proposition~\ref{proposition:Groups:group_inv_reverse} shows that in general, when finding inverses of products it is necessary to take the products of inverses in reverse order. One might ask, Is it ever the case that it's not necessary to reverse the order? Glad you asked! We address this question in the following exercise: 
 
 \begin{exercise}{group_abelian}
 Given a group $G$ and $a, b \in G$, prove that $G$ is abelian if and only if $(ab)^{-1} =a^{-1}b^{-1}$ for all $a,b$ in $G$.
-\hyperref[sec:groups:hints]{(*Hint*)} 
+\hyperref[sec:Groups:Hints]{(*Hint*)} 
 \end{exercise}
  
-Proposition~\ref{proposition:groups:group_inv_reverse} characterizes the inverse of a product: now we shall characterize the inverse of an inverse. From ordinary algebra we know that $-(-a) = a$ and $1/(1/a) = a$. This generalizes to arbitrary groups as follows:
+Proposition~\ref{proposition:Groups:group_inv_reverse} characterizes the inverse of a product: now we shall characterize the inverse of an inverse. From ordinary algebra we know that $-(-a) = a$ and $1/(1/a) = a$. This generalizes to arbitrary groups as follows:
 
 \begin{prop}{inv_inv}
 Let $G$ be a group.  For any $a \in G$, $(a^{-1})^{-1} = a$.
@@ -1040,16 +1040,16 @@ groups} are true in groups.  We leave the proof as an exercise.
 \begin{exercise}{56}
 \begin{enumerate}[(a)]
 \item
-To prove  Proposition~\ref{proposition:groups:cancel}, we need to prove both that   $ba = ca$ implies $b = c$,  and that $ab = ac$ implies $b = c$. Why do these two statements require two different proofs?
+To prove  Proposition~\ref{proposition:Groups:cancel}, we need to prove both that   $ba = ca$ implies $b = c$,  and that $ab = ac$ implies $b = c$. Why do these two statements require two different proofs?
 \item
-Prove Proposition~\ref{proposition:groups:cancel}.
+Prove Proposition~\ref{proposition:Groups:cancel}.
 \end{enumerate}
 \end{exercise} 
  
 We can use exponential notation for groups just as we do in ordinary
 algebra:
 
-\begin{defn}\label{DefGroupExponents}
+\begin{defn}{DefGroupExponents}
  If $G$ is a group and $g \in G$, then we define $g^0 = e$.
 For $n \in {\mathbb N}$, we define 
 \[
@@ -1061,7 +1061,7 @@ g^{-n} := (g^{-1})^n =  \underbrace{g^{-1} \cdot g^{-1} \cdots g^{-1}}_{n \; {\r
  \end{defn}
  
 \begin{exercise}{57}
-Using Definition~\ref{DefGroupExponents}, prove that 
+Using Definition~\ref{definition:Groups:DefGroupExponents}, prove that 
 \[ (g^n)^{-1} = g^{-n},\]
 i.e. the inverse of $g^n$ is equal to $g^{-n}$ for any group element $g$ and for any natural number $n$.
 \end{exercise}
@@ -1088,7 +1088,7 @@ We will prove part (1), and you will do the rest. We can break part (1) into fou
 (c) $m \ge 0, n< 0$; (d) $m<0, n \ge 0$. 
 
 Consider first case (a). 
-Using Definition~\ref{DefGroupExponents}, we have
+Using Definition~\ref{definition:Groups:DefGroupExponents}, we have
 \[
 g^m g^n = \underbrace{g \cdot g \cdots g}_{m \; {\rm times}}\underbrace{g \cdot g \cdots g}_{n \; {\rm times}},
 \]
@@ -1099,7 +1099,7 @@ g^{m+n} = \underbrace{g \cdot g \cdots g}_{m+n \; {\rm times}}.
 Since the right-hand sides of these expressions are equal, then so are the left-hand sides: so $g^mg^n = g^{m+n}$.
 
 The proof of case (b) is exactly the same, except on the right-hand sides we should replace all $g$'s with $g^{-1}$ and we should also replace `$m$ times', `$n$ times', and `$m+n$ times' with `$-m$ times', `$-n$ times', and `$-(m+n)$ times' respectively (recall that $m$ and $n$ are negative, so $-(m+n)$ is positive). These replacements gives us
-$g^mg^n =( g^{-1})^{-(m+n)}$, and according to Definition \ref{DefGroupExponents} we may rewrite this as  $g^mg^n = g^{m+n}$. This completes the proof of case (b).
+$g^mg^n =( g^{-1})^{-(m+n)}$, and according to Definition \ref{definition:Groups:DefGroupExponents} we may rewrite this as  $g^mg^n = g^{m+n}$. This completes the proof of case (b).
 
 In case (c), we have
 \[
@@ -1119,7 +1119,7 @@ Case (d) is just like (c), except we exchange the signs  on the $g$'s,  $m$'s an
 
 
 \begin{exercise}{59}
-Prove parts (2) and (3) of Proposition~\ref{proposition:groups:exponent_laws}.
+Prove parts (2) and (3) of Proposition~\ref{proposition:Groups:exponent_laws}.
 \end{exercise}
 \end{proof} 
 
@@ -1174,7 +1174,7 @@ group theory appeared in William Burnside's\index{Burnside, William}
 
  We first came across subgroups in the Permutations chapter.  We saw that $S_n$, the set of permutations on a set of n elements, is a group under function composition.  Yet we also saw that the set of symmetries of an $n$-sided figure, which is a subset of $S_n$, is itself a group under function composition.  So a subgroup is a subset of a larger group that is itself a group under the same operation as the larger group.  Formally then: 
 
-\begin{defn} \label{subgroup_defn}
+\begin{defn}{subgroup_defn}
 A \term{subgroup}\index{Subgroup!definition of} $H$ of a group $(G,\circ)$ is a subset $H$ of $G$ such that when the group operation of $G$ is restricted to $H$, $H$ is a group in its own right. 
 \end{defn}
 
@@ -1277,7 +1277,7 @@ $U(n)$ is  a subgroup of ${\mathbb Z}_n$.
 \end{exercise}
  
 
-We can make the task of proving subgroups  a bit easier. First notice that in Example~\ref{example:groups:Z2subgroup},  $2{\mathbb Z}$ was  associative simply by virtue of the fact that it's contained in the  group ${\mathbb Z}$ and has the same operation.  This will be true in general: the associate property will always hold for any subset of a group $G$ under that group's operation. We may also make the following observation about identity elements:
+We can make the task of proving subgroups  a bit easier. First notice that in Example~\ref{example:Groups:Z2subgroup},  $2{\mathbb Z}$ was  associative simply by virtue of the fact that it's contained in the  group ${\mathbb Z}$ and has the same operation.  This will be true in general: the associate property will always hold for any subset of a group $G$ under that group's operation. We may also make the following observation about identity elements:
 
 \begin{exercise}{65}
 Prove the following: Suppose $G$ is a group with identity element $e$, and let $H$ be a subgroup of $G$ with identity element $f$.  Then $e=f$.
@@ -1308,7 +1308,7 @@ The set ${\mathbb T}$ is defined as the subset of  ${\mathbb C}$ whose elements 
 
 \begin{enumerate}[(a)]
 \item
-Using Proposition \ref{proposition:groups:subgroup_prove} above, prove that ${\mathbb T}$ is a subgroup of ${\mathbb C}^{\ast}$.
+Using Proposition \ref{proposition:Groups:subgroup_prove} above, prove that ${\mathbb T}$ is a subgroup of ${\mathbb C}^{\ast}$.
 \item
 What is $| {\mathbb T} |$?
 \item
@@ -1317,10 +1317,10 @@ Prove or disprove that ${\mathbb T}$ is abelian.
 \end{exercise}
 
 \begin{exercise}{67}
-Let  $H_4 = \{ 1, -1, i, -i \}$, (these are the  fourth roots of unity, which we studied in Section~\ref{sec:RootsOfUnity}).  
+Let  $H_4 = \{ 1, -1, i, -i \}$, (these are the  fourth roots of unity, which we studied in Section~\ref{subsec:ComplexNumbers:ComplexRoots:RootsOfUnity}).  
 \begin{enumerate}[(a)]
 \item
-Using Proposition \ref{proposition:groups:subgroup_prove}, prove that $H_4$ is a subgroup of ${\mathbb T}$. (\emph{Note} you should first verify that $H_4$ is a subset of ${\mathbb T}$.)
+Using Proposition \ref{proposition:Groups:subgroup_prove}, prove that $H_4$ is a subgroup of ${\mathbb T}$. (\emph{Note} you should first verify that $H_4$ is a subset of ${\mathbb T}$.)
 \item  
 What is $| H_4 |$?
 \item
@@ -1337,7 +1337,7 @@ H_n = \{z \in {\mathbb C} : z^n = 1\} \]
 \item
 Prove that $H_n$ is a subset of ${\mathbb T}$.
 \item
-Using Proposition \ref{proposition:groups:subgroup_prove}, prove that $H$ is a subgroup of ${\mathbb T}$.
+Using Proposition \ref{proposition:Groups:subgroup_prove}, prove that $H$ is a subgroup of ${\mathbb T}$.
 \item  
 What is $| H_n |$?
 \item
@@ -1355,7 +1355,7 @@ In other words ${\mathbb Q}^*$ is the set of non-zero rational numbers (${\mathb
 
 \begin{enumerate}[(a)]
 \item
-Using Proposition \ref{proposition:groups:subgroup_prove}, prove that ${\mathbb Q}^*$ is a subgroup of ${\mathbb R}^*$.
+Using Proposition \ref{proposition:Groups:subgroup_prove}, prove that ${\mathbb Q}^*$ is a subgroup of ${\mathbb R}^*$.
 \item
 Prove or disprove that ${\mathbb Q}^*$ is abelian.
 \end{enumerate}
@@ -1410,7 +1410,7 @@ linear $(SL_n(\mathbb{R}))$}\label{speciallinear}.
 
 \begin{enumerate}[(a)]
 \item
-Using Proposition \ref{proposition:groups:subgroup_prove}, prove that $SL_2( {\mathbb R})$ is a subgroup of $GL_2( {\mathbb R})$.
+Using Proposition \ref{proposition:Groups:subgroup_prove}, prove that $SL_2( {\mathbb R})$ is a subgroup of $GL_2( {\mathbb R})$.
 \item
 Prove or disprove that $SL_2( {\mathbb R})$ is abelian.
 \end{enumerate}
@@ -1437,7 +1437,7 @@ Prove or disprove that $G$ is abelian.
 \end{exercise} 
  
 
-There is an alternative way to prove a subset $H$ of $G$ is a subgroup of $G$ that  can save some time.  It turns out that the three conditions in Proposition~\ref{proposition:groups:subgroup_prove} can be combined into a single statement:
+There is an alternative way to prove a subset $H$ of $G$ is a subgroup of $G$ that  can save some time.  It turns out that the three conditions in Proposition~\ref{proposition:Groups:subgroup_prove} can be combined into a single statement:
 
 \begin{prop}{subgroup_prove_2}
 Let $H$ be a subset of a group $G$.  Then $H$ is a subgroup of $G$ if and only if $H \neq \emptyset$, and whenever $g, h \in H$ then $gh^{-1}$ is in $H$. 
@@ -1445,7 +1445,7 @@ Let $H$ be a subset of a group $G$.  Then $H$ is a subgroup of $G$ if and only i
  
  
 \begin{proof}
-We first prove the ``if'' direction, so we assume $H$ be a nonempty subset of $G$ and whenever $g, h \in H$ then $gh^{-1}$ is in $H$. Proposition~\ref{proposition:groups:subgroup_prove} says that if $H$ contains the identity and is closed under inverse and the group operation, then $H$ is a subgroup. Let's prove these one by one. First, since $H$ is nonempty, it contains some element $g$: and letting $h=g$ we obtain $gg^{-1} = e$ is in $H$.  Second, since $e \in H$ and  $g \in H$, then $eg^{-1} = g^{-1}$ is also in $H$: so $H$ is closed under inverse.  Finally, let $g, h \in H$. We must show that their product is also in $H$.  But we have already shown that $h \in H$ implies that $h^{-1} \in H$, so that, $g(h^{-1})^{-1} = gh \in H$.  We have established the three required conditions, so we may conclude that  $H$ is a subgroup of $G$.
+We first prove the ``if'' direction, so we assume $H$ be a nonempty subset of $G$ and whenever $g, h \in H$ then $gh^{-1}$ is in $H$. Proposition~\ref{proposition:Groups:subgroup_prove} says that if $H$ contains the identity and is closed under inverse and the group operation, then $H$ is a subgroup. Let's prove these one by one. First, since $H$ is nonempty, it contains some element $g$: and letting $h=g$ we obtain $gg^{-1} = e$ is in $H$.  Second, since $e \in H$ and  $g \in H$, then $eg^{-1} = g^{-1}$ is also in $H$: so $H$ is closed under inverse.  Finally, let $g, h \in H$. We must show that their product is also in $H$.  But we have already shown that $h \in H$ implies that $h^{-1} \in H$, so that, $g(h^{-1})^{-1} = gh \in H$.  We have established the three required conditions, so we may conclude that  $H$ is a subgroup of $G$.
 
 To prove the ``only  if''' direction, we may assume that $H$ is a subgroup of $G$. Given any elements $g, h \in H$, we need to show that $gh^{-1} \in H$.  Since $h$ is in $H$, its inverse $h^{-1}$ must also be in $H$.  Because of the closure of the group operation, $gh^{-1} \in H$. This completes the proof. 
 \end{proof}
@@ -1481,7 +1481,7 @@ $\implies |xy^{-1}| \in {\mathbb T}$
 \end{example} 
 
 \begin{exercise}{73}
-Use Proposition \ref{proposition:groups:subgroup_prove_2} to re-prove the following:
+Use Proposition \ref{proposition:Groups:subgroup_prove_2} to re-prove the following:
 \begin{enumerate}[(a)]
 \item
 ${\mathbb Q}^*$ is a subgroup of ${\mathbb R}^*$.
@@ -1497,7 +1497,7 @@ $SL_2( {\mathbb R})$ is a subgroup of $GL_2( {\mathbb R})$.
  
 In this section we will explore an important property of some groups and subgroups.  
 
-\subsection{Definitions}\label{subsec:groups:cyclic_groups}
+\subsection{Definitions}\label{subsec:Groups:cyclic_groups}
 
 \begin{example}{construct_Z}
 Consider the group ${\mathbb Z}$.  Let us try to find the smallest subgroup of ${\mathbb Z}$ that contains the number 1.
@@ -1531,11 +1531,11 @@ as positive and negative multiples of $1$.  Therefore we can think of all the el
 \[ \langle 1 \rangle = \{ n \cdot 1 : n \in \mathbb Z \} = P. \]
 
 \noindent
-In Example ~\ref{example:groups:construct_Z} we also saw that $P$ was in fact $\mathbb Z$; therefore $\mathbb Z = \langle 1 \rangle$. We say that $\mathbb Z$ is \emph{generated by} $1$, as per the following definition:
+In Example ~\ref{example:Groups:construct_Z} we also saw that $P$ was in fact $\mathbb Z$; therefore $\mathbb Z = \langle 1 \rangle$. We say that $\mathbb Z$ is \emph{generated by} $1$, as per the following definition:
 
 Let us extend this concept to groups in general:
 
-\begin{defn}\label{defn_set_gen} Given a group $G$ and an element $a \in G$, then \term{the set  generated by the element} $a$\index{Set!generated by group element} is denoted by $\langle a \rangle$, and is defined as the set obtained by repeated multiplication of the identity $e$ by the group elements $a$ and $a^{-1}$.  Using the notation we introduced right before Proposition ~\ref{proposition:groups:exponent_laws}, we can write this as
+\begin{defn}{defn_set_gen} Given a group $G$ and an element $a \in G$, then \term{the set  generated by the element} $a$\index{Set!generated by group element} is denoted by $\langle a \rangle$, and is defined as the set obtained by repeated multiplication of the identity $e$ by the group elements $a$ and $a^{-1}$.  Using the notation we introduced right before Proposition ~\ref{proposition:Groups:exponent_laws}, we can write this as
 \[ \langle a \rangle = \{ \ldots, a^{-3}, a^{-2}, a^{-1}, e, a, a^2, a^3, \ldots \} \]
 \noindent
 or
@@ -1553,7 +1553,7 @@ List the set $\langle 3 \rangle$ for $3 \in {\mathbb R}^*$.
 \noindent
 We have special terminology for the case where all the elements of a group are generated by a single element:
 
-\begin{defn}\label{cyclic_generator}
+\begin{defn}{cyclic_generator}
  If a group $G$ contains some element $a$ such that $G = \langle a \rangle $, then $G$ is a
 \term{cyclic group}\index{Group!cyclic}\index{Cyclic group}. In this case $a$ is a \term{
 generator}\index{Generator! of a cyclic group}\index{Cyclic group!generator} of $G$.
@@ -1692,7 +1692,7 @@ powers of $a$ by closure; hence, $H$ contains $\langle a \rangle $.
 \end{proof}
  
 \medskip
-\begin{defn}\label{defn_cyclic_subgroup}
+\begin{defn}{defn_cyclic_subgroup}
 Given a group $G$, for each $a \in G$, we call $\langle a \rangle $ the \term{cyclic
 subgroup}\index{Subgroup!cyclic} generated by $a$. 
 \end{defn}
@@ -1702,11 +1702,11 @@ $\left\{a, a^2, a^3, \ldots\right\}$ must contain duplicate elements, since othe
 
 \begin{exercise}{90}
 Let $G$ be a finite group, and let $a \in G$ where $a \neq e$. Show there exists a natural number $m>0$ such that $a^m = e$.
-\hyperref[sec:groups:hints]{(*Hint*)}
+\hyperref[sec:Groups:Hints]{(*Hint*)}
 \end{exercise}
 In view of the preceding exercise, we may make the following definition:
 
-\begin{defn}\label{DefOrder}
+\begin{defn}{DefOrder}
 If $a$ is an element of a group $G$, we define the \term*{order}\index{Element!order
 of}\index{Order! of a group element} of $a$ to be the smallest positive integer $n$ such that $a^n= e$,
 and we write $|a| = n$\label{noteelementorder}. If there is no such
@@ -1718,7 +1718,7 @@ integer $n$, we say that the order of $a$ is infinite and  write $|a|
 Let us consider the orders of different elements in the infinite group $\mathbb Z$.
 \begin{itemize}
 \item
-First, what is $| 0 |$?  According to Definition~\ref{DefOrder}, we need to find the smallest positive integer such that $n \cdot 0 = 0$  (remember, $\mathbb Z$ is an \emph{additive} group. We get $n=1$, so $| 0 | =1$, and the cyclic subgroup generated by $0$ is $\langle 0 \rangle = \{ 0 \}$
+First, what is $| 0 |$?  According to Definition~\ref{definition:Groups:DefOrder}, we need to find the smallest positive integer such that $n \cdot 0 = 0$  (remember, $\mathbb Z$ is an \emph{additive} group. We get $n=1$, so $| 0 | =1$, and the cyclic subgroup generated by $0$ is $\langle 0 \rangle = \{ 0 \}$
 \item
 What is $| 1 |$?  $1 + 1 = 2$; $1 + 1 + 1 = 3$; $\ldots$  In fact you'll never get to $0$ adding a positive number of ones.  So $| 1 | = \infty$, and as we've seen, $\langle 1 \rangle = \mathbb Z$.
 \item
@@ -1759,7 +1759,7 @@ Based on your experience with this problem, would you say there is any relations
 
 
 Let us now consider specifically the cyclic subgroups of finite groups. In the following exercises, you may wish to make use of 
-the laws of exponents listed in Proposition~\ref{proposition:groups:exponent_laws}.
+the laws of exponents listed in Proposition~\ref{proposition:Groups:exponent_laws}.
 
 \begin{exercise}{finite_inv}
 Let $G$ be a finite group, and let $a \in G$ where $|a|=n$. Show that $(a^{-1})^n = e$.
@@ -1770,7 +1770,7 @@ In the following exercises, $G$ is a finite group, and  $a \in G$ where $|a|=n$.
 \begin{enumerate}[(a)]
 \item
 Show that for any integer $m \in \mathbb{Z}$, $a^m = a^{\bmod(m,n)}$.
-\hyperref[sec:groups:hints]{(*Hint*)} 
+\hyperref[sec:Groups:Hints]{(*Hint*)} 
 \item
 Let $A = \{e,a,a^2,\ldots,a^{n-1}\}$.  Show that $\langle a \rangle \subset A$ and $A \subset \langle a \rangle$.
 \item 
@@ -1836,14 +1836,14 @@ Given a group $G$ and a subgroup $H \subset G$, and suppose that $a \in H$.  The
 \end{prop}
 
 \begin{exercise}{prove_orbit_sgp}
-Prove Proposition~\ref{proposition:groups:orbit_sgp}
+Prove Proposition~\ref{proposition:Groups:orbit_sgp}
 \end{exercise}
 
-Proposition~\ref{proposition:groups:orbit_sgp} makes it much easier to find subgroups of a given group, because it greatly cuts down
+Proposition~\ref{proposition:Groups:orbit_sgp} makes it much easier to find subgroups of a given group, because it greatly cuts down
 on the possibilities.
 
 \begin{example}{S3_subgroups}
-We showed in Example~\ref{example:groups:Not_Cyclic_S3} that $D_3$ has 4 cyclic subgroups, and that every element of $D_3$ is in at least one of these subgroups.  Proposition~\ref{proposition:groups:orbit_sgp} shows that, for example, any subgroup containing $\rho_1$ must also contain $id$ and  $\rho_2$, since $\langle \rho_1 \rangle = \{id, \rho_1, \rho_2\}$.  Let's try to find a larger subgroup $H \subset D_3$ that contains $\rho_1$.  If we add any other element  (which must be  $\mu_k$ for some $k=1,2$ or $3$), then we must also add $\rho_1 \mu_k$ and $\rho_2 \mu_k$, which means that $H$ contains  all 6 elements of $D_3$. It follows that $H=D_3$. Similarly, if we try to find a subgroup $K$ that contains $\mu_k$ by adding another reflection $\mu_j (j \neq k)$, we find that $\mu_j \mu_k$ and $\mu_j \mu_k$  must also be in $K$, which means that $\rho_1$ must also be in $K$. But we've just finished shown that if $\rho_1 \in K$ and $\mu_k \in K$, then  $K=G$.  It follows that the only proper nontrivial subgroups of $D_3$ are the four cyclic subgroups shown in Figure~\ref{subgrpsS3}.
+We showed in Example~\ref{example:Groups:Not_Cyclic_S3} that $D_3$ has 4 cyclic subgroups, and that every element of $D_3$ is in at least one of these subgroups.  Proposition~\ref{proposition:Groups:orbit_sgp} shows that, for example, any subgroup containing $\rho_1$ must also contain $id$ and  $\rho_2$, since $\langle \rho_1 \rangle = \{id, \rho_1, \rho_2\}$.  Let's try to find a larger subgroup $H \subset D_3$ that contains $\rho_1$.  If we add any other element  (which must be  $\mu_k$ for some $k=1,2$ or $3$), then we must also add $\rho_1 \mu_k$ and $\rho_2 \mu_k$, which means that $H$ contains  all 6 elements of $D_3$. It follows that $H=D_3$. Similarly, if we try to find a subgroup $K$ that contains $\mu_k$ by adding another reflection $\mu_j (j \neq k)$, we find that $\mu_j \mu_k$ and $\mu_j \mu_k$  must also be in $K$, which means that $\rho_1$ must also be in $K$. But we've just finished shown that if $\rho_1 \in K$ and $\mu_k \in K$, then  $K=G$.  It follows that the only proper nontrivial subgroups of $D_3$ are the four cyclic subgroups shown in Figure~\ref{subgrpsS3}.
 \end{example}
 
 \begin{exercise}{d_4subgroups}
@@ -1851,13 +1851,13 @@ We showed in Example~\ref{example:groups:Not_Cyclic_S3} that $D_3$ has 4 cyclic 
 \item
 Find all cyclic subgroups of  the symmetry group of the square (i.e. $D_4$)  by finding $\langle a \rangle$ for every element $a \in D_4$.
 \item
-Find all nontrivial proper subgroups of $D_4$  (You may follow the procedure used in Example~\ref{example:groups:S3_subgroups} if you wish.) 
+Find all nontrivial proper subgroups of $D_4$  (You may follow the procedure used in Example~\ref{example:Groups:S3_subgroups} if you wish.) 
 \item
 Show that at least one of the subgroups in (a)  is abelian and not cyclic.
 \end{enumerate}
 \end{exercise}      
 
-It is not true that every abelian group is cyclic (see Exercise~\ref{exercise:groups:d_4subgroups}.  However, we can prove the converse, namely:
+It is not true that every abelian group is cyclic (see Exercise~\ref{exercise:Groups:d_4subgroups}.  However, we can prove the converse, namely:
  
 \begin{prop}{cyclic_abelian}
 Every cyclic group is abelian.
@@ -1874,7 +1874,7 @@ g  h = a^r a^s = a^{r+s} = a^{s+r} = a^s a^r = h g.
 Since $g$ and $h$ were arbitrary elements of $G$, it follows that $G$ is abelian.
 \end{proof}
  
-How about the converse of Proposition~\ref{proposition:groups:cyclic_abelian}? Is it true that every abelian group is cyclic? As it turns out, No. The following proposition gives an example:
+How about the converse of Proposition~\ref{proposition:Groups:cyclic_abelian}? Is it true that every abelian group is cyclic? As it turns out, No. The following proposition gives an example:
 
 \begin{prop}{realNotCyclic}
 The group $({\mathbb R},+)$ is not cyclic.
@@ -1916,7 +1916,7 @@ Every subgroup of a cyclic group is cyclic.
  
 \begin{proof}
 The main tools used in this proof are the division algorithm, which we mentioned in Proposition~\ref{proposition:ModularArithmetic:DivAlg},  and the
-Principle of Well-Ordering, which we mentioned in Section~\ref{subsec:orderprop}.
+Principle of Well-Ordering, which we mentioned in Section~\ref{subsec:Preliminaries:OrderRelations}.
  
 Let $G$ be a cyclic group generated by $a$
 and suppose that $H$ is a subgroup of $G$. If $H = \{ e \}$, then
@@ -1949,7 +1949,7 @@ The subgroups of ${\mathbb Z}$ are exactly $n{\mathbb Z}$ for $n = 0, 1, 2,
 \end{prop}
 
 \begin{exercise}{}
-Prove Proposition~\ref{proposition:groups:nZ_sgp}
+Prove Proposition~\ref{proposition:Groups:nZ_sgp}
 \end{exercise}
 
 \begin{exercise}{}
@@ -1964,7 +1964,7 @@ generator for  $G$. Then $a^k=e$ if and only if $n$ divides $k$.
  
  
 \begin{proof}
-Since $G=\langle a \rangle$ it follows from Proposition~\ref{proposition:groups:OrderEltCyclic} that $|a|=n$. In Exercise~\ref{exercise:groups:OrderEltCyclic} (a) we proved that  $a^k =  a^{\bmod(m,n)}$. Let $r =\bmod(m,n)$.  If $r=0$ (which is the same thing as saying that $n$ divides $k$) this implies $a^k =  a^{0} = e$. Otherwise, if it must be the case that $0< r< n=|a|$, and by the definition of $|a|$ it follows that $a^r \neq e$. This concludes the proof.
+Since $G=\langle a \rangle$ it follows from Proposition~\ref{proposition:Groups:OrderEltCyclic} that $|a|=n$. In Exercise~\ref{exercise:Groups:OrderEltCyclic} (a) we proved that  $a^k =  a^{\bmod(m,n)}$. Let $r =\bmod(m,n)$.  If $r=0$ (which is the same thing as saying that $n$ divides $k$) this implies $a^k =  a^{0} = e$. Otherwise, if it must be the case that $0< r< n=|a|$, and by the definition of $|a|$ it follows that $a^r \neq e$. This concludes the proof.
 \end{proof}
 
 \begin{prop}{}
@@ -1976,7 +1976,7 @@ generator of the group.  If $b = a^k$, then the order of $b$ is $n
  
 \begin{proof}
 We wish to find the smallest integer $m$ such that $e = b^m = a^{km}$.
-By Proposition~\ref{proposition:groups:Cyclic_subgrp_order}, this is the smallest integer $m$ such that
+By Proposition~\ref{proposition:Groups:Cyclic_subgrp_order}, this is the smallest integer $m$ such that
 $n$ divides $km$ or, equivalently, $n/d$ divides $m(k/d)$. (Note that $n/d$ and $k/d$ are both integers, since $d$ divides both $n$ and $k$.)  Since $d$ is
 the greatest common divisor of $n$ and $k$, $n/d$ and $k/d$ are
 relatively prime. Hence, for $n/d$ to divide $m(k/d)$ it must divide
@@ -2064,8 +2064,8 @@ quantum physics.
 %\]
   
 
-\begin{exercise}{}\label{ex:groups:quat}
-List all subgroups of the quaternion group $Q_8$. \hyperref[sec:groups:hints]{(*Hint*)}
+\begin{exercise}{}\label{ex:Groups:quat}
+List all subgroups of the quaternion group $Q_8$. \hyperref[sec:Groups:Hints]{(*Hint*)}
 \end{exercise} 
  
 \begin{exercise}{}
@@ -2114,7 +2114,7 @@ non-abelian.
 \begin{exercise}{}\label{ex:eoc:11}
 \begin{enumerate}[(a)]
 \item
-Recall the discussion of Section~\ref{sec:miracle}, which explains how two apparently different groups can in fact be essentially the ``same" group. Find two groups of order eight that we have studied are not the ``same'' in this sense, and explain why they can't be considered as examples of the ``same'' group.  
+Recall the discussion of Section~\ref{sec:Symmetry:UnexplainedMiracle}, which explains how two apparently different groups can in fact be essentially the ``same" group. Find two groups of order eight that we have studied are not the ``same'' in this sense, and explain why they can't be considered as examples of the ``same'' group.  
 \item
 Using the previous exercise (which introduces ${\mathbb Z}_2^n$), give an example of a third group that is not the ``same'' as the two groups you found in (a), and explain why it is not the ``same''.
 \end{enumerate}
@@ -2145,7 +2145,7 @@ there is an element $k \in U(n)$ such that $k^2 = 1$ and $k \neq 1$.
 \begin{exercise}{}\label{ex:eoc:evenInv}
 Show that if $G$ is a finite group of even order, then there is an $a
 \in G$ such that $a$ is not the identity and $a^2 = e$.
-\hyperref[sec:groups:hints]{(*Hint*)} 
+\hyperref[sec:Groups:Hints]{(*Hint*)} 
 \end{exercise} 
  
  
@@ -2158,21 +2158,21 @@ Show that if $G$ is a finite group of even order, then there is an $a
 \begin{exercise}{}\label{ex:eoc:abelian1}
 Let $G$ be a group and suppose that $(ab)^2 = a^2b^2$ for all $a$ and
 $b$ in $G$.  Prove that $G$ is an abelian group.
-\hyperref[sec:groups:hints]{(*Hint*)}  
+\hyperref[sec:Groups:Hints]{(*Hint*)}  
 \end{exercise}
 
 \begin{exercise}{}\label{ex:eoc:abelian2}
 Show that if $a^2 = e$ for all $a \in G$, then $G$ must be an abelian group. 
-\hyperref[sec:groups:hints]{(*Hint*)} 
+\hyperref[sec:Groups:Hints]{(*Hint*)} 
 \end{exercise}
  
-\begin{exercise}{}\label{ex:groups:2elt}
+\begin{exercise}{}\label{ex:Groups:2elt}
 If $(xy)^2 = xy$ for all $x$ and $y$ in $G \setminus {e}$, prove that $G$ must be
 abelian.
-\hyperref[sec:groups:hints]{(*Hint*)}
+\hyperref[sec:Groups:Hints]{(*Hint*)}
 \end{exercise}
 
-\begin{exercise}{}\label{ex:groups:abelian_proof}
+\begin{exercise}{}\label{ex:Groups:abelian_proof}
 If $xy = x^{-1} y^{-1}$ for all $x$ and $y$ in $G \setminus {e}$, prove that $G$
 must be abelian.
 \end{exercise} 

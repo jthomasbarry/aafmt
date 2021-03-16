@@ -51,13 +51,13 @@ When studying rings (and groups), we put a lot of focus on the integers.  The in
 
 All of the number systems listed at the beginning of this chapter have properties I-VII.  Similar properties are found in other number systems.\footnote{The reader may recall that some of these same properties were listed in Section~\ref{polycoefficients}, when we were talking about coefficients of polynomials.}
 
-\begin{defn}\label{def:ring}
+\begin{defn}{def:ring}
 Any number system with the two arithmetic operations (+ and $\cdot$) that satisfy properties I-VII is called a \term{ring}.
 \end{defn}
 
 As well as having properties $I-VII$, multiplication is commutative in all of the above number systems. This leads us to the following definition:
 
-\begin{defn}\label{def:comring}
+\begin{defn}{def:comring}
 A number system is a \term{commutative ring} if it is a ring where multiplication is also commutative.
 \end{defn}
 
@@ -151,7 +151,7 @@ Let's continue with our proof of Example \ref{example:rings:extension_ring}. We 
 
 For associativity of addition, let $a,b,c,\in{\mathbb Q}[ \sqrt[3]{2}]$. Since all of the numbers in ${\mathbb Q}[\sqrt[3]{2}]$ are real numbers, and the real numbers are associative, then it follows automatically that numbers in ${\mathbb Q}[\sqrt[3]{2}]$ also associate.  We can make a similar argument for associativity of multiplication.  Associativity is an example of an \emph{inherited property}.
 
-\begin{defn}\label{def:inherited property}
+\begin{defn}{def:inherited property}
 An \term{inherited property} is a property such that, if the property is true for a set of numbers $S$, then it's also true for any subset of $S$.
 \end{defn}
 
@@ -262,7 +262,7 @@ We need to show that if $x$ is a multiplicative identity, then $x=1$.
 Show that the additive identity of a ring $R$ is unique.  (You may model your proof on the proof of Proposition~\ref{proposition:rings:mult_idR}).
 \end{exercise}
 
-Way back in Section~\ref{OpsAndRels} we mentioned the \term{zero divisor property} for real numbers: the product of two real numbers is zero if and only if at least one of the two numbers is zero. In fact, the ``only if'' part of this statement is \emph{not true} for general rings:
+Way back in Section~\ref{subsec:Preliminaries:OpsAndRels} we mentioned the \term{zero divisor property} for real numbers: the product of two real numbers is zero if and only if at least one of the two numbers is zero. In fact, the ``only if'' part of this statement is \emph{not true} for general rings:
 
 \begin{exercise}{ModZeroProducts}
 \begin{enumerate}[(a)]
@@ -330,7 +330,7 @@ Given $A,B,C\in R$ where R is a commutative ring, we can show that $(B+(-C))\cdo
 
 Earlier we mentioned that two important topics studied in Abstract Algebra are groups and rings. Just like groups have subgroups, rings have \emph{subrings}.
 
-\begin{defn}\label{subring}
+\begin{defn}{subring}
 A ring that is a subset of another ring is called a \term{subring}.
 \end{defn}
 
@@ -470,7 +470,7 @@ If $R={\mathbb Z}_{mn}$ and $S=\{0,m,2m,...(n-1)m\}$, then $S$ is a subring of $
 
 We have learned that a subring can be formed from a subset of a ring. One example we used was that $\{0,2,4\}$ is a subring of ${\mathbb Z}_6$. We can also extend a ring into a larger set, called an extension ring.  We would say that ${\mathbb Z}_6$ is an extension ring of $\{0,2,4\}$.
 
-\begin{defn}\label{ext_ring}
+\begin{defn}{ext_ring}
 If $R$ is a subring of $S$, then we can say that $S$ is an \term{extension ring} of $R$.
 \end{defn}
 
@@ -625,7 +625,7 @@ Find the multiplicative inverse of $(1+2x+3x^2)$ in $ \widehat{{\mathbb Z}}_5[x]
 
 In certain situations, we may want to combine two or more rings to form a larger ring. Product rings allow us to do just that. In fact, the product operation for rings is very similar to the product of groups (see Definition~\ref{def:ProductOfGroups}).
 
-\begin{defn}\label{product ring}
+\begin{defn}{product ring}
 If $R_1,~R_2$ are rings, then the \emph{product ring}, $R_1\times R_2$ is the set of pairs $(a,b),~a\in R_1$ and $b\in R_2$, with the following operations:
 \begin{enumerate}
 \item $(a,b)+(c,d)=(a+_1c,b+_2d)$
@@ -812,7 +812,7 @@ where multiplication of matrices was used.  So, $\phi(z\cdot_1 w)=\phi(z)\cdot_2
 \end{example}
 The two examples above show how we can relate different rings that have the same structure. In both examples we use a bijection that preserves the addition and multiplication operations to make a correspondence between two rings. We may generalize this type of bijection as follows.
 
-\begin{defn}\label{Isomorphism}
+\begin{defn}{Isomorphism}
 Let $\phi:R_1\rightarrow R_2$ be a bijection between rings $R_1$ and $R_2$.  We say that $\phi$ is an \term{isomorphism} from $R_1$ to $R_2$ if the following two equations are satisfied for all $x,y\in R_1$:
 \begin{equation}\label{iso_add}
 \phi(x+_1y)=\phi(x)+_2\phi(y)
@@ -888,7 +888,7 @@ Given $\phi:  {\mathbb Q}[x,y]\rightarrow{\mathbb Q}[x,y]$, defined by $\phi(p(x
 
 When we restrict the isomorphism, so that $R_1=R_2$, we have a special type of isomorphism known as an \emph{automorphism}.
 
-\begin{defn}\label{automorphism}
+\begin{defn}{automorphism}
 A \term{ring automorphism} is a ring isomorphism whose domain is equal to its range.
 \end{defn}
 
@@ -929,7 +929,7 @@ We may rewrite these equations in terms of $f$ as $f(\ell+ m) = f(\ell) \oplus f
 \end{example}
 We may generalize this example with the following definition.
 
-\begin{defn}\label{homomorph}
+\begin{defn}{homomorph}
 A function $f:R_1\rightarrow R_2$ between rings $R_1,R_2$ is called a \term{ring homomorphism} if $f$ has the following properties:
 \begin{equation}\label{eq:homo_add}
 f(\ell+_1 m) = f(\ell) +_2 f(m)
@@ -1025,7 +1025,7 @@ where $B=
 
 When we discussed homomorphisms of groups, we introduced the notion of the kernel of a homomorphism.  According to Definition \ref{def:kernel}, the kernel of a group homomorphism is the inverse image of the identity element of the codomain.  We may make a similar definition for ring homomorphisms.  
 
-\begin{defn}\label{kernel}
+\begin{defn}{kernel}
 If $f:R_1\rightarrow R_2$ is a ring homomorphism, then the set $\{x\in R_1|f(x)=0\}$ is called the \term{kernel} of $f$, notated $Ker(f)$.
 \end{defn}
 
@@ -1126,7 +1126,7 @@ f(0)&=0 & \text{proven above}\\
 
 Any set $J$ which has properties (1-4) is called an \textit{ideal}.  We formalize the definition of ideal as follows.
 
-\begin{defn}\label{def:ideal}
+\begin{defn}{def:ideal}
 Given a ring $R$, suppose $J \subset R$ satisfies the following properties:
 \begin{enumerate}[(a)]
 \item $J$ is closed under the ring's additive operation:  in other words if $j_1,j_2\in J$ then $j_1+j_2\in J$.
@@ -1265,7 +1265,7 @@ Prove Proposition \ref{proposition:rings:int_ideal}.
 
 We will now look at an important class of ideals.
 
-\begin{defn}\label{set_gen}
+\begin{defn}{set_gen}
 If $a\in R$, then the \term{set generated by a} is \\
 $Ra\equiv \{ra, r\in R\}$
 \end{defn}
@@ -1279,7 +1279,7 @@ Prove Proposition \ref{proposition:rings:Ra} by showing that $Ra$ satisfies all 
 \end{exercise}
 
 
-\begin{defn}\label{principal_ideal}
+\begin{defn}{principal_ideal}
 A \term{principal ideal} is an ideal that is generated by a single element. In other words, $Ra\equiv \{ra,r\in R\}$ is a \term{principal ideal}.
 \end{defn}
 
@@ -1348,7 +1348,7 @@ Notice that $f^{-1}(0)\cup f^{-1}(1)\cup f^{-1}(2)\cup f^{-1}(3)\cup f^{-1}(4)={
 We may recall the definition of \term{partition} from Section \ref{Partitions1} 
 (Definition \ref{def:Partition}), which we repeat here for convenience.
 
-\begin{defn}\label{partition}
+\begin{defn}{partition}
 A \term{partition} of a set $S$ is a set of subsets $A_1,\dots A_n$ such that:
 \begin{enumerate}[(a)]
 \item $\cup_{m=1}^n A_m=S$
@@ -1414,7 +1414,7 @@ $\{4,9\}$ & $\{0,5\}$ & $\{4,9\}$ & $\{3,8\}$ & $\{2,7\}$ & $\{1,6\}$ \\
 
 The equivalence classes form a ring.  This is our first example of a \term{quotient ring}.  We write this ring as ${\mathbb Z}_{10}/{\mathbb Z}_5$.  (Recall we used a similar notation for quotient groups.)  We will formally define quotient rings below.
 
-\begin{defn}\label{quotient ring}
+\begin{defn}{quotient ring}
 Let $J$ be an ideal of ring $R$.  The \term{quotient ring} of $R$ by $D$ is the set $R/J$ consisting of all equivalence classes modulo $J$ in $R$, together with binary operations $+$ and $\cdot$ defined by the following:
 \begin{align*}
 (x+J)+(y+J)&=(x+y)+J \text{ and}\\
@@ -1448,7 +1448,7 @@ Define $f:{\mathbb Z}_3\times {\mathbb Z}_3\rightarrow {\mathbb Z}_3$ by $f(a,b)
 
 In high school algebra, we learn that if $a\cdot b=0$, then either $a=0$ or $b=0$.  This real number property is helpful when solving polynomial equations.  We will see that ring elements do not \emph{always} follow this rule.
 
-\begin{defn}\label{zero_divisor}
+\begin{defn}{zero_divisor}
 If $a,b\in R$ with $a\neq 0,~b\neq 0,$ and $ab=0$, then $a$ and $b$ are called \term{zero divisors}.
 \end{defn}
 
@@ -1481,7 +1481,7 @@ Prove Proposition~\ref{proposition:rings:zerodivisor}\hyperref[ringsHints]{(*Hin
 
 Many rings have no zero divisors, other than zero itself.
 
-\begin{defn}\label{int_dom}
+\begin{defn}{int_dom}
 A commutative ring that has no zero divisors is called an \term{integral domain}.
 \end{defn}
 
@@ -1555,7 +1555,7 @@ Since $D$ is an integral domain, then $D$ has no zero divisors.  This means that
 
 In Definition \ref{principal_ideal} we learned that a principal ideal is generated by a single element of a ring, $R$.  We can now combine this idea with that of the integral domain.
 
-\begin{defn}\label{princ_ideal_dom}
+\begin{defn}{princ_ideal_dom}
 A \term{principal ideal domain} is an integral domain, all of whose ideals are principal.
 \end{defn}
 
@@ -1581,17 +1581,17 @@ We can disprove this by counterexample.  Consider, for example, $3,4\in{\mathbb 
 
 The previous exercise is an example of a \emph{prime ideal}, defined below. 
 
-\begin{defn}\label{prime_ideal}
+\begin{defn}{prime_ideal}
 A \term{prime ideal} $J\subset R$ is an ideal such that if $p,q\in R$ and $p\cdot q\in J$, then either $p\in J$ or $q\in J$.
 \end{defn}
 
-\begin{defn}\label{prime element}
+\begin{defn}{prime element}
 When a principal ideal $Ra$ is also a prime ideal, then the generator $a$ is called a \term{prime element}
 \end{defn}
 
 In Exercise \ref{exercise:rings:prime_ideals} (a) you showed that $7$ is a prime element.  However, the result of (b) implies that $7^n$ where $n>1$ is \emph{not} a prime element.  The following definition applies to powers of prime elements.
 
-\begin{defn}\label{prime_power_ideal}
+\begin{defn}{prime_power_ideal}
 Suppose $a$ is a prime element in the ring $R$.  Then for any positive integer $n$, $a^n$ is called a \term{prime power} and $R(a^n)$ is called a \term{prime power ideal}.
 \end{defn}
 
@@ -1696,7 +1696,7 @@ Although the zero element never has a multiplicative inverse, there are cases wh
 Given a ring $R$ suppose every nonzero element of $R$ has a multiplicative inverse in $R$, then $R$ is called a \term{division ring}.
 \end{defn}
 
-Let's explore an important example of division rings.  In Example \ref{example:groups:quaternions} we introduced a special group called the quaternion group,\\ $Q_8=\{1,-1,i,-i,j,-j,k,-k\}$, with the following relations:
+Let's explore an important example of division rings.  In Example \ref{example:Groups:quaternions} we introduced a special group called the quaternion group,\\ $Q_8=\{1,-1,i,-i,j,-j,k,-k\}$, with the following relations:
 \begin{enumerate}[(a)]
 \item
 $1$ is the identity
@@ -1723,7 +1723,7 @@ Show that all of the equalities in parts (e) and (f) above may be derived from (
 
 We can extend the quaternion group by taking linear combinations of the elements of ${\mathbb Q}_8$ with real coefficients.  This new set, simply known as the \emph{quaternions}, was discovered by William Rowan Hamilton of Dublin in 1843.  Hamilton's quaternions, notated by ${\mathbb H}$ in his honor, are widely used today in computer graphics to describe motion in three dimensional space and multiple antennae communications systems.  We may define this set formally as follows.
 
-\begin{defn}\label{quaternionring}
+\begin{defn}{quaternionring}
 The set of real \term{quaternions}, denoted by ${\mathbb H}$, is defined by:
 \begin{center}
 ${\mathbb H}=\{a_0+a_1i+a_2j+a_3k:a_0,a_1,a_2,a_3\in {\mathbb R}\}$,
@@ -2212,7 +2212,7 @@ Find the roots of $f(x)=x^3-13x+12$.
 
 In Section~\ref{FTOA} we discussed the so-called \term{Fundamental Theorem of Algebra  (hard part)}, (Proposition~\ref{proposition:Polynomials:FTOAhard})which states that any polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}[x]$. This property leads to a host of important consequences.  Since this property is so important, it's been given a name:
 
-\begin{defn}\label{def:algclosed}  
+\begin{defn}{def:algclosed}  
 A field $F$ is \term*{algebraically closed}\index{Field!algebraically closed}\index{Algebraically closed!field} if and only if every nonconstant polynomial in $F[x]$ has a root in $F$ (see Figure \ref{algebraicallyclosed}).
 \end{defn}
 
@@ -2270,7 +2270,7 @@ We've seen quite a few fields that are not algebraically closed. For example, th
 First we need some  terminology to describe the case where one field is contained in  another:
 
 
-\begin{defn}\label{def:subfield}  
+\begin{defn}{def:subfield}  
 Given a field $E$ and $F\subset E$, then $F$ is called a \term{subfield} of $E$ if $F$ is also a field with the same field operations as $E$. Conversely, $E$ is called an \term{extension field}\index{Field!extension} of $F$.
  \end{defn}
 
@@ -2296,7 +2296,7 @@ Give an example of a field, $F$ that is a subset of a field $E$, but is not a su
 
 We also need terminology to describe roots of polynomials in $F[x]$ that aren't in $F$:
 
-\begin{defn}\label{def:algover}  
+\begin{defn}{def:algover}  
 Let $F$ be a subfield of $E$, and let $a\in E$. If $p(a)=0$ for some $p(x) \in F[x]$, then $a$ is \term*{algebraic}\index{Algebraic!element, of a field}\index{Field!algebraic element of} over $F$ (see Figure \ref{algebraicelement}). Otherwise, $a$  is \term*{transcendental}\index{Transcendental!element, of a field}\index{Field!transcendental element of} over $F$.
 \end{defn}
 
@@ -2351,7 +2351,7 @@ Even today, only  a handful of classes of numbers have been shown to be transcen
 
 For field extensions which have no transcendental elements, the following definition applies:
 
-\begin{defn}\label{def:algfieldextension}  
+\begin{defn}{def:algfieldextension}  
 Suppose $E$ is an extension field of $F$. Then $E$ is called an \term{algebraic extension}\index{Field!algebraic extension} of $F$ if every $a\in E$ is algebraic over $F$. %Otherwise, $E$ is transcendental if it contains at least one $a$ such that $a$ is transcendental over $F$. 
 %$E$ is called a \term{transcendental extension} of $F$.
  \end{defn}
@@ -2376,7 +2376,7 @@ A field extension may be algebraic, but still contain polynomials that have no r
 %\end{enumerate}
 %\end{solution}
 
-\begin{defn}\label{def:algclosure}  
+\begin{defn}{def:algclosure}  
 Let $E$ be an algebraic extension field of $F$. Suppose that for every $p(x) \in E[x]$, there exists $a \in E$ such that $p(a)=0$.  Then  $E$ is  an \term*{algebraic closure}\index{Field!algebraic closure of}\index{Algebraic closure!of a field} of $F$ (see Figure \ref{algebraicclosure}).
 \end{defn}
 

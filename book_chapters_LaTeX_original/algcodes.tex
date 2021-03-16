@@ -320,7 +320,7 @@ theory  can be used to design block codes with very nice properties.
 
 We begin with a formal definition of block code, which generalizes the examples discussed in the previous section. In the following, the notation $\mathbb{Z}^{m}_{2}$ denotes the set of  binary $m$-tuples.
 
-\begin{defn}\label{definition:algcodes:BlockCode}
+\begin{defn}{definition:algcodes:BlockCode}
 a $(n, m)$ \term{block code} \index{Block code}  consists of a one-to-one \term{encoding function} \index{Function!encoding}
 \[
 E:\mathbb{Z}^{m}_{2} \rightarrow \mathbb{Z}^{n}_{2}
@@ -401,7 +401,7 @@ Give two possible decoding functions.
 
 In order to characterize error detection and correction properties of codes, we need to quantify the degree of ``similarity'' between code words, since two code words that are similar are liable to be mistaken for each other. This leads naturally to the idea of ``distance'' between code words, defined as follows.
 
-\begin{defn}\label{defn:algcodes:weight} 
+\begin{defn}{defn:algcodes:weight} 
 Let ${\bold x} = (x_1, \ldots, x_n)$ and ${\bold y} = (y_1, \ldots,
 y_n)$ be binary $n$-tuples. The \term{Hamming distance}\index{Hamming
 distance} or \term{distance}, $d({\bold x}, {\bold
@@ -730,7 +730,7 @@ error-correction capabilities of your code.
 
 So far in this book, we've tried to relate everything we've talked about to groups. Codes are no exception to this rule!  In fact, we know that all codewords of length $n$ are elements of $\mathbb{Z}_2^n$, which in fact turns out to be a group. To show this, we must first define a group operation:
 
-\begin{defn}\label{defn:algcodes:group}
+\begin{defn}{defn:algcodes:group}
 The group $\mathbb{Z}_2^n$ consists of the set of all binary $n$-tuples, together with an operation ``+'' defined as follows:
 \[ (x_1, \ldots, x_n) +  (y_1, \ldots, y_n) = (x_1 \oplus y_1, \ldots, x_n \oplus y_n), \]
 where ``$\oplus$'' means addition mod 2.
@@ -1472,7 +1472,7 @@ Before jumping into this discussion, we should simplify our notation. Up to now 
 
 Now that that's out of the way,  let's begin on our new code generation method.  First, a definition:
 
-\begin{defn}\label{definition:algcodes:GeneratorMatrix}
+\begin{defn}{definition:algcodes:GeneratorMatrix}
 With each $k \times n$ canonical parity-check matrix 
 $H= (A \mid I_k)$
 we can associate an $n \times
