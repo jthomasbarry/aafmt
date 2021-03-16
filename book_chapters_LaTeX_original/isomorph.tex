@@ -631,7 +631,7 @@ order~6.
 \end{exercise} 
 
 \begin{example}{factor_S3_iso}
-In Example~\ref{example:cosets:factor_S3} of the Cosets chapter, we looked at  the normal subgroup  $N = \{ (1), (123), (132)  \}$ of $S_3$.
+In Example~\ref{example:Cosets:factor_S3} of the Cosets chapter, we looked at  the normal subgroup  $N = \{ (1), (123), (132)  \}$ of $S_3$.
 The cosets of $N$ in $S_3$ were $N$ and $(12) N$; and the quotient group $S_3
 / N$ had the following multiplication table.
 \begin{center}
@@ -650,13 +650,13 @@ permutation, whereas multiplying an odd permutation by an even
 permutation yields an odd permutation. This suggests a possible isomorphism to ${\mathbb Z}_2$.
 \end{example}
 
-%Let's look at an interesting example of isomorphic groups that was brought up and hinted at in the Cosets chapter %(Example~\ref{example:cosets:factor_S3}. 
+%Let's look at an interesting example of isomorphic groups that was brought up and hinted at in the Cosets chapter %(Example~\ref{example:Cosets:factor_S3}. 
 
 \begin{exercise}{factor_S3}
 Prove that the quotient group $S_3/A_3 \cong {\mathbb Z}_2$.
 \end{exercise}
 
-In Section~\ref{sec:factor_groups} of the Cosets chapter we hinted at several examples of possible isomorphisms,  which we'll have you prove now:
+In Section~\ref{subsec:Cosets:NormalSubAndFactorGroup:FactorGroup} of the Cosets chapter we hinted at several examples of possible isomorphisms,  which we'll have you prove now:
 
 \begin{exercise}{factor_iso}
 Prove the following:
@@ -669,7 +669,7 @@ $D_n / R_n \cong {\mathbb Z}_2$
 \end{exercise}
 
 \begin{exercise}{factor_iso2}
-Based on your work in Exercise~\ref{exercise:cosets:factor_cayley_prac} prove the following:
+Based on your work in Exercise~\ref{exercise:Cosets:factor_cayley_prac} prove the following:
 \begin{enumerate}[(a)]
 \item
  ${\mathbb Z}/ 6 {\mathbb Z} \cong {\mathbb Z}_6 $
@@ -1620,7 +1620,7 @@ Prove or disprove: There is an abelian group of order 30 that is \emph{not} cycl
 \end{enumerate}
 \end{exercise}
 
-We know from Euler's theorem (Proposition~\ref{proposition:cosets:cosets:Eulers_theorem}) that the order of a group element $g \in G$ must divide the order of the group. However, this does not necessarily imply that every divisor of $|G|$ has a group element of that order.  For abelian groups though, 
+We know from Euler's theorem (Proposition~\ref{proposition:Cosets:cosets:Eulers_theorem}) that the order of a group element $g \in G$ must divide the order of the group. However, this does not necessarily imply that every divisor of $|G|$ has a group element of that order.  For abelian groups though, 
 thanks to  Proposition~\ref{proposition:Isomorphism:FactorabelianGroup} we can actually guarantee that for certain divisors of $|G|$
 
 \begin{example}{elementOrders}  Any group $G$ of order 54 must have an element of order 3. This is because $54 =  3^3 \cdot 2$, and according to     
@@ -1660,7 +1660,7 @@ Suppose that $p^n$ is the largest power of $p$ that divides $G$. Show that there
 \end{enumerate}
 \end{exercise}
 
-We may also recall that Lagrange's theorem  (Proposition~\ref{proposition:cosets:LagrangeTheorem})  enables us to conclude that the order of any subgroup $H \in G$ must divide $|G|$.   Proposition~\ref{proposition:Isomorphism:FactorabelianGroup} enables us to go one better.
+We may also recall that Lagrange's theorem  (Proposition~\ref{proposition:Cosets:LagrangeTheorem})  enables us to conclude that the order of any subgroup $H \in G$ must divide $|G|$.   Proposition~\ref{proposition:Isomorphism:FactorabelianGroup} enables us to go one better.
 
 \begin{example}{}
  Suppse that $|G| = 125.$  Let us show that $G$ has a subgroup of order 25.  From Proposition~\ref{proposition:Isomorphism:FactorabelianGroup}, we know that there are 3 possible cases for $G$:  (i) $G \cong {\mathbb Z}_{125}$; (ii) $G \cong {\mathbb Z}_{25} \times {\mathbb Z}_5$; (iii) $G \cong {\mathbb Z}_5 \times {\mathbb Z}_5 \times {\mathbb Z}_5$.  In case (i), then the isomorphic image of $\langle 5 \rangle$ is a subgroup of order 25.  In case (ii), then the isomorphic image of $\langle (1,0) \rangle$ is a subgroup of order 25.  In case (iii), then the isomorphic image of ${\mathbb Z}_5 \times {\mathbb Z}_5 \times \{0\}$ is a subgroup of order 25.
@@ -1736,7 +1736,7 @@ It is then possible to prove that (recall that ``$|g|$ '' is the order of the gr
 Given the above definitions of $g_i$ and $g_j$, show that   $|g_i| = p_i$ and  $|g_j| = p_j$.
 \hyperref[sec:Polynomials:Hints]{(*Hint*)} 
 \end{exercise}
-As a result of the above exercise, Proposition~\ref{proposition:cosets:cosets_theorem_7}  enables us to conclude that 
+As a result of the above exercise, Proposition~\ref{proposition:Cosets:cosets_theorem_7}  enables us to conclude that 
 \[
 |g_i^n| = p_i \mathrm{~ and ~} |g_j^n| = p_j \mathrm{~ for~~} (n = 1,...,p_j-1).
 \]

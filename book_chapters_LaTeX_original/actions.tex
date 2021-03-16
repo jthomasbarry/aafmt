@@ -230,7 +230,7 @@ exist group elements $g$ and $h$ such that $g.x = y$ and $h.y= z$. So $z
 = h.y = (hg).x$, and $x$ is equivalent to $z$.
 \end{proof}
 
-Recall from Chapter~\ref{EquivalenceRelationsChap} that every equivalence relation on a set $X$ is associated with a partition of $X$, where a partition is a collection of disjoint subsets whose union is $X$. Each set in this partition is called an \term{equivalence class}.\index{Equivalence class}
+Recall from Chapter~\ref{EquivalenceRelations} that every equivalence relation on a set $X$ is associated with a partition of $X$, where a partition is a collection of disjoint subsets whose union is $X$. Each set in this partition is called an \term{equivalence class}.\index{Equivalence class}
 
 \begin{exercise}{Cube2}
 Consider the edge $\overline{y_+,z_+}$ of a cube.  What is the equivalence class of this edge under $G$-equivalence, where $G$ is the group of rotational symmetries of a cube? \emph{Explain} your answer.
@@ -422,7 +422,7 @@ In the previous example we used faces to count the rotational symmetries of a cu
 From the previous example and exercises, it seems we have a general formula:  if $G$ acts on $X$ and $x\in X$, then 
 $$|G|=|G_x|\cdot|{\cal O}_x|.$$
 
-This may remind you of \emph{Lagrange's Theorem}, which we proved in Section~\ref{sec:LagThm} of the Cosets chapter:  
+This may remind you of \emph{Lagrange's Theorem}, which we proved in Section~\ref{sec:Cosets:LagrangeTheorem} of the Cosets chapter:  
 $$|G|=|H|\cdot [G:H], $$
 where $H$ is any subgroup of $G$.  If we replace $H$ with $G_x$, this becomes $$|G|=|G_x|\cdot [G:G_x]. $$
 Comparing with our previous formula, we get
@@ -444,7 +444,7 @@ exists a $g$ in $G$ such that $g x = y$. Define $\phi$ by $\phi( y )
 Before we can show that $\phi$ is a bijection, we must first show that $\phi(y)$ is well-defined for any $y$, and does 
 not depend on our selection of $g$. Suppose that $g'$ is another 
 element in $G$ such that $g'x = y$. Then $g x = g' x$ or $x= g^{-1} g' x$. 
-By the definition of the stabilizer subgroup $G_x$, $g^{-1}g'\in G_x$. By Proposition~\ref{proposition:cosets:cosets_theorem_1} in Section \ref{sec:CosetsPartitions}, it follows that 
+By the definition of the stabilizer subgroup $G_x$, $g^{-1}g'\in G_x$. By Proposition~\ref{proposition:Cosets:cosets_theorem_1} in Section \ref{sec:CosetsPartitions}, it follows that 
  $g G_x = g' G_x$. Thus, $y$ gets mapped to the same 
 coset regardless of the choice of group element.
 
@@ -457,7 +457,7 @@ Recall that $\phi(x_1)$ is defined as a coset of $G_x$ that contains an element 
 
 Now consider the expression $g_1(g_1^{-1}g_2)x$. On the one hand, by the associative law we get:
 $$(g_1g_1^{-1})g_2x=g_2x=x_2.$$ 
- On the other hand, by Proposition~\ref{proposition:cosets:cosets_theorem_1} in the Cosets chapter, it follows that $g_1^{-1}g_2$ is in $G_x$, so that $g_1^{-1}g_2x=x$.  This means that we also have:
+ On the other hand, by Proposition~\ref{proposition:Cosets:cosets_theorem_1} in the Cosets chapter, it follows that $g_1^{-1}g_2$ is in $G_x$, so that $g_1^{-1}g_2x=x$.  This means that we also have:
 $$g_1(g_1^{-1}g_2)x=g_1x=x_1.$$
   Therefore $x_1=x_2$.  This completes the proof that $\phi$ is 1-1.
 
@@ -1174,7 +1174,7 @@ Let $G$ be the additive group of real numbers.  That is, $G=(\mathbb{R},+)$, and
 Prove that $2 \pi \mathbb{Z}$ is a subgroup of $(\mathbb{R},+)$.
 \end{exercise}
 \begin{example}{AngleCoset2}
-Let $L$ be the set of left cosets of $2\pi \mathbb{Z}$ in the group $(\mathbb{R},+)$.  Recall from Definition~\ref{def_coset} in Chapter~\ref{cosets} that the set of left cosets $L$ is defined as $x+2\pi \mathbb{Z}=\{x+h:h\in 2\pi\mathbb{Z}\}$.  For example, the left coset which contains $\pi/3$ is the set $ \{\pi/3 +2k\pi, k\in \mathbb{Z}\}$, which we could also write as $\{ \ldots \pi/3-4\pi, \pi/3-2\pi, \pi/3, \pi/3+2\pi, \pi/3 + 4\pi, \ldots \}$.  It turns out that $L$ is $G$-set under the action  
+Let $L$ be the set of left cosets of $2\pi \mathbb{Z}$ in the group $(\mathbb{R},+)$.  Recall from Definition~\ref{definition:Cosets:def_coset} in Chapter~\ref{cosets} that the set of left cosets $L$ is defined as $x+2\pi \mathbb{Z}=\{x+h:h\in 2\pi\mathbb{Z}\}$.  For example, the left coset which contains $\pi/3$ is the set $ \{\pi/3 +2k\pi, k\in \mathbb{Z}\}$, which we could also write as $\{ \ldots \pi/3-4\pi, \pi/3-2\pi, \pi/3, \pi/3+2\pi, \pi/3 + 4\pi, \ldots \}$.  It turns out that $L$ is $G$-set under the action  
 $(g,x+2\pi\mathbb{Z}) \rightarrow g+x+2\pi\mathbb{Z}$. Let's verify the two conditions of a $G$-set:
 \begin{enumerate}[(a)]
 \item
@@ -1199,7 +1199,7 @@ In this section we'll take a close look at a group action on a set of cosets.  T
 
 
 Let $G$ be the $xy$-plane under addition (that is, $G=(\mathbb {R}^2,+)$).  Let $H=\mathbb{Z}\times \mathbb{Z}$, which is a subgroup of $G$ ($H$ is called the \term{integer lattice}\index{Integer lattice}: see Figure~\ref{fig:HwithUnitSquare}).
-Cosets of $H$ in $G$ may be written as $a+H=\{(x+m, y+n):m,n \in\mathbb{ Z}\}$, where $a :=(x,y)$ can be any element of $G$. Recall from Proposition~\ref{proposition:cosets:cosets_theorem_2} that cosets form a partition, so $H$ and its cosets partition $\mathbb{R}^2$.
+Cosets of $H$ in $G$ may be written as $a+H=\{(x+m, y+n):m,n \in\mathbb{ Z}\}$, where $a :=(x,y)$ can be any element of $G$. Recall from Proposition~\ref{proposition:Cosets:cosets_theorem_2} that cosets form a partition, so $H$ and its cosets partition $\mathbb{R}^2$.
 
 \begin{figure}[htpb]
 \begin{center}
