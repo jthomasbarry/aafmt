@@ -14,7 +14,7 @@ In this chapter we examine two specific topics in cryptography which are highly 
 
 \noindent
 \emph{Prerequisites}: 
-To understand this chapter, the reader should be familiar with the material in  Chapters~\ref{modular},\ref{functions}, and~\ref{groups}. We also make use of one important result from Chapter~\ref{isomorph}, but we only apply the result and don't make use of the proof itself.  
+To understand this chapter, the reader should be familiar with the material in  Chapters~\ref{ModularArithmetic},\ref{functions}, and~\ref{groups}. We also make use of one important result from Chapter~\ref{isomorph}, but we only apply the result and don't make use of the proof itself.  
 \bigskip
 
 This chapter is written by Moses Marmolejo, with revisions by C.T.
@@ -22,7 +22,7 @@ This chapter is written by Moses Marmolejo, with revisions by C.T.
 \section{Diffie-Hellman key exchange}
 \label{sec:FurtherCryptography:DiffieHellmanKeyExchange}
 
-In order to share a private message over a public domain a sender must  "lock" or encrypt their message using a \emph{key}\index{key! in cryptogaphy}.  Recall from Section \ref{sec:crypt:overview}, that in cryptography a  key is a special piece of information (usually a number)  that is required to encrypt and decrypt data which is shared between the sender and receiver. There are generally three types of keys used: public, private and symmetric keys. A \emph{public key}\index{Public Key! in cryptography} can be widely distributed, and is typically used for encrypting messages.  For a public key to be effective, there must be a matching \emph{private key}\index{Private Key! in cryptography} which is known only to the receiver. The private key can be used to decrypt the messages created using the public key.  Finally, a \emph{symmetric key}\index{Symmetric Key! in cryptography} is known by the sender and receiver, and is used to both encypt and decrypt messages.  Not all cryptosystems require all three kinds of keys, but every cryptosystem must have either a private key or a symmetric key.
+In order to share a private message over a public domain a sender must  "lock" or encrypt their message using a \emph{key}\index{key! in cryptogaphy}.  Recall from Section \ref{sec:Cryptography:overview}, that in cryptography a  key is a special piece of information (usually a number)  that is required to encrypt and decrypt data which is shared between the sender and receiver. There are generally three types of keys used: public, private and symmetric keys. A \emph{public key}\index{Public Key! in cryptography} can be widely distributed, and is typically used for encrypting messages.  For a public key to be effective, there must be a matching \emph{private key}\index{Private Key! in cryptography} which is known only to the receiver. The private key can be used to decrypt the messages created using the public key.  Finally, a \emph{symmetric key}\index{Symmetric Key! in cryptography} is known by the sender and receiver, and is used to both encypt and decrypt messages.  Not all cryptosystems require all three kinds of keys, but every cryptosystem must have either a private key or a symmetric key.
 
   If a symmetric key is used, then both parties must share their key before they can begin communicating securely. The requirement of establishing a key exchange is so essential that it is embedded into almost every technology we use today.  Some examples of key exchange can be seen in media applications, cell phones, banking, online purchasing, and emails.  
 
@@ -90,7 +90,7 @@ As a result of the exchange, both Moses and Rachel have obtained the same shared
 
 %Since all values of $a$ such that $1 \leq a \leq p$ are congruent to $1$, then Fermat's Little Theorem tells us that $p$ is prime, but are there numbers that exist that pass Fermat's Little Theorem but are not prime?  The answer is yes, these numbers are called \emph{Lucas-Carmichael Numbers}\index{Lucas-Carmichael Numbers! in cryptogaphy}.  (or \emph{pseudoprimes}\index{Pseudoprimes}) 
 
-Following the example above you can see that the DHKE requires that you raise a given number $g$ to a natural number (either $m$ or $n$) and take the result mod $p$. This operation is called \term{discrete exponentiation}. Calculating discrete exponentials with small values of $m$ or $n$ is manageable, but in practice the exponent $m$ or $n$ can be enormous, with hundreds of digits. It would seem that in this case discrete exponentiation would take a long, long time to compute.  But we can use the repeated squaring formula described in Section \ref{exercise:crypt:power} to speed up the process.  Create a spreadsheet using the repeated squaring formula to compute the following exercises.
+Following the example above you can see that the DHKE requires that you raise a given number $g$ to a natural number (either $m$ or $n$) and take the result mod $p$. This operation is called \term{discrete exponentiation}. Calculating discrete exponentials with small values of $m$ or $n$ is manageable, but in practice the exponent $m$ or $n$ can be enormous, with hundreds of digits. It would seem that in this case discrete exponentiation would take a long, long time to compute.  But we can use the repeated squaring formula described in Section \ref{exercise:Cryptography:power} to speed up the process.  Create a spreadsheet using the repeated squaring formula to compute the following exercises.
  
 \begin{exer}
 Suppose you want to conduct a DHKE with one person, and you are given $p$ = 32452867; $g$ = 54321; and $n$ = 876.  
@@ -205,7 +205,7 @@ If you try to calculate $m$ using a brute force method (that is, computing all p
 The larger the modulus, the harder the DL is to find. The exercise below is designed to show how many computations a brute force attack would take in comparison to a growing modulus.
 
 \begin{exercise}{DLP}
-Use the Repeated Square spreadsheet from Exercise \ref{exercise:crypt:power} to solve the following DL Problems. In each case, you will use the brute force method used in Example \ref{example:further_crypt:one-way}, and write down how many discrete exponentials you need to compute in order to find the answer.  
+Use the Repeated Square spreadsheet from Exercise \ref{exercise:Cryptography:power} to solve the following DL Problems. In each case, you will use the brute force method used in Example \ref{example:further_crypt:one-way}, and write down how many discrete exponentials you need to compute in order to find the answer.  
 \begin{enumerate}[(a)]
 \item Given $ \bmod(7^{m}, 41)=28$, solve for $m$.
 %ans: 29
@@ -444,7 +444,7 @@ We saw in Section \ref{CyclicSubgroups} that every element of a group defines a 
 \[ {\var id}, g, g^2, g^3, \ldots, g^{n-1} \ \]
 is a subgroup of $G$, where $n$ is the \emph{order} of $g$ and satisfies $g^n = {\var id}$. In EC cryptography, extensive use is made of cyclic subgroups.  Any EC cyptosystem is based on a single group element, which is referred to as a \term{generator}\index{Generator! in EC cryptography}.  In practice, the generator is added to itself repeatedly. Follow the examples below to see how this works.
 
-\emph{Note} that in the following examples we will use `+'  and `$\cdot$' to denote addition and multiplication in the particular  $\mathbb{Z}_p$ that we are working with: in other words, `+' and `$\cdot$' in the following are the same as `$\oplus$' and `$\odot$' which we used in Chapter~\ref{modular}  (it's simpler to write this way, and this is how it's done in most references.) You'll have to pay attention to what `+' is operating on in order to discern its meaning:  for example, in the expression $P+P$ we're referring to the elliptic curve operation defined in the previous section, while in the polynomial $x^3 + 2x + 2$  the `+' refers to modular addition. 
+\emph{Note} that in the following examples we will use `+'  and `$\cdot$' to denote addition and multiplication in the particular  $\mathbb{Z}_p$ that we are working with: in other words, `+' and `$\cdot$' in the following are the same as `$\oplus$' and `$\odot$' which we used in Chapter~\ref{ModularArithmetic}  (it's simpler to write this way, and this is how it's done in most references.) You'll have to pay attention to what `+' is operating on in order to discern its meaning:  for example, in the expression $P+P$ we're referring to the elliptic curve operation defined in the previous section, while in the polynomial $x^3 + 2x + 2$  the `+' refers to modular addition. 
 
 \begin{example}{P1+P2} In this example we'll use arithmetic mod 17, so  all coefficients and variables take values on $\mathbb{Z}_{17}$.  
 
