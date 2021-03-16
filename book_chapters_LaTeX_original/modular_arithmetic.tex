@@ -345,6 +345,7 @@ Now you're ready! Give answers for the seven examples at the beginning of this c
 \label{sec:ModularArithmetic:ModularEquations}
 
 \subsection{More uses of modular arithmetic  }
+\label{subsec:ModularArithmetic:MoreUses}
  
 Supermarkets and retail stores have a nasty  little secret. Every time you scan your purchases, they're using modular arithmetic on you! In fact, modular arithmetic is the basis for  bar codes you see in stores. We will use these practical examples to introduce \emph{modular equations}\index{Modular equations}. 
 
@@ -466,6 +467,7 @@ A publisher has houses in Germany and the United States.  Its German prefix is 3
 
 
 \subsection{Solving modular equations}
+\label{subsec:ModularArithmetic:ModEq}
 
 In Exercise ~\ref{exercise:ModularArithmetic:ISBNCodes} part (h) you solved a modular equation with three variables by trial and error: you couldn't solve for one variable at a time, so you had to test out sets of values for $a$, $b$, $c$ together and see if the the ISBN equation held.  The UPC and ISBN error detection schemes themselves, given again below,  are examples of modular equations with 12 and 10 variables, respectively: 
 
@@ -1163,7 +1165,7 @@ From parts (h) and (i) of Exercise \ref{exercise:ModularArithmetic:modeq3} we se
 \sectionvideohref{EwMbFYQCpfs&index=10&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
 \label{sec:ModularArithmetic:IntegerModn}
 
-\subsection{Remainder arithmetic}\label{ArithWithRems}
+\subsection{Remainder arithmetic}\label{subsec:ModularArithmetic:ArithWithRems}
 Several times now in this chapter we've simplified our modular calculations by replacing numbers with their remainders mod $n$ (remember, we have defined these remainders as the set ${\mathbb Z}_n$).  We will now fulfill the promise we made at the end of the first section by proving that if you replace numbers with their remainders, we don't change the result of our modular calculations.  That is, we'll show that modular arithmetic can be thought of as arithmetic on the remainders, or``remainder arithmetic'' (as opposed to ``integer arithmetic'' or ``complex arithmetic'' which we're already familiar with).
 
 Before we do this, we need to address an important issue. Consider the case of $\mathbb{Z}_5 = \{0,1,2,3,4\}$, so 3 and 4 are in $\mathbb{Z}_5$. However the sum $3 + 4$ is 7, which is not in $\mathbb{Z}_5$. If we're going to do arithmetic with the remainders, we should define a ``sum'' on $\mathbb{Z}_n$ such that the result is also in $\mathbb{Z}_n$. This motivates the following two definitions:
@@ -1372,7 +1374,7 @@ $654321^{87654321} \equiv 123456^{12345678}  \pmod{5}$
 \end{exercise}
 
 
-\subsection{Cayley tables for ${\mathbb Z}_n$}\label{sec:cayleyForZn1}
+\subsection{Cayley tables for ${\mathbb Z}_n$}\label{subsec:ModularArithmetic:cayleyForZn1}
 The fact that we can replace integers with their remainders mod $n$ leads us to a simpler way of  thinking about modular arithmetic.  First, recall the integer number line, pictured (again) in Figure~\ref{fig:integers}:
 %that when we talked about the car going around a racetrack, the displacements corresponded to
 %As we also saw in the racetrack example, 
@@ -1442,7 +1444,7 @@ $\odot$ & 0 & 1 & 2 & 3 & 4 \\
 Again, looking at the entry in the ''2'' row and the ''3'' column we see 1, which tells us that $2 \odot 3 = 1$.
 
 Similarly, for each set of numbers ${\mathbb Z}_n$ we can construct a table to determine the result of any possible calculation mod $n$.
-Tables like these are  known as \term*{Cayley tables}.\footnote{Technically, this kind of operation table is only called a ``Cayley table'' if the operation satisfies the ``group properties'' (see Section~\ref{DefOfGroup}). }  We will see them often throughout the course.
+Tables like these are  known as \term*{Cayley tables}.\footnote{Technically, this kind of operation table is only called a ``Cayley table'' if the operation satisfies the ``group properties'' (see Section~\ref{subsec:ModularArithmetic:DefOfGroup}). }  We will see them often throughout the course.
 
 \begin{exercise}{49}
 Use the above Cayley tables for $\oplus$ and $\odot$  in $\integer_5$ to calculate each of the following.  (Remember, compute the remainders \emph{before} doing the arithmetic.)
@@ -1469,7 +1471,7 @@ $ \bmod(523 + \left( (4568 \cdot 43) + (4568 \cdot 20525) \right) ,5)$
 \noindent
 Later on (in the chapter on Equivalence Relations) we'll show another way of looking at the integers mod $n$.
 
-\subsection{Closure properties of ${\mathbb Z}_n$}\label{sec:ClosureZn}
+\subsection{Closure properties of ${\mathbb Z}_n$}\label{subsec:ModularArithmetic:ClosureZn}
 
 Let's look a little further into the arithmetic properties of the numbers ${\mathbb Z}_n$ that we've just defined. 
 
@@ -1564,6 +1566,8 @@ Prove that the complex numbers are closed under complex addition and multiplicat
 \end{exercise}
 
 \subsection{Identities and inverses in ${\mathbb Z}_n$}
+\label{subsec:ModularArithmetic:IdentitiesAndInversesZn}
+
 Next, we want to look at some additional properties that were introduced in Chapter~\ref{ComplexNumbers}, namely 
  identities  and inverses (both additive and multiplicative).  
 This time we'll go through these properties more quickly.
@@ -1615,6 +1619,7 @@ Give a similar proof that $1$ is the multiplicative identity for ${\mathbb Z}_n$
 % \end{exercise}
 
 \subsection{Inverses in ${\mathbb Z}_n$}
+\label{subsec:ModularArithmetic:InversesZn}
 
 Now let's find out whether the integers mod $n$ have additive and multiplicative inverses\index{Inverse!integers mod n}. Additive inverse first:  for each element of  ${\mathbb Z}_n$ is there a corresponding element of ${\mathbb Z}_8$ such that their modular sum is the additive identity (that is, 0)?  You may see in Table~\ref{groups_Z8_add_table} that each row of the addition table contains a $0$ (e.g. $1\oplus 7 = 0$).  It follows that each element  of ${\mathbb Z}_8$ has an additive inverse. But will the same be true for ${\mathbb Z}_{27}$, or ${\mathbb Z}_{341}$,  or ${\mathbb Z}_{5280}$? We can't just take this for granted--we need to give a proof:
 
@@ -1732,7 +1737,7 @@ Prove  part (\ref{distrib}) of Proposition \ref{proposition:ModularArithmetic:Zn
 \end{enumerate}
 \end{exercise} 
 
-\subsection{Group: a central concept in abstract algebra}\label{DefOfGroup}
+\subsection{Group: a central concept in abstract algebra}\label{subsec:ModularArithmetic:DefOfGroup}
 It's time for us to make a confession. We have an ulterior motive. We've been spending lots of time and effort discussing modular arithmetic because it provides good examples of one of the central concepts in abstract algebra, namely the notion of a \emph{group}.
 
 Notice that the set ${\mathbb Z}_n$ with the operation of $\oplus$ has an identity, and inverses, and the property of closure. Furthermore, ${\mathbb Z}_n$ is associative under $\oplus$, as we just showed.  Any combination of a set and an operation that has those three properties, as well as the associative property, is called a \emph{group}. Here's the formal definition:
@@ -1798,6 +1803,7 @@ Now that you know what a group is, we'll be referring back to this definition fa
  
  
 \subsection{A sticky problem}
+\label{subsec:ModularArithmetic:StickyProblem}
 The following problem may not seem to have anything to do with modular arithmetic, but it's an interesting problem and fun to think about. (And it turns out to be relevant after all!)\footnote{This section is by David Weathers, edited by C.T.}
 
 \begin{example}{2sticks} Someone gives us a pencil and two unmarked sticks of lengths 52 cm and  20 cm respectively (see Figure~\ref{fig:1euclidean}). We are told to make measuring sticks by using the pencil to make markings on the sticks. Question: what is the smallest length that we can accurately measure? 
@@ -1897,7 +1903,7 @@ Use what you've discovered in part (b) to quickly find a solution to the two-sti
 \end{enumerate}
 \end{exercise}
 
-\subsection{Greatest common divisors}\label{sec:gcd}
+\subsection{Greatest common divisors}\label{subsec:ModularArithmetic:gcd}
 You may be  familiar with the notion of greatest common divisor (gcd) of two numbers.  The gcd is defined as the greatest number that divides the two given numbers. gcd's play a key role in modular arithmetic, as we shall see. 
 
 The general question we now consider is: What's a good way to find the gcd of two integer numbers? It may be easy to find the gcd of small numbers like 12 and 20, but what if you have to find the gcd of 583768 and 260568447? 
@@ -2018,6 +2024,7 @@ The gcd of two numbers $a$ and $b$ can be written in the form $n \cdot a + m \cd
 This proposition will be useful in the next section.
 
 \subsection{Computer stuff}
+\label{subset:ModularArithmetic:ComputerStuff}
 For the computationally inclined reader here are two examples, in C++ syntax, of functions that calculate the greatest common divisor.
 
 \begin{verbatim}
@@ -2087,7 +2094,7 @@ This second example is also in C++, but uses recursion.
 \end{figure}
 
 
-\subsection{Diophantine equations}\label{sec:diophantine}
+\subsection{Diophantine equations}\label{subsec:ModularArithmetic:diophantine}
 %%% CPT start with the example.
 Let's look now at another type of  problem, which has played a key role in the history of mathematics.
 
@@ -2322,7 +2329,7 @@ Prove \term{Euclid's Lemma}:  Let $p$ be a prime number, and let $a$ and $b$ be 
 
 Euclid's lemma can be used to prove another ``obvious'' fact about natural numbers that ``everybody knows'' (but few people can prove): namely, that all natural numbers greater than 1 can be factored as a product of primes in exactly one way. This fact is known as the \term{Fundamental Theorem of Arithmetic}. There are two parts to the proof: first, showing that such a factorization alwasy exists; and second, that there is only  one way to do it (up to rearrangement of the factors).  Both parts may be proved by induction, and a proof of the first part is given in Section~\ref{sec:Induction:StrongInduction}.
 
-\subsection{Multiplicative inverse for modular arithmetic\label{subsec:MultInve}}
+\subsection{Multiplicative inverse for modular arithmetic\label{subsec:ModularArithmetic:MultInve}}
 This section is supposed to be about modular division, but so far we've been talking about all kinds of other stuff. You may be wondering, So where's the modular division? You're about to find out!
 
 Recall that the set $\mathbb{Z}_n$ under the operation $\oplus$ forms a group:  
@@ -2455,6 +2462,7 @@ Show that if $n$ is not prime, then $\mathbb{Z}_n\setminus \{0\}$ is not a group
 \end{exercise}
 
 \subsection{Chinese remainder theorem}
+\label{subset:ModularArithmetic:ChineseRemainderTheorem}
 We now are experts at finding solutions to congruences  of the form $ax \equiv c \pmod b$. But what about multiple congruences?  Take for example:
 
 \[x \equiv 4 \pmod 7; \qquad x \equiv 5 \pmod 9.\]
