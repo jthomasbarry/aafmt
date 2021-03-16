@@ -7,14 +7,14 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{ Further Topics in Cryptography}{chap:FurtherCryptography}
+\chap{ Further Topics in Cryptography}{FurtherCryptography}
 
 In this chapter we examine two specific topics in cryptography which are highly practical and are relatively recent developments: Diffie-Hellman key exchange (originated by W. Diffie and M. Hellman in 1976) and elliptic curve cryptography (proposed by N. Koblitz and V. Miller in 1985).
 \medskip
 
 \noindent
 \emph{Prerequisites}: 
-To understand this chapter, the reader should be familiar with the material in  Chapters~\ref{ModularArithmetic},\ref{functions}, and~\ref{groups}. We also make use of one important result from Chapter~\ref{isomorph}, but we only apply the result and don't make use of the proof itself.  
+To understand this chapter, the reader should be familiar with the material in  Chapters~\ref{ModularArithmetic},\ref{Functions}, and~\ref{Groups}. We also make use of one important result from Chapter~\ref{Isomorphism}, but we only apply the result and don't make use of the proof itself.  
 \bigskip
 
 This chapter is written by Moses Marmolejo, with revisions by C.T.
@@ -142,13 +142,13 @@ Find all nonzero elements of $\mathbb{Z}_7 \setminus \{0\}$ which have no discre
 \end{enumerate}
 \end{exercise}
 
-The preceding exercise points out some key issues with discrete logarithms. Sometimes there are lots of them, and sometimes there aren't any! These phenomena are related to the one-to-oneness and ontoness properties of  the discrete exponential function (recall Definitions~\ref{121defn} and \ref{ontoDef}, respectively):
+The preceding exercise points out some key issues with discrete logarithms. Sometimes there are lots of them, and sometimes there aren't any! These phenomena are related to the one-to-oneness and ontoness properties of  the discrete exponential function (recall Definitions~\ref{definition:Functions:121defn} and \ref{definition:Functions:ontoDef}, respectively):
 
 \begin{exercise}{DLex2}
 \begin{enumerate}[(a)]
 \item
 We may define a function $f: \mathbb{N} \rightarrow \mathbb{Z}_7 \setminus \{0\}$ by the equation: $f(n) = \bmod(2^n,7)$. 
-Use parts (a) and (b) of Exercise~\ref{exercise:further_crypt:DLex1} to prove that $f$ is neither one-to-one nor onto.
+Use parts (a) and (b) of Exercise~\ref{exercise:FurtherCryptography:DLex1} to prove that $f$ is neither one-to-one nor onto.
 %ans: Not 1-1 (counter example): 3 is an element of Z_7, by definition of 1-1, 3 must be an element of mod(2^n,7) however from part 5b we can see that it is not an element.  Onto: The codomain = 1,2,3,4,5,6; by definition of onto there must exist an element in the domain that maps to every element of the codomain.  However, from exercise 5 we can see that the domain only maps to 1,2, and 4.  Thus is not onto.
 \item
 We may also define a function $g: \mathbb{N} \rightarrow \mathbb{Z}_7 \setminus \{0\}$ by the equation: $g(n) = \bmod(3^n,7)$. 
@@ -160,7 +160,7 @@ With the same $g$ as in part (b), prove or disprove: $g$ is onto.
 \end{enumerate}
 \end{exercise}
 
-This exercise suggests the following question:  Under what conditions can we guarantee that the discrete exponentiation function is onto and/or one-to-one? (This turns out to be more than just an idle question, as we shall see shortly.)  To gain some leverage against this problem, we will take advantage of   Proposition~\ref{proposition:isomorph:Up_cyclic} from Chapter~\ref{isomorph}, which tells us that the multiplicative group $\mathbb{Z}_p\setminus \{0\}$ is \emph{cyclic}, whenever $p$ is a prime. (In Chapter~\ref{isomorph} we also used the notation $U(p)$ instead of $\mathbb{Z}_p\setminus \{0\}$, and we will use this same notation in the following.) This means that for any prime $p$, there is a $g \in U(p)$  such that $g$ is a \emph{generator} of  $U(p)$: that is, $U(p) = \langle g \rangle$ (recall from Chapter~\ref{groups} that for a finite group, $\langle g \rangle = \{g, g^2, g^3, \ldots \}$). A generator of $U(p)$ is also referred to as a \term{primitive root} of $\mathbb{Z}_p$. Any element of $U(p)$ may be expressed as a power of $g$ (under mod $p$ multiplication).  In other words, the discrete exponentiation function $f: \mathbb{N} \rightarrow U(p)$ given by $f(n) = \bmod(g^n,p)$ is an onto function!  
+This exercise suggests the following question:  Under what conditions can we guarantee that the discrete exponentiation function is onto and/or one-to-one? (This turns out to be more than just an idle question, as we shall see shortly.)  To gain some leverage against this problem, we will take advantage of   Proposition~\ref{proposition:Isomorphism:Up_cyclic} from Chapter~\ref{Isomorphism}, which tells us that the multiplicative group $\mathbb{Z}_p\setminus \{0\}$ is \emph{cyclic}, whenever $p$ is a prime. (In Chapter~\ref{Isomorphism} we also used the notation $U(p)$ instead of $\mathbb{Z}_p\setminus \{0\}$, and we will use this same notation in the following.) This means that for any prime $p$, there is a $g \in U(p)$  such that $g$ is a \emph{generator} of  $U(p)$: that is, $U(p) = \langle g \rangle$ (recall from Chapter~\ref{Groups} that for a finite group, $\langle g \rangle = \{g, g^2, g^3, \ldots \}$). A generator of $U(p)$ is also referred to as a \term{primitive root} of $\mathbb{Z}_p$. Any element of $U(p)$ may be expressed as a power of $g$ (under mod $p$ multiplication).  In other words, the discrete exponentiation function $f: \mathbb{N} \rightarrow U(p)$ given by $f(n) = \bmod(g^n,p)$ is an onto function!  
 
 It turns out that onto-ness also gives use one-to-oneness, when we restrict $f$ to the appropriate domain:
 
@@ -205,7 +205,7 @@ If you try to calculate $m$ using a brute force method (that is, computing all p
 The larger the modulus, the harder the DL is to find. The exercise below is designed to show how many computations a brute force attack would take in comparison to a growing modulus.
 
 \begin{exercise}{DLP}
-Use the Repeated Square spreadsheet from Exercise \ref{exercise:Cryptography:power} to solve the following DL Problems. In each case, you will use the brute force method used in Example \ref{example:further_crypt:one-way}, and write down how many discrete exponentials you need to compute in order to find the answer.  
+Use the Repeated Square spreadsheet from Exercise \ref{exercise:Cryptography:power} to solve the following DL Problems. In each case, you will use the brute force method used in Example \ref{example:FurtherCryptography:one-way}, and write down how many discrete exponentials you need to compute in order to find the answer.  
 \begin{enumerate}[(a)]
 \item Given $ \bmod(7^{m}, 41)=28$, solve for $m$.
 %ans: 29
@@ -224,14 +224,17 @@ What trend do you see in the number of computations required in parts (a), (b), 
 From the foregoing discussion, we may see why it is important to choose a prime $p$ as a modulus and a primitive root $g$ as a base in an effective DHKE scheme. This choice will minimize duplicate DLs and create the largest search space possible for an eavesdropper.  If you do not use a primitive root as a generator, then you will end up with a smaller subgroup of $U(p)$ which will have an increased number of DLs, and an eavesdropper trying to calculate $m$ using a brute force method is more likely to succeed. 
 
 \subsection{Man in the middle attack}
+\label{subsec:FurtherCryptography:DiffieHellmanKeyExchange:MiddleAttack}
+
 Our previous discussion indicates the DHKE is very hard to crack if it uses a large enough modulus $p$ and a suitable base $g$. But, is there any way to successfully eavesdrop on Moses and Rachael's conversation without actually cracking the code?  It seems that Moses and Rachael's security is assured, since an attacker would only be privy to $\bmod (g^n , p)$ and $\bmod (g^m , p)$, each of which cannot be used to decrypt the message since an attacker would have to compute the DL problem to find $m$ and $n$. 
 
-But not so fast. What would happen if an attacker, Fred (an eavesdropper) places himself between Moses and Rachael's messages?  If Fred could do this then Rachael's message would pass through Fred first before reaching Moses, and vice-versa.  Fred would then be able to intercept the public key and establish his own private keys with Moses and Rachael separately.  Fred is now able to read or alter messages.  This type of attack is commonly referred to as the Man in the Middle (MiM) attack.  See Figure~\ref{fig:DH:DHKE_2} to see how Fred is able to modify the key exchange.
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=5in]
 	         {images/DHKE_18.png}}
 	  \caption{\label{fig:DH:DHKE_2} MiM Attack during Moses and Rachael's key exchange }
 \end{figure}
+
+But not so fast. What would happen if an attacker, Fred (an eavesdropper) places himself between Moses and Rachael's messages?  If Fred could do this then Rachael's message would pass through Fred first before reaching Moses, and vice-versa.  Fred would then be able to intercept the public key and establish his own private keys with Moses and Rachael separately.  Fred is now able to read or alter messages.  This type of attack is commonly referred to as the Man in the Middle (MiM) attack.  See Figure~\ref{fig:DH:DHKE_2} to see how Fred is able to modify the key exchange.
 
 Following Figure~\ref{fig:DH:DHKE_2}, Fred establishes one secret key $k_M$ with Moses and a different secret key $k_R$ with Rachael.  Now Moses thinks $r_f$ is Rachael's public key, and Rachael thinks that she has Moses' public key. Moses and Rachael both combine their private keys with Fred's public keys and create two different symmetric keys, $k_M$ and $k_R$ respectively. At this point if either Moses or Rachael sends a message, then Fred is free to decrypt and encrypt the message using the appropriate key. 
 
@@ -248,7 +251,7 @@ Given $p=73,$ and $g=11$ find $q, r, r_f, q_f, k_M,$ and $k_R$ if Moses chooses 
 %ans:q=13, k_M=7, r_f=17, q_f=48, r=41, k_R=2
 \end{exercise}
 
-DHKE is vulnerable to this type of MiM attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Fortunately,  MiM attacks can be prevented if messages are sent with a so-called \term{digital signature} which uniquely identifies the source of the message   In Section \ref{sec:DHKE:1}, we described how to send uniquely-identifiable messages by using a private key to encrypt  messages that can be decrypted by a public key.  So Moses may share his key with Rachael by encrypting his public key, together with some known text. Even if the MiM can receives and decode this information, there is no way for him (or her) to send a bogus key to Rachel, because (s)he does not know Moses' signature key.  
+DHKE is vulnerable to this type of MiM attack since Moses cannot verify that Rachael was the originator of the message, and vice-versa.  Fortunately,  MiM attacks can be prevented if messages are sent with a so-called \term{digital signature} which uniquely identifies the source of the message   In Section \ref{sec:FurtherCryptography:DiffieHellmanKeyExchange}, we described how to send uniquely-identifiable messages by using a private key to encrypt  messages that can be decrypted by a public key.  So Moses may share his key with Rachael by encrypting his public key, together with some known text. Even if the MiM can receives and decode this information, there is no way for him (or her) to send a bogus key to Rachel, because (s)he does not know Moses' signature key.  
 
  Diffie-Hellman is just one of many key exchange algorithms. In the next section, we will talk about a different key exchange method that is even more secure.
 
@@ -270,6 +273,8 @@ How long would it take to crack a cryptosystem with a 128 bit security, using a 
 Now that we've described the benefits of ECC, let's see what elliptic curves are all about. Our discussion will be quite wide-ranging, and touch on several areas of mathematics. Although we will not go into the background, elliptic curves originally arose from the study of polynomial equations in multiple variables. Elliptic curves also have deep connections to the theory of complex functions. 
 
 \subsection{Definition of elliptic curves}
+\label{subsec:FurtherCryptography:EllipticalCurve:Definition}
+
 An Elliptic Curve (EC) is the set of solutions $(x,y)$ of  an equation of the form $y^2 = x^3 + ax + b$, where $a$ and $b$ are real coefficients.  See Figure~\ref{fig:DH:DHKE_5} below for graphs of some elliptic  curves.  
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=5in]
@@ -287,14 +292,16 @@ Additionally, ECs are not allowed to have double or triple roots in the variable
 \begin{exercise}{dubroots}
 		\begin{enumerate}[(a)] 
 	\item  Prove that if the equation $y^2 = x^3 + ax + b$ has a double or triple root, then $4a^3+27b^2=0$. 
-\hyperref[sec:further_crypt:hints]{(*Hint*)}
-	\item Prove the converse to part (a), that is show that if $4a^3 + 27b ^2=0$, then the equation has a double or triple root. \hyperref[sec:further_crypt:hints]{(*Hint*)}
+\hyperref[sec:FurtherCryptography:Hints]{(*Hint*)}
+	\item Prove the converse to part (a), that is show that if $4a^3 + 27b ^2=0$, then the equation has a double or triple root. \hyperref[sec:FurtherCryptography:Hints]{(*Hint*)}
 \end {enumerate} 
 \end{exercise}
 
 All of the cryptosystems that we have studied so far have been based on group operations associated with a particular group. For example, Diffie-Hellman used discrete exponentiation (which is repeated multiplication in $U(p)$) to construct a one-way function. In order to  use elliptic curves to construct cryptosystems, we'll need to show that we can associate a group with each elliptic curve. In the following sections we'll define an arithmetic operation on the points of  any  elliptic curve, an  show that this operation is in fact a group operation.
 
-\subsection{Elliptic curve arithmetic}\label{sec:ECA}
+\subsection{Elliptic curve arithmetic}
+\label{subsec:FurtherCryptography:EllipticalCurve:ECA}
+
 In this section, we show how to do arithmetic on elliptic curves. Specifically, we define an operation (denoted by `+') which acts on two points of an elliptic curve, to give another point on the same curve. 
 
 Suppose that $P_1$ and $P_2$ are two points on an EC. We will consider first the case where $P_1 \neq P_2$: later we will consider the case where  $P_1= P_2$. Geometrically, if the two points are different then $P_1 + P_2$ is given by drawing a line from point $P_1$ to point $P_2$ and continuing the line until it intersects the elliptic curve, then reflect that point about the $x$-axis.  See Figure~\ref{fig:DH:DHKE_6} for a geometric representation of the operation $P_1+P_2$.
@@ -305,7 +312,7 @@ Suppose that $P_1$ and $P_2$ are two points on an EC. We will consider first the
 	  \caption{\label{fig:DH:DHKE_6}Adding two distinct points, $P_1 + P_2$ on the EC (from reference (\ref{wikipedia2017})).}
 \end{figure}
 
-It turns out that $P_1 + P_2$ is always defined on the EC (except in one special case which we will explain a little bit later), even though sometimes the result of $P_1 + P_2$ is quite far away from both $P_1$ and $P_2$.  For instance, take E: $ y^2$ = $x^3 - x$, and points $P_1 = (2, \sqrt{6})$ and $P_2 = (3, -\sqrt{24})$.  Then $P_1 + P_2 = (49,342.93)$ (we'll show this later in Example \ref{example:further_crypt:find P3}), as illustrated in Figure~\ref{fig:DH:DHKE_16}. 
+It turns out that $P_1 + P_2$ is always defined on the EC (except in one special case which we will explain a little bit later), even though sometimes the result of $P_1 + P_2$ is quite far away from both $P_1$ and $P_2$.  For instance, take E: $ y^2$ = $x^3 - x$, and points $P_1 = (2, \sqrt{6})$ and $P_2 = (3, -\sqrt{24})$.  Then $P_1 + P_2 = (49,342.93)$ (we'll show this later in Example \ref{example:FurtherCryptography:findP3}), as illustrated in Figure~\ref{fig:DH:DHKE_16}. 
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=2in]
 	         {images/DHKE_16.png}}
@@ -323,7 +330,7 @@ Compute the slope of the line $m$ through $P_1$ and $P_2$ as follows:  \[ m =(y_
 \item
 Use the point-slope formula $y - y_1 = m(x-x_1)$  in order to find equation of the line that passes through the two points.  Rewrite as: \[y  = m(x-x_1) + y_1\]
 \item
-It turns out that the sum of the roots is $m^2$ (see Exercise~\ref{exercise:further_crypt:root3}). So we have
+It turns out that the sum of the roots is $m^2$ (see Exercise~\ref{exercise:FurtherCryptography:root3}). So we have
 \[x_1 + x_2 + x_3 = m^2, \text{ which implies } x_3 =   m^2 -  x_1 - x_2.\]
 \item  The third point of intersection is $(x_3, -y_3)$. So  we may plug $x_3$ into $(-y_3)  = m(x_3-x_1) + y_1$ to obtain $y_3$. 
 \item Finished!  $P_3 = (x_3,y_3)$.
@@ -331,10 +338,10 @@ It turns out that the sum of the roots is $m^2$ (see Exercise~\ref{exercise:furt
  \end{example} 
 
 \begin{exercise}{root3}
-In part (c) of Example~\ref{example:further_crypt:ec:realplus} we mentioned that $x_1+x_2+x_3=m^2$, where $x_1,x_2,x_3$ are the x-coordinates of three intersections of the a with the EC and $m$ is the slope of the line.  In this exercise, we will prove this.
+In part (c) of Example~\ref{example:FurtherCryptography:ec:realplus} we mentioned that $x_1+x_2+x_3=m^2$, where $x_1,x_2,x_3$ are the x-coordinates of three intersections of the a with the EC and $m$ is the slope of the line.  In this exercise, we will prove this.
 \begin{enumerate}[(a)]
 \item
-Substitute the equation for $y$ in (b) of Example~\ref{example:further_crypt:ec:realplus} into equation E. The resulting equation can be rearranged to form a cubic equation in $x$ of the form: $0 = x^3 + c_2 x^2 + c_1 x + c_0$, where $c_0,c_1, c_2$ depend on the parameters $a,b,m,x_1,y_1$. Express the coefficient $c_2$ in terms of these parameters.
+Substitute the equation for $y$ in (b) of Example~\ref{example:FurtherCryptography:ec:realplus} into equation E. The resulting equation can be rearranged to form a cubic equation in $x$ of the form: $0 = x^3 + c_2 x^2 + c_1 x + c_0$, where $c_0,c_1, c_2$ depend on the parameters $a,b,m,x_1,y_1$. Express the coefficient $c_2$ in terms of these parameters.
 \item
 The cubic equation $0 = x^3 + c_2 x^2 + c_1 x + c_0$ has three roots, so the cubic equation can be factored:  $x^3 + c_2 x^2 + c_1 x + c_0 = (x-x_1)(x-x_2)(x-x_3)$. Use this equality to express $c_2$ in terms of $x_1, x_2, x_3$.
 \item
@@ -359,7 +366,7 @@ Use equation of line with $y=-y_3$ and $x=x_3$:  $-y_3 = -2$ or $y_3=2$.
 $P_3 = (2,2)$.
 \end{enumerate}
 \end{example}
-\begin{example}{find P3} Given E: $y^2 = x^3 - x$, $P_1 = (2, \sqrt{6})$, $P_2 = (3, -\sqrt{24})$ from Figure~\ref{fig:DH:DHKE_16} above.
+\begin{example}{findP3} Given E: $y^2 = x^3 - x$, $P_1 = (2, \sqrt{6})$, $P_2 = (3, -\sqrt{24})$ from Figure~\ref{fig:DH:DHKE_16} above.
 	Find $P_3$, where $P_3 = P_1 + P_2$.
 \begin{enumerate}[(a)]
 \item 
@@ -383,7 +390,7 @@ $P_3 = (49,140\sqrt{6}) \approx (49,342.93)$.
 
 If the two points are the same, $P_1 = P_2 = (x_1,y_1)$, then a tangent line to the point is drawn and the point of intersection to the EC is then reflected about the x-axis.  This is often referred to as \term{point doubling}\index{Point doubling! in elliptic curves}. The slope for this line is, 
 \[m = (3x_1^2 + a) \cdot (2y_1)^{-1},\] 
-which may be found using implicit differentiation (note that $a$ refers to the coefficient of $x$ in the elliptic curve equation--see Example~\ref{example:further_crypt:ec:realplus}).  See Figure~\ref{fig:DH:DHKE_7} below for a geometrical representation of point doubling.
+which may be found using implicit differentiation (note that $a$ refers to the coefficient of $x$ in the elliptic curve equation--see Example~\ref{example:FurtherCryptography:ec:realplus}).  See Figure~\ref{fig:DH:DHKE_7} below for a geometrical representation of point doubling.
 
 \begin{exercise}{}
 Derive the equation for $m$ by taking derivatives of both sides  of equation  E and solving for $\frac{dy}{dx}$. Show your steps.
@@ -419,7 +426,7 @@ Remarkably, it turns out that the `+' operation turns the elliptic curve (plus t
 \end{figure}
 \item \textbf{Inverse}: A line through $P$ and$-P$ goes through $\infty$, and $\infty$ is its own reflection (see Figure \ref{fig:DH:DHKE_13}). Another way of saying this is, $P + (- P) = \infty$. In the same way, we can show that $(-P) + P = \infty$. Therefore the inverse of $P$ is $-P$. 
 
-\item \textbf{Closure}: if $P_1$ and $P_2$ are points on the elliptic curve then $P_1 + P_2$ is also a point on the curve; as stated (without proof) in Section \ref{sec:ECA}.
+\item \textbf{Closure}: if $P_1$ and $P_2$ are points on the elliptic curve then $P_1 + P_2$ is also a point on the curve; as stated (without proof) in Section \ref{subsec:FurtherCryptography:EllipticalCurve:ECA}.
 \item \textbf{Associativity}:$(P_1 + P_2) + P_3 = P_1 + (P_2 + P_3)$. This is always true (for an example, see Figure~\ref{fig:DH:DHKE_12} below),  but it is not at all easy to prove. See for example \url{math.rice.edu/~friedl/papers/AAELLIPTIC.PDF}, which gives a 5-page ``elementary'' proof.
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=2.5in]
@@ -434,13 +441,13 @@ These properties are sufficient to establish the fact that the `+' operation on 
 Does the '+' operation define an Abelian group? Prove your answer.
 \end {exercise}
 
-\subsection{Elliptic curves over $\mathbb{Z}_p$}\label{sec:ECA2} 
+\subsection{Elliptic curves over $\mathbb{Z}_p$}\label{subsec:FurtherCryptography:EllipticalCurve:ECA2} 
 
 Thus far we have looked at elliptic curves whose coefficients are real numbers. Unfortunately, computer calculations with real numbers are prone to rounding errors, so real number arithmetic is not suitable for modern cryptography. To avoid this problem,  instead of using real numbers we use \emph{finite fields}\index{Finite fields!in EC cryptography}, which are finite additive groups that also have a multiplication operation with inverse. The simplest finite fields are  $\mathbb{Z}_p$ (integers mod $p$),  where $p$ is prime. In this section we will demonstrate how to do arithmetic with elliptic curves over $\mathbb{Z}_p$.
 
 At the end of the previous section, we showed that our new  `+' operation allows us to define a group on the set of points of an elliptic curve, when the curve is a subset of $R^2$ and is defined using real coefficients.  It turns out that exactly the same argument can be used to show the very same group property for curves with coefficients in $\mathbb{Z}_p$, which are subsets of $\mathbb{Z}_p \times \mathbb{Z}_p$.  
 
-We saw in Section \ref{CyclicSubgroups} that every element of a group defines a \term{cyclic subgroup}\index{Cyclic subgroup! in EC cryptography}. Specifically, if the group $G$ is finite, then for any element $g \in G$ the set 
+We saw in Section \ref{subsec:Groups:GroupProperties:CyclicGroups} that every element of a group defines a \term{cyclic subgroup}\index{Cyclic subgroup! in EC cryptography}. Specifically, if the group $G$ is finite, then for any element $g \in G$ the set 
 \[ {\var id}, g, g^2, g^3, \ldots, g^{n-1} \ \]
 is a subgroup of $G$, where $n$ is the \emph{order} of $g$ and satisfies $g^n = {\var id}$. In EC cryptography, extensive use is made of cyclic subgroups.  Any EC cyptosystem is based on a single group element, which is referred to as a \term{generator}\index{Generator! in EC cryptography}.  In practice, the generator is added to itself repeatedly. Follow the examples below to see how this works.
 
@@ -449,7 +456,7 @@ is a subgroup of $G$, where $n$ is the \emph{order} of $g$ and satisfies $g^n = 
 \begin{example}{P1+P2} In this example we'll use arithmetic mod 17, so  all coefficients and variables take values on $\mathbb{Z}_{17}$.  
 
 Given E: $y^2 = x^3 + 2x + 2$, and $P = (5,1)$,  we want to find $2P$, where $2P = P + P$.\\ \\
-First we use the slope of the tangent line, using the same formula we did for the real case in Example \ref{example:further_crypt:ec:realplus}:	
+First we use the slope of the tangent line, using the same formula we did for the real case in Example \ref{example:FurtherCryptography:ec:realplus}:	
 \[m = (3x_1^2 + a) \cdot (2y_1)^{-1}\]	
 We may then calculate (remember we're doing arithmetic in  $\mathbb{Z}_{17}$!)
 \begin{align*}
@@ -475,10 +482,10 @@ Therefore, $2P = (6,3)$.
 \end{example}
 
 \begin{exercise}{P}
-Using the equations from Example~\ref{example:further_crypt:ec:realplus} parts (c) and (d), find the following: $3P, 4P, 5P, ..., 20P$ for the point $P=(5,1)$ that was used in Example~\ref{example:further_crypt:P1+P2}.  Note that $3P = 2P + P,  4P = 3P +P,$ and so on. Note also that arithmetic operations are to be performed in mod 17.  What do you notice about $18P,  19P,$ and $20P?$
+Using the equations from Example~\ref{example:FurtherCryptography:ec:realplus} parts (c) and (d), find the following: $3P, 4P, 5P, ..., 20P$ for the point $P=(5,1)$ that was used in Example~\ref{example:FurtherCryptography:P1+P2}.  Note that $3P = 2P + P,  4P = 3P +P,$ and so on. Note also that arithmetic operations are to be performed in mod 17.  What do you notice about $18P,  19P,$ and $20P?$
 \end{exercise}
 
-In view of what we have just discussed, let's reconsider the Diffie-Hellman key exchange which we described in Section~\ref{sec:DHKE:1}. A little thought should convince you that in that section we made use of cyclic subgroups as well. So using Example \ref{example:further_crypt:P1+P2} and Exercise~\ref{exercise:further_crypt:P}, let's revise the Diffie-Hellman key exchange, but this time we'll use the cyclic group associated with the elliptic curve.  Use Figure~\ref{fig:DH:DHKE_8} as a guide to help you answer the following exercise.
+In view of what we have just discussed, let's reconsider the Diffie-Hellman key exchange which we described in Section~\ref{sec:FurtherCryptography:DiffieHellmanKeyExchange}. A little thought should convince you that in that section we made use of cyclic subgroups as well. So using Example \ref{example:FurtherCryptography:P1+P2} and Exercise~\ref{exercise:FurtherCryptography:P}, let's revise the Diffie-Hellman key exchange, but this time we'll use the cyclic group associated with the elliptic curve.  Use Figure~\ref{fig:DH:DHKE_8} as a guide to help you answer the following exercise.
 
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=5in]
@@ -487,10 +494,13 @@ In view of what we have just discussed, let's reconsider the Diffie-Hellman key 
 \end{figure}
 
 \begin{exer}
-Using Example \ref{example:further_crypt:P1+P2} and Exercise~\ref{exercise:further_crypt:P}, what is the shared key exchange if Moses chooses $n = 9$ and Rachael chooses $m = 3$?
+Using Example \ref{example:FurtherCryptography:P1+P2} and Exercise~\ref{exercise:FurtherCryptography:P}, what is the shared key exchange if Moses chooses $n = 9$ and Rachael chooses $m = 3$?
 \end{exer}
+
 \subsection{An encryption system using elliptic curves} 
-In Chapter \ref{crypt} we explained how to use RSA with a shared key to exchange secret messages.  We can construct a similar cryptosystem on the basis of elliptic curves. In this section, we'll describe one way that this may be done. The following discussion is a simplified version of reference (\ref{Kumar}).
+\label{subsec:FurtherCryptography:EllipticalCurve:EncryptionSystem} 
+
+In Chapter \ref{Cryptography} we explained how to use RSA with a shared key to exchange secret messages.  We can construct a similar cryptosystem on the basis of elliptic curves. In this section, we'll describe one way that this may be done. The following discussion is a simplified version of reference (\ref{Kumar}).
 
 Suppose Moses and Rachael would like to communicate a message using ECC, then they should first agree upon an elliptic curve and a code table. Each character of the encrypted message will correspond to a point on the elliptic curve.
 
@@ -575,7 +585,9 @@ There is a serious drawback with the above encryption scheme. Another person cou
 % When Moses receives a message from Rachel, when he decrypts the message he can re-encrypt part of it and send it back to Rachel.  Rachel can verify that it's Moses because it agrees with the original. 
 
 \subsection{Next steps}
-The examples we've given show the basic idea of ECC, but genuinely practical ECC systems are somewhat more complicated. Notice the progression from Section~\ref{sec:ECA} to \label{sec:ECA2}. We first introduced elliptic curves as solution sets in $\mathbb{R}^2$ for a certain type of polynomial equation. But we then remarked that unfortunately these curves are not suitable for practical cryptography, because computers have trouble with real numbers. So in the next section we looked at elliptic curves that are subsets of $\mathbb{Z}_p \times \mathbb{Z}_p$ where $p$ is a prime, as in Figure~\ref{fig:DH:DHKE_11}. But there are disadvantages to $\mathbb{Z}_p$ as well: finding enormous primes is not all that easy. It turns out there is yet another alternative for sets for elliptic curves to live in:  these sets are called \term{Galois Fields}. Galois fields are derived from polynomials, where the polynomials have coefficients in $\mathbb{Z}_p$ (in practice, usually $p=2$).  Since we haven't really looked into polynomials yet, we're not quite ready to dive into this aspect of ECC just yet.  So, you have something to look forward to! 
+\label{subsec:FurtherCryptography:EllipticalCurve:NextSteps} 
+
+The examples we've given show the basic idea of ECC, but genuinely practical ECC systems are somewhat more complicated. Notice the progression from Section~\ref{subsec:FurtherCryptography:EllipticalCurve:ECA} to \ref{subsec:FurtherCryptography:EllipticalCurve:ECA2}. We first introduced elliptic curves as solution sets in $\mathbb{R}^2$ for a certain type of polynomial equation. But we then remarked that unfortunately these curves are not suitable for practical cryptography, because computers have trouble with real numbers. So in the next section we looked at elliptic curves that are subsets of $\mathbb{Z}_p \times \mathbb{Z}_p$ where $p$ is a prime, as in Figure~\ref{fig:DH:DHKE_11}. But there are disadvantages to $\mathbb{Z}_p$ as well: finding enormous primes is not all that easy. It turns out there is yet another alternative for sets for elliptic curves to live in:  these sets are called \term{Galois Fields}. Galois fields are derived from polynomials, where the polynomials have coefficients in $\mathbb{Z}_p$ (in practice, usually $p=2$).  Since we haven't really looked into polynomials yet, we're not quite ready to dive into this aspect of ECC just yet.  So, you have something to look forward to! 
 
 %In practice, it is important to choose a large prime number $p$, in order to make it difficult for an eavesdropper to crack your code.  Internet protocols usually use a minimum of a 1024-bit prime number for $p$, which is equivalent to $2^{1024}$ or roughly 300 decimal digits long.  So, there are $2^{1023}$ different possibilities for 1024 bits (where the highest bit is a `1'). It is not necessary to generate your own prime.  There are many records of large primes published that can be referenced. For example, if you visit \url{http://primes.utm.edu/} you can see some lists of 210 digit primes and larger (from reference (\ref{Caldwell})).
 %
