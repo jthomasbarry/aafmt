@@ -12,15 +12,15 @@
 
 %If its not already included, it would be useful to have a list of identities involving summation notation. JW
 
-\chap{Sigma Notation}{Sigma}
+\chap{Sigma Notation}{SigmaNotation}
 We're about to start looking at polynomials, which means we'll be working with sums of terms--sometimes many terms. Such sums are often written using a special notation known as ``sigma notation''.  It's possible that you are already a master of sigma notation. If not, you can brush up with the material in this section. (At very least, you should try some of the exercises to make sure that you haven't gotten rusty.)
 \bigskip
 
-David Weathers wrote the original version of Sections~\ref{sec:sigmaExamples}-\ref{sec:CommonSums}. Johnny Watts started Sections~\ref{sec:sigmaLinAlg}-\ref{sec:sumByParts}, while  Rachel McCoy made significant improvements to Section~\ref{sec:sumByParts}.
+David Weathers wrote the original version of Sections~\ref{sec:SigmaNotation:Examples}-\ref{sec:SigmaNotation:CommonSums}. Johnny Watts started Sections~\ref{sec:SigmaApp:LinearAlgebra}-\ref{sec:SigmaNotation:SumByParts}, while  Rachel McCoy made significant improvements to Section~\ref{sec:SigmaNotation:SumByParts}.
 
 \section{Lots of examples\quad
 \sectionvideohref{W9vTsHE5SJE&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=43}}
-\label{sec:sigmaExamples}
+\label{sec:SigmaNotation:Examples}
 
 In mathematics one often encounters sums everywhere.  Sometimes these sums have very few terms, but occasionally the sums can reach hundreds, thousands or even an infinite number of terms.  In these cases, rather than listing each and every term or listing the first several terms and assuming the pattern is obvious, one can represent a sum using \term{summation notation}, often referred to as \term{sigma notation}. 
 
@@ -78,7 +78,7 @@ $\displaystyle{ \sum_{k=0}^{100} \left(\frac{1}{k+2} - \frac{1}{k+1}\right)}$
 \end{exercise}
 
 \section{Algebraic rules for Sigmas} 
-\label{sec:sigmaProperties}
+\label{sec:SigmaNotation:Properties}
 
 % Sigma, as with any other math notation, is designed not only to offer control and concise notation, but to offer the ability to change the representation of that notation without changing the value.  There are some circumstances where numbers can be moved or removed from the sum and yet the sum maintains the same value.  
 As with any algebraic notation, there are rules that allow us to do algebraic manipulations with expressions that involve sigmas. In this section, we explore some of these rules.
@@ -158,7 +158,7 @@ Given that $\sum_{i=1}^{20} i = 210$ and $\sum_{i=1}^{20} i^2 = 2870$, Evaluate 
 
 \section{Change of variable and  rearrangement of sums\quad
 \sectionvideohref{cVfYaB4Gn4M&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=44}}
- \label{sec:sigmaNested}
+ \label{sec:SigmaNotation:Nested}
 
 Change of variable (a.k.a. substitution) is an extremely powerful technique in mathematics. We've used change of variable in previous chapters, and most likely you've seen change of variable when doing integrals in calculus.  Change of variable can also be used to simplify sums (in fact, there is a very close relationship between integrals and sums, so it's no surprise that the same techniques are useful in both regimes).
 
@@ -350,9 +350,9 @@ where $f(m,n)$ is an arbitrary expression involving the variables $m$ and $n$.
 \begin{exercise}{}
 \begin{enumerate}[(a)]
 \item
-In Exercise~\ref{exercise:Sigma:interchangeSum}, all sums had 1 as lower limit.  Repeat the exercise (parts a,b,c) but use 0 as the lower limit on all sums.
+In Exercise~\ref{exercise:SigmaNotation:interchangeSum}, all sums had 1 as lower limit.  Repeat the exercise (parts a,b,c) but use 0 as the lower limit on all sums.
 \item
-Repeat Exercise~\ref{exercise:Sigma:interchangeSum} again, but use 2 as the lower limit on all sums.
+Repeat Exercise~\ref{exercise:SigmaNotation:interchangeSum} again, but use 2 as the lower limit on all sums.
 \item
 Based on what you have learned from (a) and (b), give a general formula for interchanging the order of summation in the following expression:
 \[
@@ -377,7 +377,7 @@ $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i \frac{1}{11-j}}$
 \item
 $\displaystyle{\sum_{i=1}^{10} \sum_{j=i}^{10} \frac{i}{j(j+1)}}$
 \item
-$\displaystyle{\sum_{i=1}^{20} \sum_{j=1}^i \frac{i}{(400-j^2)+j+20}}$ \hyperref[sec:sigma:hints]{(*Hint*)} 
+$\displaystyle{\sum_{i=1}^{20} \sum_{j=1}^i \frac{i}{(400-j^2)+j+20}}$ \hyperref[sec:SigmaNotation:Hints]{(*Hint*)} 
 \item
 $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i (j+i)}$
 \end{enumerate}
@@ -386,7 +386,7 @@ $\displaystyle{\sum_{i=1}^{10} \sum_{j=1}^i (j+i)}$
 
 \section{Common Sums\quad
 \sectionvideohref{i5RI-Ssnwps&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=54}}
-\label{sec:CommonSums}
+\label{sec:SigmaNotation:CommonSums}
 
 There are several sums, even a few infinite sums, for which the total value is known. One very basic example is:
 \[\sum_{i=1}^{k}1.\]
@@ -426,7 +426,7 @@ Give a formula for the sum that you wrote in (e).
 \end {enumerate}
 \end {exercise}
 
-All of the sums in Exercise~\ref{exercise:Sigma:common1} have a constant difference between consecutive terms (this constant difference is also called the \term*{step size}\index{Step size! for arithmetic sum}). The step sizes for parts (a), (c), and (e) are 2,2, and 5 respectively.  Any sum with a constant step size is called an \term{arithmetic sum}: and all arithmetic sums can be evaluated using the same technique that was used  in parts (b),(d), and (f) of the exercise.  
+All of the sums in Exercise~\ref{exercise:SigmaNotation:common1} have a constant difference between consecutive terms (this constant difference is also called the \term*{step size}\index{Step size! for arithmetic sum}). The step sizes for parts (a), (c), and (e) are 2,2, and 5 respectively.  Any sum with a constant step size is called an \term{arithmetic sum}: and all arithmetic sums can be evaluated using the same technique that was used  in parts (b),(d), and (f) of the exercise.  
 
 \term{Geometric sums} are defined as the sum of non-negative integer powers of a common base.  For example, here is a geometric sum with base 1/2:
 \[
@@ -514,7 +514,7 @@ Although we won't be talking about infinite series, the same summation notation 
 
 
 \section{Summation by parts}
-\label{sec:sumByParts}
+\label{sec:SigmaNotation:SumByParts}
 
 Those who have studied integrals in calculus may be familiar with the process of integration by parts.  This is used when you need to find the integral of the product of two terms.  While this process is used for continuous situations, there is a version of this process for discrete situations called \term{summation by parts}.  
 
@@ -666,7 +666,7 @@ Evaluate $\sum_{k=1}^{7n} \cis(2\pi k/7)\cdot k$.
 
 \section{Introduction to sigma notation in linear algebra\quad
 \sectionvideohref{M0jHrubtHBA&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=45}}
-\label{sec:sigmaLinAlg}
+\label{sec:SigmaApp:LinearAlgebra}
 
 Linear algebra is the algebra of real space: not just 3-dimensional space, but $n$-dimensional generalizations. The important mathematical objects in linear algebra are vectors and matrices: You may remember that matrices represent functions (transformations) that act  on vectors.  Although linear algebra is a relatively recent field of mathematics (which got its start in the mid-1800's), since the advent of computers it has risen to the `top of the heap' so to speak, so that  most modern applications of mathematics to real-world problems are built on linear algebra.
 
@@ -677,7 +677,7 @@ This chapter ties together material from several chapters in the book. Besides s
 In the following discussions, we will assume that all matrices have real entries.  However, all of the results that we will prove also apply (in some cases, with slight modifications)  for matrices with \emph{complex} entries, or matrices with entries in $\mathbb{Z}_p$.
 
 \section{Matrix multiplication}
-\label{sec:MatrixMultiplication}
+\label{sec:SigmaApp:MatrixMultiplication}
 
 
 It should come as no surprise that summation notation commonly shows up when working with matrices. 
@@ -777,12 +777,12 @@ Let $G = AD$.  Write a formula for the entries $g_{\ell,j}$ of $G$ in terms of t
 Let $H$ =  $(AB)$, and let $M = HC$. Write a formula for the entries $m_{\ell,j}$ of $M$ in terms of the entries of $A$, $B$ and $C$.
 \item
 Using parts (b) and (c), show that matrix multiplication is \emph{associative}. 
-\hyperref[sec:sigma:hints]{(*Hint*)} 
+\hyperref[sec:SigmaNotation:Hints]{(*Hint*)} 
 \end{enumerate}
 \end{exercise}
 
 \section{The identity matrix and the Kronecker delta}
-\label{sec:IdentityMatrixKroneckerDelta}
+\label{sec:SigmaApp:IdentityMatrixKroneckerDelta}
 
 The identity matrix $I$ often comes up when working with matrices. You may remember that an identity matrix has 1's on its diagonal and 0's everywhere else:
 
@@ -945,7 +945,7 @@ Compute $BF$.
 It turns out that matrices defined using Kronecker deltas play a prominent role in numerical analysis, and in particular the numerical solution of ordinary and partial differential equations.
 
 \section{Abbreviated matrix notations}
-\label{sec:AbbrevMatrixNotations}
+\label{sec:SigmaApp:AbbrevMatrixNotations}
 
 In the following discussion, we will be seeing lots of sums involving matrices. This being the case, it's worth our while to try to simplify our notation. In our expression for $C=AB$, we had:
 \[ {c}_{i,j}= \sum_{k=1}^n a_{i,k} b_{k,j} \]
@@ -990,9 +990,11 @@ In the following sections we will use the first type of abbreviated notation (no
 
 
 \section{Matrix transpose and matrix inverse}
-\label{sec:MatrixTransposeInverses}
+\label{sec:SigmaApp:MatrixTransposeInverses}
 
 \subsection{Matrix transpose}
+\label{subsec:SigmaApp:MatrixTransposeInverses:MatrixTranspose}
+
 Transpose is another operation on matrices that lends itself to summation notation.  Recall that the transpose of a matrix changes the rows to columns,so that the first row becomes the first column, the second row becomes the second column, and so on.  The transpose of matrix $A$ is denoted as $A^{\text{T}}$.\index{Transpose!of a matrix}\index{Matrix!transpose} Using indices and recalling that first index is the row and the second is the column, we can express this as:
 
 \[ \left[ {A}^{\text{T}} \right]_{i,j} = \left[ A \right]_{j,i}, \]
@@ -1047,6 +1049,7 @@ Transpose preserves multiplication, i.e. $A^T \cdot B^T = (A\cdot B)^T$ for any 
 
 
 \subsection{Matrix inverse}
+\label{subsec:SigmaApp:MatrixTransposeInverses:MatrixInverse}
 
 We can also express matrix inverse equations in summation notation.  Recall that the inverse of a matrix $A$ is a matrix $A^{-1}$ such that $AA^{-1}=I$ and $A^{-1}A=I$.
 
@@ -1060,7 +1063,7 @@ Suppose that $A$ and $B$ are invertible square matrices of the same size (so tha
 \end{exercise}
 
 \section{Rotation matrices (in 3 dimensions)}
-\label{sec:rotMx3}
+\label{sec:SigmaApp:RotationMatrix3D}
 
 
 In three-dimensional space, the \term{dot product} (or \term{scalar product}) of two vectors $v:=[v_1,v_2,v_3]^{\text{T}}$ and $w:=[w_1,w_2,w_3]^{\text{T}}$ is defined as
@@ -1134,10 +1137,10 @@ We summarize these results in a proposition:
 
 \begin{prop}{rotTrans} A $3 \times 3$ matrix $R$ is a rotation matrix if and only if $\det(R)>0$ and $R^{\text{T}}R = I$.
 \end{prop}
-We will pick up on rotation matrices in Section~\ref{subsec:LeviCivitaDet} when we talk about determinants, and again in Section~\ref{subsec:EulerRot} when we prove Euler's rotation theorem.
+We will pick up on rotation matrices in Section~\ref{subsec:SigmaApp:LeviCivitaAndApp:LeviCivitaDet} when we talk about determinants, and again in Section~\ref{subsec:SigmaApp:LeviCivitaAndApp:EulerRot} when we prove Euler's rotation theorem.
 
 \section{Matrix traces}
-\label{sec:MatrixTraces}
+\label{sec:SigmaApp:MatrixTraces}
 
 Another cool application of summation notation with matrices is to prove things about the \term{trace}\index{Trace!of a matrix} of a matrix.  The trace only applies to square matrices (equal number of rows and columns) and is the sum of all the entries on the diagonal--that is,  the sum of all entries with the same column and row number.  In summation notation, the trace of an $n \times n$ matrix as:
 
@@ -1180,7 +1183,7 @@ In the above proof that $\text{Tr} ({AB}) = \text{Tr}({BA})$, we assumed that bo
 
 \begin{exercise}{trace3}
 Show that $\text{Tr} ({ABC}) = \text{Tr}({CAB})$, as long as the dimensions of $A, B, C$ are such that the products are well-defined.
-\hyperref[sec:sigma:hints]{(*Hint*)} 
+\hyperref[sec:SigmaNotation:Hints]{(*Hint*)} 
 \end{exercise}
 
 
@@ -1195,10 +1198,10 @@ In linear algebra, given two $n \times n$ matrices $A$ and $B$ we say that $A$ i
 \begin{enumerate}[(a)]
 \item
 Prove that if $A$ is similar to $B$, then $B$ is similar to $A$.
-\hyperref[sec:sigma:hints]{(*Hint*)} 
+\hyperref[sec:SigmaNotation:Hints]{(*Hint*)} 
 \item
 Prove that if $A$ is similar to $B$, then $\text{Tr} ({A}) = \text{Tr} ({B})$. 
-\hyperref[sec:sigma:hints]{(*Hint*)} 
+\hyperref[sec:SigmaNotation:Hints]{(*Hint*)} 
 \end{enumerate}
 \end{exercise}
 
@@ -1214,9 +1217,11 @@ This formula is actually quite general, and applies to many non-diagonal matrice
 
 
 \section{Levi-Civita symbols and applications}
-\label{sec:LeviCivita}
+\label{sec:SigmaApp:LeviCivitaAndApp}
 
-\subsection{Levi-Civita symbols: definitions and examples}\label{subsec:LeviCivita}
+\subsection{Levi-Civita symbols: definitions and examples}
+\label{subsec:SigmaApp:LeviCivitaAndApp:LeviCivita}
+
 When dealing with vectors and matrices in physics, one often finds lurking  the Levi-Civita symbol,\footnote{Levi-Civita actually refers to one person, not two: the Italian mathematician Tullio Levi-Civita, (1873-1941), who worked on mathematical physics (including relativity).} which is written as an epsilon (the Greek letter $\epsilon$) with various numbers of subscripts.  The possible values it can take are 1, -1, or 0, depending on the values of the subscripts (we refer to these subscripts as ``indices'').  This might not seem too useful since it can only take three different values, but you will see that it does a great job of simplifying expressions that ordinarily would be much more complicated.  
 
 For an epsilon with two indices (written as $\epsilon_{ij}$), each index can be either 1 or 2. The different values that $\epsilon_{ij}$ can take are:
@@ -1241,7 +1246,7 @@ What's the rule behind this definition?
 The six possible rearrangements of $(1,2,3)$ in the definition of $\epsilon_{ijk}$ are called \emph{permutations}\index{Permutation}.  
 The three arrangements $(2,1,3)$, $(1,3,2)$, and $(3,2,1)$  can all be obtained from $(1,2,3)$ by a single exchange of two numbers.  For example, $(2,1,3)$ is obtained from $(1,2,3)$ by exchanging $1 \leftrightarrow 2$; and the other two rearrangements exchange $2 \leftrightarrow 3$ and $1 \leftrightarrow 3$ respectively.  On the other hand, to get $(2,3,1)$ or $(3,1,2)$ from $(1,2,3)$ requires \emph{two} exchanges.  Since the number of exchanges for $(2,1,3), (1,3,2), and (3,2,1)$ is odd, these are called \emph{odd permutations}\index{Permutation!odd and even}, while the others (including $(1,2,3)$  are called \emph{even  permutations}.   So the definition of   $\epsilon_{ijk}$ may be summarized as follows:  it's equal to 1 if $(i,j,k)$ is an even permutation, $-1$ if  $(i,j,k)$ is an odd permutation, and 0 if $(i,j,k)$ is not a permutation (i.e. there are repeated indices.
 
-You may wonder, Why this strange definition?  We'll see more reasons later, but for now we can relate the definition of  $\epsilon_{ijk}$  to rotations of the $x,y,z$ axes in 3-dimensional space. Let's call these axes 1,2,3 instead of $x,y,z$ Now, if it is possible to rotate the axes so that 1 moves to 2, 2 moves to 3, and 3 moves to 1: in other words $(1,2,3)$ has moved to $(2,3,1)$. It's also possible to move $(1,2,3)$ to $(3,1,2)$.  Notice that these two  are exactly the even permutations!  On the other hand, it is not possible to move $(1,2,3)$ to $(1,3,2)$:  To do so would require turning one of the axes around  (this is called a \emph{reflection}\index{Reflection}). So the sign of   $\epsilon_{ijk}$  distinguishes rotations from reflections. Besides this geometrical interpretation, we'll have a lot more to say about even and odd permutations in Section~\ref{other_groups}.)  
+You may wonder, Why this strange definition?  We'll see more reasons later, but for now we can relate the definition of  $\epsilon_{ijk}$  to rotations of the $x,y,z$ axes in 3-dimensional space. Let's call these axes 1,2,3 instead of $x,y,z$ Now, if it is possible to rotate the axes so that 1 moves to 2, 2 moves to 3, and 3 moves to 1: in other words $(1,2,3)$ has moved to $(2,3,1)$. It's also possible to move $(1,2,3)$ to $(3,1,2)$.  Notice that these two  are exactly the even permutations!  On the other hand, it is not possible to move $(1,2,3)$ to $(1,3,2)$:  To do so would require turning one of the axes around  (this is called a \emph{reflection}\index{Reflection}). So the sign of   $\epsilon_{ijk}$  distinguishes rotations from reflections. Besides this geometrical interpretation, we'll have a lot more to say about even and odd permutations in Section~\ref{sec:Permutations:OtherGroups}.)  
 
 We may simplify the notation somewhat if we define the \term*{sign} of a permutation as follows:
 
@@ -1282,18 +1287,20 @@ This means that you may count all the elements contained in set $A$ or set $B$ b
 \item
 Show that for any values $i,j,k \in \{1,2,3\}$, it is always true that 
 \[ 1=|\epsilon_{ijk}|+\delta_{ij}+\delta_{jk}+\delta_{ik}-2\delta_{ij}\delta_{ik}\]
- \hyperref[sec:sigma:hints]{(*Hint*)}.   
+ \hyperref[sec:SigmaNotation:Hints]{(*Hint*)}.   
 \item
 Show that 
 \[
 \sum_{i,j,k} a_{i,j,k}=\sum_{i,j,k~\text{all unequal}}a_{i,j,k}+\sum_{i,k}a_{i,i,k}+\sum_{i,j}a_{i,j,j}+\sum_{j,k}a_{k,j,k}-2\sum_{i}a_{i,i,i}.
 \]
-\hyperref[sec:sigma:hints]{(*Hint*)} 
+\hyperref[sec:SigmaNotation:Hints]{(*Hint*)} 
 \end{enumerate}
 \end{exercise}
 
 
-\subsection{Levi-Civita symbols and determinants}\label{subsec:LeviCivitaDet} 
+\subsection{Levi-Civita symbols and determinants}
+\label{subsec:SigmaApp:LeviCivitaAndApp:LeviCivitaDet} 
+
 Now that we've defined Levi-Civita symbols, we can actually use them for something!  The first application we'll look at is determinants.  Suppose you have a $2 \times 2 $ matrix $A$:
 
 \[ A = \left( \begin{array}{cc}
@@ -1346,7 +1353,7 @@ Based on our definition of the Levi-Civita symbol $\epsilon_{ijk}$ in terms of t
 \begin{exercise}{detTrans}
 Use this formula to prove that the determinant of any $3 \times 3$ square matrix $A$ is equal to the determinant of its transpose.  That is, 
 \[ \text{det} A = \text{det}A^{T} \]
-\hyperref[sec:sigma:hints]{(*Hint*)} 
+\hyperref[sec:SigmaNotation:Hints]{(*Hint*)} 
 \end{exercise}
 
 An important concept to keep in mind when dealing with these Levi-Civita symbols is what they mean based on when indices are equal or unequal, and how that relates to permutations.  To see how this works, let's look at a proof to show that if any two rows in a $3 \times 3$ matrix are equal, the determinant is 0.  Based on our definition we start out with:
@@ -1395,7 +1402,7 @@ At this point we can now consider the product of two possibilities for our indic
 Of the two sums on the right-hand side, the first makes zero contribution:
 
 \begin{exercise}{EqualZero}
-Given that $i=j$, show that $\sum_{x,y} \epsilon_{xy}  b_{ix}b_{jy}$  is equal to 0. Use this to show that the first summation in the square brackets makes zero contribution. \hyperref[sec:sigma:hints]{(*Hint*)} 
+Given that $i=j$, show that $\sum_{x,y} \epsilon_{xy}  b_{ix}b_{jy}$  is equal to 0. Use this to show that the first summation in the square brackets makes zero contribution. \hyperref[sec:SigmaNotation:Hints]{(*Hint*)} 
 \end{exercise}
 Since we can ignore the case where $i=j$, let us look at the case where $i \neq j$.  There are actually two cases: $i=1, j=2$ and $i=2, j=1$.  Notice that:
 \begin{align*}
@@ -1455,7 +1462,7 @@ Show that
 \sum_{x,y,z}  \epsilon_{xyz} b_{ix}b_{jy}b_{kz}&=\sum_{x,y,z} \epsilon_{xyz}\epsilon_{ijk} b_{1x}b_{2y}b_{3z},
 \end{align*}
 whenever $i,j,k \in \{1,2,3\}$.
-\hyperref[sec:sigma:hints]{(*Hint*)} 
+\hyperref[sec:SigmaNotation:Hints]{(*Hint*)} 
 \item
 Give a complete proof of $\text{det}(AB)= \text{det}A \,\text{det}B$ for the case where $A$ and $B$ are $3 \times 3$ matrices.
 \end{enumerate}
@@ -1464,7 +1471,7 @@ Give a complete proof of $\text{det}(AB)= \text{det}A \,\text{det}B$ for the cas
 We may use some of the facts which we've established in this section to prove some important properties of rotation matrices. 
 
 \begin{exercise}{}
-Recall from Section~\ref{subsec:rotMx3} that a rotation matrix $R$ must satisfy $R^{\text{T}} R = I$ and $\det R \ge 0$.
+Recall from Section~\ref{sec:SigmaApp:RotationMatrix3D} that a rotation matrix $R$ must satisfy $R^{\text{T}} R = I$ and $\det R \ge 0$.
 \begin{enumerate}[(a)]
 \item
 Using Exercise~\ref{exercise:SigmaApp:detTrans} and the determinant product formula $\det A \det B = \det(AB)$, show that $\det R = 1$ and $\det R^{\text{T}}=1$. 
@@ -1482,6 +1489,7 @@ The results of the previous exercise are important, so we'll restate them as a p
 
 
 \subsection{Levi-Civita symbols and cross products}
+\label{subsec:SigmaApp:LeviCivitaAndApp:CrossProducts}
 
 You may have seen the formula for the cross product of two vectors in vector calculus, or college physics. Given two three-dimensional vectors $\textbf{a}=(a_1, a_2, a_3)$ and $\textbf{b}=(b_1, b_2, b_3)$, the \term{cross product} of $\textbf{a}$ and $\textbf{b}$ can be expressed as  (note that the absolute value brackets in the formula  indicate that it's a determinant and not a matrix.)
 
@@ -1550,6 +1558,8 @@ $(\textbf{a} \times \textbf{b})_i$ as
 Note that we do not bother to indicate that the indices $i,j,k$ run from 1 to 3: this is understood by the nature of $\epsilon_{ijk}$.
 
 \subsection{Proof of the vector BAC-CAB Rule}
+\label{subsec:SigmaApp:LeviCivitaAndApp:BAC-CAB-Rule}
+
 As another example, suppose we want to prove what is known as the $BAC-CAB$ rule\index{BAC-CAB@$BAC-CAB$ rule}, which states:
 \[ \textbf{a} \times \left( \textbf{b} \times \textbf{c} \right) = \textbf{b} \left( \textbf{a} \cdot \textbf{c} \right) - \textbf{c} \left( \textbf{a} \cdot \textbf{b} \right). \]
 We'll arrive at this formula this by two different routes: the brute-force method or the symmetry method.  Let's start with the brute force method.
@@ -1678,9 +1688,10 @@ Using some facts from the discussion above, show that  $S_{ijmn} :=  \sum_k \eps
 \end{exercise}
 
 
-\subsection{Proof of Euler's Rotation Theorem}\label{subsec:EulerRot}
+\subsection{Proof of Euler's Rotation Theorem}
+\label{subsec:SigmaApp:LeviCivitaAndApp:EulerRot}
 
-In Section~\ref{sec:actions:Euler} we prove Euler's formula for regular polyhedra. Our proof depends on the following proposition:
+In Section~\ref{subsec:GroupActions:SymmetryOfPolyhedra:Euler} we prove Euler's formula for regular polyhedra. Our proof depends on the following proposition:
 
 \begin{prop}{EulerRotThm}(\term{Euler's Rotation Theorem}): Any rotation (besides the identity) in three dimensions has exactly one axis which is fixed by the rotation.
 \end{prop}
@@ -1741,7 +1752,7 @@ $ \lambda_1 \cdot \lambda_2 = -1$.
 
 Now, the $\lambda$'s could be complex, or they could be real. If complex, then they must be complex conjugates of each other (since $R$ is a real matrix), but then their product would be positive (why is this?). Since their product is negative, this is not possible. 
 
-We may conclude that the $\lambda$'s are real. Now let $w$ be an eigenvector for the eigenvalue $\lambda_1$. Then $Rw = \lambda_1 w$, so that $ \lVert Rw \rVert = |\lambda_1| \lVert w \rVert$. But we know from the properties of rotations (see Section~\ref{subsec:rotMx3} that 
+We may conclude that the $\lambda$'s are real. Now let $w$ be an eigenvector for the eigenvalue $\lambda_1$. Then $Rw = \lambda_1 w$, so that $ \lVert Rw \rVert = |\lambda_1| \lVert w \rVert$. But we know from the properties of rotations (see Section~\ref{sec:SigmaApp:RotationMatrix3D} that 
 $ \lVert Rw \rVert =  \lVert w \rVert$. This implies $|\lambda_1|=1$. The same argument shows $|\lambda_2|=1$. 
 
 So what've we got?  We know that $\lambda_1$ and $\lambda_2$ are real.  We also know that  $|\lambda_1|=|\lambda_2|=1$, so each $\lambda$ is either $+1$ or $-1$.  Finally, we know that $\lambda_1 \cdot \lambda_2 = -1$.  This means that one of the $\lambda$'s must be $-1$, and one must be 1. Since the remaining eigenvalue is $-1$, It follows that there is a unique eigenvector with eigenvalue 1, which is the unique fixed axis of the rotation.

@@ -7,7 +7,7 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Introduction to Rings and Fields}{rings}
+\chap{Introduction to Rings and Fields}{Rings}
 
 \begin{quote}
 The integers are like a golden ring in a chain, whose beginning is a glance and whose ending is eternity.     
@@ -18,13 +18,13 @@ The integers are like a golden ring in a chain, whose beginning is a glance and 
 The kingdom of heaven is like treasure hidden in a field. When a man found it, he hid it again, and then in his joy went and sold all he had and bought that field.(Source:  Jesus of Nazareth (quoted by Matthew))
 \end{quote}
 
-Groups and  \emph{rings} are the two basic abstract structures in study of abstract algebra, These are not the only abstract structures studied,but most others are  modifications of these two. groups and rings are basic in the areas of particle physics, cryptography, and coding theory (see Section~\ref{sec:rings:refs} for more information). They also creep into other areas of mathematics like analysis and number theory.
+Groups and  \emph{rings} are the two basic abstract structures in study of abstract algebra, These are not the only abstract structures studied,but most others are  modifications of these two. groups and rings are basic in the areas of particle physics, cryptography, and coding theory (see Section~\ref{sec:Rings:References} for more information). They also creep into other areas of mathematics like analysis and number theory.
  As we proceed, you may notice many similarities between the properties of rings and those of groups. Let's begin with a review of common number systems.
 
 This chapter is by Christy Douglass and Chris Thron, with contributions by Jennifer Lazarus and Adam McDonald.
 
 \section{Definitions and Examples \quad\sectionvideohref{xKUyYlAq24c&feature=youtu.be}}
-\label{sec:rings:Definitions and Examples}
+\label{sec:Rings:DefinitionsAndExamples}
 
 Some of the number systems we've studied in previouos chapters are:
 \begin{itemize}
@@ -49,15 +49,15 @@ When studying rings (and groups), we put a lot of focus on the integers.  The in
 \textbf{Note} that commutativity of multiplication is \underline{not} a property of all  rings, so $a(b+c)=(b+c)a$ is not necessarily true for a ring.
  \end{enumerate}
 
-All of the number systems listed at the beginning of this chapter have properties I-VII.  Similar properties are found in other number systems.\footnote{The reader may recall that some of these same properties were listed in Section~\ref{polycoefficients}, when we were talking about coefficients of polynomials.}
+All of the number systems listed at the beginning of this chapter have properties I-VII.  Similar properties are found in other number systems.\footnote{The reader may recall that some of these same properties were listed in Section~\ref{sec:Polynomials:PropertiesAndSigmaNotation}, when we were talking about coefficients of polynomials.}
 
-\begin{defn}\label{def:ring}
+\begin{defn}{defring}
 Any number system with the two arithmetic operations (+ and $\cdot$) that satisfy properties I-VII is called a \term{ring}.
 \end{defn}
 
 As well as having properties $I-VII$, multiplication is commutative in all of the above number systems. This leads us to the following definition:
 
-\begin{defn}\label{def:comring}
+\begin{defn}{defcomring}
 A number system is a \term{commutative ring} if it is a ring where multiplication is also commutative.
 \end{defn}
 
@@ -71,23 +71,23 @@ The rings we've talked about so far (${\mathbb Z},{\mathbb Q},{\mathbb R},{\math
 Prove that ${\mathbb Z}_n$ is a ring for any integer $n \ge 2$.
 
 \begin{proof}
-Recall that ${\mathbb Z}_n=\{0,1,2,\ldots,n-1\}$.  It is also important to note that the operations of addition and multiplication will be defined as \emph{modular sum} and \emph{modular product}, notated as $\oplus$ and $\odot$, respectively.  We should address each of the seven properties listed above to show that we have a ring.  It turns out that we have already shown each of these properties in the chapter on modular arithmetic, Chapter \ref{modular}.  Let's divide our proof into seven steps, one for each required ring property.
+Recall that ${\mathbb Z}_n=\{0,1,2,\ldots,n-1\}$.  It is also important to note that the operations of addition and multiplication will be defined as \emph{modular sum} and \emph{modular product}, notated as $\oplus$ and $\odot$, respectively.  We should address each of the seven properties listed above to show that we have a ring.  It turns out that we have already shown each of these properties in the chapter on modular arithmetic, Chapter \ref{ModularArithmetic}.  Let's divide our proof into seven steps, one for each required ring property.
 \begin{enumerate}[(I)]
-\item First we must show that ${\mathbb Z}_n$ is closed under $\oplus$ and $\odot$.  In Proposition \ref{proposition:modular:closed_property_Zn}, we showed that the modular sum and modular product of two elements of  ${\mathbb Z}_n$ are also in ${\mathbb Z}_n$. In other words, $a\oplus b \in{\mathbb Z}_n$ and $a\odot b\in{\mathbb Z}_n$, for all $a,b\in{\mathbb Z}_n$.  So ${\mathbb Z}_n$ is closed under $\oplus$ and $\odot$.
+\item First we must show that ${\mathbb Z}_n$ is closed under $\oplus$ and $\odot$.  In Proposition \ref{proposition:ModularArithmetic:closed_property_Zn}, we showed that the modular sum and modular product of two elements of  ${\mathbb Z}_n$ are also in ${\mathbb Z}_n$. In other words, $a\oplus b \in{\mathbb Z}_n$ and $a\odot b\in{\mathbb Z}_n$, for all $a,b\in{\mathbb Z}_n$.  So ${\mathbb Z}_n$ is closed under $\oplus$ and $\odot$.
 %%%% Help with reference of the proposition.
-\item Second, we must show that the associative property holds for ${\mathbb Z}_n$.  In Proposition \ref{proposition:modular:Zn_comm_assoc} (b), we show that $(a \oplus b) \oplus c  =  a \oplus (b \oplus c)$ and $(a \odot b) \odot c    =  a \odot (b \odot c)$.  So the associative property holds for ${\mathbb Z}_n$.
-\item Third, we will show that the zero property holds for ${\mathbb Z}_n$. In Proposition \ref{proposition:modular:id_property_Zn}, we show that $0 \in {\mathbb Z}_n$ and $a\oplus 0=0\oplus a=a$, for any $a\in{\mathbb Z}_n$, so $0$ is the additive identity of ${\mathbb Z}_n$ and the zero property holds.
-\item Our next step is to show that ${\mathbb Z}_n$ has the multiplicative identity property (one).  Again, we will refer to Section \ref{ArithWithRems}.  In particular, Exercise \ref{exercise:modular:56} showed us that $1\in{\mathbb Z}_n$ and $1\odot a=a\odot 1=a$, for any $a\in{\mathbb Z}_n$.  So, the identity property of multiplication holds for ${\mathbb Z}_n$.
-\item The commutative property of $\oplus$ for ${\mathbb Z}_n$ must be proven next.  Proposition \ref{proposition:modular:Zn_comm_assoc} (a) shows us that $a \oplus b   =  b \oplus a$ and
+\item Second, we must show that the associative property holds for ${\mathbb Z}_n$.  In Proposition \ref{proposition:ModularArithmetic:Zn_comm_assoc} (b), we show that $(a \oplus b) \oplus c  =  a \oplus (b \oplus c)$ and $(a \odot b) \odot c    =  a \odot (b \odot c)$.  So the associative property holds for ${\mathbb Z}_n$.
+\item Third, we will show that the zero property holds for ${\mathbb Z}_n$. In Proposition \ref{proposition:ModularArithmetic:id_property_Zn}, we show that $0 \in {\mathbb Z}_n$ and $a\oplus 0=0\oplus a=a$, for any $a\in{\mathbb Z}_n$, so $0$ is the additive identity of ${\mathbb Z}_n$ and the zero property holds.
+\item Our next step is to show that ${\mathbb Z}_n$ has the multiplicative identity property (one).  Again, we will refer to Section \ref{subsec:ModularArithmetic:ArithWithRems}.  In particular, Exercise \ref{exercise:ModularArithmetic:56} showed us that $1\in{\mathbb Z}_n$ and $1\odot a=a\odot 1=a$, for any $a\in{\mathbb Z}_n$.  So, the identity property of multiplication holds for ${\mathbb Z}_n$.
+\item The commutative property of $\oplus$ for ${\mathbb Z}_n$ must be proven next.  Proposition \ref{proposition:ModularArithmetic:Zn_comm_assoc} (a) shows us that $a \oplus b   =  b \oplus a$ and
 $a \odot b    =  b \odot a$, for all $a,b\in{\mathbb Z}_n$.  Note that for a set to be a ring, we only need to show that commutativity of \emph{addition} holds.  Because commutativity of \emph{multiplication} also holds for ${\mathbb Z}_n$, we may also have a \emph{commutative} ring.  Let's continue with our proof that ${\mathbb Z}_n$ is a ring before we jump to that conclusion.
-\item The sixth property that we must show is that of the additive inverse.  We will refer back to Proposition \ref{proposition:modular:addinv_property_Zn}.  Here we let $a' = n-a$, for any $a\in{\mathbb Z}_n$.  We show that $a'\in{\mathbb Z}_n$ and $a \oplus a' = a' \oplus a  = 0 \pmod{ n}$: that is, $a'$ is the additive inverse of $a$.
-\item For our last step, we will show that the distributive property holds true for ${\mathbb Z}_n$. Once again, we have already shown that this is true.  In Proposition \ref{proposition:modular:Zn_comm_assoc} (c), we show that $a \odot (b \oplus c)  = (a \odot b)\oplus (a \odot c)$.  Since $\odot$ commutes in ${\mathbb Z}_n$, it follows that $a \odot (b \oplus c)  = (b \oplus c) \odot a= (a \odot b)\oplus (a \odot c)$ and the distributive property holds.
+\item The sixth property that we must show is that of the additive inverse.  We will refer back to Proposition \ref{proposition:ModularArithmetic:addinv_property_Zn}.  Here we let $a' = n-a$, for any $a\in{\mathbb Z}_n$.  We show that $a'\in{\mathbb Z}_n$ and $a \oplus a' = a' \oplus a  = 0 \pmod{ n}$: that is, $a'$ is the additive inverse of $a$.
+\item For our last step, we will show that the distributive property holds true for ${\mathbb Z}_n$. Once again, we have already shown that this is true.  In Proposition \ref{proposition:ModularArithmetic:Zn_comm_assoc} (c), we show that $a \odot (b \oplus c)  = (a \odot b)\oplus (a \odot c)$.  Since $\odot$ commutes in ${\mathbb Z}_n$, it follows that $a \odot (b \oplus c)  = (b \oplus c) \odot a= (a \odot b)\oplus (a \odot c)$ and the distributive property holds.
 \end{enumerate}
 We have shown that all seven ring properties hold true in ${\mathbb Z}_n$ over $\oplus$ and $\odot$. Additionally, we have shown that ${\mathbb Z}_n$ commutes over $\odot$.  So, ${\mathbb Z}_n$ is a \emph{commutative} ring and our proof is complete.
 \end{proof}
 \end{example}
 
-We've already mentioned that ${\mathbb Q}$ is a ring. Sometimes we can use rings to create larger rings by adding additional elements. Such rings are called \term{extension rings}. We will discuss these further in Section~\ref{sec:extensionRings}. For now, let's look at a particular example.
+We've already mentioned that ${\mathbb Q}$ is a ring. Sometimes we can use rings to create larger rings by adding additional elements. Such rings are called \term{extension rings}. We will discuss these further in Section~\ref{sec:Rings:ExtensionRings}. For now, let's look at a particular example.
 
 \begin{example}{extension_ring}
 Prove that ${\mathbb Q}[\sqrt[3]{2}]=\{a_0+a_1\sqrt[3]{2}+a_2(\sqrt[3]{4})~|~a_0,a_1,a_2\in {\mathbb Q}\}$ forms a ring.\\
@@ -143,7 +143,7 @@ In the definition of ${\mathbb Q}[\sqrt[3]{2}]$, we included a term proportional
 \end{enumerate}
 \end{exercise}
 
-Let's continue with our proof of Example \ref{example:rings:extension_ring}. We have shown that ${\mathbb Q}[\sqrt[3]{2}]$ satisfies the first property of rings. Now, let's take a look at property (2). We must show associativity for addition and multiplication. In other words, we must show that:
+Let's continue with our proof of Example \ref{example:Rings:extension_ring}. We have shown that ${\mathbb Q}[\sqrt[3]{2}]$ satisfies the first property of rings. Now, let's take a look at property (2). We must show associativity for addition and multiplication. In other words, we must show that:
 \begin{enumerate}[(a)]
 \item If $a,b,c\in{\mathbb Q}[\sqrt[3]{2}]$ then $(a+b)+c=a+(b+c)$, and
 \item If $a,b,c\in{\mathbb Q}[\sqrt[3]{2}]$ then $(ab)c=a(bc)$.
@@ -151,7 +151,7 @@ Let's continue with our proof of Example \ref{example:rings:extension_ring}. We 
 
 For associativity of addition, let $a,b,c,\in{\mathbb Q}[ \sqrt[3]{2}]$. Since all of the numbers in ${\mathbb Q}[\sqrt[3]{2}]$ are real numbers, and the real numbers are associative, then it follows automatically that numbers in ${\mathbb Q}[\sqrt[3]{2}]$ also associate.  We can make a similar argument for associativity of multiplication.  Associativity is an example of an \emph{inherited property}.
 
-\begin{defn}\label{def:inherited property}
+\begin{defn}{definherited property}
 An \term{inherited property} is a property such that, if the property is true for a set of numbers $S$, then it's also true for any subset of $S$.
 \end{defn}
 
@@ -159,7 +159,7 @@ An \term{inherited property} is a property such that, if the property is true fo
 Show that additive closure is \emph{not} an inherited property by providing a counterexample.
 \end{exercise}{}
 
-Back to our proof of Example \ref{example:rings:extension_ring}.
+Back to our proof of Example \ref{example:Rings:extension_ring}.
 
 Property (3): This is known as the \emph{zero property}. To prove this property, we must show that $0\in{\mathbb Q}[\sqrt[3]{2}]$ and also that $a+0=0+a=0$ for all $a\in{\mathbb Q}[\sqrt[3]{2}]$. Notice that $0=0+0\sqrt[3]{2}+0\sqrt[3]{4}\in{\mathbb Q}[\sqrt[3]{2}]$. Since all numbers, $a\in{\mathbb Q}[\sqrt[3]{2}]$ are real numbers, it follows that $a+0=0+a=0$. So $0$ is the zero element of ${\mathbb Q}[\sqrt[3]{2}]$ and property (3) holds true.\\
 
@@ -175,7 +175,7 @@ The proofs of properties (5) and (7) resemble the proof of property (2).
 Prove properties (5) and (7). (You may use the proof of property (2) as a model.)
 \end{exercise}{}
 
-We have shown that ${\mathbb Q}[\sqrt[3]{2}]$ satisfies all seven properties of rings. Therefore, by Definition \ref{def:ring}, ${\mathbb Q}[\sqrt[3]{2}]$ is a ring and our proof is complete.
+We have shown that ${\mathbb Q}[\sqrt[3]{2}]$ satisfies all seven properties of rings. Therefore, by Definition \ref{definition:Rings:defring}, ${\mathbb Q}[\sqrt[3]{2}]$ is a ring and our proof is complete.
 \end{proof}
 \end{example}{}
 
@@ -206,14 +206,15 @@ Suppose $R$ is a ring. Prove that  ${\mathbb M}_2(R)$ is also a ring.
 \end{exercise}
 
 
-\subsection{Polynomial  rings}\label{sec:polynomialRings}
+\subsection{Polynomial rings}
+\label{subsec:Rings:DefinitionsAndExamples:polynomialRings}
 
 Take any ring $R$ and the set of polynomials over that ring $R[x]$.  It turns out that $R[x]$ is also a ring.  In this section, we will prove this, and explore some properties of $R[x]$. 
 
-Actually, we've already completed most of the proof that $R[x]$ is a ring. Recall that in Section~\ref{polycoefficients} we proved several properties of polynomials $R[x]$, under very general assumptions about the set of coefficients $R$.  In fact, properties (I)-(V) in Section~\ref{polycoefficients} are all included in the ring properties listed in Section~\ref{sec:rings:Definitions and Examples}. So all of the properties shown in Section~\ref{polycoefficients} apply to $R[x]$ as long as $R$ is a ring.
+Actually, we've already completed most of the proof that $R[x]$ is a ring. Recall that in Section~\ref{sec:Polynomials:PropertiesAndSigmaNotation} we proved several properties of polynomials $R[x]$, under very general assumptions about the set of coefficients $R$.  In fact, properties (I)-(V) in Section~\ref{sec:Polynomials:PropertiesAndSigmaNotation} are all included in the ring properties listed in Section~\ref{sec:Rings:DefinitionsAndExamples}. So all of the properties shown in Section~\ref{sec:Polynomials:PropertiesAndSigmaNotation} apply to $R[x]$ as long as $R$ is a ring.
 
 \begin{exercise}{polyRingProps}
-Go back to Section~\ref{polycoefficients} and identify the propositions that prove that the set $R[x]$ satisfies the ring properties (I,II,III,V,VI,VII) from Section~\ref{sec:rings:Definitions and Examples}.
+Go back to Section~\ref{sec:Polynomials:PropertiesAndSigmaNotation} and identify the propositions that prove that the set $R[x]$ satisfies the ring properties (I,II,III,V,VI,VII) from Section~\ref{sec:Rings:DefinitionsAndExamples}.
 \end{exercise}
 
 We are still missing property IV, the identity property. We can take care of this in short order.
@@ -227,19 +228,20 @@ Suppose that $R$ is a ring with a multiplicative identity 1. Then $1x^0$ is a mu
 \end{prop}
 
 \begin{exercise}{}
-Prove Proposition~\ref{proposition:rings:ringMultId}.
+Prove Proposition~\ref{proposition:Rings:ringMultId}.
 \end{exercise}
 
-Putting Exercise~\ref{exercise:rings:polyRingProps} and Proposition \ref{proposition:rings:ringMultId} together, we have immediately:
+Putting Exercise~\ref{exercise:Rings:polyRingProps} and Proposition \ref{proposition:Rings:ringMultId} together, we have immediately:
 
 \begin{prop}{polyringsarerings} The set of polynomials over a ring is also a ring. That is, if $R$ is a ring, then $R[x]$ is also a ring.
 \end{prop}
 
-Proposition~\ref{proposition:rings:polyringsarerings} is a powerful result. We may use this proposition to build larger and larger rings. For example, Proposition~\ref{proposition:rings:polyringsarerings} tells us that $((\mathbb{Z}[x])[y])[z]$ is a ring of polynomials in $x,y,z$  (usually this is written as $\mathbb{Z}[x,y,z]$). Apparently there are many examples of mathematical structures that are rings, which makes them an interesting and fruitful object of study.
+Proposition~\ref{proposition:Rings:polyringsarerings} is a powerful result. We may use this proposition to build larger and larger rings. For example, Proposition~\ref{proposition:Rings:polyringsarerings} tells us that $((\mathbb{Z}[x])[y])[z]$ is a ring of polynomials in $x,y,z$  (usually this is written as $\mathbb{Z}[x,y,z]$). Apparently there are many examples of mathematical structures that are rings, which makes them an interesting and fruitful object of study.
 
 
 
 \subsection{Some Ring Proofs}
+\label{subsec:Rings:DefinitionsAndExamples:RingProofs}
 
 Remember that rings must satisfy the multiplicative identity property. For the set of integers, the multiplicative identity is uniquely 1. We can show that the multiplicative identity for any ring is unique.
 
@@ -259,10 +261,10 @@ We need to show that if $x$ is a multiplicative identity, then $x=1$.
 \end{prop}
 
 \begin{exercise}{addIdenUnique}
-Show that the additive identity of a ring $R$ is unique.  (You may model your proof on the proof of Proposition~\ref{proposition:rings:mult_idR}).
+Show that the additive identity of a ring $R$ is unique.  (You may model your proof on the proof of Proposition~\ref{proposition:Rings:mult_idR}).
 \end{exercise}
 
-Way back in Section~\ref{OpsAndRels} we mentioned the \term{zero divisor property} for real numbers: the product of two real numbers is zero if and only if at least one of the two numbers is zero. In fact, the ``only if'' part of this statement is \emph{not true} for general rings:
+Way back in Section~\ref{subsec:Preliminaries:OpsAndRels} we mentioned the \term{zero divisor property} for real numbers: the product of two real numbers is zero if and only if at least one of the two numbers is zero. In fact, the ``only if'' part of this statement is \emph{not true} for general rings:
 
 \begin{exercise}{ModZeroProducts}
 \begin{enumerate}[(a)]
@@ -291,7 +293,7 @@ We will use properties of rings in our proof.
 We have shown that $0=x\cdot0$. It remains to show that $0=0\cdot x$, since multiplication in rings is not always commutative.
 
 \begin{exercise}{MultZeroRing}
-Complete the proof of Proposition \ref{proposition:rings:add_inverse} by showing that $0=0\cdot x$, for $x\in R$.
+Complete the proof of Proposition \ref{proposition:Rings:add_inverse} by showing that $0=0\cdot x$, for $x\in R$.
 \end{exercise}
 \end{proof}
 \end{prop}
@@ -302,7 +304,7 @@ Let $R$ be a ring, let $-1$ be the additive inverse of $1$, and let $-x$ denote 
 \end{prop}
 
 \begin{exercise}{}
-Prove Proposition \ref{proposition:rings:inverse}.
+Prove Proposition \ref{proposition:Rings:inverse}.
 \end{exercise}
 
 Since there are many rules that ring operations obey,
@@ -326,11 +328,11 @@ Given $A,B,C\in R$ where R is a commutative ring, we can show that $(B+(-C))\cdo
 \end{exercise}
 
 \section{Subrings}
-\label{sec:Subrings}
+\label{sec:Rings:Subrings}
 
 Earlier we mentioned that two important topics studied in Abstract Algebra are groups and rings. Just like groups have subgroups, rings have \emph{subrings}.
 
-\begin{defn}\label{subring}
+\begin{defn}{subring}
 A ring that is a subset of another ring is called a \term{subring}.
 \end{defn}
 
@@ -373,7 +375,7 @@ Given rings $R_1$ and $R_2$, with the same $\cdot$ operation, Show that $1\in R_
 \end{exercise}
 \end{proof}
 \end{example}
-We have shown in Exercise~\ref{exercise:rings:ringMatrices} that ${\mathbb M}_2({\mathbb R})$, forms a ring.  In the following exercise, we will consider some subrings of ${\mathbb M}_2({\mathbb R})$.
+We have shown in Exercise~\ref{exercise:Rings:ringMatrices} that ${\mathbb M}_2({\mathbb R})$, forms a ring.  In the following exercise, we will consider some subrings of ${\mathbb M}_2({\mathbb R})$.
 
 
 \begin{exercise}{}
@@ -408,7 +410,7 @@ is a subring of  ${\mathbb M}_2({\mathbb R})$.
 \end{enumerate}
 \end{exercise}
 
-In Section \ref{sec:rings:Definitions and Examples}, we learned that ${\mathbb C}$, the set of all complex numbers, forms a ring.  Consider the following subset of ${\mathbb C}$:
+In Section \ref{sec:Rings:DefinitionsAndExamples}, we learned that ${\mathbb C}$, the set of all complex numbers, forms a ring.  Consider the following subset of ${\mathbb C}$:
 
 \begin{exercise}{}
 Prove or disprove:  $\{1,-1,i,-i\}$ forms a subring of ${\mathbb C}$.
@@ -466,11 +468,11 @@ If $R={\mathbb Z}_{mn}$ and $S=\{0,m,2m,...(n-1)m\}$, then $S$ is a subring of $
 \end{exercise}
 
 \section{Extension Rings}
-\label{sec:extensionRings}
+\label{sec:Rings:ExtensionRings}
 
 We have learned that a subring can be formed from a subset of a ring. One example we used was that $\{0,2,4\}$ is a subring of ${\mathbb Z}_6$. We can also extend a ring into a larger set, called an extension ring.  We would say that ${\mathbb Z}_6$ is an extension ring of $\{0,2,4\}$.
 
-\begin{defn}\label{ext_ring}
+\begin{defn}{ext_ring}
 If $R$ is a subring of $S$, then we can say that $S$ is an \term{extension ring} of $R$.
 \end{defn}
 
@@ -621,11 +623,11 @@ Find the multiplicative inverse of $(1+2x+3x^2)$ in $ \widehat{{\mathbb Z}}_5[x]
 \end{example}
 
 \section{Product Rings}
-\label{sec:ProductRings}
+\label{sec:Rings:ProductRings}
 
-In certain situations, we may want to combine two or more rings to form a larger ring. Product rings allow us to do just that. In fact, the product operation for rings is very similar to the product of groups (see Definition~\ref{def:ProductOfGroups}).
+In certain situations, we may want to combine two or more rings to form a larger ring. Product rings allow us to do just that. In fact, the product operation for rings is very similar to the product of groups (see Definition~\ref{definition:Groups:defProductOfGroups}).
 
-\begin{defn}\label{product ring}
+\begin{defn}{product ring}
 If $R_1,~R_2$ are rings, then the \emph{product ring}, $R_1\times R_2$ is the set of pairs $(a,b),~a\in R_1$ and $b\in R_2$, with the following operations:
 \begin{enumerate}
 \item $(a,b)+(c,d)=(a+_1c,b+_2d)$
@@ -720,12 +722,12 @@ Give the addition and multiplication tables for the following product rings:
 \end{exercise}
 
 \section{Isomorphic rings}
-\label{sec:IsomorphicRings}
+\label{sec:Rings:IsomorphicRings}
 
 Sometimes we encounter rings that are basically the ``same''.  In this section we will give a mathematical definition for what the ``same'' means in this context.  Before we give the definition, we will start out with an example.
 
 \begin{example}{}
-Consider the two rings $R_1={\mathbb Z}[x]$ and $R_2={\mathbb Z}[y]$.  Obviously, these two rings are basically the same except we replace $x$ with $y$.  We can make a formal correspondence between the two rings by defining a function $\phi:R_1\rightarrow R_2$ as follows: $\phi(a_nx^n+a_{n-1}x^{n-1}+\ldots +a_0)=(a_ny^n+a_{n-1}y^{n-1}+\ldots +a_0)$.  Note that $\phi$ is a bijection because it has an inverse (see Proposition \ref{proposition:functions:InverseBijection}).  Additionally, $\phi$ preserves the operations of addition and multiplication:  $\phi(x+_1y)=\phi(x)+_2\phi(y)$ and
+Consider the two rings $R_1={\mathbb Z}[x]$ and $R_2={\mathbb Z}[y]$.  Obviously, these two rings are basically the same except we replace $x$ with $y$.  We can make a formal correspondence between the two rings by defining a function $\phi:R_1\rightarrow R_2$ as follows: $\phi(a_nx^n+a_{n-1}x^{n-1}+\ldots +a_0)=(a_ny^n+a_{n-1}y^{n-1}+\ldots +a_0)$.  Note that $\phi$ is a bijection because it has an inverse (see Proposition \ref{proposition:Functions:InverseBijection}).  Additionally, $\phi$ preserves the operations of addition and multiplication:  $\phi(x+_1y)=\phi(x)+_2\phi(y)$ and
 $\phi(x\cdot_1y)=\phi(x)\cdot_2\phi(y)$.  In other words, $\phi$ gives us a way to ``translate'' every operation we do in $R_1$ to a corresponding operation in $R_2$.
 \end{example}
 The above example may seem trivial, but it turns out that in some cases similar construction can make deep connections between rings that seem quite different:
@@ -812,7 +814,7 @@ where multiplication of matrices was used.  So, $\phi(z\cdot_1 w)=\phi(z)\cdot_2
 \end{example}
 The two examples above show how we can relate different rings that have the same structure. In both examples we use a bijection that preserves the addition and multiplication operations to make a correspondence between two rings. We may generalize this type of bijection as follows.
 
-\begin{defn}\label{Isomorphism}
+\begin{defn}{Isomorphism}
 Let $\phi:R_1\rightarrow R_2$ be a bijection between rings $R_1$ and $R_2$.  We say that $\phi$ is an \term{isomorphism} from $R_1$ to $R_2$ if the following two equations are satisfied for all $x,y\in R_1$:
 \begin{equation}\label{iso_add}
 \phi(x+_1y)=\phi(x)+_2\phi(y)
@@ -875,7 +877,7 @@ This shows $f(z\cdot w)=f(z)\cdot f(w)$, so property two of isomorphisms is sati
 Note that there can be more than one isomorphism between two rings.
 
 \begin{exercise}{}
-In Example \ref{example:rings:conjugate} we gave an isomorphism from ${\mathbb C}$ to itself.  Give another example of an isomorphism from ${\mathbb C}$ to itself.  (\emph{Hint}:  Make your example as easy as possible.)
+In Example \ref{example:Rings:conjugate} we gave an isomorphism from ${\mathbb C}$ to itself.  Give another example of an isomorphism from ${\mathbb C}$ to itself.  (\emph{Hint}:  Make your example as easy as possible.)
 \end{exercise}
 
 \begin{exercise}{phi_iso}
@@ -888,14 +890,14 @@ Given $\phi:  {\mathbb Q}[x,y]\rightarrow{\mathbb Q}[x,y]$, defined by $\phi(p(x
 
 When we restrict the isomorphism, so that $R_1=R_2$, we have a special type of isomorphism known as an \emph{automorphism}.
 
-\begin{defn}\label{automorphism}
+\begin{defn}{automorphism}
 A \term{ring automorphism} is a ring isomorphism whose domain is equal to its range.
 \end{defn}
 
 \begin{example}{}
 Show that $f(a+bi)=a-bi$ is a ring automorphism from ${\mathbb C}$ to ${\mathbb C}$.
 
-We showed in Example \ref{example:rings:conjugate} that this function is a ring isomorphism.  It should be clear that the domain and range of $f$ are the same, so $f$ is also a ring automorphism.  
+We showed in Example \ref{example:Rings:conjugate} that this function is a ring isomorphism.  It should be clear that the domain and range of $f$ are the same, so $f$ is also a ring automorphism.  
 \end{example}
 
 \begin{exercise}{abc_iso}
@@ -906,18 +908,18 @@ Consider the function $f((a,b,c))=(a,-b,c)$, where $a,b,c\in{\mathbb R}$.
 \item $f((a,b,c)+(d,e,f))=f((a,b,c))+f((d,e,f))$, and 
 \item $f((a,b,c)\cdot(d,e,f))=f((a,b,c))\cdot f((d,e,f))$.
 \end{enumerate}
-\item Is $f$ an isomorphism? \hyperref[ringsHints]{(*Hint*)} 
+\item Is $f$ an isomorphism? \hyperref[sec:Rings:Hints]{(*Hint*)} 
 \item Is $f$ an automorphism?
 \end{enumerate}
 \end{exercise}
 
 \section{Ring homomorphisms: kernels, and ideals}
-\label{sec:RingHomomorphismKernelsIdeals}
+\label{sec:Rings:RingHomomorphismKernelsIdeals}
 
 As we have seen above, ring isomorphisms are functions that are bijections and preserve the additive and multiplicative operations. It is possible to have functions that are not bijections but still preserve the additive and multiplicative operations.  One important example is a function that we are very familiar with: 
 
 \begin{example}{ring_homo}
-Define the function $f:{\mathbb Z}\rightarrow {\mathbb Z}_n$ defined by $f(x)=\bmod(x,n)$, where $n$ is a fixed integer $> 1$.  In Proposition~\ref{proposition:modular:number_remainder} we showed that for any $\ell,m \in {\mathbb Z}$ we have:
+Define the function $f:{\mathbb Z}\rightarrow {\mathbb Z}_n$ defined by $f(x)=\bmod(x,n)$, where $n$ is a fixed integer $> 1$.  In Proposition~\ref{proposition:ModularArithmetic:number_remainder} we showed that for any $\ell,m \in {\mathbb Z}$ we have:
 \begin{enumerate}[(a)]
 \item
 $\bmod(\ell+ m,n) = \bmod(\ell,n) \oplus \bmod(m,n)$, 
@@ -929,7 +931,7 @@ We may rewrite these equations in terms of $f$ as $f(\ell+ m) = f(\ell) \oplus f
 \end{example}
 We may generalize this example with the following definition.
 
-\begin{defn}\label{homomorph}
+\begin{defn}{homomorph}
 A function $f:R_1\rightarrow R_2$ between rings $R_1,R_2$ is called a \term{ring homomorphism} if $f$ has the following properties:
 \begin{equation}\label{eq:homo_add}
 f(\ell+_1 m) = f(\ell) +_2 f(m)
@@ -998,7 +1000,7 @@ So, the second ring homomorphism property holds and we can say that $f$ is a rin
 \end{enumerate}
 \end{proof}
 \end{example}
-The homomorphism in Example \ref{example:rings:polyhom} is just one example of an important class of homomorphisms.  
+The homomorphism in Example \ref{example:Rings:polyhom} is just one example of an important class of homomorphisms.  
 
 \begin{exercise}{}
 Give $a\in{\mathbb Q}$ define the function $f_a:  {\mathbb Q}[x]\rightarrow{\mathbb Q}$ by\\ $f_a(p(x))=p(a)$.  For what values of $a$ is $f_a$ a homomorphism?
@@ -1022,10 +1024,11 @@ where $B=
 
 
 \subsection{Homomorphism kernels and ideals}
+\label{subsec:Rings:RingHomomorphismKernelsIdeals:KernalAndIdeals}
 
-When we discussed homomorphisms of groups, we introduced the notion of the kernel of a homomorphism.  According to Definition \ref{def:kernel}, the kernel of a group homomorphism is the inverse image of the identity element of the codomain.  We may make a similar definition for ring homomorphisms.  
+When we discussed homomorphisms of groups, we introduced the notion of the kernel of a homomorphism.  According to Definition \ref{definition:Homomorphism:defkernel}, the kernel of a group homomorphism is the inverse image of the identity element of the codomain.  We may make a similar definition for ring homomorphisms.  
 
-\begin{defn}\label{kernel}
+\begin{defn}{kernel}
 If $f:R_1\rightarrow R_2$ is a ring homomorphism, then the set $\{x\in R_1|f(x)=0\}$ is called the \term{kernel} of $f$, notated $Ker(f)$.
 \end{defn}
 
@@ -1041,18 +1044,18 @@ Given $f_a:{\mathbb Q}[x]\rightarrow{\mathbb Q}$, where $f_a(p(x))=p(a)$.  Find 
 \end{exercise}
 
 \begin{exercise}{}
-In Exercise \ref{exercise:rings:R_C_homo}, we defined a function $f:{\mathbb R}[x]\rightarrow C_3({\mathbb R})$.
+In Exercise \ref{exercise:Rings:R_C_homo}, we defined a function $f:{\mathbb R}[x]\rightarrow C_3({\mathbb R})$.
 \begin{enumerate}[(a)]
 \item For what values of $a$ is $x^3+a$ in $Ker(f)$?
 \item Consider the polynomial $p(x)=(x^3-1)\cdot q(x)+a_2x^2+a_1x+a_0$.  Show that $p(x)\in Ker(f)$ if and only if $a_0=a_1=_2=0$.
 \end{enumerate}
 \end{exercise}
 
-We saw previously that the kernel of a group homomorphism is always a subgroup of the domain (see Proposition \ref{proposition:homomorph:homo_ker_normal}).  We may ask the same question of rings:  Given a ring homomorphism $f$, is $Ker(f)$ also a ring?
+We saw previously that the kernel of a group homomorphism is always a subgroup of the domain (see Proposition \ref{proposition:Homomorphism:homo_ker_normal}).  We may ask the same question of rings:  Given a ring homomorphism $f$, is $Ker(f)$ also a ring?
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]
-    \item Given the homomorphism $f$ defined in Example~\ref{example:rings:ring_homo}, show that $f^{-1}(0)$ is \emph{not} a ring.  Which properties fail?
+    \item Given the homomorphism $f$ defined in Example~\ref{example:Rings:ring_homo}, show that $f^{-1}(0)$ is \emph{not} a ring.  Which properties fail?
     \item Given the same example, show that $f^{-1}(1)$ is \emph{also not} a ring.  Which ring properties fail?
 \end{enumerate}
 \end{exercise}
@@ -1060,7 +1063,7 @@ We saw previously that the kernel of a group homomorphism is always a subgroup o
 Although the set $f^{-1}(0)$ is not a ring, nonetheless it does have some nice properties.
 
 \begin{exercise}{kernel_props}
-Given the function $f$ defined in Example~\ref{example:rings:ring_homo}, and let $S=f^{-1}(0)$.
+Given the function $f$ defined in Example~\ref{example:Rings:ring_homo}, and let $S=f^{-1}(0)$.
 \begin{enumerate}[(a)]
 \item Show that if $a,b \in S$, then $a+b \in S$.  In other words, $S$ is closed under addition.
 \item Show that if $a,b \in S$, then $a\cdot b \in S$.  In other words, $S$ is closed under multiplication.
@@ -1069,7 +1072,7 @@ Given the function $f$ defined in Example~\ref{example:rings:ring_homo}, and let
 \end{enumerate}
 \end{exercise}
 
-The following proposition generalizes the results in Exercise \ref{exercise:rings:kernel_props}.
+The following proposition generalizes the results in Exercise \ref{exercise:Rings:kernel_props}.
 
 \begin{prop}{kernelIsIdeal}
 The kernel of a homomorphism $f:R_1\rightarrow R_2$ satisfies the following properties:
@@ -1095,7 +1098,7 @@ The kernel of a homomorphism $f:R_1\rightarrow R_2$ satisfies the following prop
 &a\in f^{-1}(0),~b\in R_1 & \text{given}\\
 &f(a)=0 & \text{def. of inverse}\\
 &f(a\cdot b)=f(a)\dot f(b) & \text{def. of homomorphism}\\
-&f(a\cdot b)=0\cdot f(b)=0 & \text{substitution \& Prop. \ref{proposition:rings:add_inverse}}\\
+&f(a\cdot b)=0\cdot f(b)=0 & \text{substitution \& Prop. \ref{proposition:Rings:add_inverse}}\\
 &ab\in f^{-1}(0) & \text{def. of inverse}
 \end{align*}
 \item
@@ -1126,7 +1129,7 @@ f(0)&=0 & \text{proven above}\\
 
 Any set $J$ which has properties (1-4) is called an \textit{ideal}.  We formalize the definition of ideal as follows.
 
-\begin{defn}\label{def:ideal}
+\begin{defn}{defideal}
 Given a ring $R$, suppose $J \subset R$ satisfies the following properties:
 \begin{enumerate}[(a)]
 \item $J$ is closed under the ring's additive operation:  in other words if $j_1,j_2\in J$ then $j_1+j_2\in J$.
@@ -1137,17 +1140,17 @@ Then $J$ is called an \term{ideal} of $R$.
 \end{defn}
 
 \begin{exercise}{}
-In Example we showed the property that for any homomorphism $f:R_1\rightarrow R_2$, we have $0_1\in Ker(f)$.  Using Definition \ref{def:ideal}, show that for any ideal $J$ the zero element is an element of $J$. 
+In Example we showed the property that for any homomorphism $f:R_1\rightarrow R_2$, we have $0_1\in Ker(f)$.  Using Definition \ref{definition:Rings:defideal}, show that for any ideal $J$ the zero element is an element of $J$. 
 \end{exercise}
 
-In view of Definition \ref{def:ideal}, we may restate Proposition \ref{proposition:rings:kernelIsIdeal} as follows.
+In view of Definition \ref{definition:Rings:defideal}, we may restate Proposition \ref{proposition:Rings:kernelIsIdeal} as follows.
 
 \begin{prop}{kernel_ideal}
 The kernel of a homomorphism is always an ideal.
 \end{prop}
 
 \begin{exercise}{}
-Find the kernel for the functions in Examples \ref{example:rings:notHomo} and \ref{example:rings:homo}, and Exercise \ref{exercise:rings:homo}.  Determine whether or not these kernels are ideals.
+Find the kernel for the functions in Examples \ref{example:Rings:notHomo} and \ref{example:Rings:homo}, and Exercise \ref{exercise:Rings:homo}.  Determine whether or not these kernels are ideals.
 \end{exercise}
 
 \begin{example}{ZtoZ7}
@@ -1174,7 +1177,7 @@ It follows that $f$ is a ring homomorphism.
 
 \item Remember that the kernel is the set $\{x\in R|f(x)=0\}$ If $f(x)=0$, then $x$ is a multiple of 7. So, the kernel of $f$ is $\{x|x=7n, n\in{\mathbb Z}\}$.
 
-\item Proposition \ref{proposition:rings:kernel_ideal} shows that $Ker(f)$ must be an ideal.  You may also show the three properties directly.
+\item Proposition \ref{proposition:Rings:kernel_ideal} shows that $Ker(f)$ must be an ideal.  You may also show the three properties directly.
 
 \begin{exercise}{kernelClosures}
 Show that $Ker(f)$ is closed under addition, multiplication, and additive inverse.
@@ -1184,7 +1187,7 @@ Show that $Ker(f)$ is closed under addition, multiplication, and additive invers
 
 
 \begin{exercise}{}
-Look back at Proposition~\ref{proposition:modular:number_remainder}.   What is the relationship between this proposition and part(a) of Example \ref{example:rings:ZtoZ7}?
+Look back at Proposition~\ref{proposition:ModularArithmetic:number_remainder}.   What is the relationship between this proposition and part(a) of Example \ref{example:Rings:ZtoZ7}?
 \end{exercise}
 
 \begin{exercise}{complexHomoKer}
@@ -1225,7 +1228,7 @@ Let $f:{\mathbb Q}\times {\mathbb Q}\rightarrow {\mathbb Q}$ be defined by: $f(a
 \end{exercise}
 
 \section{Further properties of ideals and principal ideals}
-\label{sec:FurtherProperties}
+\label{sec:Rings:FurtherProperties}
 
 We arrived at the concept of `ideal' by studying kernels of ring homomorphisms. It turns out that ideals are objects of interest in their own right, without any reference to homomorphisms. In the following, we will investigate some additional properties of ideals.
 
@@ -1238,7 +1241,7 @@ We can see that $J\subset {\mathbb Z}$, and $J$ is closed under addition however
 \end{proof}
 
 \begin{exercise}{}
-Give examples that show the set $J$ in Example \ref{example:rings:not_ideal} fails to satisfy properties (b) and (c).
+Give examples that show the set $J$ in Example \ref{example:Rings:not_ideal} fails to satisfy properties (b) and (c).
 \end{exercise}
 
 \begin{exercise}{}
@@ -1249,7 +1252,7 @@ Give examples that show the set $J$ in Example \ref{example:rings:not_ideal} fai
 \end{exercise}
 
 \begin{exercise}{}
-Show that condition (c) in Definition \ref{def:ideal} is not really necessary:  in other words, show that conditions (a) and (b) imply (c).
+Show that condition (c) in Definition \ref{definition:Rings:defideal} is not really necessary:  in other words, show that conditions (a) and (b) imply (c).
 \end{exercise}
 
 
@@ -1260,12 +1263,12 @@ The intersection of ideals is an ideal.
 \end{prop}
 
 \begin{exercise}{int_ideal}
-Prove Proposition \ref{proposition:rings:int_ideal}.
+Prove Proposition \ref{proposition:Rings:int_ideal}.
 \end{exercise}
 
 We will now look at an important class of ideals.
 
-\begin{defn}\label{set_gen}
+\begin{defn}{set_gen}
 If $a\in R$, then the \term{set generated by a} is \\
 $Ra\equiv \{ra, r\in R\}$
 \end{defn}
@@ -1275,16 +1278,16 @@ For every $a\in R$, the set $Ra$ is an ideal.
 \end{prop}
 
 \begin{exercise}{}
-Prove Proposition \ref{proposition:rings:Ra} by showing that $Ra$ satisfies all properties of an ideal.
+Prove Proposition \ref{proposition:Rings:Ra} by showing that $Ra$ satisfies all properties of an ideal.
 \end{exercise}
 
 
-\begin{defn}\label{principal_ideal}
+\begin{defn}{principal_ideal}
 A \term{principal ideal} is an ideal that is generated by a single element. In other words, $Ra\equiv \{ra,r\in R\}$ is a \term{principal ideal}.
 \end{defn}
 
 \begin{exercise}{ringIsPrId}
-    Show that every ring $R$ is also a principal ideal. \hyperref[ringsHints]{(*Hint*)} 
+    Show that every ring $R$ is also a principal ideal. \hyperref[sec:Rings:Hints]{(*Hint*)} 
 \end{exercise}
 
 \begin{example}{}
@@ -1312,9 +1315,9 @@ Therefore, there does not exist an $a$ such that $a\in {\mathbb Z}[x]=J$. Which 
 \end{example}
 
 \section{Quotient Rings}
-\label{sec:QuotientRings}
+\label{sec:Rings:QuotientRings}
 
-\emph{Quotient rings} allow us to form a ring of equivalence classes, much like quotient groups studied in Chapter~\ref{cosets}.  Follow the next example to make sense of this concept.
+\emph{Quotient rings} allow us to form a ring of equivalence classes, much like quotient groups studied in Chapter~\ref{Cosets}.  Follow the next example to make sense of this concept.
 
 \begin{example}{}
 Define $f: {\mathbb Z}_{10}\rightarrow {\mathbb Z}_5$ by $f(n)=\bmod(n,5)$.
@@ -1345,10 +1348,10 @@ f^{-1}(4)&=\text{the set of all $n\in{\mathbb Z}_{10}$ such that} f(n)=4=\{4,9\}
 \end{enumerate}
 
 Notice that $f^{-1}(0)\cup f^{-1}(1)\cup f^{-1}(2)\cup f^{-1}(3)\cup f^{-1}(4)={\mathbb Z}_{10}$ and $f^{-1}(m)\cap f^{-1}(n)=\emptyset$ if $m\neq n$.\\
-We may recall the definition of \term{partition} from Section \ref{Partitions1} 
-(Definition \ref{def:Partition}), which we repeat here for convenience.
+We may recall the definition of \term{partition} from Section \ref{sec:EquivalenceRelations:PartitionsAndProperties} 
+(Definition \ref{definition:EquivalenceRelations:defPartition}), which we repeat here for convenience.
 
-\begin{defn}\label{partition}
+\begin{defn}{partition}
 A \term{partition} of a set $S$ is a set of subsets $A_1,\dots A_n$ such that:
 \begin{enumerate}[(a)]
 \item $\cup_{m=1}^n A_m=S$
@@ -1356,8 +1359,8 @@ A \term{partition} of a set $S$ is a set of subsets $A_1,\dots A_n$ such that:
 \end{enumerate}
 \end{defn}
 
-The sets $f^{-1}(0)\dots f^{-1}(4)$ are called \textit{inverse images}. The inverse images of $f$ divide ${\mathbb Z}_{10}$ into \textit{equivalence classes}.  (Review Definition \ref{DefEquivRel}.)
-(Actually, we showed in Proposition \ref{proposition:EquivalenceRelationsChap:FuncIsRange} that the inverse images of a function always divide the domain into equivalence classes.)\\
+The sets $f^{-1}(0)\dots f^{-1}(4)$ are called \textit{inverse images}. The inverse images of $f$ divide ${\mathbb Z}_{10}$ into \textit{equivalence classes}.  (Review Definition \ref{definition:EquivalenceRelations:DefEquivRel}.)
+(Actually, we showed in Proposition \ref{proposition:EquivalenceRelations:FuncIsRange} that the inverse images of a function always divide the domain into equivalence classes.)\\
 
 \begin{figure}[H]
 \begin{center}
@@ -1414,7 +1417,7 @@ $\{4,9\}$ & $\{0,5\}$ & $\{4,9\}$ & $\{3,8\}$ & $\{2,7\}$ & $\{1,6\}$ \\
 
 The equivalence classes form a ring.  This is our first example of a \term{quotient ring}.  We write this ring as ${\mathbb Z}_{10}/{\mathbb Z}_5$.  (Recall we used a similar notation for quotient groups.)  We will formally define quotient rings below.
 
-\begin{defn}\label{quotient ring}
+\begin{defn}{quotient ring}
 Let $J$ be an ideal of ring $R$.  The \term{quotient ring} of $R$ by $D$ is the set $R/J$ consisting of all equivalence classes modulo $J$ in $R$, together with binary operations $+$ and $\cdot$ defined by the following:
 \begin{align*}
 (x+J)+(y+J)&=(x+y)+J \text{ and}\\
@@ -1423,7 +1426,7 @@ Let $J$ be an ideal of ring $R$.  The \term{quotient ring} of $R$ by $D$ is the 
 \end{defn}
 
 \begin{exercise}{Iso_Z10_to_Z5}
-The quotient ring ${\mathbb Z}_{10}/{\mathbb Z}_5$ is isomorphic to another ring that we are familiar with. Can you identify this familiar ring?  \hyperref[ringsHints]{(*Hint*)} 
+The quotient ring ${\mathbb Z}_{10}/{\mathbb Z}_5$ is isomorphic to another ring that we are familiar with. Can you identify this familiar ring?  \hyperref[sec:Rings:Hints]{(*Hint*)} 
 %answer: ${\mathbb Z}_5$
 \end{exercise}
 
@@ -1438,17 +1441,17 @@ Define $f:{\mathbb Z}_3\times {\mathbb Z}_3\rightarrow {\mathbb Z}_3$ by $f(a,b)
 \item What are the inverse images of $f$?
 \item Use the definition of partition to show that the inverse images form a partition of the domain of $f$.
 \item Make an addition and multiplication tables for the quotient ring, which consist of the inverse images.
-\item What ring is isomorphic to the quotient ring?  \hyperref[ringsHints]{(*Hint*)} 
+\item What ring is isomorphic to the quotient ring?  \hyperref[sec:Rings:Hints]{(*Hint*)} 
 \end{enumerate}
 \end{exercise}
 
 
 \section{Integral domains, Principal ideal domains and fields}
-\label{sec:IntegralDomainsPrincipalIdealDomains}
+\label{sec:Rings:IntegralDomainsPrincipalIdealDomains}
 
 In high school algebra, we learn that if $a\cdot b=0$, then either $a=0$ or $b=0$.  This real number property is helpful when solving polynomial equations.  We will see that ring elements do not \emph{always} follow this rule.
 
-\begin{defn}\label{zero_divisor}
+\begin{defn}{zero_divisor}
 If $a,b\in R$ with $a\neq 0,~b\neq 0,$ and $ab=0$, then $a$ and $b$ are called \term{zero divisors}.
 \end{defn}
 
@@ -1476,12 +1479,12 @@ Suppose that $R$ is a ring, and suppose $a \in R$ has a multiplicative inverse. 
 \end{prop}
 
 \begin{exercise}{zerodivisor}
-Prove Proposition~\ref{proposition:rings:zerodivisor}\hyperref[ringsHints]{(*Hint*)} 
+Prove Proposition~\ref{proposition:Rings:zerodivisor}\hyperref[sec:Rings:Hints]{(*Hint*)} 
 \end{exercise}
 
 Many rings have no zero divisors, other than zero itself.
 
-\begin{defn}\label{int_dom}
+\begin{defn}{int_dom}
 A commutative ring that has no zero divisors is called an \term{integral domain}.
 \end{defn}
 
@@ -1491,12 +1494,12 @@ ${\mathbb Z},~{\mathbb R},~{\mathbb C},~and~{\mathbb Q}$ are all integral domain
 Show that ${\mathbb Z}_p$ is an integral domain if $p$ is prime.
 
 \begin{proof}
-We have shown in Example \ref{example:rings:Zn_ring} that ${\mathbb Z}_p$ is a commutative ring for all $p\in{\mathbb Z}$.  It remains to show that ${\mathbb Z}_p$ has no zero divisors.  We will show this by contradiction.
+We have shown in Example \ref{example:Rings:Zn_ring} that ${\mathbb Z}_p$ is a commutative ring for all $p\in{\mathbb Z}$.  It remains to show that ${\mathbb Z}_p$ has no zero divisors.  We will show this by contradiction.
 
-Suppose ${\mathbb Z}_p$ has a zero divisor $a\in{\mathbb Z}_p$ such that $a\neq 0$.  Then by Definition~\ref{zero_divisor}, there is some $b\in{\mathbb Z}_p$ such that $b\neq 0$ and $a\odot b=0$.  So:
+Suppose ${\mathbb Z}_p$ has a zero divisor $a\in{\mathbb Z}_p$ such that $a\neq 0$.  Then by Definition~\ref{definition:Rings:zero_divisor}, there is some $b\in{\mathbb Z}_p$ such that $b\neq 0$ and $a\odot b=0$.  So:
 \begin{align*}
 &a\odot b=\bmod(ab,p)=0 & \text{Def. of }\odot\\
-&p \text{ divides } ab & \text{Proposition }\ref{proposition:modular:equivalence_alt}\\
+&p \text{ divides } ab & \text{Proposition }\ref{proposition:ModularArithmetic:equivalence_alt}\\
 &p \text{ divides } a \text{ or } b & \text{Euclid's Lemma}\\
 \end{align*}
 But how can $p$ divide $a$ or $b$ when $p>a$ and $p>b$?  It is not possible.  So our assumption that ${\mathbb Z}_p$ has a zero divisor $a$ is false.  So ${\mathbb Z}_p$ has no zero divisors and ${\mathbb Z}_p$ is an integral domain.
@@ -1507,7 +1510,7 @@ But how can $p$ divide $a$ or $b$ when $p>a$ and $p>b$?  It is not possible.  So
 Prove that ${\mathbb Q}[\sqrt[3]{2}]$ is an integral domain.
 
 \begin{proof}
-In Example \ref{example:rings:extension_ring} we showed that ${\mathbb Q}[\sqrt[3]{2}]$ is a ring.  It remains to show that ${\mathbb Q}[\sqrt[3]{2}]$ is commutative and contains no zero divisors.  We know that elements of ${\mathbb Q}[\sqrt[3]{2}]$ are real numbers, which are commutative by nature.  Thus, ${\mathbb Q}[\sqrt[3]{2}]$ inherits commutativity from the real numbers.  Additionally, real numbers have no zero divisors.  So again, this property is inherited by ${\mathbb Q}[\sqrt[3]{2}]$ and we can conclude that ${\mathbb Q}[\sqrt[3]{2}]$ is an integral domain.
+In Example \ref{example:Rings:extension_ring} we showed that ${\mathbb Q}[\sqrt[3]{2}]$ is a ring.  It remains to show that ${\mathbb Q}[\sqrt[3]{2}]$ is commutative and contains no zero divisors.  We know that elements of ${\mathbb Q}[\sqrt[3]{2}]$ are real numbers, which are commutative by nature.  Thus, ${\mathbb Q}[\sqrt[3]{2}]$ inherits commutativity from the real numbers.  Additionally, real numbers have no zero divisors.  So again, this property is inherited by ${\mathbb Q}[\sqrt[3]{2}]$ and we can conclude that ${\mathbb Q}[\sqrt[3]{2}]$ is an integral domain.
 \end{proof}
 \end{example}
 
@@ -1553,9 +1556,9 @@ Since $D$ is an integral domain, then $D$ has no zero divisors.  This means that
 \end{prop}
 
 
-In Definition \ref{principal_ideal} we learned that a principal ideal is generated by a single element of a ring, $R$.  We can now combine this idea with that of the integral domain.
+In Definition \ref{definition:Rings:principal_ideal} we learned that a principal ideal is generated by a single element of a ring, $R$.  We can now combine this idea with that of the integral domain.
 
-\begin{defn}\label{princ_ideal_dom}
+\begin{defn}{princ_ideal_dom}
 A \term{principal ideal domain} is an integral domain, all of whose ideals are principal.
 \end{defn}
 
@@ -1581,17 +1584,17 @@ We can disprove this by counterexample.  Consider, for example, $3,4\in{\mathbb 
 
 The previous exercise is an example of a \emph{prime ideal}, defined below. 
 
-\begin{defn}\label{prime_ideal}
+\begin{defn}{prime_ideal}
 A \term{prime ideal} $J\subset R$ is an ideal such that if $p,q\in R$ and $p\cdot q\in J$, then either $p\in J$ or $q\in J$.
 \end{defn}
 
-\begin{defn}\label{prime element}
+\begin{defn}{prime element}
 When a principal ideal $Ra$ is also a prime ideal, then the generator $a$ is called a \term{prime element}
 \end{defn}
 
-In Exercise \ref{exercise:rings:prime_ideals} (a) you showed that $7$ is a prime element.  However, the result of (b) implies that $7^n$ where $n>1$ is \emph{not} a prime element.  The following definition applies to powers of prime elements.
+In Exercise \ref{exercise:Rings:prime_ideals} (a) you showed that $7$ is a prime element.  However, the result of (b) implies that $7^n$ where $n>1$ is \emph{not} a prime element.  The following definition applies to powers of prime elements.
 
-\begin{defn}\label{prime_power_ideal}
+\begin{defn}{prime_power_ideal}
 Suppose $a$ is a prime element in the ring $R$.  Then for any positive integer $n$, $a^n$ is called a \term{prime power} and $R(a^n)$ is called a \term{prime power ideal}.
 \end{defn}
 
@@ -1633,11 +1636,11 @@ Since $4$ and $3$ are relatively prime, then the only common multiples of $4$ an
 Show that $42{\mathbb Z}=2{\mathbb Z}\cap 3{\mathbb Z}\cap 7{\mathbb Z}$.
 \end{exercise}
 
-Proposition \ref{proposition:rings:int_PPI} is the algebraic way of proving that any integer is the product of primes. The proposition also shows that polynomial can be factored uniquely.  We will explore this more in Section~\ref{sec:polyOverFields} when we discuss polynomial rings.  We need a bit more ring theory first.
+Proposition \ref{proposition:Rings:int_PPI} is the algebraic way of proving that any integer is the product of primes. The proposition also shows that polynomial can be factored uniquely.  We will explore this more in Section~\ref{sec:Rings:PolynomialOverFields} when we discuss polynomial rings.  We need a bit more ring theory first.
 
 \subsection{Division rings and fields\quad
 \sectionvideohref{Q5q-LL4QW4o&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=48}}
-
+\label{subsec:Rings:IntegralDomainsPrincipalIdealDomains:DivisionRingAndField}
 
 %%%% We want to start talking about rings that have a multiplicative identity and inverses.  We'll need some terminology for this. So let's kick off with a definition:
 
@@ -1663,7 +1666,7 @@ Suppose the ring $R$ has more than one element.  Show that the additive identity
 %%%% \begin{enumerate}[(a)]
 %%%% \item
 %%%% Let $R$ be a ring, and let $0$ be the additive identity of $R$.  Show that $a \cdot 0 = 0 \cdot a = 0$ for any element $a \in R$. 
-%%%% \hyperref[sec:polyrings:hints]{(*Hint*)} 
+%%%% \hyperref[sec:Polynomials:Hints]{(*Hint*)} 
 %%%% \item
 %%%% Part (a) shows that every ring element times 0 must be equal to 0.  So in order for 0 to have an inverse, 0 must also be the multiplicative identity. Show that 
 %%% if $R$ has two or more elements, then 0 cannot be the multiplicative identity of $R$.
@@ -1692,11 +1695,11 @@ Suppose the ring $R$ has more than one element.  Show that the additive identity
 
 Although the zero element never has a multiplicative inverse, there are cases where multiplicative inverses exist for every \emph{nonzero} element of a ring. Such a ring is called a \emph{division ring}. 
 
-\begin{defn} \label{def:divisionring}
+\begin{defn}{defdivisionring}
 Given a ring $R$ suppose every nonzero element of $R$ has a multiplicative inverse in $R$, then $R$ is called a \term{division ring}.
 \end{defn}
 
-Let's explore an important example of division rings.  In Example \ref{example:groups:quaternions} we introduced a special group called the quaternion group,\\ $Q_8=\{1,-1,i,-i,j,-j,k,-k\}$, with the following relations:
+Let's explore an important example of division rings.  In Example \ref{example:Groups:quaternions} we introduced a special group called the quaternion group,\\ $Q_8=\{1,-1,i,-i,j,-j,k,-k\}$, with the following relations:
 \begin{enumerate}[(a)]
 \item
 $1$ is the identity
@@ -1723,7 +1726,7 @@ Show that all of the equalities in parts (e) and (f) above may be derived from (
 
 We can extend the quaternion group by taking linear combinations of the elements of ${\mathbb Q}_8$ with real coefficients.  This new set, simply known as the \emph{quaternions}, was discovered by William Rowan Hamilton of Dublin in 1843.  Hamilton's quaternions, notated by ${\mathbb H}$ in his honor, are widely used today in computer graphics to describe motion in three dimensional space and multiple antennae communications systems.  We may define this set formally as follows.
 
-\begin{defn}\label{quaternionring}
+\begin{defn}{quaternionring}
 The set of real \term{quaternions}, denoted by ${\mathbb H}$, is defined by:
 \begin{center}
 ${\mathbb H}=\{a_0+a_1i+a_2j+a_3k:a_0,a_1,a_2,a_3\in {\mathbb R}\}$,
@@ -1802,7 +1805,7 @@ Give three examples of finite division rings.
 
 Division rings with commutative multiplication are called \term*{fields}.  Fields are one of the most important objects of study in all of mathematics.
 
-\begin{defn} \label{def:field}
+\begin{defn}{deffield}
 A division ring $F$ is called a \term{field} if the multiplication operation is commutative. \end{defn}
 
 In many of the rings we've seen so far, the field axioms are also satisfied.  Figure \ref{fig:ring_classes} shows the relationship between the ring classes.
@@ -1814,7 +1817,7 @@ In many of the rings we've seen so far, the field axioms are also satisfied.  Fi
 %\end{center}
 \caption{Ring Classes}\label{fig:ring_classes}
 \end{figure}
-%%%% In the following discussion, we will be considering the case where the polynomial coefficients form a field. We will see in Section~\ref{divisionalgorithm} that this allows us to perform polynomial long division and determine gcd's, very much like we did with integers in the modular arithmetic chapter.
+%%%% In the following discussion, we will be considering the case where the polynomial coefficients form a field. We will see in Section~\ref{sec:Polynomials:PolynomialsAndDivision:divisionalgorithm} that this allows us to perform polynomial long division and determine gcd's, very much like we did with integers in the modular arithmetic chapter.
 
 \begin{exercise}{poly47}
 Which of the following rings are also fields?  Explain your answers.
@@ -1839,7 +1842,7 @@ a & b\\
 where $a,b\in{\mathbb R}$.  Show that $S$ is a field.
 
 \begin{proof}
-We know from Exercise \ref{exercise:rings:ringMatrices} that the set of all $2\times 2$ matrices form a ring.  It remains to show that $S$ is a division ring with multiplicative commutativity.  It will be important in our proof to know that $S$ has the multiplicative inverse property.  Let's show that first.
+We know from Exercise \ref{exercise:Rings:ringMatrices} that the set of all $2\times 2$ matrices form a ring.  It remains to show that $S$ is a division ring with multiplicative commutativity.  It will be important in our proof to know that $S$ has the multiplicative inverse property.  Let's show that first.
 
 Let $A\in S$ be defined by
 $\begin{bmatrix}
@@ -1853,7 +1856,7 @@ Then $A^{-1}=
 \end{bmatrix}$ (as long as $a$ and $b$ are not both 0)
 because $A\cdot A^{-1}=A^{-1}\cdot A=1$.  It should be clear that $A^{-1}\in S$.  Thus every nonzero element of $S$ has an inverse in $S$ and the multiplicative inverse property holds.  We are now ready to show that $S$ is a division ring.
 
-We will show that $S$ is a division ring by showing that it has no zero divisors.  At this point, Proposition~\ref{proposition:rings:zerodivisor} comes in handy.  We've already seen that every nonzero element  $A \in S$ has an inverse. Proposition~\ref{proposition:rings:zerodivisor} immediately tells us that $A$ is not a zero divisor. Since $A$ was an arbitrary element of $S$, then there are no zero divisors in $S$ and $S$ is a division ring.
+We will show that $S$ is a division ring by showing that it has no zero divisors.  At this point, Proposition~\ref{proposition:Rings:zerodivisor} comes in handy.  We've already seen that every nonzero element  $A \in S$ has an inverse. Proposition~\ref{proposition:Rings:zerodivisor} immediately tells us that $A$ is not a zero divisor. Since $A$ was an arbitrary element of $S$, then there are no zero divisors in $S$ and $S$ is a division ring.
   
 We have shown that $S$ is a division ring, but we must now prove commutativity of multiplication.
 
@@ -1893,7 +1896,7 @@ a & b\\
 where $a,b\in {\mathbb R}$ is \emph{not} a field.
 \end{exercise}
 
-Looking bac at Section~\ref{sec:extensionRings} we can see that we were creating fields without knowing it!  The sets $\widehat{\mathbb{Q}}[x]$, 
+Looking bac at Section~\ref{sec:Rings:ExtensionRings} we can see that we were creating fields without knowing it!  The sets $\widehat{\mathbb{Q}}[x]$, 
 $\widehat{\mathbb{R}}[x]$,
 $\widehat{\mathbb{Z}}_p[x]$,
 $\widehat{\mathbb{C}}[x]$
@@ -1903,6 +1906,7 @@ $\mathbb{Z}_p[x]$,
 $\mathbb{C}[x]$. 
 
 \subsection{Further properties of fields}
+\label{subsec:Rings:IntegralDomainsPrincipalIdealDomains:FurtherProperties}
 
 We've just introduced several new concepts, including integral domain, principal ideal domain, division ring, and field. Let's consider how they are related. We know that every field is a division ring (by definition). We also know that not every division ring is a integral domain (${\mathbb H}$ is a example). What about the relation between integral domain and field?
 
@@ -1917,11 +1921,11 @@ If $J$ is an ideal of the ring $R$ and $1 \in J$, then $J = R$.
 \end{prop}
 
 \begin{exercise}{1inIdeal}
-Prove Proposition~\ref{proposition:rings:1inIdeal}
+Prove Proposition~\ref{proposition:Rings:1inIdeal}
 \end{exercise}
 
 
-%%% Definition \ref{def:ideal}
+%%% Definition \ref{definition:Rings:defideal}
 
 %Note that in general, a ring does not require the properties of commutativity, multiplicative inverse or multiplicative identity.  Rings that satisfy these additional conditions form a field.
 
@@ -1936,7 +1940,7 @@ To show that $J=R$, we can show that $J\subset R$ and $R\subset J$.  We already 
  &a\in J \text{ implies } a^{-1}\in R & \text{Given}\\
  &a\cdot a^{-1} = 1 & \text{Def. of mult. inverse}\\
  &a\in J \text{ and } a^{-1}\in R \text{ implies } a\cdot a^{-1}=1\in J & \text{Def. of ideal}\\
- &J = R  & \text{Proposition~\ref{proposition:rings:1inIdeal}}
+ &J = R  & \text{Proposition~\ref{proposition:Rings:1inIdeal}}
 \end{align*}
 
 \end{proof}
@@ -1946,7 +1950,7 @@ To show that $J=R$, we can show that $J\subset R$ and $R\subset J$.  We already 
 Given field $F$, the only two ideals in $F$ are $\{0\}$ and all of $F$.
 
 \begin{proof}
-Suppose $J$ is an ideal in field $F$.  Then either $J=\{0\}$ or $J$ has a nonzero element $a$. By the definition of field, $a$ must have an inverse; and by Proposition~\ref{proposition:rings:idealWithInv}, it follows that $J=F$.
+Suppose $J$ is an ideal in field $F$.  Then either $J=\{0\}$ or $J$ has a nonzero element $a$. By the definition of field, $a$ must have an inverse; and by Proposition~\ref{proposition:Rings:idealWithInv}, it follows that $J=F$.
 \end{proof}
 \end{prop}
 
@@ -1963,12 +1967,12 @@ Suppose that $R$ is a commutative ring such that every ideal contains the multip
 \end{prop}
 
 \begin{exercise}{idealField}
-Prove Proposition~\ref{proposition:rings:idealField}
+Prove Proposition~\ref{proposition:Rings:idealField}
 \end{exercise}
 
 
 \section{Polynomials over fields}
-\label{sec:polyOverFields}
+\label{sec:Rings:PolynomialOverFields}
 
 We saw in the previous section that  $R[x]$ is a ring whenever $R$ is a ring. We may ask a similar question about fields: If $F$ is a field, then is $F[x]$ also a field? We investigate this question in the following exercises.
 
@@ -2022,7 +2026,7 @@ Let $p(x)=\sum_{i=0}^{5} a_ix^i$ and $q(x)=\sum_{j=0}^{3} b_jx^j$ be polynomials
 \item
 What is the degree of $p(x)q(x)$?
 \item
-Give an expression for the highest order term in $p(x)q(x)$. How do you know that this expression is not zero? \hyperref[ringsHints]{(*Hint*)} 
+Give an expression for the highest order term in $p(x)q(x)$. How do you know that this expression is not zero? \hyperref[sec:Rings:Hints]{(*Hint*)} 
 \end{enumerate}
 Note that since $p(x)q(x)$ has a nonzero term, then it can't be the zero polynomial.
 \end{exercise}
@@ -2040,7 +2044,7 @@ Give an expression for the highest order term in $p(x)q(x)$. How do you know tha
 \end{enumerate}
 \end{exercise}
 
-Exercise \ref{exercise:rings:zdzp} establishes the following proposition: 
+Exercise \ref{exercise:Rings:zdzp} establishes the following proposition: 
 
 \begin{prop}{nozerodiv} If $F$ is a field, then $F[x]$ has no zero divisors.
 \end{prop}
@@ -2055,7 +2059,7 @@ Let $F$ be a field and let $f(x)$ be a polynomial in $F[x]$ of degree $n$. Then 
 
 
 \begin{proof}
-Suppose $a_1$ is a solution to $f(x)=0$. Then by Proposition~\ref{proposition:poly:polydivides} it follows that $x-a_1$ divides $f(x)$. Therefore $f(x) = (x-a_1) g_{n-1}(x)$ where the degree of $g_{n-1}(x)=n-1$. 
+Suppose $a_1$ is a solution to $f(x)=0$. Then by Proposition~\ref{proposition:Polynomials:polydivides} it follows that $x-a_1$ divides $f(x)$. Therefore $f(x) = (x-a_1) g_{n-1}(x)$ where the degree of $g_{n-1}(x)=n-1$. 
 
 Now if $a_2 \neq a_1$ is another solution then using our above result we have
 \[ f(a_2) = (a_2 - a_1)g_{n-1}(a_2) = 0. \]
@@ -2075,7 +2079,7 @@ Let $F$ be a field, and let $c$ be any element $F$.  Then $c$ has at most $n$ $n
 
 
 \begin{proof}
-Given the field $F$ let $F[x]$ be the associated polynomial ring over the field $F$. The polynomial $x^n-c$ is an element of $F[x]$. By Proposition~\ref{proposition:rings:FTOA}, the equation $x^n-c=0$ has at most $n$ solutions.  This is exactly the same thing as saying that $c$ has at most $n$ $n^{\text{th}}$ roots.
+Given the field $F$ let $F[x]$ be the associated polynomial ring over the field $F$. The polynomial $x^n-c$ is an element of $F[x]$. By Proposition~\ref{proposition:Rings:FTOA}, the equation $x^n-c=0$ has at most $n$ solutions.  This is exactly the same thing as saying that $c$ has at most $n$ $n^{\text{th}}$ roots.
 \end {proof}
 
 \begin{exercise}{roots}
@@ -2092,7 +2096,7 @@ Find all sixth roots of 1 in $\mathbb{Z}_7$.
 \end{exercise}
 
 
-Take note of the ``at most'' qualification in Proposition~\ref{proposition:rings:FTOA}. There are cases of polynomials in $F[x]$ which do not have  \emph{any} roots in $F$. For example, there are polynomials in $\mathbb{R}[x]$ that have no roots at all in $\mathbb{R}[x]$, as the next examples illustrate.
+Take note of the ``at most'' qualification in Proposition~\ref{proposition:Rings:FTOA}. There are cases of polynomials in $F[x]$ which do not have  \emph{any} roots in $F$. For example, there are polynomials in $\mathbb{R}[x]$ that have no roots at all in $\mathbb{R}[x]$, as the next examples illustrate.
 
 \begin{example}{poly_complex} 
 Find the roots of $p(x)=2x^2+2x+5$.
@@ -2153,16 +2157,16 @@ $q$ is a factor of $a_n$.
 \end{proof}{}
 
 
-Now let's get some practice using Proposition~\ref{proposition:rings:Rationalroots}.
+Now let's get some practice using Proposition~\ref{proposition:Rings:Rationalroots}.
 
 \begin{example}{}
 Find the roots of $f(x)=3x^3+10x^2+11x+6$.
 
-Since this is a cubic polynomial, we can't use the quadratic formula, at least not to begin with. The coefficients are integers, so we may use Proposition~\ref{proposition:rings:Rationalroots}, which says that \emph{any} rational roots of $p(x)$ have numerators that are factors of $a_{0}$ and denominators that  are factors of $a_{n}$. This does not guarantee that there are rational roots: sometimes polynomials are irreducible, but we still try every method possible to find those roots unless we know that we can't reduce the polynomial. So we will proceed with trying to find the roots of $f(x)$ using Proposition~\ref{proposition:rings:Rationalroots}.
+Since this is a cubic polynomial, we can't use the quadratic formula, at least not to begin with. The coefficients are integers, so we may use Proposition~\ref{proposition:Rings:Rationalroots}, which says that \emph{any} rational roots of $p(x)$ have numerators that are factors of $a_{0}$ and denominators that  are factors of $a_{n}$. This does not guarantee that there are rational roots: sometimes polynomials are irreducible, but we still try every method possible to find those roots unless we know that we can't reduce the polynomial. So we will proceed with trying to find the roots of $f(x)$ using Proposition~\ref{proposition:Rings:Rationalroots}.
 
 In $f(x)$, possible numerators of any rational roots are: $p=\pm1, \pm2, \pm3, \pm6$. The possible denominators are: $q=\pm1, \pm3$.
 So we have as possible rational roots the following: $p/q= \pm1, \pm\frac{1}{3}, \pm2, \pm\frac{2}{3},\pm3, \pm6$.
-By Proposition~\ref{proposition:poly:polydivides}, if $f(p/q)=0$ then $(x-p/q)$ is a factor of $f(x)$; which would make $p/q$ a root of $f(x)$. After testing all possibilities we find the following rational root:
+By Proposition~\ref{proposition:Polynomials:polydivides}, if $f(p/q)=0$ then $(x-p/q)$ is a factor of $f(x)$; which would make $p/q$ a root of $f(x)$. After testing all possibilities we find the following rational root:
 $f(-2)=3(-2)^3+10(-2)^2+11(-2)+6=0$. Therefore, $x=-2$ is a root of $f(x)$ and $(x+2)$ is a factor of $f(x)$.
 We then use long division to factor $f(x)$.
 
@@ -2209,10 +2213,11 @@ Find the roots of $f(x)=x^3-13x+12$.
 %\end{solution}
 
 \subsection{Algebraic closure of fields}
+\label{subsec:Rings:PolynomialOverFields:ClosureOfField}
 
-In Section~\ref{FTOA} we discussed the so-called \term{Fundamental Theorem of Algebra  (hard part)}, (Proposition~\ref{proposition:poly:FTOAhard})which states that any polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}[x]$. This property leads to a host of important consequences.  Since this property is so important, it's been given a name:
+In Section~\ref{subsec:Rings:PolynomialOverFields:FieldExtension} we discussed the so-called \term{Fundamental Theorem of Algebra  (hard part)}, (Proposition~\ref{proposition:Polynomials:FTOAhard})which states that any polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}[x]$. This property leads to a host of important consequences.  Since this property is so important, it's been given a name:
 
-\begin{defn}\label{def:algclosed}  
+\begin{defn}{defalgclosed}  
 A field $F$ is \term*{algebraically closed}\index{Field!algebraically closed}\index{Algebraically closed!field} if and only if every nonconstant polynomial in $F[x]$ has a root in $F$ (see Figure \ref{algebraicallyclosed}).
 \end{defn}
 
@@ -2223,7 +2228,7 @@ A field $F$ is \term*{algebraically closed}\index{Field!algebraically closed}\in
 \end{center}
 \end{figure}
 
-With this new definition in mind, we can restate Proposition~\ref{proposition:poly:FTOAhard} as follows: 
+With this new definition in mind, we can restate Proposition~\ref{proposition:Polynomials:FTOAhard} as follows: 
 
 \begin{prop}{complexalgclosed}
 $\mathbb{C}$ is algebraically closed.
@@ -2251,7 +2256,7 @@ Use the polynomial $x^6 + 2$ to determine whether or not $\mathbb{Z}_7$ is algeb
 \end{enumerate}
 \end{exercise}
 
-In Section~\ref{subsec:FTOAhard} we proved polynomial factorization (Proposition~\ref{proposition:poly:complexlinear}), namely that any polynomial in $\mathbb{C}[x]$ factors as a product of linear factors. The very same proof goes through for any algebraically closed field $F$.  Thus we have:
+In Section~\ref{subsec:Polynomials:PolynomialsAndDivision:FTOAhard} we proved polynomial factorization (Proposition~\ref{proposition:Polynomials:complexlinear}), namely that any polynomial in $\mathbb{C}[x]$ factors as a product of linear factors. The very same proof goes through for any algebraically closed field $F$.  Thus we have:
 
 \begin{prop}{algClosedLinear}
 Let $F$ be an algebraically closed field. Then any polynomial $p(x)$  of degree $n$ in $F[x]$ can be completely factored as a constant times a product of $n$ linear terms,   as follows:
@@ -2264,17 +2269,19 @@ where $b,a_1,\ldots,a_n \in F$.
 
 
 \subsection{Field extensions and algebraic elements}
+\label{subsec:Rings:PolynomialOverFields:FieldExtension}
+
 We've seen quite a few fields that are not algebraically closed. For example, the rational numbers $\mathbb{Q}$ are not algebraically closed, because e.g. $x^2 - 2$ has no  roots in $\mathbb{Q}$.  However, we were able to find a larger field (namely $\mathbb{R}$) that contains $\mathbb{Q}$ which has the root that $\mathbb{Q}$ is lacking. In this section, we'll talk about situations like this in a general context. 
 
 
 First we need some  terminology to describe the case where one field is contained in  another:
 
 
-\begin{defn}\label{def:subfield}  
+\begin{defn}{defsubfield}  
 Given a field $E$ and $F\subset E$, then $F$ is called a \term{subfield} of $E$ if $F$ is also a field with the same field operations as $E$. Conversely, $E$ is called an \term{extension field}\index{Field!extension} of $F$.
  \end{defn}
 
-The following exercise should  bolster your understanding of Definition~\ref{def:subfield}
+The following exercise should  bolster your understanding of Definition~\ref{definition:Rings:defsubfield}
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]
@@ -2296,7 +2303,7 @@ Give an example of a field, $F$ that is a subset of a field $E$, but is not a su
 
 We also need terminology to describe roots of polynomials in $F[x]$ that aren't in $F$:
 
-\begin{defn}\label{def:algover}  
+\begin{defn}{defalgover}  
 Let $F$ be a subfield of $E$, and let $a\in E$. If $p(a)=0$ for some $p(x) \in F[x]$, then $a$ is \term*{algebraic}\index{Algebraic!element, of a field}\index{Field!algebraic element of} over $F$ (see Figure \ref{algebraicelement}). Otherwise, $a$  is \term*{transcendental}\index{Transcendental!element, of a field}\index{Field!transcendental element of} over $F$.
 \end{defn}
 
@@ -2329,8 +2336,8 @@ Given that $a \in \mathbb{C}$ is algebraic over $\mathbb{Q}$, show that $a^{1/n}
 \end{exercise}
 
 
-\begin{rem}\label{remark:poly:transcendental}
-It's not so easy to show that elements are transcendental. This is because to show that $a$ is transcendental over $F$, you need to show that there's no polynomial whatsoever in $F[x]$  which has $a$ as a root. Let's consider in particular the case $F = \mathbb{Q}$. We saw in Chapter~\ref{complex} that $\mathbb{R}$ has lots of \emph{irrational} numbers, but so far we haven't definitely identified any real number that is transcendental over $\mathbb{Q}$. 
+\begin{rem}\label{remark:Polynomials:transcendental}
+It's not so easy to show that elements are transcendental. This is because to show that $a$ is transcendental over $F$, you need to show that there's no polynomial whatsoever in $F[x]$  which has $a$ as a root. Let's consider in particular the case $F = \mathbb{Q}$. We saw in Chapter~\ref{ComplexNumbers} that $\mathbb{R}$ has lots of \emph{irrational} numbers, but so far we haven't definitely identified any real number that is transcendental over $\mathbb{Q}$. 
 
 In 1844, Joseph Liouville gave the first proof that a transcendental number exists.  Liouville constructed a number (using infinite series) with special properties, and was able to show that it's impossible to construct a polynomial in $\mathbb{Q}[x]$ that has that number as a root. Hermite showed about 30 years later that $e$ was transcendental, and $\pi$ was added to the list (by Lindemann) 10 years after that. 
 
@@ -2351,7 +2358,7 @@ Even today, only  a handful of classes of numbers have been shown to be transcen
 
 For field extensions which have no transcendental elements, the following definition applies:
 
-\begin{defn}\label{def:algfieldextension}  
+\begin{defn}{defalgfieldextension}  
 Suppose $E$ is an extension field of $F$. Then $E$ is called an \term{algebraic extension}\index{Field!algebraic extension} of $F$ if every $a\in E$ is algebraic over $F$. %Otherwise, $E$ is transcendental if it contains at least one $a$ such that $a$ is transcendental over $F$. 
 %$E$ is called a \term{transcendental extension} of $F$.
  \end{defn}
@@ -2376,7 +2383,7 @@ A field extension may be algebraic, but still contain polynomials that have no r
 %\end{enumerate}
 %\end{solution}
 
-\begin{defn}\label{def:algclosure}  
+\begin{defn}{defalgclosure}  
 Let $E$ be an algebraic extension field of $F$. Suppose that for every $p(x) \in E[x]$, there exists $a \in E$ such that $p(a)=0$.  Then  $E$ is  an \term*{algebraic closure}\index{Field!algebraic closure of}\index{Algebraic closure!of a field} of $F$ (see Figure \ref{algebraicclosure}).
 \end{defn}
 
@@ -2395,7 +2402,7 @@ $\mathbb{C}$ is an algebraic closure of $\mathbb{R}$.
 
 
 \begin{proof}{}
-Let $a+bi \in \mathbb{C}$ be arbitrary and let $p(x)=(x-(a+bi))(x-(a-bi))= x^2-2ax+a^2+b^2\in\mathbb{R}[x]$. We see that $a+bi$ is a root of $p(x)$. Since $a+bi$ is arbitrary, we can say that any element of $\mathbb{C}$ is a root of some polynomial in $\in\mathbb{R}[x]$. By Definition~\ref{def:algfieldextension} this makes $\mathbb{C}$ an algebraic extension of $\mathbb{R}$. Additionally, by Proposition~\ref{proposition:rings:complexalgclosed}, $\mathbb{C}$ is algebraically closed. Therefore, by Definition~\ref{def:algclosure}, $\mathbb{C}$ is the algebraic closure of $\mathbb{R}$.
+Let $a+bi \in \mathbb{C}$ be arbitrary and let $p(x)=(x-(a+bi))(x-(a-bi))= x^2-2ax+a^2+b^2\in\mathbb{R}[x]$. We see that $a+bi$ is a root of $p(x)$. Since $a+bi$ is arbitrary, we can say that any element of $\mathbb{C}$ is a root of some polynomial in $\in\mathbb{R}[x]$. By Definition~\ref{definition:Rings:defalgfieldextension} this makes $\mathbb{C}$ an algebraic extension of $\mathbb{R}$. Additionally, by Proposition~\ref{proposition:Rings:complexalgclosed}, $\mathbb{C}$ is algebraically closed. Therefore, by Definition~\ref{definition:Rings:defalgclosure}, $\mathbb{C}$ is the algebraic closure of $\mathbb{R}$.
 \end{proof}
 
 Does every field have an algebraic closure? Let's look at some field extensions we're already familiar with:
@@ -2418,6 +2425,7 @@ Draw a set diagram that shows the relationships between the sets $\mathbb{Q}, \m
 \end{exercise}
 
 \subsection{Applications of algebraic field extensions}
+\label{subsec:Rings:PolynomialOverFields:AppFieldExtension}
 
 We've already seen how field extensions play an important role in mathematics.  The irrational numbers were first introduced using an algebraic  field extension  of $\mathbb{Q}$  (although later it was discovered that not all irrational numbers are algebraic over $\mathbb{Q}$).  Similarly, the complex numbers were created as an algebraic field extension of the real numbers.  But this is just the beginning. Algebraic field extensions have played a pivotal role in a great number of deep mathematical results obtained over the last 200 years. Here is a short list of results which make use of algebraic field extensions:
 
@@ -2430,7 +2438,7 @@ This result relates to field extensions because every solution to an equation th
 \item
 Beginning with the Greeks,  mathematicians tried for thousands of years to find a way to trisect an angle, using only straightedge and compass. In 1837, Pierre Wantzel finally showed that it is \emph{impossible}. His proof built on previous results of Galois. (Think of how many hours over how many centuries were spent on a futile quest!)
 
-This result relates to field extensions in similar fashion as the previous one. Geometrical points in the plane are identified as complex numbers (as we described in Section~\ref{complex_roots}). Every point constructed based on a set of  points is an algebraic combination of the corresponding complex numbers, together with square roots. This means that every constructable point must be contained in a series of field extensions created by successively adding square roots to an existing field. It can be shown that trisecting an angle involves finding a cube root which cannot possibly belong to such a series of extensions.  You may consult:
+This result relates to field extensions in similar fashion as the previous one. Geometrical points in the plane are identified as complex numbers (as we described in Section~\ref{sec:ComplexNumbers:ComplexRoots}). Every point constructed based on a set of  points is an algebraic combination of the corresponding complex numbers, together with square roots. This means that every constructable point must be contained in a series of field extensions created by successively adding square roots to an existing field. It can be shown that trisecting an angle involves finding a cube root which cannot possibly belong to such a series of extensions.  You may consult:
 
 \noindent
  \footnotesize{\url{https://terrytao.wordpress.com/2011/08/10/a-geometric-proof-of-the-}}\\
@@ -2439,11 +2447,11 @@ This result relates to field extensions in similar fashion as the previous one. 
 \noindent
  to get a flavor of how this proof goes.
 \item
-A similar constructability problem is known as ``squaring the circle'':  Given a square of side 1, find a circle with the same area using only straightedge and compass. This can be shown to be impossible, as a consequence of the transcendence of $\pi$ alluded to in Remark~\ref{remark:poly:transcendental}.
+A similar constructability problem is known as ``squaring the circle'':  Given a square of side 1, find a circle with the same area using only straightedge and compass. This can be shown to be impossible, as a consequence of the transcendence of $\pi$ alluded to in Remark~\ref{remark:Polynomials:transcendental}.
 \end{itemize}
 
 \section{References}
-\label{sec:rings:refs}
+\label{sec:Rings:References}
 
 The following links talk about different applications of rings:
 

@@ -1,5 +1,5 @@
 \section{Solutions for ``Induction''}
-\subsection{Proofs for Section~\ref{sec:basic_induction}}
+\subsection{Proofs for Section~\ref{sec:Induction:BasicInduction}}
 \subsubsection{Induction proofs, type I: sum/product formulas}
 
 
@@ -362,7 +362,7 @@ proof of the induction step is complete.
 it follows that $P(n)$ is true for all $n\in\NN$.  
  
 
-\subsection{Proofs for Section~\ref{strong_induction_practice}}
+\subsection{Proofs for Section~\ref{sec:Induction:StrongInductionPractice}}
 \subsubsection{``Strong induction and recurrences''}
 
 \noindent
@@ -725,7 +725,7 @@ induction step is complete.
 \textbf{Conclusion:} By the strong induction principle, 
 it follows that $P(n)$  is true for all $n\ge1$.
 
-\subsection{Proofs for Section~\ref{practice_non_formula}}
+\subsection{Proofs for Section~\ref{sec:Induction:NonFormulaProofs}}
 
 \textbf{Proof of (a):}
 We use a variation of the above argument (showing that an
@@ -913,16 +913,16 @@ complete.
 \textbf{Conclusion:} By the principle of induction, $P(m)$ holds for all
 $m\in\NN$.
 
-\subsection{Solutions to Section~\ref{sec:fallacies} } 
+\subsection{Solutions to Section~\ref{sec:Induction:FallaciesAndPitfalls} } 
 
-\textbf{Example~\ref{example:induction:fall1}}
+\textbf{Example~\ref{example:Induction:fall1}}
 
 Here there is no problem with the induction step, but the base case
 is not valid despite the claim that it is true in this case.
 Moral: Make sure to \emph{really} check the base case. Simply 
 stating that it is true doesn't make it true!
 
-\textbf{Example~\ref{example:induction:fall2}}
+\textbf{Example~\ref{example:Induction:fall2}}
 The base step is valid, as is the induction step \emph{provided $k$
 is at least $2$.} However, when $k=1$, the induction step breaks down since in
 this case there is no overlap in the variables in (1) and (2), so one cannot
@@ -932,7 +932,7 @@ first link (from $P(1)$ to $P(2)$) is broken, while all other links are valid.
 This single broken link is enough to render the induction argument invalid.
 
 
-\textbf{Example~\ref{example:induction:fall3}}
+\textbf{Example~\ref{example:Induction:fall3}}
 
 The base step is valid, and the induction step is valid, too,
 \emph{provided $k$ is at least $1$.} However, the first $k$-value for which
@@ -944,14 +944,14 @@ the argument breaks down in this case. (When $k\ge1$, there is no problem
 since choosing $i=1$ and $j=k$ we can satisfy both $i+j=k+1$ and 
 the constraints $0\le i,j\le k$.)
 
-\textbf{Example~\ref{example:induction:fall4}}
+\textbf{Example~\ref{example:Induction:fall4}}
 The base step is valid, and the induction step is valid, too,
 \emph{provided $k$ is at least $1$.} However, as in the previous example, 
 when $k=0$ (the first $k$-value we need in the induction step), something goes wrong:
 Namely, in this case, $k-1=0-1=-1$ is negative and hence out of range of 
 the induction hypothesis.
 
-\textbf{Example~\ref{example:induction:fall5}}
+\textbf{Example~\ref{example:Induction:fall5}}
 
 The base step is valid, 
 but there is a problem with the induction step: In this step

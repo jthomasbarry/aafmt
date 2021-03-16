@@ -1,8 +1,8 @@
-\chap{Preliminaries}{BeforeWeBegin}
+\chap{Preliminaries}{Preliminaries}
 
 \section{In the Beginning\quad
-\sectionvideohref{tepwsFnVAqQ&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=2 }}
-\label{sec:InTheBeginning}
+\sectionvideohref{tepwsFnVAqQ&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=2}}
+\label{sec:Preliminaries:InTheBeginning}
 
 \begin{verse}
 Let's start at the very beginning\\
@@ -36,7 +36,7 @@ We close this prologue with the assurance that abstract algebra is a beautiful s
 The original version of this chapter was written by David Weathers. 
 
 \section{Integers, rational numbers, real numbers}
-\label{sec:IntegersRationalRealNumbers}
+\label{sec:Preliminaries:IntegersRationalRealNumbers}
 
 
 We assume that you have already been introduced to the following number systems: integers, rational numbers, and real numbers.  These number systems possess the well-known arithmetic operations of addition, subtraction, multiplication, and division. The following statements hold for all of these number systems. 
@@ -46,7 +46,7 @@ There are number systems for which the following properties do NOT hold (as we s
 \end{warn}
 
 \subsection{Properties of arithmetic operations}
-\label{OpsAndRels}
+\label{subsec:Preliminaries:OpsAndRels}
 
 We assume the following properties of arithmetic operations on the integers, rational numbers, and real numbers. In the following list of properties, $a,b,c$ are arbitrary numbers (integers, rational, or real), unless otherwise specified. We use the notation $a \cdot b$ to denote the product of $a$ and $b$ (i.e. $a$ multipliled by $b$).
 
@@ -163,7 +163,9 @@ Simplify the expression using all laws.
 %\end{exercise}
 
 
-\subsection{Order relations}\label{subsec:orderprop}
+\subsection{Order relations}
+\label{subsec:Preliminaries:OrderRelations}
+
 We also have \term*{order relations}\index{Order relation!in ordinary arithmetic} on the real, rational, and integer number systems, which are expressed by the terms `greater than'  and 'less than' with corresponding symbols $>$ and $<$. If $a$ and $b$ are numbers, then  the mathematical statement `$a > b$' is logically identical to the statement  `$b<a$' (another way of saying this is: $a > b$ if and only if $b < a$). \term{Positive numbers} are defined to be those numbers greater than the additive identity 0, and \term{negative numbers} are defined to be those that  are less than 0. We assume the following properties of the order relation on the integers, rational numbers, and real numbers:
 
 \begin{enumerate}[(A)] 
@@ -203,16 +205,16 @@ $a < c$ \qquad
 
 Besides these order properties, there is a special order property that applies only to integers. This property is called the \term{principle of well-ordering}, and may be stated as a proposition as follows:
 
-\begin{prop}{}\emph{(Well-ordering principle)}
+\begin{prop}{WellOrderPrinciple}\emph{(Well-ordering principle)}
 Any set of positive integers  has a smallest element.
 \end{prop}
 
 \noindent
-This may seem obvious, but in mathematics we have to do our best not to take anything for granted.  Sometimes the most ``obvious'' statements are the most difficult to prove. In this case, the well-ordering principle can be proved from the principle of mathematical induction (see Chapter~\ref{induction}). The proof is beyond the scope of this course.\footnote{It is also possible to prove the principle of mathematical induction from well-ordering principle--it's a matter of personal preference which is taken as an axiom, and which is taken as a consequence.}
+This may seem obvious, but in mathematics we have to do our best not to take anything for granted.  Sometimes the most ``obvious'' statements are the most difficult to prove. In this case, the well-ordering principle can be proved from the principle of mathematical induction (see Chapter~\ref{Induction}). The proof is beyond the scope of this course.\footnote{It is also possible to prove the principle of mathematical induction from well-ordering principle--it's a matter of personal preference which is taken as an axiom, and which is taken as a consequence.}
 
 
 \subsection {Manipulating equations and inequalities}
-\label{subsec:eqsAndIneqs}
+\label{subsec:Preliminaries:EqsAndIneqs}
 
 Following are some common rules for manipulating equations and inequalities. Notice there are two types of inequalities:  \term{strict inequalities} (that use the $>$ or $<$ symbols) and \term{nonstrict inequalities} (that use the $\ge$ or $\le$ symbols).\index{Inequality!strict}\index{Inequality!nonstrict} 
 
@@ -234,7 +236,7 @@ Give specific examples for statements (A--D)   given above. You may use either n
 \end{exercise}
 
 \begin{exercise}{}
-Parts (a-f) of this exercise give a sequence of successive steps in a proof of an important arithmetic fact. For each of the steps, give either an arithmetic operation property (from Section~\ref{OpsAndRels}) or an equation manipulation rule (from Section~\ref{subsec:eqsAndIneqs}) which justifies the step.
+Parts (a-f) of this exercise give a sequence of successive steps in a proof of an important arithmetic fact. For each of the steps, give either an arithmetic operation property (from Section~\ref{subsec:Preliminaries:OpsAndRels}) or an equation manipulation rule (from Section~\ref{subsec:Preliminaries:EqsAndIneqs}) which justifies the step.
 \begin{enumerate}[(a)]
 \item
 $1 -1 = 0$
@@ -262,7 +264,7 @@ This proposition may seem way too obvious to you, but it's actually saying somet
 The following exercise walks you through a proof of another important fact.
 
 \begin{exercise}{}
-For each step in the following argument, give either an arithmetic operation property (from Section~\ref{OpsAndRels}) or an equation manipulation rule (from Section~\ref{subsec:eqsAndIneqs}) which justifies the step.
+For each step in the following argument, give either an arithmetic operation property (from Section~\ref{subsec:Preliminaries:OpsAndRels}) or an equation manipulation rule (from Section~\ref{subsec:Preliminaries:EqsAndIneqs}) which justifies the step.
 
 \noindent
 We first suppose that $a>b$ and $c>d$. 
@@ -309,7 +311,7 @@ Let $a,b,c,d$ be integer, rational, or real numbers such that $a>b$ and $c>d$.  
 %Given that the product of two numbers is equal to 0, then it is true that one of the numbers must be 0.
 
 
-Finally, we're going to prove is that $-1$ is negative.  At this point you may be thinking, `` Duh,  it's got a minus sign, so of course it's negative!'' But if you look back in Section~\ref{OpsAndRels} property (B), you'll see that the minus sign on $-1$ just means that it's the additive inverse of the multiplicative identity 1. On the other hand, negative numbers were defined in  Section~\ref{subsec:orderprop} as numbers that are less than the additive identity 0.  Just because we've decided to write the additive inverse of 1 as $-1$, doesn't mean that we can automatically assume that $-1<0$.  Remember, be skeptical!
+Finally, we're going to prove is that $-1$ is negative.  At this point you may be thinking, `` Duh,  it's got a minus sign, so of course it's negative!'' But if you look back in Section~\ref{subsec:Preliminaries:OpsAndRels} property (B), you'll see that the minus sign on $-1$ just means that it's the additive inverse of the multiplicative identity 1. On the other hand, negative numbers were defined in  Section~\ref{subsec:Preliminaries:OrderRelations} as numbers that are less than the additive identity 0.  Just because we've decided to write the additive inverse of 1 as $-1$, doesn't mean that we can automatically assume that $-1<0$.  Remember, be skeptical!
 
 \begin{prop}{minusOne2}
 $-1 < 0$
@@ -327,9 +329,9 @@ First we show that $-1 > 0$ is false:
 Statement& Reason\\
 \hline
 Suppose $-1>0$ . & Proof by contradiction: supposing the opposite\\
-$1>0$ &  Prop. (A) in Section~\ref{subsec:orderprop}\\
-$1 + (-1)> 0$. & Prop. (C) in  Section~\ref{subsec:orderprop}\\
-$1 + (-1) = 0$ & Prop. (B) in Section~\ref{OpsAndRels}\\
+$1>0$ &  Prop. (A) in Section~\ref{subsec:Preliminaries:OrderRelations}\\
+$1 + (-1)> 0$. & Prop. (C) in  Section~\ref{subsec:Preliminaries:OrderRelations}\\
+$1 + (-1) = 0$ & Prop. (B) in Section~\ref{subsec:Preliminaries:OpsAndRels}\\
 Contradiction is acheived&  The last 2 statements contradict\\
 $-1>0 $ is false& The supposition must be false
 \end{tabular}
@@ -342,24 +344,25 @@ Statement& Reason\\
 \hline
 Suppose $-1=0$ & Proof by contradiction: supposing the opposite\\
 $1 + (-1) = 1 + 0$ & Follows from previous statement by substitution\\
-$0=1$   & Props. (A) and (B) in Section~\ref{OpsAndRels}\\
-$0>0$  & Prop. (A)  in  Section~\ref{subsec:orderprop}\\
-Contradiction is achieved & $0>0$ contradicts Prop. (B)  in  Section~\ref{subsec:orderprop}\\
+$0=1$   & Props. (A) and (B) in Section~\ref{subsec:Preliminaries:OpsAndRels}\\
+$0>0$  & Prop. (A)  in  Section~\ref{subsec:Preliminaries:OrderRelations}\\
+Contradiction is achieved & $0>0$ contradicts Prop. (B)  in  Section~\ref{subsec:Preliminaries:OrderRelations}\\
 $-1 = 0$ is false &The supposition must be false
 \end{tabular}
 
 \noindent
-According to   Property (B) in  Section~\ref{subsec:orderprop}, there are three  possibilities: either $-1>0, -1=0,$ or $-1<0$.  We have eliminated the first two possibilities.  So the third possibility must be true:  $-1<0$. This completes the proof.
+According to   Property (B) in  Section~\ref{subsec:Preliminaries:OrderRelations}, there are three  possibilities: either $-1>0, -1=0,$ or $-1<0$.  We have eliminated the first two possibilities.  So the third possibility must be true:  $-1<0$. This completes the proof.
 
 \end{proof} 
 \footnote{The '$\square$' symbol will be used to indicate the end of a proof. In other words: Ta-daa!}
 
 \begin{exercise}{}
-Using Proposition~\ref{proposition:BeforeWeBegin:minusOne}  Proposition~\ref{proposition:BeforeWeBegin:minusOne2}, and one of the order relation properties, show that the additive inverse of any positive number is negative.
+Using Proposition~\ref{proposition:Preliminaries:minusOne}  Proposition~\ref{proposition:Preliminaries:minusOne2}, and one of the order relation properties, show that the additive inverse of any positive number is negative.
 \end{exercise}
 
 
 \subsection {Exponentiation (VERY important)}
+\label{subsec:Preliminaries:Exponentiation}
 
 Exponentiation is one of the key tools of abstract algebra. It is \emph{essential} that you know your exponent rules inside and out!  
 
@@ -385,7 +388,7 @@ Write an equation that shows another way to express a number raised to a power t
 \end{exercise}
 
 \section{Test yourself}
-\label{sec:TestYourself}
+\label{sec:Preliminaries:TestYourself}
 Test yourself with the following exercises. If you feel totally lost, I strongly recommend that you improve your basic algebra skills before continuing with this course. Trying to do higher math without a confident mastery of basic algebra is like trying to play baseball without knowing how to throw and catch.
 
 \begin{exercise}{TestYourselfQ1}

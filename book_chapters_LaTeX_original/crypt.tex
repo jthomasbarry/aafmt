@@ -8,7 +8,7 @@
 %%%%(c)
 %%%%(c)
 \chap{ Introduction to Cryptography\quad
-\sectionvideohref{tkGDFDuf_Gw&index=33&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}{crypt}
+\sectionvideohref{tkGDFDuf_Gw&index=33&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}{Cryptography}
 
 Cryptography is the study of sending and receiving secret messages.
 The aim of cryptography is to send messages across a channel so only
@@ -21,13 +21,13 @@ heavily dependent on abstract algebra and number theory.
 
 \noindent
 \emph{Prerequisites}: The cryptographic systems we'll be looking at are all based on modular arithmetic.
-To understand this chapter, the reader should be familiar with the material in  Chapters~\ref{modular} and~\ref{functions}. Section \ref{subsec:polyCodes} also uses some simple matrix multiplication.
+To understand this chapter, the reader should be familiar with the material in  Chapters~\ref{ModularArithmetic} and~\ref{Functions}. Section \ref{sec:PolynomialCodes:CyclicBinaryCodes} also uses some simple matrix multiplication.
 \bigskip
 
 Thanks to Tom Judson for material used in this chapter.
 
 \section{Overview and basic terminology}
-\label{sec:crypt:overview}
+\label{sec:Cryptography:Overview}
 
 The message to be sent is called the \term{
 plaintext}\index{Plaintext} message. The disguised message is called
@@ -68,19 +68,20 @@ On the other hand, in \term{single}\index{Key!single}\index{Cryptosystem!single 
 cryptosystems}\index{Key!private}\index{Cryptosystem!private key}
 the same key is used for both encrypting and decrypting messages. To
 encrypt a  plaintext message, we apply to the message procedure which transforms a  plaintext message into an encrypted message.  We will call this procedure an \term{encryption function}\index{Encryption!function}\index{Function!encryption}, and denote it by the letter $f$.  Given the encrypted form of the message, we can recover the 
-original message by applying the \term{decryption function}\index{Decryption!function}\index{Function!decryption} $f^{-1}$, which basically undoes the transformation performed by the encryption function.\footnote{In fact, $f^{-1}$ is the \emph{inverse}\index{Inverse function!in cryptography} of $f$--we will study inverse functions in general in Chapter~\ref{functions}.} 
+original message by applying the \term{decryption function}\index{Decryption!function}\index{Function!decryption} $f^{-1}$, which basically undoes the transformation performed by the encryption function.\footnote{In fact, $f^{-1}$ is the \emph{inverse}\index{Inverse function!in cryptography} of $f$--we will study inverse functions in general in Chapter~\ref{Functions}.} 
 Both the
 encryption function $f$ and the decryption function $f^{-1}$ must be relatively easy to compute; however, they must be virtually impossible to guess if only
 examples of coded messages are available.
 
-In Section~\ref{sec:privateKeyCrypto} we will look at private key cryptography, beginning  with a classic example from antiquity. In Section~\ref{sec:publicKeyCrypto} we will look at a famous example of a public key cryptosystem, 
+In Section~\ref{sec:Cryptography:PrivateKey} we will look at private key cryptography, beginning  with a classic example from antiquity. In Section~\ref{sec:Cryptography:PublicKey} we will look at a famous example of a public key cryptosystem, 
 which was only discovered in the last century and has had an enormous impact on information security in the digital age.
  
 \section{Private key cryptography}
-\label{sec:privateKeyCrypto}
+\label{sec:Cryptography:PrivateKey}
   
  
 \subsection{Shift codes} 
+\label{subsec:Cryptography:PrivateKey:ShiftCode}
  
 \begin{example}{ex1}
 One of the first and most famous private key cryptosystems was the
@@ -123,7 +124,7 @@ different shift.
 \begin{exercise}{encode1}
 \begin{enumerate}[(a)]
 \item
-Encode IXLOVEXMATH using the cryptosystem in Example~\ref{example:crypt:ex1}.
+Encode IXLOVEXMATH using the cryptosystem in Example~\ref{example:Cryptography:ex1}.
 \item
 Encode the same message using the encoding function $f(n) =n \oplus 10$.
 \end{enumerate}
@@ -134,7 +135,7 @@ Encode the same message using the encoding function $f(n) =n \oplus 10$.
 \begin{enumerate}[(a)]
 \item
 Decode ZLOOA WKLVA EHARQ WKHA ILQDO, which was encoded using the
-cryptosystem in Example~\ref{example:crypt:ex1}.
+cryptosystem in Example~\ref{example:Cryptography:ex1}.
 \item
 Decode: OFOBIDRSXQIYENYPVYGCPBYWDROROKBD, which was encoded using a shift code with a shift of 10.
 \end{enumerate}
@@ -216,6 +217,7 @@ Thai script has 44 letters. How many different shift codes are there for the Tha
 
 
 \subsection{Affine codes}
+\label{subsec:Cryptography:PrivateKey:AffineCode}
  
 Let us investigate a slightly more sophisticated cryptosystem. Suppose
 that the encoding function is given by  
@@ -231,7 +233,7 @@ Such a decoding function exists when we can solve the equation
 $$
 m \equiv an + b \pmod{26}\qquad \textrm{or}\qquad a \odot n = m \ominus  b
 $$
-for $n$ in $\mathbb{Z}_{26}$. By Proposition~\ref{proposition:modular:mod_eq_solution} in Chapter~\ref{modular}, this is possible exactly when $a$ has an
+for $n$ in $\mathbb{Z}_{26}$. By Proposition~\ref{proposition:ModularArithmetic:mod_eq_solution} in Chapter~\ref{ModularArithmetic}, this is possible exactly when $a$ has an
 inverse in $\mathbb{Z}_{26}$, which means that $\gcd( a, 26) =1$. 
 Such a cryptosystem is called an \term{affine
 cryptosystem}\index{Cryptosystem!affine}. 
@@ -306,11 +308,11 @@ What is the total number of affine cryptosystems that work on an alphabet of 26 
 \end{exercise}
 
 \begin{exercise}{}
-The Spanish alphabet has 29 letters. Give answers to parts (a), (b), and (c) of Exercise~\ref{exercise:crypt:english}, but with the Spanish alphabet instead of the English alphabet.
+The Spanish alphabet has 29 letters. Give answers to parts (a), (b), and (c) of Exercise~\ref{exercise:Cryptography:english}, but with the Spanish alphabet instead of the English alphabet.
 \end{exercise}
 
 \begin{exercise}{}
-The Hebrew alphabet has  22 letters. Give answers to parts (a), (b), and (c) of Exercise~\ref{exercise:crypt:english}, but with the Hebrew alphabet instead of the English alphabet.
+The Hebrew alphabet has  22 letters. Give answers to parts (a), (b), and (c) of Exercise~\ref{exercise:Cryptography:english}, but with the Hebrew alphabet instead of the English alphabet.
 \end{exercise}
 
 \begin{exercise}{}
@@ -358,6 +360,7 @@ Find the plaintext.
 \end{exercise}
 
 \subsection{Monoalphabetic codes}
+\label{subsec:Cryptography:PrivateKey:MonoalphabeticCode}
 
 In both shift codes and affine codes, one character in the encoded message represents exactly one character in the original message. Cryptosystems that employ such a one-to-one substitution are called \term{monoalphabetic cryptosystems}\index{Cryptosystem!monoalphabetic}.
 The ``cryptoquips''\index{Cryptoquip}  that appear regularly in many newspapers make use of this type of cryptosystem (see Figure~\ref{fig:cryptoquip}).
@@ -374,7 +377,8 @@ What is the total number of monoalphabetic cryptosystems?
 Although there are many different possible monoalphabetic cryptosystems, they are relatively easy to break using frequency analysis. (You may even find web sites that can automatically decode cryptoquips.)
 
 
-\subsection{Polyalphabetic codes}\label{subsec:polyCodes}
+\subsection{Polyalphabetic codes}
+\label{subsec:Cryptography:PrivateKey:PolyCodes}
 
 A cryptosystem would be more secure if a ciphertext letter could
 represent more than one plaintext letter.  To give an example of this
@@ -526,7 +530,7 @@ This same formula carries over to matrix multiplication mod 26, because (as we'v
 
 \begin{exercise}{mat1}
 Suppose that $A = \left( \begin{array}{cc} a & b \\ c & d \end{array} \right)$ is a matrix with entries in ${\Bbb Z}_{26}$, such that  $(a \odot d)  \ominus (b \odot c)$ has no inverse in ${\Bbb Z}_{26}$. Show that $A$ has no inverse in  ${\Bbb Z}_{26}$.
-\hyperref[sec:crypt:hints]{(*Hint*)}
+\hyperref[sec:Cryptography:Hints]{(*Hint*)}
 \end{exercise}
 
 
@@ -546,7 +550,7 @@ $\left( \begin{array}{cc} 2 & 2 \\ 3 & 4 \end{array} \right)$
 \end{multicols}
 \end{exercise}
  \begin{exercise}{}
-For the same matrices as in Exercise~\ref{exercise:crypt:minv}, find the matrix inverses in ${\Bbb Z}_{29}$.
+For the same matrices as in Exercise~\ref{exercise:Cryptography:minv}, find the matrix inverses in ${\Bbb Z}_{29}$.
 \end{exercise}
 
 \begin{exercise}{}
@@ -573,12 +577,14 @@ cryptosystem, because we have a good understanding of how pairs of
 letters appear in the English language. The pair {\em th} appears
 quite often; the pair {\em qz} never appears.  To avoid decryption by
 a third party, we must use a larger matrix than the one we used in
-Example~\ref{example:crypt:4}. 
+Example~\ref{example:Cryptography:4}. 
   
 \subsection{Spreadsheet exercises}
 Spreadsheets can be used to automate many of the calculations that we have looked at in the previous sections.
 
 \subsubsection*{Shift encoding and decoding spreadsheet \quad \sectionvideohref{6tgBvDI1Tiw&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=35}}
+\label{sec:Cryptography:PrivateKey:ShiftCodeAndDecodeSpreadsheet}
+
 
 \begin{exercise}{EngShift}
 In this exercise, you will use a spreadsheet to create an automated shift encoder for English. Please refer to Figure~\ref{fig:AutoShiftEnc} for guidance:
@@ -616,7 +622,7 @@ Once you have completed the formulas, select cells F6 through J11, and use the s
 \end{exercise}
 
 \begin{exercise}{}
-The Spanish alphabet has 3 more letters than English:  `Ch' (comes after C in the alphabet), `Ll'  (comes after L in the alphabet), and `Nn' (comes after N).  Modify the sheet you created in Exercise \ref{exercise:crypt:EngShift} to make a Spanish language shift encoder.  Use your sheet to decode the following message:
+The Spanish alphabet has 3 more letters than English:  `Ch' (comes after C in the alphabet), `Ll'  (comes after L in the alphabet), and `Nn' (comes after N).  Modify the sheet you created in Exercise \ref{exercise:Cryptography:EngShift} to make a Spanish language shift encoder.  Use your sheet to decode the following message:
 
 MS KIUPVX	UIB NIKPS VX MB BPMUYAM MS UMQXA
 
@@ -626,6 +632,7 @@ MS KIUPVX	UIB NIKPS VX MB BPMUYAM MS UMQXA
 \subsubsection*{Affine encoding and decoding spreadsheet
 \quad
 \sectionvideohref{SJstRseE0V4&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=34}}
+\label{sec:Cryptography:PrivateKey:AffineCodeDecodeSpreadsheet}
 
 \begin{exercise}{}
 Create a spreadsheet that can perform any affine encoding on English plaintext.  You may model your spreadsheet on the sheet in Figure~\ref{fig:affine}.  Use your spreadsheet to decode the following message:
@@ -702,7 +709,7 @@ EXUFQPRRGA, $A= \left(
 
 
 \section{Public key cryptography}
-\label{sec:publicKeyCrypto}
+\label{sec:Cryptography:PublicKey}
   
 If traditional cryptosystems are used, anyone who knows enough to
 encode a message will also know enough to decode an intercepted
@@ -723,7 +730,8 @@ with only knowledge of the encoding key.
  
  
 \subsection{The RSA cryptosystem\quad
-\sectionvideohref{NPA_Q0M4n54&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=37}}\label{sec:RSA}
+\sectionvideohref{NPA_Q0M4n54&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=37}}
+\label{subsec:Cryptography:PublicKey:RSA}
  
 The RSA cryptosystem introduced by R.~Rivest\index{Rivest, R.},
 A.~Shamir\index{Shamir, A.}, and L.~Adleman\index{Adleman, L.} in
@@ -743,7 +751,7 @@ The code may be constructed as follows:
 \begin{enumerate}[(a)]
 \item 
 Choose  two random 150-digit prime
-numbers $p$ and $q$. (This is easier said than done!  We will consider some possible ways of doing this in Section~\ref{primality}.)
+numbers $p$ and $q$. (This is easier said than done!  We will consider some possible ways of doing this in Section~\ref{subsec:Cryptography:PublicKey:Primality}.)
 \item
 Compute the product $n= pq$ as well as $ m = (p - 1)(q-1)$. 
 (It can be shown that $m$ is actually the number of positive integers in $\mathbb{Z}_n$ that are relatively prime to $n$.)    
@@ -781,7 +789,7 @@ is computed to be
 $$
 \bmod(395^{487},  667) = 570.
 $$
-(This may seem like a very long computation, but there are fast ways of doing this: see Exercise \ref{exercise:crypt:power} below.)
+(This may seem like a very long computation, but there are fast ways of doing this: see Exercise \ref{exercise:Cryptography:power} below.)
 Using the Euclidean
 algorithm, we determine that $191 E = 1 + 151 m$; therefore, the
 decrypting key is $(n, D) = ( 667, 191)$. We can recover the original 
@@ -805,7 +813,7 @@ This means that
 $$
 y^D = (x^E)^D = x^{DE} = x^{km+1} = (x^m)^k x.
 $$
-At this point we need \emph{Euler's theorem} from Chapter~\ref{cosets}, which states the following. Suppose $m$ is the number of positive integers less than $n$ that are relatively prime to $n$. Then it is true that:
+At this point we need \emph{Euler's theorem} from Chapter~\ref{Cosets}, which states the following. Suppose $m$ is the number of positive integers less than $n$ that are relatively prime to $n$. Then it is true that:
 $$
 x^m \equiv 1 \pmod n.
 $$
@@ -826,10 +834,11 @@ for $D$ by using the Euclidean algorithm. If we had known that $667 =
  
 \begin{exercise}{primes}
 Show that if $p$ and $q$ are primes, then the number of positive integers less than $pq$ which are relatively prime to $pq$ is $(p-1)(q-1)$.
-\hyperref[sec:crypt:hints]{(*Hint*)}
+\hyperref[sec:Cryptography:Hints]{(*Hint*)}
 \end{exercise}
  
-\subsection{Message verification}\label{crypt:verify}
+\subsection{Message verification}
+\label{subsec:Cryptography:PublicKey:MessageVerification}
  
  
 There is a problem of message verification in public key
@@ -859,7 +868,7 @@ message that could have only been sent by Bob.
 
 \subsection{RSA exercises\quad
 \sectionvideohref{1f2C9LXTIRg&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=38}}
- 
+ \label{subsec:Cryptography:PublicKey:RSAExercises}
 
 \begin{exercise}{power}
 This problem demonstrates a fast method for computing very large powers of numbers in modular arithmetic using a spreadsheet.  You will need this method in order to do the subsequent problems. We will demonstrate the method by computing $\bmod(23^{485} ,617)$.
@@ -870,7 +879,7 @@ Use a spreadsheet to compute the following sequence of numbers:
 Note that each power of 23 in this series is the  \emph{square} of the previous power.  So to compute any number in this series, square the previous number and reduce mod 617.  You may use the MOD spreadsheet function.  It is easiest to put all the numbers in a single column. (This way, you can use the spreadsheet's ``Fill down'' feature.)
 \item  Write 485 as a sum of powers of 2.  (This is the same thing as finding the \emph{binary expansion} of 485.)
 \item Using the results of (b), identify a set of entries from the table you found in part (a), such that the product of these entries is equivalent to $23^{485}  \pmod{617}$.
-\hyperref[sec:crypt:hints]{(*Hint*)}
+\hyperref[sec:Cryptography:Hints]{(*Hint*)}
 \item 
 Use your result from (c) to compute $\bmod(23^{485} ,617)$.
 \end{enumerate}
@@ -993,18 +1002,19 @@ On the web, find two four-digit primes
 \item
 Use these primes to compute $n$ and $m$.
 \item
-Choose a value of $E$ which is less than $m$, and use you Diophantine Equation spreadsheet (Exercise~\ref{exercise:modular:DiophantineSS} in the Modular Arithmetic chapter) to find the inverse $D$ under multiplication mod $m$.  If it turns out that $E$ is not relatively prime to $m$, try again.
+Choose a value of $E$ which is less than $m$, and use you Diophantine Equation spreadsheet (Exercise~\ref{exercise:ModularArithmetic:DiophantineSS} in the Modular Arithmetic chapter) to find the inverse $D$ under multiplication mod $m$.  If it turns out that $E$ is not relatively prime to $m$, try again.
 \item
 Test your cryptosystem by encoding `123', and then decoding it. To encode, use the spreadsheet that you 
-created in Exercise~\ref{exercise:crypt:powerplus} earlier in this chapter. To decode, make another copy of the same sheet.
+created in Exercise~\ref{exercise:Cryptography:powerplus} earlier in this chapter. To decode, make another copy of the same sheet.
 \end{enumerate}
 \end{exercise} 
  
  
 \subsection{Additional exercises: identifying prime numbers\quad
-\sectionvideohref{h971dgcV5-0&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=36}}\label{primality}
+\sectionvideohref{h971dgcV5-0&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=36}}
+\label{subsec:Cryptography:PublicKey:Primality}
  
-We saw in Section~\ref{sec:RSA} that the RSA algorithm depends on finding very large primes. In practice, large primes are found using trial and error. That is, we choose a large random number and test to see whether it's prime. 
+We saw in Section~\ref{subsec:Cryptography:PublicKey:RSA} that the RSA algorithm depends on finding very large primes. In practice, large primes are found using trial and error. That is, we choose a large random number and test to see whether it's prime. 
 If the test fails, then try, try again.
 
 So it all comes down to figuring out how to test whether a number is prime. In this section, we consider some possible ways of doing this.
@@ -1014,7 +1024,7 @@ On way to do this is sheer brute force: try dividing by 2,3,4, $\ldots$, and if 
 
 \begin{exercise}{brute}
 To test whether the number $n$ is a prime, you divide $n$ all the integers $1,2,3, \dots$ up to $a$, and see if any of them divides evenly.  How large does $a$ have to be in order to guarantee that $n$ really is a prime?
-\hyperref[sec:crypt:hints]{(*Hint*)}
+\hyperref[sec:Cryptography:Hints]{(*Hint*)}
 \end{exercise}
 
 When testing whether $n$ is prime, by the ``brute force'' method, as long as $n$ is odd we don't need to divide by even numbers (Why?). 
@@ -1062,13 +1072,13 @@ n = x^2 - y^2 = (x-y)(x+y),
 $$
 where both $x$ and $y$ are greater than 1. Consequently, a positive odd integer can be factored exactly when we
 can find integers $x$ and $y$ such that $n = x^2 - y^2$.
-\hyperref[sec:crypt:hints]{(*Hint*)} 
+\hyperref[sec:Cryptography:Hints]{(*Hint*)} 
 \end{exercise} 
 We can use this fact to factor $n$ by trying different pairs of squares in order to get $n$ as the difference of the two.  Of course, we want to do this systematically. So we want to see what values of $x$ and $y$ we actually need to check:
 
 \begin{exercise}{smallest_value}
 In the formula  $n = x^2 - y^2 = (x-y)(x+y)$,  what is the smallest possible value for $x$ that needs to be tested?
-\hyperref[sec:crypt:hints]{(*Hint*)}
+\hyperref[sec:Cryptography:Hints]{(*Hint*)}
 \end{exercise}
 
 There are other special conditions that $x$ and $y$ must satisfy:
@@ -1077,22 +1087,22 @@ There are other special conditions that $x$ and $y$ must satisfy:
 \begin{enumerate}[(a)]
 \item
 Assuming that $n$ is an odd number, show that if $x$ is odd then $y$ is even, and if $x$ is even then $y$ is odd.
-\hyperref[sec:crypt:hints]{(*Hint*)}
+\hyperref[sec:Cryptography:Hints]{(*Hint*)}
 \item
 Show that for any odd number $m$, then $\mod(m^2,4) = 1$.
-\hyperref[sec:crypt:hints]{(*Hint*)}
+\hyperref[sec:Cryptography:Hints]{(*Hint*)}
 \item
 Let $m = x + y$. Show that $m$ is odd, and that we can rewrite  $n  = (x-y)(x+y)$ as: $n = m(m-2y)$. 
 \item
 Show that if $\mod(n,4)=1$, then $y$ must be even.
-\hyperref[sec:crypt:hints]{(*Hint*)}
+\hyperref[sec:Cryptography:Hints]{(*Hint*)}
 \item
 Show that if $\mod(n,4)=3$, then $y$ must be odd.
-\hyperref[sec:crypt:hints]{(*Hint*)}
+\hyperref[sec:Cryptography:Hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
 
-The Fermat primality testing scheme is better for finding factors that are nearly equal. The brute force method of Exercise~\ref{exercise:crypt:brute}  is much better when one factor is much bigger than the other one.
+The Fermat primality testing scheme is better for finding factors that are nearly equal. The brute force method of Exercise~\ref{exercise:Cryptography:brute}  is much better when one factor is much bigger than the other one.
 
 \begin{exercise}{brute}
 \begin{enumerate}[(a)]
@@ -1110,13 +1120,13 @@ Cell E2: ~~=MAX(C6:C99999)
 \end{itemize}
 You may obtain the rest of the formulas using the spreadsheet's ``fill down'' capability.
 \item
-Use this spreadsheet to factor $n=3551$. Then, use your result to find the decoding key $D$ for Exercise~\ref{exercise:crypt:RSA_E} part (a).
+Use this spreadsheet to factor $n=3551$. Then, use your result to find the decoding key $D$ for Exercise~\ref{exercise:Cryptography:RSA_E} part (a).
 \item
-Use this spreadsheet to  find the decoding key $D$ for Exercise~\ref{exercise:crypt:RSA_E} part (b).
+Use this spreadsheet to  find the decoding key $D$ for Exercise~\ref{exercise:Cryptography:RSA_E} part (b).
 \item
-Use this spreadsheet to  find the decoding key $D$ for Exercise~\ref{exercise:crypt:RSA_E} part (c).
+Use this spreadsheet to  find the decoding key $D$ for Exercise~\ref{exercise:Cryptography:RSA_E} part (c).
 \item
-Use this spreadsheet to  find the decoding key $D$ for Exercise~\ref{exercise:crypt:RSA_E} part (d).
+Use this spreadsheet to  find the decoding key $D$ for Exercise~\ref{exercise:Cryptography:RSA_E} part (d).
 \item
 Given the encryption key $(n,E) = (451,231)$, find $D$.
 \item
@@ -1165,14 +1175,14 @@ Use this spreadsheet to factor $n=16394854313$. Then, use your result to find th
 \end{figure}
 
 \begin{exercise}{}
-* Using the results from Exercise~\ref{exercise:crypt:FermatEfficient} parts (d) and (e), modify the spreadsheet that you created in Exercise~\ref{exercise:crypt:FermatSpreadsheet} to make it twice as efficient.  In other words, modify the formula in cell A6 so that you can replace the formula in A7 with the formula: `=A6+2'.
+* Using the results from Exercise~\ref{exercise:Cryptography:FermatEfficient} parts (d) and (e), modify the spreadsheet that you created in Exercise~\ref{exercise:Cryptography:FermatSpreadsheet} to make it twice as efficient.  In other words, modify the formula in cell A6 so that you can replace the formula in A7 with the formula: `=A6+2'.
 \end{exercise}
 
 \subsubsection*{\emph{Probabilistic methods using the ``little Fermat theorem''}}
 In practice, neither the brute force nor the Fermat method is used to verify large prime numbers. Instead, 
 \emph{probabilistic methods} are used: these methods can show that it's very, very likely that $n$ is a prime, but they don't prove for certain. The principal test of this type is the  \term{Miller-Rabin test} for primality. \index{Prime!Miller-Rabin test for} This test uses some of the principles described  below.	 
  
-In Exercise~\ref{exercise:cosets:FermatLittle} in Section~\ref{sec:Fermat}, we will prove the following fact (which is widely known as \emph{Fermat's little theorem}\index{Fermat!little theorem}): 
+In Exercise~\ref{exercise:Cosets:FermatLittle} in Section~\ref{sec:Cosets:Fermat}, we will prove the following fact (which is widely known as \emph{Fermat's little theorem}\index{Fermat!little theorem}): 
 \medskip
 
 If  $p$ is any prime number and $a$ is any nonzero integer, then $a^{p-1} \equiv 1 \pmod{p}$.  
@@ -1305,7 +1315,7 @@ grounds that ``gentlemen do not read each other's mail.''
 \end{rem} 
  
 \section{References and suggested readings}
-\label{sec:References}
+\label{sec:Cryptography:References}
  
 {\small
 \begin{itemize}
