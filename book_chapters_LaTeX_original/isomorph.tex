@@ -8,7 +8,7 @@
 %%%%(c)
 %%%%(c)
 \chap{Isomorphisms of Groups\quad
-\sectionvideohref{JmyIIeUEoAU&index=30&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}{chap:Isomorphism}
+\sectionvideohref{JmyIIeUEoAU&index=30&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}{Isomorphism}
 
 Thanks to Tom Judson for providing the foundational material for this chapter.
 
@@ -73,7 +73,7 @@ Draw a diagram similar to Figure~\ref{fig:Groups:CommDiag}  for the function $g:
 
 \begin{exercise}{iso_4}
 Prove that the function $h(a + bi) = (a+2, b+2)$ is {\bf not} an isomorphism from ${\mathbb C}$ to  ${\mathbb R} \times {\mathbb R}$.
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
  \end{exercise}
 
 
@@ -259,14 +259,14 @@ We'll often use Greek letters ($\phi$ (`phi'), $\gamma$ ('gamma'), $\psi$('psi')
 \end{rem}
 
 \begin{rem}
-Definition~\ref{isomorph_defn} specifies that any isomorphism must be a bijection, i.e. a function that is 1-1 and onto.  Proposition~\ref{proposition:Functions:InverseBijection} tells us that any function that has an inverse is a bijection, and vice versa. You'll find that often the easiest way to show that a function is a bijection is to show it has an inverse.   
+Definition~\ref{definition:Isomorphism:isomorph_defn} specifies that any isomorphism must be a bijection, i.e. a function that is 1-1 and onto.  Proposition~\ref{proposition:Functions:InverseBijection} tells us that any function that has an inverse is a bijection, and vice versa. You'll find that often the easiest way to show that a function is a bijection is to show it has an inverse.   
 \end{rem}
 
 
 \begin{exercise}{iso_8}
 \begin{enumerate}[(a)]
 \item
-Let consider the function $\phi : \mathbb{R} \rightarrow \mathbb{R}$ defined by:  $\phi(x) = 5x$.  Use Definition~\ref{isomorph_defn} to show that $\phi$ defines an isomorphism. What are the two isomorphic groups involved?
+Let consider the function $\phi : \mathbb{R} \rightarrow \mathbb{R}$ defined by:  $\phi(x) = 5x$.  Use Definition~\ref{definition:Isomorphism:isomorph_defn} to show that $\phi$ defines an isomorphism. What are the two isomorphic groups involved?
 \item
 Let $a$ be a nonzero real number, and consider the function $\phi_a : \mathbb{R} \rightarrow \mathbb{R}$ defined by:  $\phi_a(x) = ax$.  Show that $\phi_a$ defines an isomorphism. What are the two isomorphic groups involved?
 \end{enumerate}
@@ -348,10 +348,10 @@ It's possible to use isomorphisms to create other isomorphisms:
 \begin{enumerate}[(a)]
 \item
 Given that  $\phi : G \rightarrow H$ is an  isomorphism, show that  $\phi^{-1} : H \rightarrow G$ is also an  isomorphism.
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \item
 Given that  $\phi : G \rightarrow H$ and $\psi : H \rightarrow K$ are  isomorphisms, show that  $\psi \circ\phi:G \rightarrow K$ is also an  isomorphism.
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
 
@@ -363,13 +363,15 @@ Isomorphism is an equivalence relation on groups.
 
 \begin{exercise}{GpEquivRel}
 Prove Proposition~\ref{proposition:Isomorphism:GpEquivRel}.
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \end{exercise}
 
 \section{Examples and generalizations}
 \label{sec:Isomorphism:ExampleAndGeneralization}
 
 \subsection{Examples of isomorphisms}
+\label{subsec:Isomorphism:ExampleAndGeneralization:Examples}
+
 Now that we have a formal definition of what it means for two groups to be isomorphic, let's look at some more examples, in order to get a good feel for identifying groups that are isomorphic and those that aren't.
 %In the previous examples we only looked at isomorphisms between finite groups.  This simplified our proof process in a couple ways.  One, in showing that the isomorphism was a bijection, all we had to do was verify it visually with the arrow diagram we created, because the arrow diagram contained all the information needed to show that the function was one-to-one and onto.  Two, to show that the function preserved the operations of the respective groups, all we needed was to verify it visually with the Cayley tables, since again the Cayley tables contained all the information needed.
 
@@ -840,7 +842,7 @@ If $G$ is cyclic and $G \cong H$, then $H$ is also cyclic.
 
 \begin{exercise}{cyclic_noncyclic} 
 Prove Proposition \ref{proposition:Isomorphism:cyclic_noncyclic}.
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \end{exercise}
 
 
@@ -871,7 +873,9 @@ An isomorphism from a group to itself is called an \emph{automorphism}\index{Aut
 
 
 \subsection{General properties of isomorphisms\quad
-\sectionvideohref{AI2JXYaaV8U&index=31&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{iso_properties}
+\sectionvideohref{AI2JXYaaV8U&index=31&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
+\label{subsec:Isomorphism:ExampleAndGeneralization:Properties}
+
 In the last two sections we  proved several properties of isomorphic groups and their corresponding isomorphisms.  We collect these properties (and add a few more) in the following proposition:
 
 \begin{prop}{isomorph_theorem_1}
@@ -908,13 +912,13 @@ Assertion (1) follows from the fact that $\phi$ is a bijection.  The proofs of (
 \begin{enumerate}[(a)]
 \item 
 Show part (2) of Proposition~\ref{proposition:Isomorphism:isomorph_theorem_1}.
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \item
 Show part (3) of Proposition~\ref{proposition:Isomorphism:isomorph_theorem_1}.
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \item
 Show part (4) of Proposition~\ref{proposition:Isomorphism:isomorph_theorem_1}.
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise} 
 
@@ -976,7 +980,8 @@ The \emph{quaternion group}\index{Quaternion group ($Q_8$)} (denoted by $Q_8$) w
 
 We have been emphasizing that two groups that are isomorphic are the ``same'' as far as all group properties are concerned. So if we can characterize a class of groups as isomorphic to a well-understood set of groups, then all of the properties of the well-understood groups carry over to the entire class of groups. We will see two examples of this in the following subsections.
 
-\subsection{Classifying cyclic groups}\label{ClassificationOfCylic}
+\subsection{Classifying cyclic groups}
+\label{subsec:Isomorphism:Classification:CylicGroup}
 
 Our first classification result concerns cyclic groups.
 
@@ -1018,7 +1023,7 @@ Prove that $\phi$ defined in Proposition ~\ref{proposition:Isomorphism:isomorph_
 \begin{enumerate}[(a)]
 \item
 In fact, the \emph{converse} of Proposition~\ref{proposition:Isomorphism:isomorph_theorem_3} is true: that is,   If $G$ is isomorphic to ${\mathbb Z_n}$
-then $G$ is a  cyclic group of order $n$.  How do we know this? \hyperref[sec:Isomorphism:hints]{(*Hint*)}
+then $G$ is a  cyclic group of order $n$.  How do we know this? \hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \item
 Is the converse of Proposition~\ref{proposition:Isomorphism:isomorph_theorem_2} also true?  \emph{Justify} your answer.
 \end{enumerate}
@@ -1034,11 +1039,12 @@ If $G$ is a  group of order $p$, where $p$ is a prime number, then $G$ is isomor
 \end{prop}
 
 \begin{exercise}{zp_isomorph}
-Prove Proposition~\ref{proposition:Isomorphism:isomorph_theorem_4} \hyperref[sec:Isomorphism:hints]{(*Hint*)}.
+Prove Proposition~\ref{proposition:Isomorphism:isomorph_theorem_4} \hyperref[sec:Isomorphism:Hints]{(*Hint*)}.
 \end{exercise}
  
 
 \subsection{Characterizing all groups: Cayley's theorem}
+\label{subsec:Isomorphism:Classification:CayleyTheoreom}
  
 In the previous section, we saw that any cyclic group is ``equivalent'' (in the sense of isomorphism) to one of the groups $\mathbb{Z}_n$.  This enables us to easily conceptualize any cyclic group in terms of a standardized set of  groups that we're very familiar with. 
 
@@ -1220,7 +1226,7 @@ Using the right regular representation, find a subgroup of $S(8)$ that is isomor
 \sectionvideohref{k6LaGUiHhMk&index=32&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
 \label{sec:Isomorphism:DirectProductsClassificationAbelianGroups}
 
-In Section~\ref{cartesian} we introduced the notion of the Cartesian product of sets . The formal definition is given in Definition~\ref{cartesianprod}--the basic idea is is to take the set of all pairs of elements $(a,b)$ where $a$ is an element of the first set and $b$ is an element of the second. A simple example to keep in mind is ${\mathbb R} \times {\mathbb R}$, which is the plane with Cartesian coordinates $(x,y)$. Notice that ${\mathbb R} \times {\mathbb R}$ is an additive group, where the addition is defined by performing addition separately on both coordinates. 
+In Section~\ref{sec:Functions:CartesianProduct} we introduced the notion of the Cartesian product of sets . The formal definition is given in Definition~\ref{definition:Functions:cartesianprod}--the basic idea is is to take the set of all pairs of elements $(a,b)$ where $a$ is an element of the first set and $b$ is an element of the second. A simple example to keep in mind is ${\mathbb R} \times {\mathbb R}$, which is the plane with Cartesian coordinates $(x,y)$. Notice that ${\mathbb R} \times {\mathbb R}$ is an additive group, where the addition is defined by performing addition separately on both coordinates. 
 
 It turns out that this example can be generalized. Given two groups $G$ and $H$, it is possible to construct a new group based on the Cartesian product $G \times H$.  Even more exciting,  it is sometimes possible to ``factor'' a large group by expressing it as the Cartesian product of smaller groups. In this case, all of the properties of the large group can be derived from the properties of the smaller groups, which can lead to tremendous simplification. This  process of factoring groups into simpler groups can be compared to the factorization of integers into primes. (We will in fact see some deep connections between these two processes.)
 
@@ -1228,6 +1234,7 @@ We begin by showing that the Cartesian product of groups does inded yield a grou
  
  
 \subsection{ Direct Products}
+\label{subsec:Isomorphism:DirectProductsClassificationAbelianGroups:DirectProducts}
 
 If $(G,\cdot)$ and $(H, \circ)$ are groups, then we can make the Cartesian product of $G$ and $H$ into a new group.  As a set, our group is just the ordered pairs $(g, h) \in G \times H$ where $g \in G$ and $h \in H$. We can define a binary operation on $G \times H$ by 
 \[
@@ -1249,7 +1256,7 @@ where $e_G$ and $e_H$ are the identities of the groups $G$ and $H$ respectively.
 \item Show that the inverse of $(g, h) \in G \times H$ is $(g^{-1}, h^{-1})$.  
 \item Show that the operation defined in Proposition~\ref{proposition:Isomorphism:isomorph_theorem_7} is associative.
 \end{enumerate}
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \end{exercise}
 
 The group $G \times H$ is called the \term{ direct product}\index{Direct product! of groups}\index{ direct product} of  $G$ and $H$. Notice the important difference between `Cartesian product' and ' direct product': the  direct product is a group whose underlying set is a Cartesian product; but in addition, the  direct product has a group operation, which generic off-the-shelf Cartesian products don't ordinarily have. 
@@ -1296,7 +1303,7 @@ and get a nonabelian group.  This time our conjecture is correct, as you will sh
 \item
 Suppose that the groups $G$  and $H$ are abelian. Prove that $G \times H$ is also abelian.
 \item
-* Show the \emph{converse} of part (a): that is, given that $G \times H$ is abelian, then $G$ and $H$ must both be abelian. \hyperref[sec:Isomorphism:hints]{(*Hint*)}
+* Show the \emph{converse} of part (a): that is, given that $G \times H$ is abelian, then $G$ and $H$ must both be abelian. \hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
 
@@ -1314,14 +1321,14 @@ So we've shown that the direct product of cyclic groups is not necessarily cycli
 
 \begin{exercise}{prodCycProp}
 Prove  the following statement: Suppose $G$ and $H$ are groups, and $G \times H$ is cyclic. Then $G$ and $H$ are both cyclic. 
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \end{exercise}	
 
 Let's now consider a different type of question. What's the difference between $G \times H$ and $H \times G$?  Not much, as the following exercise shows:
  
 \begin{exercise}{direct_commute}
 Show that for any two groups $G$ and $H$,  $G \times H \cong H \times G$.
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \end{exercise}
 
 
@@ -1404,6 +1411,7 @@ Prove Proposition~\ref{proposition:Isomorphism:isomorph:dp_isom} for the case wh
 \end{exercise}
 
 \subsection{Classifying finite abelian groups by factorization}
+\label{subsec:Isomorphism:DirectProductsClassificationAbelianGroups:FiniteAbelianFactor}
 
 We have used isomorphisms to classify cyclic groups (Proposition~\ref{proposition:Isomorphism:isomorph_theorem_2}), as well as to characterize  groups in general (Cayley's theorem, Proposition~\ref{proposition:Isomorphism:isomorph_theorem_6}). In this section, we will make use of direct products to prove a classification of finite abelian groups up to isomorphism. The bottom line is that every finite abelian group is isomorphic to a direct product of cyclic groups of prime power oders. To get to this bottom line, we'll have to establish some more properties of direct products, especially in relation to cyclic groups.  The following  proposition characterizes the order of the elements in a direct product.\index{Abelian group!classification}\index{Classification!abelian groups}
 
@@ -1759,7 +1767,7 @@ Is it possible to specify exactly the positive integers $n$ for which $U(n)$ is 
 
 
 \subsection{Internal direct products}
- 
+\label{subsec:Isomorphism:UpIsCyclic:InternalDirectProduct}
 
 The  direct product of two groups builds a large group out of
 two smaller groups.   We would like to be able to reverse this process
@@ -1905,7 +1913,7 @@ $k \in K$, prove that $G$ is the internal direct product of $H$ and $K$.
 \begin{exercise}{isomex}
 Prove the following: Let $G$, $H$, and $K$ be
 groups such that $G \times K \cong H \times K$. Then is is also true that $G \cong H$. 
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 \end{exercise}
 
 We can extend the definition of an internal direct product of $G$ to a
@@ -2001,7 +2009,7 @@ proper subgroups.
 \item \label{exercise:Isomorphism:eoc}
 * Prove that $S_3 \times {\mathbb Z}_2$ is isomorphic to $D_6$. Can you
 make a conjecture about $D_{2n}$? Prove your conjecture. 
-\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
  
 %% TWJ, 2011/11/21
 %% Notation corrected in the quaternion group.  Suggested by S. Hansen.

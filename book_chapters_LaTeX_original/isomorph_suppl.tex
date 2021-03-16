@@ -42,7 +42,7 @@ Since $f$ is 1:1 and onto, $f$ is a bijection.
 
 \noindent\textbf{Exercise \ref{exercise:Isomorphism:iso_4}:}
 %Prove that the function $h(a + bi) = (a+2, b+2)$ is {\bf not} an isomorphism from ${\mathbb C}$ to  ${\mathbb R} \times {\mathbb R}$.
-%\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+%\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 %\\
 \begin{figure}[H]
 	   \center{\includegraphics[width=4.in]
@@ -293,7 +293,7 @@ $\phi(g^{-1})$
 \begin{enumerate}[(a)]
 \item
 %Given that  $\phi : G \rightarrow H$ is an  isomorphism, show that  $\phi^{-1} : H \rightarrow G$ is also an  isomorphism.
-%\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+%\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 %\\
 %\\
 Proof:  First, it is clear that $\phi^{-1}$ is invertible, and hence a bijection.
@@ -304,7 +304,7 @@ Given $x, y \in H$ then, let $a = \phi^{-1}(x), b = \phi^{-1}(y)$
 \\
 \phi(b) &= y &\text{(definition of inverse)}
 \\
-\phi(a \cdot b) &= \phi(a) \circ \phi(b) &\text{(by Definition~\ref{isomorph_defn})}
+\phi(a \cdot b) &= \phi(a) \circ \phi(b) &\text{(by Definition~\ref{definition:Isomorphism:isomorph_defn})}
 \\
 \phi(\phi^{-1}(x) \cdot \phi^{-1}(y)) &= x \circ y &\text{(substitution)}
 \\
@@ -312,12 +312,12 @@ Given $x, y \in H$ then, let $a = \phi^{-1}(x), b = \phi^{-1}(y)$
 \\
 \phi^{-1}(x) \cdot \phi^{-1}(y) &= \phi^{-1}(x \circ y) &\text{(def of inverse)}
 \end{align*}
-Therefore $\phi^{-1}$ is an isomorphism by Definition~\ref{isomorph_defn}.
+Therefore $\phi^{-1}$ is an isomorphism by Definition~\ref{definition:Isomorphism:isomorph_defn}.
 \\
 
 \item
 %Given that  $\phi : G \rightarrow H$ and $\psi : H \rightarrow K$ are  isomorphisms, show that  $\psi \circ\phi:G \rightarrow K$ is also an  isomorphism.
-%\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+%\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 %\\
 %\\
 Show: $(i)$ Show that $\psi \circ \phi$ is a bijection and $(ii)\ \psi \circ \phi$ preserves group operation i.e. $\psi \circ \phi(a \cdot b) = (\psi \circ \phi(a)) \times (\psi \circ \phi(b))$.
@@ -342,7 +342,7 @@ and by Exercise \ref{exercise:Functions:BijectionComposeExer}, if $\psi$ and $\p
 \noindent\textbf{Exercise \ref{exercise:Isomorphism:GpEquivRel}:}
 %\\
 %Prove Proposition~\ref{GpEquivRel}.
-%\hyperref[sec:Isomorphism:hints]{(*Hint*)}
+%\hyperref[sec:Isomorphism:Hints]{(*Hint*)}
 %\\
 \\
 Proof: Show that it is $(i)$ reflexive: $G \cong G$ , $(ii)$ symmetric: $G \cong H \implies H \cong G$, and $(iii)$ transitive: $G \cong H$ and $H \cong K \implies G \cong K$. 
