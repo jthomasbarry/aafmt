@@ -10,7 +10,7 @@
 %%%%(c)  See the file COPYING.txt for copying conditions
 %%%%(c)
 %%%%(c)
-\chap{Homomorphisms of Groups}{chap:Homomorphism}
+\chap{Homomorphisms of Groups}{Homomorphism}
 
 
 In this chapter we will introduce homomorphisms, which are a powerful tool in the study of the structure of abstract groups. Our brief treatment only gives the reader a taste of this important topic, and the reader wanting to go deeper is encouraged to look at other algebra texts.
@@ -150,7 +150,7 @@ g(a \oplus b) = g(a) \cdot g(b).
 A bijection that preserved group operations was called an isomorphism.  So what do we call $g$?  We say that $g$ is a \emph{homomorphism} from ${\mathbb Z}_8$ to $\langle i \rangle$, and that ${\mathbb Z}_8$ is \emph{homomorphic} to $\langle i \rangle$.
 \end{example}
 
-We see some interesting things in  Example~\ref{example:homomorph:Z_8_i homomorph}. 
+We see some interesting things in  Example~\ref{example:Homomorphism:Z_8_i homomorph}. 
 The elements in ${\mathbb Z}_8$ that map to 1 are  $0$ and $4$. The set $\{0,4\}$ is a subgroup of ${\mathbb Z}_8$.  Naturally it's a normal subgroup, since $\mathbb{Z}_8$ is abelian.
 On the other hand, the sets $\{1,5\}, \{2,6\},$ and $\{3,7\}$ which map to $i, -1,$ and $-i$ respectively are \emph{not} subgroups of ${\mathbb Z}_8$. Instead, we may recognize them as the \emph{cosets} of $\{0,4\}$ in ${\mathbb Z}_8$. We saw in Section~\ref{subsec:Cosets:NormalSubAndFactorGroup:NormalSubgroups} 
 that the cosets of a normal subgroup themselves form a group called the \emph{quotient group}. You may want
@@ -221,10 +221,10 @@ So ${\mathbb Z}_8/ \{0,4\} \cong \langle i \rangle$! (See Figure~\ref{fig:homomo
 	  \caption{\label{fig:homomorph2} Isomorphism $h$ between $\ZZ_8/\{0,4\}$ and $\langle i \rangle$. }
 \end{figure}
 
-Example~\ref{example:homomorph:Z_8_i homomorph} exhibited lots of interesting properties. Let's see if these properties hold for other examples as well. We may  then formalize our observations and provide proofs.
+Example~\ref{example:Homomorphism:Z_8_i homomorph} exhibited lots of interesting properties. Let's see if these properties hold for other examples as well. We may  then formalize our observations and provide proofs.
 
 \begin{example}{Z_8_isub_homomorph}
-The function $g$ which we constructed in Example~\ref{example:homomorph:Z_8_i homomorph} was not one-to-one, but it was onto. Is ``onto'' necessary? Or could we possibly find a function from ${\mathbb Z}_8$ to $\langle i \rangle$ that still preserves the group operation, whose range is not all of $\langle i \rangle$?  
+The function $g$ which we constructed in Example~\ref{example:Homomorphism:Z_8_i homomorph} was not one-to-one, but it was onto. Is ``onto'' necessary? Or could we possibly find a function from ${\mathbb Z}_8$ to $\langle i \rangle$ that still preserves the group operation, whose range is not all of $\langle i \rangle$?  
 
 %Essentially, we are asking ourselves the following: can we map the elements of ${\mathbb Z}_8$ to some, but not all, of the elements of $\langle i \rangle$ (a proper subset) in such a way that after we replace the elements in the ${\mathbb Z}_8$ table according to the function and remove all redundant rows and columns, we end up with some subset of the Cayley table for $\langle i \rangle$? 
 
@@ -280,7 +280,7 @@ q(a \oplus b) = q(a) \cdot q(b).
 In other words, $q$ is a homomorphism.
 \end{example}
 
-In Example ~\ref{example:homomorph:Z_8_isub_homomorph} we find several similarities to \ref{example:homomorph:Z_8_i homomorph}:
+In Example ~\ref{example:Homomorphism:Z_8_isub_homomorph} we find several similarities to \ref{example:Homomorphism:Z_8_i homomorph}:
 
 \begin{itemize}
 \item
@@ -330,9 +330,9 @@ homomorphic image}\index{Homomorphic image}~of~$f$.
 
 \begin{enumerate}[(a)]
 \item
-For the homomorphism $g$ from ${\mathbb Z}_8$ to $\langle i \rangle$ in Example~\ref{example:homomorph:Z_8_i homomorph}, what is the homomorphic image of $g$?
+For the homomorphism $g$ from ${\mathbb Z}_8$ to $\langle i \rangle$ in Example~\ref{example:Homomorphism:Z_8_i homomorph}, what is the homomorphic image of $g$?
 \item
-For the homomorphism $q$ from ${\mathbb Z}_8$ to $\langle i \rangle$ in Example~\ref{example:homomorph:Z_8_isub_homomorph}, what is the homomorphic image of $q$?
+For the homomorphism $q$ from ${\mathbb Z}_8$ to $\langle i \rangle$ in Example~\ref{example:Homomorphism:Z_8_isub_homomorph}, what is the homomorphic image of $q$?
 \end{enumerate}
 \end{exercise}  
  
@@ -389,7 +389,7 @@ Recall that the circle group ${ \mathbb T}$ consists of all complex numbers $z$ 
 
 \noindent
 Now imagine wrapping the real number line around this circle like it was a tape measure, with $0$ on the real number line corresponding to $1$ on the unit circle.  Then we would have a correspondence between each real number and a complex number in ${ \mathbb T}$. Every $2\pi$ units the real numbers start around the circle again, so that an infinite set of real numbers corresponds to each complex number $z$ in ${ \mathbb T}$.  For instance not only 0, but $2\pi, 4\pi, 6\pi$, etc. would correspond to $1$.  
-Evidently for a given complex number $z$, any real number $\alpha$ that corresponds to $z$ is an \emph{argument} for $z$ (see Figure~\ref{polarcoord}), so that $z = \cis \alpha$.
+Evidently for a given complex number $z$, any real number $\alpha$ that corresponds to $z$ is an \emph{argument} for $z$ (see Figure~\ref{fig:polarcoord}), so that $z = \cis \alpha$.
 From this point of view, we may conceive of $\cis$ as  a function from ${ \mathbb R}$ to  ${ \mathbb T}$.   Does $\cis$ preserve the operations between ${ \mathbb R}$ and ${ \mathbb T}$? We've shown this before in Proposition~\ref{proposition:ComplexNumbers:polar_mult} in the Complex Numbers chapter, but it won't hurt to see it again:
 \begin{align*}
 \cis( \alpha + \beta )
@@ -408,7 +408,7 @@ This means that in some sense, complex multiplication on the unit circle is like
 \end{example}
 
 
-In the following exercise, we relate the previous example to the properties observed in  Examples~\ref{example:homomorph:Z_8_i homomorph} and~\ref{example:homomorph:Z_8_isub_homomorph} in the previous section.
+In the following exercise, we relate the previous example to the properties observed in  Examples~\ref{example:Homomorphism:Z_8_i homomorph} and~\ref{example:Homomorphism:Z_8_isub_homomorph} in the previous section.
 
 \begin{exercise}{circle_cosets_factorgroup}
 As we mentioned above, $\cis$ maps $0, \pm 2\pi, \pm 4\pi$, etc to $1$, the identity, in ${ \mathbb T}$. Another way to say the same thing is:
@@ -450,7 +450,7 @@ So $f$ is indeed a homomorphism from ${\mathbb C}^\ast$ to ${\mathbb R}^\ast$.
 Once again, we may compare this example to the remarks of the previous section.
 
 \begin{exercise}{Cstar_modulus_cosets}
-With reference to the function $f$ defined in Example~\ref{example:homomorph:homo_C*}:
+With reference to the function $f$ defined in Example~\ref{example:Homomorphism:homo_C*}:
 \begin{enumerate}[(a)]
 \item
 What is the homomorphic image of $f$?
@@ -495,7 +495,7 @@ In the Groups chapter we defined $SL_2( {\mathbb R })$ as the set of $2 \times 2
 Describe the cosets of $SL_2( {\mathbb R })$ in $GL_2( {\mathbb R })$.
 \item
 Prove that $SL_2( {\mathbb R })$ is a normal subgroup of $GL_2( {\mathbb R })$. 
-\hyperref[sec:homomorph:hints]{(*Hint*)} 
+\hyperref[sec:Homomorphism:Hints]{(*Hint*)} 
 \item
 Prove that the quotient group $GL_2( {\mathbb R }) / SL_2( {\mathbb R })$ is isomorphic to ${\mathbb R}^\ast$.
 \end{enumerate}  
@@ -558,18 +558,18 @@ Finally, let's look at one more pattern for the homomorphisms we've developed so
 \begin{exercise}{homo_ex_inverses}
 \begin{enumerate}[(a)]
 \item
-In the group ${\mathbb Z}_8$, the inverse of 3 is 5 (we may write this as $3^{-1} = 5$).  Using the homomorphism $g$ from Example~\ref{example:homomorph:Z_8_i homomorph}, what is $g(5)$?  What is the inverse of $g(3)$ in the group $\langle i \rangle$? What does this example show about the relation between $g(3^{-1})$ and $(g(3))^{-1}$?
+In the group ${\mathbb Z}_8$, the inverse of 3 is 5 (we may write this as $3^{-1} = 5$).  Using the homomorphism $g$ from Example~\ref{example:Homomorphism:Z_8_i homomorph}, what is $g(5)$?  What is the inverse of $g(3)$ in the group $\langle i \rangle$? What does this example show about the relation between $g(3^{-1})$ and $(g(3))^{-1}$?
 \item
-In ${\mathbb Z}_8$, $2^{-1} = 6$.  Using the homomorphism $q$ from Example~\ref{example:homomorph:Z_8_isub_homomorph}, what is $q(2^{-1})$?  What is $(q(2))^{-1}$? What do you notice about your two answers?
+In ${\mathbb Z}_8$, $2^{-1} = 6$.  Using the homomorphism $q$ from Example~\ref{example:Homomorphism:Z_8_isub_homomorph}, what is $q(2^{-1})$?  What is $(q(2))^{-1}$? What do you notice about your two answers?
 \item
-In  ${\mathbb C}^\ast$, $(r \cis \theta)^{-1} = \frac{1}{r} \cis (2\pi - \theta)$.  Using $f$ from Example~\ref{example:homomorph:homo_C*},  compute $f\left((r \cis \theta)^{-1}\right)$ and $(f(r \cis \theta))^{-1}$. What do you notice about your two answers? 
+In  ${\mathbb C}^\ast$, $(r \cis \theta)^{-1} = \frac{1}{r} \cis (2\pi - \theta)$.  Using $f$ from Example~\ref{example:Homomorphism:homo_C*},  compute $f\left((r \cis \theta)^{-1}\right)$ and $(f(r \cis \theta))^{-1}$. What do you notice about your two answers? 
 \item
 In $GL_2( {\mathbb R })$, what is the inverse of
 $\begin{pmatrix}
 a & b \\
 c & d
 \end{pmatrix}$?
-Using $f$ from Exercise~\ref{exercise:homomorph:homo_GL2}, does $f\left((\begin{pmatrix} a & b \\ c & d \end{pmatrix})^{-1}\right) = [f(\begin{pmatrix} a & b \\ c & d \end{pmatrix})]^{-1}$?  Verify or give a counterexample.
+Using $f$ from Exercise~\ref{exercise:Homomorphism:homo_GL2}, does $f\left((\begin{pmatrix} a & b \\ c & d \end{pmatrix})^{-1}\right) = [f(\begin{pmatrix} a & b \\ c & d \end{pmatrix})]^{-1}$?  Verify or give a counterexample.
 \item
 What general property of homomorphisms can you infer from these examples? (You don't need to give a proof if you don't want to.)
 \end{enumerate}
@@ -725,23 +725,23 @@ of $f$ is a normal subgroup of $G$.\index{Kernel!as a normal subgroup}
 \end{prop}
 
 \begin{exercise}{hker}
-Prove Proposition~\ref{proposition:homomorph:homo_ker_normal}. 
-\hyperref[sec:homomorph:hints]{(*Hint*)} 
+Prove Proposition~\ref{proposition:Homomorphism:homo_ker_normal}. 
+\hyperref[sec:Homomorphism:Hints]{(*Hint*)} 
 \end{exercise}
 
 \begin{exercise}{ker_review}
 What were the kernels of the homomorphisms in:
 \begin{enumerate}[(a)]
 \item
-Example~\ref{example:homomorph:Z_8_i homomorph}
+Example~\ref{example:Homomorphism:Z_8_i homomorph}
 \item
-Example~\ref{example:homomorph:Z_8_isub_homomorph}
+Example~\ref{example:Homomorphism:Z_8_isub_homomorph}
 \item
-Example~\ref{example:homomorph:homo_T}
+Example~\ref{example:Homomorphism:homo_T}
 \item
-Example~\ref{example:homomorph:homo_C*}
+Example~\ref{example:Homomorphism:homo_C*}
 \item
-Exercise~\ref{exercise:homomorph:homo_GL2}
+Exercise~\ref{exercise:Homomorphism:homo_GL2}
 \end{enumerate}
 \end{exercise} 
  
@@ -891,7 +891,7 @@ Describe all of the homomorphisms from ${\mathbb Z}$ to ${\mathbb Z}_{12}$.
 \begin{exercise}{allhom}
 Find all of the homomorphisms $f : {\mathbb Z} \rightarrow {\mathbb Z}$.
 Which of these are isomorphisms?
-\hyperref[sec:homomorph:hints]{(*Hint*)} 
+\hyperref[sec:Homomorphism:Hints]{(*Hint*)} 
 \end{exercise} 
 
  
@@ -1209,14 +1209,14 @@ $f$ is one-to-one if and only if $f^{-1}(e') = \{ e \}$, where $e$ and $e'$ are 
 For $k \in {\mathbb Z}_n$, define a map $f_k : {\mathbb Z}_n \rightarrow
 {\mathbb Z}_n$ by $a \mapsto ka$.  Prove that $f_k$ is a homomorphism. 
  
- \item \label{ex:homomorph:Ad1}
+ \item \label{ex:Homomorphism:Ad1}
 Show that a homomorphism defined on a cyclic group is completely
 determined by its action on the generator of the group. 
-\hyperref[sec:homomorph:hints]{(*Hint*)} 
+\hyperref[sec:Homomorphism:Hints]{(*Hint*)} 
 
-\item \label{ex:homomorph:Ad2}
+\item \label{ex:Homomorphism:Ad2}
 Prove or disprove: ${\mathbb Q} / {\mathbb Z} \cong {\mathbb Q}$. 
-\hyperref[sec:homomorph:hints]{(*Hint*)} 
+\hyperref[sec:Homomorphism:Hints]{(*Hint*)} 
 
 
 
