@@ -1663,7 +1663,7 @@ Suppose the ring $R$ has more than one element.  Show that the additive identity
 %%%% \begin{enumerate}[(a)]
 %%%% \item
 %%%% Let $R$ be a ring, and let $0$ be the additive identity of $R$.  Show that $a \cdot 0 = 0 \cdot a = 0$ for any element $a \in R$. 
-%%%% \hyperref[sec:polyrings:hints]{(*Hint*)} 
+%%%% \hyperref[sec:Polynomials:Hints]{(*Hint*)} 
 %%%% \item
 %%%% Part (a) shows that every ring element times 0 must be equal to 0.  So in order for 0 to have an inverse, 0 must also be the multiplicative identity. Show that 
 %%% if $R$ has two or more elements, then 0 cannot be the multiplicative identity of $R$.
@@ -1814,7 +1814,7 @@ In many of the rings we've seen so far, the field axioms are also satisfied.  Fi
 %\end{center}
 \caption{Ring Classes}\label{fig:ring_classes}
 \end{figure}
-%%%% In the following discussion, we will be considering the case where the polynomial coefficients form a field. We will see in Section~\ref{divisionalgorithm} that this allows us to perform polynomial long division and determine gcd's, very much like we did with integers in the modular arithmetic chapter.
+%%%% In the following discussion, we will be considering the case where the polynomial coefficients form a field. We will see in Section~\ref{sec:Polynomials:PolynomialsAndDivision:divisionalgorithm} that this allows us to perform polynomial long division and determine gcd's, very much like we did with integers in the modular arithmetic chapter.
 
 \begin{exercise}{poly47}
 Which of the following rings are also fields?  Explain your answers.
@@ -2055,7 +2055,7 @@ Let $F$ be a field and let $f(x)$ be a polynomial in $F[x]$ of degree $n$. Then 
 
 
 \begin{proof}
-Suppose $a_1$ is a solution to $f(x)=0$. Then by Proposition~\ref{proposition:poly:polydivides} it follows that $x-a_1$ divides $f(x)$. Therefore $f(x) = (x-a_1) g_{n-1}(x)$ where the degree of $g_{n-1}(x)=n-1$. 
+Suppose $a_1$ is a solution to $f(x)=0$. Then by Proposition~\ref{proposition:Polynomials:polydivides} it follows that $x-a_1$ divides $f(x)$. Therefore $f(x) = (x-a_1) g_{n-1}(x)$ where the degree of $g_{n-1}(x)=n-1$. 
 
 Now if $a_2 \neq a_1$ is another solution then using our above result we have
 \[ f(a_2) = (a_2 - a_1)g_{n-1}(a_2) = 0. \]
@@ -2162,7 +2162,7 @@ Since this is a cubic polynomial, we can't use the quadratic formula, at least n
 
 In $f(x)$, possible numerators of any rational roots are: $p=\pm1, \pm2, \pm3, \pm6$. The possible denominators are: $q=\pm1, \pm3$.
 So we have as possible rational roots the following: $p/q= \pm1, \pm\frac{1}{3}, \pm2, \pm\frac{2}{3},\pm3, \pm6$.
-By Proposition~\ref{proposition:poly:polydivides}, if $f(p/q)=0$ then $(x-p/q)$ is a factor of $f(x)$; which would make $p/q$ a root of $f(x)$. After testing all possibilities we find the following rational root:
+By Proposition~\ref{proposition:Polynomials:polydivides}, if $f(p/q)=0$ then $(x-p/q)$ is a factor of $f(x)$; which would make $p/q$ a root of $f(x)$. After testing all possibilities we find the following rational root:
 $f(-2)=3(-2)^3+10(-2)^2+11(-2)+6=0$. Therefore, $x=-2$ is a root of $f(x)$ and $(x+2)$ is a factor of $f(x)$.
 We then use long division to factor $f(x)$.
 
@@ -2210,7 +2210,7 @@ Find the roots of $f(x)=x^3-13x+12$.
 
 \subsection{Algebraic closure of fields}
 
-In Section~\ref{FTOA} we discussed the so-called \term{Fundamental Theorem of Algebra  (hard part)}, (Proposition~\ref{proposition:poly:FTOAhard})which states that any polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}[x]$. This property leads to a host of important consequences.  Since this property is so important, it's been given a name:
+In Section~\ref{FTOA} we discussed the so-called \term{Fundamental Theorem of Algebra  (hard part)}, (Proposition~\ref{proposition:Polynomials:FTOAhard})which states that any polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}[x]$. This property leads to a host of important consequences.  Since this property is so important, it's been given a name:
 
 \begin{defn}\label{def:algclosed}  
 A field $F$ is \term*{algebraically closed}\index{Field!algebraically closed}\index{Algebraically closed!field} if and only if every nonconstant polynomial in $F[x]$ has a root in $F$ (see Figure \ref{algebraicallyclosed}).
@@ -2223,7 +2223,7 @@ A field $F$ is \term*{algebraically closed}\index{Field!algebraically closed}\in
 \end{center}
 \end{figure}
 
-With this new definition in mind, we can restate Proposition~\ref{proposition:poly:FTOAhard} as follows: 
+With this new definition in mind, we can restate Proposition~\ref{proposition:Polynomials:FTOAhard} as follows: 
 
 \begin{prop}{complexalgclosed}
 $\mathbb{C}$ is algebraically closed.
@@ -2251,7 +2251,7 @@ Use the polynomial $x^6 + 2$ to determine whether or not $\mathbb{Z}_7$ is algeb
 \end{enumerate}
 \end{exercise}
 
-In Section~\ref{subsec:FTOAhard} we proved polynomial factorization (Proposition~\ref{proposition:poly:complexlinear}), namely that any polynomial in $\mathbb{C}[x]$ factors as a product of linear factors. The very same proof goes through for any algebraically closed field $F$.  Thus we have:
+In Section~\ref{subsec:FTOAhard} we proved polynomial factorization (Proposition~\ref{proposition:Polynomials:complexlinear}), namely that any polynomial in $\mathbb{C}[x]$ factors as a product of linear factors. The very same proof goes through for any algebraically closed field $F$.  Thus we have:
 
 \begin{prop}{algClosedLinear}
 Let $F$ be an algebraically closed field. Then any polynomial $p(x)$  of degree $n$ in $F[x]$ can be completely factored as a constant times a product of $n$ linear terms,   as follows:
@@ -2329,7 +2329,7 @@ Given that $a \in \mathbb{C}$ is algebraic over $\mathbb{Q}$, show that $a^{1/n}
 \end{exercise}
 
 
-\begin{rem}\label{remark:poly:transcendental}
+\begin{rem}\label{remark:Polynomials:transcendental}
 It's not so easy to show that elements are transcendental. This is because to show that $a$ is transcendental over $F$, you need to show that there's no polynomial whatsoever in $F[x]$  which has $a$ as a root. Let's consider in particular the case $F = \mathbb{Q}$. We saw in Chapter~\ref{ComplexNumbers} that $\mathbb{R}$ has lots of \emph{irrational} numbers, but so far we haven't definitely identified any real number that is transcendental over $\mathbb{Q}$. 
 
 In 1844, Joseph Liouville gave the first proof that a transcendental number exists.  Liouville constructed a number (using infinite series) with special properties, and was able to show that it's impossible to construct a polynomial in $\mathbb{Q}[x]$ that has that number as a root. Hermite showed about 30 years later that $e$ was transcendental, and $\pi$ was added to the list (by Lindemann) 10 years after that. 
@@ -2439,7 +2439,7 @@ This result relates to field extensions in similar fashion as the previous one. 
 \noindent
  to get a flavor of how this proof goes.
 \item
-A similar constructability problem is known as ``squaring the circle'':  Given a square of side 1, find a circle with the same area using only straightedge and compass. This can be shown to be impossible, as a consequence of the transcendence of $\pi$ alluded to in Remark~\ref{remark:poly:transcendental}.
+A similar constructability problem is known as ``squaring the circle'':  Given a square of side 1, find a circle with the same area using only straightedge and compass. This can be shown to be impossible, as a consequence of the transcendence of $\pi$ alluded to in Remark~\ref{remark:Polynomials:transcendental}.
 \end{itemize}
 
 \section{References}
