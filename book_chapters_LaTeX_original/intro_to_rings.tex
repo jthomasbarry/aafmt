@@ -51,13 +51,13 @@ When studying rings (and groups), we put a lot of focus on the integers.  The in
 
 All of the number systems listed at the beginning of this chapter have properties I-VII.  Similar properties are found in other number systems.\footnote{The reader may recall that some of these same properties were listed in Section~\ref{polycoefficients}, when we were talking about coefficients of polynomials.}
 
-\begin{defn}{def:ring}
+\begin{defn}{defring}
 Any number system with the two arithmetic operations (+ and $\cdot$) that satisfy properties I-VII is called a \term{ring}.
 \end{defn}
 
 As well as having properties $I-VII$, multiplication is commutative in all of the above number systems. This leads us to the following definition:
 
-\begin{defn}{def:comring}
+\begin{defn}{defcomring}
 A number system is a \term{commutative ring} if it is a ring where multiplication is also commutative.
 \end{defn}
 
@@ -151,7 +151,7 @@ Let's continue with our proof of Example \ref{example:rings:extension_ring}. We 
 
 For associativity of addition, let $a,b,c,\in{\mathbb Q}[ \sqrt[3]{2}]$. Since all of the numbers in ${\mathbb Q}[\sqrt[3]{2}]$ are real numbers, and the real numbers are associative, then it follows automatically that numbers in ${\mathbb Q}[\sqrt[3]{2}]$ also associate.  We can make a similar argument for associativity of multiplication.  Associativity is an example of an \emph{inherited property}.
 
-\begin{defn}{def:inherited property}
+\begin{defn}{definherited property}
 An \term{inherited property} is a property such that, if the property is true for a set of numbers $S$, then it's also true for any subset of $S$.
 \end{defn}
 
@@ -175,7 +175,7 @@ The proofs of properties (5) and (7) resemble the proof of property (2).
 Prove properties (5) and (7). (You may use the proof of property (2) as a model.)
 \end{exercise}{}
 
-We have shown that ${\mathbb Q}[\sqrt[3]{2}]$ satisfies all seven properties of rings. Therefore, by Definition \ref{def:ring}, ${\mathbb Q}[\sqrt[3]{2}]$ is a ring and our proof is complete.
+We have shown that ${\mathbb Q}[\sqrt[3]{2}]$ satisfies all seven properties of rings. Therefore, by Definition \ref{definition:defring}, ${\mathbb Q}[\sqrt[3]{2}]$ is a ring and our proof is complete.
 \end{proof}
 \end{example}{}
 
@@ -623,7 +623,7 @@ Find the multiplicative inverse of $(1+2x+3x^2)$ in $ \widehat{{\mathbb Z}}_5[x]
 \section{Product Rings}
 \label{sec:Rings:ProductRings}
 
-In certain situations, we may want to combine two or more rings to form a larger ring. Product rings allow us to do just that. In fact, the product operation for rings is very similar to the product of groups (see Definition~\ref{def:ProductOfGroups}).
+In certain situations, we may want to combine two or more rings to form a larger ring. Product rings allow us to do just that. In fact, the product operation for rings is very similar to the product of groups (see Definition~\ref{definition:defProductOfGroups}).
 
 \begin{defn}{product ring}
 If $R_1,~R_2$ are rings, then the \emph{product ring}, $R_1\times R_2$ is the set of pairs $(a,b),~a\in R_1$ and $b\in R_2$, with the following operations:
@@ -1023,7 +1023,7 @@ where $B=
 
 \subsection{Homomorphism kernels and ideals}
 
-When we discussed homomorphisms of groups, we introduced the notion of the kernel of a homomorphism.  According to Definition \ref{def:kernel}, the kernel of a group homomorphism is the inverse image of the identity element of the codomain.  We may make a similar definition for ring homomorphisms.  
+When we discussed homomorphisms of groups, we introduced the notion of the kernel of a homomorphism.  According to Definition \ref{definition:defkernel}, the kernel of a group homomorphism is the inverse image of the identity element of the codomain.  We may make a similar definition for ring homomorphisms.  
 
 \begin{defn}{kernel}
 If $f:R_1\rightarrow R_2$ is a ring homomorphism, then the set $\{x\in R_1|f(x)=0\}$ is called the \term{kernel} of $f$, notated $Ker(f)$.
@@ -1126,7 +1126,7 @@ f(0)&=0 & \text{proven above}\\
 
 Any set $J$ which has properties (1-4) is called an \textit{ideal}.  We formalize the definition of ideal as follows.
 
-\begin{defn}{def:ideal}
+\begin{defn}{defideal}
 Given a ring $R$, suppose $J \subset R$ satisfies the following properties:
 \begin{enumerate}[(a)]
 \item $J$ is closed under the ring's additive operation:  in other words if $j_1,j_2\in J$ then $j_1+j_2\in J$.
@@ -1137,10 +1137,10 @@ Then $J$ is called an \term{ideal} of $R$.
 \end{defn}
 
 \begin{exercise}{}
-In Example we showed the property that for any homomorphism $f:R_1\rightarrow R_2$, we have $0_1\in Ker(f)$.  Using Definition \ref{def:ideal}, show that for any ideal $J$ the zero element is an element of $J$. 
+In Example we showed the property that for any homomorphism $f:R_1\rightarrow R_2$, we have $0_1\in Ker(f)$.  Using Definition \ref{definition:defideal}, show that for any ideal $J$ the zero element is an element of $J$. 
 \end{exercise}
 
-In view of Definition \ref{def:ideal}, we may restate Proposition \ref{proposition:rings:kernelIsIdeal} as follows.
+In view of Definition \ref{definition:defideal}, we may restate Proposition \ref{proposition:rings:kernelIsIdeal} as follows.
 
 \begin{prop}{kernel_ideal}
 The kernel of a homomorphism is always an ideal.
@@ -1249,7 +1249,7 @@ Give examples that show the set $J$ in Example \ref{example:rings:not_ideal} fai
 \end{exercise}
 
 \begin{exercise}{}
-Show that condition (c) in Definition \ref{def:ideal} is not really necessary:  in other words, show that conditions (a) and (b) imply (c).
+Show that condition (c) in Definition \ref{definition:defideal} is not really necessary:  in other words, show that conditions (a) and (b) imply (c).
 \end{exercise}
 
 
@@ -1346,7 +1346,7 @@ f^{-1}(4)&=\text{the set of all $n\in{\mathbb Z}_{10}$ such that} f(n)=4=\{4,9\}
 
 Notice that $f^{-1}(0)\cup f^{-1}(1)\cup f^{-1}(2)\cup f^{-1}(3)\cup f^{-1}(4)={\mathbb Z}_{10}$ and $f^{-1}(m)\cap f^{-1}(n)=\emptyset$ if $m\neq n$.\\
 We may recall the definition of \term{partition} from Section \ref{Partitions1} 
-(Definition \ref{def:Partition}), which we repeat here for convenience.
+(Definition \ref{definition:defPartition}), which we repeat here for convenience.
 
 \begin{defn}{partition}
 A \term{partition} of a set $S$ is a set of subsets $A_1,\dots A_n$ such that:
@@ -1356,8 +1356,8 @@ A \term{partition} of a set $S$ is a set of subsets $A_1,\dots A_n$ such that:
 \end{enumerate}
 \end{defn}
 
-The sets $f^{-1}(0)\dots f^{-1}(4)$ are called \textit{inverse images}. The inverse images of $f$ divide ${\mathbb Z}_{10}$ into \textit{equivalence classes}.  (Review Definition \ref{DefEquivRel}.)
-(Actually, we showed in Proposition \ref{proposition:EquivalenceRelationsChap:FuncIsRange} that the inverse images of a function always divide the domain into equivalence classes.)\\
+The sets $f^{-1}(0)\dots f^{-1}(4)$ are called \textit{inverse images}. The inverse images of $f$ divide ${\mathbb Z}_{10}$ into \textit{equivalence classes}.  (Review Definition \ref{definition:EquivalenceRelations:DefEquivRel}.)
+(Actually, we showed in Proposition \ref{proposition:EquivalenceRelations:FuncIsRange} that the inverse images of a function always divide the domain into equivalence classes.)\\
 
 \begin{figure}[H]
 \begin{center}
@@ -1692,7 +1692,7 @@ Suppose the ring $R$ has more than one element.  Show that the additive identity
 
 Although the zero element never has a multiplicative inverse, there are cases where multiplicative inverses exist for every \emph{nonzero} element of a ring. Such a ring is called a \emph{division ring}. 
 
-\begin{defn} \label{def:divisionring}
+\begin{defn}{defdivisionring}
 Given a ring $R$ suppose every nonzero element of $R$ has a multiplicative inverse in $R$, then $R$ is called a \term{division ring}.
 \end{defn}
 
@@ -1802,7 +1802,7 @@ Give three examples of finite division rings.
 
 Division rings with commutative multiplication are called \term*{fields}.  Fields are one of the most important objects of study in all of mathematics.
 
-\begin{defn} \label{def:field}
+\begin{defn}{deffield}
 A division ring $F$ is called a \term{field} if the multiplication operation is commutative. \end{defn}
 
 In many of the rings we've seen so far, the field axioms are also satisfied.  Figure \ref{fig:ring_classes} shows the relationship between the ring classes.
@@ -1921,7 +1921,7 @@ Prove Proposition~\ref{proposition:rings:1inIdeal}
 \end{exercise}
 
 
-%%% Definition \ref{def:ideal}
+%%% Definition \ref{definition:defideal}
 
 %Note that in general, a ring does not require the properties of commutativity, multiplicative inverse or multiplicative identity.  Rings that satisfy these additional conditions form a field.
 
@@ -2212,7 +2212,7 @@ Find the roots of $f(x)=x^3-13x+12$.
 
 In Section~\ref{FTOA} we discussed the so-called \term{Fundamental Theorem of Algebra  (hard part)}, (Proposition~\ref{proposition:Polynomials:FTOAhard})which states that any polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}[x]$. This property leads to a host of important consequences.  Since this property is so important, it's been given a name:
 
-\begin{defn}{def:algclosed}  
+\begin{defn}{defalgclosed}  
 A field $F$ is \term*{algebraically closed}\index{Field!algebraically closed}\index{Algebraically closed!field} if and only if every nonconstant polynomial in $F[x]$ has a root in $F$ (see Figure \ref{algebraicallyclosed}).
 \end{defn}
 
@@ -2270,11 +2270,11 @@ We've seen quite a few fields that are not algebraically closed. For example, th
 First we need some  terminology to describe the case where one field is contained in  another:
 
 
-\begin{defn}{def:subfield}  
+\begin{defn}{defsubfield}  
 Given a field $E$ and $F\subset E$, then $F$ is called a \term{subfield} of $E$ if $F$ is also a field with the same field operations as $E$. Conversely, $E$ is called an \term{extension field}\index{Field!extension} of $F$.
  \end{defn}
 
-The following exercise should  bolster your understanding of Definition~\ref{def:subfield}
+The following exercise should  bolster your understanding of Definition~\ref{definition:defsubfield}
 
 \begin{exercise}{}
 \begin{enumerate}[(a)]
@@ -2296,7 +2296,7 @@ Give an example of a field, $F$ that is a subset of a field $E$, but is not a su
 
 We also need terminology to describe roots of polynomials in $F[x]$ that aren't in $F$:
 
-\begin{defn}{def:algover}  
+\begin{defn}{defalgover}  
 Let $F$ be a subfield of $E$, and let $a\in E$. If $p(a)=0$ for some $p(x) \in F[x]$, then $a$ is \term*{algebraic}\index{Algebraic!element, of a field}\index{Field!algebraic element of} over $F$ (see Figure \ref{algebraicelement}). Otherwise, $a$  is \term*{transcendental}\index{Transcendental!element, of a field}\index{Field!transcendental element of} over $F$.
 \end{defn}
 
@@ -2351,7 +2351,7 @@ Even today, only  a handful of classes of numbers have been shown to be transcen
 
 For field extensions which have no transcendental elements, the following definition applies:
 
-\begin{defn}{def:algfieldextension}  
+\begin{defn}{defalgfieldextension}  
 Suppose $E$ is an extension field of $F$. Then $E$ is called an \term{algebraic extension}\index{Field!algebraic extension} of $F$ if every $a\in E$ is algebraic over $F$. %Otherwise, $E$ is transcendental if it contains at least one $a$ such that $a$ is transcendental over $F$. 
 %$E$ is called a \term{transcendental extension} of $F$.
  \end{defn}
@@ -2376,7 +2376,7 @@ A field extension may be algebraic, but still contain polynomials that have no r
 %\end{enumerate}
 %\end{solution}
 
-\begin{defn}{def:algclosure}  
+\begin{defn}{defalgclosure}  
 Let $E$ be an algebraic extension field of $F$. Suppose that for every $p(x) \in E[x]$, there exists $a \in E$ such that $p(a)=0$.  Then  $E$ is  an \term*{algebraic closure}\index{Field!algebraic closure of}\index{Algebraic closure!of a field} of $F$ (see Figure \ref{algebraicclosure}).
 \end{defn}
 
@@ -2395,7 +2395,7 @@ $\mathbb{C}$ is an algebraic closure of $\mathbb{R}$.
 
 
 \begin{proof}{}
-Let $a+bi \in \mathbb{C}$ be arbitrary and let $p(x)=(x-(a+bi))(x-(a-bi))= x^2-2ax+a^2+b^2\in\mathbb{R}[x]$. We see that $a+bi$ is a root of $p(x)$. Since $a+bi$ is arbitrary, we can say that any element of $\mathbb{C}$ is a root of some polynomial in $\in\mathbb{R}[x]$. By Definition~\ref{def:algfieldextension} this makes $\mathbb{C}$ an algebraic extension of $\mathbb{R}$. Additionally, by Proposition~\ref{proposition:rings:complexalgclosed}, $\mathbb{C}$ is algebraically closed. Therefore, by Definition~\ref{def:algclosure}, $\mathbb{C}$ is the algebraic closure of $\mathbb{R}$.
+Let $a+bi \in \mathbb{C}$ be arbitrary and let $p(x)=(x-(a+bi))(x-(a-bi))= x^2-2ax+a^2+b^2\in\mathbb{R}[x]$. We see that $a+bi$ is a root of $p(x)$. Since $a+bi$ is arbitrary, we can say that any element of $\mathbb{C}$ is a root of some polynomial in $\in\mathbb{R}[x]$. By Definition~\ref{definition:defalgfieldextension} this makes $\mathbb{C}$ an algebraic extension of $\mathbb{R}$. Additionally, by Proposition~\ref{proposition:rings:complexalgclosed}, $\mathbb{C}$ is algebraically closed. Therefore, by Definition~\ref{definition:defalgclosure}, $\mathbb{C}$ is the algebraic closure of $\mathbb{R}$.
 \end{proof}
 
 Does every field have an algebraic closure? Let's look at some field extensions we're already familiar with:

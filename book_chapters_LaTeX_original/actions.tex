@@ -71,7 +71,7 @@ x_{85}&\stackrel{\checkmark}{=}x_{85}
 
 These ideas motivate the following definitions of action and $G$-Set:
 
-\begin{defn}{def:action}
+\begin{defn}{defaction}
 Let $G$ be a group and $X$ be a set. A \term{(left) action}\index{Actions!group} of $G$ on $X$ is a map $G\times X\rightarrow X$ given by $(g, x)\rightarrow g.x$, such that
 \begin{enumerate}[(1)]
 \item Identity: $e.x = x$ for all $x\in X$, and $e$ is the identity element of the group $G$;
@@ -85,7 +85,7 @@ We will use the period to represent group action. The set $X$ on which $G$ acts 
 \item $X$ is not required to be a group, it only needs to be a set. $G$ is the group. In some cases, as we will see, $X$ can be a group.
 \item $g.x$ is not group multiplication. It is the result when $g$ acts on $x$, and is always an element of $X$.
 \item We call the set $X$ a $G$-set because $G$ is acting on it. If $\mathbb{R}^2$ is acting on $X$ we will call $X$ an $\mathbb{R}^2$-set; $GL_2 (\mathbb{R})$ acting on $X$ would be a $GL_2 (\mathbb{R})$-set.
-\item Notice that the second condition in Definition~\ref{def:action} is NOT associativity. It is not associativity because the group operation between $g_1$ and $g_2$ is not the action between $g$ and $x$. Recall we refer to this property as compatibility.
+\item Notice that the second condition in Definition~\ref{definition:defaction} is NOT associativity. It is not associativity because the group operation between $g_1$ and $g_2$ is not the action between $g$ and $x$. Recall we refer to this property as compatibility.
 \end{enumerate}
 \end{rem}
 
@@ -238,7 +238,7 @@ Consider the edge $\overline{y_+,z_+}$ of a cube.  What is the equivalence class
 
 In the case of a cube where $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$ The three sets $\{\text{faces}\},\{\text{edges}\},\{\text{vertices}\}$ are disjoint equivalence classes whose union is $X$. We call each of these sets an \emph{orbit} of $X$ under $G$.  In general, we have the following definition.
 
-\begin{defn} \label{noteorbit}
+\begin{defn}{noteorbit}
 If $X$ is a $G$-set, then each set in the partition of $X$ associated with
 $G$-equivalence is called an \term{orbit}\index{Orbit!Of a $G$-set} of $X$ under $G$. We will denote the orbit that contains an element $x$ of $X$ by
 ${\cal O}_x$. 
@@ -292,7 +292,7 @@ Definition~\ref{StabilizerSubgroups} talks about elements of the group $G$ which
 Consider for instance the group of rotations of a cube. We may describe the cube as consisting of faces, edges, and vertices. So let's take   $X=\{\text{faces}\}\cup\{\text{edges}\}\cup\{\text{vertices}\}$.  Rotations about the $x$ axis (which can all be expressed as ${r_x}^n$ for some $n$) leave the faces $x_+$ and $x_-$ fixed. Similarly, $\{y_+$ ,$y_-\}$ and $\{z_+,z_-\}$ are  fixed by rotations about the $y$ axis and $z$ axis, respectively.   Thus, $\{x_+,x_-\},\{y_+,y_-\},\{z_+,z_-\},$  are all examples of \emph{fixed point sets} in $X$.
 This leads to another definition:
 
-\begin{defn} \label{FixedPoint}
+\begin{defn}{FixedPoint}
 Let $G$ be a group acting on a set $X$, and let $g$ be
 an element of $G$. The \term{fixed point set}\index{Fixed point
 set!of a group element} of $g$ in $X$, denoted by $X_g$, is the set of 
