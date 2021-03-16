@@ -97,7 +97,8 @@ doing something wrong.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Induction proofs, type I: Sum/product formulas}
- 
+ \label{subsec:Induction:ProofPatternsAndPractice:TypeISumProd}
+
 The most common, and the easiest, application of induction is to prove
 formulas for sums or products of $n$ terms. Many of these  proofs follow
 the same pattern. Here are  some examples of formulas that can be proved by induction:
@@ -223,6 +224,8 @@ Prove formula (iv) above using induction.
 
 
 \subsection*{Induction proofs, type II: inequalities} 
+\label{subsec:Induction:ProofPatternsAndPractice:TypeII_Ineq}
+
 A second general type of application of induction is to prove inequalities
 involving a  natural number $n$.   These proofs also tend to be on the
 routine side; in fact, the algebra required is usually very minimal, in
@@ -366,6 +369,8 @@ Prove inequality (v) above using induction.
 
 \subsection*{Induction proofs, type III:
 Extension of theorems from $2$ variables to $n$ variables}
+\label{subsec:Induction:ProofPatternsAndPractice:TypeIII_NVariables}
+
 Another very common and usually routine application of induction is to
 extend general results that have been proved for the case of $2$
 variables to the case of $n$ variables.  Below are some examples.
@@ -729,8 +734,9 @@ $n=k,k-1,\dots,1$.  This variation of the induction
 method is called \textbf{strong induction}.  The induction principle
 remains valid in this modified form. 
 
-
 \subsection*{Strong induction and recurrences}
+\label{subsec:Induction:StrongInduction:Recurrences}
+
 In the induction proofs we've looked at so far, we first had to prove a base case, and then used a preceding case ($n=k$) to prove the case $n=k+1$ in the induction step. But when we aply  induction to two-term recurrence sequences like the Fibonacci
 numbers, we'll need \emph{two} preceding cases, $n=k$ and $n=k-1$, in
 the induction step, and \emph{two} base cases (e.g., $n=1$ and $n=2$) to get
@@ -818,6 +824,8 @@ $P(n)$ is true for all $n\in\NN$.
 \end{proof}
 
 \subsection*{Strong Induction and representation problems}
+\label{subsec:Induction:StrongInduction:RepresentProblems}
+
 For applications to representation problems one 
 typically requires the induction hypothesis in its strongest possible
 form, where one assumes \emph{all} preceding
