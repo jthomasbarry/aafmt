@@ -137,7 +137,7 @@ Try to use the method of Proposition~\ref{proposition:ComplexNumbers:no_sqrt} to
 Notice that the $n$th root of $a$ is a solution of the equation $x^n - a=0$ (and conversely--any solution of $x^n- a=0$ is an $n$th root of $a$). 
 Based on this observation, we may generalize the notion of ``root'':
 
-\begin{defn} Given a function $f(x)$ which is defined on the real numbers and takes real values, then a \term*{root}\index{Root! of a real function} of $f(x)$ is any solution of the equation $f(x)=0$.  
+\begin{defn}{root} Given a function $f(x)$ which is defined on the real numbers and takes real values, then a \term*{root}\index{Root! of a real function} of $f(x)$ is any solution of the equation $f(x)=0$.  
 \end{defn}
 
 \begin{exercise}{graph}
@@ -158,6 +158,7 @@ Exercise~\ref{exercise:ComplexNumbers:graph} underscores an important point. A g
 \end{exercise}
 
 \subsection{Unreal, but unavoidable}
+\label{subsec:ComplexNumbers:Origin:Unreal}
 
 Mathematicians have known Proposition~\ref{proposition:ComplexNumbers:no_sqrt} for thousands of years, and
 for a long time that settled the question. Unfortunately, that nasty
@@ -326,7 +327,7 @@ In mathematics, when we say ``either X is true or Y is true'', we also include t
 
 \end{prop}
 \begin{proof}
-We're not ready to give a proof yet, but we'll give one later (see Exercise~\ref{exercise:ModularArithmetic:EuclidLemmaProof}  in Section~\ref{sec:ModularArithmetic:Diophantine}).
+We're not ready to give a proof yet, but we'll give one later (see Exercise~\ref{exercise:ModularArithmetic:EuclidLemmaProof}  in Section~\ref{subsec:ModularArithmetic:Diophantine}).
 \end{proof}
 
 
@@ -694,16 +695,17 @@ of \emph{nonzero} rationals, reals, and complex numbers.\index{Complex numbers!a
 Prove FOIL for complex numbers: that is, if $u,v,w,$ and $z$ are complex numbers, then $(u+v)(w+z) = uw + uz+vw+vz$.
 \end{exercise}
 
-Tables~\label{additive_table}-\label{multiplicative_table} show that complex numbers also follow the same fundamental algebraic  rules that real numbers do. This makes life a lot simpler! From now on,
+Tables~\ref{additive_table}-\ref{multiplicative_table} show that complex numbers also follow the same fundamental algebraic  rules that real numbers do. This makes life a lot simpler! From now on,
 in our proofs we may freely apply these properties to complex numbers, just like with real numbers. But it's important to realize that we had to go through the process first of establishing the properties specifically for complex numbers, because there are number systems in which these basic properties do not hold--be forewarned! 
 
 \subsection{Modulus and complex conjugate}
+\label{subsec:ComplexNumbers:Arithmetic:ModulusConjugateComplex}
 
 We are familiar with the absolute value of a real number: for instance,
 $|-\sqrt{7}|=\sqrt{7}$. In general, for a real number $x$ the absolute
 value can be defined as $|x|\equiv\sqrt{x^{2}}$. (Here and elsewhere, the square root symbol is used to denote the \emph{positive} square root.)
 
-\begin{defn}
+\begin{defn}{modulus}
 For a complex number $z$, the \term{absolute value} or \term{modulus}\index{Modulus}\index{Complex numbers!modulus}
 of $z=a+bi$ is $|z|=\sqrt{a^{2}+b^{2}}$.
 \end{defn}
@@ -711,7 +713,7 @@ of $z=a+bi$ is $|z|=\sqrt{a^{2}+b^{2}}$.
 Complex numbers have an additional operation that real numbers do
 not have. 
 
-\begin{defn}
+\begin{defn}{complexConjugate}
 The \term{complex conjugate}\index{Conjugate, complex}\index{Complex numbers!complex conjugate}
 of a complex number $z=a+bi$ is defined to be $\overline{z}=a-bi$.
 \end{defn}

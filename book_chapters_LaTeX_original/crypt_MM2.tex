@@ -447,7 +447,7 @@ Thus far we have looked at elliptic curves whose coefficients are real numbers. 
 
 At the end of the previous section, we showed that our new  `+' operation allows us to define a group on the set of points of an elliptic curve, when the curve is a subset of $R^2$ and is defined using real coefficients.  It turns out that exactly the same argument can be used to show the very same group property for curves with coefficients in $\mathbb{Z}_p$, which are subsets of $\mathbb{Z}_p \times \mathbb{Z}_p$.  
 
-We saw in Section \ref{subsec:Groups:GroupProperties:CyclicGroups} that every element of a group defines a \term{cyclic subgroup}\index{Cyclic subgroup! in EC cryptography}. Specifically, if the group $G$ is finite, then for any element $g \in G$ the set 
+We saw in Section \ref{subsec:Groups:GroupProperties:CyclicSubgroups} that every element of a group defines a \term{cyclic subgroup}\index{Cyclic subgroup! in EC cryptography}. Specifically, if the group $G$ is finite, then for any element $g \in G$ the set 
 \[ {\var id}, g, g^2, g^3, \ldots, g^{n-1} \ \]
 is a subgroup of $G$, where $n$ is the \emph{order} of $g$ and satisfies $g^n = {\var id}$. In EC cryptography, extensive use is made of cyclic subgroups.  Any EC cyptosystem is based on a single group element, which is referred to as a \term{generator}\index{Generator! in EC cryptography}.  In practice, the generator is added to itself repeatedly. Follow the examples below to see how this works.
 

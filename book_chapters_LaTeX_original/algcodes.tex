@@ -15,7 +15,7 @@ arises in many areas of communications, including radio, telephone, television, 
 \medskip
 
 \noindent
-\underline{\bf Prerequisites}: In this chapter we will make extensive use of the group $\mathbb{Z}^{n}_{2}$, which is the direct product of $n$ copies of $\mathbb{Z}_{2}$ (direct products were introduced in Section~\ref{sec:isomorph_section_2}.  
+\underline{\bf Prerequisites}: In this chapter we will make extensive use of the group $\mathbb{Z}^{n}_{2}$, which is the direct product of $n$ copies of $\mathbb{Z}_{2}$ (direct products were introduced in Section~\ref{sec:Isomorphism:DirectProductsClassificationAbelianGroups}.  
 %Section~\ref{sec:MaximumLikelihood} on maximum-likelihood decoding uses some probability theory--this section is independent of the rest of the chapter, and may be omitted if desired. 
 The discussion of linear block codes (Section~\ref{sec:ErrorAndCorrectionCode:BlockCodes} and following) uses concepts from linear algebra such as matrix, vector, and matrix multiplication. Section \ref{sec:ErrorAndCorrectionCode:EfficientDecoding} uses some basic ideas about cosets, which were introduced in  Chapter~\ref{Cosets}.  
 \bigskip
@@ -121,7 +121,7 @@ original codeword.
 
  
 \begin{table}[htb]
-\caption{A repetition code\label{algcodes:table0}}{\small
+\caption{A repetition code\label{ErrorAndCorrectionCode:table0}}{\small
 \begin{center}
 \begin{tabular}{|lc|cccccccc|}
 \hline
@@ -558,7 +558,7 @@ For each $j$, we have the 4 possibilities for $x_j$ and $y_j$ shown in Table~\re
 1 & 1 & 0\\
 \hline
 \end{tabular}
-\label{algcodes:table3}
+\label{ErrorAndCorrectionCode:table3}
 \end{center}
 }
 \end{table}
@@ -608,7 +608,7 @@ that the minimum distance here is 2; hence, the code is suitable as
 a single error-detecting code. 
   
 \begin{table}[hbt]
-\caption{Distances between 4-bit codewords\label{algcodes:table1}}{\small
+\caption{Distances between 4-bit codewords\label{ErrorAndCorrectionCode:table1}}{\small
 \begin{center}
 \begin{tabular}{|c|cccccccc|}
 \hline
@@ -695,7 +695,7 @@ single error-correcting code.
 \end{example}
   
 \begin{table}[htb]
-\caption{ Hamming distances for an error-correcting code\label{algcodes:table2}}{\small
+\caption{ Hamming distances for an error-correcting code\label{ErrorAndCorrectionCode:table2}}{\small
 \begin{center}
 \begin{tabular}{|c|cccc|}
 \hline
@@ -789,7 +789,7 @@ Prove part (b) of Proposition~\ref{proposition:ErrorAndCorrectionCode:norm} by u
 \end{exercise}
 The codes we discussed in Section~\ref{sec:ErrorAndCorrectionCode:Definitions} were all subsets of $\mathbb{Z}_2^n$, for some positive integer $n$. We shall now see that codes that are also \emph{subgroups} have special properties that enable efficient encoding and decoding. Accordingly, we define:
 
-\begin{defn}
+\begin{defn}{groupCode}
  A \term{group
 code}\index{Code!group}\index{Group code} is a set of codewords that is also a subgroup of ${\Bbb
 Z}_2^n$.  
@@ -869,13 +869,13 @@ d_{\min} &= & \min \{ d({\bold x},{\bold y}) : {\bold x}
  \end{warn}
  
 \section{Linear Block Codes}
-\label{sec:ErrorAndCorrectionCode:BlockCodes}
+\label{sec:ErrorAndCorrectionCode:LinearBlockCodes}
   
 Using Proposition~\ref{proposition:ErrorAndCorrectionCode:GroupCodeMinDist}, it is now a simple matter to find the error detection and correction capabilities of a group code. However, so far we don't have a good method  for creating group codes. In this section, we will use some techniques from linear algebra to give one such method. This method is widely used in digital information processing: for instance, in CDs, DVDs, and satellite communications.
 
 To understand this section, readers should familiar with basic notions of linear algebra such as systems of linear equations, vectors, linear combination, matrix multiplication, and transpose. Readers may find a brief refresher on matrix multiplication in Chapter~\ref{SigmaNotation}.
  
- \begin{defn}
+ \begin{defn}{innerProduct}
 The \term{inner product}\index{Inner product} of two binary
 $n$-tuples is
 \[
@@ -942,7 +942,7 @@ x_4
 \end{example} 
 Example~\ref{example:ErrorAndCorrectionCode:ParityCheck0} shows that an even-parity codeword can be verified by an inner product, which is a special case of a matrix multiplication. We will now show that codewords in other types of group codes can also be verified by matrix multiplication. But first, as usual, a definition:
 
-\begin{defn} 
+\begin{defn}{MknZ2} 
 Let ${\Bbb M}_{k \times n}(\mathbb{Z}_2)$ denote the set
 of all $k \times n$ matrices with entries in $\mathbb{Z}_2$. We do
 matrix operations as usual except that all our addition and multiplication
@@ -1264,7 +1264,7 @@ therefore must be a codeword.
 
 We give a special name to  group codes that are obtained as null spaces:
 
-\begin{defn}
+\begin{defn}{linearCode}
 A code is a \term{linear code}\index{Code!linear} if it is
 determined by the null space of some matrix $H \in \mathbb{M}_{k \times
 n}(\mathbb{Z}_2)$.  
@@ -1325,7 +1325,7 @@ We have shown how to define a set of codewords for a block linear code. But so f
 \sectionvideohref{1eCIhwdnJLU&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=42}}
 \label{subsec:ErrorAndCorrectionCode:EncodingBlockLinearCodes:ParityCheck}
 
-\begin{defn}
+\begin{defn}{CanonicalParityCheckMatrix}
   Suppose that $H$ is a $k \times n$ matrix with entries in
 $\mathbb{Z}_2$ and $n > k$. If the last $k$ columns of the
 matrix form the $k \times k$ identity matrix, $I_k$, then
@@ -1446,7 +1446,7 @@ The proof of Proposition~\ref{proposition:ErrorAndCorrectionCode:RowEchelon} sim
 
  Proposition~\ref{proposition:ErrorAndCorrectionCode:RowEchelon} motivates the following definitions.
  
- \begin{defn}
+ \begin{defn}{InformBits}
  Let $H$ be a canonical parity-check matrix, and let ${\bold x}$ be a codeword in Null($H$). Then the first $n-k$ bits of ${\bold x}$ are called \term{
 information bits} \index{Bits!information bits} \index{Information bits}and the last $k$ bits are called \term{check bits}\index{Bits!check bits}\index{Check bits}.
 \end{defn}
@@ -1474,7 +1474,7 @@ Before jumping into this discussion, we should simplify our notation. Up to now 
 
 Now that that's out of the way,  let's begin on our new code generation method.  First, a definition:
 
-\begin{defn}{algcodes:GeneratorMatrix}
+\begin{defn}{GeneratorMatrix}
 With each $k \times n$ canonical parity-check matrix 
 $H= (A \mid I_k)$
 we can associate an $n \times
@@ -1983,7 +1983,7 @@ where the error occurred. If we flip the first bit in ${\bold y}$ from
  
  It appears from this example that the vector $H{\bold x}$ has special importance, so we create a special term for it:
  
- \begin{defn}
+ \begin{defn}{syndomeOfx}
 If $H$ is an $k \times n$ matrix and ${\bold x} \in \mathbb{Z}_2^n$,
 then $H{\bold x}$ is called the \term{syndrome}\index{Syndrome of a code} of
 ${\bold x}$
