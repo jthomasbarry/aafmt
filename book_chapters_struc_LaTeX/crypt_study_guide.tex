@@ -1,0 +1,68 @@
+\section{Study guide  for ``Applications (I): Introduction to Cryptography''  chapter}
+\label{sec:crypt:study} 
+\subsection*{Section \ref{sec:privateKeyCrypto}, Private key cryptography}
+\subsubsection*{Concepts:}
+\begin{enumerate}
+\item 
+Shift codes (monoalphabetic cryptosystem -- one-to-one substitution)
+\item
+Affine codes (monoalphabetic cryptosystem -- one-to-one substitution)
+\item
+Affine codes (polyalphabetic cryptosystem -- ciphertext represents more than one letter)
+\item
+Modular matrix multiplication
+\item
+Matrix inverses in ${\mathbb Z}_{n}$
+\end{enumerate}
+
+\subsubsection*{Competencies}
+\begin{enumerate}
+\item
+Know how to encode and decode using the shift code method.   (\ref{exercise:crypt:encode1}, \ref{exercise:crypt:decode1}, \ref{exercise:crypt:plaintext1}, \ref{exercise:crypt:plaintext2})
+\item
+Be able to find the decoding function when given a valid encoding affine function.  (\ref{exercise:crypt:affine1}, \ref{exercise:crypt:affine2})
+\item
+Be able to solve modular matrix multiplication.  (\ref{exercise:crypt:mod_mult})
+\item
+Be able to find matrix inverses in ${\mathbb Z}_{n}$, when they exist.  (\ref{exercise:crypt:minv})
+\end{enumerate}
+
+
+\subsection*{Section \ref{sec:publicKeyCrypto}, Public key cryptography}
+\subsubsection*{Concepts:}
+\begin{enumerate}
+\item 
+RSA cryptosystem (more advanced encryption system: uses modular exponentiation to encrypt and decrypt messages)
+\item
+Binary expansion (like decimal expansion, except it uses base 2 instead of base 10)
+\item
+Identifying prime numbers by brute force (Euler totient function and sieve of Eratosthenes)
+\item
+Identifying prime numbers by Fermat's test for primality (Fermat's factorization algorithm)
+\item
+Pseudoprime numbers
+\end{enumerate}
+
+\subsubsection*{Key formulas}
+\begin{enumerate}
+\item
+Fermat's factorization algorithm: If $n$ is an odd composite number, then $n = x^{2} - y^{2} = (x - y)(x + y)$ for some $x$ and $y$
+\item
+Pseudoprime formula: the odd number $n$ is a pseudoprime base $b$ if mod$(b^{n-1},n) = 1$
+\end{enumerate}
+
+\subsubsection*{Competencies}
+\begin{enumerate}
+\item
+Compute binary expansion of exponent, either by hand (\ref{exercise:crypt:power}) or by spreadsheet (\ref{exercise:crypt:powerplus}).
+\item
+Using binary expansion of exponent to rapidly compute modular exponentials by spreadsheet. (\ref{exercise:crypt:power}, \ref{exercise:crypt:powerplus})
+\item
+Given a base, encoding (decoding) key, and message, encrypt (decrypt) RSA messages. (\ref{exercise:crypt:RSA_E}, \ref{exercise:crypt:RSA_D})
+\item
+Given a base and encoding (or decoding) key, use brute force method by spreadsheet to find the corresponding decoding (or encoding) key. (\ref{exercise:crypt:brute})
+\item
+Use Fermat's factoring method by spreadsheet to factor large numbers. (\ref{exercise:crypt:FermatSpreadsheet})
+\item
+Determine if a number is pseudoprime relative to a given base. (\ref{exercise:crypt:prime_pseudo})
+\end{enumerate}

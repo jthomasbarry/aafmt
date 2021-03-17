@@ -1,0 +1,1006 @@
+\section{Solutions for  ``Symmetries of Plane Figures''}
+\noindent\textbf{\textit{ (Chapter \ref{symmetries})}}\bigskip
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:mercedes}:}
+%List six different symmetries of the Mercedes logo.
+%\hyperref[sec:symmetries:hints]{(*Hint*)}
+(In the following answers, 0 degrees is taken as the vertical up direction.)
+\begin{multicols}{3}
+\begin{enumerate}
+\item
+$\var{id}$
+
+\item
+$r_{120}$
+
+\item
+$r_{240}$
+
+\item
+$s_v$
+
+\item
+$s_{120^{\circ}}$
+
+\item
+$s_{240^{\circ}}$
+\end{enumerate}
+\end{multicols}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:hexagon}:}
+\begin{enumerate}[(a)]
+\item
+%Is $r_{60}$ one-to-one?  Explain why or why not.
+Yes, $r_{60}$ is one-to-one, because each element of the domain goes to only one element of the codomain.
+
+\item
+%Is $r_{60}$ onto?  Explain why or why not.
+Yes, $r_{60}$ is onto, because every element of the codomain maps to an element in the domain.
+
+\item
+%Is $r_{60}$ a bijection?  Explain why or why not.
+Yes, $r_{60}$ is it is one-to-one and onto it is a bijection.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:bijectnotsym}:}\\
+%Create a bijection from $\{A,B,C,D,E,F\} \to \{A,B,C,D,E,F\}$ that does not correspond to a symmetry of the regular hexagon in  Figure~\ref{hex60rot}. \emph{Explain} why it is not a symmetry.
+There are many answers, one is given below.  It's not a symmetry because it doesn't preserve the length and position of corresponding side $\overline{AB}$.\\
+\\
+$\begin{pmatrix}
+A & B & C & D & E & F\\
+A & C & B & D & E & F
+\end{pmatrix}$\\
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:10}:}
+\begin{enumerate}[(a)]
+\item
+%Explain why a $90^\circ$ rotation, a $270^\circ$ rotation, or reflection across a diagonal are not symmetries  of the rectangle $ABCD$.
+The two rotations and the reflection all change the final image so they are not symmetries.
+
+\item
+%What subcategory of rectangle would have a $90^\circ$ rotation, $270^\circ$ rotation, and a reflection across a diagonal as symmetries?
+square
+
+\item
+%What rotation angle does the identity symmetry correspond to? (Give the easiest answer.)
+0
+
+\item
+%Write each of the symmetries of a rectangle as a function (use either a table, ordered pairs, arrow diagram, etc.)
+$\var{id}: \begin{pmatrix}
+A & B & C & D\\
+A & B & C & D
+\end{pmatrix}$
+$\qquad r_{180}: \begin{pmatrix}
+A & B & C & D\\
+C & D & A & B
+\end{pmatrix}$\\
+\\
+$s_{v}: \begin{pmatrix}
+A & B & C & D\\
+D & C & B & A
+\end{pmatrix}$
+$\qquad s_{h}: \begin{pmatrix}
+A & B & C & D\\
+B & A & D & C
+\end{pmatrix}$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:SymmComposition}:}
+%With reference to the symmetries of a rectangle in Example~\ref{example:symmetries:rectsymmetries}, let  $r_{180}$ be the $180^\circ$ counterclockwise rotation and let $s_v$ be the reflection across the vertical axis. (Note that reflection across the vertical axis is sometimes called ``horizontal reflection,'' since the figure ``flips'' from left to right. Admittedly this is confusing, but that's what people call it so what can you do?)
+\begin{enumerate}[(a)]
+\item
+%Write the function $r_{180}$ in ordered pair notation.
+$r_{180} = \{(A, C), (B, D), (C, A), (D, B)\}$
+
+\item
+%Write the function $s_v$ in ordered pair notation.
+$s_v = \{(A, D), (B, C), (C, B), (D, A)\}$
+
+\item 
+%Write the function $r_{180} \compose s_v$ in ordered pair notation. Is it a symmetry of the rectangle? If so, then which one?
+$r_{180}: \begin{pmatrix}
+A & B & C & D\\
+C & D & A & B
+\end{pmatrix}$
+$\qquad s_v: \begin{pmatrix}
+A & B & C & D\\
+D & C & B & A
+\end{pmatrix}$\\
+$r_{180}\circ s_v = \{(A,B), (B,A), (C,D), (D,C)\}$\\
+It's the symmetry $s_h$.
+
+\item
+%Write the function $s_v \compose r_{180}$ in ordered pair notation. Is it a symmetry of the rectangle? If so, then which one?
+$s_v\circ r_{180}= \{(A,B), (B,A), (C,D), (D,C)\}$\\
+It's the symmetry $s_h$.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:CompSymm}:}
+\begin{enumerate}[(a)]
+\item
+%Write $s_h$ in tableau form, where $s_h$ is reflection across the horizontal axis. (Note $s_h$ is sometimes referred to  as ``vertical reflection,'', since the two reflected halves are stacked on top of each other.)
+$s_h: \begin{pmatrix}
+A & B & C & D\\
+B & A & D & C
+\end{pmatrix}$
+
+\item
+%Does $r_{180} \compose s_v = s_h$?
+Yes, $r_{180}\circ s_v=s_h$
+
+\item
+%Compute $s_h \compose  s_v$. Is this a symmetry? If so, which one?
+$s_h\circ s_v=\begin{pmatrix}
+A & B & C & D\\
+C & D & A & B
+\end{pmatrix}$\\
+It's the symmetry $r_{180}$.
+
+\item
+%Compute $s_v \compose r_{180}$.  Is this a symmetry? If so, which one?
+$s_v\circ r_{180}=\begin{pmatrix}
+A & B & C & D\\
+B & A & D & C
+\end{pmatrix}$\\
+It's the symmetry $s_h$.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:16}:}
+%With reference to the hexagon in Figure~\ref{hex60rot}, for the symmetries $f$ and $g$ in parts (a)-(d) below:
+%\begin{enumerate}[(i)]
+%\item
+%Write the symmetries $f$ and $g$ in tableau form.
+%\item
+%Compute $f \compose g$ and $g \compose f$, expressing your answers in tableau form.
+%\item 
+%Describe the symmetries that correspond to $f \compose g$ and $g \compose f$, respectively.
+%%\end{enumerate}
+%\medskip
+%\noindent
+%Note ${\var id}$ denotes the identity symmetry, that is the symmetry that leaves all points unchanged.
+%\medskip
+\begin{enumerate}[(a)]
+\item
+%$f=$ rotation by $240^\circ, g=$ rotation by $120^\circ$
+	\begin{enumerate}[(i)]
+	\item
+	$f=r_{240}=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	E & F & A & B & C & D
+	\end{pmatrix}$
+	$\qquad g=r_{120}=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	C & D & E & F & A & B
+	\end{pmatrix}$\\
+	
+	\item
+	$f\circ g=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	A & B & C & D & E & F
+	\end{pmatrix}$
+	$\qquad g\circ f=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	A & B & C & D & E & F
+	\end{pmatrix}$
+	
+	\item
+	$f\circ g = \var{id}$\\
+	$g\circ f= \var{id}$
+	\end{enumerate}
+	
+\item
+%$f={\var id}, g=$ rotation by $120^\circ$
+	\begin{enumerate}[(i)]
+	\item
+	$f=\var{id}=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	A & B & C & D & E & F
+	\end{pmatrix}$
+	$\qquad g=r_{120}=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	C & D & E & F & A & B
+	\end{pmatrix}$\\
+	
+	\item
+	$f\circ g=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	C & D & E & F & A & B
+	\end{pmatrix}$
+	$\qquad g\circ f=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	C & D & E & F & A & B
+	\end{pmatrix}$
+	
+	\item
+	$f\circ g = r_{120}$\\
+	$g\circ f = r_{120}$
+	\end{enumerate}
+	
+\item
+%$f=$rotation by $ 240^\circ, g=$reflection across the line $BE$
+	\begin{enumerate}[(i)]
+	\item
+	$f=r_{240}=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	E & F & A & B & C & D
+	\end{pmatrix}$
+	$\qquad g=s_{BE}=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	C & B & A & F & E & D
+	\end{pmatrix}$\\
+	
+	\item
+	$f\circ g=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	A & F & E & D & C & B
+	\end{pmatrix}$
+	$\qquad g\circ f=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	E & D & C & B & A & F
+	\end{pmatrix}$
+	
+	\item
+	$f\circ g = s_{AD}$\\
+	$g\circ f = s_{CF}$
+	\end{enumerate}
+	
+\item
+%$f=$rotation by $ 180^\circ, g=$reflection across the line $CF$
+	\begin{enumerate}[(i)]
+	\item
+	$f=r_{180}=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	D & E & F & A & B & C
+	\end{pmatrix}$
+	$\qquad g=s_{CF}=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	E & D & C & B & A & F
+	\end{pmatrix}$\\
+	
+	\item
+	$f\circ g=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	B & A & F & E & D & C
+	\end{pmatrix}$
+	$\qquad g\circ f=\begin{pmatrix}
+	A & B & C & D & E & F\\
+	B & A & F & E & D & C
+	\end{pmatrix}$
+	
+	\item
+	$f\circ g = s_{30}$\\
+	$g\circ f = s_{30}$
+	\end{enumerate}
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:S3Table}:}
+%Verify the following entries in Table~\ref{S3_table} by (i) writing the symmetries in tableau form and (ii) computing the composition directly.
+\begin{enumerate}[(a)]
+\item
+%Row 2, column 4\\
+$\rho_1 \circ \mu_1 = \begin{pmatrix}
+A & B & C\\
+B & C & A
+\end{pmatrix} \circ \begin{pmatrix}
+A & B & C\\
+A & C & B
+\end{pmatrix}=\begin{pmatrix}
+A & B & C\\
+B & A & C
+\end{pmatrix}=\mu_3$
+
+\item
+%Row 4, column 2\\
+$\mu_1\circ \rho_1=\begin{pmatrix}
+A & B & C\\
+A & C & B
+\end{pmatrix}\circ \begin{pmatrix}
+A & B & C\\
+B & C & A
+\end{pmatrix}=\begin{pmatrix}
+A & B & C\\
+C & B & A
+\end{pmatrix}=\mu_2$
+
+\item
+%Row 3, column 6\\
+$\rho_2\circ \mu_3=\begin{pmatrix}
+A & B & C\\
+C & A & B
+\end{pmatrix}\circ \begin{pmatrix}
+A & B & C\\
+B & A & C
+\end{pmatrix}=\begin{pmatrix}
+A & B & C\\
+A & C & B
+\end{pmatrix}=\mu_1$
+
+\item
+%Row 6, column 3\\
+
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:20}:}
+%Use Table~\ref{S3_table} to answer the following questions. 
+\begin{enumerate}[(a)]
+\item
+%Explain why Table~\ref{S3_table} shows that ${\var id}$ satisfies the definition of an identity element.
+Any symmetry composes with $\var{id}$ leave that symmetry unchanged.\\
+$\var{id}$ composes with any symmetry still leave that symmetry unchanged.
+
+\item
+%Does every element in $S$ have an inverse?  List the inverses for each symmetry that has an inverse.
+Yes, because every element has another element that when they are composed returns the $\var{id}$. The inverses are as follows:\\
+	\begin{multicols}{3}
+	\begin{itemize}
+	\item
+	$\var{id} \leftrightarrow \var{id}$.
+	
+	\item
+	$\rho_1 \leftrightarrow \rho_2$.
+	
+	\item
+	$\mu_1 \leftrightarrow \mu_1$.
+	
+	\item
+	$\mu_2 \leftrightarrow \mu_2$.
+	
+	\item
+	$\mu_3 \leftrightarrow \mu_3$.
+	\end{itemize}
+	\end{multicols}
+	
+\item
+%Explain why Table~\ref{S3_table} shows that composition is \emph{not} commutative.
+It is not commutative, because you cannot always switch the order of elements, an example: $\mu_1\circ \mu_2 = \rho_1$ but $\mu_2\circ \mu_1=\rho_2$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:prop_proof}:}\\
+%Write out the proof of Proposition \ref{proposition:symmetries:symcompinv} part (i).
+%\hyperref[sec:symmetries:hints]{(*Hint*)}
+We show that $s^{-1}$ leave distances between points unchanged as follows:\\
+Proof:\\
+Choose any two points $A$ and $B$ in the figure, and let $A'=s^{-1}(A)$ and $B'=s^{-1}(B)$.\\
+By definition of inverse, it follows that $s(A')=A$ and $s(B')=B$.\\
+Since $s$ is a symmetry, it follows that $\overline{A'B'}$ = $\overline{AB}$\\
+Since $A$ and $B$ were arbitrary points in the figure, we have shown that $s^{-1}$ leaves distance between points unchanged.
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:group_proof}:}\\ 
+%Prove Proposition~\ref{proposition:symmetries:symcompinv} (make use of the propositions that we've proved previously.)
+We just need show that the set of symmetries with the operation of composition has closure, associativity, an identity element, and every element has an inverse.  
+\begin{itemize}
+\item
+Closure: Using Proposition~\ref{proposition:symmetries:symcompclosed} and Exercise \ref{exercise:symmetries:16}, you can see that if $f$ and $g$ are symmetries of a figure, then $f \compose g$ and $g \compose f$ are also symmetries of the figure.
+
+\item
+Associativity: Using Proposition~\ref{proposition:symmetries:symcompassoc} we know that the set of symmetries $S$ of any figure under composition is associative.
+
+\item
+Identity: Using Proposition~\ref{proposition:symmetries:symcompid} we know that all the set of symmetries $S$ of any figure has an identity.
+
+\item
+Inverse: Using Proposition~\ref{proposition:symmetries:symcompinv} we know that all elements of set $S$ have inverses.
+\end{itemize}
+Since the set has closure, associativity, an identity element, and every element has an inverse it is a group.\\
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:symm_rectangle}:}\\ 
+\begin{enumerate}[(a)]
+\item
+%Write the Cayley table for the symmetries of a rectangle.
+\begin{tabular}{c| c c c c c c c c }
+		o & $\var{id}$ & $r_{180}$ & $s_v$ & $s_h$ \\
+		\hline
+		$\var{id}$ & $\var{id}$ & $r_{180}$ & $s_v$ & $s_h$\\
+		$r_{180}$ & $r_{180}$ & $\var{id}$ & $s_h$ & $s_v$\\
+		$s_v$ & $s_v$ & $s_h$ & $\var{id}$ & $r_{180}$\\
+		$s_h$ & $s_h$ & $s_v$ & $r_{180}$ & $\var{id}$\\
+	\end{tabular}
+	
+\item
+%List the inverses of each symmetry of the symmetries of a rectangle.
+The inverses are as follows:
+	\begin{multicols}{2}
+	\begin{itemize}
+	\item
+	$\var{id} \leftrightarrow \var{id}$.
+	
+	\item
+	$r_{180} \leftrightarrow r_{180}$.
+	
+	\item
+	$s_v \leftrightarrow s_v$.
+	
+	\item
+	$s_h \leftrightarrow s_h$.
+	\end{itemize}
+	\end{multicols}
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:symm_square}:}
+\begin{enumerate}[(a)]
+\item
+%Describe all symmetries of a square  (for example: ``reflection about the vertical axis '' describes one symmetry: give similar descriptions of all symmetries of the square)
+The identity; rotations of 90, 180, and 270 degrees; vertical and horizontal reflections; and reflections about the 45 and 135 degree lines.
+
+\item
+%Label the square's vertices as $A, B, C, D$, and write down each symmetry in tableau form. As in Figure~\ref{groups_s3_symmetry_fig}, denote each symmetry by a variable (you may use $\rho_1, \rho_2, \ldots$ for the rotations and $\mu_1, \mu_2, \ldots$ for the reflections).
+	\begin{multicols}{2}
+	\begin{itemize}
+	\item
+	$\var{id}=\begin{pmatrix}
+	A & B & C & D\\
+	A & B & C & D
+	\end{pmatrix}$
+	
+	\item
+	$r_{90}=\begin{pmatrix}
+	A & B & C & D\\
+	B & C & D & A
+	\end{pmatrix}$
+	
+	\item
+	$r_{180}=\begin{pmatrix}
+	A & B & C & D\\
+	C & D & A & B
+	\end{pmatrix}$
+	
+	\item
+	$r_{270}=\begin{pmatrix}
+	A & B & C & D\\
+	D & A & B & C
+	\end{pmatrix}$
+	
+	\item
+	$s_{v}=\begin{pmatrix}
+	A & B & C & D\\
+	D & C & B & A
+	\end{pmatrix}$
+	
+	\item
+	$s_{h}=\begin{pmatrix}
+	A & B & C & D\\
+	B & A & D & C
+	\end{pmatrix}$
+	
+	\item
+	$s_{45}=\begin{pmatrix}
+	A & B & C & D\\
+	C & B & A & D
+	\end{pmatrix}$
+	
+	\item
+	$s_{135}=\begin{pmatrix}
+	A & B & C & D\\
+	A & D & C & B
+	\end{pmatrix}$
+	\end{itemize}
+	\end{multicols}
+	
+\item
+%Write the Cayley table for the symmetries of a square.
+	\begin{tabular}{c| c c c c c c c c }
+		o & $\var{id}$ & $r_{90}$ & $r_{180}$ & $r_{270}$ & $s_v$ & $s_h$ & $s_{45}$ & $s_{135}$\\
+		\hline
+		$\var{id}$ & $\var{id}$ & $r_{90}$ & $r_{180}$ & $r_{270}$ & $s_v$ & $s_h$ & $s_{45}$ & $s_{135}$\\
+		$r_{90}$ & $r_{90}$ & $r_{180}$ & $r_{270}$ & $\var{id}$ & $s_{135}$ & $s_{45}$ & $s_v$ & $s_h$\\
+		$r_{180}$ & $r_{180}$ & $r_{270}$ & $\var{id}$ & $s_{90}$ & $s_h$ & $s_v$ & $s_{135}$ & $s_{45}$\\
+		$r_{270}$ & $r_{270}$ & $\var{id}$ & $r_{90}$ & $r_{180}$ & $s_{45}$ & $s_{135}$ & $s_h$ & $s_v$\\
+		$s_v$ & $s_v$ & $s_{45}$ & $s_h$ & $s_{135}$ & $\var{id}$ & $r_{180}$ & $r_{90}$ & $r_{270}$\\
+		$s_h$ & $s_h$ & $s_{135}$ & $s_v$ & $s_{45}$ & $r_{180}$ & $\var{id}$ & $r_{270}$ & $r_{90}$\\
+		$s_{45}$ & $s_{45}$ & $s_h$ & $s_{135}$ & $s_v$ & $r_{270}$ & $r_{90}$ & $\var{id}$ & $r_{180}$\\
+		$s_{135}$ & $s_{135}$ & $s_v$ & $s_{45}$ & $s_h$ & $r_{90}$ & $r_{270}$ & $r_{180}$ & $\var{id}$
+	\end{tabular}
+
+\item
+%For each symmetry of a square, list its inverse.
+	\begin{multicols}{3}
+	\begin{itemize}
+	\item
+	$\var{id} \leftrightarrow \var{id}$.
+	
+	\item
+	$r_{90} \leftrightarrow r_{270}$.
+	
+	\item
+	$r_{180} \leftrightarrow r_{180}$.
+	
+	\item
+	$s_v \leftrightarrow s_v$.
+	
+	\item
+	$s_h \leftrightarrow s_h$.
+	
+	\item
+	$s_{45} \leftrightarrow s_{45}$.
+	
+	\item
+	$s_{135} \leftrightarrow s_{135}$.
+	\end{itemize}
+	\end{multicols}
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:describesymm}:}
+%With reference to the logos in Figure~\ref{logos}:
+\begin{multicols}{3}
+\begin{enumerate}[{a.}]
+\item
+%For which logos do the set of symmetries include all symmetries of the equilateral triangle? (Note: there are at least two!)
+$i, v$
+
+\item
+%For which logos do the set of symmetries include all symmetries of the rectangle?
+$v$
+
+\item
+%For which logos do the set of symmetries include all symmetries of the hexagon?
+$v$
+
+\item
+%Which logos have set of symmetries which are proper subsets of the set of all symmetries as the rectangle?
+$ii, vi$
+
+\item
+%Give two logos such that all symmetries of the first logo are also symmetries of the second logo.
+first $i$, second $v$
+
+\item
+%Which logos have no symmetries except for the identity?
+$vi$
+\end{enumerate}
+\end{multicols}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:InverseRot}:}
+\begin{enumerate}[(a)]
+\item
+%Using the above definition of $r^k$, show that $r^k \compose r^m = r^{m+k}$ for any natural numbers $k,m$.
+Proof:
+\[
+r^k =  \underbrace{r \compose r \cdots \compose r}_{k \; {\rm times}}
+\]
+and
+\[
+r^m =  \underbrace{r \compose r \cdots \compose r}_{m \; {\rm times}}
+\]
+so
+\[
+r^{k+m} =  \underbrace{r \compose r \cdots \compose r}_{m \; {\rm times}} \compose 
+\underbrace{r \compose r \cdots \compose r}_{m \; {\rm times}}
+\]
+which is equal to
+\[
+r^{k+m} =  \underbrace{r \compose r \cdots \compose r}_{m+k \; {\rm times}}
+\]
+
+\item
+%Show that $r^k \compose r^{n-k} = r^{n-k} \compose r^k = {\var id}$ for $1 < k < n$.  
+From part (a), we get  $r^k \compose r^{n-k} = r^{n-k} \compose r^k = r^n$, which is equal to ${\var id}$ according to the text right above the exercise.
+
+\item
+%What does (b) tell us about the inverse of $r^k$?
+The inverse of $r^k$ is $r^{n-k}$.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:reflection_pentagon}:}
+\begin{enumerate}[{a.}]
+\item
+%Write the reflection $s$  for the pentagon in tableau form.  
+$s =\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5\\
+	1 & 5 & 4 & 3 & 2
+	\end{pmatrix}$
+	
+\item
+%How many vertices are fixed by $s$? What are they?
+1 vertice is fixed and it is 1.
+
+\item
+%What is $s^2$?  (Recall that $s^2$ means the same as $s \compose s$.)
+$s^2 = s \circ s =\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5\\
+	1 & 2 & 3 & 4 & 5
+	\end{pmatrix} = \var{id}$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:31}:}
+\begin{enumerate}[{a.}]
+\item
+%Write the reflection $s$ for the octagon in tableau form. 
+$s =\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+	1 & 8 & 7 & 6 & 5 & 4 & 3 & 2
+	\end{pmatrix}$
+	
+\item
+%How many vertices are fixed by $s$? What are they?
+Two vertices are fixed: 1 and 5.
+
+\item
+%What is $s^2$?
+$s^2 = s\circ s = \begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+	1 & 2 & 3 & 4 & 5 & 6 & 7 & 8
+	\end{pmatrix} = \var{id}$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:32}:}
+%Prove the following proposition by filling in the blanks:
+%\medskip
+%
+%\noindent \textbf{Proposition.} 
+%If $0< p,q < n$ and $p \neq q$, then $s \compose r^p$ and $s \compose r^q$ are distinct elements of $D_n$: that is, $s\circ r^p \neq s \compose r^q$.
+%\medskip
+%
+%\begin{proof}
+\begin{multicols}{3}
+\begin{enumerate}
+\item
+% The proof is by contradiction. Given  $0< p,q < n$ and  $p \neq q$, and suppose that $s \compose r^p  \underline{~<1>~}  s \compose r^q$
+$=$
+
+\item
+%Compose both sides of the equation with $s$, and obtain the equation:  $s \compose (s \compose r^p) =  \underline{~<2>~} $.
+$s \circ (s \circ r^q)$
+
+\item
+%By the associative property of composition, this can be rewritten: $(s \compose s) \compose \underline{~<3>~}  
+$r^p$
+
+\item
+%=  \underline{~<4>~}$
+$(s \circ s) \circ r^q$
+
+\item
+%Since $s \compose s = \underline{~<5>~}$,
+$\var{id}$
+
+\item
+%this can be rewritten: ${\var id} \compose \underline{~<6>~}  
+$r^p$
+
+\item
+%=  \underline{~<7>~}$.
+$\var{id} \circ r^q$
+
+\item
+%Since ${\var id}$ is a group identity, we have: $r^p = \underline{~<8>~}$.
+$r^q$
+
+%\item
+%But we have already shown that $r^p$ and $r^q$ are distinct symmetries if $0< p,q < n$ and  $p \neq q$. This is a contradiction.
+
+\item
+%Therefore we conclude that our supposition was incorrect, and $s \compose r^p  \underline{~<9>~} s \compose r^q$. This completes the proof.
+$\neq$
+\end{enumerate}
+\end{multicols}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:33}:}\\
+%Prove the following proposition: 
+%\medskip
+%
+%\noindent
+%\textbf{Proposition}
+%If $0< q < n$  then $s$ and $s \compose r^q$ are distinct elements of $D_n$: that is, $s \neq s \compose r^q$.
+%\medskip
+%\hyperref[sec:symmetries:hints]{(*Hint*)}
+Suppose $0<q<n$ and $s=s\circ r^q$, we have:
+$s\circ s=s\circ(s\circ r^q)$ (compose $s$ to the left of both sides)\\
+$\implies s\circ s=(s\circ s)\circ r^q$ (associative property)\\
+$\implies id=id\circ r^q$ (because $s\circ s=id$)\\
+$\implies id=r^q$ ($id$ is group identity)\\
+It's a contradiction since we have shown that $id\neq r^q$ when $0<q<n$.\\
+Therefore, $s\neq s\circ r^q$.\\
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:34}:}
+%Fill in the blanks to prove that given any integers $p,q$ with $0< p,q < n$, $s \compose r^p \neq r^q$ :
+\begin{multicols}{3}
+\begin{enumerate}
+\item
+%The proof is by contradiction: so given integers $p,q$ with $0< p,q < n$, we suppose $\underline{~<1>~}$.
+$s\circ r^p=r^q$
+
+\item
+%By multiplying both sides on the \emph{right} by $r^{n-p}$, we obtain $s \compose r^p \compose \underline{~<2>~} 
+$r^{n-p}$
+
+\item
+%= r^q \compose \underline{~<3>~}$
+$r^{n-p}$
+
+\item
+%By associativity, we have $s \compose  \underline{~<4>~} 
+$(r^p\circ r^{n-p})$
+
+\item
+%=  \underline{~<5>~}$
+$(r^q\circ r^{n-p})$
+
+\item
+%Using the fact that \underline{~<6>~} 
+$r^p\circ r^{n-p}$
+
+\item
+%= ${\var id}$, we obtain $s = \underline{~<7>~}$
+$r^q\circ r^{n-p}$
+
+\item
+%The left side of this equation is a reflection, and the right side is a $\underline{~<8>~}$, which is a contradiction.
+rotation
+
+\item
+%This contradiction implies that our supposition is incorrect, so  given integers $p,q$ with $0< p,q < n$, we conclude $\underline{~<9>~}$.
+$s\circ r^p\neq r^q$
+\end{enumerate}
+\end{multicols}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:36}:}
+\begin{enumerate}[{a.}]
+\item
+%List four reflections of the square in tableau form.
+%\hyperref[sec:symmetries:hints]{(*Hint*)}
+	\begin{multicols}{2}
+	\begin{itemize}
+	\item
+	$s_h =\begin{pmatrix}
+	1 & 2 & 3 & 4\\
+	2 & 1 & 4 & 3
+	\end{pmatrix}$
+	
+	\item
+	$s_v =\begin{pmatrix}
+	1 & 2 & 3 & 4\\
+	4 & 3 & 2 & 1
+	\end{pmatrix}$
+	
+	\item
+	$s_{13} =\begin{pmatrix}
+	1 & 2 & 3 & 4\\
+	1 & 4 & 3 & 2
+	\end{pmatrix}$
+	
+	\item
+	$s_{24} =\begin{pmatrix}
+	1 & 2 & 3 & 4\\
+	3 & 2 & 1 & 4
+	\end{pmatrix}$
+	\end{itemize}
+	\end{multicols}
+	
+\item
+%Let $\mu$ be any of the reflections in part (a). What is $\mu \compose \mu$?
+$\mu = s_h \implies \mu \circ \mu = \var{id}$
+
+\item
+%How many reflections have no fixed vertices?
+2 reflections fix no vertices.
+
+\item
+%How many reflections fix exactly one vertex?
+0 reflections fix 1 vertice.
+
+\item
+%How many reflections fix exactly two vertices?
+2 relections fix 2 vertices.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:PentagonRefl}:}
+\begin{enumerate}[{a.}]
+\item
+%List five reflections of the pentagon in tableau form.
+%\hyperref[sec:symmetries:hints]{(*Hint*)}
+	\begin{multicols}{2}
+	\begin{itemize}
+	\item
+	$s_1 =\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5\\
+	1 & 5 & 4 & 3 & 2
+	\end{pmatrix}$
+	
+	\item
+	$s_2 =\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5\\
+	3 & 2 & 1 & 5 & 4
+	\end{pmatrix}$
+	
+	\item
+	$s_3 =\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5\\
+	5 & 4 & 3 & 2 & 1
+	\end{pmatrix}$
+	
+	\item
+	$s_4 =\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5\\
+	2 & 1 & 5 & 4 & 3
+	\end{pmatrix}$
+	
+	\item
+	$s_5 =\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5\\
+	4 & 3 & 2 & 1 & 5
+	\end{pmatrix}$
+	\end{itemize}
+	\end{multicols}
+	
+\item
+%Let $\mu$ be any of the reflections in part (a). What is $\mu \compose \mu$?
+$\mu = s_1 \implies \mu \circ \mu = \var{id}$
+
+\item
+%How many reflections have no fixed vertices?
+0 reflections fix no vertex.
+
+\item
+%How many reflections fix exactly one vertex?
+5 reflections fix 1 vertex.
+
+\item
+%How many reflections fix exactly two vertices?
+0 reflections fix 2 vertices.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:HexagonRefl}:}
+\begin{enumerate}[{a.}]
+\item
+%List six reflections of the hexagon in tableau form.
+%\hyperref[sec:symmetries:hints]{(*Hint*)}
+	\begin{multicols}{2}
+	\begin{itemize}
+	\item
+	$s_1=\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6\\
+	1 & 6 & 5 & 4 & 3 & 2
+	\end{pmatrix}$
+
+	\item
+	$s_2=\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6\\
+	3 & 2 & 1 & 6 & 5 & 4
+	\end{pmatrix}$
+
+	\item
+	$s_3=\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6\\
+	5 & 4 & 3 & 2 & 1 & 6
+	\end{pmatrix}$
+	
+	\item
+	$s_{12}=\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6\\
+	2 & 1 & 6 & 5 & 4 & 3
+	\end{pmatrix}$
+
+
+	\item
+	$s_{23}=\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6\\
+	4 & 3 & 2 & 1 & 6 & 5
+	\end{pmatrix}$
+	
+	\item
+	$s_{34}=\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6\\
+	6 & 5 & 4 & 3 & 2 & 1
+	\end{pmatrix}$
+	\end{itemize}
+	\end{multicols}
+	
+\item
+%Let $\mu$ be any of the reflections in part (a). What is $\mu \compose \mu$?
+$\mu\circ\mu = \var{id}$
+
+\item
+%How many reflections have no fixed vertices?
+3 reflections have no fixed vertices.
+
+\item
+%How many reflections fix exactly one vertex?
+
+\item
+%How many reflections fix exactly two vertices?
+
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:nonagon}:}
+\begin{enumerate}[{a.}]
+\item 
+%Complete the second row of the following tableau that represents the reflection of the nonagon that fixes vertex 4:
+%
+%$$\mu_1 = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \_\_ & \_\_ & \_\_ & 4 & \_\_ & \_\_ & \_\_ & \_\_ & \_\_   \end{pmatrix}$$
+$\mu_1 = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ 7 & 6 & 5 & 4 & 3 & 2 & 1 & 9 & 8   \end{pmatrix}$
+
+\item
+%Complete the second row of the following tableau that represents the reflection of the 10-gon that fixes vertex 4:
+%
+%$$\mu_2 = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10  \\ \_\_ & \_\_ & \_\_ & 4 & \_\_ & \_\_ & \_\_ & \_\_ & \_\_ & \_\_   \end{pmatrix}$$
+$\mu_2 = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10  \\ 7 & 6 & 5 & 4 & 3 & 2 & 1 & 10 & 9 & 8 \end{pmatrix}$
+
+\item 
+%Complete the second row of the following tableau that represents the reflection of the 10-gon that exchanges vertices 6 and 7:
+%
+%$$\mu_3 = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \_\_ & \_\_ & \_\_  & \_\_ & \_\_ & 7 & 6 & \_\_ & \_\_ & \_\_  \end{pmatrix}$$
+$\mu_3 = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ 2 & 1 & 10 & 9 & 8 & 7 & 6 & 5 & 4 & 3\end{pmatrix}$
+
+\item
+%What is $\mu_1 \compose \mu_1$? What is $\mu_2 \compose \mu_2$? What is $\mu_3 \compose \mu_3$?
+$\mu_1\circ\mu_1 = \var{id}$\\
+$\mu_2\circ\mu_2 = \var{id}$\\
+$\mu_3\circ\mu_3 = \var{id}$
+\end{enumerate}
+
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:41}:}
+\begin{enumerate}[{a.}]
+\item
+%Based on results we've shown, prove that $s \compose r^p$ must be a reflection, for $0 < p < n$.
+$s\circ r^p$ is either a rotation or a reflection. (Proposition~\ref{proposition:symmetries:dihReflRot}, part (a)\\
+Suppose $s\circ r^p$ is a rotation.\\
+Then $s\circ r^p=r^k$ $(k\in Z)$.\\
+Multiply both sides on the right by $r^{n-p}$\\
+Then $s\circ r^p\circ r^{n-p}=r^k\circ r^{n-p}$\\
+$\implies s=r^{k+n-p}$\\
+This would mean $s$ is a rotation, which is a contradiction.\\
+Therefore, $s\circ r^p$ must be a reflection.
+
+\item
+%Using part (a) and other results we've shown, show that $(s \compose r^p) \compose (s \compose r^p) = {\var id}$.
+%\hyperref[sec:symmetries:hints]{(*Hint*)}
+From part (a), we have $s\circ r^p$ is a reflection, and Proposition~\ref{proposition:symmetries:dihReflRot} part (b) then implies 
+ $(s\circ r^p)\circ (s\circ r^p) = {\var id}$.
+ 
+\item
+%Using part (b) and composing on the left by $r^{n-p} \compose s$, show that $  r^{n-p} \compose s = s \compose r^p$  for $0< p < n$.
+Perform the composition and use the associative property.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:44}:}\\
+%Using only associativity and Proposition~\ref{proposition:symmetries:Dn_generator_theorem}, complete the entire Cayley table for $D_4$.  Remember, there is a row and a column for each element of $D_4$. List the elements as indicated in Proposition~\ref{proposition:symmetries:D_elts}. You don't need to show all your computations. \emph{(But don't use tableau form--no cheating!)} 
+	\begin{tabular}{c| c c c c c c c c }
+		o & $id$ & $r$ & $r^2$ & $r^3$ & $s$ & $s\circ r$ & $s\circ r^2$ & $s\circ r^3$\\
+		\hline
+		$id$ & $id$ & $r$ & $r^2$ & $r^3$ & $s$ & $s\circ r$ & $s\circ r^2$ & $s\circ r^3$\\
+		$r$ & $r$ & $r^2$ & $r^3$ & $id$ & $s\circ r^3$ & $s$ & $s\circ r$ & $s\circ r^2$\\
+		$r^2$ & $r^2$ & $r^3$ & $id$ & $r$ & $s\circ r^2$ & $s\circ r^3$ & $s$ & $s\circ r$\\
+		$r^3$ & $r^3$ & $id$ & $r$ & $r^2$ & $s\circ r$ & $s\circ r^2$ & $s\circ r^3$ & $s$\\
+		$s$ & $s$ & $s\circ r$ & $s\circ r^2$ & $s\circ r^3$ & $id$ & $r$ & $r^2$ & $r^3$\\
+		$s\circ r$ & $s\circ r$ & $s\circ r^2$ & $s\circ r^3$ & $s$ & $r^3$ & $id$ & $r$ & $r^2$\\
+		$s\circ r^2$ & $s\circ r^2$ & $s\circ r^3$ & $s$ & $s\circ r$ & $r^2$ & $r^3$ & $id$ & $r$\\
+		$s\circ r^3$ & $s\circ r^3$ & $s$ & $s\circ r$ & $s\circ r^2$ & $r$ & $r^2$ & $r^3$ & $id$
+	\end{tabular}
+\\
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:D5}:}
+%Using only associativity and Proposition~\ref{proposition:symmetries:Dn_generator_theorem}, complete the entire Cayley table for $D_5$.  You don't need to show all your computations. \emph{(But don't use tableau form -- no cheating!)} 
+\\
+
+\noindent\textbf{Exercise \ref{exercise:symmetries:46}:}
+\begin{enumerate}[{a.}]
+\item
+%Give the Cayley table for the integers mod 4 under addition.
+
+\item 
+%Give the Cayley table for the four rotations of the square (4-sided polygon).  You may use $r$ to denote rotation by $90$ degrees, so that the rotations will be $\{ {\var id}, r, r^2, r^3  \}$.
+\begin{tabular}{c| c c c c}
+		o & $id$ & $r$ & $r^2$ & $r^3$\\
+		\hline
+		$id$ & $id$ & $r$ & $r^2$ & $r^3$\\
+		$r$ & $r$ & $r^2$ & $r^3$ & $id$\\
+		$r^2$ & $r^2$ & $r^3$ & $id$ & $r$\\
+		$r^3$ & $r^3$ & $id$ & $r$ & $r^2$
+	\end{tabular}
+	
+\item 
+%Give the Cayley table for the four complex $4'{th}$ roots of unity. You may use $z$ to denote cis($\pi / 2$) so that the roots will be $\{ 1, z, z^2, z^3 \}$.
+\begin{tabular}{c| c c c c}
+		o & $1$ & $z$ & $z^2$ & $z^3$\\
+		\hline
+		$1$ & $1$ & $z$ & $z^2$ & $z^3$\\
+		$z$ & $z$ & $z^2$ & $z^3$ & $1$\\
+		$z^2$ & $z^2$ & $z^3$ & $1$ & $z$\\
+		$z^3$ & $z^3$ & $1$ & $z$ & $z^2$
+	\end{tabular}
+	
+\item
+%Do you see any connection between your answers to (a), (b), and (c) above?
+\end{enumerate}

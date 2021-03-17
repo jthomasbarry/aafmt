@@ -1,0 +1,1086 @@
+
+\section{Solutions for ``Cosets and Quotient Groups (a.k.a. Factor Groups)''}
+\noindent\textbf{\textit{(Chapter \ref{cosets}})}\bigskip
+\\
+\textbf{Exercise \ref{exercise:cosets:equiv_class_mod5}:}
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item
+%Write the 5 equivalence classes (subsets of ${\mathbb Z}$)  which make up ${\mathbb Z}_5$ using our new notation.
+	\begin{itemize}
+	\item
+	$[1]_5 = 5{\mathbb Z} + 1$
+	\item
+	$[2]_5 = 5{\mathbb Z} + 2$
+	\item
+	$[3]_5 = 5{\mathbb Z} + 3$
+	\item
+	$[4]_5 = 5{\mathbb Z} + 4$
+	\item
+	$[0]_5 = 5{\mathbb Z} + 0$
+	\end{itemize}
+\columnbreak	
+\item
+%Write all elements of ${\mathbb Z}_7$ using our new notation.
+	\begin{itemize}
+	\item
+	$[1]_7 = 7{\mathbb Z} + 1$
+	\item
+	$[2]_7 = 7{\mathbb Z} + 2$
+	\item
+	$[3]_7 = 7{\mathbb Z} + 3$
+	\item
+	$[4]_7 = 7{\mathbb Z} + 4$
+	\item
+	$[5]_7 = 7{\mathbb Z} + 5$
+	\item
+	$[6]_7 = 7{\mathbb Z} + 6$
+	\item
+	$[0]_7 = 7{\mathbb Z} + 0$
+	\end{itemize}
+\end{enumerate}
+\end{multicols}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:Z6_cosets}:}
+%Let $H$ be the subgroup of ${\mathbb Z}_6 = \{0,1,2,3,4,5\}$ consisting of the elements 0 and 3.
+%(We are using our simplified notation here: `0' represents $\overline{0}$, etc.)  The left cosets are 
+%\begin{gather*}
+%0 + H = 3 + H = \{ 0, 3 \} \\
+%1 + H = 4 + H = \{ 1, 4 \} \\
+%2 + H = 5 + H = \{ 2, 5 \}.
+%\end{gather*}
+%What are the right cosets? Are the left and right cosets equal?
+%\\
+%$H = {0, 3}$ and ${\mathbb Z}_6 = {0, 1, 2, 3, 4, 5}$
+\\
+Right coset:
+\begin{gather*}
+H + 0 = H + 3 = \{0, 3\}
+\\
+H + 1 = H + 4 = \{ 1, 4 \} 
+\\
+H + 2 = H + 5 = \{ 2, 5 \}.
+\end{gather*}
+Yes, the left and right cosets are equal.
+\\
+\\
+\textbf{Exercise \ref{exercise:cosets:left_right_cosets}:}
+%List the left and right cosets of the subgroups in each of the following.  Tell whether the left and right cosets are equal.
+%
+%\noindent
+%(Recall that $A_n$ (the alternating group) is the set of even permutations, on $n$ objects; $D_4$ is the group of symmetries of a square; and ${\mathbb T}$ is the group of complex numbers with modulus 1, under the operation of multiplication.)
+\begin{enumerate}[(a)]
+
+\skipitems{1}
+
+\item
+%$\langle 3 \rangle$ in $U(8)$
+%\\
+%$G = U(8) = \{1, 3, 5, 7\}$ and $H = \langle 3 \rangle = \{1, 3\}.  (3 \equiv 3, 3 \odot 3 \equiv 1)$ and $U(8)$ is *
+%\\
+Left coset:
+\begin{gather*}
+1H = 3H = \{1, 3\}
+\\
+5H = 7H = \{5, 7\} 
+\end{gather*}
+\\
+Right coset:
+\begin{gather*}
+H1 = H3 = \{1, 3\}
+\\
+H5 = H7 = \{5, 7\} 
+\end{gather*}
+Yes, the left and right cosets are equal.
+
+\skipitems{1}
+
+\item
+%$H = \{ (1), (123), (132) \}$ in $S_4$
+%\\
+%$H = \{ (1), (123), (132) \}$ and $S_4 = \{(1), (12), (13), (14), (23), (24), (34), (123), (124), (132),(134), (142),
+%\\
+%(143), (234), (243), (1234), (1243), (1324), (1342), (1423), (1432), (12)(34), (13)(24), (14)(23)\}$
+%\\
+Left coset:
+\begin{gather*}
+(1)H = (123)H = (132)H = \{(1), (123), (132)\}
+\\
+(12)H =(13)H = (23)H = \{(12), (13), (23)\} 
+\\
+(14)H =(1234)H = (1324)H = \{(14), (1234), (1324)\} 
+\\
+(24)H =(1423)H = (1342)H = \{(24), (1423), (1342)\}
+\\
+(34)H =(1243)H = (1432)H = \{(34), (1243), (1432)\}
+\\
+(124)H =(14)(23)H = (134)H = \{(124), (14)(23), (134)\}
+\\
+(142)H =(234)H = (13)(24)H = \{(142), (234), (13)(24)\}
+\\
+(143)H =(12)(34)H = (243)H = \{(143), (12)(34), (243)\}
+\end{gather*}
+\\
+Right coset:
+\begin{gather*}
+H(1) = H(123) = H(132) = \{(1), (123), (132)\}
+\\
+H(12) = H(23) = H(13) = \{(12), (23), (13)\} 
+\\
+H(14) = H(1423) = H(1432)  = \{(14), (1423), (1432)\} 
+\\
+H(24)H = H(1243) = H(1324)  = \{(24), (1243), (1324)\}
+\\
+H(34) = H(1234) = H(1342) = \{(34), (1234), (1342)\}
+\\
+H(124) = H(243) = H(13)(24) = \{(124), (243), (13)(24)\}
+\\
+H(134) = H(234) = H(12)(34) =  \{(134), (234), (12)(34)\}
+\\
+H(142) = H(143) = H(14)(23) =  \{(142), (143), (14)(23)\}
+\end{gather*}
+No, the left and right cosets are not equal.
+
+\item
+%$A_4$ in $S_4$, $A_4$ is the even permutations of $S_4$
+%%\\
+%$A_4 = \{(1), (123), (124), (132), (134), (142), (143), (234), (243), (12)(34), (13)(24), (14)(23)\}$
+%\\
+%and $S_4 = \{(1), (12), (13), (14), (23), (24), (34), (123), (124), (132), (134), (142), (143), 
+%\\
+%(234), (243), (1234), (1243), (1324), (1342), (1423), (1432), (12)(34), (13)(24), (14)(23)\}$
+%\\
+Left cosets:
+\\
+$A_4$ in $S_4$
+\\
+$S_4\setminus A_4$
+\\
+%\begin{gather*}
+%(1)H = (123)H = (124)H = (132)H = (134)H = (142)H =  (143)H = (234)H = (243)H = (12)(34)H = 
+%\\
+%(13)(24)H = (14)(23)H = \{(1), (123), (124), (132), (134), (142), (143), (234), (243), (12)(34), (13)(24), (14)(23)\}
+%\\
+%\\
+%(12)H = (13)H = (14)H = (23)H = (24)H = (34)H = (1234)H = (1243)H = (1324)H = 
+%\\
+%(1342)H = (1423)H = (1432)H = \{(12), (13), (14), (23), (24), (34), (1234), (1243), (1324), (1342), (1423), (1432)\}
+%\end{gather*}
+\\
+Right cosets:
+\\
+$A_4$ in $S_4$
+\\
+$S_4\setminus A_4$
+\\
+%\begin{gather*}
+%H(1) =  H(123) = H(124) = H(132) = H(134) = H(142) = H(143) = H(234) = H(243) = H(12)(34) = 
+%\\
+%H(13)(24) = H(14)(23) =\{(1), (123), (124), (132), (134), (142), (143), (234), (243), (12)(34), (13)(24), (14)(23)\}
+%\\
+%\\
+%H(12) = H(13) = H(14) = H(23) = H(24) = H(34) = H(1234) = H(1243) = H(1324) = 
+%\\
+%H(1342) = H(1423) = H(1432) = \{(12), (13), (14), (23), (24), (34), (1234), (1243), (1324), (1342), (1423), (1432)\}
+%\end{gather*}
+
+Yes, the left and right cosets are equal.
+
+\item
+%$A_n$ in $S_n$
+%\\
+%$A_n$ = \{even permutations $\in S_n\} = H$
+%\\
+%$S_n$ = \{all the even and odd permutations of a symmetric group, where $n \in {\mathbb N}\} = G$
+%\\
+%\\
+Left coset, as shown in part e:
+\\
+$g_{even}H$ = \{all even permutations in $S_n$\}
+\\
+$g_{odd}H$ = \{all odd permutation in $S_n$\} 
+\\
+\\
+Right coset, as shown in part e:
+\\
+$Hg_{even}$ = \{all even permutations in $S_n$\}
+\\
+$Hg_{odd}$ = \{all odd permutation in $S_n$\} 
+\\
+\\
+Yes, the left and right cosets are equal.
+
+\item
+%$D_4$ in $S_4$
+%\\
+%$D_4 = \{(1), (13), (24), (1234), (1432), (12)(34), (13)(24), (14)(23)\}$ and 
+%\\
+%$S_4 = \{(1), (12), (13), (14), (23), (24), (34), (123), (124), (132), (134), (142), (143), (234), (243), (1234), (1243), (1324), (1342), (1423), (1432), (12)(34), (13)(24), (14)(23)\}$
+%\\
+Left coset:
+\begin{gather*}
+(1)H = (13)H = (24)H = (1234)H = (1432)H =  (12)(34)H = (13)(24)H = (14)(32)H = 
+\\
+\{(1), (13), (24), (1234), (1432), (12)(34), (13)(24), (14)(23)\}
+\\
+\\
+(12)H = (34)H = (124)H = (132)H = (143)H = (234)H = (1324)H = (1423)H = 
+\\
+\{(12), (34), (124), (132), (143), (234), (1324), (1423)\}
+\\
+\\
+(14)H = (23)H = (123)H = (134)H = (142)H = (243)H = (1243)H = (1342)H = 
+\\
+\{(14), (23), (123), (134), (142), (243), (1243), (1342)\}
+\end{gather*}
+\\
+Right coset:
+\begin{gather*}
+H(1) = H(13) = H(24) = H(1234) = H(1432) =  H(12)(34) = H(13)(24) = H(14)(32) = 
+\\
+\{(1), (13), (24), (1234), (1432), (12)(34), (13)(24), (14)(23)\}
+\\
+\\
+H(12) = H(34) = H(123) = H(134) = H(142)  = H(243) = H(1324) = H(1423) = 
+\\
+\{(12), (34), (123), (134), (142), (243), (1324), (1423)\}
+\\
+\\
+H(14) = H(23) = H(124) = H(132) = H(143)  = H(234) = H(1243) = H(1342) = 
+\\
+\{(14), (23), (124), (132), (143), (234), (1243), (1342)\}
+\end{gather*}
+
+No, the left and right cosets are not equal.
+\\
+
+\item
+%${\mathbb T}$ in ${\mathbb C}^\ast$ 
+%\\
+%$H$ = ${\mathbb T}$ is the unit circle = \{$z$ such that $|z| = 1$\}
+%\\
+%$G$ = ${\mathbb C}^\ast$ is the nonzero complex numbers under multiplication.
+%\\
+The cosets of ${\mathbb T}$ are the sets of the form $w{\mathbb T}$, where $w$ is a complex number.
+\\
+Suppose that $z \in {\mathbb T}$.  In polar form, $z = \cis (\theta)$, where $z \in {\mathbb T}$.
+\\
+So, $wz =( r \cis (\phi))(\cis (\theta)) = r \cis (\phi + \theta)$
+\\
+$\implies |wz| = r \implies wz$ lies on the circle with center 0 and radius $r$.
+\\
+Also consider, complex number $v$, that lies on the circle with center 0 and radius r. 
+\\
+Then $v = r \cis(\alpha)$ for any angle $\alpha$.
+\\
+It follows that $v = r \cis(\phi) \cis(-\phi) \cis(\alpha) = r \cis(\phi) \cis(\alpha - \phi) = wz'$, where $|z'| = 1$.
+\\
+So, $v \in w{\mathbb T}$.
+\\
+$\therefore$ the left cosets are all the circles of the complex plane with center 0.
+\\
+Since, ${\mathbb C}^\ast$ is abelian from Exercise \ref{exercise:groups:C_star}d, left and right cosets are equal.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:abelian_cosets}:}
+%\\
+%Show that if $G$ is an abelian group and $H$ is a subgroup of $G$, then any left coset $gH$ is equal to the right coset $Hg$.  
+%\\
+\\
+Suppose $G$ is an abelian group and $H$ is a subgroup of $G$.
+\\
+The left coset: $gH = \{gh: h \in H\}$.
+\\
+The right coset: $Hg = \{hg: h \in H\}$.
+\\
+Since $G$ is abelian we have: $gh = hg, \forall \  h \in H$.
+\\
+Therefore, the left and right cosets are equal.
+\\
+\\
+\textbf{Exercise \ref{exercise:cosets:CosetEquiv}:}
+%Theorem \ref{cosets_theorem_1}  Let $H$ be a subgroup of a group $G$ and suppose that $g_1, g_2 \in G$.  The following conditions are equivalent.  
+%\begin{multicols}{2}
+%\begin{enumerate}
+%\item
+%$g_1 H = g_2 H$; 
+%
+%\item
+%$g_1^{-1} g_2 \in H$.
+%
+%\item
+%$g_2 \in g_1 H$; 
+%
+%\item
+%$g_2 H \subset g_1 H$; \qquad (\emph{Note:} ``$\subset$'' means that equality is also possible)
+%
+%\item
+%$H g_1^{-1}  = H g_2^{-1}$; 
+%\end{enumerate}
+%\end{multicols}
+%\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.2pt}}
+\begin{enumerate}[(a)]
+\item
+%Show that condition (1) implies condition (2).  
+%\\
+$g_2 = g_2 e$
+\\
+It follows that $g_2 \in g_2 H$
+\\
+By (1), it follows that $g_2 \in g_1 H$ since $g_1H = g_2 H$
+\\
+By def. $g_1 H$, it follows that $g_2 = g_1 h$ for some $h \in H$
+\\
+By composition on left, $(g_1)^{-1} g_2 = g_1^{-1} g_1 h$
+\\
+By def. of inverse $(g_1)^{-1} g_2 = eh$
+\\
+By def. of identity $(g_1)^{-1} g_2 = h$ 
+\\
+Since, $h \in H, g_1^{-1}g_2 \in H$.
+
+\item
+%Show that condition (2) implies condition (3).
+%\\
+Let $g_1^{-1}g_2 \in H$
+\begin{align*}
+g_1^{-1}g_2 &= h
+\\
+g_1g_1^{-1}g_2 &= g_1h &\text{by composition on left by\ } g_1
+\\
+eg_2 &= g_1h &\text{by def. of inverse}
+\\
+g_2 &= g_1h &\text{by def. of identity}
+\end{align*}
+Since, $h \in H, g_2 \in g_1H$.
+
+\skipitems{1}
+
+\item
+%Show that condition (4) implies condition (1).
+%\\
+Given $g_2H \subset g_1H$. Let $g_1h \in g_1H$.
+\\
+$\implies g_2(id) \in g_1H$
+\\
+$\implies g_2 = g_1h'$, where $h' \in H$.
+\\
+\begin{align*}
+g_2h'^{-1} &=g_1h'h'^{-1} &\text{by composition on right by\ } h'^{-1}
+\\
+g_2g'^{-1} &= g_1e &\text{def. of inverse}
+\\
+g_2g'^{-1} &= g_1 &\text{def. of identity}
+\\
+g_2h'^{-1}h &= g_1h &\text{by composition on right by\ } h
+\end{align*}
+Since $h'^{-1} h \in H$, it follows that $g_1 h \in g_2 H$.
+\\
+Since $g_1 h$ is an arbitrary element of $g_1H$, it follows that $g_1H \subset g_2 H$.
+\\
+By condition (4), $g_2H \subset g_1 H$.
+\\
+It follows that $g_1 H = g_2 H$
+
+
+\item
+%Show that condition (2) implies condition (5).
+%\\
+Given $g_1^{-1}g_2 \in H \implies Hg_1^{-1} = Hg_2^{-1}$.
+\\
+Let $h_1g_1^{-1} \in Hg_1^{-1}$
+\\
+By given, $g_1^{-1}g_2 = h$
+\begin{align*}
+g_1^{-1}g_2g_2^{-1} &= hg_2^{-1} &\text{ by right compose of} g_2^{-1}
+\\
+g_1^{-1}e &= hg_2^{-1} &\text{by def of inverse}
+\\
+g_1^{-1} &= hg_2^{-1} &\text{def of identity}
+\\
+h_1 g_1^{-1} \in H g_2^{-1} &\text{def\ } H g_2^{-1}
+\end{align*}
+Since $h_1 g_1^{-1}$ was an arbitrary element of $H g_1^{-1}$, it follows that $H g_1^{-1} \subset H g_2^{-1}$.
+\\
+A similar argument shows that $H g_2^{-1} \subset H g_1^{-1}$.
+\\
+It follows that $H g_1^{-1} = H g_2^{-1}$.
+
+\item
+%Show that condition (5) implies condition (2).
+%\\
+Given $h_1 g_1^{-1}$, there exists some $h_2$ such that $h_1 g_1^{-1} = h_2 g_2^{-1}$.
+\\
+Let $h_1, h_2 \in H$
+\begin{align*}
+hg_1^{-1} &= h g_2^{-1} &\text{by given}
+\\
+h_1g_1^{-1}g_2 &= h_2g_2^{-1}g_2 &\text{ by right compose of\ } g_2
+\\
+h_1g_1^{-1}g_2 &= h_2e &\text{by def of inverse}
+\\
+h_1g_1^{-1}g_2 &= h_2 &\text{def of identity}
+\\
+h_1^{-1}h_1g_1^{-1}g_2 &= h_1^{-1}h_2  &\text{by left compose of\ } h_1^{-1}
+\\
+eg_1^{-1}g_2 &= h_1^{-1}h_2 &\text{by def of inverse}
+\\
+g_1^{-1}g_2 &= h_1^{-1}h_2 &\text{def of identity}
+\end{align*}
+Since $h_1^{-1}, h_2 \in H$, it follows that $g_1^{-1}g_2 \in H$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:equiv_conditions}:} %10.2.3
+%Proposition~\ref{cosets_theorem_1} deals with \emph{left} cosets. A parallel proposition holds for right cosets. List the five equivalent conditions for \emph{right} cosets that correspond to the five conditions given in Proposition~\ref{cosets_theorem_1}.
+\\
+Right cosets:
+\begin{multicols}{3}
+\begin{enumerate}
+\item
+$Hg_1 = Hg_2$
+
+\item
+$g_2 g_1^{-1} \in H$
+
+\item
+$g_2 \in Hg_1$
+
+\item
+$Hg_2 \in Hg_1$
+
+\item
+$g_1^{-1}H = g_2^{-1}H$
+\end{enumerate}
+\end{multicols}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:disjoint_union_proof}:} %10.2.5
+%Complete part (2) of the proof: that is, prove that $\bigcup_{g \in G} g H = G$.
+\\
+Suppose $g \in G$.
+\\
+Then $g \in gH$, where $gH$ is an arbitrary coset.
+\\
+\bigskip
+$g \in \bigcup\limits_{g \in G} gH \implies G \subset \bigcup\limits_{g \in G} g_iH$
+\\
+\bigskip
+Suppose $x \in \bigcup\limits_{g \in G} gH$.
+\\
+Then $x \in gH$ for some $ g \in G$.
+\\
+$gH \subset G$ by definition of closure.
+\\
+So, $x \in gH \subset G$.
+\\
+\bigskip
+$x \subset G \implies \bigcup\limits_{g \in G} g_iH \subset G$.
+\\
+Since $G \subset \bigcup\limits_{g \in G} g_iH$ and $\bigcup\limits_{g \in G} g_iH \subset G$ then, $\bigcup\limits_{g \in G} g_iH = G$.
+\\
+\\
+\\
+\textbf{Exercise \ref{exercise:cosets:S3_right_index}:}
+%How many right cosets of  $H = \{ (1),(123), (132) \}$ in $S_3$ were there?  How about right cosets of  $K= \{ (1), (12) \}$ in $S_3$?
+\\
+$G = S_3 \implies$ order of 6.
+\\
+$H$ has an order of 3.
+\\
+Left cosets = 2
+\\
+Right cosets = 2
+\\
+\\
+$G = S_3 \implies$ order of 6.
+\\
+$K$ has an order of 2.
+\\
+Left cosets = 3
+\\
+Right cosets  = 3
+\\
+\\
+\textbf{Exercise \ref{exercise:cosets:index_right_cosets}:}
+%Using your work from Exercise~\ref{exercise:cosets:left_right_cosets}, find:
+\begin{enumerate}[(a)]
+\skipitems{1}
+
+\item
+%$[ U(8) : \langle 3 \rangle ]$ and the number of right cosets of $\langle 3 \rangle$ in $U(8)$.
+%\\
+%\\
+%$G = U(8) = \{1, 3, 5, 7\}$ and $H = \langle 3 \rangle = \{1, 3\}$
+%\\
+$[ U(8) : \langle 3 \rangle ] = \frac{4}{2} = 2$
+\\
+The number of right cosets = 2.
+
+\skipitems{1}
+
+\item
+%$[  S_4 : \{ (1), (123), (132) \}  ]$ and the number of the right cosets of $\{ (1), (123), (132) \}$ in $S_4$.
+%\\
+%\\
+%$G = S_4 = \{(1), (12), (13), (14), (23), (24), (34), (123), (124), (132), (134), (142), (143), (234), (243), (1234), (1243), (1324), (1342), (1423), (1432), (12)(34), (13)(24), (14)(23)\}$ and $H = \{ (1), (123), (132) \}$
+%\\
+$[S_4 : \{(1), (123), (132)\}] = \frac{24}{3} = 8$
+\\
+The number of right cosets = 8.
+
+\item
+%$[ S_4 : A_4 ]$ and the number of right cosets of $A_4$ in $S_4$.
+%\\
+%\\
+%$G = S_4 = \{(1), (12), (13), (14), (23), (24), (34), (123), (124), (132), (134), (142), (143), (234), (243), (1234), (1243), (1324), (1342), (1423), (1432), (12)(34), (13)(24), (14)(23)\}$ and $H = A_4 = \{(1), (123), (124), (132), (134), (142), (143), (234), (243), (12)(34), (13)(24), (14)(23)\}$
+%\\
+$[S_4 : A_4] = \frac{24}{12} = 2$
+\\
+The number of right cosets = 2.
+
+\item
+%$[ S_n : A_n ]$ and the number of right cosets of $A_n$ in $S_n$.
+%\\
+%\\
+$[ S_n : A_n ] = 2$
+\\
+The number of right cosets = 2.
+
+\item
+%$[S_4 : D_4  ]$ and the number of right cosets of $D_4$ in $S_4$.
+%\\
+%\\
+%$G = S_4 = \{(1), (12), (13), (14), (23), (24), (34), (123), (124), (132), (134), (142), (143), (234), (243), (1234), (1243), (1324), (1342), (1423), (1432), (12)(34), (13)(24), (14)(23)\}$ and $H = D_4 = \{(1), (13), (24), (1234), (1432), (12)(34), (13)(24), (14)(23)\}$
+$[S_4 : D_4] = \frac{24}{8} = 3$
+
+\item
+%$[ {\mathbb C}^\ast : {\mathbb T} ]$ and the number or right cosets of ${\mathbb T}$ in ${\mathbb C}^\ast$.
+%\\
+%\\
+$[ {\mathbb C}^\ast : {\mathbb T} ] = \infty$
+\\
+The number of right cosets = $\infty$.
+
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:SL2_cosets}:}
+%Consider the left cosets of $SL_2( {\mathbb R} )$ in $GL_2( {\mathbb R})$.  Show that two matrices in $GL_2( {\mathbb R})$ are in the same left coset of $SL_2( {\mathbb R} )$ if and only if they have the same determinant. Is the same true for right cosets? (Prove your answer.) 
+%\\
+\\
+Let $G = GL_2({\mathbb R})$  and $H = SL_2({\mathbb R})$. Suppose $a$ and $b$ are matrices that are in the same coset of $H$.  By Condition (3) of Exercise~\ref{exercise:cosets:CosetEquiv}, $b \in aH$. 
+\begin{align*}
+\implies b &= ah
+\\
+\implies \det(b) &= \det(ah)  & &\text{[substitution]}
+\\
+&= \det(a)\det(h) &= \det(a)  &\text{[ by det product rule and\ } h \in SL_2{\mathbb R} ]
+\\
+\text{So\ } \det b &= \det a
+\\
+\\
+\text{Suppose\ } \det b &= \det a
+\\
+\text{Show\ } \det(a^{-1} b) &= 1
+\\
+\implies a^{-1}b &\in H
+\end{align*}
+By condition ... this implies that $a$ and $b$ are in the same coset.
+\\
+\\
+\noindent\textbf{Exercise \ref{exercise:cosets:order5and7}:}
+%Suppose that $G$ is a finite group with an element $g$ of order 5 and an element $h$ of order 7. 
+%
+\begin{enumerate}[(a)]
+\item
+%Show that $G$ has subgroups of order 5 and 7.
+%\\
+Proof: Given a finite group with $g \in G, h \in G$ such that $|g| = 5, |h| = 7$, then by Proposition~\ref{proposition:groups:OrbitIsSubgroup}, $\langle g \rangle$ is a subgroup of $G$.
+\\
+By Proposition~\ref{proposition:groups:OrderEltCyclic}, $|\langle g \rangle| = |g|$, so $|\langle g \rangle| = 5$, where $\langle g \rangle$ is a subgroup of $G$ of order 5.
+\\
+Also by Proposition~\ref{proposition:groups:OrbitIsSubgroup}, $\langle h \rangle$ is a subgroup of $G$.
+\\
+So by Proposition~\ref{proposition:groups:OrderEltCyclic}, $|\langle h \rangle| = |h|$, so $|\langle h \rangle| = 7$, where $\langle h \rangle$ is a subgroup of $G$ of order 7.
+\\
+Therefore, if $g, h \in G$ such that $|g| = 5, |h| = 7, G$ has subgroups of order 5 and 7.
+
+\item
+%Why must $|G| \geq 35$?
+%\\
+$|G|$ must be $\geq$ based on Lagrange's Theorem.
+\\
+Since $\langle g \rangle$ is a subgroup of $G, |\langle g \rangle|$ must divide $|G|$, so $|G|$ is a multiple of 5.
+\\
+Also, $\langle h \rangle$ is also a subgroup of $G$, so $|\langle h \rangle| =7$ must also divide $|G|$.  Then $|G|$ is also a multiple of 7.
+\\
+Since $\lcm(5, 7) = 35, |G|$ must be $\geq 35$. 
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:finite_60}:}
+%Suppose that $G$ is a finite group with 60 elements.  What are the possible orders for subgroups of $G$?
+%\\
+\\
+Proposition~\ref{proposition:cosets:LagrangeTheorem} tells us that $|G|$ is evenly divided by $|H|$ and we know that $|G| = 60$.
+\\
+$\implies |H| = \{1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60\}$.
+\\
+\\
+\noindent\textbf{Exercise \ref{exercise:cosets:phivals}:}
+%Evaluate the following:
+\begin{enumerate}[(a)]
+\item
+%$\phi(12)$
+%\\
+%$U(12) = \{1, 5, 7, 11\}$
+%\\
+$\phi(12) = 4$ 
+
+\item
+%$\phi(16)$
+%\\
+%$U(16) = \{1, 3, 5, 7, 9, 12, 13, 15\}$
+%\\
+$\phi(16) = 8$
+ 
+\item
+%$\phi(20)$
+%\\
+%$U(20) = \{1, 3, 7, 9, 11, 13, 17, 19\}$
+%\\
+$\phi(20) = 8$
+
+\item
+%$\phi(23)$
+%\\
+%$U(23) = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22\}$
+%\\
+$\phi(23) = 22$
+
+\item
+%$\phi(51)$
+%\\
+%$U(51) = \{1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 19, 20, 22, 23, 25, 26, 28, 29, 31, 32, 35, 37, 38, 40, 41, 43, 44, 46, 47, 49, 50\}$
+%\\
+$\phi(51) = 32$
+
+\item
+%$\phi(p)$, where $p$ is prime.
+%\\
+$\phi(p) = p - 1$
+
+\item
+%$\phi(p^2)$, where $p$ is prime (\emph{justify} your answer).
+%\\
+Every number from 1 to $p^2$, except multiples of $p$. 
+\\
+For example, $U(5^2) = \{1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19, 21, 22, 23, 24\}$
+\\
+$\phi(5^2) = 20$ or $5^2 - 5 = 20$
+\\ 
+$\phi(p^2) = p^2 - p$
+
+\skipitems{1}
+
+\item
+%$\phi(pq)$, where $p$ and $q$ are primes and $p \neq q$ (\emph{justify} your answer).
+%\\
+Every number except $pq, p, q$ or multiples of $p, q$
+\\
+For example, $U(3 \cdot 5) = U(15) = \{1, 2, 4, 7, 8, 11, 13, 14\} = 8$
+\\
+$\phi(pq) = pq - p - q + 1$.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:modvals}:}
+%Evaluate the following, using the results of Exercise 10.3.10
+\begin{enumerate}[(a)]
+\item
+%$\mod(5^{200},12)$
+%\\
+%Theorem~\ref{cosets:Eulers_theorem} $gcd(a, n) = 1$ and $a^{\phi(n)} \equiv 1 \pmod{n}$
+%\\
+gcd(5, 12) = 1
+\\
+$5^{\phi(12)} \equiv 1 \pmod{12} \quad \quad \phi(12) = 4$
+\\
+$(5^{50})^4 \equiv 1 \pmod{12}$
+
+\skipitems{1}
+
+\item
+%$\mod(15^{221}, 23)$
+%\\
+%Theorem~\ref{cosets:Eulers_theorem} $gcd(a, n) = 1$ and $a^{\phi(n)} \equiv 1 \pmod{n}$
+%\\
+gcd(15, 23) = 1
+\\
+$15^{\phi(23)} \equiv 1 \pmod{23} \quad \quad \phi(23) = 22$
+\\
+$(15^{10})^{22} \equiv 1 \pmod{23}$
+\\
+$\mod(15^{221}, 23) \equiv 1 \pmod{23} \cdot 15 \pmod{23} = 15 \pmod{23}$
+
+
+\skipitems{1}
+
+\item
+%$\mod(10^{195},221)$
+%\\
+%Theorem~\ref{cosets:Eulers_theorem} $gcd(a, n) = 1$ and $a^{\phi(n)} \equiv 1 \pmod{n}$
+%\\
+gcd(10, 221) = 1
+\\
+$10^{\phi(221)} \equiv 1 \pmod{221} \quad \quad \phi(221) = 192$
+\\
+$10^{192} \equiv 1 \pmod{221}$
+\\
+$\mod(10^{195},221) \equiv 1 \pmod{221} \cdot 10^3 \pmod{221} = 116 \pmod{221}$
+
+\item
+%$\mod \left( \left( \frac{p+1}{2} \right)^p,p\right)$, where $p$ is prime.
+%\\
+%Theorem~\ref{cosets:Eulers_theorem} $gcd(a, n) = 1$ and $a^{\phi(n)} \equiv 1 \pmod{n}$
+%\\
+gcd$(\frac{p+1}{2}, p) = 1$
+\\
+$\left(\frac{p+1}{2}\right)^{\phi(p)} \equiv 1 \pmod{p} \quad \quad \phi(p) = p - 1$
+\\
+\\
+$\left(\frac{p+1}{2}\right)^{p-1} \equiv 1 \pmod{p}$
+\\
+$\mod \left( \left( \frac{p+1}{2} \right)^p,p\right) \equiv 1 \pmod{p} \cdot \left( \frac{p+1}{2} \right)^p \pmod{p} =  \left( \frac{p+1}{2} \right)^p \pmod{p}$
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:FermatLittle}:}
+%Suppose that $p$ is a prime number, and $a$ is a natural number which is relatively prime to $p$. Show that  $a^{p-1} \equiv 1 \bmod{p}$.
+%\\
+\\
+Let gcd$(a, p) = 1$.  Then we know that $a^{\phi(p)} \equiv 1 \pmod{p}$, by Proposition~\ref{proposition:cosets:cosets:Eulers_theorem}.
+\\
+By Exercise~\ref{exercise:cosets:phivals}f we know that $\phi(p) = p - 1$. So, $a^{p - 1} \equiv 1 \pmod{p}$.
+\\
+\\
+
+\noindent\textbf{Exercise \ref{exercise:cosets:primeGroups}:}
+%Let $G$ be a group such that $|G| = p$, where $p$ is a prime number.
+\begin{enumerate}[(a)]
+\item
+%Let $a$ be an element of $G \setminus \{e\}$.  What does Proposition~\ref{cosets_theorem_6} tell us about $|a|$? (Recall that `$\setminus$' is the set difference operation, defined in Definition \ref{setdifference}).  \hyperref[sec:cosets:hints]{(*Hint*)}
+%\\
+%\\
+Suppose $G$ is a group such that $|G| = p$ where $p$ is prime.
+\\
+Suppose $a \in G \setminus \{e\}$.
+\\
+Since $p$ is prime its subgroups must be of the order 1 or $p$.
+\\
+Since $a \in G \setminus \{e\}$ we know $a$ is not $\{e\}$
+\\
+$\implies |a| = p$
+
+\item
+%Prove that $G$ is cyclic.
+%\\
+%\\
+Then by part a showing $|a| = p \implies a^p = e \implies | \langle a \rangle | = p$.
+\\
+Since $\langle a \rangle \subset G$ and $| \langle a \rangle | = p = |G| \implies \langle a \rangle = G \implies G$ is cyclic.
+
+\item
+%Describe the set of generators of $G$  (recall that $g \in G$ is a generator of $G$ if $\langle g \rangle = G$.)
+%\\
+%\\
+Any besides \{e\} is a generator.
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:prime_simple}:}
+%Let $G$ be a group of prime order. Use Proposition~\ref{cosets_theorem_7} to show that the only proper subgroup of $G$ is the trivial subgroup $\{e\}$.
+%\\
+\\
+Suppose $G$ is a group of prime order $\implies |G| = p$.
+\\
+Since $|G|$ is prime then the order of the subgroups of $G$ are 1 and $p$.  The only proper subgroup of $G$ would have order 1, which means it is the trivial subgroup containing the identity, $\{e\}$.
+\\
+$\{e\}$ is a subgroup by Exercise~\ref{exercise:groups:trivial}.
+\\
+\\
+\noindent\textbf{Exercise \ref{exercise:cosets:which_normal}:}
+%Looking back at Exercise~\ref{exercise:cosets:left_right_cosets}, which of the subgroups were normal?
+%\\
+\begin{enumerate}[(a)]
+
+\skipitems{1}
+
+\item
+$\langle 3 \rangle$ in $U(8)$ is normal.
+
+\skipitems{1}
+
+\item
+$H = \{ (1), (123), (132) \}$ in $S_4$ is not normal.
+
+\item
+$A_4$ in $S_4$, $A_4$ is the even permutations of $S_4$ is normal.
+
+\item
+$A_n$ in $S_n$ is normal.
+
+\item
+$D_4$ in $S_4$ is normal.
+
+\item
+${\mathbb T}$ in ${\mathbb C}^\ast$ is normal.
+
+\end{enumerate}
+
+
+\noindent\textbf{Exercise \ref{exercise:cosets:SL2_normal}:}
+%Is $SL_2( {\mathbb R} )$ a normal subgroup of $GL_2( {\mathbb R})?$  Prove or disprove.
+%\\
+\\
+By Exercise~\ref{exercise:complex:56}a, we proved that matrix multiplication is not always abelian. Therefore, $SL_2{\mathbb R}$ will not be a normal subgroup of $GL_2{\mathbb R}$.
+
+\noindent\textbf{Exercise \ref{exercise:cosets:e_normal}:}
+%Prove that for \emph{any} group $G$, the set $\{e\}$ is a normal subgroup of $G$ (in other words the identity of group is always a normal subgoup).
+%\\
+\\
+Suppose $G$ is a group and let $H = \{e\}$.  Also, suppose that $g_i \in G, i \in {\mathbb N}$.
+\\
+$\implies g_ie = eg_i = g_i$
+\\
+Therefore the left and right cosets are equal, because the identity element can be compose on either side and output the $g_i$ it is composed with.
+\\
+\\
+\noindent\textbf{Exercise \ref{exercise:cosets:abelian_normal}:}
+%Prove that any subgroup of an abelian group is normal.
+%\\
+\\
+Suppose you have an abelian group, $G$, and it's subgroup, $H$. Let $g \in G$.
+\\
+Left coset = $gH$ and the Right coset = $Hg$.
+\\
+Since $G$ is abelian $\implies gH = Hg \implies H$ is a normal subgroup.
+\\
+\\
+
+\noindent\textbf{Exercise \ref{exercise:cosets:normalk}:}
+%In the following exercises, $G$ is a group and $H$ is a subgroup of $G$.
+\begin{enumerate}[(a)]
+\item
+%Show that for any $g \in G$ then $gHg^{-1}$ is also a subgroup of $G$.
+%\\
+%\\
+Suppose that $H$ is a subgroup of $G$.  Also suppose that $g \in G$ and $h \in H$.
+\\
+Since $e$ is an element of all groups, $e \in H$.
+\begin{align*}
+&gHg^{-1}
+\\
+\implies &geg^{-1} &\text{by substitution}
+\\
+\implies &gg^{-1} &\text{def of identity}
+\\
+\implies &e &\text{def of inverse}
+\\
+\implies &e \in gHg^{-1}
+\end{align*}
+So we've shown that $H$ has an identity element.
+\\
+\\
+Suppose that $h_1 \in H \implies h^{-1} \in H$ (by def of subgroup).
+\begin{align*}
+&(gh_1g^{-1})^{-1}
+\\
+&g^{-1}h_1^{-1}g &\text{by algebra}
+\\
+&g^{-1}h_1^{-1}g \in gHg^{-1} 
+\end{align*}
+So we've shown that every element has an inverse.
+\\
+\\
+Suppose $gh_2g^{-1} \in gHg^{-1}$ and$h_2 \in H$.
+\begin{align*}
+(gh_1g^{-1})(gh_2g^{-1}) &= gh_1(g^{-1}g)h_2g^{-1} &\text{by associativity}
+\\
+&= gh_1eh_2g^{-1} &\text{by def of inverse}
+\\
+&= gh_1h_2g^{-1} &\text{by def of identity}
+\\
+&= g(h_1h_2)g^{-1} &\text{by associativity}
+\\
+&= gHg^{-1} &\text{since\ } h_1, h_2 \in H
+\end{align*}
+Since H has an identity, inverse, and closure we know that $H$ is a subgroup.
+ 
+\item
+%Define a function $f: H \rightarrow gHg^{-1}$ as follows:  $f(h) = ghg^{-1}$.  Show that $f$ is a bijection, and thus $|H| = |gHg^{-1}|$.
+%\\
+%\\
+Let $f: H \mapsto gHg^{-1}$ be defined as $f(h) = ghg^{-1}$. Also, $g \in G$ and $h_1, h_2 \in H$.
+\begin{align*}
+f(h_1) &= f(h_2)
+\\
+gh_1g^{-1} &= gh_2g^{-1} &\text{(def of mapping)}
+\\
+g^{-1}gh_1g^{-1} &= g^{-1}gh_2g^{-1} &\text{(left compose by\ } g^{-1}\text{)}
+\\
+eh_1g^{-1} &= eh_2g^{-1} &\text{(def of inverse)}
+\\
+h_1g^{-1} &= h_2g^{-1} &\text{(def of identity)}
+\\
+h_1g^{-1}g &= h_2g^{-1}g &\text{(right compose by\ } g\text{)}
+\\
+h_1e &= h_2e &\text{(def of inverse)}
+\\
+h_1 &= h_2 &\text{(def of identity)}
+\end{align*}
+This shows the $f$ is one to one.
+\\
+\\
+Suppose $y \in gHg^{-1}$, then $y = ghg^{-1}$, for all $g, g^{-1} \in G$ and $h \in H$.
+\\
+Since $f(h) = y$ (by def of $f(h)$), $f$ is onto.
+\\
+Therefore, since $f(h)$ is both one-to-one and onto, $f(h)$ is a bijection.
+\end{enumerate}
+
+
+\noindent\textbf{Exercise \ref{exercise:cosets:normal_mult}:}
+\begin{enumerate}[(a)]
+\item
+%Let $H \subset G$ be a normal subgroup, and let $g \in G, h \in H$.  Show that $g^{-1}hg \in H$.
+%\\
+%\\
+Suppose that $H \subset G$ and that $H$ is a normal subgroup.  
+\\
+Let $g \in G, h \in H$.
+\\
+Since $H$ is a normal subset, we can say that 
+\begin{align*}
+gHg^{-1} \subset H \text{\ and\ } gHg^{-1} &= H &\text{(by Proposition~\ref{proposition:cosets:normal:normalequivalents})}
+\\
+ghg^{-1} &= h' &h' \in H
+\\
+\text{Let\ } g = g^{-1}\text{, then\ } 
+\\
+g^{-1}h(g^{-1})^{-1} &= h' &\text{by substitution}
+\\
+g^{-1}hg &= h' &\text{by exponent rules}
+\\
+g^{-1}hg &\in H &h' \in H 
+\end{align*}
+
+\item
+%Let $H \subset G$ be a normal subgroup, and let $g \in G, h \in H$. Use part (a) to show that there exists an $h' \in H$ such that $hg = g h'$.
+%\\
+%\\
+Suppose that $H \subset G$ and that $H$ is a normal subgroup.  
+\\
+Let $g \in G$ and $h, h' \in H$.
+\\
+\begin{align*}
+h &= ghg^{-1} &\text{part a}
+\\
+hg &= ghg^{-1}g &\text{right compose by\ } g
+\\
+hg &= ghe &\text{def of inverse}
+\\
+hg &= gh &\text{def of identity}
+\end{align*}
+
+\item
+%Let $H \subset G$ be a normal subgroup, and suppose $x_1 \in g_1H$ and $x_2 \in g_2H$. Prove that $x_1x_2 \in g_1g_2H$.
+%\\
+%\\
+Suppose that $H \subset G$ and that $H$ is a normal subgroup.  
+\\
+Suppose $x_1 \in g_1H$ and $x_2 \in g_2H$. $\implies x_1 = g_1h_1$ and $x_2 = g_2h_2$.
+\\
+Let $g_1, g_2 \in G$ and $h_1, h_2 \in H$.
+\\
+\begin{align*}
+x_1x_2 &= (g_1h_1)(g_2h_2) &\text{by algebra}
+\\
+&= g_1h_1g_2h_2 &\text{by algebra}
+\\
+\text{Let\ } g = g_2 \text{\ and\ } h = h_1
+\\
+ g_1h_1g_2h_2 &= g_1hgh_2 &\text{substitution}
+\\
+&= g_1ghh_2 &\text{part b}
+\\
+\text{Let\ } g = g_2 \text{\ and\ } h = h_1
+\\
+&= g_1g_2h_1h_2 &\text{part b}
+\\
+&= g_1g_2H &h_1, h_2 \in H 
+\end{align*}
+Then, $x_1x_2 \in g_1g_2H$.
+
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:factor_cayley_prac}:}
+%Give the Cayley tables for the following factor groups:
+\begin{enumerate}[(a)]
+\item
+% ${\mathbb Z}/ 4 {\mathbb Z}$
+\begin{center}
+\begin{tabular}{c|cccc}
+$\cdot$             & $0 + 4{\mathbb Z}$ & $1 + 4{\mathbb Z}$ & $2 + 4{\mathbb Z}$ & $3 + 4{\mathbb Z}$ \\\hline
+$0 + 4{\mathbb Z}$ & $0 + 4{\mathbb Z}$ & $1 + 4{\mathbb Z}$ & $2 + 4{\mathbb Z}$ & $3 + 4{\mathbb Z}$\\
+$1 + 4{\mathbb Z}$ & $1 + 4{\mathbb Z}$ & $2 + 4{\mathbb Z}$ & $3 + 4{\mathbb Z}$ & $0 + 4{\mathbb Z}$\\
+$2 + 4{\mathbb Z}$ & $2 + 4{\mathbb Z}$ & $3 + 4{\mathbb Z}$ & $0 + 4{\mathbb Z}$ & $1 + 4{\mathbb Z}$\\
+$3 + 4{\mathbb Z}$ & $3 + 4{\mathbb Z}$ & $0 + 4{\mathbb Z}$ & $1 + 4{\mathbb Z}$ & $2 + 4{\mathbb Z}$\\
+\end{tabular}
+\end{center}
+
+\skipitems{1}
+ 
+\item
+% ${\mathbb Z}_{24} / \langle 8 \rangle$ 
+% $ \langle 8 \rangle =  0, 8, 16$
+\begin{center}
+\begin{tabular}{c|cccccccc}
+$\cdot$             & $\langle 8 \rangle$ & $1 + \langle 8 \rangle$ & $2 + \langle 8 \rangle$ & $3 + \langle 8 \rangle$ & $4 + \langle 8 \rangle$ & $5 + \langle 8 \rangle$ & $6 + \langle 8 \rangle$ & $7 + \langle 8 \rangle$\\\hline
+$\langle 8 \rangle$  & $\langle 8 \rangle$ & $1 + \langle 8 \rangle$ & $2 + \langle 8 \rangle$ & $3 + \langle 8 \rangle$ & $4 + \langle 8 \rangle$ & $5 + \langle 8 \rangle$ & $6 + \langle 8 \rangle$ & $7 + \langle 8 \rangle$\\
+$1 + \langle 8 \rangle$ & $1 + \langle 8 \rangle$ & $2 + \langle 8 \rangle$ & $3 + \langle 8 \rangle$ & $4 + \langle 8 \rangle$ & $5 + \langle 8 \rangle$ & $6 + \langle 8 \rangle$ & $7 + \langle 8 \rangle$ & $\langle 8 \rangle$ \\
+$2 + \langle 8 \rangle$ & $2 + \langle 8 \rangle$ & $3 + \langle 8 \rangle$ & $4 + \langle 8 \rangle$ & $5 + \langle 8 \rangle$ & $6 + \langle 8 \rangle$ & $7 + \langle 8 \rangle$  & $\langle 8 \rangle$ & $1 + \langle 8 \rangle$ \\
+$3 + \langle 8 \rangle$ & $3 + \langle 8 \rangle$ & $4 + \langle 8 \rangle$ & $5 + \langle 8 \rangle$ & $6 + \langle 8 \rangle$ & $7 + \langle 8 \rangle$ & $\langle 8 \rangle$ & $1 + \langle 8 \rangle$ & $2 + \langle 8 \rangle$ \\
+$4 + \langle 8 \rangle$ & $4 + \langle 8 \rangle$ & $5 + \langle 8 \rangle$ & $6 + \langle 8 \rangle$ & $7 + \langle 8 \rangle$ &  $\langle 8 \rangle$ & $1 + \langle 8 \rangle$ & $2 + \langle 8 \rangle$ & $3 + \langle 8 \rangle$ \\
+$5 + \langle 8 \rangle$ & $5 + \langle 8 \rangle$ & $6 + \langle 8 \rangle$ & $7 + \langle 8 \rangle$ & $\langle 8 \rangle$ & $1 + \langle 8 \rangle$ & $2 + \langle 8 \rangle$ & $3 + \langle 8 \rangle$ & $4 + \langle 8 \rangle$ \\
+$6 + \langle 8 \rangle$ & $6 + \langle 8 \rangle$ & $7 + \langle 8 \rangle$ & $\langle 8 \rangle$ & $1 + \langle 8 \rangle$ & $2 + \langle 8 \rangle$ & $3 + \langle 8 \rangle$ & $4 + \langle 8 \rangle$ & $5 + \langle 8 \rangle$ \\
+$7 + \langle 8 \rangle$ & $7 + \langle 8 \rangle$ & $\langle 8 \rangle$ & $1 + \langle 8 \rangle$ & $2 + \langle 8 \rangle$ & $3 + \langle 8 \rangle$ & $4 + \langle 8 \rangle$ & $5 + \langle 8 \rangle$ & $6 + \langle 8 \rangle$ 
+\end{tabular}
+\end{center}
+\skipitems{3}
+ 
+\item
+%$U(8) / \langle 3 \rangle$
+%\begin{gather*}
+%1H = 3H = \{1, 3\}
+%\\
+%5H = 7H = \{5, 7\} 
+%\end{gather*}
+\begin{center}
+\begin{tabular}{c|cc}
+                         & & $5 \langle 3 \rangle$ \\
+$\cdot$             & $\langle 3\rangle$ & $\langle 3 \rangle 5$ \\\hline
+$\langle 3\rangle$ & $\langle 3 \rangle$ & $5 \langle 3 \rangle$ or $\langle 3 \rangle 5$ \\
+$5 \langle 3 \rangle$ or $\langle 3 \rangle 5$ & $5 \langle 3 \rangle$ or $\langle 3 \rangle 5$ & $\langle 3\rangle$\\
+
+\end{tabular}
+\end{center}
+\end{enumerate}
+
+\noindent\textbf{Exercise \ref{exercise:cosets:cayley_dn_rn}:}
+%Construct the Cayley table for  $D_n / R_n$. 
+%\\
+%\\
+\begin{center}
+\begin{tabular}{c|cc}
+$\cdot$             & $R_n$ & $F_n$ \\\hline
+$R_n$ & $R_n$ & $F_n$ \\
+$F_n$ & $F_n$ & $R_n$\\
+
+\end{tabular}
+\end{center}
+

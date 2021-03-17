@@ -1,0 +1,1580 @@
+     %%%%%    Symmetry groups for polyhedra
+%%%%(c)
+%%%%(c)  This file is a portion of the source for the textbook
+%%%%(c)
+%%%%(c)    Abstract Algebra: Theory and Applications
+%%%%(c)    Copyright 1997 by Thomas W. Judson
+%%%%(c)
+%%%%(c)  See the file COPYING.txt for copying conditions
+%%%%(c)
+%%%%(c)
+\chapter{Cosets and Quotient Groups (a.k.a. Factor Groups)\quad
+\sectionvideohref{L19Zo2BOFBQ&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo&index=28}}\label{cosets}
+
+\begin{dialogue}
+\speak{Shrek} For your information, there's a lot more to ogres than people think.
+\speak{Donkey} Example?
+\speak{Shrek} Example... uh... ogres are like onions!
+\speak{Donkey} They stink?
+\speak{Shrek} Yes... No!
+\speak{Donkey} Oh, they make you cry?
+\speak{Shrek} No!
+\speak{Donkey} Oh, you leave 'em out in the sun, they get all brown, start sproutin' little white hairs...
+\speak{Shrek}  NO! Layers. Onions have layers. Ogres have layers... You get it? We both have layers.
+\end{dialogue}
+\medskip
+
+\noindent
+Source: \emph{Shrek} (movie), 2001.
+\vspace{0.75 in}
+
+Groups, like onions and ogres, also have layers. As we've seen, many groups have subgroups inside them. These subgroups can be used to define ``layers'' which are called \emph{cosets}. And in some cases, the ``layers'' (cosets) themselves form groups, which are called \emph{quotient groups} (or \emph{factor groups}). 
+
+Our examination of cosets will give us deep insight into the nature and structure of groups. We will be leaning heavily on the material from Chapter~\ref{modular}  (which will furnish us with motivating examples), Chapter~\ref{EquivalenceRelationsChap} (which will aid us in our characterization of cosets), and of course Chapter~\ref{groups}.  In the course of reading this chapter, you may want to review these chapters.   So, here we go!
+\medskip
+
+Thanks to Tom Judson for material used in this chapter.
+
+\section{Definition of cosets}
+\label{sec:cosets:def}
+
+The concept of ``coset'' brings together two ideas that we've seen before, namely \emph{subgroups} and \emph{equivalence classes}. We'll see how cosets arise from this mix by using a familiar example.
+
+\begin{example}\label{example:cosets:ModArith}\emph{(Modular addition d\'ej\`a vu all over again)}  
+
+Back in Chapter~\ref{modular} we defined modular equivalence (Definition~\ref{definition:modular:equivalence}), and in Proposition~\ref{proposition:modular:equivalence_alt} we gave an alternative characterization:
+\medskip
+
+$a \equiv b \pmod{m}$ iff $a - b = k \cdot m$, where $k$ is an integer (that is, $k \in  {\mathbb Z}$). 
+\medskip
+
+\begin{exercise}
+\begin{enumerate}[(a)]
+\item
+Give 4 integers $a$ that satisfy the equation: $a \equiv 0 \pmod{3}$.
+\item
+Give 4 integers $a$ that satisfy the equation: $a \equiv 2 \pmod{3}$.
+\end{enumerate}
+\end{exercise}
+
+\noindent
+In Section~\ref{EquivalenceRelationsModArithSect} in the Equivalence Relations chapter, we saw that modular equivalence was indeed an \emph{equivalence relation}, and  gave rise to \emph{equivalence classes}:
+\medskip
+
+$[0]_3  = \{\mbox{All integers equivalent to 0 mod 3}\} = \{ \ldots -9, -6, -3, 0, 3, 6, 9 \ldots \}.$
+
+$[1]_3  = \{\mbox{All integers equivalent to 1 mod 3}\} = \{ \ldots -8, -5, -2, 1, 4, 7, 10 \ldots \}.$
+
+$[2]_3  = \{\mbox{All integers equivalent to 2 mod 3}\} = \{ \ldots -7, -4, -1, 2, 5, 8, 11 \ldots \}.$
+\medskip
+
+\noindent
+Then in the Groups chapter we introduced an alternative notation for $[0]_3$, namely $3{\mathbb Z}$. Since every element of  $[1]_3$ is 1~+~an element of $3{\mathbb Z}$ (and similarly for $[2]_3$)  it makes sense to introduce the notation:
+\medskip
+
+$[1]_3  = 1 + 3{\mathbb Z}.$
+
+$[2]_3  = 2 + 3{\mathbb Z}.$
+\medskip
+
+\noindent
+Notice the pattern here. Recall that $3{\mathbb Z}$ is a \emph{subgroup} of ${\mathbb Z}$. In order to ``create" the equivalence class $1 + 3{\mathbb Z}$, we added a specific group element (namely, 1) to \emph{every} element of the subgroup $3{\mathbb Z}$. The same holds true for $2 +  3{\mathbb Z}$. In both cases, the notation follows the pattern: 
+\medskip
+
+(selected group element) (group operation) (subgroup). 
+\medskip
+
+\noindent
+And, since every element of  $[1]_3$ can also be viewed as an element of $3{\mathbb Z}$~+~1 (and similarly for $[2]_3$), an alternative notation that makes sense is:
+\medskip
+
+$[1]_3  =  3{\mathbb Z} + 1$
+
+$[2]_3  = 3{\mathbb Z} + 2,$
+\medskip
+
+\noindent
+which follows the pattern:
+\medskip
+
+(subgroup) (group operation) (selected group element).
+\end{example}
+
+\begin{exercise}\label{exercise:cosets:equiv_class_mod5}
+\begin{enumerate}[(a)]
+\item
+Write the 5 equivalence classes (subsets of ${\mathbb Z}$)  which make up ${\mathbb Z}_5$ using our new notation.
+\item
+Write all elements of ${\mathbb Z}_7$ using our new notation.
+\end{enumerate}
+\end{exercise}
+
+The same pattern that we saw in the preceding example can actually be generalized to any group possessing a subgroup:
+
+\begin{defn}\label{def_coset}
+Let $G$ be a group and $H$ a subgroup of $G$.  The \term{left  coset}\index{Coset!left} of $H$ with \term{ representative}\index{Coset!representative} $g \in G$ is defined as the following set: 
+\[
+gH = \{ gh : h \in H \}.
+\]
+\term{Right cosets}\index{Coset!right} are defined similarly by
+\[
+Hg = \{ hg : h \in H \}.
+\]
+(Note that in the preceding equations, ``$gh$'' denotes $g \compose h$ where $\compose$ is the group operation. This is similar to our writing $xy$ to denote $x \cdot y$ in conventional algebra).
+\end{defn}
+
+Definition \ref{def_coset} looks a little different from Example~\ref{example:cosets:ModArith}, e.g. we have $gH$ instead of  $3 + {\mathbb Z}$.  But in fact the pattern is the same:  (group element) (group operation) (subgroup).  If the group operation is +, we will typically write left cosets as $g + H$ and right cosets as $H + g$. For all other group operations, we'll use the more compact notation $gH$ and $Hg$.
+
+We should note also that Definition \ref{def_coset} enables us to express the same coset in multiple ways. For example, the coset $1 + 3\mathbb{Z}$ described above could also be written as $4 + 3\mathbb{Z}$ or $7 + 3\mathbb{Z}$ or $-8 + 3\mathbb{Z}$. These all refer to the same subset of $\mathbb{Z}$.
+
+Now Definition \ref{def_coset} distinguishes between  \emph{left} and \emph{right} cosets.   In our earlier discussion,the left coset $1 + 3{\mathbb Z}$ and the right coset $ 3{\mathbb Z} + 1$ were in fact the same set, as were $2 + 3{\mathbb Z}$ and the right coset $ 3{\mathbb Z} + 2$.  But left and right cosets are not always equal, as the following example shows.  
+
+\begin{example}\label{example:cosets:S3_Cosets}
+Let $H$ be the subgroup of $S_3$ defined by the permutations $\{(1), (123), (132) \}$.  (Here we are using $(1)$ to denote the identity permutation ${\var id}$.) to find  cosets, we should take each element of $S_3$ and multiply it by the three permutations in $H$.  Recall the elements of $S_3$ are $(1), (123), (132), (12), (13),$ and $(23)$.  The left cosets of $H$ are thus: 
+\begin{gather*}
+(1)H = (1 2 3)H =  (132)H = \{(1), (1 23), (132) \}, \\
+(1 2)H = (1 3)H = (2 3)H =  \{ (1 2), (1 3), (2 3)  \}.
+\end{gather*}
+There are 2 left cosets, and each coset can be expressed in 3 different ways. 
+
+On the other hand, the right cosets of $H$ may be computed similarly as:
+\begin{gather*}
+H(1) = H(1 2 3) =  H(132) = \{(1), (1 23), (132) \}, \\
+H(1 2) = H(1 3) = H(2 3) =  \{ (1 2), (1 3), (2 3)  \}.
+\end{gather*}
+So in this case once again the left cosets and right cosets are the same.
+
+On the other hand, let $K$ be the subgroup of $S_3$ defined by the permutations $\{(1), (1 2)\}$.  Then the left cosets of $K$ are
+\begin{gather*}
+(1)K = (1 2)K = \{(1), (1 2)\} \\
+(1 3)K = (1 2 3)K = \{(1 3), (1 2 3)\} \\
+(2 3)K = (1 3 2)K = \{(2 3), (1 3 2)\};
+\end{gather*}
+and the right cosets of $K$ are
+\begin{gather*}
+K(1) = K(1 2) = \{(1), (1 2)\} \\
+K(1 3) = K(1 3 2) = \{(1 3), (1 3 2)\} \\
+K(2 3) = K(1 2 3) = \{(2 3), (1 2 3)\}.
+\end{gather*}
+The left and right cosets are \emph{not} the same. 
+
+Take note of something very striking about the previous two examples. First look at the case of $H \subset S_3$. In this case we ended up with 2 different left cosets, each of which could be expressed as $gH$ in 3 different ways.  For example, we saw that  $(1 2)H = (1 3)H = (2 3)H$. In fact, these three different $g$'s are exactly the elements of the coset! The very same thing applies to all other cases. For example, we found  $K(2 3) = K(1 2 3)$, and that both were equal to  $ \{(2 3), (1 2 3)\}$. This turns out to be a general property of cosets, which we will prove in the next section.
+\end{example}
+
+
+Unequal left and right cosets are actually very common.  So let's get some practice determining both left and right cosets.
+
+\begin{exercise}\label{exercise:cosets:Z6_cosets}
+Let $H$ be the subgroup of ${\mathbb Z}_6 = \{0,1,2,3,4,5\}$ consisting of the elements 0 and 3.
+(We are using our simplified notation here: `0' represents $\overline{0}$, etc.)  The left cosets are 
+\begin{gather*}
+0 + H = 3 + H = \{ 0, 3 \} \\
+1 + H = 4 + H = \{ 1, 4 \} \\
+2 + H = 5 + H = \{ 2, 5 \}.
+\end{gather*}
+What are the right cosets? Are the left and right cosets equal?
+\end{exercise}
+
+\begin{exercise}\label{exercise:cosets:left_right_cosets}
+List the left and right cosets of the subgroups in each of the following.  Tell whether the left and right cosets are equal.
+
+\noindent
+(Recall the following notations: $\langle a \rangle$ is the cyclic group generated by the element $a$ in a given group $G$; $A_n$ (the alternating group) is the set of even permutations, on $n$ objects; $D_4$ is the group of symmetries of a square; and ${\mathbb T}$ is the group of complex numbers with modulus 1, under the operation of multiplication.)
+
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+
+\item 
+$\langle 8 \rangle$ in ${\mathbb Z}_{24}$
+
+\item
+$\langle 3 \rangle$ in $U(8)$
+
+\item
+$4{\mathbb Z}$ in ${\mathbb Z}$
+
+\item
+$H = \{ (1), (123), (132) \}$ in $S_4$
+
+\item
+$H = \{1,i,-1,-i\}$ in $Q_8$ (See Example~\ref{example:groups:quaternions})
+
+\item
+$A_4$ in $S_4$ \hyperref[sec:cosets:hints]{(*Hint*)}
+
+\item
+$A_n$ in $S_n$ \hyperref[sec:cosets:hints]{(*Hint*)}
+
+\item
+$D_4$ in $S_4$ \hyperref[sec:cosets:hints]{(*Hint*)}
+
+\item
+${\mathbb T}$ in ${\mathbb C}^\ast$ 
+
+
+
+\end{enumerate}
+\end{multicols}
+\end{exercise} 
+
+\begin{rem}
+From now on, if the left and right cosets coincide, or if it is clear from the context to which type of coset that we are referring, we will simply use the word ``coset'' without specifying left or right.
+\end{rem}
+
+From what we've seen so far, you might have noticed that it seems that left and right cosets are always equal for \emph{abelian} groups.  This makes sense, because
+ abelian means you get the same result whether you compose on the left or on the right. In fact, it is true in general: 
+%no matter the order you operate; i.e. given an abelian group $G$ and elements $a,b \in G$, $ab=ba$.  So whether you compose $a$ on the left side of a subgroup or the right side of a subgroup, the result of the compositions will be the same elements, the same set.  
+
+  
+% For example, the following exercise shows that we can talk about cosets in an abelian group without worrying about left or right.
+
+\begin{exercise}\label{exercise:cosets:abelian_cosets}
+Show that if $G$ is an abelian group and $H$ is a subgroup of $G$, then any left coset $gH$ is equal to the right coset $Hg$.  
+\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+But abelian groups are not the only groups in which left cosets are equal to right cosets--see for example the first case in Example~\ref{example:cosets:S3_Cosets}. So we still haven't answered the question of what is the most general situation in which left cosets and right cosets are equal. We'll take this issue up again in Section~\ref{cosets:normal}.
+
+\section{Cosets and partitions of groups}
+\label{sec:CosetsPartitions}
+
+In Example~\ref{example:cosets:ModArith}, the cosets that we described were equivalence classes. We saw in Chapter~\ref{EquivalenceRelationsChap} that equivalence classes form a \emph{partition} which divides up the containing set into disjoint subsets.
+This is actually a general fact that is true for all cosets, and we will prove this below. In the proof, we will need the following proposition, which shows that there are several different ways to characterize the situation when  two cosets are equal.  
+
+\begin{prop}\label{proposition:cosets:cosets_theorem_1}
+Let $H$ be a subgroup of a group $G$ and suppose that $g_1, g_2 \in G$.  The following conditions are equivalent.  
+\begin{enumerate}
+ 
+\item
+$g_1 H = g_2 H$; 
+
+\item
+$g_1^{-1} g_2 \in H$.
+
+\item
+$g_2 \in g_1 H$; 
+
+\item
+$g_2 H \subset g_1 H$; \qquad (\emph{Note:} ``$\subset$'' means that equality is also possible)
+
+\item
+$H g_1^{-1}  = H g_2^{-1}$; 
+
+
+ \end{enumerate}
+\end{prop}
+The proof of this Proposition is laid out in the Exercise~\ref{exercise:cosets:CosetEquiv} below, and you are asked to fill in the details. Parts (a)-(f) of the exercise establish the following steps:
+\[ (1) \underset{(a)}\implies (2) \underset{(b)}\implies (3) \underset{(c)}\implies (4) \underset{(d)}\implies (1) \qquad \text{and} \qquad (2) \underset{(e,f)}\Leftrightarrow (5). \]
+
+
+\begin{exercise}\label{exercise:cosets:CosetEquiv}
+\begin{enumerate}[(a)]
+\item
+Show that condition (1) implies condition (2).  
+\hyperref[sec:cosets:hints]{(*Hint*)}
+
+\item
+Show that condition (2) implies condition (3).
+\hyperref[sec:cosets:hints]{(*Hint*)}
+
+
+\item
+Show that condition (3) implies condition (4).
+\hyperref[sec:cosets:hints]{(*Hint*)}
+
+\item
+Show that condition (4) implies condition (1).
+\hyperref[sec:cosets:hints]{(*Hint*)}
+
+\item
+Show that condition (2) implies condition (5).
+\hyperref[sec:cosets:hints]{(*Hint*)}
+
+\item
+Show that condition (5) implies condition (2).
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}\label{exercise:cosets:equiv_conditions}
+Proposition~\ref{proposition:cosets:cosets_theorem_1} deals with \emph{left} cosets. A parallel proposition holds for right cosets. List the five equivalent conditions for \emph{right} cosets that correspond to the five conditions given in Proposition~\ref{proposition:cosets:cosets_theorem_1}.
+\end{exercise}
+
+Now we're ready to prove that the cosets of a subgroup always form a partition of the group that contains it:
+
+\begin{prop}\label{proposition:cosets:cosets_theorem_2}
+Let $H$ be a subgroup of a group $G$.  Then the left cosets of $H$ in $G$ partition $G$.  That is, the group $G$ is the disjoint union of the left cosets of $H$ in $G$. 
+\end{prop}
+
+\begin{proof}
+The proof has two parts, namely  (1) Cosets are disjoint; and (2) The union of cosets is all of $G$.
+\begin{enumerate}[(1)]
+\item
+Let $g_1 H$ and $g_2 H$ be two cosets of $H$ in $G$.  We must show that either $g_1 H \cap g_2 H = \emptyset$ or $g_1 H = g_2 H$.  Suppose that $g_1 H \cap g_2 H \neq \emptyset$ and $a \in g_1 H \cap g_2 H$.  Then by the definition of a left coset, $a = g_1 h_1 = g_2 h_2$ for some elements $h_1$ and $h_2$ in $H$.  Hence, $g_1 = g_2 h_2 h_1^{-1}$ or $g_1 \in g_2 H$.  By Proposition~\ref{proposition:cosets:cosets_theorem_1}, $g_1 H = g_2 H$. 
+\item
+\begin{exercise}\label{exercise:cosets:disjoint_union_proof}
+Complete part (2) of the proof: that is, prove that $\bigcup_{g \in G} g H = G$.
+\end{exercise}
+\end{enumerate}
+\end{proof}
+
+\begin{rem}\label{right_is_left}
+Right cosets also partition $G$. The partition may not be the same as the partition using the left cosets, since the left and right cosets aren't necessarily equal, 
+The proof of this fact is exactly the same as the proof for left cosets except that all group multiplications are done on the right side of $H$.
+\end{rem} 
+
+Let's consider now the question of how many cosets there are for a particular subgroup within a given group. First, we define some convenient notation:
+
+\begin{defn}\label{cosets_index}
+Let $G$ be a group and $H$ be a subgroup of $G$.  The \term{index}\index{Index of a subgroup}\index{Subgroup!index of} of $H$ in $G$ is the number of left cosets of $H$ in $G$.  We will denote the index of $H$ in $G$  by~$[G:H]$\label{indexofasubgroup}.
+\end{defn}  
+
+\begin{example}\label{example:cosets:Z6_index}
+Let $G= {\mathbb Z}_6$ and $H = \{ 0, 3 \}$. Then looking back at Exercise~\ref{exercise:cosets:Z6_cosets}, we see that $[G:H] = 3$.
+\end{example}
+
+\begin{exercise}\label{exercise:cosets:Z6_right_index}
+Based on your work in  Exercise~\ref{exercise:cosets:Z6_cosets}, how many right cosets of  $H = \{ 0, 3 \}$ were there in ${\mathbb Z}_6$?
+\end{exercise}
+
+\begin{example}\label{example:cosets:S3_index}
+Suppose that $G= S_3$, $H = \{ (1),(123), (132) \}$, and $K= \{ (1), (12) \}$.  Then looking back at Example~\ref{example:cosets:S3_Cosets}, we can see that $[G:H] = 2$ and $[G:K] = 3$. 
+\end{example}
+
+\begin{exercise}\label{exercise:cosets:S3_right_index}
+How many right cosets of  $H = \{ (1),(123), (132) \}$ in $S_3$ were there?  How about right cosets of  $K= \{ (1), (12) \}$ in $S_3$?
+\end{exercise}
+
+\begin{exercise}\label{exercise:cosets:index_right_cosets}
+Using your work from Exercise~\ref{exercise:cosets:left_right_cosets}, find:
+
+\begin{enumerate}[(a)]
+\item
+$[ {\mathbb Z}_{24}: \langle 8 \rangle ]$ and the number of right cosets of $\langle 8 \rangle$ in ${\mathbb Z}_{24}$.
+
+\item
+$[ U(8) : \langle 3 \rangle ]$ and the number of right cosets of $\langle 3 \rangle$ in $U(8)$.
+
+\item
+$[{\mathbb Z} : 4{\mathbb Z} ]$ and the number of right cosets of $4{\mathbb Z}$ in ${\mathbb Z}$.
+
+\item
+$[  S_4 : \{ (1), (123), (132) \}  ]$ and the number of the right cosets of $\{ (1), (123), (132) \}$ in $S_4$.
+
+\item
+$[ S_4 : A_4 ]$ and the number of right cosets of $A_4$ in $S_4$.
+
+\item
+$[ S_n : A_n ]$ and the number of right cosets of $A_n$ in $S_n$.
+
+\item
+$[S_4 : D_4  ]$ and the number of right cosets of $D_4$ in $S_4$.
+
+\item
+$[ {\mathbb C}^\ast : {\mathbb T} ]$ and the number or right cosets of ${\mathbb T}$ in ${\mathbb C}^\ast$.
+
+\end{enumerate}
+\end{exercise}
+
+The last several examples seem to suggest that although the the left and right cosets of a subgroup aren't always equal, it seems the \emph{number} of them is always the same.  Indeed we can prove this:
+
+\begin{prop}\label{proposition:cosets:cosets_theorem_3}
+Let $H$ be a subgroup of a group $G$.  The number of left cosets of $H$ in $G$ is the same as the number of right cosets of $H$ in $G$.  
+\end{prop}
+
+ 
+\begin{proof}
+Let $L$ and  $R$ denote the set of left and right cosets of $H$ in $G$, respectively.  If we can define a bijection $\phi :  L \rightarrow R$, then the proposition will be proved.  If $gH \in L$, let $\phi( gH ) = Hg^{-1}$.  By Proposition~\ref{proposition:cosets:cosets_theorem_1}, the map $\phi$ is well-defined; that is, if $g_1 H = g_2 H$, then $H g_1^{-1} = H g_2^{-1}$.  To show that $\phi$ is one-to-one, suppose that 
+\[
+H g_1^{-1} = \phi( g_1 H ) = \phi( g_2 H ) = H g_2^{-1}.
+\]
+Again by Proposition~\ref{proposition:cosets:cosets_theorem_1}, $g_1 H = g_2 H$.  The map $\phi$ is onto since $\phi(g^{-1} H ) = H g$. 
+\hspace*{1in}
+\end{proof}
+ 
+
+
+\begin{exercise}\label{exercise:cosets:SL2_cosets}
+Consider the left cosets of $SL_2( {\mathbb R} )$ in $GL_2( {\mathbb R})$.  Show that two matrices in $GL_2( {\mathbb R})$ are in the same left coset of $SL_2( {\mathbb R} )$ if and only if they have the same determinant. Is the same true for right cosets? (Prove your answer.) \hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+
+%\begin{exercise}
+%\begin{enumerate}[(a)]
+%\item
+%Prove or disprove: Every nontrivial subgroup of the integers has finite index.
+ %\item
+%Prove or disprove: Every nontrivial subgroup of the integers has finite order.
+%\end{enumerate}
+%\end{exercise}
+ 
+\section{Lagrange's theorem, and some consequences}
+\label{sec:LagThm}
+
+\subsection{Lagrange's theorem}
+At the beginning of the chapter, we compared cosets to layers of an onion.  Indeed, as we saw in the last section, this is a good analogy because the cosets of a subgroup partition the group.  However, an even better analogy is to slices of a loaf of sandwich bread--because as we'll see in this section, every coset of a particular subgroup within a given group has exactly the same size. 
+
+What may we conclude from this? Let's push our analogy with sandwich bread a little farther. Suppose the bread has raisins in it, and each slice has exactly the same number of raisins. Then the number of raisins in the loaf must be equal to the sum of all raisins in all the slices, that is:
+
+
+$|$raisins in loaf$|$ = $|$raisins in each slice$| \cdot |$slices$|$,
+
+\noindent
+where as usual the $| \cdots |$ notation  signifies ``size'' or ``number of''.
+Applying this same reasoning to groups and their subgroups leads to a very general result called \emph{Lagrange's theorem}.  This far-reaching theorem will enable us to prove some surprising  properties of subgroups, their elements, and even some results in number theory.  So let's get started.  
+
+\begin{rem}\label{left_is_right}
+In the following discussion, for specificity's sake we will use  left coset notation. However, just lke we saw in the last section (Remark~\ref{right_is_left}), everything we say about left cosets is also true for right cosets. Indeed, to prove the cases for the right cosets, you simply need to take the left coset proofs given below and switch around each coset expression and group operation.
+\end{rem}
+
+As mentioned above, to prove  Lagrange's theorem we first need to prove that every left coset of a subgroup has the exactly the same size:
+
+\begin{prop}\label{proposition:cosets:cosets_theorem_4}
+Let $H$ be a subgroup of $G$ with $g \in G$ and define a map $\phi:H \rightarrow gH$ by $\phi(h) = gh$.  The map $\phi$ is a bijection; hence, the number of elements in $H$ is the same as the number of elements in $gH$. 
+\end{prop}
+ 
+\begin{proof}
+We first show that the map $\phi$ is one-to-one.  Suppose that $\phi(h_1)  = \phi(h_2)$ for elements $h_1, h_2 \in H$.  We must show that $h_1 =  h_2$, but $\phi(h_1) = gh_1$ and $\phi(h_2) = gh_2$.  So $gh_1 = gh_2$,  and by left cancellation $h_1= h_2$.  To show that $\phi$ is onto is easy.  By definition every element of $gH$ is of the form $gh$ for some $h \in H$ and $\phi(h) = gh$. 
+\end{proof}
+
+Given this proposition Lagrange's theorem falls right out:
+
+\begin{prop}\label{proposition:cosets:LagrangeTheorem}(\term{Lagrange's theorem})
+Let $G$ be a finite group and let $H$ be a subgroup of $G$.  Then $|G|/|H| = [G : H]$ is the number of distinct left cosets of $H$ in $G$.  In particular, the number of elements in $H$ must divide the number of elements in $G$. 
+\end{prop}
+
+\begin{proof}
+The group $G$ is partitioned into $[G : H]$ distinct left cosets.  Each left coset has $|H|$ elements; therefore, $|G| = [G : H] |H|$.
+\end{proof}
+
+Consider for a moment what we've just proven. The number of elements in a subgroup \emph{must} divide evenly into the number of elements in the group; you can't have just any number of elements in a subgroup. This is a very powerful tool to give insight into the structure of groups.
+
+\begin{example}
+Let $G$ be a group with $|G|=25$.  Then since $2$ doesn't divide 25 evenly, Lagrange's theorem implies that $G$ can't possibly have a subgroup with 2 elements.
+\end{example}
+%it couldn't have a subgroup with $2$ elements in it.  Because if that subgroup existed, it would partition the $25$-element group into some whole number of $2$-element cosets; but that's impossible, because $2$ times a whole number can never make $25$.  This is what Lagrange's Theorem says in a very compact, elegant manner.  Let's practice a couple preliminary exercises with groups using Lagrange's Theorem:
+
+\begin{exercise}\label{exercise:cosets:order5and7}
+Suppose that $G$ is a finite group with an element $g$ of order 5 and an element $h$ of order 7. 
+\begin{enumerate}[(a)]
+\item
+Show that $G$ has subgroups of order 5 and 7. \hyperref[sec:cosets:hints]{(*Hint*)}
+\item
+Why must $|G| \geq 35$?
+\end{enumerate}
+\end{exercise} 
+
+\begin{exercise}\label{exercise:cosets:finite_60}
+Suppose that $G$ is a finite group with 60 elements.  What are the possible orders for subgroups of $G$?
+\end{exercise}
+
+
+We can take the result in Lagrange's theorem a step farther by considering  subgroups of subgroups. We can prove a multiplication rule for indices:
+
+\begin{prop}\label{proposition:cosets:cosets_theorem_8}
+Let $H$ and $K$ be subgroups of a finite group $G$ such that $G \supset H \supset K$.  Then 
+\[
+[G:K] = [G:H][H:K].
+\]
+\end{prop}
+ 
+\begin{proof}
+Observe that
+\[
+[G:K] = \frac{|G|}{|K|} = \frac{|G|}{|H|} \cdot
+\frac{|H|}{|K|} = [G:H][H:K].
+\]
+\end{proof}
+
+\begin{rem} (\emph{historical background})  Joseph-Louis Lagrange\index{Lagrange, Joseph-Louis} (1736--1813), born in Turin, Italy, was of French and Italian descent.  His talent for mathematics became apparent at an early age.  Leonhard Euler\index{Euler, Leonhard} recognized Lagrange's abilities when Lagrange, who was only 19, communicated to Euler some work that he had done in the calculus of variations.  That year he was also named a professor at the Royal Artillery School in Turin.  At the age of 23 he joined the Berlin Academy. Frederick the Great had written to Lagrange proclaiming that the ``greatest king in Europe'' should have the ``greatest mathematician in Europe'' at his court.  For 20 years Lagrange held the position vacated by his mentor, Euler.  His works include contributions to number theory, group theory, physics and mechanics, the calculus of variations, the theory of equations, and differential equations.  Along with Laplace and Lavoisier, Lagrange was one of the people responsible for designing the metric system.  During his life Lagrange profoundly influenced the development of mathematics, leaving much to the next generation of mathematicians in the form of examples and new problems to be solved. 
+\end{rem}
+
+\subsection{Orders of elements, Euler's theorem, Fermat's little theorem, and prime order}\label{sec:Fermat}
+
+Now let's really put Lagrange's theorem to work. Note that Lagrange's theorem is an extremely general result--it applies to \emph{any} subgroup of \emph{any} finite group. So let's consider one particular type of subgroup, namely cyclic subgroups of the form $\langle g \rangle$ where  $g$ is an element of a given group $G$. (See Proposition~\ref{proposition:groups:OrbitIsSubgroup} in Section~\ref{CyclicSubgroups}  for the definition of $\langle g \rangle$ and the proof that it is indeed a group).
+
+\begin{prop}\label{proposition:cosets:cosets_theorem_6}
+Suppose that $G$ is a finite group and $g \in G$.  Then the order of $g$ must divide the number of elements in $G$. 
+\end{prop}
+
+\begin{proof}
+The order of a group element $g$, which is denoted as $|g|$, is defined in Definition~\ref{DefOrder} in Section~\ref{CyclicSubgroups}. We indicated in Exercise~\ref{exercise:groups:OrderEltCyclic} in that same section that $|g|$ is equal to $|\langle g \rangle|$, which is  the order of the cylic subgroup generated by $g$. It follows immediately from Lagrange's theorem that $|g|$ must divide $|G|$.
+\end{proof}
+
+To show the power of this result, we'll apply it to  the group of units $U(n)$ which was introduced in 
+Section~\ref{subsec:GroupOfUnits}.
+
+But before we do this, let's do some exploration. Recall that the elements of $U(n)$ are the positive integers that are less than $n$ and relatively prime to $n$ (we showed in Exercise~\ref{exercise:groups:U(n)_abgroup} of Section~\ref{subsec:GroupOfUnits} that these elements actually form a group. There is a special notation for the number of elements in $U(n)$:
+
+\begin{defn}
+For $n>1$, define $\phi(n)$ as the number of natural numbers that are less than $n$ and relatively prime to $n$. Alternatively, we can say that  $\phi(n)$ is the number of natural numbers $m$ where  $m < n$ and $\gcd(m,n) = 1$. In order to make $\phi$ a function on the natural numbers, we also define $\phi(1)=1$. 
+The function $\phi$ is called the \term{Euler $\phi$-function}\index{Euler $\phi$-function}.
+\end{defn}
+
+
+\begin{exercise}\label{exercise:cosets:phivals}
+Evaluate the following:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item
+$\phi(12)$
+\item
+$\phi(16)$
+\item
+$\phi(20)$
+\item
+$\phi(23)$
+\item
+$\phi(51)$
+\item
+$\phi(p)$, where $p$ is prime.
+\item\label{p2}
+$\phi(p^2)$, where $p$ is prime (\emph{justify} your answer).
+\item
+$\phi(p^n)$, where $p$ is prime and $n \in {\mathbb N}$ (\emph{justify} your answer).
+\item
+$\phi(pq)$, where $p$ and $q$ are primes and $p \neq q$ (\emph{justify} your answer).
+\end{enumerate}
+\end{multicols}
+\noindent
+\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+
+If we now apply Lagrange's theorem to $U(n)$, we obtain an important result in number theory which was first proved by Leonhard Euler in 1763. 
+
+\begin{prop}\label{proposition:cosets:cosets:Eulers_theorem} (\emph{Euler's theorem}) \index{Euler's theorem}
+Let $a$ and $n$ be integers such that $n>0$ and $\gcd(a, n) = 1$.  Then $a^{\phi(n)} \equiv 1 \pmod{n}$.
+\end{prop}
+
+\begin{proof}
+First, let $r$ be the remainder when $a$ is divided by $n$. We may consider $r$ as an element of $U(n)$.
+
+As noted above, the order of $U(n)$ is $\phi(n)$.  Lagrange's theorem then tells us that $|r|$ divides $\phi(n)$, so we can write: $\phi(n) = k|r|$, where $k \in {\mathbb N}$.   Consequently, considering $r$ as an element of $U(n)$, we have $r^{\phi(n)} = r^{k|r|} = (r^{|r|})^k = (1)^k=1$ (take note that the multiplication that is being used here is \emph{modular} multiplication, not regular multiplication). 
+
+Finally, we may use  the fact that $a \equiv r \pmod{n}$ and apply Exercise~\ref{exercise:modular:ModPower} in Section~\ref{ArithWithRems} to conclude that $a^{\phi(n)} \equiv 1 \pmod{n}$.
+
+\hspace*{0.5in}
+\end{proof}
+
+\begin{exercise}
+\begin{enumerate}[(a)]
+\item
+Verify Euler's theorem for $n = 15$ and $a = 4$.
+\item
+Verify Euler's theorem for $n = 22$ and $a = 3$.
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}\label{exercise:cosets:modvals}
+Evaluate the following, using the results of Exercise~\ref{exercise:cosets:phivals}
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item
+$\mod(5^{200},12)$
+\item
+$\mod(13^{48},16)$
+\item
+$\mod(15^{221},23)$
+\item
+$\mod(9^{111},121)$
+\item
+$\mod(10^{195},221)$
+\item
+$\mod \left( \left( \frac{p+1}{2} \right)^p,p\right)$, where $p$ is prime.
+\item
+$\mod ( (p+1)^{p^2},p^2)$, where $p$ is prime.
+\end{enumerate}
+\end{multicols}
+\end{exercise}
+
+In the following exercise you will prove \emph{Fermat's little theorem}\index{Fermat!little theorem}, which may be thought of as a special case of Euler's theorem:
+
+\begin{exercise}\label{exercise:cosets:FermatLittle}
+Suppose that $p$ is a prime number, and $a$ is a natural number which is relatively prime to $p$. Show that  $a^{p-1} \equiv 1 \bmod{p}$.
+\end{exercise}
+
+We can also apply Proposition~\ref{proposition:cosets:cosets_theorem_6} to groups of prime order, as in the following exercise.
+
+\begin{exercise}\label{exercise:cosets:primeGroups}
+Let $G$ be a group such that $|G| = p$, where $p$ is a prime number.
+\begin{enumerate}[(a)]
+\item
+Let $a$ be an element of $G \setminus \{e\}$.  What does Proposition~\ref{proposition:cosets:cosets_theorem_6} tell us about $|a|$? (Recall that `$\setminus$' is the set difference operation, defined in Definition \ref{setdifference}).  \hyperref[sec:cosets:hints]{(*Hint*)}
+\item
+Prove that $G$ is cyclic.
+\item
+Describe the set of generators of $G$  (recall that $g \in G$ is a generator of $G$ if $\langle g \rangle = G$.)
+\end{enumerate}
+\end{exercise}
+
+The results of the preceding exercise can be summarized as follows:
+
+\begin{prop}\label{proposition:cosets:cosets_theorem_7}
+Let $|G| = p$ with $p$ a prime number.  Then $G$ is cyclic and any $g \in G$ such that $g \neq e$ is a generator. 
+\end{prop}
+Later we will use this proposition to show that all groups of  prime order $p$  are the ``same'' in some sense (see Section~\ref{ClassificationOfCylic}).
+
+Finally, we can use Lagrange's theorem to show that groups of prime order have a very simple structure:
+ 
+\begin{exercise}\label{exercise:cosets:prime_simple}
+Let $G$ be a group of prime order. Use Proposition~\ref{proposition:cosets:cosets_theorem_7} to show that the only proper subgroup of $G$ is the trivial subgroup $\{e\}$.
+\end{exercise}
+
+Exercise~\ref{exercise:cosets:prime_simple} shows that groups of prime order (such as ${\mathbb Z}_p$)  are ``simple'' in the sense that they don't contain any nontrivial subgroups. In Section~\ref{sec:FactoringSimpleGroup} we will talk more about ``simple'' groups.
+
+
+%%% CPT the following proof is incorrect, because it confuses conjugacy in S_n with conjugacy in A_n
+%\subsection{Disproving the converse of Lagrange's theorem: conjugate group elements}
+%
+%According to Lagrange's Theorem, any subgroup of a group of order 12 must  have order 1, 2, 3, 4, or  6.  But is the converse of Lagrange's theorem also true? For example, for any group of order 12, must there exist subgroups of each of these orders?
+%
+%In order to disprove the converse of Lagrange's theorem, all we need to do is find one example where it fails. The example we'll give  is $A_4$, the group of even permutations on 4 symbols. $|A_4|=12$, and we'll show that $A_4$ has no subgroup of order 6.
+%
+%In order to show this, we need to introduce the concept of \emph{conjugate elements}, which will be useful later:
+%
+%\begin{defn}
+%Let $G$ be a group, and let $a,b \in G$.  Then $a$ and $b$ are said to be \term{conjugate elements} if and only if there exists a $c \in G$ such that $b = c \circ a \circ c^{-1}$.
+%\index{Conjugate!group elements}\index{Permutation!conjugate}
+%\end{defn}
+%
+%It turns out that in permutation groups, conjugation is closely tied up with cycle structure, as shown in the following proposition.
+%
+%\begin{prop}\label{proposition:cosets:cosets:cycle_length_theorem}
+%Two cycles $\tau$ and $\mu$ in $S_n$ have the same length if and only if they are conjugate in $S_n$: that is, there exists a $\sigma \in S_n$ such that $\mu = \sigma \tau \sigma^{-1}$.  
+%\end{prop}
+% 
+%\begin{proof}
+%Suppose that
+%$\tau  = (a_1, a_2, \ldots, a_k )$ and $\mu   = (b_1, b_2, \ldots, b_k )$.
+%Define $\sigma$ to be the permutation
+%\begin{align*}
+%\sigma( a_1 )  = b_1,~~~\sigma( a_2 )  = b_2,~~\ldots,~~ \sigma( a_k )  = b_k.
+%\end{align*}
+%Then $\mu = \sigma \tau \sigma^{-1}$ (we'll show this in detail in Exercise~\ref{exercise:cosets:conjugate} below).
+%
+%Conversely, suppose that $\tau = (a_1, a_2, \ldots, a_k )$ is a $k$-cycle and $\sigma \in S_n$. If $\sigma( a_i ) = b$ and $\sigma( a_{(i+1) \bmod k)} ) = b'$, then $\mu( b) = b'$.  Hence, 
+%\[
+%\mu = ( \sigma(a_1), \sigma(a_2), \ldots, \sigma(a_k) ).
+%\]
+%Since $\sigma$ is one-to-one and onto, $\mu$ is a cycle of the same length as $\tau$. 
+%\end{proof}
+%
+%\begin{exercise}\label{exercise:cosets:conjugate}
+%Given $\tau, \mu$, and $\sigma$ as Proposition~\ref{proposition:cosets:cosets:cycle_length_theorem}. 
+%\begin{enumerate}[(a)]
+%\item
+%Compute $\sigma^{-1} (b_1)$
+%\item
+%Compute $\tau (a_1)$
+%\item
+%Compute $\sigma (a_1)$
+%\item
+%Using parts (a-c) above, fill in the blanks:
+%
+%\begin{align*}
+%\sigma \tau \sigma^{-1} (b_1) & = \sigma \tau (\sigma^{-1} (b_1)) \\
+%&= \sigma \tau (\_\_\_\_)  \textrm{(from part (a))}\\
+%&= \sigma(\tau (\_\_\_\_))  \textrm{(def. of composition)}\\
+%&= \sigma(\_\_\_\_\_) \textrm{(from part (b))}\\
+%& = \_\_\_\_\_ \textrm{(from part (c))}.
+%\end{align*}
+%
+%It follows that $\sigma \tau \sigma^{-1} (b_1) = \mu (\_\_\_\_\_)$.
+%\item
+%In general, we can write:
+%
+%\[ \tau (a_j) = a_{(j+1) \bmod k} \]
+%
+%How would you write $\mu(b_j)$ using a similar notation?
+%
+%\item
+%Follow the proof in (d) to show that:
+%
+%\[ \sigma \tau \sigma^{-1} (b_j) = \mu(b_j). \]
+%\end{enumerate}
+%\end{exercise}
+%
+%One more little result is needed:
+%
+%\begin{exercise}\label{exercise:cosets:NoThreeCycles}
+%List all of the 3-cycles in $A_4$.
+%\end{exercise}
+%
+%Now we're ready for the proof, which brings together several of the ideas that we've introduced so far in this book. This is a what is often called ``elegant'' proof: although it's short and easy to write down, in a way it seems that it pulls a ``rabbit out of a hat''. As a foretaste of Chapter~\ref{actions}, we will find that \emph{counting arguments}\index{Counting argument} play an important role.
+%
+%\begin{prop}\label{proposition:cosets:cosets_theorem_10}
+%The group $A_4$ has no subgroup of order 6.
+%\end{prop}
+%
+%\begin{proof}
+%The proof is by contradiction. We suppose that $H$ is a subgroup of $A_4$ or order 6. From Exercise~\ref{exercise:cosets:NoThreeCycles} we know that there are 8 3-cycles in $A_4$.  It follows that $H$ must contain at least 2 3-cycles (since only 6 of them can fit in $A_4 \setminus H$.We will let 
+%
+%Next let's consider  the cosets of $H$. Since $[A_4 : H] = 2$, there are only two left cosets of $H$ in $A_4$.  Since $H$ is one of these left cosets, the other must be $A_4 \setminus H$. The very same argument shows that the two right cosets of $H$ are also $H$ and $A_4 \setminus H$. It follows that $gH = Hg$, and therefore $g H g^{-1} = H$ for every $g \in A_4$.  
+%
+%Now comes the punch line. By Proposition~\ref{proposition:cosets:cosets:cycle_length_theorem}, if $H$ contains one 3-cycle, then it must contain every 3-cycle, contradicting the order of~$H$. \hspace*{1in}
+%\end{proof}
+%
+ 
+\section{Normal subgroups and factor groups}
+\label{sec:cosets:normal}
+ 
+We saw in Section~\ref{cosets:def} that if $H$ is a subgroup of a group $G$, then right cosets of $H$ in $G$ are not always the same as left cosets. The \emph{number} of right cosets and left cosets are always equal, and the number of elements in the left and right cosets match; but the right and left cosets \emph{themselves} may not equal each other (it is not always the case that $gH = Hg$ for all $g \in G$).  But as we saw sometimes they do equal each other. The subgroups for which this property holds play a critical role in group theory: they allow for the construction of a new class of groups, called  \emph{quotient groups} (or \emph{factor groups}. 
+% Factor groups may be studied by using homomorphisms, a generalization of isomorphisms. 
+
+\subsection{Normal subgroups}
+
+First, let's give a name to these nice subgroups:
+
+\begin{defn}\label{normal_sub}
+A subgroup $H$ of a group $G$ is \term{normal}\index{Subgroup!normal}\index{Normal subgroup} in G if $gH =
+Hg$ for all $g \in G$. That is, a normal subgroup of a group $G$ is
+one in which the right and left cosets for every group element are precisely the same. 
+\end{defn}
+ 
+\begin{example}\label{example:cosets:normal_S3}
+Think back to Example~\ref{example:cosets:S3_Cosets} earlier in the chapter.  $H$ was the subgroup of $S_3$ consisting of elements $(1)$ and
+$(12)$. Since 
+\[
+(123) H = \{ (123), (13) \}
+\quad
+\text{and}
+\quad
+H (123) = \{ (123), (23) \},
+\]
+$H$ cannot be a normal subgroup of $S_3$.  However, the subgroup $N$,
+consisting of the permutations $(1)$, $(123)$, and $(132)$, is normal
+since the cosets of $N$ are 
+\[
+\begin{array}{c}
+N  =   \{ (1), (123), (132) \} \\
+(12) N =  N (12)  =  \{ (12), (13), (23) \}.
+\end{array}
+\]
+\end{example}
+
+\begin{exercise}\label{exercise:cosets:which_normal}
+Looking back at Exercise~\ref{exercise:cosets:left_right_cosets}, which of the subgroups were normal?
+\end{exercise}
+
+\begin{exercise}\label{exercise:cosets:SL2_normal}
+Is $SL_2( {\mathbb R} )$ a normal subgroup of $GL_2( {\mathbb R})?$  Prove or disprove.
+\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+\begin{exercise}\label{exercise:cosets:i_normal}
+Prove or disprove:  $\{ 1, -1, i, -i \}$ is a normal subgroup of $Q_8$.\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+Now let's see if you can prove some general facts about normal subgroups.  We'll start with a warm-up:
+
+
+\begin{exercise}\label{exercise:cosets:e_normal}
+Prove that for \emph{any} group $G$, the set $\{e\}$ is a normal subgroup of $G$ (in other words the identity of group is always a normal subgoup).
+\end{exercise} 
+
+This next one often comes in handy.
+
+\begin{prop}\label{proposition:cosets:index2_normal} Let $G$ be a group, and let $H$ be a subgroup of $G$ with index 2. Then $H$ is a normal subgroup of $G$.
+\end{prop}
+\begin{exercise}
+Prove Proposition~\ref{proposition:cosets:index2_normal} by proving each of the following steps.
+\begin{enumerate}[(a)]
+\item
+Prove that $G \setminus H$ is a left coset of $H$ in $G$.
+\item
+Prove that $G \setminus H$ is a right coset of $H$ in $G$.
+\item 
+Prove that $H$ is normal in $G$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}\label{exercise:cosets:abelian_normal} Prove that any subgroup of an abelian group is normal.
+\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+
+Here's an alternative way to characterize normal subgroups:
+
+\begin{prop}\label{proposition:cosets:cosetNormal} Let $H$ be a subgroup of $G$. Then $H$ is normal iff every left coset of $H$ is also a right coset of $H$.
+\end{prop}
+\begin{exercise}
+Prove Proposition~\ref{proposition:cosets:cosetNormal}.
+\end{exercise}
+
+The following proposition can be useful when trying to prove that a certain subgroup is normal.  It gives several different characterizations of normal subgroups.
+  
+\begin{prop}\label{proposition:cosets:normal:normalequivalents}
+Let $G$ be a group and $N$ be a subgroup of $G$. Then the following
+statements are equivalent.
+\begin{enumerate}
+ 
+\item
+The subgroup $N$ is normal in $G$. 
+ 
+\item
+For all $g \in G$, $gNg^{-1} \subset N$. 
+ 
+\item
+For all $g \in G$, $gNg^{-1} = N$.
+ 
+\end{enumerate}
+\end{prop}
+ 
+ 
+\begin{proof}
+(1) $\Rightarrow$ (2).
+Since $N$ is normal in $G$, $gN = Ng$ for all $g \in G$. Hence, for a
+given $g \in G$ and $n \in N$, there exists an $n'$ in $N$ such that
+$g n = n' g$. Therefore, $gng^{-1} = n' \in N$ or $gNg^{-1} \subset
+N$.
+ 
+ 
+(2)  $\Rightarrow$ (3).  
+Let $g \in G$. Since $gNg^{-1} \subset N$, we need only show $N
+\subset gNg^{-1}$. For $n \in N$,  $g^{-1}ng=g^{-1}n(g^{-1})^{-1} \in
+N$.  Hence, $g^{-1}ng = n'$ for some $n' \in N$. Therefore, $n = g n'
+g^{-1}$ is in $g N g^{-1}$.
+ 
+ 
+(3) $\Rightarrow$ (1).
+Suppose that $gNg^{-1} = N$ for all $g \in G$. Then for any $n \in N$
+there exists an $n' \in N$ such that $gng^{-1} = n'$.  Consequently,
+$gn = n' g$ or $gN \subset Ng$. Similarly, $Ng \subset gN$.
+\end{proof}
+ 
+ Proposition~\ref{proposition:cosets:normal:normalequivalents} enables us to formulate an alternative definition for normal subgroups:  
+
+\begin{defn}\label{normal_alt}
+ Given a group $G$, a subgroup $H \subset G$ is called a 
+\term{normal subgroup}\index{Subgroup!normal} if for every $g \in G$ and for every $h \in H$, we have that $ghg^{-1} \in H$  (alternatively, we can write this condition as: $gHg^{-1} = H$).
+\end{defn}
+
+\begin{exercise}\label{exercise:cosets:ghg-1_prove}
+Prove that Definition~\ref{normal_alt} is equivalent to Definition~\ref{normal_sub}.
+\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+
+\begin{exercise}
+We showed in Exercise~\ref{ex:eoc:31} that the intersection of two subgroups of the same group is also a subgroup.
+Show that if the two subgroups are normal, then the intersection  is also a normal. 
+\end{exercise}
+
+
+\begin{exercise}\label{exercise:cosets:normalk}
+In the following exercises, $G$ is a group and $H$ is a subgroup of $G$.
+\begin{enumerate}[(a)]
+\item
+Show that for any $g \in G$ then $gHg^{-1}$ is also a subgroup of $G$.
+\item
+Define a function $f: H \rightarrow gHg^{-1}$ as follows:  $f(h) = ghg^{-1}$.
+Show that $f$ is a bijection, and thus $|H| = |gHg^{-1}|$.
+\item
+If a group $G$ has exactly one subgroup $H$ of order $k$, prove that
+$H$ is normal in $G$.
+\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{enumerate}
+\end{exercise}
+
+Finally, here's one that will be very useful in the very near future.
+
+\begin{exercise}\label{exercise:cosets:normal_mult}
+\begin{enumerate}[(a)]
+\item
+Let $H \subset G$ be a normal subgroup, and let $g \in G, h \in H$. Show that $g^{-1}hg \in H$.
+\item
+Let $H \subset G$ be a normal subgroup, and let $g \in G, h \in H$. Use part (a) to show how that there exists an $h' \in H$ such that $hg = g h'$.
+\item
+Let $H \subset G$ be a normal subgroup, and suppose $x_1 \in g_1H$ and $x_2 \in g_2H$. Prove that $x_1x_2 \in g_1g_2H$.
+\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{enumerate}
+\end{exercise}  
+
+\subsection{Factor groups}\label{sec:factor_groups}
+ 
+So what's the hubbub about these normal subgroups?  We've been promising a grand revelation.  It turns out that the cosets of normal subgroups have some very special properties.
+
+\begin{example}\label{example:cosets:factor_Z3}
+Consider the normal subgroup $3 {\mathbb Z}$ of ${\mathbb Z}$ that we started exploring at the beginning of the chapter. The cosets of
+$3 {\mathbb Z}$ in ${\mathbb Z}$ were
+\begin{align*}
+0 + 3 {\mathbb Z} & = \{ \ldots, -3, 0, 3, 6, \ldots \} \\
+1 + 3 {\mathbb Z} & = \{ \ldots, -2, 1, 4, 7, \ldots \} \\
+2 + 3 {\mathbb Z} & = \{ \ldots, -1, 2, 5, 8, \ldots \}.
+\end{align*}
+
+Now just for curiosity's sake, let's say we took \emph{every} element in $0 + 3 {\mathbb Z}$ and added them to \emph{every} element in $1 + 3 {\mathbb Z}$.  What would be the resulting set?  Try some examples: take an arbitrary element of $0 + 3 {\mathbb Z}$, and add to it an arbitrary element of $1 + 3 {\mathbb Z}$. You will find that the result is always in $1 + 3 {\mathbb Z}$. Let's give a proof of this. First let's give some notation:
+
+\begin{defn}\label{setplus}(\emph{Set addition})  Let $A$ and $B$ be two sets of real numbers.  Then the \term{sum}\index{Sum!of sets} $A + B$ is defined as the set:
+\[ A + B := \{a + b, \mathrm{~where~} a \in A \text{ and } b \in B\} .\]
+\end{defn}
+\noindent
+Notice that we are giving a \emph{new} meaning to the symbol `+', because we are applying it to \emph{sets} rather than \emph{numbers}. 
+
+In terms of this new notation, what we're trying to prove is:
+
+\[ (0 + 3 {\mathbb Z}) + (1 + 3 {\mathbb Z}) = 1 + 3 {\mathbb Z}. \]
+
+As we've done many times before, we may prove that these two sets are equal by showing that all elements of the left-hand set are contained in the right-hand set, and vice versa. So let's take an arbitrary element of $(0 + 3 {\mathbb Z}) + (1 + 3 {\mathbb Z})$. We may write this element as $(0 + 3m) + (1 + 3n)$, where $m,n \in \ZZ$. Basic algebra gives us:
+\[(0 + 3m) + (1 + 3 n) = 1 + 3(m+ n), \]
+which is in $1 + 3 {\mathbb Z}$. This shows that: 
+\[ (0 + 3 {\mathbb Z}) + (1 + 3 {\mathbb Z}) \subset 1 + 3 {\mathbb Z}. \]
+On the other hand, we may write an arbitrary element of $1 + 3 {\mathbb Z}$ as $1 + 3k$, which is equal to  $0 + (1 + 3k)$.  Since $0 \in 0 + 3 {\mathbb Z}$, we have 
+\[ (0 + 3 {\mathbb Z}) + (1 + 3 {\mathbb Z}) \supset 1 + 3 {\mathbb Z}, \]
+and the proof is complete.
+
+%Looking at it again, the result does make sense; if you take any multiple of $3$ ($1 + 3 {\mathbb Z}$) and add to it any multiple of $3$ plus an extra $1$ ($1 + 3 {\mathbb Z}$), you get get an integer that is a multiple of $3$ plus an extra $1$.  This is like saying that, mod $3$, a zero plus a one is a one.  \emph{And}, if you look at the element signifiers on the front of the cosets in the equation, we have \emph{exactly} that: $0 + 1 = 1$.  So another way to think about the line above is:
+%
+%\[ (\text{\emph{0}} + 3 {\mathbb Z}) + (\text{\emph{1}} + 3 {\mathbb Z}) = (\text{\emph{$0$}} + \text{\emph{$1$}}) +  3 {\mathbb Z} = 1 + 3 {\mathbb Z} \]
+%
+%\emph{Now}, instead of adding elements of sets together, we are adding \emph{sets} together, using the elements at the beginning of the cosets to do the work of the `'addition". Let's practice another one:
+%
+%What is $(1 + 3 {\mathbb Z}) + (2 + 3 {\mathbb Z})$ (think through it in your head first)?
+%
+%You should get $0 + 3 {\mathbb Z}$, and indeed,
+%
+%\[ (\text{\emph{1}} + 3 {\mathbb Z}) + (\text{\emph{2}} + 3 {\mathbb Z}) = (\text{\emph{$1$}} + \text{\emph{$2$}}) +  3 {\mathbb Z} = 0 + 3 {\mathbb Z} \pmod{3} \]
+
+Let's step back and see what we've done. We've taken one coset of $ 3 {\mathbb Z}$ (i.e. $0 + 3\ZZ$), and ``added" a second coset (i.e. $1 + 3\ZZ$) to it, to get a third coset of $ 3 {\mathbb Z}$. This sounds like closure.  So let's check that we have it.  Doing the same thing with all pairs of cosets, we obtain the following ``addition'' table: 
+
+%Notice also that 
+%The group   ${\mathbb Z}/ 3 {\mathbb Z}$ then is given by the multiplication
+%table below. 
+\begin{center}
+\begin{tabular}{c|ccc}
+$+$             & $0 + 3{\mathbb Z}$ & $1 + 3{\mathbb Z}$ & $2 + 3{\mathbb Z}$ \\\hline
+$0 + 3{\mathbb Z}$ & $0 + 3{\mathbb Z}$ & $1 + 3{\mathbb Z}$ & $2 + 3{\mathbb Z}$ \\
+$1 + 3{\mathbb Z}$ & $1 + 3{\mathbb Z}$ & $2 + 3{\mathbb Z}$ & $0 + 3{\mathbb Z}$ \\
+$2 + 3{\mathbb Z}$ & $2 + 3{\mathbb Z}$ & $0 + 3{\mathbb Z}$ & $1 + 3{\mathbb Z}$
+\end{tabular}
+\end{center}
+
+So indeed we have closure.  It's beginning to look like we have a group here. Actually,  we can see an identity ( $0 + 3 {\mathbb Z}$) and an inverse for every coset (for example $[1 + 3 {\mathbb Z}]^{-1}=2 + 3 {\mathbb Z}$). It turns that the associative property also holds: this follows from the associativity of ordinary addition. So we got it: the cosets of $3 {\mathbb Z}$ \emph{themselves} form a group!  (Note the Cayley table for this group looks suspiciously the same as the Cayley table for ${\mathbb Z}_3$; we'll pick up on this in Chapter~\ref{isomorph}.)  
+\end{example}
+
+ So \emph{this} is the grand revelation about normal subgroups: \emph{the cosets of a normal subgroup form a group}. But we shouldn't jump the gun: we've only shown it's true for a special case. Now we have to get down to the hard work of proving it in general. First we have to generalize Definition~\ref{setplus} to other group operations.
+
+\begin{defn}\label{setcomp}(\emph{Set composition})  Let $A$ and $B$ be two subsets of a group $G$.  Then the \term{composition}\index{Composition!of sets} $A \circ B$ (or $AB$)  is defined as the set:
+\[ A \circ B := \{a b, \mathrm{~where~} a \in A \text{ and } b \in B\} .\]
+\end{defn}
+
+The reason that normal subgroups are special is that set composition defines an operation on cosets:
+
+\begin{prop}\label{proposition:cosets:norm_comp}
+Let $N$ be a normal subgroup of a group $G$. If $a,b \in G$ , then $aN \circ bN = abN$.
+\end{prop}
+\begin{proof}
+The proof parallels the argument in Example~\ref{example:cosets:factor_Z3}. Let $x \in aN$ and $y \in bN$. 
+Using Exercise~\ref{exercise:cosets:normal_mult} part (c), we may conclude that $xy \in abN$.  This shows that $aN \circ bN \subset abN$.  On the other hand,
+let $z \in abN$.  Then $z = ae \circ b  n$ for some $n\in N$, which implies that $z \in aN \circ bN$.  This shows that $aN \circ bN \supset abN$, and the proof is finished.
+\end{proof}
+
+\begin{prop}
+Let $N$ be a normal subgroup of a group $G$. The cosets of $N$ in $G$
+form a group under the operation of set composition. 
+\end{prop}
+  
+\begin{proof}
+We have shown that the set composition operation is well-defined and closed on the set of cosets of $N$, provided that $N$ is normal. 
+Associativity follows by the associativity of the group operation defined on $G$.
+Using Proposition~\ref{proposition:cosets:norm_comp} we have that $eN \circ aN = aN \circ eN = aN$, so $eN = N$ is an identity.  
+Proposition~\ref{proposition:cosets:norm_comp} also gives us that $g^{-1}N \circ gN = gN \circ g^{-1}N = eN$, so the inverse of $gN$ is $g^{-1} N$. 
+\end{proof}
+
+Let's define a special notation for our new discovery.
+
+\begin{defn}\label{factor_group} 
+If $N$ is a normal subgroup of a group $G$, then the group of cosets of $N$ under the operation of set composition is denoted as $G/N$\label{notefactor} This group is called the  \term{quotient group}\index{Group!quotient} or \term{factor group}\index{Group!factor} of $G$ and $N$. 
+\end{defn} 
+Note that the order of $G/N$ is $[G:N]$, the number of cosets of $N$ in $G$. 
+
+ 
+
+\begin{rem}
+In Example~\ref{example:cosets:factor_Z3} above, the quotient  group would have been labeled ${\mathbb Z}/ 3 {\mathbb Z}$. In general, the subgroup $n {\mathbb Z}$ of ${\mathbb Z}$ is normal. The
+cosets of the quotient  group ${\mathbb Z } / n {\mathbb Z}$ then are 
+\[
+n {\mathbb Z};\quad 1 + n {\mathbb Z}; \quad 2 + n {\mathbb Z}; \quad \cdots \quad
+(n-1) + n {\mathbb Z}.
+\]
+and the sum of the cosets $k + {\mathbb Z}$ and $l + {\mathbb Z}$ is $k+l + 
+{\mathbb Z}$. Notice that  we have written our cosets additively, 
+because the group operation is integer addition. 
+\end{rem}
+
+
+It is very important to remember that the elements in a quotient group are not the elements of the original group, but \emph{sets of elements} in the original group. As well then, the operation for the quotient group is not the original operation of the group (which was used to compose elements), but a convenient derivative of it that we use to compose sets together.  Both of these facts take a second to get use to, so let's practice:
+
+ 
+\begin{example}\label{example:cosets:factor_S3}
+Consider the normal subgroup of $S_3, H = \{ (1), (123), (132)  \}$ which we started exploring in Example~\ref{example:cosets:S3_Cosets}.
+The cosets of $H$ in $S_3$ were $H$ and $(12) N$. Using the group operation from Defintion~\ref{factor_group} to compose these cosets together, the quotient group $S_3
+/ N$ then has the following Cayley table.
+\begin{center}
+\begin{tabular}{c|cc}
+         & $N$      & $(12) N$ \\
+\hline
+$N$      & $N$      & $(12) N$ \\
+$(12) N$ & $(12) N$ & $N$
+\end{tabular}
+\end{center}
+%This group is isomorphic to ${\mathbb Z}_2$
+
+Notice that  $S_3 / N$ is a smaller group than $S_3$ ($2$ elements compared to $6$ eleemnts). So the quotient group then displays a pared down amount of
+information about $S_3$.  Actually, $N = A_3$, the group of even
+permutations, and $(12) N = \{ (12), (13), (23) \}$ is the set of odd
+permutations. The information captured in $G/N$ is parity; that is,
+multiplying two even or two odd permutations results in an even
+permutation, whereas multiplying an odd permutation by an even
+permutation yields an odd permutation.  This information, as well as the Cayley table above, might suggest to you that the quotient group is equivalent to another group we know.  Again, we'll pick up on this in the Isomorphisms chapter. 
+\end{example}
+ 
+ 
+
+
+Now it's your turn:
+
+\begin{exercise}\label{exercise:cosets:factor_cayley_prac}
+Give the Cayley tables for the following quotient groups:
+
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item
+ ${\mathbb Z}/ 4 {\mathbb Z}$
+
+\item
+ ${\mathbb Z}/ 6 {\mathbb Z}$
+\item
+ ${\mathbb Z}_{24} / \langle 8 \rangle$ 
+
+\item
+ ${\mathbb Z}_{20} / \langle 4 \rangle$ 
+
+\item
+${\mathbb Z}_{6} / \{0,3\}$
+
+\item
+${\mathbb Z}_{8} / \{0,4\}$
+\item
+$U(8) / \langle 3 \rangle$
+\item
+$U(20) / \langle 3 \rangle$
+
+\end{enumerate}
+\end{multicols}
+\end{exercise}
+ 
+\begin{example}\label{example:cosets:factor_Dn}
+Consider the dihedral group $D_n$ that we studied in the Symmetries chapter, which was the group of symmetries (rotations and reflections) of a regular $n$ sided polygon.  We determined in the latter part of that chapter that $D_n$ was actually generated by the two elements $r$ and $s$, satisfying the relations 
+\begin{align*}
+r^n & = id \\
+s^2 & = id \\
+srs & = r^{-1}.
+\end{align*}
+Any element of $D_n$ can be written as $sr^k$ for some integer $0 \le k < n$.
+
+The element $r$ generates the cyclic subgroup of rotations,
+$R_n$, of $D_n$.  Since $(sr^k)r(sr^k)^{-1} = sr^krr^{-k}s = r^{-1} \in R_n$, then by Definition~\ref{normal_alt} the group
+of rotations is a normal subgroup of $D_n$; therefore, $D_n / R_n$ is
+a group.  Now there are $2n$ symmetries in $D_n$ and $n$ rotations in $R_n$; so Lagrange's theorem tells us the number of cosets, $[D_n : R_n] =  \frac{|D_n|}{|R_n|} = \frac{2n}{n} =2$.  
+
+Since $R_n$, the rotations, are one of the cosets, the reflections must be the other coset.  So the group $D_n / R_n$ boils down to to two elements, rotations and reflections, described by a $2 \times 2$ Cayley table.  
+\end{example}
+
+\begin{exercise}\label{exercise:cosets:cayley_dn_rn}
+Construct the Cayley table for  $D_n / R_n$. 
+\end{exercise}
+
+
+ 
+\section{Factoring of groups and simple groups}
+\label{sec:FactoringSimpleGroups}
+% \label{normal:sec:simplealternating}
+ 
+\subsection{Concepts, definitions, and examples}
+ In the previous section we talked about how a normal subgroup enables us to ``factor'' a group to obtain two groups with fewer elements (i.e. the group of cosets, and the normal subgroup). This seems quite similar to the idea of factoring positive integers as a product of smaller numbers. In fact, just as with positive integers, the process can be continued. To be precise: suppose that $G$ is a group, and $N_1$ is a normal subgroup. Suppose further that $N_2$ is a normal subgroup of $N_1$.  Then we can ``factor'' $G$ into three groups, namely $G/N_1$, $N_1/N_2$, and $N_2$. Evidently the process can be continued: if $N_2$ has a normal subgroup $N_3$, then we can ``factor'' $G$ into four groups: $G/N_1$, $N_1/N_2$, $N_2/N_3$, and $N_3$.  When does this process end? Eventually, we will reach a group in which the only normal subgroup is the trivial subgroup  $\{e\}$.  But factoring by $\{e\}$ doesn't give a group with fewer elements, because the number of cosets of the identity in any group $G$ is (by Lagrange's theorem)
+
+\[ \frac{|G|}{|\{e\}|} = \frac{|G|}{1} = |G|. \]
+
+\noindent
+Thus factoring a group by $\{e\}$ is kind of like dividing an integer by 1: it doesn't change anything. So a group with no nontrivial normal subgroups is like a prime number: it can't be factored any further. A group with no nontrivial normal subgroups is called a \term{simple group}\index{Group!simple}\index{Simple group}.  Just like any positive integer uniquely factors into a product of prime numbers,  it turns out that any group can be factored into a series of simple groups, and the factors are (in some sense) unique.  There's a beautiful theorem, called the \term{ Jordan-H{\"o}lder Theorem}, which characterizes these factors. Unfortunately, the precise statement of the theorem is somewhat involved, so we leave to the interested reader to research this topic further.\footnote{See for example \url{http://turnbull.mcs.st-andrews.ac.uk/~colva/topics/ch4.pdf}.} 
+
+\begin{exercise}
+\begin{enumerate}[(a)]
+\item
+For the dihedral group $D_5$, find a normal subgroup $N$ such that $D_5 / N$ and $N$ are both simple.
+\item
+For the dihedral group $D_4$, find subgroups $N, P$ such that $P \subset N_1$ and  $D_4/N$, $N/M$, and $M$ are all  simple groups.
+\item
+For the  group $\mathbb{Z}_6$, find a normal subgroup $N$  such that $\mathbb{Z}_6 / N$ and $N$ are both simple. Find also a \emph{different} subgroup $M$  such that $\mathbb{Z}_6 / M$ and $M$ are both simple. Show that $\mathbb{Z}_6 / N$ is isomorphic to $M$ and $\mathbb{Z}_6 / M$ is isomorphic to $N$.  (Recall our discussion of ``isomorphic'' in Section~\ref{sec:IsoGps}.) This exercise shows that although the factors of a group are unique (up to isomorphism), the group may be ``broken down'' in different ways to obtain the factors.
+\item
+For the  group $S_3$, find a subgroup $N$  such that $S_3 / N$ and $N$ are both simple. Show that these groups are isomorphic to the two groups in each factorization in part (c).  This shows that although the factors of any group are unique, it's possible to have two different groups with the same factors.
+\end{enumerate}
+\end{exercise}
+
+We've been comparing simple groups to prime numbers, but actually they are somewhat more complicated than prime numbers. There are several infinite classes of simple groups (as well as a few simple groups which defy classification--see the  Remark  at the end of this section.) We've already seen one such  class: the groups of prime order. As we noted at the end of Section~\ref{sec:LagThm}, these groups are simple since they have
+no nontrivial proper subgroups. 
+
+
+\subsection{Simplicity of the alternating groups $A_n$ for $n \ge 5$}
+Let's consider the simplicity question for some other groups. We'll start with the symmetric groups $S_n$ (permutations on $n$ numbers).
+
+\begin{exercise}\label{exercise:cosets:Sn_NotSimple}
+Show that $S_n$ is not simple for $n \geq 3$.\hyperref[sec:cosets:hints]{(*Hint*)}
+\end{exercise}
+
+So the $S_n$'s aren't simple in general.  How about the $A_n$'s?
+
+\begin{exercise}
+\begin{enumerate}[(a)]
+\item
+Show that $A_2$ and $A_3$ are simple.
+\item
+Let $H$ be the subset of $A_4$ consisting of elements which are products of two disjoint  transpositions (that is, the cycle structure is two 2-cycles). Show that $H$ is a subgroup of $A_4$, and in fact is a normal subgroup of $A_4$.
+\end{enumerate}
+\end{exercise}
+
+Although $A_4$ is not simple, it turns out that the alternating groups $A_n$ are simple for
+$n \geq 5$. We will prove this result by looking at properties of 3-cycles. The strategy is to establish the following two facts:
+\begin{enumerate}[(1)]
+\item
+The only  normal subgroup of $A_n (n \geq 3)$ that contains a 3-cycle is $A_n$ itself.
+\item
+Any nontrivial normal subgroup of $A_n (n \geq 5)$ contains a 3-cycle.
+\end{enumerate}
+Facts (1) and (2) then imply that the only nontrivial normal subgroup of $A_n (n \geq 5)$ is $A_n$ itself.
+
+Before we can prove facts (1) and (2), we need first a preliminary result: 
+
+\begin{prop}\label{proposition:cosets:normal:3cycle_lemma1}
+The alternating group $A_n$ is generated by $3$-cycles for $n \geq 3$.
+\end{prop}
+ 
+\begin{proof}
+We know that any element $\sigma$ of $A_n$ is an even permutation, so $\sigma$ can be expressed as the product of an even number of transpositions. In this  expression for $\sigma$ we may pair up the transpositions two by two, and thus obtain an expression for $\sigma$ as a product of \emph{pairs} of transpositions. Now consider any pair of transpositions. Either the pair has both elements in common; or the pair has one element in common; or the pair has no elements in common. In other words, the three possibilities for any pair of transpositions are:
+\[ (ab)(ab) \text{ or } (ab)(bc)  \text{ or } (ab)(cd) \quad \text{(where } a,b,c,d \text{ are all different elements of } A_n).\]
+We may write all of these pairs of transpositions as follows:
+\begin{align*}
+(ab)(ab) & = e \\
+(ab)(bc) & = (abc) \\
+(ab)(cd) & = (abc)(bcd).
+\end{align*}
+By substituting pairs of transpositions in the product expression for $\sigma$ with equivalent 3-cycle expressions, we may express the arbitrary element $\sigma \in A_n$ as a product of 3-cycles.
+\end{proof}
+
+Before continuing onward with our proof, let's do a few examples to see how this works.
+
+ \begin{exercise}\label{exercise:cosets:ex3cycle}
+ Express the following permutations as products of 3-cycles.
+\begin{enumerate}[(a)]
+\item 
+(12)(34)(56)(78)
+\item 
+(13)(35)(57)(79)(24)(68)
+\item 
+(1357)(2468)
+\item 
+(428)(1628)
+\end{enumerate}
+ \end{exercise}
+Armed with Proposition~\ref{proposition:cosets:normal:3cycle_lemma1} we're now able to prove fact (1).
+
+\begin{prop}\label{proposition:cosets:normal:3cycle_lemma2}
+Let $N$ be a  normal subgroup of $A_n$, where $n \geq 3$. If $N$ 
+contains a $3$-cycle, then $N = A_n$. 
+\end{prop}
+ 
+ 
+\begin{proof}
+We will first show that $A_n$ is generated by 3-cycles of the specific
+form $(ijk)$, where $i$ and $j$ are fixed in  $\{ 1, 2, \ldots, n \}$
+and we let $k$ vary. Every 3-cycle is the product of 3-cycles of this 
+form, since
+\begin{align*}
+(i a j) & = (i j a)^2  \\
+(i a b) & = (i j b) (i j a)^2 \\
+(j a b) & = (i j b)^2 (i j a) \\
+(a b c) & = (i j a)^2 (i j c) (i j b)^2 (i j a).
+\end{align*}
+Now suppose that $N$ is a nontrivial normal subgroup of $A_n$ for $n 
+\geq 3$  such that $N$ contains a 3-cycle of the form $(i j a)$. Using
+the normality of $N$, we see that
+\[
+[(i j)(a k)](i j a)^2 [(i j)(a k)]^{-1} = (i j k)
+\]
+is in $N$. Hence, $N$ must contain all of the 3-cycles $(i j k)$ 
+for $1 \leq k \leq n$. By Proposition~\ref{proposition:cosets:normal:3cycle_lemma1}, these 3-cycles generate $A_n$; 
+hence, $N = A_n$. 
+\end{proof}
+\bigskip
+ 
+\noindent
+Let's move on to fact (2):
+
+\begin{prop}\label{proposition:cosets:normal:3cycle_lemma3}
+For $n \geq 5$, every nontrivial normal subgroup $N$ of $A_n$ contains a
+$3$-cycle. 
+\end{prop}
+
+%TWJ - 1/13/2014
+%nontrivial added to the lemma statement.  Suggested by M. Faucette.
+ 
+ 
+\begin{proof}
+Let $\sigma$ be an arbitrary element in a normal subgroup $N$. The possible cycle structures for $\sigma$ are as follows:
+
+\begin{enumerate}[(i)]
+ \item
+$\sigma$ is a 3-cycle.
+ \item
+The cycle structure of $\sigma$ includes an $r$-cycle where $r>3$.
+\item
+The cycle structure of $\sigma$ includes at least two 3-cycles.
+\item
+The cycle structure of $\sigma$ includes just one 3-cycle and an even number of 2-cycles. 
+\item
+the cycle structure of $\sigma$ includes an even
+number of 2-cycles. 
+\end{enumerate}
+
+\noindent
+We may treat these cases one by one.
+
+\begin{enumerate}[(i)]
+ \item
+If $\sigma$ is a $3$-cycle, then we are done. 
+\item
+In this case we can write $\sigma = \tau(a_1 a_2 \cdots a_r)$, where $r>3$ 
+and $\tau$ includes cycles that are disjoint from $(a_1 a_2 \cdots a_r)$.
+Then   
+\[
+(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1}
+\]
+is in $N$ since $N$ is normal. It follows that
+\[
+\sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1}
+\]
+is also in $N$ since $N$ is closed. Now since
+\begin{align*}
+\lefteqn{\sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1} } \\
+& = \sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_3 a_2) \\
+& = (a_1 a_2 \cdots a_r)^{-1}\tau^{-1}(a_1 a_2 a_3) 
+      \tau(a_1 a_2 \cdots a_r)(a_1 a_3 a_2) \\
+& = (a_1 a_r a_{r-1} \cdots a_2 )(a_1 a_2 a_3) 
+      (a_1 a_2 \cdots a_r)(a_1 a_3 a_2) \\
+& = (a_1 a_3 a_r),
+\end{align*}
+$N$ must contain a 3-cycle; hence, $N = A_n$.
+ 
+\item  
+In this case we may write
+\[
+\sigma = \tau(a_1 a_2 a_3)(a_4 a_5 a_6),
+\]
+where the permutation $\tau$ consists of cycles that are disjoint from $\{a_1,a_2,a_3,a_4,a_5,a_6\}$.
+We may argue as in case (ii) that
+\[
+\sigma^{-1}(a_1 a_2 a_4)\sigma(a_1 a_2 a_4)^{-1} \in N,
+\]
+and may compute
+\begin{align*}
+\lefteqn{\sigma^{-1}(a_1 a_2 a_4)\sigma(a_1 a_2 a_4)^{-1} } \\
+& = [ \tau (a_1 a_2 a_3) (a_4 a_5 a_6) ]^{-1}  (a_1 a_2 a_4) 
+      \tau (a_1 a_2 a_3) (a_4 a_5 a_6) (a_1 a_2 a_4)^{-1} \\
+& = (a_4 a_6 a_5) (a_1 a_3 a_2) \tau^{-1}(a_1 a_2 a_4)  
+      \tau (a_1 a_2 a_3) (a_4 a_5 a_6) (a_1 a_4 a_2) \\
+& = (a_4 a_6 a_5)(a_1 a_3 a_2) (a_1 a_2 a_4)
+      (a_1 a_2 a_3) (a_4 a_5 a_6)(a_1 a_4 a_2) \\
+& = (a_1 a_4 a_2 a_6 a_3).
+\end{align*}
+So $N$ contains a disjoint cycle of length greater than 3, and we can
+apply case (ii) to conclude that $N$ must also contain a 3-cycle. 
+ 
+\item
+In this case we may write $\sigma = \tau(a_1
+a_2 a_3)$, where $\tau$ is the product of disjoint 2-cycles.Then $\sigma^2 \in N$ since $N$ is closed, and
+\begin{align*}
+\sigma^2
+& = \tau(a_1 a_2 a_3)\tau(a_1 a_2 a_3) \\
+& =(a_1 a_3 a_2).
+\end{align*}
+So $N$ contains a 3-cycle.
+ 
+\item 
+In this case we may write
+\[
+\sigma = \tau (a_1 a_2) (a_3 a_4),
+\]
+where $\tau$ is the product of an even number of disjoint 2-cycles.
+We may argue as in case (ii) above that
+\[
+\sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1} \in N
+\]
+and we compute
+\begin{align*}
+\lefteqn{\sigma^{-1}(a_1 a_2 a_3)\sigma(a_1 a_2 a_3)^{-1} } \\
+& = \tau^{-1} (a_1 a_2) (a_3 a_4) (a_1 a_2 a_3) 
+      \tau (a_1 a_2)(a_3 a_4)(a_1 a_2 a_3)^{-1} \\
+& = (a_1 a_3)(a_2 a_4).
+\end{align*}
+Since $n \geq 5$, we can find $b \in \{1, 2, \ldots, n \}$ such that
+$b \neq a_1, a_2, a_3, a_4$. Let $\mu = (a_1 a_3 b)$. Then
+\[
+\mu^{-1} (a_1 a_3)(a_2 a_4) \mu (a_1 a_3)(a_2 a_4) \in N
+\]
+and
+\begin{align*}
+\lefteqn{\mu^{-1} (a_1 a_3)(a_2 a_4) \mu (a_1 a_3)(a_2 a_4) } \\
+& = (a_1 b a_3)(a_1 a_3)(a_2 a_4) 
+      (a_1 a_3 b)(a_1 a_3)(a_2 a_4) \\
+& = (a_1 a_3 b ).
+\end{align*}
+Therefore, $N$ contains a 3-cycle. 
+\end{enumerate}
+We have thus shown that in all possible cases $N$ contains a 3-cycle, and the  proof of the
+proposition is complete.  
+\end{proof}
+ 
+So finally we may summarize the proof that $A_n$ is simple $(n \geq 5)$.
+
+\begin{prop}\label{proposition:cosets:normal:An_simple}
+The alternating group, $A_n$, is simple for $n \geq 5$. 
+\end{prop}
+ 
+\begin{proof}
+Let $N$ be a normal subgroup of $A_n$. By Proposition~\ref{proposition:cosets:normal:3cycle_lemma3}, $N$ contains a
+3-cycle. By Proposition~\ref{proposition:cosets:normal:3cycle_lemma2}, $N = A_n$; therefore, $A_n$ contains no proper
+nontrivial normal subgroups for $n \geq 5$.
+\end{proof} 
+ 
+And there we have it, $A_n$ is a simple group for $n \geq 5$.  Simple, right? :)
+
+\subsection{The simplicity of $A_n$ and the impossibility of polynomial root formulas}
+ We've just spent several pages proving that $A_n$ is simple for $n \ge 5$.  What's the big deal? It turns out that this fact played a key role in a VERY big deal in the history of mathematics.
+
+Consider any second-degree real polynomial $a_2x^2 + a_1x + a_0$.  We may find the roots of the polynomial using the quadratic formula.  But what if the polynomial is of degree three ($a_3x^3 + a_2x^2 + a_1x + a_0$) or higher?  It turns out there's a formula  for finding the roots of an arbitrary real cubic (degree 3) polynomial. There's even a formula for finding the roots of  quartic equations.  All of these formulas involve arithmetic operations ($+.,-,\cdot,/$) and radicals (square roots, cube roots, etc.)  But how about quintic (fifth order) and higher order polynomials?  It turns out that for fifth or higher order polynomials there's no such formula for finding the roots using arithmetic operations and radicals.  It's not just that we haven't found one--we can prove that \emph{such a formula is impossible}. Proving this was one of the all-time great discoveries of mathematics, in which Abel, Ruffini, and Galois all played important roles.  The theoretical foundations  required for this proof are found in an area of abstract algebra known as \term{Galois Theory}.  You may find chapters on Galois Theory in most advanced undergraduate textbooks on abstract algebra.
+
+An outline of the proof strategy is as follows. Each of the following steps requires extensive proof (which we won't supply), but at least you can see how the argument goes:
+\begin{enumerate}[(i)]
+\item
+An $n$th order real polynomial has up to $n$ distinct roots, which may be real or complex and are irrational in general. (This follows from the Fundamental Theorem of Algebra.)
+\item 
+Associated with the roots of a given real polynomial  is a certain type of symmetry group called the \term{Galois group}. For an $n$th order polynomial, the Galois group is a subgroup of $S_n$. 
+\item
+In order for a formula to exist for a given real polynomial's roots that involves only arithmetic operations and radicals, the Galois group of the polynomial must be factorable in such a way that the factors are all abelian groups.  (This is the hardest step.) 
+\item
+There are $n$th order real polynomials that have $S_n$ as their Galois group. 
+\item
+It isn't possible to factor $S_n$ into abelian factors, since $S_n$ factors into $\mathbb{Z}_2$ and $A_n$, and $A_n$ is simple and non-abelian.  
+\item
+It follows that there can be no such formula for the roots of such polynomials, so there can't be a root formula that works in general.
+\end{enumerate}
+
+\begin{exercise}
+In this exercise, we give the Galois group for quadratic polynomials, and explore some of its properties.  Let ${\var id}:\mathbb{C} \rightarrow \mathbb{C}$ be the identity function:  ${\var id}(z) = z$.  Let $f:\mathbb{C} \rightarrow \mathbb{C}$ be the conjugation function:  $f(z) = \bar{z}$. 
+\begin{enumerate}[(a)]
+\item
+Show that $H=\{ {\var id}, f \}$ is a subgroup of the group of all bijections from $\mathbb{C} \rightarrow \mathbb{C}$
+\item
+Let $S$ be the set of roots of the real polynomial  $a_2x^2 + a_1x + a_0$.  Show that $H$ is a group of symmetries for $S$: that is, $h(S)=S$ for any $h \in H$.
+\item
+Show that $H$ factors in such a way that all the factors are abelian simple groups. (It therefore satisfies the criterion for a root solution formula to exist.)
+\end{enumerate}
+\end{exercise}
+
+\begin{rem} (\emph{historical background})  It is impossible to overstate the importance of simple groups in mathematics and physics. 
+Groups are the fundamental mathematical tools used to describe the symmetries and regularities which we observe in the physical world--and simple groups, as mentioned in the text, are the building blocks from which all finite groups may be built.
+
+The earliest work on the classification problem dates back over 200 years.  The first non-abelian simple groups to be discovered were the alternating groups, and Galois was the first to prove that $A_5$ was
+simple. Later mathematicians, such as C.~Jordan\index{Jordan, C.} and
+L.~E.~Dickson,\index{Dickson, L. E.} found several infinite families of
+matrix groups that were simple. Other families of simple groups were
+discovered in the 1950s.  Around 1900 William
+Burnside\index{Burnside's conjecture} conjectured that all non-abelian
+simple groups must have even order. But it wasn't until 1963 that
+ Walter Feit and John Thompson published a 250-page  proof of Burnside's conjecture.
+After this breakthrough, mathematicians redoubled their efforts to complete the classification. Hundreds of mathematicians produced thousands of pages of proofs. Success was announced in 1983, but a gap was later discovered, and it was not until 2004 that one of the great intellectual achievements of all time was finally accomplished. The final result:  all finite simple groups belong to 18 countably infinite families, except for 26 exceptional ``sporadic'' groups\index{Group!sporadic}.  The largest of these groups (called the ``monster''\index{Group!monster} has over 80 trillion trillion trillion trillion entries, which is more than 100 times the number of atoms in the earth!
+\end{rem} 
+ 
+\markright{EXERCISES}
+\section*{Additional exercises}
+\label{sec:AdditionalExercises}
+
+\begin{enumerate}
+ 
+\item
+Let $T$ be the multiplicative group of nonsingular upper triangular $2 \times 2$
+matrices with entries in ${\mathbb R}$; that is, matrices of the form
+\[
+\begin{pmatrix}
+a & b \\
+0 & c
+\end{pmatrix},
+\]
+where $a$, $b$, $c \in {\mathbb R}$ and $ac \neq 0$. Let $U$ consist of
+matrices of the form 
+\[
+\begin{pmatrix}
+1 & x \\
+0 & 1
+\end{pmatrix},
+\]
+where $x \in {\mathbb R}$.
+\begin{enumerate}
+ 
+ \item 
+Show that $U$ is a subgroup of $T$.
+ 
+ \item 
+Prove that $U$ is abelian.
+ 
+ \item 
+Prove that $U$ is normal in $T$.
+ 
+ \item  
+Show that $T/U$ is abelian.
+ 
+ \item
+Is $T$ normal in $GL_2( {\mathbb R})$?
+ 
+\end{enumerate}
+
+%***************************THEORY******************
+
+
+\item
+If $G$ is abelian, prove that $G/H$ must also be abelian.
+ 
+\item
+Prove or disprove: If $H$ is a normal subgroup of $G$ such that $H$
+and $G/H$ are abelian, then $G$ is abelian. 
+ 
+ 
+
+\item
+If $G$ is cyclic, prove that $G/H$ must also be cyclic.
+
+
+\item
+Prove or disprove: If $H$ and $G/H$ are cyclic, then $G$ is cyclic.
+ 
+ 
+
+\item
+Define the \term{centralizer}\index{Element!centralizer
+of}\index{Centralizer!of an element} of an element $g$ in a group $G$
+to be the set  
+\[
+C(g) = \{ x \in G : xg = gx \}.
+\]
+Show that $C(g)$ is a subgroup of $G$.  If $g$ generates a normal
+subgroup of $G$, prove that $C(g)$ is normal in $G$.
+ 
+ 
+\item
+Recall that the \term{center}\index{Group!center of} of a group $G$ is
+the set 
+\[
+Z(G) = \{ x \in G : xg = gx \mbox{ for all $g \in G$ } \}.
+\]
+\begin{enumerate}
+ 
+ \item
+Calculate the center of $S_3$.
+ 
+ \item
+Calculate the center of $GL_2 ( {\mathbb R} )$.
+ 
+ \item
+Show that the center of any group $G$ is a normal subgroup of $G$. 
+ 
+ \item
+If $G / Z(G)$ is cyclic, show that $G$ is abelian.
+ 
+\end{enumerate}
+
+\item
+Let $G$ be a group and let $G' = \{ aba^{- 1} b^{-1}, a,b \in G \}$;
+that is, $G'$ is the set of all finite products of elements in
+$G$ of the form $aba^{-1}b^{-1}$.  
+\begin{enumerate}
+ \item
+Show that $G'$ is a subgroup of $G$. $G'$ is called the
+\term{commutator
+subgroup}\index{Subgroup!commutator}\label{commutatorsubgroup} of $G$.  
+ \item
+Show that $G'$ is a normal subgroup of $G$.
+
+ \item
+Let $N$ be  a normal subgroup of $G$.  Prove that $G/N$ is abelian if
+and only if $N$ contains the commutator subgroup of $G$.
+ 
+\end{enumerate}
+
+\item
+Use Fermat's little theorem to show that if $p= 4n+3$ is prime, there is no solution to the equation $x^2 \equiv -1 \pmod{p}$.
+ 
+\item
+Show that the integers have infinite index in the additive group of rational numbers.
+ 
+\item
+Show that the additive group of real numbers has infinite index in the additive group of the complex numbers.
+ 
+ 
+\item
+What fails in the proof of Proposition~\ref{proposition:cosets:cosets_theorem_3} if $\phi :  {\mathcal L}_H \rightarrow {\mathcal R}_H$ is defined by $\phi( gH ) = Hg$?
+ 
+\item
+Suppose that $g^n = e$. Show that the order of $g$ divides
+$n$.
+ 
+%%% Following material was moved to Group Actions.
+%\item
+%Modify the proof of Proposition~\ref{proposition:cosets:cosets:cycle_length_theorem} to show that any two permutations $\alpha, \beta \in S_n$ have the same cycle structure if and only if there exists a  permutation $\gamma$ such that $\beta = \gamma \alpha \gamma^{-1}$.  
+
+\item \label{eoc:cosets:1}
+If $|G| = 2n$, prove that the number of elements of order 2 is odd.  Use this result to show that $G$ must contain a subgroup of order 2.
+\hyperref[sec:cosets:hints]{(*Hint*)}
+
+\item
+Suppose that $[G : H] = 2$. If $a, b \in G \setminus H$, show that $ab \in H$.
+
+\item
+If $[G : H] = 2$, prove that $gH = Hg$.
+
+\item
+Let $H$ and $K$ be subgroups of a group $G$.  Prove that $gH \cap gK$ is a coset of $H \cap K$ in $G$.  
+ 
+\item
+Let $H$ and $K$ be subgroups of a group $G$.  Define a relation $\sim$ on $G$ by $a \sim b$ if there exists an $h \in H$ and a $k \in K$ such that $hak = b$.  Show that this relation is an equivalence relation.  The corresponding equivalence classes are called \term{double cosets}\index{Coset!double}.  In the case where $G = A_4$, compute the double cosets for:
+\begin{enumerate}[(a)]
+\item
+$H = K =  \{ (1),(123), (132) \}$.
+\item
+$H  =  \{ (1),(123), (132) \}$, $K  =  \{ (1),(124), (142) \}$. 
+\end{enumerate}
+ 
+\item
+If $G$ is a group of order $p^n$ where $p$ is prime, show that $G$ must have a proper subgroup of order $p$.  If $n \geq 3$, is it true that $G$ will have a proper subgroup of order $p^2$?
+ 
+\item
+Let $G$ be a cyclic group of order $n$.  Show that there are exactly $\phi(n)$ generators for $G$.
+
+\item
+Let $n = p_1^{e_1} p_2^{e_2} \cdots p_k^{e_k}$ be the factorization of $n$ into distinct primes.  Prove that
+\[
+\phi(n) =  n 
+\left( 1- \frac{1}{p_1} \right)
+\left( 1- \frac{1}{p_2} \right)	\cdots
+\left( 1- \frac{1}{p_k} \right).
+\]
+
+\item
+Show that 
+\[
+n = \sum_{d \mid n} \phi(d)
+\]
+for all positive integers $n$.
+
+\end{enumerate}
