@@ -210,40 +210,15 @@ Some groups use exotic operations that you may never have seen before:
 
 \begin{example}{S_group}
 Let $S = {\mathbb R} \setminus \{ -1 \}$ and define a binary operation on
-$S$ by $a \ast b = a + b +ab$. It turns out that $(S, \ast)$ is an abelian group. We will prove closure and the commutative property; the rest of the proof will be left to you.
-\begin{enumerate}[(1)]
+$S$ by $a \ast b = (a + b) + (ab)$. It turns out that $(S, \ast)$ is an abelian group. We will prove closure and the commutative property; the rest of the proof will be left to you.
+\begin{enumerate}[(a)]
 \item
-Closure:  Suppose $a, b \in S$.  We need to show that $a \ast b \in S$; i.e. that (i) $a \ast b \in {\mathbb R}$ and (ii) $a \ast b \neq -1$.
-\begin{enumerate}[(i)]
-\item
-By the closure of $({\mathbb R}, +), (a + b) \in {\mathbb R}$.  By the closure of $({\mathbb R}, \ast), (ab) \in {\mathbb R}$.  Finally, by the closure of $({\mathbb R}, +), ((a + b) + (ab)) \in {\mathbb R}$.  
-It follows that $a \ast b \in {\mathbb R}$, so $S$ is closed under $\ast$.
-
-\item
-Suppose that $a \ast b = -1$.  Then by definition of $\ast$, $a + b +ab = -1$.  Solving for $a$, we get
-\begin{center}
-$a = \dfrac{-1(b + 1)}{b + 1}$, or $a = -1$
-\end{center}  
-
-But since $a \in S, a \neq -1$.  So we have a contradiction.  Hence $a \ast b \neq -1$. This completes the proof that $(S, \ast)$ is closed.
-\end{enumerate}
-
+Closure:  Suppose $a, b \in S$.  We need to show that $a \ast b \in S$; i.e. firstly that $a \ast b \in {\mathbb R}$ and secondly $a \ast b \neq -1$.
+First, since both additiona and multiplication are closed in  ${\mathbb R}$, it follows that $(a + b) + (ab) \in {\mathbb R}$ and hence $a \ast b \in {\mathbb R}$. For the second point,  we will use a contradiction argument and suppose that $a \ast b = -1$, i.e. $(a + b) + (ab) = -1$.  Using basic algebra to rearrange this expression, we get
+$a(b-1) = -(b-1)$, which implies that either $a = -1$ or $b=-1$. But $a$ and $b$ are assumed to be in $S$, so this is a contradiction. Hence $a \ast b =-1$ is impossible, and the proof is complete.
 \item
 Commutativity:  Suppose $a, b \in S$.  We need to show that $a \ast b = b \ast a$:
-\begin{itemize}
-\item
-First, by the definition of the operation $\ast$ we have $a \ast b = a + b +ab$.
-\item
-Next, since ${\mathbb R}$ is commutative under addition and multiplication, 
-it follows that $a + b = b + a$ and $ab = ba$. 
-Adding these two equations, we have $(a + b) + (ab) = (b + a) + (ba)$.
-\item
-By the definition of $\ast$, $(b + a) + (ba) = b \ast a$.
-\item
-Putting all these equalities together, we have $a \ast b = a + b +ab = b + a + ba = b \ast a$
-\end{itemize}
-
-This completes the proof that $(S, \ast)$ is commutative.
+By the definition of the operation $\ast$ we have $a \ast b = (a + b) + (a b)$, which is equal to  $(b + a) + (ba)$ since addition and multiplication in ${\mathbb R}$ are commutative. Since  $b \ast a = (b + a) + (b a)$ by definition, it follows that $a \ast b$ is commutative.
 \end{enumerate}
 
 \begin{exercise}{S_group}
@@ -339,7 +314,7 @@ Let ${\mathbb Z}_2^n = \{ (a_1, a_2, \ldots, a_n) : a_i \in {\mathbb Z}_2
 +
 (b_1, b_2, \ldots, b_n)
 =
-(a_1 \oplus  b_1, a_2 \oplus b_2, \ldots, a_n+b_n),
+(a_1 \oplus  b_1, a_2 \oplus b_2, \ldots, a_n \oplus b_n),
 \]
 where $\oplus$ denotes addition in ${\mathbb Z}_2$.
 Prove that ${\mathbb Z}_2^n$ is a group under this operation. This group
