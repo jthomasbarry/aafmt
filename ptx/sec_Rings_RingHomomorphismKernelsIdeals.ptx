@@ -55,12 +55,12 @@
     <p>
       Notice that a homomorphism is an isomorphism without the bijection requirement.
       <xref ref="fig_ring_functions">Figure</xref>
-      shows the relationship between homomorphisms,
+      shows the relationship between homomorphisms
       isomorphisms and automorphisms.
     </p>
     <figure xml:id="fig_ring_functions">
       <caption>Ring Functions</caption>
-      <image width="75%" source="images/ringFunctions.png"/>
+      <image width="75%" source="images/ringFunctions.jpg"/>
     </figure>
     <p>
       Following are a number of examples of ring homomorphisms.
@@ -353,7 +353,7 @@
                 <mrow>\amp a,b\in f^{-1}(0) \amp  \text{ given }</mrow>
                 <mrow>\amp f(a)=0,f(b)=0 \amp  \text{ def. of inverse }</mrow>
                 <mrow>\amp f(a+b)=f(a)+f(b) \amp  \text{ def. of homomorphism }</mrow>
-                <mrow>\amp f(a+b)=0+0=0 \amp  \text{ substitution \\amp  zero property }</mrow>
+                <mrow>\amp f(a+b)=0+0=0 \amp  \text{ substitution and  zero property }</mrow>
                 <mrow>\amp a+b\in f^{-1}(0) \amp  \text{ def. of inverse }</mrow>
               </md>
             </p>
@@ -364,7 +364,7 @@
                 <mrow>\amp a\in f^{-1}(0),~b\in R_1 \amp  \text{ given }</mrow>
                 <mrow>\amp f(a)=0 \amp  \text{ def. of inverse }</mrow>
                 <mrow>\amp f(a\cdot b)=f(a)\dot f(b) \amp  \text{ def. of homomorphism }</mrow>
-                <mrow>\amp f(a\cdot b)=0\cdot f(b)=0 \amp  \text{ substitution \\amp  Prop. <xref ref="proposition_Rings_add_inverse"></xref> }</mrow>
+                <mrow>\amp f(a\cdot b)=0\cdot f(b)=0 \amp  \text{ substitution and  Prop. <xref ref="proposition_Rings_add_inverse"></xref> }</mrow>
                 <mrow>\amp ab\in f^{-1}(0) \amp  \text{ def. of inverse }</mrow>
               </md>
             </p>
