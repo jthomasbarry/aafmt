@@ -18,7 +18,7 @@
   </p>
   <figure xml:id="fig_grandview">
     <caption>Grandview Yard (Pennsylvania Railorad) in Grandview Heights, OH around 1900 (source: \url{http://www.ghmchs.org/thisweek/photo-listing10.htm}.</caption>
-    <image width="75%" source="images/GrandviewYard.png"/>
+    <image width="75%" source="images/GrandviewYard.jpg"/>
   </figure>
   <p>
     <xref ref="fig_switchyard">Figure</xref>
@@ -120,7 +120,7 @@
     <caption>
     <q>Switchyard</q>
     model in home position</caption>
-    <image width="46%" source="images/switchyardHomeposition.png"/>
+    <image width="46%" source="images/switchyardHomeposition.jpg"/>
   </figure>
   <p>
     We'll illustrate the motions necessary to switch cars 5 and 6 using the model.
@@ -130,7 +130,7 @@
   </p>
   <figure xml:id="fig_switchyardCl4">
     <caption>First stage in switching cars 5 and 6: clockwise rotation <m>r^{-4}</m>.</caption>
-    <image width="46%" source="images/switchyardCl4.png"/>
+    <image width="46%" source="images/switchyardCl4.jpg"/>
   </figure>
   <p>
     Next, we exchange the two cars
@@ -140,7 +140,7 @@
   </p>
   <figure xml:id="fig_switchyard_t">
     <caption>Second stage in switching cars 5 and 6: switch <m>t</m>.</caption>
-    <image width="46%" source="images/switchyard_t.png"/>
+    <image width="46%" source="images/switchyard_t.jpg"/>
   </figure>
   <p>
     Finally, all we need to do is rotate counterclockwise 4 slots (<m>r^4</m>),
@@ -148,7 +148,7 @@
   </p>
   <figure xml:id="fig_switchyardCCL4">
     <caption>Third stage in switching cars 5 and 6: counterclockwise rotation <m>r^{4}</m>.</caption>
-    <image width="46%" source="images/switchyardCCL4.png"/>
+    <image width="46%" source="images/switchyardCCL4.jpg"/>
   </figure>
   <p>
     Altogether, these three steps give the composition <m>r^4 \compose t \compose r^{-4}</m>

@@ -73,7 +73,7 @@
   </p>
   <figure xml:id="fig_mercedes">
     <caption>Mercedes Logo</caption>
-    <image width="35%" source="images/mercedes.png"/>
+    <image width="35%" source="images/mercedes.jpg"/>
   </figure>
   <example xml:id="example_Symmetry_mercedeslogo">
     <statement>
