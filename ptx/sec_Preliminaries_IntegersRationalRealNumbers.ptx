@@ -188,7 +188,7 @@
     <exercise>
       <statement>
         <p>
-          Show that <m>a + (-1 \cdot a) = 0 and (-1 \cdot a)=0</m>
+          Show that <m>a + (-1 \cdot a) = 0</m> and <m>(-1 \cdot a)=0</m>
           (this is the same thing as showing that
           <m>-1 \cdot a</m> is the additive inverse of <m>a</m>,
           or <m>-1 \cdot a = -a</m>).
@@ -415,7 +415,7 @@
       (that use the <m>\ge</m> or <m>\le</m> symbols).
           <idx><h>Inequality</h><h>strict</h></idx>
           <idx><h>Inequality</h><h>nonstrict</h></idx>
-      <ol type="A">
+      <ol label="A">
         <li>
           <p>
             <em>Substitution</em>:
