@@ -20,8 +20,8 @@
 \newcommand{\chapterletter}[1]{#1}
 \newcommand{\var}[1]{{#1}}
 \newcommand{\hint}[1]{\emph{#1}}
-\newcommand{\autoref}[1]{{\terminology{ #1}}}
-\newcommand{\autoref}[1]{{\terminology{ #1}}}
+<!-- \newcommand{\autoref}[1]{{\terminology{ #1}}} -->
+\renewcommand{\autoref}[1]{{\terminology{ #1}}}
 \newcommand{\real}{\mathbb{R}}
 \newcommand{\rational}{\mathbb{Q}}
 \newcommand{\integer}{\mathbb{Z}}
@@ -29,7 +29,7 @@
 \newcommand{\factoidbox}[1]{#1}
 \newcommand{\eif}{\Rightarrow}
 \newcommand{\eiff}{\Leftrightarrow}
-\newcommand{\qedhere}{\Box}
+\renewcommand{\qedhere}{\Box}
 \newcommand{\compose}{\circ}
 \newcommand{\bigset}[1]{ \left\{ #1 \right\}}
 \newcommand{\Id}{\textsf{Id}}
@@ -48,10 +48,10 @@
 \newcommand{\bbb}{\langle b\rangle}
 \newcommand{\cc}{\langle c\rangle}
 \newcommand{\liminfty}{\lim\limits_{n\to\infty}}
-\renewcommand{\ul}[1]{\underline{#1}}
-\renewcommand{\pts}[1]{}
+\newcommand{\ul}[1]{\underline{#1}}
+<!-- \renewcommand{\pts}[1]{} -->
 \renewcommand{\implies}{\Rightarrow}
-\renewcommand{\equivalent}{\Leftrightarrow}
+\newcommand{\equivalent}{\Leftrightarrow}
 \newcommand{\dsum}{\displaystyle\sum}
 \newcommand{\dprod}{\displaystyle\prod}
 \renewcommand{\topfraction}{0.9}
@@ -83,13 +83,13 @@
         </author>
       </titlepage>
     </frontmatter>
-    <xi:include href="./chap_Introduction.ptx"/>
+    <xi:include href="./Introduction.ptx"/>
     <xi:include href="./GlossaryofSymbols.ptx"/>
     <xi:include href="./Preliminaries.ptx"/>
     <xi:include href="./ComplexNumbers.ptx"/>
     <xi:include href="./ModularArithmetic.ptx"/>
     <xi:include href="./ModularArithmeticBases.ptx"/>
-    <xi:include href="./Sets.ptx"/>
+    <!-- <xi:include href="./Sets.ptx"/>
     <xi:include href="./Functions.ptx"/>
     <xi:include href="./Cryptography.ptx"/>
     <xi:include href="./SigmaNotation.ptx"/>
@@ -109,7 +109,7 @@
     <xi:include href="./Rings.ptx"/>
     <xi:include href="./PolynomialCodes.ptx"/>
     <xi:include href="./Induction.ptx"/>
-    <xi:include href="./chapter1x.ptx"/>
+    <xi:include href="./chapter1x.ptx"/> -->
     <backmatter>
       <xi:include href="./bibliography.ptx"/>
       <index>

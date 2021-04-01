@@ -604,7 +604,7 @@
               shows a table giving the different powers of 10 mod base 37.
               <figure xml:id="powersOf10Mod37">
                 <caption>Spreadsheet to compute the powers of 10 mod 37</caption>
-                <image width="37%" source="images/divisibility_37.png"/>
+                <image width="37%" source="images/divisibility_37.jpg"/>
               </figure>
               Based on the results shown in <xref ref="powersOf10Mod37">Figure</xref>,
               propose a divisibility rule to check whether numbers are divisible by 37.
