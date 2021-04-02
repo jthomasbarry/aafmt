@@ -2,7 +2,7 @@
 %%% Descriptions of sets need to be concise.
 
 
-\chap{Set Theory}{sets}
+\chap{Set Theory}{Sets}
 
 \begin{quote}
 ``A set is a Many that allows itself to be thought of as a One.'' (Georg Cantor)
@@ -14,7 +14,8 @@
 ``Set'' is one of the most fundamental concepts in mathematics, and sets have been a part of mathematics since ancient times. However, a truly rigorous theory of sets was only developed about a hundred years ago. We won't get into the difficulties involved in coming up with a rigorous theory (we'll just mention ``Russell's paradox'' in passing). Instead, we'll focus on the algebraic properties of sets: in particular the operations of intersection, union, and complement, and proving identities involving these operations.
 
 \section{Set Basics \quad
-\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{basics}
+\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
+\label{sec:Sets:Basics}
 
 You've probably seen sets, set relations, and set operations in previous classes.  In fact, in the previous two chapters of this book you've already been working with sets.  So we'll review them quickly before moving on to further properties and proofs concerning sets and their accessories.
 \medskip
@@ -22,10 +23,11 @@ You've probably seen sets, set relations, and set operations in previous classes
 This chapter is an adapted and expanded version of a chapter by D. and J. Morris.
  
 \subsection{Definition and examples}
+\label{subsec:Sets:DefinitionAndExamples}
 
 First of all, let's give a precise mathematical definition for ``set'':
 
-\begin{defn} A \term{set}\index{Set!definition of} is a well-defined collection of objects: that is, it is defined in such a manner that we can determine for any given object $x$ whether or not $x$ belongs to the set.  The objects that belong to a set are called its \term{elements}\index{Element!of a set}\index{Set!elements} or \term{members}. We will denote sets by capital letters, such as $A$ or $X$; if $a$ is an element of the set $A$, we write $a \in A$\label{sets_membership}.
+\begin{defn}{defSet} A \term{set}\index{Set!definition of} is a well-defined collection of objects: that is, it is defined in such a manner that we can determine for any given object $x$ whether or not $x$ belongs to the set.  The objects that belong to a set are called its \term{elements}\index{Element!of a set}\index{Set!elements} or \term{members}. We will denote sets by capital letters, such as $A$ or $X$; if $a$ is an element of the set $A$, we write $a \in A$\label{sets_membership}.
 \end{defn}
 % \subsection{How to specify sets}
 Two common ways of specifying sets are:
@@ -101,10 +103,10 @@ Each of these teams consists of a set of players: so altogether the set $L$ is a
 \begin{enumerate}[(a)]
 \item
 Describe the $21^{st}$ century as a set of sets of sets of sets of sets of sets of sets.
-\hyperref[sec:set_chapter:hints]{(*Hint*)}
+\hyperref[sec:Sets:Hints]{(*Hint*)}
 \item
 (For you biologists out there)  Describe the animal kingdom as a set of sets of sets of sets of sets of sets of sets of sets
-\hyperref[sec:set_chapter:hints]{(*Hint*)}
+\hyperref[sec:Sets:Hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
 
@@ -125,6 +127,8 @@ How do we get out of this mess? No matter what we assume, we end up with a contr
 In the following discussion we will avoid this problem by always starting out with a well-defined set that contains all the sets and elements of interest in a particular example or problem. Such an all-encompassing set is referred to as a \term{universal set}\index{Universal set}. Note each particular problem will have its own universal set. For instance, if we are talking about public opinion polls  in the United States, an appropriate universal set might be the set of American citizens. If we're talking about sets of prime and composite numbers, our universal set could be either the set of integers, or the set of natural numbers. If we are talking about roots of algebraic equations, depending on our particular interest we might choose the universal set to be the set of real numbers, or the set of complex numbers. When we talk about sets in a general way, we often denote sets by captial  letters $A, B, C,...$, and it's assumed that all these sets are subsets of some universal set $U$.
 
 \subsection{Important sets of numbers}
+\label{subset:Sets:ImportantSets}
+
 We will refer often to the following sets of numbers. Although we are presuming that these sets are ``given'', the reader should be aware that it's not at all easy to formally define them in a mathematically precise way.  (Although we won't give any definitions here,  you may encounter them in other mathematics courses, such as logic or analysis.)
 \begin{itemize}
 \item
@@ -137,12 +141,13 @@ ${\mathbb Q}\label{rationals} = \{r : r \text{ is a rational number}\};$
 ${\mathbb R}\label{reals} = \{ x : x \text{ is a real number} \};$
 \end{itemize}
 
-You may recall that in  Chapter~\ref{complex}, we defined  the set of complex numbers ${\mathbb C}$ as
+You may recall that in  Chapter~\ref{ComplexNumbers}, we defined  the set of complex numbers ${\mathbb C}$ as
 \[ {\mathbb C} := \{ x + iy, \text{ such that } x,y \in {\mathbb R} \}. \] 
 This is just one example of a favorite gambit of mathematicians, namely creating new sets from existing sets in various imaginative ways. You'll be seeing many more examples of this as we go along.
 
 
 \subsection *{Subsets and proper subsets}
+\label{subset:Sets:SubsetsAndProperSubsets}
 % Back in grade school, you were introduced to \term{relations} between integers, such as 'less than' ($<$).\index{Relation}
 
 % \begin{exercise}{}
@@ -169,7 +174,7 @@ This is just one example of a favorite gambit of mathematicians, namely creating
 
 % It turns out that 'relation' is an important concept in higher mathematics that extends far beyond numbers. In fact, we can define a relation between sets. You've seen it before: here we give the mathematical definition:
 
-\begin{defn}\label{definition:sets:subset}
+\begin{defn}{subset}
 A set $A$ is a \term{subset}\index{Subset!definition of} of $B$, written $A \subset B$\label{setcontain} or $B \supset A$, if every element of $A$ is also an element of $B$.  
 \end{defn}
 
@@ -185,7 +190,7 @@ and
 \[
 {\mathbb N} \subset {\mathbb Z} \subset {\mathbb Q} \subset {\mathbb R} \subset {\mathbb C}.
 \]
-According to Definition~\ref{definition:sets:subset}, every set is a subset of itself.  That is, for any set $A$, $A \subset A$, since every element in $A$ is (of course) in $A$.  Sometimes though we may want to take about subsets of $A$ that really are strictly contained in $A$, without being all of $A$. Such subsets are called \term*{proper subsets}\index{Subset!proper}. Formally, a set $B$ is a \term{proper subset} of a set $A$ if $B \subset A$ and $B \neq A$. For instance, if John and Jane Doe had only sons, then
+According to Definition~\ref{definition:Sets:subset}, every set is a subset of itself.  That is, for any set $A$, $A \subset A$, since every element in $A$ is (of course) in $A$.  Sometimes though we may want to take about subsets of $A$ that really are strictly contained in $A$, without being all of $A$. Such subsets are called \term*{proper subsets}\index{Subset!proper}. Formally, a set $B$ is a \term{proper subset} of a set $A$ if $B \subset A$ and $B \neq A$. For instance, if John and Jane Doe had only sons, then
 $\{\textrm{sons of John and Jane Doe}\}$ is not a proper subset of \{ children of John and Jane Doe\}.
 
 \begin{rem} 
@@ -227,6 +232,8 @@ What is the smallest number of elements a set must have in order to have at leas
 \end{exercise}
 
 \subsection{Operations on sets}
+\label{subset:Sets:Operations}
+
 In our halcyon days of youth, we were introduced to \term{operations} on integers, rational numbers, etc.. An operation on the integers takes two integers and always comes up with another integer. For instance, the '+' operation gives $2+3=5$ (of course, we know now that this means that + has the property of \emph{closure}).
 
 \begin{exercise}{}
@@ -235,13 +242,13 @@ What's wrong with the following statement: ``Subtraction is an operation on the 
 
 In a similar way, we can construct new sets out of old sets using \emph{set operations}.\index{Set operations} The mathematical definitions of the basic set operations are as follows:
 
-\begin{defn}
+\begin{defn}{union}
 The \term{union} $A \cup B$ of two sets $A$ and $B$ is defined as\index{Set operations!union}\index{Union}  
 \[
 A \cup B\label{union} = \{x : x \in A \text{ or } x \in B \};
 \]
 \end{defn}
-\begin{defn}
+\begin{defn}{intersection}
 the \term{intersection} of $A$ and $B$  is defined by \index{Set operations!intersection}\index{Intersection}
 \[
 A \cap B\label{intersection} = \{x :  x \in A \text{ and } x \in B \}.
@@ -386,7 +393,7 @@ A' = \{ x : x \in U \text{ and } x \notin A \}.
 \]
 
 
-\begin{defn}\label{setdifference}\index{Set operations!set difference}
+\begin{defn}{setDifference}\index{Set operations!set difference}
 The \term{difference} of two sets $A$ and $B$ is defined as\index{Set difference}
 \[
 A \setminus B = A \cap B'  = \{ x : x \in A \text{ and } x \notin B \}.
@@ -516,7 +523,8 @@ $A \cap (B \cup C)'$
 
 
 \section{Properties of set operations \quad
-\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} \label{propset}
+\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}} 
+\label{sec:Sets:Properties}
 
 Now that we have the basics out of the way, let's look at the some of  the properties of set operations.
 The individual steps of the following proofs depend on \emph{logic}; and a rigorous treatment  of these proofs would require that we introduce formal logic and its rules. However, many of these logical rules are intuitive, and it should be possible for you to follow the proofs even if you haven't studied mathematical logic.
@@ -541,7 +549,7 @@ First, suppose that $x$ is an element of $A \cap B$. we then have:
 Since every element of $A \cap B$ is an element of $A$, it follows by the definition of $\subset$ that $A \cap B \subset A$.
 
 \begin{exercise}{23}
-Give a similar proof of the second part of Proposition~\ref{proposition:sets:cupcapincl}.
+Give a similar proof of the second part of Proposition~\ref{proposition:Sets:cupcapincl}.
 \end{exercise}
 \end{proof}
 
@@ -659,25 +667,25 @@ Let's begin by proving (I). Take any element $x \in A \cup (B \cap C)$.  Then
 $x \in A$  or $(x \in B \cap C)$, by the definition of $\cup$. We may therefore consider two cases: (i) $x \in A$, or (ii) $x \in B \cap C$.  (Actually some $x$'s are included in both cases, but that's not a problem.)
 
 \noindent
-\emph{Case i}:  If $x \in A$, the by Proposition~\ref{proposition:sets:cupcapincl} we know $x \in A \cup B$ and $x \in A \cup C$. By the definition of $\cap$, we then have   $x \in (A \cup B) \cap (A \cup C)$.
+\emph{Case i}:  If $x \in A$, the by Proposition~\ref{proposition:Sets:cupcapincl} we know $x \in A \cup B$ and $x \in A \cup C$. By the definition of $\cap$, we then have   $x \in (A \cup B) \cap (A \cup C)$.
 
 \noindent
-\emph{Case ii}:  If $x \in  B  \cap C$, then by Proposition~\ref{proposition:sets:cupcapincl} we know $x \in  B$ and $x \in  C$. 
-By Proposition~\ref{proposition:sets:cupcapincl},  then $x \in A \cup  B$ and $x \in A  \cup  C$.  By the definition of $\cap$, this means that $x \in (A \cup  B) \cap (A  \cup  C)$.  
+\emph{Case ii}:  If $x \in  B  \cap C$, then by Proposition~\ref{proposition:Sets:cupcapincl} we know $x \in  B$ and $x \in  C$. 
+By Proposition~\ref{proposition:Sets:cupcapincl},  then $x \in A \cup  B$ and $x \in A  \cup  C$.  By the definition of $\cap$, this means that $x \in (A \cup  B) \cap (A  \cup  C)$.  
 
 This completes the proof of (I). Now we'll  prove (II). Take any element $x \in (A \cup B) \cap (A \cup C)$.  Then we may consider two cases: 
 (i) $x \in A$, or (ii) $x \not\in A$.
 
 \noindent
-\emph{Case i}:  If $x \in A$, then by by Proposition~\ref{proposition:sets:cupcapincl} it's also true that 
+\emph{Case i}:  If $x \in A$, then by by Proposition~\ref{proposition:Sets:cupcapincl} it's also true that 
 $x \in A \cup (B \cap C)$.  
 
 \noindent
-\emph{Case ii}:  Suppose $x \not\in  A$. Now, since $x \in (A \cup B) \cap (A \cup C)$, by the definitions of $\cap$ and $\cup$ we know that $(x \in A \text{ or } x \in B)$ and $(x \in A \text{ or } x \in C)$. But since  $x \not\in  A$, it must be true that $x\in B$, and also $x\in C$. By the definition of $\cap$, this means that $x\in B \cap C$. by Proposition~\ref{proposition:sets:cupcapincl}, we have that  $x \in A \cup (B \cap C)$. This completes the proof of (II), which completes the proof of (7).
+\emph{Case ii}:  Suppose $x \not\in  A$. Now, since $x \in (A \cup B) \cap (A \cup C)$, by the definitions of $\cap$ and $\cup$ we know that $(x \in A \text{ or } x \in B)$ and $(x \in A \text{ or } x \in C)$. But since  $x \not\in  A$, it must be true that $x\in B$, and also $x\in C$. By the definition of $\cap$, this means that $x\in B \cap C$. by Proposition~\ref{proposition:Sets:cupcapincl}, we have that  $x \in A \cup (B \cap C)$. This completes the proof of (II), which completes the proof of (7).
 \end{proof}
 
 \begin{exercise}{}
-Fill in the blanks in the following proof of Proposition~\ref{proposition:sets:sets_theorem_set_ops} part (3):
+Fill in the blanks in the following proof of Proposition~\ref{proposition:Sets:sets_theorem_set_ops} part (3):
 
 \medskip{}
 \noindent
@@ -695,7 +703,7 @@ A \cap \emptyset & =  \{ x : \mbox{ $x \in \_\_\_\_\_\_\_$ and $x \in \_\_\_\_\_
 \end{exercise}
 
 \begin{exercise}{26}
-Prove parts 4,6,8 of Proposition~\ref{proposition:sets:sets_theorem_set_ops} using element-by-element proofs.
+Prove parts 4,6,8 of Proposition~\ref{proposition:Sets:sets_theorem_set_ops} using element-by-element proofs.
 \end{exercise}
 
 \medskip{}
@@ -712,7 +720,7 @@ $(A \cap B)' = A' \cup B'$.
  \end{enumerate}
 \end{prop}
  
- We will use the same strategy we used to prove Proposition~\ref{proposition:sets:sets_theorem_set_ops} part (7)-that is, we show that sets are equal by showing they are subsets of each other.
+ We will use the same strategy we used to prove Proposition~\ref{proposition:Sets:sets_theorem_set_ops} part (7)-that is, we show that sets are equal by showing they are subsets of each other.
 \medskip{}
 
 \begin{proof} 
@@ -726,12 +734,12 @@ First we show that $(A \cup B)' \subset A' \cap B'$.  Let $x \in (A \cup B)'$.  
 \end{proof}
 
 \begin{exercise}{s27}
-Prove Proposition~\ref{proposition:sets:sets_de_morgan} part (2).
+Prove Proposition~\ref{proposition:Sets:sets_de_morgan} part (2).
 \end{exercise}
  
 \medskip{}
 \noindent
-Proposition~\ref{proposition:sets:sets_theorem_set_ops} and Proposition~\ref{proposition:sets:sets_de_morgan} provide us with an arsenal of rules for set operations. You should consider these as your ``rules of arithmetic'' for sets: just as you used arithmetic rules in high school to solve algebraic equations, so now you can use these rules for set operations to solve set equations.  Here is an example of how to do this:
+Proposition~\ref{proposition:Sets:sets_theorem_set_ops} and Proposition~\ref{proposition:Sets:sets_de_morgan} provide us with an arsenal of rules for set operations. You should consider these as your ``rules of arithmetic'' for sets: just as you used arithmetic rules in high school to solve algebraic equations, so now you can use these rules for set operations to solve set equations.  Here is an example of how to do this:
 
 \begin{example}{other_relations}
 Prove that
@@ -746,8 +754,8 @@ To see that this is true, observe that
 & =
 ( A \cap B') \cap (B \cap A')   & \mbox{[definition of } \setminus] \\
 & =
-A \cap A' \cap B \cap B'    &\mbox{[by Proposition~\ref{proposition:sets:sets_theorem_set_ops} parts 5 and 6]} \\
-&= \emptyset \cap \emptyset    &\mbox{[by Proposition~\ref{proposition:sets:sets_theorem_set_ops} part 1]} \\
+A \cap A' \cap B \cap B'    &\mbox{[by Proposition~\ref{proposition:Sets:sets_theorem_set_ops} parts 5 and 6]} \\
+&= \emptyset \cap \emptyset    &\mbox{[by Proposition~\ref{proposition:Sets:sets_theorem_set_ops} part 1]} \\
 & = \emptyset. \\
 \end{align*}
 \end{proof}
@@ -803,7 +811,7 @@ A \cap A' \cap B \cap B'    &\mbox{[by Proposition~\ref{proposition:sets:sets_th
 %Prove  $(A \cup B) \times C = (A \times C ) \cup (B \times C)$.
  
 \begin{exercise}{30}
-Prove the following statements by mimicking the style of proof in Example~\ref{example:sets:other_relations}; that is use the definitions of $\cap, \cup, \setminus$, and $'$ as well as their properties listed in Proposition~\ref{proposition:sets:sets_theorem_set_ops} and  Proposition~\ref{proposition:sets:sets_de_morgan}. This type of proof is called an ``algebraic'' proof.  Every time you use a property, remember to give a reference!
+Prove the following statements by mimicking the style of proof in Example~\ref{example:Sets:other_relations}; that is use the definitions of $\cap, \cup, \setminus$, and $'$ as well as their properties listed in Proposition~\ref{proposition:Sets:sets_theorem_set_ops} and  Proposition~\ref{proposition:Sets:sets_de_morgan}. This type of proof is called an ``algebraic'' proof.  Every time you use a property, remember to give a reference!
 
 (You may find it easiest to begin with the more complicated side of the equality, and  simplify until it agrees with the other side. if you make that work, then start with the other side and simplify until the simplified versions of both sides finally agree.)
 
@@ -828,8 +836,11 @@ $(A \cap B \cap C) \cup D = (A \cup D) \cap (B \cup D)\cap (C \cup D)$.
 \end{exercise}
 
 \section{Do the subsets of a set form a group? \quad
-\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}\label{SetGroup} 
-Some of the properties in Proposition~\ref{proposition:sets:sets_theorem_set_ops} may ring a bell. Recall that in the Section~\ref{DefOfGroup} of the Modular Arithmetic chapter  we defined a \emph{group}\index{Group!definition} to be a set combined with an operation that has the following properties:
+\sectionvideohref{ciswhn56NJc&index=12&list=PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo}}
+\label{sec:Sets:SetGroup} 
+
+
+Some of the properties in Proposition~\ref{proposition:Sets:sets_theorem_set_ops} may ring a bell. Recall that in the Section~\ref{subsec:ModularArithmetic:DefOfGroup} of the Modular Arithmetic chapter  we defined a \emph{group}\index{Group!definition} to be a set combined with an operation that has the following properties:
 \begin{enumerate}
 \item
 The set is \emph{closed} under the operation (in other words, the operation has the property of \emph{closure});
@@ -844,7 +855,7 @@ The set elements satisfy the \emph{associative property} under the group operati
 \end{enumerate}
 
 \noindent
-If you forgot what these properties mean, look back at Section~\ref{sec:ClosureZn} and the following subsections, where we discuss these properties as applied to the integers mod $n$.
+If you forgot what these properties mean, look back at Section~\ref{subsec:ModularArithmetic:ClosureZn} and the following subsections, where we discuss these properties as applied to the integers mod $n$.
 
 What we're going to do now is a first taste of a magic recipe that you're going to see again and again in Abstract Algebra. We're going to turn \emph{sets} into \emph{elements}. Abracadabra!
 
@@ -860,7 +871,7 @@ If you listed the subsets of $\{a,b\}$, how many subsets would be in your list?
 If you listed the subsets of $\{a,b,c,d\}$, how many subsets would be in your list?
 \item
 **If you listed the subsets of $\{a,b,c,\ldots,x,y,z\}$, how many subsets would be in your list?
-\hyperref[sec:set_chapter:hints]{(*Hint*)}
+\hyperref[sec:Sets:Hints]{(*Hint*)}
 \end{enumerate}
 \end{exercise}
 
@@ -884,19 +895,19 @@ Let $G$ be the set of subsets of the set $\{a,b,c\}$.
 \item
 Does the set $G$  with the operation $\cup$ have the closure property? \emph{Justify} your answer.
 \item
-Does the set $G$  with the operation $\cup$ have an identity? If so, what is it? Which part of  Proposition~\ref{proposition:sets:sets_theorem_set_ops} enabled you to draw this conclusion?
+Does the set $G$  with the operation $\cup$ have an identity? If so, what is it? Which part of  Proposition~\ref{proposition:Sets:sets_theorem_set_ops} enabled you to draw this conclusion?
 \item
-Is the operation $\cup$ defined on the set $G$ associative? Which part of  Proposition~\ref{proposition:sets:sets_theorem_set_ops} enabled you to draw this conclusion?
+Is the operation $\cup$ defined on the set $G$ associative? Which part of  Proposition~\ref{proposition:Sets:sets_theorem_set_ops} enabled you to draw this conclusion?
 \item
-Is the operation $\cup$ defined on the set $G$ commutative? Which part of  Proposition~\ref{proposition:sets:sets_theorem_set_ops} enabled you to draw this conclusion?
+Is the operation $\cup$ defined on the set $G$ commutative? Which part of  Proposition~\ref{proposition:Sets:sets_theorem_set_ops} enabled you to draw this conclusion?
 \item
-Does each element of $G$ have a unique inverse under the operation $\cup$? If so, which part of  Proposition~\ref{proposition:sets:sets_theorem_set_ops} enabled you to draw this conclusion? If not, provide a counterexample.
+Does each element of $G$ have a unique inverse under the operation $\cup$? If so, which part of  Proposition~\ref{proposition:Sets:sets_theorem_set_ops} enabled you to draw this conclusion? If not, provide a counterexample.
 \item
 Is the set $G$ a group under the $\cup$ operation?  \emph{Justify} your answer.
 \end{enumerate}
 \end{exercise} 
 
-Although Exercise~\ref{exercise:sets:cup_group} deals with a particular set of subsets,  the results of the  exercise are completely general and apply to the set of any subsets of \emph{any} set (and not just $\{a,b,c\}$.  
+Although Exercise~\ref{exercise:Sets:cup_group} deals with a particular set of subsets,  the results of the  exercise are completely general and apply to the set of any subsets of \emph{any} set (and not just $\{a,b,c\}$.  
  
 Now we'll consider $\cap$:
 
@@ -906,13 +917,13 @@ Given a set $A$, let $G$ be the set of all subsets of $A$.
 \item
 Does the set $G$  with the operation $\cap$ have the closure property? \emph{Justify} your answer.
 \item
-Does the set $G$  with the operation $\cap$ have an identity? If so, what is it? Which part of  Proposition~\ref{proposition:sets:sets_theorem_set_ops} enabled you to draw this conclusion?
+Does the set $G$  with the operation $\cap$ have an identity? If so, what is it? Which part of  Proposition~\ref{proposition:Sets:sets_theorem_set_ops} enabled you to draw this conclusion?
 \item
-Is the operation $\cap$ defined on the set $G$ associative? Which part of  Proposition~\ref{proposition:sets:sets_theorem_set_ops} enabled you to draw this conclusion?
+Is the operation $\cap$ defined on the set $G$ associative? Which part of  Proposition~\ref{proposition:Sets:sets_theorem_set_ops} enabled you to draw this conclusion?
 \item
-Is the operation $\cap$ defined on the set $G$ commutative? Which part of  Proposition~\ref{proposition:sets:sets_theorem_set_ops} enabled you to draw this conclusion?
+Is the operation $\cap$ defined on the set $G$ commutative? Which part of  Proposition~\ref{proposition:Sets:sets_theorem_set_ops} enabled you to draw this conclusion?
 \item
-Does each element of $G$ have a unique inverse under the operation $\cap$? If so, which part of  Proposition~\ref{proposition:sets:sets_theorem_set_ops} enabled you to draw this conclusion? If not, provide a counterexample.
+Does each element of $G$ have a unique inverse under the operation $\cap$? If so, which part of  Proposition~\ref{proposition:Sets:sets_theorem_set_ops} enabled you to draw this conclusion? If not, provide a counterexample.
 \item
 Is the set $G$ a group under the $\cap$ operation?  \emph{Justify} your answer.
 \end{enumerate}
@@ -928,6 +939,6 @@ Although $\cap$ and $\cup$ didn't work, there is a consolation prize:
 \begin{equation*}
 A \Delta B = (A \setminus B) \cup (B\setminus A).
 \end{equation*}
-Given a set $U$, let $G$ be the set of all subsets of $U$.  Repeat parts (a)--(f) of Exercise~\ref{exercise:sets:cap_group}, but this time for the set operation $\Delta$ instead of $\cap$.
+Given a set $U$, let $G$ be the set of all subsets of $U$.  Repeat parts (a)--(f) of Exercise~\ref{exercise:Sets:cap_group}, but this time for the set operation $\Delta$ instead of $\cap$.
 \end{exercise} 
 

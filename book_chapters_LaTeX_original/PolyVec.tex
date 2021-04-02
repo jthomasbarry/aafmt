@@ -11,7 +11,7 @@
 % Other applications of matrix rings?
 % Then make a separate chapter: Polynomials, Matrices, and Signal processing
 %\chap{Application: Ring Isomorphisms and Signal Processing }{PolyVec}
-\chap{Exploration: relating polynomials and matrices}{PolyVec}
+\chap{Exploration: Relating polynomials and matrices}{ExploringPolynomials}
 
 In the previous chapter, we formally introduced the concept of \term*{isomorphism} as it relates to groups.
 Intuitively, two groups are isomorphic if any algebraic statement about one group is also true about the other, just expressed in different symbology. For example, given that group a finite group $G$ is isomorphic to group $H$, it is then possible to obtain the Cayley table for $H$ simply by making letter-for-letter substitutions in the Cayley table for $G$.
@@ -24,6 +24,7 @@ This isomorphism is quite important in  \term{digital  signal processing},is a k
 To understand this chapter you will need some background in linear algebra. In particular, you will need to understand algebraic operations on vectors and matrices. In the first section, we'll give a brief review of some basic properties of vectors and vector spaces. 
 
 \section{Definition of  vector space}
+\label{sec:ExploringPolynomials:DefiningVectorSpace}
 %%% Needs new section and introduction -- relate polynomials to vector spaces. Assume students have seen vector space in linear algebr, but brief review.
 The most basic idea of a ``vector'' is  a quantity that has magnitude and direction, and which can be represented by an arrow. This simple representation was good enough for basic math and physics classes. However, in upper-level math (and physics) there's a lot more to vectors than this. Vectors are defined as objects in a \emph{vector space}, which can have $1,2,3, 4,$ or millions of dimensions. Besides this, vectors in a vector space must have two operations (called \emph{addition} and \emph{scalar multiplication}) which must satisfy certain requirements. 
 
@@ -129,7 +130,8 @@ r \cdot \left(\left(\begin{array}{c}v_1\\v_2\\v_3\end{array}\right) ~+~\left(\be
 \begin{exercise}{}
 Prove conditions 4,5,6,7,9,10 for column vectors in $\RR^3$.
 \end{exercise}
-\section{Polynomials are also  vectors}\label{sec:polyAreVec}
+\section{Polynomials are also vectors}
+\label{sec:ExploringPolynomials:PolynomialsAreVectors}
 
 At this point the ``abstract''  of abstract algebra comes into play. Once we have defined vector space, then \emph{any} set of any objects that satisfies all ten requirements qualifies as a bona fide vector space, and objects in the set can be called vectors. Do polynomials qualify? We already know that we can add polynomials together, and we can also multiply polynomials by  scalars. To see whether or not the set of polynomials with real coefficients (that is, $\RR[x]$) is a vector space, we will need to check all 10 conditions: 
 \medskip{}
@@ -168,7 +170,8 @@ Another vector space that we will want to examine is the set of $n \times n$ mat
 Let $M$ be the set of $n \times n$ matrices with real entries. Let $A$, $B$, and $C$ be elements of $M$, and let $\alpha$, $\beta\in\mathbb{R}$ be scalars.  Write the 10 vector space conditions in terms of  $A,B,C,\alpha,\beta$. 
 \end{exercise}
 
-\section{Identifying polynomials with matrices}\label{sec:ringIsoPolyMat}
+\section{Identifying polynomials with matrices}
+\label{sec:ExploringPolynomials:IdentifyingPolynomialsMatrices}
 
 We have seen that both vectors and matrices define vectors spaces.  But matrices (in particular, square matrices) have something that vectors don't have: namely, two square matrices of the same size can be multiplied together to get a square matrix of the same size.  In contrast, we don't know of any way in general to multiply two $n \times 1$ vectors to obtain another $n \times 1$ vector. 
 
@@ -236,7 +239,7 @@ Constant polynomials are the next simplest case. It makes sense to map the const
 \[ \varphi_m(a) := aI_{m \times m},\]
 In view of the exercises that we did a little while ago, the next reasonable step is to define $\varphi_m(ax)$ as:
 \[  \varphi_m(ax) = \varphi_m(a) \cdot \varphi_m(x) = a \varphi_m(x). \]
-We also saw in Example~\ref{example:PolyVec:multx2} and Exercise~\ref{exercise:PolyVec:multx3} that $ \varphi_m(x^2) = \varphi_m(x)^2$ and; $\varphi_m(x^3) =   \varphi_m(x)^3$. This suggests the following general rule:
+We also saw in Example~\ref{example:ExploringPolynomials:multx2} and Exercise~\ref{exercise:ExploringPolynomials:multx3} that $ \varphi_m(x^2) = \varphi_m(x)^2$ and; $\varphi_m(x^3) =   \varphi_m(x)^3$. This suggests the following general rule:
 \[ \varphi_m(ax^n) :=   \varphi_m(a) \cdot \varphi_m(x)^n =   a\varphi_m(x)^n. \]
 
 Finally, in light of our previous experience with isomorphisms of groups, it's reasonable to impose the following requirement on $\varphi_m$:
@@ -406,7 +409,7 @@ Using the definition of $\varphi$, show that if $M = \varphi(p(x))$ then $M$ is 
 \begin{exercise}{phi_onto}
 Let $M$ be an arbitrary matrix in $B$. Suppose the first column of $M$ is the column vector:
 \[\left(\begin{array}{c}v_1\\v_2\\v_3\\\vdots\end{array}\right).\] 
-Find a polynomial $p(x)$ such that $\varphi(p(x)) = M$. \hyperref[sec:PolyVec:hints]{(*Hint*)} 
+Find a polynomial $p(x)$ such that $\varphi(p(x)) = M$. \hyperref[sec:ExploringPolynomials:Hints]{(*Hint*)} 
 \end{exercise}
 So we have that $\varphi:P[x]\to B$ is a 1-1 and onto map. In fact, $\varphi$ is an isomorphism between the additive group of polynomials   and the subdiagonal banded matrices $B$. To finish proving this, we need to show the operation-preserving property of $\varphi$:
 %\textbf{Note:} Let recall that isomorphism is a mathematical method for comparing two mathematical objects. From Ancient Greek, isos means equal and morphe means form or shape. So two mathematical objects are "in the same equal forms" if there is a isomorphism between them, which means there is a bijection (1-to-1 and onto function) that can help to map each element $x$ in $X$ mathematical object to each element $y$ in another $Y$ mathematical object and vice-versa.\\
@@ -508,7 +511,7 @@ Now, with the following proposition, we can show that $\varphi$ does preserve mu
 % Provide hint to fill in the blanks.
 
 \begin{exercise}{propPhi}
-Fill in the blanks the following proof. \hyperref[sec:PolyVec:hints]{(*Hint*)} 
+Fill in the blanks the following proof. \hyperref[sec:ExploringPolynomials:Hints]{(*Hint*)} 
 
 \begin{align*}
 \varphi(pq) &= \varphi\Bigg(\Big(\sum^ {N}_{m=0} a_{m}x^{m}\Big)\Big( \sum^{N'}_{m'=0} b_{m'}x^{m'}\Big)\Bigg)\\

@@ -1,7 +1,8 @@
-\chap{Appendix: Induction proofs--patterns and examples}{induction}
+\chap{Appendix: Induction proofs--patterns and examples}{Induction}
 
 
-\section{ Basic examples of induction proofs}\label{sec:basic_induction}
+\section{ Basic examples of induction proofs}
+\label{sec:Induction:BasicInduction}
 
 Below is a complete proof of the
 formula for the sum of the first $n$ integers, that can serve as a model
@@ -42,6 +43,7 @@ we have proved that $P(n)$ holds for all $n\in\NN$.
 
 
 \section{Advice on writing up induction proofs}
+\label{sec:Induction:Advice}
 Here are four things to keep in mind as you write up induction proofs.
 
 \noindent
@@ -85,7 +87,9 @@ play at some point during the proof of the induction step---if not, you are
 doing something wrong. 
 
 
-\section{Induction proof patterns \& practice problems} 
+\section{Induction proof patterns \& practice problems}
+\label{sec:Induction:ProofPatternsAndPractice}
+ 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,7 +97,8 @@ doing something wrong.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Induction proofs, type I: Sum/product formulas}
- 
+ \label{subsec:Induction:ProofPatternsAndPractice:TypeISumProd}
+
 The most common, and the easiest, application of induction is to prove
 formulas for sums or products of $n$ terms. Many of these  proofs follow
 the same pattern. Here are  some examples of formulas that can be proved by induction:
@@ -219,6 +224,8 @@ Prove formula (iv) above using induction.
 
 
 \subsection*{Induction proofs, type II: inequalities} 
+\label{subsec:Induction:ProofPatternsAndPractice:TypeII_Ineq}
+
 A second general type of application of induction is to prove inequalities
 involving a  natural number $n$.   These proofs also tend to be on the
 routine side; in fact, the algebra required is usually very minimal, in
@@ -362,6 +369,8 @@ Prove inequality (v) above using induction.
 
 \subsection*{Induction proofs, type III:
 Extension of theorems from $2$ variables to $n$ variables}
+\label{subsec:Induction:ProofPatternsAndPractice:TypeIII_NVariables}
+
 Another very common and usually routine application of induction is to
 extend general results that have been proved for the case of $2$
 variables to the case of $n$ variables.  Below are some examples.
@@ -485,7 +494,7 @@ Then
 &=\underline{~~~~~} + a_{k+1}.
 \end{align*}
 \item
-Assuming that $P(k)$ is true, use  Proposition~\ref{proposition:BeforeWeBegin:sumIneq} to show that $P(k+1)$ is also true.  This is equivalent to showing that $P(k)$ implies $P(k+1)$.
+Assuming that $P(k)$ is true, use  Proposition~\ref{proposition:Preliminaries:sumIneq} to show that $P(k+1)$ is also true.  This is equivalent to showing that $P(k)$ implies $P(k+1)$.
 \item 
 \textbf{Conclusion:} What is the final conclusion?
 \end{enumerate}
@@ -706,7 +715,8 @@ Assuming that $P(k)$ is true, use  Proposition~\ref{proposition:BeforeWeBegin:su
 
 
 
-\section{Strong Induction, with applications}\label{strong_induction}
+\section{Strong Induction, with applications}
+\label{sec:Induction:StrongInduction}
 
 
 One of the most common applications of induction is to problems involving
@@ -724,8 +734,9 @@ $n=k,k-1,\dots,1$.  This variation of the induction
 method is called \textbf{strong induction}.  The induction principle
 remains valid in this modified form. 
 
-
 \subsection*{Strong induction and recurrences}
+\label{subsec:Induction:StrongInduction:Recurrences}
+
 In the induction proofs we've looked at so far, we first had to prove a base case, and then used a preceding case ($n=k$) to prove the case $n=k+1$ in the induction step. But when we aply  induction to two-term recurrence sequences like the Fibonacci
 numbers, we'll need \emph{two} preceding cases, $n=k$ and $n=k-1$, in
 the induction step, and \emph{two} base cases (e.g., $n=1$ and $n=2$) to get
@@ -813,6 +824,8 @@ $P(n)$ is true for all $n\in\NN$.
 \end{proof}
 
 \subsection*{Strong Induction and representation problems}
+\label{subsec:Induction:StrongInduction:RepresentProblems}
+
 For applications to representation problems one 
 typically requires the induction hypothesis in its strongest possible
 form, where one assumes \emph{all} preceding
@@ -825,7 +838,7 @@ existence part of what is called the Fundamental Theorem of Arithmetic;
 the other part guarantees uniquess of the representation, which we will
 not be concerned with here (it can also be proved by induction, but the proof is a little more complicated).  
 
-Recall the definition of \term*{prime} from Chapter~\ref{complex}: an integer $n>1$ is called 
+Recall the definition of \term*{prime} from Chapter~\ref{ComplexNumbers}: an integer $n>1$ is called 
 \term*{prime} if it has no factor greater than 1 other than itself. An integer $n>1$ that is not prime is called
 \term*{composite}\index{Composite number!definition}: in other words, $n$ can be written as $n=ab$
 with integers $a,b$ satisfying $2\le a,b<n$. Using these definitions, we may now state and prove:
@@ -887,7 +900,8 @@ it follows that $P(n)$  is true for all $n\ge2$, i.e., every integer
 $n\ge2$ is either a prime or can be represented as a product of primes.
 \end{proof}
 
-\section{More advice on  induction and strong induction proofs}
+\section{More advice on induction and strong induction proofs}
+\label{sec:Induction:MoreAdviceAndStrongInduction}
 
 \noindent
 \term{Should I use ordinary induction or strong induction?}
@@ -949,6 +963,7 @@ step:
 \end{itemize}
 
 \section{Common mistakes}
+\label{sec:Induction:CommonMistakes}
  The following examples illustrate
 some common mistakes in setting up base case(s) and the induction step.
 
@@ -1008,7 +1023,8 @@ these cases, $n=k-1=0$, is out of range.\\
 
 
 
-\section{Strong induction practice problems}\label{strong_induction_practice} 
+\section{Strong induction practice problems}
+\label{sec:Induction:StrongInductionPractice} 
 
 
 \begin{enumerate}
@@ -1485,13 +1501,14 @@ $\sum_{i=1}^ki!i=(k+1)!-1$.)
 %it follows that $P(n)$  is true for all $n\ge1$.
 %}
 
-
-
-
 \end{enumerate}
 
 
-\section{Non-formula induction proofs.}
+\section{Non-formula induction proofs}
+\label{sec:Induction:NonFormulaProofs}
+
+
+
 Below is a sample proof of the statement that any $n$-element set (i.e.,
 any set with $n$ elements) has $2^n$ subsets. 
 This illustrates a case where the result we seek to prove is not a
@@ -1558,7 +1575,8 @@ Thus $P(k+1)$ is true, completing the induction step.
 $P(n)$  is true for all $n\in\NN$.
 \end{proof}
 
-\section{Practice problems for non-formula induction}\label{practice_non_formula}
+\section{Practice problems for non-formula induction}
+\label{sec:Induction:PracticeNonFormulaInduction}
 
 \begin{enumerate}
 
@@ -1788,7 +1806,8 @@ some small cases, e.g., $n=3$ and $n=5$.)
 \end{enumerate}
 
 
-\section{~Fallacies and pitfalls }\label{sec:fallacies} 
+\section{~Fallacies and pitfalls }
+\label{sec:Induction:FallaciesAndPitfalls} 
 
 By now, induction proofs should feel routine to you, to the point that you
 could almost do them in your sleep.  However, it is important not to become
