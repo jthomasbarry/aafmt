@@ -57,7 +57,7 @@
       Your simple calculator can't help you with that one!<fn>
       It's true that the fancier graphing calculators can handle it,
       but that's beside the point.
-      </fn> If you try to take the square root of -1, the calculator will choke out <c>ERR OR</c> or some similar message of distress.
+      </fn> If you try to take the square root of -1, the calculator will choke out <c>ERROR</c> or some similar message of distress.
       But why does it do this?
       Doesn't <m>-1</m> have a square root?
     </p>
@@ -161,14 +161,14 @@
       </p>
       <p>
         The proof is by contradiction.
-        Suppose <m>\exists \emph{a} \in \mathbb{R}</m> such that <m>a^{2}=-1</m>
+        Suppose <m>\exists a \in \mathbb{R}</m> such that <m>a^{2}=-1</m>
         (note the symbol
         <q><m>\exists</m></q>
         means
         <q>there exists,</q>
         the symbol <m>\mathbb{R}</m> denotes the real numbers,
         and the expression
-        <q><m>\emph{a} \in \mathbb{R}</m></q>
+        <q><m>a \in \mathbb{R}</m></q>
         means that <m>a</m> is contained in <m>\mathbb{R}</m>,
         that is, <m>a</m> is a real number).
       </p>
@@ -652,11 +652,11 @@
       Before giving this lemma, let's be precise about what we mean by
       <q>prime number</q>:
     </p>
-    <definition>
+    <definition xml:id= "definition_ComplexNumbers_PrimeNumber">
+      <!--{defPrime} -->
       <statement>
         <p>
-          {defPrime} A <em>prime number</em>
-              <idx><h>Prime</h><h>definition</h></idx>
+          A <em>prime number</em> <idx><h>Prime</h><h>definition</h></idx>
           is a natural number (i.e. positive integer) bigger than 1 that only has one factor bigger than 1, namely itself.
         </p>
       </statement>
@@ -787,8 +787,10 @@
                 </li>
               </ul>
             </p>
-            What can you conclude about <m>n</m>?
-            Make a clear statement and <em>prove</em> your statement. (*Hint*)
+            <p>
+              What can you conclude about <m>n</m>?
+              Make a clear statement and <em>prove</em> your statement. (*Hint*)
+          </p>
           </li>
           <li>
             <p>

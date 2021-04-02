@@ -480,14 +480,14 @@
     <exercise xml:id="exercise_ComplexNumbers_tableentries">
       <statement>
         <p>
-          Complete all entries of <xref ref="additive_table">Table</xref>,
+          Complete all entries of <xref ref="additive_tableX">Table</xref>,
           which shows the additive properties of integers,
           rationals, reals, and complex numbers.
               <idx><h>Complex numbers</h><h>additive properties</h></idx>
         </p>
         <table xml:id="additive_tableX">
           <title>Additive properties of different number systems</title>
-          <tabular>
+          <tabular >
             <row bottom="minor">
               <cell></cell>
               <cell></cell>
@@ -694,7 +694,7 @@
       </statement>
     </exercise>
     <p>
-      <xref ref="additive_table">Tables</xref>- <xref ref="multiplicative_table"></xref>
+      <xref ref="additive_tableX">Tables</xref>- <xref ref="multiplicative_table"></xref>
       show that complex numbers also follow the same fundamental algebraic rules that real numbers do.
       This makes life a lot simpler!
       From now on,
@@ -713,10 +713,11 @@
       (Here and elsewhere, the square root symbol is used to denote the
       <em>positive</em> square root.)
     </p>
-    <definition>
+    <definition xml:id="definition_ComplexNumbers_Modulus">
+      <!-- {modulus} -->
       <statement>
         <p>
-          {modulus} For a complex number <m>z</m>,
+           For a complex number <m>z</m>,
           the <term>absolute value</term> or <term>modulus</term>
               <idx><h>Modulus</h></idx>
               <idx><h>Complex numbers</h><h>modulus</h></idx>
@@ -727,10 +728,11 @@
     <p>
       Complex numbers have an additional operation that real numbers do not have.
     </p>
-    <definition>
+    <definition xml:id = "definition_ComplexNumbers_ComplexConjugate">
+      <!-- {complexConjugate}  -->
       <statement>
         <p>
-          {complexConjugate} The <term>complex conjugate</term>
+          The <term>complex conjugate</term>
               <idx><h>Conjugate, complex</h></idx>
               <idx><h>Complex numbers</h><h>complex conjugate</h></idx>
           of a complex number <m>z=a+bi</m> is defined to be <m>\overline{z}=a-bi</m>.
@@ -871,10 +873,10 @@
         Then
         <md>
           <mrow>\overline{z} + \overline{w} \amp = \overline{a + bi} + \overline{c + di}</mrow>
-          <mrow>\amp  = (a - bi) + (c - di) \amp  \textrm{by~definition~of~conjugate}</mrow>
+          <mrow>\amp  = (a - bi) + (c - di) \amp  \textrm{by definition of conjugate}</mrow>
           <mrow>\amp  = (a + c) - (b + d)i \amp  \textrm{commutative, associative }</mrow>
-          <mrow>\amp  = \overline{(a + c) + (b + d)i} \amp  \textrm{by~definition~of~conjugate}</mrow>
-          <mrow>\amp  = \overline{z + w} \amp  \textrm{by~definition~of~complex~addition}</mrow>
+          <mrow>\amp  = \overline{(a + c) + (b + d)i} \amp  \textrm{by definition of conjugate}</mrow>
+          <mrow>\amp  = \overline{z + w} \amp  \textrm{by definition of complex addition}</mrow>
         </md>
       </p>
     </proof>
@@ -989,7 +991,7 @@
           <li>
             <p>
               In view of part (a), complete the following statement:
-              <q>The complex number <m>z=a+bi</m> is a pure imaginary number if and only if <m>\overline{z} = \ldots \ldots</m>.</q>
+              <q>The complex number <m>z=a+bi</m> is a pure imaginary number if and only if <m>\overline{z} = \ldots</m>.</q>
               <em>Prove</em> your statement.
             </p>
           </li>

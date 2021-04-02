@@ -56,8 +56,8 @@
     <p>
       You should already know that a point in a plane can also be considered as a <em>vector</em>:
       in other words,
-      the ordered pair <m>(a,b)</m> can be identified with the vector <m>a</m><em>i</em> + <m>b</m><em>j</em>,
-      where <em>i</em> and <em>j</em>
+      the ordered pair <m>(a,b)</m> can be identified with the vector <m>ai +bj</m>,
+      where <m>i</m> and <m>j</m>
       are the unit vectors in the <m>x+</m> and <m>y+</m> directions,
       respectively.
       So complex numbers can also be considered as two-dimensional vectors.
@@ -772,7 +772,7 @@
           <md>
             <mrow>(r\cis\theta)^{3} \amp = r\cis\theta \cdot (\underline{~\lt 1>~})^{2} \amp  \text{ (associative) }</mrow>
             <mrow>\amp =  r\cis\theta \cdot (r^{2} \cdot\underline{~\lt 2>~}) \amp  \text{ (by the previous exercise) }</mrow>
-            <mrow>\amp =  r^{3} \cdot \cis( \theta +  \underline{~\lt 3>~})) \amp  \mbox{(by <xref ref="proposition_ComplexNumbers_polar_mult">Proposition</xref>)}</mrow>
+            <mrow>\amp =  r^{3} \cdot \cis( \theta +  \underline{~\lt 3>~})) \amp  \text{(by } <xref ref="proposition_ComplexNumbers_polar_mult">Proposition</xref>\text{)} </mrow>
             <mrow>\amp =   \underline{~\lt 4>~}) \amp  \mbox{(by basic algebra)}</mrow>
           </md>
         </p>
@@ -874,10 +874,11 @@
       we know <m>x^{-n}</m> means <m>(x^n)^{-1}</m>.
       Complex numbers happen to work the same way.
     </p>
-    <definition>
+    <definition xml:id ="definition_ComplexNumbers_negpower">
+      <!-- {polar_negpower} -->
       <statement>
         <p>
-          {polar_negpower} Given a complex number <m>z=r\cis\theta</m>,
+          Given a complex number <m>z=r\cis\theta</m>,
           <me>
             z^{-n} = (z^n)^{-1}
           </me>.
@@ -893,7 +894,7 @@
             <mrow>z^{-3} \amp  = (z^3)^{-1}</mrow>
             <mrow>\amp  = ([2\cis(\pi/4)]^3)^{-1}</mrow>
             <mrow>\amp  = (8\cis(3\pi/4))^{-1}  \mbox{ (by de Moivre's Theorem) }</mrow>
-            <mrow>\amp  = \frac{1}{8}\cis(5\pi/4) \qquad \mbox{ (by <xref ref="exercise_ComplexNumbers_polar_z_inv">Exercise</xref>) }</mrow>
+            <mrow>\amp  = \frac{1}{8}\cis(5\pi/4) \qquad \text{(by } <xref ref="exercise_ComplexNumbers_polar_z_inv">Exercise</xref> \text{)} </mrow>
           </md>
         </p>
       </statement>
