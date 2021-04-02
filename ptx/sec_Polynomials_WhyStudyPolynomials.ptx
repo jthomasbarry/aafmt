@@ -114,7 +114,7 @@
         Additionally,
         suppose vehicle 2 has an initial position of <m>y_0=80</m> <m>\text{m}</m>,
         an initial velocity of <m>v_0=-50</m> m/s, and a constant acceleration of <m>a=2</m> <m>\text{ m/sec } ^2</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Express the position of the second vehicle relative to the first,

@@ -27,7 +27,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give 4 integers <m>a</m> that satisfy the equation:
@@ -110,7 +110,7 @@
   </example>
   <exercise xml:id="exercise_Cosets_equiv_class_mod5">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Write the 5 equivalence classes
@@ -286,7 +286,7 @@
         on <m>n</m> objects;
         <m>D_4</m> is the group of symmetries of a square;
         and <m>{\mathbb T}</m> is the group of complex numbers with modulus 1, under the operation of multiplication.)
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\langle 8 \rangle</m> in <m>{\mathbb Z}_{24}</m>

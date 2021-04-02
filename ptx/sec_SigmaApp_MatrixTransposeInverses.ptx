@@ -96,7 +96,7 @@
           where <m>M_n(\mathbb{R})</m> is the set of
           <m>n \times n</m> matrices with real-number entries.
           Prove or disprove the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Transpose defines an invertible function from
@@ -129,7 +129,7 @@
     </p>
     <exercise xml:id="exercise_SigmaNotation_inverse1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Express the equations <m>AA^{-1}=I</m> and

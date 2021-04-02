@@ -98,7 +98,7 @@
       <statement>
         <p>
           Given <m>\ell,m \in {\mathbb Z}</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bmod(\ell+ m,n) = \bmod(\ell,n) \oplus \bmod(m,n)</m>,
@@ -197,7 +197,7 @@
     </proof>
     <exercise xml:id="exercise_ModularArithmetic_44">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove part (b) of <xref ref="proposition_ModularArithmetic_number_remainder">Proposition</xref>.
@@ -258,7 +258,7 @@
     </p>
     <exercise xml:id="exercise_ModularArithmetic_ModPower">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using part (b) of <xref ref="proposition_ModularArithmetic_number_remainder">Proposition</xref> above,
@@ -293,7 +293,7 @@
           <m>a=\bmod(\ell,n),
           b=\bmod(m,n)</m>, and <m>c=\bmod(p,n)</m>.
           Show the following equivalences using <xref ref="proposition_ModularArithmetic_number_remainder">Proposition</xref>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bmod( (\ell +m) + p,n) = (a \oplus b) \oplus c</m>. (*Hint*)
@@ -347,7 +347,7 @@
         <p>
           <em>Proposition</em>: Given <m>\ell,m,x,y \in {\mathbb Z}</m> where
           <m>\ell \equiv x \pmod{n}</m> and <m>m \equiv y \pmod{n}</m>, then
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\ell + m \equiv x + y \pmod{n}</m>,
@@ -393,7 +393,7 @@
         <p>
           Prove or disprove,
           using the proposition in <xref ref="exercise_ModularArithmetic_number_remainder">Exercise</xref>:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>7787 \cdot 21005 \cdot 495 \equiv 56002 \cdot 492 \cdot 213 \pmod{7}</m>
@@ -627,7 +627,7 @@
           <m>\integer_5</m> to calculate each of the following.
           (Remember, compute the remainders
           <em>before</em> doing the arithmetic.)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bmod(456 \cdot (252 + 54),5)</m>
@@ -958,7 +958,7 @@
           For example,
           we know that the negative real numbers are not closed under square root because
           <m>\sqrt{-1}</m> is not a negative real number. (*Hint*)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 The integers
@@ -1090,7 +1090,7 @@
     </p>
     <exercise xml:id="exercise_ModularArithmetic_58">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>0 \in {\mathbb Z}_n</m> has an additive inverse in <m>{\mathbb Z}_n</m>.
@@ -1102,7 +1102,7 @@
               (in mathematical shorthand, we write this as:
               <m>a \in {\mathbb Z}_n \setminus \{0\}</m>),
               and let <m>a' = n-a</m>.
-              <ol type="i">
+              <ol label="i">
                 <li>
                   <p>
                     Show that <m>a'</m> is in <m>{\mathbb Z}_n</m> . (*Hint*)
@@ -1162,7 +1162,7 @@
     </p>
     <exercise xml:id="exercise_ModularArithmetic_60">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find an integer <m>n>2</m> such that all <em>nonzero</em>
@@ -1203,7 +1203,7 @@
           In the following <m>n</m> is an arbitrary positive integer and
           <m>a,
           b, c</m> denote arbitrary elements of <m>{\mathbb Z}_n</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="comm">
               <p>
                 Modular addition and multiplication are commutative:<idx><h>Commutative property</h><h>modular addition/multiplication</h></idx>
@@ -1277,7 +1277,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that addition mod <m>n</m> is commutative.
@@ -1407,7 +1407,7 @@
     </p>
     <exercise xml:id="exercise_ModularArithmetic_64_0">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Explain why it is <em>impossible</em> for any set of
@@ -1433,7 +1433,7 @@
     </p>
     <exercise xml:id="exercise_ModularArithmetic_64">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that the nonzero elements of

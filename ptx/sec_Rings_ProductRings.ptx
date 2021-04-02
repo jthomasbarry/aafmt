@@ -39,11 +39,11 @@
     we must show that the seven ring properties hold true.
   </p>
   <proof>
-    <ol type="I">
+    <ol label="I">
       <li>
         <p>
           Closure:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Additive closure: If <m>(a,b)</m>,
@@ -73,7 +73,7 @@
       <li>
         <p>
           Associativity:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Associativity of Addition:  For <m>(a,b),(c,d),(e,f)\in R_1\times R_2</m>,

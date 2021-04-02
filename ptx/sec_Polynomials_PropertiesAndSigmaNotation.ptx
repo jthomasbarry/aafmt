@@ -16,7 +16,7 @@
     <m>n \times n</m> matrices).
     This means that the results of this section will be valid for many different types of polynomials.
     The only properties that we require of the set <m>R</m> are the following:
-    <ol type="I">
+    <ol label="I">
       <li>
         <p>
           <m>R</m> has two binary operations,
@@ -73,7 +73,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Prove that <xref ref="definition_Polynomials_defsumpoly">Definition</xref>

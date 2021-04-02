@@ -107,7 +107,7 @@
     </p>
     <exercise xml:id="exercise_Permutations_7">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write <m>\mu \compose \sigma</m> in tableau form.
@@ -234,7 +234,7 @@
       <statement>
         <p>
           Let <m>W =\{G, H \}</m> and <m>Z = \{J, K \}</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Write the Cayley Tables for <m>S_W</m> and <m>S_Z</m>.
@@ -264,7 +264,7 @@
       <statement>
         <p>
           Let <m>X =\{A, B, C\}</m> and <m>Y = \{M, N, P\}</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Write the Cayley Tables for <m>S_X</m> and <m>S_Y</m>
@@ -371,7 +371,7 @@
             <mrow>\mu \amp  = \begin{pmatrix} 1 \amp  2 \amp  3 \amp  4 \amp  5</mrow>
             <mrow>3 \amp  2 \amp  1 \amp  5 \amp  4 \end{pmatrix}</mrow>
           </md>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Write the Cayley table for <m>G</m>.
@@ -402,7 +402,7 @@
             <mrow>\mu \amp  = \begin{pmatrix} 1 \amp  2 \amp  3 \amp  4</mrow>
             <mrow>3 \amp  1 \amp  2 \amp  4 \end{pmatrix}</mrow>
           </md>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Write the Cayley table for <m>G</m> (Label your rows and columns as:

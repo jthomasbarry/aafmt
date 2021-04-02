@@ -67,7 +67,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let the entries of <m>A</m> be given by
@@ -95,7 +95,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let the entries of <m>A</m> and <m>B</m> be given by <m>a_{i,j} =2^{i+j}</m> and
@@ -127,7 +127,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let the entries of <m>A</m> and <m>B</m> be given by <m>a_{i,j} =2^{ij}</m> and
@@ -162,7 +162,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let <m>z= \cis(\pi/4)</m>,
@@ -195,7 +195,7 @@
     <statement>
       <p>
         Given three matrices <m>A, B, C</m> with sizes <m>m \times n, n \times p, p \times q</m> respectively.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Let <m>D = BC</m>.

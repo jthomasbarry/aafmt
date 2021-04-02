@@ -48,7 +48,7 @@
         under the operation of addition.
         To show this,
         according to the definition of subgroup we need to show:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>({\mathbb Z}, +)</m> is a group;
@@ -158,7 +158,7 @@
     <statement>
       <p>
         Prove or disprove:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>GL_2({\mathbb R})</m> is a subgroup of <m>{\mathbb M}_2 ( {\mathbb R})</m>.
@@ -199,7 +199,7 @@
       <p>
         A subset <m>H</m> of a group <m>G</m> is a subgroup if and only if:
         <idx><h>Subgroup</h><h>necessary conditions</h></idx>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               The identity <m>e</m> of <m>G</m> is in <m>H</m>.
@@ -229,7 +229,7 @@
         <me>
           {\mathbb T} = \{c \in {\mathbb C} :  | c | =1 \}
         </me>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using <xref ref="proposition_Groups_subgroup_prove">Proposition</xref> above,
@@ -256,7 +256,7 @@
         Let <m>H_4 = \{ 1, -1, i, -i \}</m>,
         (these are the fourth roots of unity,
         which we studied in <xref ref="subsec_ComplexNumbers_ComplexRoots_RootsOfUnity">Section</xref>).
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using <xref ref="proposition_Groups_subgroup_prove">Proposition</xref>,
@@ -288,7 +288,7 @@
         <me>
           H_n = \{z \in {\mathbb C} : z^n = 1\}
         </me>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that <m>H_n</m> is a subset of <m>{\mathbb T}</m>.
@@ -325,7 +325,7 @@
       <p>
         In other words <m>{\mathbb Q}^*</m> is the set of non-zero rational numbers
         (<m>{\mathbb Q}^* = {\mathbb Q} \setminus 0</m>).
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using <xref ref="proposition_Groups_subgroup_prove">Proposition</xref>,
@@ -360,7 +360,7 @@
         <me>
           H = \left\{ \begin{pmatrix}a \amp  b \\ c \amp  d \end{pmatrix} : a + d = 0 \right\}
         </me>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that <m>H</m> is a subgroup of <m>G</m>.
@@ -386,7 +386,7 @@
         is in <m>SL_2( {\mathbb R})</m> exactly when <m>ad - bc = 1</m>.
         We call this the <term>Special Linear Group</term>
         <idx><h>Group</h><h>special linear <m>(SL_n(\mathbb{R}))</m></h></idx> .
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using <xref ref="proposition_Groups_subgroup_prove">Proposition</xref>,
@@ -410,7 +410,7 @@
           \begin{pmatrix}\cos \theta \amp  -\sin \theta \\ \sin \theta \amp  \cos \theta \end{pmatrix}
         </me>
         where <m>\theta \in {\mathbb R}</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that <m>G</m> is a subgroup of
@@ -493,7 +493,7 @@
     <proof>
       <p>
         Based on the proposition, there are four things we need to show:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>{\mathbb C}^{\ast}</m> is a group;
@@ -539,7 +539,7 @@
     <statement>
       <p>
         Use <xref ref="proposition_Groups_subgroup_prove_2">Proposition</xref> to re-prove the following:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>{\mathbb Q}^*</m> is a subgroup of <m>{\mathbb R}^*</m>.

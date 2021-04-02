@@ -107,7 +107,7 @@
         <p>
           Using the general definition of the Levi-Civita symbol,
           show that:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\displaystyle \sum_{i,j} \epsilon_{ij} \delta_{ij}=0</m>
@@ -145,7 +145,7 @@
     </p>
     <exercise xml:id="exercise_SigmaNotation_split">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that for any values <m>i,j,k \in \{1,2,3\}</m>, it is always true that
@@ -318,7 +318,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               We showed that if the first and second row of a
@@ -422,7 +422,7 @@
     </p>
     <exercise xml:id="exercise_SigmaNotation_detId">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that
@@ -449,7 +449,7 @@
           Recall from <xref ref="sec_SigmaApp_RotationMatrix3D">Section</xref>
           that a rotation matrix <m>R</m> must satisfy
           <m>R^{\text{T} } R = I</m> and <m>\det R \ge 0</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Using <xref ref="exercise_SigmaApp_detTrans">Exercise</xref>
@@ -789,7 +789,7 @@
         (because we must have <m>k \neq i,j</m>).
         We must also have <m>m,n \neq k</m> in order for <m>\epsilon_{kmn} \neq 0</m>.
         It follows that there are two possibilities for which <m>S_{ijmn} \neq 0</m>:
-        <ol type="A">
+        <ol label="A">
           <li>
             <p>
               <m>i \neq j</m>, <m>m=i</m> and <m>n=j</m>;
@@ -1163,7 +1163,7 @@
           Actually we're not <em>quite</em> done.
           We never showed that the vector <m>z</m> defined by <m>z_i := \sum_{j,k} \epsilon_{ijk} r_{jk}</m> is a nonzero vector.
           We'll take care of this case in this exercise.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that if <m>z=0</m>,

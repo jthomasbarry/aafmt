@@ -173,7 +173,7 @@
         In our case,
         both additions are regular complex addition and both multiplications are regular complex multiplication.
         So we will use <m>+</m> to represent both <m>+_1</m> and <m>+_2</m> and similarly for <m>\cdot</m>.
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               First we must show that <m>f(z+w)=f(z)+f(w)</m>,
@@ -234,7 +234,7 @@
       <p>
         Given <m>\phi: {\mathbb Q}[x,y]\rightarrow{\mathbb Q}[x,y]</m>,
         defined by <m>\phi(p(x,y))=p(y,x)</m>:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>\phi</m> is an isomorphism.
@@ -282,12 +282,12 @@
         Consider the function <m>f((a,b,c))=(a,-b,c)</m>,
         where <m>a,b,c\in{\mathbb R}</m>.
       </p>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             show that f is a homomorphism by proving that:
           </p>
-          <ol type="1">
+          <ol label="1">
             <li>
               <p>
                 <m>f((a,b,c)+(d,e,f))=f((a,b,c))+f((d,e,f))</m>, and

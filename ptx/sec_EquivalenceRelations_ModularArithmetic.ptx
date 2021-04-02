@@ -269,7 +269,7 @@
       <statement>
         <p>
           Make tables that show the results of:
-          <ol type="a">
+          <ol label="a">
             <li xml:id="Mod3TablesEx-multiplication">
               <p>
                 multiplication modulo<nbsp/><m>3</m>.
@@ -301,7 +301,7 @@
       <statement>
         <p>
           {integ_mod_n} Fix some natural number <m>n</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 For any integer<nbsp/><m>k</m>,
@@ -380,7 +380,7 @@
           Using the definitions of addition, subtraction,
           and multiplication given in part (c) of <xref ref="definition_EquivalenceRelations_integ_mod_n">Definition</xref>,
           make tables that show the results of:
-          <ol type="a">
+          <ol label="a">
             <li xml:id="ModArithEx-tables-addition">
               <p>
                 addition modulo<nbsp/><m>4</m>.
@@ -426,7 +426,7 @@
     </p>
     <exercise xml:id="exercise_EquivalenceRelations_compareCaley">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Compute Cayley tables for <m>\oplus</m> and <m>\odot</m> for
@@ -512,7 +512,7 @@
       that is, if <m>a_1, a_2, b_1</m>,
       and <m>b_2</m> are integers such that <m>\class{a_1} = \class{a_2}</m> and
       <m>\class{b_1} = \class{b_2}</m>, then we need to show that
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             <m>\class{a_1} \mathbin{+} \class{b_1} = \class{a_2} \mathbin{+} \class{b_2}</m>,
@@ -536,14 +536,14 @@
     </p>
     <exercise xml:id="exercise_EquivalenceRelations_54">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Fill in the blanks in the following proof of statement (a) above that <m>\mathbin{+}</m> is well-defined
               (that is, that <m>\class{a_1} = \class{a_2}</m> and
               <m>\class{b_1} = \class{b_2}</m> implies that <m>\class{a_1} + \class{b_1} = \class{a_2} + \class{b_2}</m>):
               Suppose <m>\class{a_1} = \class{a_2}</m> and <m>\class{b_1} = \class{b_2}</m>.
-              <ol type="i">
+              <ol label="i">
                 <li>
                   <p>
                     From the definition of equivalence class,
@@ -627,7 +627,7 @@
     </exercise>
     <exercise xml:id="exercise_EquivalenceRelations_WellDefEx">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li xml:id="WellDefEx-AbsVal0">
             <p>
               Show that absolute value does <em>not</em>
@@ -650,7 +650,7 @@
     </exercise>
     <exercise xml:id="exercise_EquivalenceRelations_57">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that there is a well-defined function <m>f \colon \integer_{12} \to \integer_{4}</m>,
@@ -673,7 +673,7 @@
     </exercise>
     <exercise xml:id="exercise_EquivalenceRelations_58">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li xml:id="WellDefEx-odd2">
             <p>
               Show that if we try to define a function

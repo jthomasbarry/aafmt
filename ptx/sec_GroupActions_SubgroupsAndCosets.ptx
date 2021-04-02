@@ -28,7 +28,7 @@
     </example>
     <exercise xml:id="exercise_GroupActions_SubgroupAction2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Recall <m>\mathbb{ Q}^*</m> is the nonzero rational numbers under multiplication.
@@ -75,7 +75,7 @@
     </exercise>
     <exercise xml:id="exercise_GroupActions_SubgroupAction3">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Let <m>G=\{2^n~|~n \in \mathbb{Z}\}</m>:
@@ -151,7 +151,7 @@
           which we could also write as <m>\{ \ldots \pi/3-4\pi, \pi/3-2\pi, \pi/3, \pi/3+2\pi, \pi/3 + 4\pi, \ldots \}</m>.
           It turns out that <m>L</m> is <m>G</m>-set under the action <m>(g,x+2\pi\mathbb{Z}) \rightarrow g+x+2\pi\mathbb{Z}</m>.
           Let's verify the two conditions of a <m>G</m>-set:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 For the identity condition note that <m>e\in G=0</m>.
@@ -289,7 +289,7 @@
         <p>
           In the following you will show that there is a bijection between cosets of the form <m>a+H</m>,
           where <m>a\in\mathbb{R}^2</m> and points of the unit square.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Let <m>(m,n)</m> be the lower left point of the lattice square which contains the point <m>a</m>.
@@ -439,7 +439,7 @@
     </example>
     <exercise xml:id="exercise_GroupActions_IntLatHW1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Given <m>a=(0.8,0.6)</m> and
@@ -496,7 +496,7 @@
         <p>
           Show that the set of all cosets of the form <m>\{a+H, a \in \mathbb{R}^2\}</m> is a
           <m>\mathbb{R}^2</m>-set by answering the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Let <m>b \in \mathbb{R}^2</m>.
@@ -580,7 +580,7 @@
     </p>
     <exercise xml:id="exercise_GroupActions_RtCosetAction2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Repeat the previous exercise,

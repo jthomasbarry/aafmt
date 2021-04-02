@@ -16,7 +16,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             What operation is the set <m>{\mathbb Z}_n</m> a group under?

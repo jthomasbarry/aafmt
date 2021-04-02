@@ -10,7 +10,7 @@
       <p>
         The set <m>{\mathbb R} \setminus \{0 \}</m> of non-zero real numbers is written as <m>{\mathbb R}^{\ast}</m>.
         Let's prove that <m>({\mathbb R}^{\ast}, \cdot)</m> is a group.
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               Closure: Suppose <m>a, b \in {\mathbb R}^{\ast}</m>.
@@ -38,7 +38,7 @@
       </p>
       <exercise xml:id="exercise_Groups_Rstar_group">
         <statement>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Finish proving that <m>({\mathbb R}^{\ast}, \cdot)</m> is a group.
@@ -63,7 +63,7 @@
       <statement>
         <p>
           Let <m>{\mathbb C}^{\ast}</m> be the set of non-zero complex numbers.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Why is <m>{\mathbb C}^{\ast}</m> not a group under the operation of complex addition?
@@ -103,7 +103,7 @@
     </remark>
     <exercise xml:id="exercise_Groups_15">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Why is it impossible for a set of complex numbers <m>S</m> which has more than one element and includes 0 to be a group under multiplication?
@@ -129,14 +129,14 @@
         We will prove closure and the commutative property;
         the rest of the proof will be left to you.
       </p>
-      <ol type="1">
+      <ol label="1">
         <li>
           <p>
             Closure: Suppose <m>a, b \in S</m>.
             We need to show that <m>a \ast b \in S</m>;
             i.e. that (i) <m>a \ast b \in {\mathbb R}</m> and (ii) <m>a \ast b \neq -1</m>.
           </p>
-          <ol type="i">
+          <ol label="i">
             <li>
               <p>
                 By the closure of <m>({\mathbb R}, +), (a + b) \in {\mathbb R}</m>.
@@ -253,7 +253,7 @@
     </example>
     <exercise xml:id="exercise_Groups_QuatEx">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Use the information given above to complete the Cayley table for <m>Q_8</m>.
@@ -275,7 +275,7 @@
         <p>
           Let <m>H = {\mathbb Z} \times {\mathbb Z}</m>
           (all integer coordinate-pairs).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Define a binary operation <m>\circ</m> on <m>H</m> by <m>(a,b) \circ (c,d) = (a + c , b + d)</m>,
@@ -305,7 +305,7 @@
         <p>
           Let <m>G = {\mathbb R}^{\ast} \times {\mathbb Z}</m> (all pairs such that the first element is a nonzero real number,
           and the second is an integer)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Define a binary operation <m>\circ</m> on <m>G</m> by <m>(a,m) \circ (b,n) = (a+b, m+n)</m>.
@@ -359,7 +359,7 @@
     </definition>
     <exercise xml:id="exercise_Groups_prod_of_groups">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Consider <m>(3,6)</m> and <m>(2,4)</m> as elements of <m>{\mathbb Z}_7 \times {\mathbb Z}_7</m>.
@@ -441,7 +441,7 @@
           Support your answer in each case.
           Assume that the associative property holds in each case.
           <em>Note</em> the identity is not always the first element listed!
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <tabular>
@@ -643,7 +643,7 @@
         <p>
           For each of the following multiplication tables,
           fill in the blanks to make a Cayley table for a group.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <tabular>
@@ -846,7 +846,7 @@
         <p>
           * Show that it is <em>impossible</em>
           to complete the following Cayley tables to make a group.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <tabular>
@@ -1275,7 +1275,7 @@
           we prove that <m>U(n)</m> is a group under multiplication mod <m>n</m> for any <m>n</m>.
           We know that modular multiplication is associative,
           so it remains to show the closure and inverse properties.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Fill in the blanks to show that <m>U(n)</m> is closed under modular multiplication: Let <m>k,m</m> be arbitrary elements of <m>U(n)</m>.
@@ -1345,7 +1345,7 @@
           <me>
             {\mathbb M}_2 ( {\mathbb C}) = \left\{ \begin{pmatrix}a \amp  b \\ c \amp  d \end{pmatrix}  ~|~ a,b,c,d \in {\mathbb C} \right\}
           </me>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that <m>{\mathbb M}_2 ( {\mathbb C})</m> a group under matrix addition.
@@ -1435,7 +1435,7 @@
         <p>
               <idx><h>Matrix groups</h><h><m>GL_2</m></h></idx>
               <idx><h>Matrices</h><h>invertible</h></idx>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that for any matrix <m>A \in GL_2(\mathbb{C})</m>,

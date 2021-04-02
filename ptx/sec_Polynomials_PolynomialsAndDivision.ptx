@@ -22,7 +22,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Which elements of <m>\mathbb{R}[x]</m> have multiplicative inverses that are also elements of <m>\mathbb{R}[x]</m>?
@@ -262,7 +262,7 @@
         <p>
           Find <m>q(x)</m> and <m>r(x)</m> in the following equations.
           All polynomials are in <m>\mathbb{R}[x]</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>x^2+3x+27=(x-2)q(x) + r(x)</m>
@@ -284,7 +284,7 @@
     </exercise>
     <exercise xml:id="exercise_Polynomials_div2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Divide <m>3x^6 + x^5 +4x^4 +2</m> by <m>x+3</m> where both polynomials are in <m>\mathbb{Z}_5[x]</m>.
@@ -324,7 +324,7 @@
       and commutativity of addition).
       In this section we will refer to our set of coefficients as <m>F</m>,
       and we require that <m>F</m> have the same properties as <m>R</m> plus two more:
-      <ol type="I">
+      <ol label="I">
         <li>
           <p>
             <m>F</m> has a multiplicative identity (which we will denote as 1)
@@ -674,7 +674,7 @@
     </example>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Use the Euclidean algorithm to compute the gcd of <m>a(x)=5x^3-2x^2-22x+21</m> and
@@ -890,7 +890,7 @@
     </example>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Use the Euclidean algorithm to compute the gcd of <m>a(x)=x^3+x^2+3x</m> and
@@ -967,7 +967,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the remainders when <m>\sum_{k=1}^{100} k x^{k-1}</m> is divided by <m>x-1</m> and <m>x+1</m>,
@@ -1188,7 +1188,7 @@
     </proof>
     <exercise xml:id="exercise_Polynomials_roots">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find all fourth roots of 5625 in <m>\mathbb{R}[x]</m>.
@@ -1474,7 +1474,7 @@
     </example>
     <exercise xml:id="exercise_Polynomials_complexroots">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the roots of <m>f(x)=2x^2+x+1</m>.
@@ -1497,7 +1497,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Given that <m>p(x) \in \mathbb{Z}[x]</m>,
@@ -1619,7 +1619,7 @@
     </example>
     <exercise xml:id="exercise_Polynomials_complexrootsb">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the root of <m>p(x)=(4-3i)x+(2+6i)</m>.
@@ -1746,7 +1746,7 @@
       <statement>
         <p>
           Factor each of the following polynomials into a product of linear terms.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>p(x) = x^3 + (-6+i)x^2 + (13-6i)x + 13i = 0</m> (<em>hint:</em> evaluate <m>p(-i)</m>).
@@ -1763,7 +1763,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose that <m>p(x) \in {\mathbb C}[x]</m> and <m>p(x)=p(-x)</m>.

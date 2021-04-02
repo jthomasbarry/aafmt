@@ -60,7 +60,7 @@
     <statement>
       <p>
         {relation} <idx><h>Relation</h><h>definition of</h></idx> Suppose <m>A</m> and <m>B</m> are sets.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Any subset of <m>A \times B</m> is called a
@@ -112,7 +112,7 @@
       <p>
         Express the following relations on NBA players as subsets of <m>P \times P</m>
         (as in <xref ref="example_EquivalenceRelations_bbal">Example</xref>).
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Players that both play the same positions
@@ -252,7 +252,7 @@
   </example>
   <exercise xml:id="exercise_EquivalenceRelations_7">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let <m>A = \{a\}</m> and <m>B = \{1\}</m>.
@@ -374,7 +374,7 @@
         and find a team roster (a good place to look is ESPN.com).
         Choose 6 players that have complete data,
         and let that be your set <m>A</m>. draw a digraph for each of the following binary relations on<nbsp/><m>A</m>:
-        <ol type="a">
+        <ol label="a">
           <li xml:id="DrawBinRelExer-sisterXX">
             <p>
               <m>\{ (x,y) \in F \times F \,|\, x \text{ 's height is within 2 inches of } y\text{ 's height } \}</m>
@@ -405,7 +405,7 @@
     <statement>
       <p>
         Let <m>A = \{-2,-1,0,1,2\}</m> Draw a digraph for each of the following binary relations on<nbsp/><m>A</m>:
-        <ol type="a">
+        <ol label="a">
           <li xml:id="DrawBinRelExer-sonX">
             <p>
               <m>R_a = \{\, (x,y) \mid x^2 = y^2 \,\} </m>.
@@ -436,7 +436,7 @@
         It is also possible to draw digraphs for relations that are not binary relations.
         In this case,
         your digraph should have a dot for each element of <m>A \cup B</m>.
-        <ol type="a">
+        <ol label="a">
           <li xml:id="DrawBinRelExer-son">
             <p>
               Draw digraph representations of the relations given in <xref ref="example_EquivalenceRelations_ex_rel">Example</xref>.
@@ -477,7 +477,7 @@
   </p>
   <exercise xml:id="exercise_EquivalenceRelations_RelationDef">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Define the set <m>R_></m> associated with the symbol

@@ -26,7 +26,7 @@
         <m>\mathbb{R}</m></h></idx> consists of a set <m>V</m> along with two operations '+' and ' <m>\cdot</m> ', subject to the conditions that for all vectors <m>\vec {v},\vec{w},\vec{u} \in V</m> and all scalars
         <m>r,
         s</m> <m>\in \mathbb{R}</m>:
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               The set <m>V</m> is closed under vector addition:

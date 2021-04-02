@@ -167,7 +167,7 @@
         of <m>G</m> on <m>X</m> is a map
         <m>G\times X\rightarrow X</m> given by <m>(g, x)\rightarrow g.x</m>,
         such that
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               Identity: <m>e.x = x</m> for all <m>x\in X</m>,
@@ -191,7 +191,7 @@
     </statement>
   </definition>
   <remark>
-    <ol type="1">
+    <ol label="1">
       <li>
         <p>
           <m>X</m> is not required to be a group,
@@ -236,7 +236,7 @@
         of <m>G</m> on <m>X</m> is a map
         <m>\underline{~\lt 1>~}\times \underline{~\lt 2>~}\rightarrow \underline{~\lt 3>~}</m> given by <m>(\underline{~\lt 4>~}, \underline{~\lt 5>~})\rightarrow \underline{~\lt 6>~}</m>,
         such that
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               Identity: <m>\underline{~\lt 7>~}=\underline{~\lt 8>~}</m> for all <m>x\in X</m>,
@@ -268,7 +268,7 @@
         <m>\mathbb{R}^2</m> by left multiplication on vectors which means that
         <m>\mathbb{R}^2</m> is a <m>GL_2(\mathbb{R})</m>-set.
         To check we must show identity and compatibility:
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               Check identity: If <m>v\in \mathbb{R}^2</m> and <m>I</m> is the identity matrix,
@@ -313,7 +313,7 @@
         Then <m>G</m> acts on <m>\mathcal{E}_n</m> by <m>g.S:=\{gs~|~s \in S\}</m>.
         Note that <m>g.S</m> is a subset of <m>G</m> with <m>n</m> elements.
         Let's verify that this is an action:
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               Check the identity condition:
@@ -362,7 +362,7 @@
   </p>
   <exercise xml:id="exercise_GroupActions_Action7">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let <m>G = 2\mathbb{Z}</m> and let <m>X =\mathbb{Z}</m>.

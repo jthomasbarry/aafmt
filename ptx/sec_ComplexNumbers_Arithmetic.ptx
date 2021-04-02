@@ -266,7 +266,7 @@
       <statement>
         <p>
           Evaluate each of the following.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(3-2i)+ (5i-6)</m>
@@ -406,7 +406,7 @@
           Complete the proof of <xref ref="proposition_ComplexNumbers_nonzero_complex_product">Proposition</xref> by filling in the blanks.
           Note that some blanks may require an expression,
           and not just a single number or variable.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 The proof is by contradiction.
@@ -787,7 +787,7 @@
       <statement>
         <p>
           Evaluate each of the following.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\overline{i}</m>
@@ -885,7 +885,7 @@
         <p>
           Prove each of the following propositions
           (follow the style of <xref ref="proposition_ComplexNumbers_conj_add">Proposition</xref>).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\overline{(\bar{z})} = z</m>
@@ -957,7 +957,7 @@
       <statement>
         <p>
           Suppose that <m>z</m> is a complex number such that <m>z^{-1} = \bar{z}</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Find the modulus of <m>z</m>.
@@ -974,7 +974,7 @@
     </exercise>
     <exercise xml:id="exercise_ComplexNumbers_abs1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that the complex number <m>z=a+bi</m> is a pure real number if and only if <m>\overline{z} = z</m>. (<em>Note</em>
@@ -1004,7 +1004,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_abs2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that If <m>|z| = 1</m> and <m>z</m> is not a real number,
@@ -1023,7 +1023,7 @@
     </exercise>
     <exercise xml:id="exercise_ComplexNumbers_abs3">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Use appropriate properties from <xref ref="exercise_ComplexNumbers_cxprops">Exercise</xref> to prove the following:

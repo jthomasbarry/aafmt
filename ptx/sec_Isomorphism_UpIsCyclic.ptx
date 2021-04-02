@@ -123,7 +123,7 @@
     </proof>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>U(6),U(8)</m>, and <m>U(9)</m> are cyclic.
@@ -285,7 +285,7 @@
         </p>
         <p>
           <m>G = ({\var id} , A_n) \cup ( (12) , (S_n \setminus A_n))</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that <m>S_2 \times S_n</m> is isomorphic to a subgroup of <m>S_{n+2}</m>.

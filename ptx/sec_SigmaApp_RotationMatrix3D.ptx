@@ -84,7 +84,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Find a matrix which maps the <m>x</m>, <m>y</m>,
@@ -157,7 +157,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             By plugging in different possibilities for <m>v</m> and <m>w</m>,

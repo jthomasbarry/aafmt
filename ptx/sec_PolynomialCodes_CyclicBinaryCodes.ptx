@@ -47,7 +47,7 @@
     <statement>
       <p>
         Shift the following codewords by the given cyclic shift.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               (1011) 1-shifted
@@ -148,7 +148,7 @@
       <p>
         For each of the following sets of code words,
         prove or disprove that they are closed under cyclic 1-shifts.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <me>
@@ -176,7 +176,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Prove or disprove: A cyclic code is closed under cylic <m>2</m>-shifts.
@@ -229,7 +229,7 @@
   </example>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Give an example of a binary code that is not reversible.

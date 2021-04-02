@@ -46,7 +46,7 @@
   </remark>
   <exercise xml:id="exercise_Isomorphism_iso_8">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let consider the function <m>\phi : \mathbb{R} \rightarrow \mathbb{R}</m> defined by:
@@ -173,7 +173,7 @@
   </p>
   <exercise xml:id="exercise_Isomorphism_InvCompIso">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Given that <m>\phi : G \rightarrow H</m> is an isomorphism,

@@ -8,7 +8,7 @@
   <example>
     <p>
       Define <m>f: {\mathbb Z}_{10}\rightarrow {\mathbb Z}_5</m> by <m>f(n)=\bmod(n,5)</m>.
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that <m>f</m> is a ring homomorphism.
@@ -25,7 +25,7 @@
           </p>
         </li>
       </ol>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             <md>
@@ -67,7 +67,7 @@
         <p>
           {partition} A <term>partition</term>
           of a set <m>S</m> is a set of subsets <m>A_1,\dots A_n</m> such that:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\cup_{m=1}^n A_m=S</m>
@@ -330,7 +330,7 @@
     <statement>
       <p>
         Define <m>f:{\mathbb Z}_3\times {\mathbb Z}_3\rightarrow {\mathbb Z}_3</m> by <m>f(a,b)=a</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>f</m> is a ring homomorphism.

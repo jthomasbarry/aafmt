@@ -100,7 +100,7 @@
       <statement>
         <p>
           Given the permutation <m>\mu = (152634)</m> in <m>S_6</m> :
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Write <m>\mu</m> in tableau form.
@@ -119,7 +119,7 @@
       <statement>
         <p>
           Given the permutation <m>\mu = (165432)</m> in <m>S_6</m> :
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Write <m>\mu</m> in tableau form.
@@ -230,7 +230,7 @@
       <statement>
         <p>
           Write each of the following permutations in <m>S_7</m> in tableau form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\omega = (243)</m>
@@ -255,7 +255,7 @@
         <p>
           Draw a figure similar to <xref ref="fig_cycle">Figure</xref>
           depicting each of the following permutations in <m>S_5</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\sigma = (25)</m>
@@ -379,7 +379,7 @@
       <statement>
         <p>
           Using the same permutations <m>\sigma</m> and <m>\tau</m> as above:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Write the product <m>\tau \sigma</m> in cycle notation.
@@ -468,7 +468,7 @@
           Given that <m>\delta = (135)</m>, <m>\sigma = (347)</m>,
           and <m>\rho = (567)</m> are permutations in <m>S_7</m>,
           compute the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\delta \sigma</m>
@@ -608,7 +608,7 @@
       <statement>
         <p>
           Write the following permutations in cycle notation.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\rho = \begin{pmatrix}1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \\ 2 \amp 1 \amp 5 \amp 6 \amp 3 \amp 4 \end{pmatrix}</m>
@@ -637,7 +637,7 @@
       <statement>
         <p>
           Write each of the following permutations in <m>S_9</m> in tableau form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\mu = (259)(347)</m>.
@@ -686,7 +686,7 @@
         <p>
           In parts (a)<ndash/>(d) below,
           write both permutations on the set <m>\{1,2,3,4,5,6\}</m> in tableau form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(123)(45)</m> and <m>(45)(123)</m>.
@@ -762,7 +762,7 @@
             there are three possibilities: (i) <m>x \in A</m> and <m>x \notin B</m>; (ii)
             <m>x \in \underline{ ~\lt 4>~}</m> and <m>x \notin \underline{ ~\lt 6>~}</m>; (iii)
             <m>x \notin \underline{ ~\lt 7>~}</m> and <m>x \notin \underline{ ~\lt 8>~}</m>.
-            <ol type="i">
+            <ol label="i">
               <li>
                 <p>
                   In this case,
@@ -814,7 +814,7 @@
       <statement>
         <p>
           Write each of the following permutations on <m>X = \{1,2,\ldots,9\}</m> in tableau form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1346)(298)(57)</m>
@@ -845,7 +845,7 @@
       <statement>
         <p>
           Write each of the following permutations 2 different ways using cycle notation.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(147)(258)(369)</m>
@@ -1011,7 +1011,7 @@
             \sigma = (1257)(34) , \tau = (265)(137), \text { and } \rho = (135)(246)(78)
           </me>
           find the products:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\sigma \tau</m>
@@ -1042,7 +1042,7 @@
           Compute each of the following.
           Note that e.g.
           <m>(123)^2</m> means the same as <m>(123)(123)</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1345)(234)</m>
@@ -1094,7 +1094,7 @@
     </p>
     <proposition xml:id="proposition_Permutations_perm_simple_notation">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Every permutation <m>\sigma</m> in <m>S_n</m> can be written either as the identity,
@@ -1148,7 +1148,7 @@
       </p>
       <p>
         Now there are two possible cases:
-        <ol type="i">
+        <ol label="i">
           <li>
             <p>
               <m>X_1</m> accounts for all the integers in <m>X</m>; i.e.
@@ -1328,7 +1328,7 @@
         <p>
           Following <xref ref="example_Permutations_S5_cycle_types">Example</xref>,
           list all possible cycle structures of permutations in the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>S_6</m>

@@ -121,7 +121,7 @@
   </p>
   <exercise xml:id="exercise_Polynomials_poly2">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let <m>p(x)=4x^2+7x</m> and <m>q(x)=-2x^2-3x+2</m>.

@@ -31,7 +31,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Given a ring <m>R</m> show that every ideal in <m>R</m> is a group under the ring's additive operation.

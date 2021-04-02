@@ -142,7 +142,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the canonical parity-check matrix for a code that performs a single even parity check for three information bits (i.e. 3 information bits, 1 check bit).
@@ -322,7 +322,7 @@
           Use the standard generator matrix to compute codewords
           (make a table similar to <xref ref="table_ErrorAndCorrectionCode_generator">Table</xref>),
           and verify that the codewords are in the null space of the canonical parity-check matrix.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <me>
@@ -682,7 +682,7 @@
           Suppose we want to design a code that encodes each of the 128 ASCII characters as a single codeword,
           such that the code also can detect and/or correct single-bit errors.
           We also want codewords to be as short as possible to speed up transmission.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 How many information bits are in each codeword?
@@ -711,7 +711,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               What is the smallest possible codeword size for a single error-correcting code with 20 information bits per codeword?

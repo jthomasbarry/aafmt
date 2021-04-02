@@ -82,7 +82,7 @@
     </p>
     <exercise xml:id="exercise_FurtherCryptography_dubroots">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that if the equation
@@ -154,7 +154,7 @@
         </p>
         <p>
           The steps of this calculation are as follows:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Compute the slope of the line <m>m</m> through <m>P_1</m> and <m>P_2</m> as follows:
@@ -207,7 +207,7 @@
           we mentioned that <m>x_1+x_2+x_3=m^2</m>,
           where <m>x_1,x_2,x_3</m> are the x-coordinates of three intersections of the a with the EC and <m>m</m> is the slope of the line.
           In this exercise, we will prove this.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Substitute the equation for <m>y</m> in (b) of <xref ref="example_FurtherCryptography_ec_realplus">Example</xref>
@@ -240,7 +240,7 @@
         <p>
           Given E: <m>y^2 = x^3 - 2x</m>,
           <m>P_1 = (0,0)</m>, <m>P_2 = (-1,1)</m>, Find <m>P_3=P_1 + P_2</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Slope : <m>m =(1 - 0) \cdot (-1- 0)^{-1}=-1</m>.
@@ -279,7 +279,7 @@
           <m>P_1 = (2, \sqrt{6})</m>,
           <m>P_2 = (3, -\sqrt{24})</m> from <xref ref="fig_DH_DHKE_16">Figure</xref> above.
           Find <m>P_3</m>, where <m>P_3 = P_1 + P_2</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Slope: <m>m =( -\sqrt{24}-\sqrt{6})</m> <m>\cdot</m> <m>(3-2)^{-1} = -3\sqrt{6}</m>
@@ -407,7 +407,7 @@
       (plus the point at infinity)
       into a group.
       In this section we'll verify all of the group properties.
-      <ol type="1">
+      <ol label="1">
         <li>
           <p>
             <em>Identity</em>: The point at infinity serves as the identity element.
@@ -653,7 +653,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that by computing <m>E_2 - \alpha E_1</m>, Rachael will correctly recover the character <m>M</m>.
@@ -671,7 +671,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose Rachael wants to send a character to Moses.
@@ -766,7 +766,7 @@
       </p>
       <exercise>
         <statement>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Verify the values of <m>E_1</m> and <m>E_2</m> computed above.
@@ -786,7 +786,7 @@
         <statement>
           <p>
             To encode t, t, a, c, k Moses chooses <m>\gamma = 12,19,2,3,23</m> respectively.
-            <ol type="a">
+            <ol label="a">
               <li>
                 <p>
                   Give the 5 pairs of numbers that Moses sends as cyphertext

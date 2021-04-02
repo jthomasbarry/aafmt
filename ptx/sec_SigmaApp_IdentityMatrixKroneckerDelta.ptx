@@ -36,7 +36,7 @@
   </p>
   <exercise xml:id="exercise_SigmaNotation_KroneckerIdentity">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             We know that if a matrix <m>B</m> is the inverse of the
@@ -77,7 +77,7 @@
     <statement>
       <p>
         Write out the following matrices:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               The matrix <m>C</m> defined by <m>\displaystyle c_{i,j} := \frac{1}{2} (-\delta_{i,j+1}+\delta_{i,j-1}) \qquad 1 \le i,j \le 6</m>.
@@ -270,7 +270,7 @@
         and <term>backward difference matrix</term>,
         respectively.)<idx><h>Matrix</h><h>forward difference</h></idx>
             <idx><h>Matrix</h><h>backward difference</h></idx>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Compute <m>FB</m>.

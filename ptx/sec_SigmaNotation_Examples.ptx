@@ -116,7 +116,7 @@
     <statement>
       <p>
         Evaluate the following:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\displaystyle{\sum _{i=0}^{400} \,2}</m>

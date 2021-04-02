@@ -55,7 +55,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               For the dihedral group <m>D_5</m>,
@@ -132,7 +132,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>A_2</m> and <m>A_3</m> are simple.
@@ -154,7 +154,7 @@
       it turns out that the alternating groups <m>A_n</m> are simple for <m>n \geq 5</m>.
       We will prove this result by looking at properties of 3-cycles.
       The strategy is to establish the following two facts:
-      <ol type="1">
+      <ol label="1">
         <li>
           <p>
             The only normal subgroup of
@@ -222,7 +222,7 @@
       <statement>
         <p>
           Express the following permutations as products of 3-cycles.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 (12)(34)(56)(78)
@@ -302,7 +302,7 @@
       <p>
         Let <m>\sigma</m> be an arbitrary element in a normal subgroup <m>N</m>.
         The possible cycle structures for <m>\sigma</m> are as follows:
-        <ol type="i">
+        <ol label="i">
           <li>
             <p>
               <m>\sigma</m> is a 3-cycle.
@@ -332,7 +332,7 @@
       </p>
       <p>
         We may treat these cases one by one.
-        <ol type="i">
+        <ol label="i">
           <li>
             <p>
               If <m>\sigma</m> is a <m>3</m>-cycle, then we are done.
@@ -497,7 +497,7 @@
       Each of the following steps requires extensive proof
       (which we won't supply),
       but at least you can see how the argument goes:
-      <ol type="i">
+      <ol label="i">
         <li>
           <p>
             An <m>n</m>th order real polynomial has up to <m>n</m> distinct roots,
@@ -550,7 +550,7 @@
           <m>{\var id}(z) = z</m>.
           Let <m>f:\mathbb{C} \rightarrow \mathbb{C}</m> be the conjugation function:
           <m>f(z) = \bar{z}</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that <m>H=\{ {\var id}, f \}</m> is a subgroup of the group of all bijections from <m>\mathbb{C} \rightarrow \mathbb{C}</m>

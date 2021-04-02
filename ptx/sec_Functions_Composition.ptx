@@ -69,7 +69,7 @@
           State the usual name for each composition.
           (Ignore the fact that <m>\var{sister}</m>, <m>\var{daughter}</m>,
           and many of the other relations are not functions in general.)
-          <ol type="a">
+          <ol label="a">
             <li xml:id="RealWorldCompositionExer-HusbandOfSister">
               <p>
                 <m>\var{husband} \compose \var{sister}</m>
@@ -273,7 +273,7 @@
           <me>
             g(x) = x^2
           </me>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Is it possible to define <m>f \compose g</m>?
@@ -295,7 +295,7 @@
         <p>
           The following formulas define functions <m>f</m> and<nbsp/><m>g</m> from<nbsp/><m>\mathbb{R}</m> to<nbsp/><m>\mathbb{R}</m>.
           Find formulas for <m>f \compose g(x)</m> and <m>g \compose f(x)</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="ComposeExers-form-_3x_1__x2_2_">
               <p>
                 <m>f(x) = 3x + 1</m> and <m>g(x) = x^2 + 2</m>
@@ -333,7 +333,7 @@
           The sets of ordered pairs in each part are functions
           <m>f \colon A \to B</m> and <m>g \colon B \to C</m>.
           Represent <m>g \compose f</m> as a set of ordered pairs.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="ComposeExers-pairs-_abcd__cdhs_">
               <p>
                 <m>f = \{(1,\var{a}), (2,\var{b}), (3,\var{c}), (4,\var{d})\}</m>,
@@ -373,7 +373,7 @@
         <p>
           The folllowing formulas define functions <m>f</m> and<nbsp/><m>g</m> from<nbsp/><m>\mathbb{C}</m> to<nbsp/><m>\mathbb{C}</m>.
           Find formulas for <m>f \compose g(x)</m> and <m>g \compose f(x)</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="composeC1">
               <p>
                 <m>f(r \cis \theta) = (r+3)\cis(\theta - \pi/6)</m> and <m>g(r \cis \theta) = (r \cis \theta)^2</m>
@@ -409,7 +409,7 @@
         <p>
           The folllowing formulas define functions <m>f</m> and<nbsp/><m>g</m> from<nbsp/><m>\mathbb{Z}_k</m> to<nbsp/><m>\mathbb{Z}_k</m> for different values of <m>k</m>.
           Find formulas for <m>f \compose g(x)</m> and <m>g \compose f(x)</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="composeZ1">
               <p>
                 <m>f,g:\mathbb{Z}_{15} \rightarrow \mathbb{Z}_{15}</m>,
@@ -597,7 +597,7 @@
     </example>
     <exercise xml:id="exercise_Functions_CompositionTheoryExers">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li xml:id="CompositionTheoryExers-gof11">
             <p>
               Suppose <m>f \colon A \to B</m> and <m>g \colon B \to C</m>.
@@ -661,7 +661,7 @@
         <p>
           Suppose <m>f \colon A \to B</m> and <m>g \colon B \to C</m>.
           Use the properties from <xref ref="exercise_Functions_CompositionTheoryExers">Exercise</xref> to prove the following:
-          <ol type="a">
+          <ol label="a">
             <li xml:id="BijectionComposeExer-gf">
               <p>
                 Show that if <m>f</m> and<nbsp/><m>g</m> are bijections,
@@ -710,7 +710,7 @@
       <statement>
         <p>
           Suppose <m>f \colon A \to B</m> and <m>g \colon B \to C</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="BijectionComposeExer-g2">
               <p>
                 Show that if <m>f</m> is not one-to-one,
@@ -734,7 +734,7 @@
           and <xref ref="exercise_Functions_BijectionComposeExer"></xref>
           (or their contrapositives),
           determine which of the following are bijections.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>f \compose g</m> in <xref ref="exercise_Functions_ComposeExers-form">Exercise</xref> parts (a)-(e).

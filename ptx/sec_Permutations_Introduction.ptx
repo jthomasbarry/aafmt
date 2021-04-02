@@ -81,7 +81,7 @@
     <statement>
       <p>
         Suppose <m>X = \{A, B, C, D\}</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               How many permutations are there on <m>X</m>?

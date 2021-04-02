@@ -107,7 +107,7 @@
         <p>
           Prove <xref ref="proposition_Cosets_index2_normal">Proposition</xref>
           by proving each of the following steps.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove that <m>G \setminus H</m> is a left coset of <m>H</m> in <m>G</m>.
@@ -249,7 +249,7 @@
         <p>
           In the following exercises,
           <m>G</m> is a group and <m>H</m> is a subgroup of <m>G</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that for any <m>g \in G</m> then
@@ -279,7 +279,7 @@
     </p>
     <exercise xml:id="exercise_Cosets_normal_mult">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Let <m>H \subset G</m> be a normal subgroup,
@@ -614,7 +614,7 @@
       <statement>
         <p>
           Give the Cayley tables for the following quotient groups:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>{\mathbb Z}/ 4 {\mathbb Z}</m>

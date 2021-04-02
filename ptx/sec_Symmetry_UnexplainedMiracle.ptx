@@ -6,7 +6,7 @@
   </p>
   <exercise xml:id="exercise_Symmetry_46">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Give the Cayley table for the integers mod 4 under addition.

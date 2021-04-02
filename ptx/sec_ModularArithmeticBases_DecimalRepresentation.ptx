@@ -90,7 +90,7 @@
       <statement>
         <p>
           Apply the above recursive method to obtain the sequences <m>\{a_k\}</m> and <m>\{d_k\}</m> for the following cases:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 The 100's digit of <m>n=238</m>.
@@ -158,7 +158,7 @@
       <statement>
         <p>
           Show how the formula in <xref ref="eq_digit"/> can be used to find the following digits.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 The 2nd digit of n=238 base 10
@@ -286,7 +286,7 @@
     </example>
     <p>
       Let's recap the steps in <xref ref="example_ModularArithmeticBases_fracdigit">Example</xref>s:
-      <ol type="i">
+      <ol label="i">
         <li>
           <p>
             multiply the given <m>x</m> by <m>10^k</m>,
@@ -314,7 +314,7 @@
       <statement>
         <p>
           {find n'th decimal number} Complete the following exercises using the recursive method from Equation<nbsp/><xref ref="eq_recursFrac"/> and re-do them by using Equation<nbsp/><xref ref="eq_decdig"/>:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Find the 2nd decimal digit of 0.238 base 10
@@ -590,7 +590,7 @@
     </proposition>
     <exercise xml:id="exercise_ModularArithmeticBases_mod_9_and_mod_37">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               In <xref ref="proposition_ModularArithmeticBases_divisibility_by_3">Proposition</xref>
@@ -653,7 +653,7 @@
     </p>
     <exercise xml:id="exercise_ModularArithmeticBases_decimal_interger_reverse_order">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Take any decimal integer, write the digits in reverse order,

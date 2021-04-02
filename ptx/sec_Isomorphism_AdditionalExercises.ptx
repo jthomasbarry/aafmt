@@ -1,6 +1,6 @@
 <section xml:id="sec_Isomorphism_AdditionalExercises">
   <title>Additional exercises</title>
-  <ol type="1">
+  <ol label="1">
     <li>
       <p>
         Let <m>\omega = \cis(2 \pi /n)</m>.
@@ -146,7 +146,7 @@
       </p>
     </li>
     <li>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let <m>G</m> be a group and <m>g \in G</m>.

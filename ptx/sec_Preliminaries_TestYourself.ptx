@@ -10,7 +10,7 @@
       <p>
         Simplify the following expressions.
         Factor whenever possible
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>2^4 4^2</m>
@@ -46,7 +46,7 @@
         Same instructions as the previous exercise.
         These examples are harder. (<em>Hint</em>: It's usually best to make the base of an exponent as simple as possible.
         Notice for instance that <m>4^7 = (2^2)^7 = 2^{14}</m>.)
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>6^{1/2\cdot}2^{1/6}\cdot3^{3/2}\cdot2^{1/3}</m>
@@ -83,7 +83,7 @@
         These examples are even harder.
         (<em>Hint</em>: Each answer is a single term,
         there are no sums or differences of terms.)
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\dfrac{a^5 +a^3 - 2a^4}{(a-1)^2}</m>
@@ -132,7 +132,7 @@
     <statement>
       <p>
         Find ALL real solutions to the following equations.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>x^2 = 5x</m>
@@ -171,7 +171,7 @@
     <statement>
       <p>
         (<em>Challenge problems</em>) These problems come from Chinese high school math web sites (thanks to J. L. Thron)
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Simplify: <m>\frac{2^{n+4} - 2(2^n)}{2(2^{n+3})}</m>

@@ -101,7 +101,7 @@
       <statement>
         <p>
           Compute the sum and product of <m>p(x)</m> and <m>q(x)</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>p(x)=1+x+2x^2</m>,
@@ -128,7 +128,7 @@
         <p>
           Compute the sum and product of <m>p(x)</m> and <m>q(x)</m>,
           where both polynomials are in <m>\mathbb{Z}_2[x]</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>p(x)= 1+ x +x^2</m>, <m>q(x)= 1+x+x^2+x^3</m>
@@ -165,7 +165,7 @@
     </p>
     <exercise xml:id="exercise_Polynomials_5Z">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose that <m>p(x) = a_2 x^2 + a_1 x + a_0</m> and <m>q(x) = b_1 x + b_0</m>,

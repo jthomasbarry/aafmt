@@ -7,7 +7,7 @@
       application of induction is to prove formulas for sums or products of <m>n</m> terms.
       Many of these proofs follow the same pattern.
       Here are some examples of formulas that can be proved by induction:
-      <ol type="i">
+      <ol label="i">
         <li>
           <p>
             <m>\sum_{i=1}^n i(i+1)=\frac{n(n+1)(n+2)}{3}</m>
@@ -77,7 +77,7 @@
       <statement>
         <p>
           Provide an outline for the proof of formula (ii) by responding to each of the parts below.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 What is the equation that must be shown for all <m>n\in\NN</m>? (Call this equation
@@ -123,7 +123,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove formula (iii) above using induction.
@@ -157,7 +157,7 @@
     </p>
     <p>
       Here are some examples of integer inequalities that can be proved using induction:
-      <ol type="i">
+      <ol label="i">
         <li>
           <p>
             <m>2^n>n</m>
@@ -240,7 +240,7 @@
         </p>
       </statement>
       <proof>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               What statement do you need to prove for every real number
@@ -283,7 +283,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove inequality (i) above using induction.
@@ -316,7 +316,7 @@
     </p>
     <p>
       Here are some examples of mulitple-variable theorems that can be proved using induction:
-      <ol type="i">
+      <ol label="i">
         <li>
           <p>
             Show that if <m>x_1,\dots,x_n</m> are odd,
@@ -440,7 +440,7 @@
       <statement>
         <p>
           Complete an outline of a proof of (ii) by responding to the following items.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 What statement do we want to prove for all natural numbers <m>n</m> and for all real numbers <m>a_i</m> and <m>b_i</m> (<m>i=1,\dots,n</m>) such that <m>a_i\le b_i</m>?

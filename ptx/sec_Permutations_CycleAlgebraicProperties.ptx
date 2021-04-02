@@ -24,7 +24,7 @@
           <caption>Diagram of <m>(1264)^2</m>, showing in particular how the permutation takes 1 to 6.</caption>
           <image width="37%" source="images/perm_square.png"/>
         </figure>
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               Notice for all elements <m>x \neq 1, 2, 6, 4</m>,
@@ -62,7 +62,7 @@
       <statement>
         <p>
           Compute each of the following.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1 2 6 4)^3</m>
@@ -86,7 +86,7 @@
       <statement>
         <p>
           Compute each of the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1 2 5 8 4 3)^2</m>
@@ -132,7 +132,7 @@
           Let <m>X = \{1,2,\ldots,10\}</m>,
           let <m>A = \{2,5,7,8\}</m>,
           and let <m>\sigma \in S_X</m> be the cycle <m>\sigma = ( 2 5 7 8 )</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 What is <m>\sigma(2)</m>?
@@ -212,7 +212,7 @@
     <proof>
       <p>
         To prove this, we essentially have to prove two things:
-        <ol type="A">
+        <ol label="A">
           <li>
             <p>
               If <m>\sigma</m> is a cycle of length <m>k</m>,
@@ -246,7 +246,7 @@
             it is sufficient to show that <m>\sigma^k(x) = \underline{~\lt 1>~} \forall x \in X</m>.
             Let <m>A</m> be the set <m>\{a_1, a_2, \ldots a_k\}</m>.
             Now for any <m>x \in X</m>, there are two possibilities:
-            <ol type="i">
+            <ol label="i">
               <li>
                 <p>
                   <m>x \in X \backslash A</m>;
@@ -262,7 +262,7 @@
           <p>
             We'll deal with these two cases separately
             (as we did in <xref ref="exercise_Permutations_power_of_n-cycle1">Exercise</xref>).
-            <ol type="i">
+            <ol label="i">
               <li>
                 <p>
                   In this case,
@@ -298,7 +298,7 @@
             In this exercise we use the same notation as part (A), that is:
             <m>\sigma \in S_X</m> has length <m>k</m> and is represented as:
             <m>\sigma = (a_1 \, a_2 \, \ldots \, a_k)</m>.
-            <ol type="a">
+            <ol label="a">
               <li>
                 <p>
                   What is <m>\sigma(a_1)</m>?
@@ -334,7 +334,7 @@
       <statement>
         <p>
           Compute the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1 2 6 4)^{11}</m>
@@ -451,7 +451,7 @@
     </example>
     <exercise xml:id="exercise_Permutations_disjoint_cube">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Let <m>\sigma = (237)</m> and <m>\tau = (458)</m>.
@@ -476,7 +476,7 @@
     </p>
     <exercise xml:id="exercise_Permutations_k_power_disjoint_cycles">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Let <m>\sigma</m> and <m>\tau</m> be <em>any</em>
@@ -500,7 +500,7 @@
         <p>
           Suppose then <m>\tau = (1 2 3)( 4 5)</m>.
           Compute each of the following
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\tau^2</m>
@@ -585,7 +585,7 @@
         Let <m>j \equiv |\sigma|, k \equiv |\tau|</m>,
         and <m>m \equiv \mbox{ lcm } (k,j)</m>.
         Then it's enough to prove:
-        <ol type="i">
+        <ol label="i">
           <li>
             <p>
               <m>(\sigma \tau)^m = {\var id}</m>;
@@ -694,7 +694,7 @@
         <p>
           What are all the possible orders for the permutations in each of the following sets
           (look back at your work for <xref ref="exercise_Permutations_cycle_types">Exercise</xref>).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>S_6</m>
@@ -718,7 +718,7 @@
       <statement>
         <p>
           Compute the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>| (1 2 5 4)^2 |</m>
@@ -747,7 +747,7 @@
       <statement>
         <p>
           Let <m>\sigma</m> be a permutation in <m>S_n</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that there exists an integer <m>k>1</m> such that <m>\sigma^k = \sigma</m>.
@@ -807,7 +807,7 @@
       <statement>
         <p>
           Compute the following products:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1 4)(1 3) (1 2)</m>
@@ -842,7 +842,7 @@
         <p>
           In light of what you discovered in the previous exercise,
           write each cycle as a product of transpositions:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1 4 9 2)</m>
@@ -920,7 +920,7 @@
       <statement>
         <p>
           Express the following permutations as products of transpositions.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>( 1 4 3 5 6 )</m>
@@ -963,7 +963,7 @@
       <statement>
         <p>
           Compute the following products:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1 2) (1 2)</m>
@@ -1070,7 +1070,7 @@
       <statement>
         <p>
           Calculate each of the following.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1 2 5 3 7)^{-1}</m>

@@ -41,7 +41,7 @@
           To show that this is indeed an isomorphism,
           by our definition we must show two things: (a) that the function preserves the operations of the respective groups;
           and (b) that the function is a bijection:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 We may compute
@@ -85,7 +85,7 @@
         <p>
           Define the function <m>\psi</m> by:
           <m>\psi(x) = e^x</m> for <m>x \in \mathbb{R}</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Given that the domain of <m>\psi</m> is all real numbers,
@@ -118,7 +118,7 @@
     </exercise>
     <exercise xml:id="exercise_Isomorphism_ln_isomorph_proof">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               What is the largest possible domain and range of the natural logarithm function <m>\ln(x)</m>? (Consider only real logarithms,and not complex-valued logarithms or logarithms of complex numbers.)
@@ -404,7 +404,7 @@
     </p>
     <exercise xml:id="exercise_Isomorphism_U8_U12_other">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using Cayley tables,
@@ -515,7 +515,7 @@
       <statement>
         <p>
           Prove the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>{\mathbb Z}/ 3 {\mathbb Z} \cong {\mathbb Z}_3</m>
@@ -534,7 +534,7 @@
       <statement>
         <p>
           Based on your work in <xref ref="exercise_Cosets_factor_cayley_prac">Exercise</xref> prove the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>{\mathbb Z}/ 6 {\mathbb Z} \cong {\mathbb Z}_6</m>
@@ -647,7 +647,7 @@
           Let <m>\sigma</m> be the permutation <m>(12)</m>,
           and let <m>\tau</m> be the permutation <m>(34)</m>.
           Let <m>G</m> be the set <m>\{ \var{id}, \sigma, \tau, \sigma\tau \}</m> together with the operation of composition.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Give the Cayley table for the group <m>G</m>.
@@ -966,7 +966,7 @@
     </exercise>
     <exercise xml:id="exercise_Isomorphism_noniso_cyclic">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that <m>{\mathbb Q}</m> is not isomorphic to <m>{\mathbb Z}</m>.
@@ -993,7 +993,7 @@
     </p>
     <exercise xml:id="exercise_Isomorphism_autoMorph">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Given any group <m>G</m>,
@@ -1035,7 +1035,7 @@
         <p>
           Let <m>\phi : G \rightarrow H</m> be an isomorphism of two groups.
           Then the following statements are true.
-          <ol type="1">
+          <ol label="1">
             <li>
               <p>
                 <m>|G| = |H|</m>.
@@ -1082,7 +1082,7 @@
       </p>
       <exercise xml:id="exercise_Isomorphism_PhiBij">
         <statement>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show part (2) of <xref ref="proposition_Isomorphism_isomorph_theorem_1">Proposition</xref>. (*Hint*)
@@ -1115,7 +1115,7 @@
       </exercise>
       <p>
         We will complete the proof of part (6) in two steps:
-        <ol type="StepI">
+        <ol label="StepI">
           <li>
             <p>
               <m>\phi(G')</m> is a subgroup of <m>H</m>;

@@ -58,7 +58,7 @@
   </p>
   <exercise xml:id="exercise_Cosets_CosetEquiv">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that condition (1) implies condition (2). (*Hint*)
@@ -119,7 +119,7 @@
     <p>
       The proof has two parts, namely (1) Cosets are disjoint;
       and (2) The union of cosets is all of <m>G</m>.
-      <ol type="1">
+      <ol label="1">
         <li>
           <p>
             Let <m>g_1 H</m> and <m>g_2 H</m> be two cosets of <m>H</m> in <m>G</m>.
@@ -210,7 +210,7 @@
     <statement>
       <p>
         Using your work from <xref ref="exercise_Cosets_left_right_cosets">Exercise</xref>, find:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>[ {\mathbb Z}_{24}: \langle 8 \rangle ]</m> and the number of right cosets of

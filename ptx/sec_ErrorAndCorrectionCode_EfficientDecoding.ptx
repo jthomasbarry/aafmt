@@ -335,7 +335,7 @@
     </proof>
     <p>
       This proposition gives us a three-step process for finding decoding:
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Compute the syndrome for the received codeword;

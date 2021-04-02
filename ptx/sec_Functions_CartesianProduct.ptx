@@ -105,7 +105,7 @@
     <statement>
       <p>
         Specify each set by listing its elements.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\{a, i\} \times \{n, t\}</m>
@@ -144,7 +144,7 @@
     <statement>
       <p>
         Let <m>A = \{a,b\}</m> and let <m>B = \{b,c\}</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write the elements of <m>A \times B</m>
@@ -235,7 +235,7 @@
   </proof>
   <exercise xml:id="exercise_Functions_9">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             If <m>B = \{\mbox{vanilla, chocolate,

@@ -35,7 +35,7 @@
         <me>
           C^\perp = \{ {\bold x} \in \mathbb{Z}_2^n :  {\bold x} \cdot {\bold y} = 0 \mbox{ for all }  {\bold y} \in C \}
         </me>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the dual code of the linear code <m>C</m> where <m>C</m> is given by the matrix
@@ -68,7 +68,7 @@
         The null space of such a matrix is called a
         <term>Hamming code</term><idx><h>Hamming code</h><h>definition</h></idx>.
             <idx><h>Code</h><h>Hamming</h></idx>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show  that the matrix

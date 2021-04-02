@@ -24,7 +24,7 @@
         it's enough to find a single pair of elements <m>a,
         b \in S_n</m> which do not commute
         (that is, <m>ab \neq ba</m>).
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that <m>S_n</m> is non-abelian for every <m>n \geq 3</m>.

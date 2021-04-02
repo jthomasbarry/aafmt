@@ -168,7 +168,7 @@
     </exercise>
     <exercise xml:id="exercise_ComplexNumbers_42">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Sketch the function <m>y = \sin(t)</m>.
@@ -259,7 +259,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_45">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using <m>\cis \theta = \cos \theta + i\sin \theta</m>,
@@ -326,7 +326,7 @@
           The first signal has an amplitude of 4 and a phase shift of 0.
           The second has an amplitude of 3 and a phase shift of <m>\pi/2</m>.
           The third signal has an amplitude of 2 and a phase shift of <m>-\pi/3</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 On graph paper,
@@ -365,7 +365,7 @@
           The first signal have a phase shift of 0.
           The second has a phase shift of <m>2\pi/3</m>.
           The third signal has a phase shift of <m>4\pi/3</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 What is the amplitude of the sum of the three signals?
@@ -421,7 +421,7 @@
         <p>
           Which of the following numbers is in the Mandelbrot set?
           <em>Demonstrate</em> your answers.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>c = 0</m>
@@ -453,7 +453,7 @@
           we mentioned that you have to check whether the iterations
           <q>grow indefinitely</q>. The question, is, How far do you have to check?
           We can actually give an answer:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Given any two complex numbers <m>z,w</m>, show that:
@@ -496,7 +496,7 @@
       <statement>
         <p>
           (<em>Programming exercise</em>)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Write an Excel spreadsheet that can multiply two complex numbers.

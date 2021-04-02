@@ -16,7 +16,7 @@
           Consider the group <m>{\mathbb Z}</m>.
           Let us try to find the smallest subgroup of
           <m>{\mathbb Z}</m> that contains the number 1.
-          <ol type="1">
+          <ol label="1">
             <li>
               <p>
                 We start with the smallest subset possible, <m>P = \{ 1 \}</m>.
@@ -228,7 +228,7 @@
     </p>
     <exercise xml:id="exercise_Groups_Z6_construct_5">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               In the group <m>{\mathbb Z}_6</m>,
@@ -254,7 +254,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>{\mathbb Z}_n</m> is cyclic for any integer <m>n > 1</m> by identifying a number <m>a</m> such that <m>\langle a \rangle = {\mathbb Z}_n</m>.
@@ -333,7 +333,7 @@
       <statement>
         <p>
           Let <m>H = \{ 2^n : n \in {\mathbb Z} \} = \langle 2 \rangle</m> under multiplication.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 List the elements in <m>H</m>
@@ -489,7 +489,7 @@
     </example>
     <exercise xml:id="exercise_Groups_Z6_orders">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               In the group <m>{\mathbb Z}_6</m>, What is <m>| 1 |</m>?
@@ -527,7 +527,7 @@
     </exercise>
     <exercise xml:id="exercise_Groups_Z12_orders">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the order of each element of <m>\mathbb{Z}_{12}</m>.
@@ -567,7 +567,7 @@
         <p>
           In the following exercises,
           <m>G</m> is a finite group, and <m>a \in G</m> where <m>|a|=n</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that for any integer <m>m \in \mathbb{Z}</m>,
@@ -714,7 +714,7 @@
     </example>
     <exercise xml:id="exercise_Groups_d_4subgroups">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find all cyclic subgroups of the symmetry group of the square (i.e.
@@ -795,7 +795,7 @@
     </proof>
     <exercise xml:id="exercise_Groups_not_cyclic">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>{\mathbb Q}</m> is not cyclic.

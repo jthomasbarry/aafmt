@@ -39,7 +39,7 @@
     <statement>
       <p>
         Compute the net displacement for the following multi-stage trips:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               346 miles in the forward direction,
@@ -82,7 +82,7 @@
   </figure>
   <exercise xml:id="exercise_ModularArithmetic_racetrack_positions">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Compute the positions on the racetrack corresponding to each of the net displacements that you computed in <xref ref="exercise_ModularArithmetic_racetrack_displacements">Exercise</xref>.
@@ -446,7 +446,7 @@
     <statement>
       <p>
         Suppose January 25 is a Thursday.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Use <xref ref="definition_ModularArithmetic_equivalence">Definition</xref>
@@ -485,7 +485,7 @@
         Explain your reasoning.
         If the equivalence is not true,
         change one of the numbers to make it true.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>71 \equiv 13 \pmod{4}</m>

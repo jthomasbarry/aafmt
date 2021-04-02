@@ -9,7 +9,7 @@
     </p>
     <exercise xml:id="exercise_Rings_poly12">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give the zero divisors of <m>{\mathbb Z}_4</m> and <m>{\mathbb Z}_{15}</m>.
@@ -45,7 +45,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Consider the polynomial <m>p(x)= 1x</m> as an element of <m>\mathbb{R}[x]</m>.
@@ -95,7 +95,7 @@
           Let <m>p(x)=\sum_{i=0}^{5} a_ix^i</m> and
           <m>q(x)=\sum_{j=0}^{3} b_jx^j</m> be polynomials in <m>\mathbb{Z}_p[x]</m>,
           where <m>a_5\neq 0</m> and <m>b_3\neq 0</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 What is the degree of <m>p(x)q(x)</m>?
@@ -124,7 +124,7 @@
           Let <m>p(x)=\sum_{i=0}^{n} a_ix^i</m> and
           <m>q(x)=\sum_{j=0}^{m} b_jx^j</m> be polynomials in <m>F[x]</m>,
           where <m>F</m> is a field and <m>a_n\neq 0</m>, <m>b_m\neq 0</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 What is the degree of <m>p(x)q(x)</m>?
@@ -224,7 +224,7 @@
     </proof>
     <exercise xml:id="exercise_Rings_roots">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find all fourth roots of 5625 in <m>\mathbb{R}[x]</m>.
@@ -509,7 +509,7 @@
     </example>
     <exercise xml:id="exercise_Rings_complexroots">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the roots of <m>f(x)=2x^2+x+1</m>.
@@ -532,7 +532,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Given that <m>p(x) \in \mathbb{Z}[x]</m>,
@@ -589,7 +589,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Are the rational numbers algebraically closed?
@@ -607,7 +607,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               In the field <m>\mathbb{Z}_5</m>,
@@ -686,7 +686,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give an example of a field <m>F</m> that has a nontrivial extension field
@@ -730,7 +730,7 @@
     </figure>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give an example of a complex number
@@ -756,7 +756,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Given that <m>a \in \mathbb{C}</m> is algebraic over <m>\mathbb{Q}</m>,
@@ -821,7 +821,7 @@
     </definition>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give an example of a extension field that is algebraic.
@@ -892,7 +892,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give an example that shows that

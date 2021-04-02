@@ -161,7 +161,7 @@
       <statement>
         <p>
           Prove or disprove:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 The ring <m>M_2(R)</m> is an integral domain.
@@ -258,7 +258,7 @@
     </proof>
     <exercise xml:id="exercise_Rings_prime_ideals">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose <m>J=\{\cdots,-14,-7,0,7,14,\cdots\}</m> in the example above.
@@ -322,7 +322,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               In the ring of integers, show that <m>2{\mathbb Z}</m> is a prime ideal.
@@ -449,7 +449,7 @@
     <p>
       <m>Q_8=\{1,-1,i,-i,j,-j,k,-k\}</m>,
       with the following relations:
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             <m>1</m> is the identity
@@ -529,7 +529,7 @@
       <statement>
         <p>
           Evaluate the following products of quaternions.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1+i+j+k)^2</m>
@@ -600,7 +600,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using <m>a</m> and <m>\bar{a}</m> as defined above,
@@ -630,7 +630,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give three examples of infinite division rings.

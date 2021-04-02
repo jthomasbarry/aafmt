@@ -14,7 +14,7 @@
           where <m>n</m> is a fixed integer <m>> 1</m>.
           In <xref ref="proposition_ModularArithmetic_number_remainder">Proposition</xref>
           we showed that for any <m>\ell,m \in {\mathbb Z}</m> we have:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bmod(\ell+ m,n) = \bmod(\ell,n) \oplus \bmod(m,n)</m>, and
@@ -122,7 +122,7 @@
         <p>
           We will divide this proof into two parts,
           one for each property of ring homomorphisms:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Let <m>p(x),q(x)</m> be arbitrary elements of <m>{\mathbb R}[x]</m>,
@@ -178,7 +178,7 @@
             f(a_nx^n+a_{n-1}x^{n-1}+\cdots +a_0)=a_nB^n+a_{n-1}B^{n-1}+\cdots +a_0
           </me>,
           where <m>B= \begin{bmatrix}0 \amp  0 \amp  1\\ 1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \end{bmatrix} </m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that <m>f</m> is onto.
@@ -237,7 +237,7 @@
         <p>
           In <xref ref="exercise_Rings_R_C_homo">Exercise</xref>,
           we defined a function <m>f:{\mathbb R}[x]\rightarrow C_3({\mathbb R})</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 For what values of <m>a</m> is <m>x^3+a</m> in <m>Ker(f)</m>?
@@ -261,7 +261,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Given the homomorphism <m>f</m> defined in <xref ref="example_Rings_ring_homo">Example</xref>,
@@ -288,7 +288,7 @@
         <p>
           Given the function <m>f</m> defined in <xref ref="example_Rings_ring_homo">Example</xref>,
           and let <m>S=f^{-1}(0)</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that if <m>a,b \in S</m>, then <m>a+b \in S</m>.
@@ -409,7 +409,7 @@
         <p>
           {defideal} Given a ring <m>R</m>,
           suppose <m>J \subset R</m> satisfies the following properties:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>J</m> is closed under the ring's additive operation:
@@ -470,7 +470,7 @@
       <statement>
       <p>
         Let <m>f:{\mathbb Z}\rightarrow {\mathbb Z}_7</m> be defined by : <m>f(x)=\bmod(x,7)</m>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove or disprove <m>f</m> is a ring homomorphism.
@@ -487,7 +487,7 @@
             </p>
           </li>
         </ol>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               To determine whether <m>f</m> is a ring homomorphism,
@@ -542,7 +542,7 @@
       <statement>
         <p>
           Let <m>f:{\mathbb C}\rightarrow {\mathbb R}</m> be defined by <m>f(a+bi)=a</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove or disprove: <m>f</m> is a ring homomorphism:
@@ -567,7 +567,7 @@
         <p>
           Let <m>f:{\mathbb C}\rightarrow {\mathbb R}</m> be defined by:
           <m>f(a+bi)=b</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove or disprove that <m>f</m> s a ring homomorphism.
@@ -592,7 +592,7 @@
         <p>
           Let <m>f:{\mathbb Z}_2\times {\mathbb Z}_2\rightarrow {\mathbb Z}_2</m> be defined by:
           <m>f(a,b)=a</m>. (Remember that <m>{\mathbb Z}_2\times{\mathbb Z}_2=\{(0,0),(0,1),(1,0),(1,1)\}</m>).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove or disprove: <m>f</m> is a ring homomorphism.
@@ -617,7 +617,7 @@
         <p>
           Let <m>f:{\mathbb Q}\times {\mathbb Q}\rightarrow {\mathbb Q}</m> be defined by:
           <m>f(a,b)=b</m>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove or disprove: <m>f</m> is a ring homomorphism.

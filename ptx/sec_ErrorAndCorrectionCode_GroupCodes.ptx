@@ -44,7 +44,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that if <m>{\bold x}</m> and
@@ -108,7 +108,7 @@
         Let <m>{\bold x}</m>, <m>{\bold y}</m>,
         and <m>{\bold z}</m> be binary <m>n</m>-tuples.
         Then
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>w({\bold x}) = d({\bold x},{\bold 0})</m>
@@ -135,7 +135,7 @@
   </p>
   <exercise xml:id="exercise_ErrorAndCorrectionCode_hamming">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Prove part (b) of <xref ref="proposition_ErrorAndCorrectionCode_norm">Proposition</xref>
@@ -183,7 +183,7 @@
   </p>
   <exercise xml:id="exercise_ErrorAndCorrectionCode_ctns0">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that a set of codewords in

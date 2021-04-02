@@ -65,7 +65,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_19">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write the numbers <m>3 + 7i</m> and <m>-5 + 9i</m> as vectors.
@@ -246,7 +246,7 @@
           (that is, write as <m>a + bi</m>).
           Give <em>exact</em> answers and not decimals
           (use square roots if necessary).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>2 \cis(\pi / 6 )</m>
@@ -291,7 +291,7 @@
         <p>
           Convert the following complex numbers to polar representation (Give exact answers,
           no decimal approximations).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>1-i</m>
@@ -357,7 +357,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_cos_form2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <xref ref="fig_polarcoord">Figure</xref>
@@ -383,7 +383,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_23">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Consider the following set of complex numbers:
@@ -493,7 +493,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_polar_z_inv">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Let <m>z = 13 \cis\left(\frac{5\pi}{7}\right)</m>.
@@ -619,7 +619,7 @@
           Calculate each of the following products using complex polar arithmetic.
           Give the answer in rectangular form if you can do so without using roots or decimals.
           Otherwise, leave the answer in polar form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>2\cis\left(\frac{\pi}{4}\right) \cdot \frac{1}{2} \cis\left( \frac{3\pi}{4}\right)</m>
@@ -654,7 +654,7 @@
         <p>
           Calculate each of the following quotients using complex polar arithmetic.
           Give the answers in polar form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\dfrac{5\cis\left( \frac{5\pi}{6}\right)}{2\cis \left( \frac{\pi}{2}\right)}</m>
@@ -905,7 +905,7 @@
           Calculate each of the following expressions.
           Write the answer as <m>a + bi</m> if you can do so without using roots or decimals.
           Otherwise, you may leave the answer in polar form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1+i)^{-3}</m>
@@ -1029,7 +1029,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_cos_form">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using de Moivre's formula for <m>z^3</m> where <m>z = \cis \theta</m>,

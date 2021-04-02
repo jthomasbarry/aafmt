@@ -171,7 +171,7 @@
           Each of the following sets of ordered pairs is a function from
           <m>\{1,2,3,4\}</m> to <m>\{\var{a},\var{b},\var{c},\var{d},\var{e}\}</m>.
           Either prove that the function is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="x11Exers-pairs-f">
               <p>
                 <m>f = \{ (1,\var{a}), (2,\var{b}), (3,\var{d}), (4,\var{e})\}</m>
@@ -232,7 +232,7 @@
           Determine which of the following functions are one-to-one.
           If so, give a proof.
           If not, give a counterexample.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>f\colon \mathbb{R} \to \mathbb{R}</m>,
@@ -423,7 +423,7 @@
       <statement>
         <p>
           Graph each function and use the horizontal line test to determine whether or not the following functions are one-to-one.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>f:[0,\pi] \rightarrow \mathbb{R}</m>, <m>f(x) = \cos(x)</m>.
@@ -461,7 +461,7 @@
     </exercise>
     <exercise xml:id="exercise_Functions_horizontal2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Sketch the function <m>f:\mathbb{R} \rightarrow \mathbb{R}</m>,
@@ -626,7 +626,7 @@
     </example>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that any strictly increasing function from
@@ -668,7 +668,7 @@
         <p>
           For each of the following functions,
           either prove the function is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="x11Exers-formula-f">
               <p>
                 <m>f:[0,1] \rightarrow [0,1], f(x) = 1</m>.
@@ -723,7 +723,7 @@
         <p>
           For each function,
           either prove that it is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="IsIt11-linear">
               <p>
                 <m>f \colon \rational \to \rational</m> defined by <m>f(r)=3r/5 - 2</m>.
@@ -769,7 +769,7 @@
         <p>
           For each function,
           either prove that it is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="modular_g">
               <p>
                 <m>g \colon {\mathbb Z}_6 \to {\mathbb Z}_6</m> defined by <m>g(n)= n \oplus 2</m> .
@@ -827,7 +827,7 @@
         <p>
           For each function,
           either prove that it is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>g \colon {\mathbb C}\setminus \{0\} \to {\mathbb C}\setminus \{0\}</m> defined by <m>g(z) = z^{-1}</m> .

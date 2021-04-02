@@ -26,7 +26,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_48">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give two distinct square roots of unity
@@ -158,7 +158,7 @@
     </remark>
     <exercise xml:id="exercise_ComplexNumbers_49">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using <xref ref="proposition_ComplexNumbers_nth_roots_of_1">Proposition</xref>,
@@ -183,7 +183,7 @@
           by showing that any complex apart from 1, -1, <m>i</m>,
           or <m>-i</m> cannot possibly be a 4th root of unity.
           First we suppose that <m>w</m> is a complex number such that <m>w \notin \{1,-1,i,-i \}</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that <m>(w-1)(w+1)(w-i)(w+i) \neq 0</m>. (*Hint*)
@@ -200,7 +200,7 @@
     </exercise>
     <exercise xml:id="exercise_ComplexNumbers_51">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Multiply out the product <m>(z - 1)(z - \cis\left(\frac{2\pi}{3}\right))(z - \cis\left(\frac{4\pi}{3}\right))</m> and simplify. (*Hint*)
@@ -302,7 +302,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_hexagon_rotate">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Draw a picture of the 6th roots of unity in the complex plane.
@@ -365,7 +365,7 @@
     </exercise>
     <exercise xml:id="exercise_ComplexNumbers_55">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Just as in part (b) of <xref ref="exercise_ComplexNumbers_hexagon_rotate">Exercise</xref>
@@ -414,7 +414,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_non_comm">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               What geometrical motion corresponds to the following algebraic operation: Multiply all 6th roots by <m>D</m>,
@@ -464,7 +464,7 @@
         <p>
           If you've studied matrix multiplication,
           then you may have seen non-commutative operations before:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Give an example of two <m>2\times2</m> matrices that do <em>not</em> commute:
@@ -494,7 +494,7 @@
           let <m>A</m> be the point <m>(a,b)</m>,
           and let <m>C</m> be the point <m>(c,d)</m>.
           Also, let <m>z = a+bi</m> and <m>w = c+di</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that
@@ -548,7 +548,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_58">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find all square roots of 1.
@@ -585,7 +585,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_58a">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               The complex number <m>1 + i</m> is one square root of <m>2i</m>.
@@ -702,7 +702,7 @@
       <statement>
         <p>
           (In this exercise, you may leave your answers in polar form)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Find all fifth roots of <m>-i</m>.
@@ -739,7 +739,7 @@
           we have considered <m>n</m>th roots where <m>n</m> is a
           <em>positive</em> integer.
           But what about <em>negative</em> roots?
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 For parts (a-d) in <xref ref="exercise_ComplexNumbers_60">Exercise</xref>,
@@ -799,7 +799,7 @@
         <p>
           Consider the cubic equation <m>z^3 + pz^2 + qz = r</m>,
           where <m>p, q</m> and <m>r</m> are all real numbers.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Using an appropriate identity from <xref ref="exercise_ComplexNumbers_cxprops">Exercise</xref>,
@@ -861,7 +861,7 @@
         <p>
           Given that <m>3 - 7i</m> and <m>-2+i</m> are solutions to an equation of the form
           <m>z^4 + a_{3}z^{3} + a_{2} z^{2}+ a_1 z + a_0 = 0</m> where <m>a_0, a_1, a_2, a_3</m> are real.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Find two other solutions to the same equation.
@@ -883,7 +883,7 @@
           where <m>a_0, a_1, a_2</m> are real numbers.
           Suppose <m>p(1) = 16</m>,
           and suppose that <m>1 + 2i</m> is a root of <m>p(z)</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Find two other solutions to the same equation.
@@ -914,7 +914,7 @@
           Suppose that <m>p(z)</m> is a fourth degree polynomial with real coefficients.
           Suppose that <m>p(z) = p(-z)</m>.
           Suppose also that <m>3+4i</m> is a root of <m>p(z)</m> and that <m>p(0) = 1</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Find three other roots of <m>p(z)</m>.
@@ -955,7 +955,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_70">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give an example of an equation of the form

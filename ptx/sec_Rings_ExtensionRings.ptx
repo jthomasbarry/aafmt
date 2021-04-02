@@ -274,7 +274,7 @@
     <statement>
       <p>
         Find the inverse of <m>1+x</m> in <m>\widehat{{\mathbb Z}}_{2}[x]</m> by the:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               long division method
@@ -293,7 +293,7 @@
     <statement>
       <p>
         Find the inverse of <m>3+2x</m> in <m>\widehat{{\mathbb Z}}_{5}[x]</m> by the:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               long division method
@@ -315,7 +315,7 @@
         <m>(1+2x+3x^2)</m> in <m>\widehat{{\mathbb Z}}_5[x]</m>,
         in <m>\widehat{{\mathbb Z}}_7[x]</m>,
         and in <m>\widehat{{\mathbb Q}}[x]</m> by the:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               long division method

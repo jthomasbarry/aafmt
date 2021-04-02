@@ -413,7 +413,7 @@
     <statement>
       <p>
         Which of the following are codewords for the code in <xref ref="example_ErrorAndCorrectionCode_SevenTuple">Example</xref>?
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>(1,1,1,1,1,0)</m>

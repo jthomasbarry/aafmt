@@ -60,7 +60,7 @@
   </p>
   <p>
     Examples of subrings:
-    <ol type="a">
+    <ol label="a">
       <li>
         <p>
           <m>{\mathbb Z}</m> is a subring in <m>{\mathbb Q}</m>.
@@ -135,7 +135,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that the set of all matrices of the form:
@@ -201,7 +201,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Prove or disprove: <m>2{\mathbb Z}</m> is a subring

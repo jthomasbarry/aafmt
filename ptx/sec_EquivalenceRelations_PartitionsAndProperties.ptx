@@ -23,7 +23,7 @@
         <m>\mathcal{P}</m> of a set<nbsp/><m>A</m> is a collection of nonempty subsets of<nbsp/><m>A</m>,
         such that each element of<nbsp/><m>A</m> is in exactly one of the subsets in <m>\mathcal{P}</m>.
         In other words:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               the union of the subsets in
@@ -54,7 +54,7 @@
   </remark>
   <example xml:id="example_EquivalenceRelations_partition1">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Consider the set of real numbers <m>\mathbb{R}</m>.
@@ -121,7 +121,7 @@
   </p>
   <example xml:id="example_EquivalenceRelations_partition2">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             When making an inventory of the animals in a zoo,
@@ -194,13 +194,13 @@
         In the following parts we will considering partitions of
         <m>\mathbb{R}</m> and the associated binary relations defined by <xref ref="definition_EquivalenceRelations_partitionrelation">Definition</xref>.
       </p>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let <m>\mathcal{P}=\{R_1, R_2\}</m> where
             <m>R_1=\{x \mid x \in \mathbb{R}, x \geq 0\}</m> and <m>R_2=\{x \mid x \in \mathbb{R}, x \lt 0\}</m>.
           </p>
-          <ol type="i">
+          <ol label="i">
             <li>
               <p>
                 Draw the real number line from <m>-5</m> to 5, and indicate the sets <m>R_1, R_2 \in \mathcal{P}</m>
@@ -230,7 +230,7 @@
             <m>\lfloor \pi \rfloor = 3</m>,
             and <m>\lfloor -2.3 \rfloor = -3</m>.
             </fn>
-            <ol type="i">
+            <ol label="i">
               <li>
                 <p>
                   Draw the real number line from <m>-5</m> to 5, and indicate the visible sets in <m>\mathcal{P}</m>.
@@ -249,7 +249,7 @@
           <p>
             Let <m>\mathcal{P}=\{\mathbb{E},\mathbb{O}\}</m> where
             <m>\mathbb{E}=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor \text{ is even } \}</m> and <m>\mathbb{O}=\{x \mid x \in \mathbb{R}, \lfloor x \rfloor \text{ is odd } \}</m>.
-            <ol type="i">
+            <ol label="i">
               <li>
                 <p>
                   Draw the real number line from <m>-5</m> to 5, and indicate the sets
@@ -339,7 +339,7 @@
       <p>
         In this example we will define a binary relation from the given partition,
         and show that the relation has the above three properties.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Given the partition in <xref ref="example_EquivalenceRelations_partition1">Example</xref>(a),
@@ -408,7 +408,7 @@
       <p>
         Define a binary relation from the given partition,
         and show that the relation has the above three properties.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               The partition in <xref ref="example_EquivalenceRelations_partition1">Example</xref>(b)
@@ -451,7 +451,7 @@
         <m>C \in \mathcal{P}</m> such that <m>a</m> and <m>b</m> are both elements of <m>C</m>,
         then the binary relation, <m>\rel</m>,
         satisfies the following 3 properties:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <term>reflexivity</term>:
@@ -576,7 +576,7 @@
     <statement>
       <p>
         Consider the following binary relations on <m>{\mathbb R}</m>:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>=</m> is reflexive, symmetric, and transitive.
@@ -687,7 +687,7 @@
     <statement>
       <p>
         For each of the following, explain your answers.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Is the binary relation <m>\leq</m> defined on the set <m>\mathbb{R}</m> reflexive?
@@ -851,7 +851,7 @@
   </example>
   <exercise xml:id="exercise_EquivalenceRelations_trickyTransitive">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Give a counterexample that proves that the binary relation C in <xref ref="fig_transnotrefsym">Figure</xref>
@@ -887,7 +887,7 @@
         and draw the corresponding digraph.
         (Note: each part can have more than one answer,
         but you only need to find one.)
-        <ol type="a">
+        <ol label="a">
           <li xml:id="BinRelSomePropsEx-symmonly">
             <p>
               symmetric, but neither reflexive nor transitive.
@@ -917,7 +917,7 @@
   </p>
   <exercise xml:id="exercise_EquivalenceRelations_21">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             How can you tell from looking at a digraph whether or not the corresponding relation is reflexive?

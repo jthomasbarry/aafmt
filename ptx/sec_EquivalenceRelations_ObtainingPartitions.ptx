@@ -107,7 +107,7 @@
     </example>
     <exercise xml:id="exercise_EquivalenceRelations_EquivClassEasyEx">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li xml:id="EquivClassEasyEx-set">
             <p>
               Let <m>B = \{1,2,3,4,5\}</m> and
@@ -145,7 +145,7 @@
         <p>
           Suppose <m>\sim</m> is an equivalence relation on a set<nbsp/><m>S</m>.
           Then:
-          <ol type="a">
+          <ol label="a">
             <li xml:id="EquivRelProps-aIn">
               <p>
                 For all <m>a \in S</m>, we have <m>a \in [a]</m>.
@@ -189,7 +189,7 @@
           Prove the assertions in <xref ref="proposition_EquivalenceRelations_EquivRelProps">Proposition</xref>.
           You may use the following hints:
         </p>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Use the reflexive property of <m>\sim</m>,
@@ -205,7 +205,7 @@
             <p>
               This can be done by showing:
             </p>
-            <ol type="i">
+            <ol label="i">
               <li>
                 <p>
                   <m>\bigcup_{a \in S} [a] \subset S</m>
@@ -282,7 +282,7 @@
         <p>
           It's enough to show that any two equivalence classes <m>[a_1]</m> and<nbsp/><m>[a_2]</m> that are not disjoint must in fact be equal.
               <idx><h>Disjoint</h><h>applied to equivalence relations</h></idx>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Since the equivalence classes are not disjoint,
@@ -384,7 +384,7 @@
           <me>
             r_1 \cis(\theta_1) \sim_r r_2(\cis \theta_2)  \iff r_1 = r_2
           </me>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove that <m>\sim_r</m> thus defined is an equivalence relation.
@@ -436,7 +436,7 @@
           <me>
             r_1 \cis(\theta_1) \, \sim_{\theta} \, r_2(\cis \theta_2)  \iff \theta_1 = \theta_2
           </me>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove that <m>\sim_{\theta}</m> thus defined is an equivalence relation.
@@ -486,7 +486,7 @@
           that any partition produces an equivalence relation.
           We also know from <xref ref="proposition_EquivalenceRelations_EquivRel-_Part">Proposition</xref>
           that any equivalence relation produces a partition.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Suppose we begin with a partition <m>\mathcal{P}</m> on the set <m>A</m>,

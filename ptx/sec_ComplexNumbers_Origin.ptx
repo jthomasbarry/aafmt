@@ -240,7 +240,7 @@
     </definition>
     <exercise xml:id="exercise_ComplexNumbers_graph">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Sketch the function <m>f(x) = x^2 + 9</m>.
@@ -377,7 +377,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write down the complex number with real part 0 and imaginary part 7.
@@ -421,7 +421,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_m2even">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Fill in the blanks: The product of two odd integers is
@@ -588,7 +588,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_6">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that the cube root of 2 is irrational. (*Hint*)
@@ -717,7 +717,7 @@
     </exercise>
     <exercise xml:id="exercise_ComplexNumbers_6aa">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose that <m>a,b,c</m> are integers and <m>(a/b)^2 = c</m>.
@@ -765,7 +765,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_root3">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose that:

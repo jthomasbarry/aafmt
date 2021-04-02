@@ -61,7 +61,7 @@
     <statement>
       <p>
         Express the following polynomials in summation notation:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>p_1(x)=1 + x+x^2+x^3</m>
@@ -106,7 +106,7 @@
       </p>
       <p>
         {Answers:}
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>p_1(x) = \sum_{j=0}^{3} x^j</m>
@@ -160,7 +160,7 @@
     <statement>
       <p>
         Write down the polynomial that each summation represents.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>p(x) = \sum_{j=0}^{6}( j^2+2)x^{3j}</m>
@@ -185,7 +185,7 @@
       <p>
         Re-express the following polynomials in summation notation,
         and give the degree of each polynomial.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>2 + 0x + 6x^2 + 0x^3 + 10x^4 + 0x^5 + 14x^6 +0x^7 + 18x^8</m>
@@ -425,7 +425,7 @@
         first, by following the procedure described in <xref ref="sec_Polynomials_PolynomialArithmetic">Section</xref>;
         and second, by using the coefficient formula in <xref ref="definition_Polynomials_defprodpoly">Definition</xref> directly.
         Verify that the two methods agree.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>(-5+x)(3x+ x^2)</m>
@@ -456,7 +456,7 @@
   </p>
   <exercise xml:id="exercise_Polynomials_multform">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Give the coefficient of <m>x^{100}</m> in the polynomial <m>p(x)^2</m>,

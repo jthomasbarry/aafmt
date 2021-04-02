@@ -167,7 +167,7 @@
         First we'll look at a switchyard with 4 positions.
         As above, <m>r</m> = counterclockwise rotation by 1 position = <m>(1 \, 2 \, 3 \, 4)</m>;
         while <m>t</m> exchanges two cars: <m>t = (1 \, 2)</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write <m>(2 \, 3)</m>, <m>(3 \, 4)</m>,
@@ -220,7 +220,7 @@
         In this case,
         rotation by 1 position is given by <m>r= (1 \; 2 \; \ldots \; n)</m>.
         We use the same switch transposition, <m>t = (1 \; 2)</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write the transposition <m>(k \enspace k\oplus 1)</m> as a product of powers of <m>r</m> and <m>t</m>.

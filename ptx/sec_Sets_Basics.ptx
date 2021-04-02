@@ -94,7 +94,7 @@
     </p>
     <exercise xml:id="exercise_Sets_set1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               What elements are in the following set:
@@ -171,7 +171,7 @@
     </p>
     <exercise xml:id="exercise_Sets_SetSet">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Describe the <m>21^{st}</m> century as a set of sets of sets of sets of sets of sets of sets. (*Hint*)
@@ -393,7 +393,7 @@
       <statement>
         <p>
           Let <m>S</m> be a set with a single element.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 How many subsets does it have?
@@ -420,7 +420,7 @@
     </exercise>
     <exercise xml:id="exercise_Sets_7">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Can you give an example of a set with exactly three subsets?
@@ -520,7 +520,7 @@
     </remark>
     <exercise xml:id="exercise_Sets_12">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find three sets <m>A_1, A_2, A_3</m> such that
@@ -575,7 +575,7 @@
               </p>
             </li>
           </ul>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bigcup_{i = 1}^{n} \{i\}</m>
@@ -595,7 +595,7 @@
         </p>
         <p>
           Solutions:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bigcup_{i = 1}^{n} \{i\} = \{1\} \bigcup \{2\} \bigcup \{ 3 \} \bigcup \ldots \bigcup \{n\}</m>
@@ -640,7 +640,7 @@
               </p>
             </li>
           </ul>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bigcap_{i = 1}^{n} \{i\}</m>
@@ -672,7 +672,7 @@
     </exercise>
     <exercise xml:id="exercise_Sets_15">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find an infinite collection of sets <m>\{A_i\}, i = 1,2,3,\ldots</m> such that (i)
@@ -722,7 +722,7 @@
     </p>
     <exercise xml:id="exercise_Sets_16">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find disjoint nonempty sets
@@ -797,7 +797,7 @@
         </p>
         <p>
           Then specify the following sets:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>A \cap B</m>
@@ -822,7 +822,7 @@
         </p>
         <p>
           Solutions:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <md>
@@ -877,7 +877,7 @@
           Specify each of the following sets.
           You may specify a set either by describing a property,
           by enumerating the elements, or as one of the four sets <m>A, B, C, D</m>:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(A \cap B) \setminus C</m>
@@ -910,7 +910,7 @@
         <p>
           Describe each of the following sets.
           Make your description as concise as possible.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>A \cap B</m>
