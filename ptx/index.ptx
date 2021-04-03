@@ -108,7 +108,7 @@
     <xi:include href="./Rings.ptx"/>
     <xi:include href="./PolynomialCodes.ptx"/>
     <xi:include href="./Induction.ptx"/>
-    <xi:include href="./chapter1x.ptx"/>
+    <xi:include href="./GNUDoc.ptx"/>
     <backmatter>
       <xi:include href="./bibliography.ptx"/>
       <index>
