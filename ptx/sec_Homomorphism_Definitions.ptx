@@ -10,10 +10,11 @@
   <p>
     Let's now formally state the definition:
   </p>
-  <definition>
+  <definition xml:id = "definition_Homomorphism_homomorphismDef">
+  <!-- {homomorphism_def}  -->
     <statement>
       <p>
-        {homomorphism_def} A <term>homomorphism</term><idx><h>Group</h><h>homomorphism of</h></idx>
+        A <term>homomorphism</term><idx><h>Group</h><h>homomorphism of</h></idx>
             <idx><h>Homomorphism</h></idx>
         between groups <m>(G, \cdot)</m> and
         <m>(H, \circ)</m> is a function <m>f : G \rightarrow H</m> such that

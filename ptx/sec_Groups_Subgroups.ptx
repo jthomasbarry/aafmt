@@ -1,4 +1,4 @@
-<section xml:id="subsec_Groups_GroupProperties_Subgroups">
+<section xml:id="sec_Groups_Subgroups">
   <title>Subgroups<nbsp/><nbsp/></title>
   <figure>
     <video youtubeplaylist="PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo"/>
@@ -13,10 +13,11 @@
     So a subgroup is a subset of a larger group that is itself a group under the same operation as the larger group.
     Formally then:
   </p>
-  <definition>
+  <definition xml:id = "definition_Symmetry_subgroup_defn">
+  <!-- {subgroup_defn}  -->
     <statement>
       <p>
-        {subgroup_defn} A <term>subgroup</term><idx><h>Subgroup</h><h>definition of</h></idx> <m>H</m> of a group
+        A <term>subgroup</term><idx><h>Subgroup</h><h>definition of</h></idx> <m>H</m> of a group
         <m>(G,\circ)</m> is a subset <m>H</m> of <m>G</m> such that when the group operation of <m>G</m> is restricted to <m>H</m>,
         <m>H</m> is a group in its own right.
       </p>

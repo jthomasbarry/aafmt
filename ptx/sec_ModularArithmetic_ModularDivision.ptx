@@ -518,10 +518,11 @@ return gcdRecurse(b, remainder);
       Let's look now at another type of problem,
       which has played a key role in the history of mathematics.
     </p>
-    <definition>
+    <definition xml:id =  "definition_ModularArithmetic_dioequiv">
+    <!-- {dioequiv}  -->
       <statement>
         <p>
-          {dioequiv} A <term>Diophantine equation</term>
+          A <term>Diophantine equation</term>
               <idx><h>Diophantine equation</h></idx>
               <idx><h>Equation,Diophantine</h></idx>
           in the variables <m>m, n</m> is an equation of the form

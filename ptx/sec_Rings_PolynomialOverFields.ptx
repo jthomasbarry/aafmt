@@ -557,10 +557,11 @@
       This property leads to a host of important consequences.
       Since this property is so important, it's been given a name:
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defalgclosed">
+    <!-- {defalgclosed}  -->
       <statement>
         <p>
-          {defalgclosed} A field <m>F</m> is
+          A field <m>F</m> is
           <em>algebraically closed</em><idx><h>Field</h><h>algebraically closed</h></idx>
               <idx><h>Algebraically closed</h><h>field</h></idx>
           if and only if every nonconstant polynomial in <m>F[x]</m> has a root in <m>F</m>
@@ -668,10 +669,11 @@
     <p>
       First we need some terminology to describe the case where one field is contained in another:
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defsubfield">
+    <!-- {defsubfield}  -->
       <statement>
         <p>
-          {defsubfield} Given a field <m>E</m> and <m>F\subset E</m>,
+          Given a field <m>E</m> and <m>F\subset E</m>,
           then <m>F</m> is called a <term>subfield</term>
           of <m>E</m> if <m>F</m> is also a field with the same field operations as <m>E</m>.
           Conversely, <m>E</m> is called an
@@ -707,10 +709,11 @@
     <p>
       We also need terminology to describe roots of polynomials in <m>F[x]</m> that aren't in <m>F</m>:
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defalgover">
+    <!-- {defalgover}  -->
       <statement>
         <p>
-          {defalgover} Let <m>F</m> be a subfield of <m>E</m>, and let <m>a\in E</m>.
+          Let <m>F</m> be a subfield of <m>E</m>, and let <m>a\in E</m>.
           If <m>p(a)=0</m> for some <m>p(x) \in F[x]</m>,
           then <m>a</m> is <em>algebraic</em><idx><h>Algebraic</h><h>element,
           of a field</h></idx>
@@ -811,10 +814,11 @@
       For field extensions which have no transcendental elements,
       the following definition applies:
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defalgfieldextension">
+    <!-- {defalgfieldextension}  -->
       <statement>
         <p>
-          {defalgfieldextension} Suppose <m>E</m> is an extension field of <m>F</m>.
+          Suppose <m>E</m> is an extension field of <m>F</m>.
           Then <m>E</m> is called an <term>algebraic extension</term><idx><h>Field</h><h>algebraic extension</h></idx> of <m>F</m> if every <m>a\in E</m> is algebraic over <m>F</m>.
         </p>
       </statement>
@@ -843,10 +847,11 @@
       There's a special term for field extensions which contain roots for
       <em>all</em> their polynomials:
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defalgclosure">
+    <!-- {defalgclosure}  -->
       <statement>
         <p>
-          {defalgclosure} Let <m>E</m> be an algebraic extension field of <m>F</m>.
+          Let <m>E</m> be an algebraic extension field of <m>F</m>.
           Suppose that for every <m>p(x) \in E[x]</m>,
           there exists <m>a \in E</m> such that <m>p(a)=0</m>.
           Then <m>E</m> is an <em>algebraic closure</em><idx><h>Field</h><h>algebraic closure of</h></idx>

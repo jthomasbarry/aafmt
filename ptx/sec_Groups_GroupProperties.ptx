@@ -512,10 +512,11 @@
   <p>
     We can use exponential notation for groups just as we do in ordinary algebra:
   </p>
-  <definition>
+  <definition xml:id = "definition_Groups_DefGroupExponents">
+  <!-- {DefGroupExponents}  -->
     <statement>
       <p>
-        {DefGroupExponents} If <m>G</m> is a group and <m>g \in G</m>,
+        If <m>G</m> is a group and <m>g \in G</m>,
         then we define <m>g^0 = e</m>.
         For <m>n \in {\mathbb N}</m>, we define
         <me>

@@ -223,7 +223,7 @@
       that these elements actually form a group.
       There is a special notation for the number of elements in <m>U(n)</m>:
     </p>
-    <definition>
+    <definition xml:id = "definition_Cosets_EulerPhiFunction">
       <statement>
         <p>
           For <m>n>1</m>,

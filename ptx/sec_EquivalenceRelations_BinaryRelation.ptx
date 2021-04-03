@@ -56,10 +56,11 @@
     Unlike the case of functions,
     there are no restrictions<ndash/>every subset is a relation.
   </p>
-  <definition>
+  <definition xml:id = "definition_EquivalenceRelations_relation">
+    <!-- {relation} -->
     <statement>
       <p>
-        {relation} <idx><h>Relation</h><h>definition of</h></idx> Suppose <m>A</m> and <m>B</m> are sets.
+        <idx><h>Relation</h><h>definition of</h></idx> Suppose <m>A</m> and <m>B</m> are sets.
         <ol label="a">
           <li>
             <p>
@@ -299,11 +300,11 @@
       </p>
     </statement>
   </exercise>
-  <definition>
+  <definition xml:id = "definition_EquivalenceRelations_Diagraph">
+  <!--         {digraph} -->
     <statement>
       <p>
-        {digraph}
-            <idx><h>Digraph</h></idx>
+        <idx><h>Digraph</h></idx>
         We can draw a picture to represent any given binary relation on any given set<nbsp/><m>A</m>:
         <ul>
           <li>

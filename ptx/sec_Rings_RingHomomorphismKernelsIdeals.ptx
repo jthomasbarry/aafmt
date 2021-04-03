@@ -36,10 +36,11 @@
     <p>
       We may generalize this example with the following definition.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_homomorph">
+    <!-- {homomorph}  -->
       <statement>
         <p>
-          {homomorph} A function <m>f:R_1\rightarrow R_2</m> between rings <m>R_1,R_2</m> is called a
+          A function <m>f:R_1\rightarrow R_2</m> between rings <m>R_1,R_2</m> is called a
           <term>ring homomorphism</term>
           if <m>f</m> has the following properties:
           <men xml:id="eq_homo_add">
@@ -200,10 +201,11 @@
       the kernel of a group homomorphism is the inverse image of the identity element of the codomain.
       We may make a similar definition for ring homomorphisms.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_kernel">
+    <!-- {kernel}  -->
       <statement>
         <p>
-          {kernel} If <m>f:R_1\rightarrow R_2</m> is a ring homomorphism,
+          If <m>f:R_1\rightarrow R_2</m> is a ring homomorphism,
           then the set <m>\{x\in R_1|f(x)=0\}</m> is called the <term>kernel</term>
           of <m>f</m>, notated <m>Ker(f)</m>.
         </p>
@@ -404,10 +406,11 @@
       Any set <m>J</m> which has properties (1-4) is called an <em>ideal</em>.
       We formalize the definition of ideal as follows.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defideal">
+    <!-- {defideal}  -->
       <statement>
         <p>
-          {defideal} Given a ring <m>R</m>,
+          Given a ring <m>R</m>,
           suppose <m>J \subset R</m> satisfies the following properties:
           <ol label="a">
             <li>

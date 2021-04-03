@@ -230,10 +230,11 @@
       Based on this observation, we may generalize the notion of
       <q>root</q>:
     </p>
-    <definition>
+    <definition xml:id = "definition_ComplexNumbers_Root">
+    <!-- {root} -->
       <statement>
         <p>
-          {root} Given a function <m>f(x)</m> which is defined on the real numbers and takes real values,
+           Given a function <m>f(x)</m> which is defined on the real numbers and takes real values,
           then a <em>root</em><idx><h>Root</h><h>of a real function</h></idx> of <m>f(x)</m> is any solution of the equation <m>f(x)=0</m>.
         </p>
       </statement>
@@ -320,7 +321,7 @@
       The web site http://math.fullerton.edu/mathews/n2003/ComplexNumberOrigin.html gives more information about the origin of complex numbers.
       </fn>
     </p>
-    <definition>
+    <definition xml:id = 'definition_ComplexNumbers_ComplexNumbers'>
       <statement>
         <p>
           The <term>complex numbers</term><idx><h>Complex numbers</h><h>definition</h></idx> are defined as

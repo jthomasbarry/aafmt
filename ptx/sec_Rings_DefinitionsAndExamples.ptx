@@ -96,10 +96,11 @@
       when we were talking about coefficients of polynomials.
       </fn>
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defring">
+    <!-- {defring}  -->
       <statement>
         <p>
-          {defring} Any number system with the two arithmetic operations (+ and <m>\cdot</m>) that satisfy properties I-VII is called a <term>ring</term>.
+          Any number system with the two arithmetic operations (+ and <m>\cdot</m>) that satisfy properties I-VII is called a <term>ring</term>.
         </p>
       </statement>
     </definition>
@@ -108,10 +109,11 @@
       multiplication is commutative in all of the above number systems.
       This leads us to the following definition:
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defcomring">
+    <!-- {defcomring}  -->
       <statement>
         <p>
-          {defcomring} A number system is a
+          A number system is a
           <term>commutative ring</term>
           if it is a ring where multiplication is also commutative.
         </p>
@@ -418,10 +420,11 @@
           Associativity is an example of an
           <em>inherited property</em>.
         </p>
-        <definition>
+        <definition xml:id = "definition_Rings_inheritedProperty">
+        <!-- {definherited property}  -->
           <statement>
             <p>
-              {definherited property} An <term>inherited property</term> is a property such that,
+              An <term>inherited property</term> is a property such that,
               if the property is true for a set of numbers <m>S</m>,
               then it's also true for any subset of <m>S</m>.
             </p>

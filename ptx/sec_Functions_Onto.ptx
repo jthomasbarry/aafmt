@@ -79,10 +79,11 @@
     <p>
       The following is the "official" definition of onto.
     </p>
-    <definition>
+    <definition xml:id ="definition_Functions_ontoDef">
+    <!-- {ontoDef}  -->
       <statement>
         <p>
-          {ontoDef} Suppose <m>f \colon A \to B</m>.
+          Suppose <m>f \colon A \to B</m>.
           We say <m>f</m> is <term>onto</term>
           if for all <m>b \in B</m>,
               <idx><h>Onto</h><h>formal definition</h></idx>

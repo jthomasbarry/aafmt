@@ -328,7 +328,7 @@
       We can generalize <xref ref="example_GroupActions_Conj6">Example</xref>
       using the following definition.
     </p>
-    <definition>
+    <definition xml:id = "definition_GroupActions_ConjugateElement">
       <statement>
         <p>
           Given two group elements <m>g,h</m> in <m>G</m>,

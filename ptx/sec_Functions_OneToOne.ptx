@@ -148,10 +148,11 @@
     <p>
       We have given an informal idea of the meaning of one-to-one<ndash/>now it's time for a formal definition.
     </p>
-    <definition>
+    <definition xml:id = "definition_Functions_121defn">
+    <!-- {121defn}  -->
       <statement>
         <p>
-          {121defn} Suppose <m>f</m> is a function with domain <m>A</m> and codomain <m>B</m>.
+          Suppose <m>f</m> is a function with domain <m>A</m> and codomain <m>B</m>.
           We say <m>f</m> is <term>one-to-one</term>
           iff for all <m>a_1,a_2 \in A</m> such that
           <m>f(a_1) = f(a_2)</m>, we have <m>a_1 = a_2</m>.
@@ -586,10 +587,11 @@
     <p>
       We formalize this equivalence in the following alternative definition of one-to-one:
     </p>
-    <definition>
+    <definition xml:id = "definition_Functions_121defn2">
+    <!-- {121defn2} -->
       <statement>
         <p>
-          {121defn2}<term>(Alternate)</term>
+          <term>(Alternate)</term>
           Suppose <m>f \colon A \to B</m>.
           We say <m>f</m> is a <term>one-to-one function</term><idx><h>One-to-one</h><h>alternate definition</h></idx> iff for all
           <m>a_1,a_2 \in A</m> such that <m>a_1 \neq a_2</m>,

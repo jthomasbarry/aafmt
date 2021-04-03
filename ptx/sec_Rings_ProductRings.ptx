@@ -7,10 +7,11 @@
     In fact, the product operation for rings is very similar to the product of groups
     (see <xref ref="definition_Groups_defProductOfGroups">Definition</xref>).
   </p>
-  <definition>
+  <definition xml:id = "definition_Rings_productRing">
+  <!-- {product ring}  -->
     <statement>
       <p>
-        {product ring} If <m>R_1,~R_2</m> are rings,
+        If <m>R_1,~R_2</m> are rings,
         then the <term>product ring</term>,
         <m>R_1\times R_2</m> is the set of pairs <m>(a,b),~a\in R_1</m> and <m>b\in R_2</m>,
         with the following operations:

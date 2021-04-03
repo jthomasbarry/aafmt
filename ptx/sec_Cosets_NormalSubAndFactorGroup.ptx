@@ -21,10 +21,11 @@
     <p>
       First, let's give a name to these nice subgroups:
     </p>
-    <definition>
+    <definition xml:id = "definition_Cosets_NormalSubgroup">
+    <!-- {normal_sub} -->
       <statement>
         <p>
-          {normal_sub} A subgroup <m>H</m> of a group <m>G</m> is <term>normal</term>
+           A subgroup <m>H</m> of a group <m>G</m> is <term>normal</term>
               <idx><h>Subgroup</h><h>normal</h></idx>
               <idx><h>Normal subgroup</h></idx>
           in G if <m>gH = Hg</m> for all <m>g \in G</m>.
@@ -212,10 +213,11 @@
       <xref ref="proposition_Cosets_normal_normalequivalents">Proposition</xref>
       enables us to formulate an alternative definition for normal subgroups:
     </p>
-    <definition>
+    <definition xml:id = "definition_Cosets_NormalSubgroup">
+    <!-- {normal_alt}  -->
       <statement>
         <p>
-          {normal_alt} Given a group <m>G</m>,
+          Given a group <m>G</m>,
           a subgroup <m>H \subset G</m> is called a
           <term>normal subgroup</term>
               <idx><h>Subgroup</h><h>normal</h></idx>
@@ -337,10 +339,11 @@
         Let's give a proof of this.
         First let's give some notation:
       </p>
-      <definition>
+      <definition xml:id = 'definition_Cosets_SetAddition'>
+      <!-- {setplus} -->
         <statement>
           <p>
-            {setplus}(<term>Set addition</term>) Let <m>A</m> and <m>B</m> be two sets of real numbers.
+            (<term>Set addition</term>) Let <m>A</m> and <m>B</m> be two sets of real numbers.
             Then the <term>sum</term>
                 <idx><h>Sum</h><h>of sets</h></idx>
             <m>A + B</m> is defined as the set:
@@ -457,10 +460,11 @@
       Now we have to get down to the hard work of proving it in general.
       First we have to generalize <xref ref="definition_Cosets_setplus">Definition</xref> to other group operations.
     </p>
-    <definition>
+    <definition xml:id = "definition_Cosets_SetComposition">
+    <!-- {setcomp} -->
       <statement>
         <p>
-          {setcomp}(<term>Set composition</term>) Let <m>A</m> and <m>B</m> be two subsets of a group <m>G</m>.
+          (<term>Set composition</term>) Let <m>A</m> and <m>B</m> be two subsets of a group <m>G</m>.
           Then the <term>composition</term><idx><h>Composition</h><h>of sets</h></idx> <m>A \circ B</m>
           (or <m>AB</m>)
           is defined as the set:
@@ -519,7 +523,8 @@
     <p>
       Let's define a special notation for our new discovery.
     </p>
-    <definition xml:id="notefactor">
+    <definition xml:id="definition_Cosets_FactorGroup">
+    <!-- {notefactor} -->
       <statement>
         <p>
           {factor_group} If <m>N</m> is a normal subgroup of a group <m>G</m>,

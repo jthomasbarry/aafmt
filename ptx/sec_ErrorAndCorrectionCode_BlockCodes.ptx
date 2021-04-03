@@ -28,10 +28,11 @@
     In the following, the notation
     <m>\mathbb{Z}^{m}_{2}</m> denotes the set of binary <m>m</m>-tuples.
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_BlockCode">
+  <!-- {BlockCode} -->
     <statement>
       <p>
-        {BlockCode} a <m>(n, m)</m> <term>block code</term>
+        a <m>(n, m)</m> <term>block code</term>
             <idx><h>Block code</h></idx>
         consists of a one-to-one <term>encoding function</term>
             <idx><h>Function</h><h>encoding</h></idx>
@@ -205,7 +206,7 @@
     <q>distance</q>
     between code words, defined as follows.
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_HammingDistance">
     <statement>
       <p>
         {weight} Let <m>{\bold x} = (x_1, \ldots,

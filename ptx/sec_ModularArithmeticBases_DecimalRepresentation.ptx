@@ -212,10 +212,11 @@
       Let's see if we can compute the <m>d_{-k}</m> digit of a decimal number less than 1.
       But first, let's recall some useful notation:
     </p>
-    <definition>
+    <definition xml:id = "definition_ModularArithmeticBases_floor">
+    <!-- {floor}  -->
       <statement>
         <p>
-          {floor} The <term>floor</term> is the highest integer less than or equal to the given decimal number,
+          The <term>floor</term> is the highest integer less than or equal to the given decimal number,
           <m>x</m>, and is represented as <m>\lfloor x \rfloor</m>.
         </p>
       </statement>
@@ -404,10 +405,11 @@
       <xref ref="proposition_ModularArithmeticBases_10power">Proposition</xref>
       leads to the following definition:
     </p>
-    <definition>
+    <definition xml:id = "definition_ModularArithmeticBases_orderMod10">
+    <!-- {orderMod10}  -->
       <statement>
         <p>
-          {orderMod10} Given a positive integer <m>n</m> with <m>\gcd(10,n)=1</m>.
+          Given a positive integer <m>n</m> with <m>\gcd(10,n)=1</m>.
           The smallest positive integer <m>m</m> such that <m>mod(10^{m},n)=1</m> is called the
           <term>multiplicative order</term> of <m>n \pmod{10}</m>).
         </p>

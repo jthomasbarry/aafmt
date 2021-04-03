@@ -150,7 +150,7 @@
       We would like to be able to reverse this process and conveniently break down a group into its direct product components;
       that is, we would like to be able to say when a group is isomorphic to the direct product of two of its subgroups.
     </p>
-    <definition>
+    <definition xml:id = "definition_Isomorphism_InternalDirectProduct">
       <statement>
         <p>
           Let <m>G</m> be a group with subgroups <m>H</m> and <m>K</m> satisfying the following conditions.

@@ -141,10 +141,11 @@
       if <m>A</m> and <m>B</m> represent faces then there always exists a symmetry <m>g</m> such that <m>gA=B</m>.
       This example motivates the following definition.
     </p>
-    <definition>
+    <definition xml:id = "definition_GroupActions_GEquivalent">
+    <!-- {GEquivalent}  -->
       <statement>
         <p>
-          {GEquivalent} If a group <m>G</m> acts on a set <m>X</m> and <m>x,
+          If a group <m>G</m> acts on a set <m>X</m> and <m>x,
           y \in X</m>,
           then <m>x</m> is said to be <term><m>G</m>-equivalent</term><idx><h>G-equiv@<m>G</m>-equivalent</h></idx> to <m>y</m> if there exists a <m>g \in G</m> such that <m>g.x =y</m>.
           We write <m>x \sim_Gy</m> or
@@ -205,10 +206,11 @@
       of <m>X</m> under <m>G</m>.
       In general, we have the following definition.
     </p>
-    <definition>
+    <definition xml:id = "definition_GroupActions_noteorbit">
+    <!-- {noteorbit}  -->
       <statement>
         <p>
-          {noteorbit} If <m>X</m> is a <m>G</m>-set,
+          If <m>X</m> is a <m>G</m>-set,
           then each set in the partition of <m>X</m> associated with <m>G</m>-equivalence is called an
           <term>orbit</term><idx><h>Orbit</h><h>Of a <m>G</m>-set</h></idx> of <m>X</m> under <m>G</m>.
           We will denote the orbit that contains an element <m>x</m> of <m>X</m> by <m>{\cal O}_x</m>.
@@ -284,10 +286,11 @@
       These are all examples of <em>stabilizer subgroups</em>.
       The general definition is as follows.
     </p>
-    <definition>
+    <definition xml:id = "definition_GroupActions_StabilizerSubgroups">
+    <!-- {StabilizerSubgroups}  -->
       <statement>
         <p>
-          {StabilizerSubgroups} Given that <m>X</m> is a <m>G</m>-set and <m>x \in X</m>,
+          Given that <m>X</m> is a <m>G</m>-set and <m>x \in X</m>,
           let <m>G_x</m> be the set of group elements <m>g</m> that fix <m>x</m>:
           in other words, <m>g.x=x</m>.
           Then <m>G_x</m> is called the <term>stabilizer subgroup</term><idx><h>Subgroup</h><h>stabilizer</h></idx> or
@@ -332,10 +335,11 @@
       are all examples of <em>fixed point sets</em> in <m>X</m>.
       This leads to another definition:
     </p>
-    <definition>
+    <definition xml:id = "definition_GroupActions_FixedPoint">
+    <!-- {FixedPoint}  -->
       <statement>
         <p>
-          {FixedPoint} Let <m>G</m> be a group acting on a set <m>X</m>,
+          Let <m>G</m> be a group acting on a set <m>X</m>,
           and let <m>g</m> be an element of <m>G</m>.
           The <term>fixed point set</term><idx><h>Fixed point set</h><h>of a group element</h></idx> of <m>g</m> in <m>X</m>,
           denoted by <m>X_g</m>,

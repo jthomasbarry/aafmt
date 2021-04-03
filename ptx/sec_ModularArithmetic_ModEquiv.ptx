@@ -230,10 +230,11 @@
     Now that we know that unique remainders really do always exist,
     we're in a position to use them in our definition of modular equivalence:
   </p>
-  <definition>
+  <definition xml:id ="definition_ModularArithmetic_equivalence">
+  <!-- {equivalence}  -->
     <statement>
       <p>
-        {equivalence} Two integers <m>a</m> and <m>b</m> are <em>equivalent</em>
+        Two integers <m>a</m> and <m>b</m> are <em>equivalent</em>
         mod <m>m</m><idx><h>Modular equivalence</h><h>first definition</h></idx> if both <m>a</m> and <m>b</m> have the same remainder when divided by <m>m</m>.
         To denote that <m>a</m> and <m>b</m> are
         <term>equivalent</term> mod <m>m</m>, we write:
@@ -601,11 +602,11 @@
     This set of remainders has a special name,
     which later on we'll use extensively:
   </p>
-  <definition>
+  <definition xml:id = definition_ModularArithmetic_intModn>
+  <!-- {integers_mod_n} -->
     <statement>
       <p>
-        {integers_mod_n}
-            <idx><h>Integers mod <m>n</m></h></idx>
+        <idx><h>Integers mod <m>n</m></h></idx>
         The set of integers <m>\{0,1,\ldots,n-1\}</m> is called the set of
         <term>integers mod <m>n</m></term>,
         and is denoted by the symbol <m>{\mathbb Z}_n</m>.

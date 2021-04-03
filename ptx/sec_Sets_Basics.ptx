@@ -460,10 +460,11 @@
           <idx><h>Set operations</h></idx>
       The mathematical definitions of the basic set operations are as follows:
     </p>
-    <definition>
+    <definition xml:id = "definition_Sets_union">
+    <!-- {union}  -->
       <statement>
         <p>
-          {union} The <term>union</term>
+          The <term>union</term>
           <m>A \cup B</m> of two sets <m>A</m> and <m>B</m> is defined as<idx><h>Set operations</h><h>union</h></idx>
               <idx><h>Union</h></idx>
           <men xml:id="union">
@@ -472,10 +473,11 @@
         </p>
       </statement>
     </definition>
-    <definition>
+    <definition xml:id = "definition_Sets_intersection">
+    <!-- {intersection}  -->
       <statement>
         <p>
-          {intersection} the <term>intersection</term>
+          The <term>intersection</term>
           of <m>A</m> and <m>B</m> is defined by <idx><h>Set operations</h><h>intersection</h></idx>
               <idx><h>Intersection</h></idx>
           <men xml:id="intersection">
@@ -755,10 +757,11 @@
         A' = \{ x : x \in U \text{ and }  x \notin A \}
       </me>.
     </p>
-    <definition>
+    <definition xml:id = "definition_Sets_setDifference">
+    <!-- {setDifference} -->
       <statement>
         <p>
-          {setDifference}<idx><h>Set operations</h><h>set difference</h></idx> The <term>difference</term>
+          <idx><h>Set operations</h><h>set difference</h></idx> The <term>difference</term>
           of two sets <m>A</m> and <m>B</m> is defined as
               <idx><h>Set difference</h></idx>
           <me>

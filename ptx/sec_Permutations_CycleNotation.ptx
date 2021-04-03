@@ -140,10 +140,11 @@
         </p>
       </statement>
     </exercise>
-    <definition>
+    <definition xml:id = "definition_Permutations_cyclelength">
+    <!-- {cyclelength}  -->
       <statement>
         <p>
-          {cyclelength} The <term>length</term>
+          The <term>length</term>
           of a cycle is how many elements the cycle contains;
           i.e. how many elements are in the parentheses.
               <idx><h>Cycle</h><h>length of</h></idx>
@@ -506,10 +507,11 @@
   </subsection>
   <subsection xml:id="subsec_Permutations_CycleNotation_ProductDisjointCycles">
     <title>Product of disjoint cycles</title>
-    <definition>
+    <definition xml:id = "definition_Permutations_disjointcycles">
+    <!-- {disjointcycles}  -->
       <statement>
         <p>
-          {disjointcycles} Two cycles are <term>disjoint</term>
+          Two cycles are <term>disjoint</term>
           if their parentheses contain no elements in common.
           Formally, two cycles <m>(a_1, a_2, \ldots,
           a_k )</m> and <m>(b_1, b_2, \ldots,

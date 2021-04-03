@@ -19,7 +19,7 @@
   <p>
     Here is the formal definition of a vector space:
   </p>
-  <definition>
+  <definition xml:id = "definition_ExploringPolynomials_VectorSpaceR">
     <statement>
       <p>
         A <term>vector space over the real numbers</term><idx><h>vector space</h><h>over

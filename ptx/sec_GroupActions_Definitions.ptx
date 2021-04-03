@@ -158,10 +158,11 @@
   <p>
     These ideas motivate the following definitions of action and <m>G</m>-Set:
   </p>
-  <definition>
+  <definition xml:id = "definition_GroupActions_defaction">
+  <!-- {defaction}  -->
     <statement>
       <p>
-        {defaction} Let <m>G</m> be a group and <m>X</m> be a set.
+        Let <m>G</m> be a group and <m>X</m> be a set.
         A <term>(left) action</term>
             <idx><h>Actions</h><h>group</h></idx>
         of <m>G</m> on <m>X</m> is a map

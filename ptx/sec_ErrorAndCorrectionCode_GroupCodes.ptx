@@ -11,10 +11,11 @@
     which in fact turns out to be a group.
     To show this, we must first define a group operation:
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_group">
+  <!-- {group}  -->
     <statement>
       <p>
-        {group} The group <m>\mathbb{Z}_2^n</m> consists of the set of all binary <m>n</m>-tuples,
+        The group <m>\mathbb{Z}_2^n</m> consists of the set of all binary <m>n</m>-tuples,
         together with an operation
         <q>+</q>
         defined as follows:
@@ -159,10 +160,11 @@
     have special properties that enable efficient encoding and decoding.
     Accordingly, we define:
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_groupCode">
+  <!-- {groupCode}  -->
     <statement>
       <p>
-        {groupCode} A <term>group code</term>
+        A <term>group code</term>
             <idx><h>Code</h><h>group</h></idx>
             <idx><h>Group code</h></idx>
         is a set of codewords that is also a subgroup of <m>{\Bbb Z}_2^n</m>.

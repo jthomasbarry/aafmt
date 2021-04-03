@@ -152,10 +152,11 @@
     <p>
       Finally, we can give the definition of an inverse function:
     </p>
-    <definition>
+    <definition xml:id = "definition_Functions_invfna">
+    <!-- {invfna} -->
       <statement>
         <p>
-          {invfna} Suppose <m>f \colon X \to Y</m> and <m>g \colon Y \to X</m> are functions.
+          Suppose <m>f \colon X \to Y</m> and <m>g \colon Y \to X</m> are functions.
           We say that <m>g</m> is an <term>inverse function </term>
               <idx><h>Inverse</h><h>function</h></idx>
               <idx><h>Function</h><h>inverse of</h></idx>
@@ -420,10 +421,11 @@
         </li>
       </ol>
     </remark>
-    <definition>
+    <definition xml:id = "definition_Functions_identityMap">
+    <!-- {identityMap}  -->
       <statement>
         <p>
-          {identityMap} For any set<nbsp/><m>A</m>,
+          For any set<nbsp/><m>A</m>,
           define the <term>identity map</term>
           <m>\Id_A \colon A \to A</m> by
           <m>\Id_A(a) = a</m> for every <m>a \in A</m>.

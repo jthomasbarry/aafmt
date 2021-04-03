@@ -28,7 +28,7 @@
       on <m>\mathbb{Z}_n</m> such that the result is also in <m>\mathbb{Z}_n</m>.
       This motivates the following two definitions:
     </p>
-    <definition>
+    <definition xml:id ="definition_ModularArithmetic_modAddition">
       <statement>
         <p>
           {mod_add} <term>Modular Addition</term>
@@ -44,16 +44,17 @@
       </statement>
     </definition>
     <p>
-      Note that in <xref ref="definition_ModularArithmetic_mod_add">Definition</xref>
+      Note that in <xref ref="definition_ModularArithmetic_modAddition">Definition</xref>
       we write <m>a \oplus b = r</m> rather than <m>a \oplus b \equiv r \pmod{n}</m>,
       since <m>a \oplus b</m> is defined to be
       <em>equal</em> to the remainder.
       The same holds for the following definition:
     </p>
-    <definition>
+    <definition xml:id = "definition_ModularArithmetic_modMultiplication">
+    <!-- {mod_mult} -->
       <statement>
         <p>
-          {mod_mult} <term>Modular Multiplication</term>
+           <term>Modular Multiplication</term>
         </p>
         <p>
           The product mod <m>n</m> of two remainders mod <m>n</m> is the remainder left after dividing their regular product by <m>n</m>;
@@ -1321,10 +1322,11 @@
       is called a <em>group</em>.
       Here's the formal definition:
     </p>
-    <definition>
+    <definition xml:id = "definition_ModularArithmetic_group">
+    <!-- {group}  -->
       <statement>
         <p>
-          {group} A <term><term>group</term></term>
+          A <term><term>group</term></term>
               <idx><h>Group</h><h>definition</h></idx>
           is a set combined with an operation that has the following properties:
           <ul>

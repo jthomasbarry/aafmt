@@ -46,10 +46,11 @@
       the only fact about given names that we used to define equivalence classes was that given name defines an equivalence relation on the set of interest.
       So it stands to reason that we can do something similar with any equivalence relation:
     </p>
-    <definition>
+    <definition xml:id = "definition_EquivalenceRelations_EquivRel">
+    <!-- {DefEquivRel} -->
       <statement>
         <p>
-          {DefEquivRel} Suppose <m>\sim</m> is an equivalence relation on a set<nbsp/><m>A</m>.
+          Suppose <m>\sim</m> is an equivalence relation on a set<nbsp/><m>A</m>.
           For each <m>a \in A</m>, the <term>equivalence class</term>
               <idx><h>Equivalence class</h></idx>
           of<nbsp/><m>a</m> is the following subset of<nbsp/><m>A</m>:

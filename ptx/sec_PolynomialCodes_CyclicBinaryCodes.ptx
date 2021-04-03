@@ -21,7 +21,7 @@
     However there is an additional interesting and useful property of these codewords.
     In order to describe the property we need the following definition.
   </p>
-  <definition>
+  <definition xml:id = "definition_PolynomialCodes_cyclicShift1">
     <statement>
       <p>
         The <term> cyclic 1-shift</term>
@@ -103,10 +103,11 @@
     This is the same as stating that the set of codewords is
     <em>closed</em> under cyclic 1-shifts.
   </p>
-  <definition>
+  <definition xml:id = "definition_PolynomialCodes_defcycliccode">
+  <!-- {defcycliccode}  -->
     <statement>
       <p>
-        {defcycliccode} A linear code that is closed under cyclic 1-shifts is said to be a
+        A linear code that is closed under cyclic 1-shifts is said to be a
         <term> cyclic code</term>.
             <idx><h>Cyclic</h><h>code</h></idx>
       </p>

@@ -107,10 +107,11 @@
     In both examples we use a bijection that preserves the addition and multiplication operations to make a correspondence between two rings.
     We may generalize this type of bijection as follows.
   </p>
-  <definition>
+  <definition xml:id = "definition_Rings_Isomorphism">
+  <!-- {Isomorphism}  -->
     <statement>
       <p>
-        {Isomorphism} Let <m>\phi:R_1\rightarrow R_2</m> be a bijection between rings <m>R_1</m> and <m>R_2</m>.
+        Let <m>\phi:R_1\rightarrow R_2</m> be a bijection between rings <m>R_1</m> and <m>R_2</m>.
         We say that <m>\phi</m> is an <term>isomorphism</term>
         from <m>R_1</m> to <m>R_2</m> if the following two equations are satisfied for all <m>x,y\in R_1</m>:
         <men xml:id="iso_add">
@@ -254,10 +255,11 @@
     When we restrict the isomorphism, so that <m>R_1=R_2</m>,
     we have a special type of isomorphism known as an <em>automorphism</em>.
   </p>
-  <definition>
+  <definition xml:id = "definition_Rings_automorphism">
+  <!-- {automorphism}  -->
     <statement>
       <p>
-        {automorphism} A <term>ring automorphism</term>
+        A <term>ring automorphism</term>
         is a ring isomorphism whose domain is equal to its range.
       </p>
     </statement>

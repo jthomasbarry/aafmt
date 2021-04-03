@@ -184,10 +184,11 @@
       Hopefully you're beginning to see the picture!
       To generalize these results, we need some additional terminology:
     </p>
-    <definition>
+    <definition xml:id = "definition_Permutations_defordercycle">
+    <!-- {defordercycle}  -->
       <statement>
         <p>
-          {defordercycle} The <term>order</term>
+          The <term>order</term>
           of a cycle <m>\sigma</m> is the smallest natural number <m>k</m> such that <m>\sigma^k = {\var id}</m>.
               <idx><h>Cycle</h><h>order of</h></idx>
               <idx><h>Order</h><h>of a cycle</h></idx>
@@ -374,10 +375,11 @@
       Now that we know the order of cycles,
       let's see if we can tackle other permutations as well:
     </p>
-    <definition>
+    <definition xml:id = "definition_Permutations_deforder">
+    <!-- {deforder}  -->
       <statement>
         <p>
-          {deforder} The <term>order</term>
+          The <term>order</term>
           of a permutation <m>\tau</m> is the smallest positive integer <m>k</m> such that <m>\tau^k = {\var id}</m>.
               <idx><h>Order</h><h>of a permutation</h></idx>
           As before, the order of <m>\tau</m> is denoted by the notation <m>|\tau|</m>.
@@ -791,10 +793,11 @@
       <q>building blocks</q>
       which can be used to construct all other cycles.
     </p>
-    <definition>
+    <definition xml:id = "definition_Permutations_Transposition">
+    <!-- {Transposition}  -->
       <statement>
         <p>
-          {Transposition} Cycles of length 2 are called
+          Cycles of length 2 are called
           <term>transpositions</term>.
               <idx><h>Transposition</h><h>definition of</h></idx>
               <idx><h>Cycle</h><h>transposition</h></idx>

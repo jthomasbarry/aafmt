@@ -269,10 +269,11 @@
       if <m>M</m> is even then <m>N</m> is odd: and vice versa.
       We may express this concisely using the following definition:
     </p>
-    <definition>
+    <definition xml:id = "definition_Permutations_defparity">
+    <!-- {defparity}  -->
       <statement>
         <p>
-          {defparity} for any permutation <m>\sigma</m> written in disjoint cycle notation,
+          For any permutation <m>\sigma</m> written in disjoint cycle notation,
           the number
           <me>
             \text{ mod(sum of cycle lengths minus number of cycles,2) }

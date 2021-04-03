@@ -304,10 +304,11 @@
       and that subset is itself a group under function composition.
       This example motivates the following definition.
     </p>
-    <definition>
+    <definition xml:id = "definition_Permutations_defsubgroup">
+    <!-- {defsubgroup}  -->
       <statement>
         <p>
-          {defsubgroup} A subset of a group <m>G</m> that is itself a group under the same operation as <m>G</m> is called a <term>subgroup</term>
+          A subset of a group <m>G</m> that is itself a group under the same operation as <m>G</m> is called a <term>subgroup</term>
               <idx><h>Subgroup</h></idx>
           of <m>G</m>.
         </p>
@@ -349,10 +350,11 @@
         </p>
       </statement>
     </example>
-    <definition>
+    <definition xml:id = "definition_Permutations_defpermgroup">
+    <!-- {defpermgroup}  -->
       <statement>
         <p>
-          {defpermgroup} A subgroup of <m>S_n</m> is called a
+          A subgroup of <m>S_n</m> is called a
           <term>permutation group</term>
               <idx><h>Group</h><h>permutation</h></idx>.
               <idx><h>Permutation group</h></idx>

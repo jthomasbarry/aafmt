@@ -17,20 +17,22 @@
       <q>modular equivalence</q>. You may recall that we actually gave two definitions,
       which we repeat here:
     </p>
-    <definition>
+    <definition xml:id = "definition_EquivalenceRelations_ModularEquivFirstDef">
+    <!-- {mod_eqiv_def_1} -->
       <statement>
         <p>
-          {mod_eqiv_def_1} <term>(Modular Equivalence, first definition)</term>
+           <term>(Modular Equivalence, first definition)</term>
         </p>
         <p>
           <m>a \equiv b \pmod{n}</m> if and only if <m>a</m> and <m>b</m> have the same remainder when divided by <m>n</m>.
         </p>
       </statement>
     </definition>
-    <definition>
+    <definition xml:id = "definition_EquivalenceRelations_ModularEquivSecondDef">
+    <!-- {mod_eqiv_def_2} -->
       <statement>
         <p>
-          {mod_eqiv_def_2} <term>(Modular Equivalence, second definition)</term>
+          <term>(Modular Equivalence, second definition)</term>
         </p>
         <p>
           <m>a \equiv b \pmod{n}</m> iff <m>a - b = k \cdot n</m>,
@@ -119,10 +121,11 @@
         <q>basically the same thing</q>? Hold that thought<ndash/>we'll come back to this point later(in <xref ref="subsec_EquivalenceRelations_ModularArithmetic_theSameThing">Section</xref>).
       </p>
     </remark>
-    <definition>
+    <definition xml:id = "definition_EquivalenceRelations_Mod3EquivClass">
+    <!-- {mod_eqiv_def_3} -->
       <statement>
         <p>
-          {mod_eqiv_def_3} <term>(Integers mod 3, equivalence class definition)</term>
+          <term>(Integers mod 3, equivalence class definition)</term>
           The set of equivalence classes
           <m>\{ [0]_3, [1]_3, [2]_3 \}</m> is identified as the set of
           <term>integers mod 3</term>,
@@ -158,10 +161,11 @@
       recall that in the Sets chapter we defined operations on sets.
       So you're old hands at this!
     </p>
-    <definition>
+    <definition xml:id = "definition_EquivalenceRelations_RulesOfModArith">
+    <!-- {RulesOfModArith} -->
       <statement>
         <p>
-          {RulesOfModArith} (Rules of modular arithmetic) The
+          (Rules of modular arithmetic) The
           <term>arithmetic operations modulo<nbsp/><m>3</m></term>
           are defined as follows:<idx><h>Modular arithmetic</h><h>on equivalence classes</h></idx>
           <ul>
@@ -297,10 +301,11 @@
       The preceding discussion can be generalized to apply with any integer<nbsp/><m>n</m> in place of<nbsp/><m>3</m>.
       This results in <term>modular arithmetic</term>.
     </p>
-    <definition>
+    <definition xml:id = "definition_EquivalenceRelations_IntModn">
+    <!-- {integ_mod_n} -->
       <statement>
         <p>
-          {integ_mod_n} Fix some natural number <m>n</m>.
+          Fix some natural number <m>n</m>.
           <ol label="a">
             <li>
               <p>
@@ -706,10 +711,11 @@
       The set <m>\integer_n</m> applies only to congruence modulo<nbsp/><m>n</m>,
       but the same thing can be done for any equivalence relation:
     </p>
-    <definition>
+    <definition xml:id = "definition_EquivalenceRelations_ModuloRelation">
+    <!-- {moduloRelation}  -->
       <statement>
         <p>
-          {moduloRelation} Suppose <m>\sim</m> is an equivalence relation on a set<nbsp/><m>A</m>.
+          Suppose <m>\sim</m> is an equivalence relation on a set<nbsp/><m>A</m>.
           The set of all equivalence classes is called
           <term><m>A</m> modulo<nbsp/><m>\sim</m></term>.
           It is denoted <m>A/\mathord{\sim}</m>.

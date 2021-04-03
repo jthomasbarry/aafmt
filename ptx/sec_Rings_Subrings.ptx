@@ -5,10 +5,11 @@
     Just like groups have subgroups,
     rings have <em>subrings</em>.
   </p>
-  <definition>
+  <definition xml:id = "definition_Rings_subring">
+  <!-- {subring}  -->
     <statement>
       <p>
-        {subring} A ring that is a subset of another ring is called a <term>subring</term>.
+        A ring that is a subset of another ring is called a <term>subring</term>.
       </p>
     </statement>
   </definition>

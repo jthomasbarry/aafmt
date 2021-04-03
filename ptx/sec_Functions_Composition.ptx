@@ -124,10 +124,11 @@
         </p>
       </statement>
     </exercise>
-    <definition>
+    <definition xml:id = " definition_Functions_composition">
+    <!-- {composition} -->
       <statement>
         <p>
-          {composition} Suppose <m>f \colon A \to B</m> and <m>g \colon B \to C</m>.
+          Suppose <m>f \colon A \to B</m> and <m>g \colon B \to C</m>.
           The <term>composition</term> of <m>g</m> and <m>f</m>
           (denoted <m>g \compose f</m>)
           is the function from<nbsp/><m>A</m> to<nbsp/><m>C</m> defined by

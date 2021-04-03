@@ -608,10 +608,11 @@
       we learned how to view a function from <m>A</m> to <m>B</m> as a particular subset of <m>A \times B</m>.
       This view leads to our official definition of a function:<idx><h>Function</h><h>formal definition</h></idx>
     </p>
-    <definition>
+    <definition xml:id = 'definition_Functions_FunctionDef'>
+    <!-- {functionDef} -->
       <statement>
         <p>
-          {functionDef} Suppose <m>A</m> and<nbsp/><m>B</m> are sets.
+           Suppose <m>A</m> and<nbsp/><m>B</m> are sets.
         </p>
         <p>
           A set<nbsp/><m>f</m> is a <term>function from<nbsp/><m>A</m> to<nbsp/><m>B</m></term> if

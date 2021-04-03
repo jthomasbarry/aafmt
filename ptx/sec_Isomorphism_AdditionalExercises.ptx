@@ -93,7 +93,7 @@
         Let <m>m, n \in {\mathbb Z}</m>.
         Prove that <m>\langle m \rangle \cap \langle n \rangle \cong \langle l \rangle</m> if and only if <m>d = \lcm(m,n)</m>.
         The following exercises will require this definition:
-        <definition>
+        <definition xml:id = "definition_Isomorphism_automorphism">
           <statement>
             <p>
               An <term>automorphism</term><idx><h>Automorphism</h><h>of a group</h></idx>

@@ -10,10 +10,11 @@
       <q>especially nice</q>
       functions are both one-to-one and onto.
     </p>
-    <definition>
+    <definition xml:id = "definition_Functions_Bijection">
+      <!-- {Bijection} -->
       <statement>
         <p>
-          {Bijection} A function is a <term>bijection</term>
+           A function is a <term>bijection</term>
           if and only if it is both one-to-one and onto.
               <idx><h>Bijection</h><h>definition of</h></idx>
         </p>

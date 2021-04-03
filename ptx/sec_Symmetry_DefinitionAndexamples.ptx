@@ -1,4 +1,4 @@
-<section xml:id="sec_Symmetry_DefinitionAndexamples">
+<section xml:id="sec_Symmetry_DefinitionAndExamples">
   <title>Definition and examples</title>
   <p>
     In plane geometry we talk about various shapes:
@@ -27,10 +27,11 @@
     We've given an intuitive picture of what symmetry means<ndash/>now let's try to translate that into mathematics.
     We start with a definition:
   </p>
-  <definition>
+  <definition xml:id = "definition_Symmetry_symmDef">
+  <!-- {symmDef}  -->
     <statement>
       <p>
-        {symmDef} A <term>symmetry</term><idx><h>Symmetry</h><h>definition</h></idx> of a geometrical figure is a rearrangement of the figure that (i) preserves distances and angles between points of the figure,
+        A <term>symmetry</term><idx><h>Symmetry</h><h>definition</h></idx> of a geometrical figure is a rearrangement of the figure that (i) preserves distances and angles between points of the figure,
         and (ii) leaves the appearance and location of the figure unchanged.
       </p>
     </statement>

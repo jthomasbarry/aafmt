@@ -15,10 +15,11 @@
     linear combination, matrix multiplication, and transpose.
     Readers may find a brief refresher on matrix multiplication in <xref ref="SigmaNotation">Chapter</xref>.
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_innerProduct">
+    <!-- {innerProduct} -->
     <statement>
       <p>
-        {innerProduct} The <term>inner product</term>
+        The <term>inner product</term>
             <idx><h>Inner product</h></idx>
         of two binary <m>n</m>-tuples is
         <me>
@@ -83,10 +84,11 @@
     We will now show that codewords in other types of group codes can also be verified by matrix multiplication.
     But first, as usual, a definition:
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_mknZ2">
+  <!-- {MknZ2} -->
     <statement>
       <p>
-        {MknZ2} Let <m>{\Bbb M}_{k \times n}(\mathbb{Z}_2)</m> denote the set of all
+        Let <m>{\Bbb M}_{k \times n}(\mathbb{Z}_2)</m> denote the set of all
         <m>k \times n</m> matrices with entries in <m>\mathbb{Z}_2</m>.
         We do matrix operations as usual except that all our addition and multiplication operations occur in <m>\mathbb{Z}_2</m>.
         Define the <term>null space</term><idx><h>Matrix</h><h>null space of</h></idx>
@@ -375,10 +377,11 @@
   <p>
     We give a special name to group codes that are obtained as null spaces:
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_linearCode">
+  <!-- {linearCode}  -->
     <statement>
       <p>
-        {linearCode} A code is a <term>linear code</term>
+        A code is a <term>linear code</term>
             <idx><h>Code</h><h>linear</h></idx>
         if it is determined by the null space of some matrix <m>H \in \mathbb{M}_{k \times n}(\mathbb{Z}_2)</m>.
       </p>
