@@ -45,15 +45,15 @@
       We recommend this License principally for works whose purpose is instruction or reference.
     </p>
   </introduction>
-  <xi:include  href="section26-8x.ptx"/>
-  <xi:include  href="section26-9x.ptx"/>
-  <xi:include  href="section26-10x.ptx"/>
-  <xi:include  href="section26-11x.ptx"/>
-  <xi:include  href="section26-12x.ptx"/>
-  <xi:include  href="section26-13x.ptx"/>
-  <xi:include  href="section26-14x.ptx"/>
-  <xi:include  href="section26-15x.ptx"/>
-  <xi:include  href="section26-16x.ptx"/>
-  <xi:include  href="section26-17x.ptx"/>
-  <xi:include  href="section26-18x.ptx"/>
+  <xi:include  href="sec_GNUDoc_AppAndDef.ptx"/>
+  <xi:include  href="sec_GNUDoc_Verbatim"/>
+  <xi:include  href="sec_GNUDoc_CopyQty"/>
+  <xi:include  href="sec_GNUDoc_Modification"/>
+  <xi:include  href="sec_GNUDoc_CombineDocs.ptx"/>
+  <xi:include  href="sec_GNUDoc_CollectDocs.ptx"/>
+  <xi:include  href="sec_GNUDoc_AggIndepWorks.ptx"/>
+  <xi:include  href="sec_GNUDoc_Translation.ptx"/>
+  <xi:include  href="sec_GNUDoc_Termination.ptx"/>
+  <xi:include  href="sec_GNUDoc_FutureRevision.ptx"/>
+  <xi:include  href="sec_GNUDoc_UsingLicense.ptx"/>
 </chapter>
