@@ -212,40 +212,15 @@ Some groups use exotic operations that you may never have seen before:
 
 \begin{example}{S_group}
 Let $S = {\mathbb R} \setminus \{ -1 \}$ and define a binary operation on
-$S$ by $a \ast b = a + b +ab$. It turns out that $(S, \ast)$ is an abelian group. We will prove closure and the commutative property; the rest of the proof will be left to you.
-\begin{enumerate}[(1)]
+$S$ by $a \ast b = (a + b) + (ab)$. It turns out that $(S, \ast)$ is an abelian group. We will prove closure and the commutative property; the rest of the proof will be left to you.
+\begin{enumerate}[(a)]
 \item
-Closure:  Suppose $a, b \in S$.  We need to show that $a \ast b \in S$; i.e. that (i) $a \ast b \in {\mathbb R}$ and (ii) $a \ast b \neq -1$.
-\begin{enumerate}[(i)]
-\item
-By the closure of $({\mathbb R}, +), (a + b) \in {\mathbb R}$.  By the closure of $({\mathbb R}, \ast), (ab) \in {\mathbb R}$.  Finally, by the closure of $({\mathbb R}, +), ((a + b) + (ab)) \in {\mathbb R}$.  
-It follows that $a \ast b \in {\mathbb R}$, so $S$ is closed under $\ast$.
-
-\item
-Suppose that $a \ast b = -1$.  Then by definition of $\ast$, $a + b +ab = -1$.  Solving for $a$, we get
-\begin{center}
-$a = \dfrac{-1(b + 1)}{b + 1}$, or $a = -1$
-\end{center}  
-
-But since $a \in S, a \neq -1$.  So we have a contradiction.  Hence $a \ast b \neq -1$. This completes the proof that $(S, \ast)$ is closed.
-\end{enumerate}
-
+Closure:  Suppose $a, b \in S$.  We need to show that $a \ast b \in S$; i.e. firstly that $a \ast b \in {\mathbb R}$ and secondly $a \ast b \neq -1$.
+First, since both additiona and multiplication are closed in  ${\mathbb R}$, it follows that $(a + b) + (ab) \in {\mathbb R}$ and hence $a \ast b \in {\mathbb R}$. For the second point,  we will use a contradiction argument and suppose that $a \ast b = -1$, i.e. $(a + b) + (ab) = -1$.  Using basic algebra to rearrange this expression, we get
+$a(b-1) = -(b-1)$, which implies that either $a = -1$ or $b=-1$. But $a$ and $b$ are assumed to be in $S$, so this is a contradiction. Hence $a \ast b =-1$ is impossible, and the proof is complete.
 \item
 Commutativity:  Suppose $a, b \in S$.  We need to show that $a \ast b = b \ast a$:
-\begin{itemize}
-\item
-First, by the definition of the operation $\ast$ we have $a \ast b = a + b +ab$.
-\item
-Next, since ${\mathbb R}$ is commutative under addition and multiplication, 
-it follows that $a + b = b + a$ and $ab = ba$. 
-Adding these two equations, we have $(a + b) + (ab) = (b + a) + (ba)$.
-\item
-By the definition of $\ast$, $(b + a) + (ba) = b \ast a$.
-\item
-Putting all these equalities together, we have $a \ast b = a + b +ab = b + a + ba = b \ast a$
-\end{itemize}
-
-This completes the proof that $(S, \ast)$ is commutative.
+By the definition of the operation $\ast$ we have $a \ast b = (a + b) + (a b)$, which is equal to  $(b + a) + (ba)$ since addition and multiplication in ${\mathbb R}$ are commutative. Since  $b \ast a = (b + a) + (b a)$ by definition, it follows that $a \ast b$ is commutative.
 \end{enumerate}
 
 \begin{exercise}{S_group}
@@ -341,7 +316,7 @@ Let ${\mathbb Z}_2^n = \{ (a_1, a_2, \ldots, a_n) : a_i \in {\mathbb Z}_2
 +
 (b_1, b_2, \ldots, b_n)
 =
-(a_1 \oplus  b_1, a_2 \oplus b_2, \ldots, a_n+b_n),
+(a_1 \oplus  b_1, a_2 \oplus b_2, \ldots, a_n \oplus b_n),
 \]
 where $\oplus$ denotes addition in ${\mathbb Z}_2$.
 Prove that ${\mathbb Z}_2^n$ is a group under this operation. This group
@@ -351,10 +326,28 @@ is important in algebraic coding theory.
 In previous chapters we've used Cayley tables\index{Cayley table} to describe group operations.  With Cayley tables we can prove a set and operation are a group even when we don't know what the elements in the set really are or what the binary operation is.
 
 
-The next two exercises are very useful in the  subsequent exercises.
+The next three exercises are very useful in helping determine whether or not a given Cayley table represents a group.
 
 \begin{exercise}{ident}
-Given two elements $g,h$  of a group ($G,\circ$). Show that $g$ is the identity element of $G$ if and only if  $g \circ h = h$.
+Given  $h$  is an element of  ($G,\circ$). 
+\begin{enumerate}
+\item
+Show that $h$ is an identity element of $G$ if and only if there exists a $g \in G$ such that  $h \circ g = g$.
+\hyperref[sec:Groups:Hints]{(*Hint*)} 
+\item
+Show that $h$ is an identity element of $G$ if and only if there exists a $g \in G$ such that $g \circ h = g$.
+\end{enumerate}
+\end{exercise}
+
+In Exercise~\ref{exercise:Groups:ident} we were careful to say \emph{an} identity element. Could a group have multiple identity elements? Let's settle the question once and for all:
+
+\begin{exercise}{unique_iden}
+Use Exercise~\ref{exercise:Groups:ident} to prove the following proposition: 
+ 
+\begin{prop}{id_unique}
+The identity element in a group $G$ is unique; that is, there exists
+only one element $e \in G$ such that $eg = ge = g$ for all $g \in G$. 
+\end{prop}
 \hyperref[sec:Groups:Hints]{(*Hint*)} 
 \end{exercise}
 
@@ -362,6 +355,8 @@ Given two elements $g,h$  of a group ($G,\circ$). Show that $g$ is the identity 
 Show that if $G$ is a group, then for every row of the Cayley table for $G$ no two entries are the same. Show also that for every column of the Cayley table no two entries are the same.
 \hyperref[sec:Groups:Hints]{(*Hint*)}  
 \end{exercise}
+
+
 
 
 \begin{exercise}{Cayley_groups}
@@ -748,22 +743,6 @@ The set of $n \times n$ invertible matrices is called the $n$ dimensional \term{
  
 Now that we have a general definition of groups, we can use this definition to prove properties that are true of \emph{all} groups. We'll begin by proving some essential properties that we've shown for specific groups, but need to know in general:
 
-\begin{prop}{id_unique}
-The identity element in a group $G$ is unique; that is, there exists
-only one element $e \in G$ such that $eg = ge = g$ for all $g \in G$. 
-\end{prop}
- 
-\begin{rem}
-The following proof follows the classic format used to prove that something is unique: assume instead there are two of them, then either derive a contradiction or show that the two things are really equal.  We will employ the latter.
-\end{rem}
- 
-\begin{proof}
-Suppose that $e$ and $e'$ are both identities in $G$. Then $eg = ge =
-g$ and $e'g = ge' = g$ for all $g \in G$. We need to show that $e =
-e'$. If we think of $e$ as the identity, then $ee' = e'$; but if $e'$
-is the identity, then $ee' = e$. Combining these two equations, we
-have $e = ee' = e'$. 
-\end{proof}
  
  Proposition~\ref{proposition:Groups:id_unique} shows that group identities are unique -- it turns out that inverses in a group are also unique:
  
