@@ -536,7 +536,7 @@
   <p>
     These properties are so important that we have a special term for binary relations that satisfy all three properties:
   </p>
-  <definition xml:id = "definition_EquivalenceRelations_EquivalenceRelation">
+  <definition xml:id = "definition_EquivalenceRelations_EquivalenceRelations">
   <!-- {equivalencerelation} -->
     <statement>
       <p>

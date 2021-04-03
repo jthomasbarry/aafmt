@@ -131,7 +131,7 @@
   </proposition>
   <p>
     We have already shown (a) in the definition of weight
-    (<xref ref="definition_ErrorAndCorrectionCode_weight">Definition</xref>).
+    (<xref ref="definition_ErrorAndCorrectionCode_HammingDistance">Definition</xref>).
     Parts (b) and (c) are for you to prove:
   </p>
   <exercise xml:id="exercise_ErrorAndCorrectionCode_hamming">

@@ -207,9 +207,10 @@
     between code words, defined as follows.
   </p>
   <definition xml:id = "definition_ErrorAndCorrectionCode_HammingDistance">
+  <!-- {weight}  -->
     <statement>
       <p>
-        {weight} Let <m>{\bold x} = (x_1, \ldots,
+        Let <m>{\bold x} = (x_1, \ldots,
         x_n)</m> and <m>{\bold y} = (y_1, \ldots,
         y_n)</m> be binary <m>n</m>-tuples.
         The <term>Hamming distance</term>

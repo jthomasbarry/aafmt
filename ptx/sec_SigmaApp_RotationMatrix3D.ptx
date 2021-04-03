@@ -198,7 +198,7 @@
   <p>
     We summarize these results in a proposition:
   </p>
-  <proposition xml:id="proposition_SigmaNotation_rotTrans">
+  <proposition xml:id="proposition_SigmaApp_rotTrans">
     <statement>
       <p>
         A <m>3 \times 3</m> matrix <m>R</m> is a rotation matrix if and only if

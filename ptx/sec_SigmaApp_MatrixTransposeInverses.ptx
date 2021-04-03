@@ -29,7 +29,7 @@
     <p>
       Now let's demonstrate the power of our new notation to prove an important property of transpose:
     </p>
-    <proposition xml:id="proposition_SigmaNotation_prodTrans">
+    <proposition xml:id="proposition_SigmaApp_prodTrans">
       <statement>
         <p>
           If <m>A</m> and <m>B</m> are matrices such that the matrix product is defined, then

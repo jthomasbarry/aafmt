@@ -472,7 +472,7 @@
       The results of the previous exercise are important,
       so we'll restate them as a proposition.
     </p>
-    <proposition xml:id="proposition_SigmaNotation_detRotMx">
+    <proposition xml:id="proposition_SigmaApp_detRotMx">
       <statement>
         <p>
           For any rotation matrix <m>R</m>,
@@ -876,7 +876,7 @@
       we prove Euler's formula for regular polyhedra.
       Our proof depends on the following proposition:
     </p>
-    <proposition xml:id="proposition_SigmaNotation_EulerRotThm">
+    <proposition xml:id="proposition_SigmaApp_EulerRotThm">
       <statement>
         <p>
           (<term>Euler's Rotation Theorem</term>): Any rotation
@@ -893,7 +893,7 @@
     <p>
       First, we need to establish a general identity involving three-dimensional Levi-Civita symbols.
     </p>
-    <proposition xml:id="proposition_SigmaNotation_crazyEq">
+    <proposition xml:id="proposition_SigmaApp_crazyEq">
       <statement>
         <p>
           Given any <m>3 \times 3</m> matrix <m>A</m>, then
