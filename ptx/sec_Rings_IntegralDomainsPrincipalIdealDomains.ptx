@@ -105,7 +105,7 @@
         <p>
           Suppose <m>{\mathbb Z}_p</m> has a zero divisor
           <m>a\in{\mathbb Z}_p</m> such that <m>a\neq 0</m>.
-          Then by <xref ref="definition_Rings_{zeroDivisor} ">Definition</xref>,
+          Then by <xref ref="definition_Rings_zeroDivisor">Definition</xref>,
           there is some <m>b\in{\mathbb Z}_p</m> such that <m>b\neq 0</m> and <m>a\odot b=0</m>.
           So:
           <md>
@@ -217,7 +217,7 @@
       <m>R</m>.
       We can now combine this idea with that of the integral domain.
     </p>
-    <definition xml:id = "definition_Rings_principal_ideal">
+    <definition xml:id = "definition_Rings_principal_ideal_dom">
     <!-- {princ_ideal_dom}  -->
       <statement>
         <p>

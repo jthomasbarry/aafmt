@@ -949,7 +949,7 @@
       part, and the hard part is the
       <q>at least one complex root</q>
       part.
-      We will eventually prove the easy part in <xref ref="Polynomial">Chapter</xref>,
+      We will eventually prove the easy part in <xref ref="Polynomials">Chapter</xref>,
       but sadly the hard part is beyond our scope.
       For more information on this see the Remark at the end of the chapter.
     </p>

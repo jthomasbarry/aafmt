@@ -46,9 +46,9 @@
     </p>
   </introduction>
   <xi:include  href="sec_GNUDoc_AppAndDef.ptx"/>
-  <xi:include  href="sec_GNUDoc_Verbatim"/>
-  <xi:include  href="sec_GNUDoc_CopyQty"/>
-  <xi:include  href="sec_GNUDoc_Modification"/>
+  <xi:include  href="sec_GNUDoc_Verbatim.ptx"/>
+  <xi:include  href="sec_GNUDoc_CopyQty.ptx"/>
+  <xi:include  href="sec_GNUDoc_Modification.ptx"/>
   <xi:include  href="sec_GNUDoc_CombineDocs.ptx"/>
   <xi:include  href="sec_GNUDoc_CollectDocs.ptx"/>
   <xi:include  href="sec_GNUDoc_AggIndepWorks.ptx"/>

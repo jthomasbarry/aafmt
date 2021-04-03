@@ -14,7 +14,7 @@
     <statement>
       <p>
         The polynomials in <m>\mathbb{Z}_2[x]</m> are:
-        <ol label="">
+        <ol label="A">
           <li>
             <p>
               The constant polynomials: 1 and 0 (there are only 2)

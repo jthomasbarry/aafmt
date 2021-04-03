@@ -142,7 +142,7 @@
         <p>
           Let <m>L</m> be the set of left cosets of
           <m>2\pi \mathbb{Z}</m> in the group <m>(\mathbb{R},+)</m>.
-          Recall from <xref ref="definition_Cosets_def_coset">Definition</xref>
+          Recall from <xref ref="definition_Cosets_Coset">Definition</xref>
           in <xref ref="Cosets">Chapter</xref>
           that the set of left cosets <m>L</m> is defined as <m>x+2\pi \mathbb{Z}=\{x+h:h\in 2\pi\mathbb{Z}\}</m>.
           For example,

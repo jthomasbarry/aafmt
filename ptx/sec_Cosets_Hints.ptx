@@ -84,7 +84,7 @@
     and vice versa (and hence <m>H</m> is a normal subgroup of <m>G</m>.
   </p>
   <p>
-    <xref ref="exercise_Cosets_normalk">Exercise</xref>: Use part (a) and <xref ref="definition_Cosets_normal_alt">Definition</xref>.
+    <xref ref="exercise_Cosets_normalk">Exercise</xref>: Use part (a) and <xref ref="definition_Cosets_NormalAlt">Definition</xref>.
   </p>
   <p>
     <xref ref="exercise_Cosets_normal_mult">Exercise</xref>(c): We may write

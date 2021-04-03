@@ -403,7 +403,7 @@
         </li>
         <li>
           <p>
-            According to <xref ref="definition_Functions_functionDef">Definition</xref>,
+            According to <xref ref="definition_Functions_FunctionDef">Definition</xref>,
             any function can be specified by a set of ordered pairs.
             That is, if <m>f:X \rightarrow Y</m>,
             we can also write <m>f \subset X \times Y</m>,

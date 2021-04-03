@@ -44,7 +44,7 @@
     <exercise xml:id="exercise_EquivalenceRelations_ProveModEquiv">
       <statement>
         <p>
-          Using <xref ref="definition_EquivalenceRelations_mod_eqiv_def_2">Definition</xref>,
+          Using <xref ref="definition_EquivalenceRelations_ModularEquivSecondDef">Definition</xref>,
           show that equivalence mod <m>n</m> is an equivalence relation. (That is,
           show that equivalence mod <m>n</m> is (a) reflexive, (b) symmetric,
           and (c) transitive)
@@ -68,7 +68,7 @@
       And how many are there?
     </p>
     <p>
-      We can use <xref ref="definition_EquivalenceRelations_mod_eqiv_def_1">Definition</xref> to answer this question.
+      We can use <xref ref="definition_EquivalenceRelations_ModularEquivFirstDef">Definition</xref> to answer this question.
       The possible remainders when an integer is divided by<nbsp/><m>3</m> are either <m>0</m>,
       <m>1</m>, or<nbsp/><m>2</m>.
       This tells us that every integer is equivalent (modulo<nbsp/><m>3</m>) to either <m>0</m>,
@@ -383,7 +383,7 @@
       <statement>
         <p>
           Using the definitions of addition, subtraction,
-          and multiplication given in part (c) of <xref ref="definition_EquivalenceRelations_integ_mod_n">Definition</xref>,
+          and multiplication given in part (c) of <xref ref="definition_EquivalenceRelations_IntModn">Definition</xref>,
           make tables that show the results of:
           <ol label="a">
             <li xml:id="ModArithEx-tables-addition">
@@ -557,7 +557,7 @@
                 </li>
                 <li>
                   <p>
-                    By <xref ref="definition_EquivalenceRelations_mod_eqiv_def_2">Definition</xref>,
+                    By <xref ref="definition_EquivalenceRelations_ModularEquivSecondDef">Definition</xref>,
                     it follows that <m>a_1 = a_2 + k_1 \cdot \underline{~\lt 3>~}</m> and <m>b_1 = b_2 + k_2 \cdot \underline{~\lt 4>~}</m>,
                     where <m>k_1</m> and <m>k_2</m> are <m>\underline{~\lt 5>~}</m>.
                   </p>
@@ -570,7 +570,7 @@
                 </li>
                 <li>
                   <p>
-                    Since <m>k_1 + k_2</m> is an integer it follows from <xref ref="definition_EquivalenceRelations_mod_eqiv_def_2">Definition</xref>
+                    Since <m>k_1 + k_2</m> is an integer it follows from <xref ref="definition_EquivalenceRelations_ModularEquivSecondDef">Definition</xref>
                     that <m>(a_1 + b_1) \equiv \underline{~\lt 7>~} \pmod{\underline{~\lt 8>~}}</m>.
                   </p>
                 </li>
@@ -581,7 +581,7 @@
                 </li>
                 <li>
                   <p>
-                    From <xref ref="definition_EquivalenceRelations_integ_mod_n">Definition</xref>
+                    From <xref ref="definition_EquivalenceRelations_IntModn">Definition</xref>
                     (c) we have <m>\class{a_1} \mathbin{+} \class{b_1} = \underline{~\lt 10>~}</m> and <m>\class{a_2} \mathbin{+} \class{b_2} = \underline{~\lt 11>~}</m>.
                   </p>
                 </li>

@@ -1,4 +1,4 @@
-<section>
+<section xml:id = "sec_GNUDoc_CombineDocs">
   <title>5.<nbsp/>Combining Documents</title>
   <p>
     You may combine the Document with other documents released under this License,

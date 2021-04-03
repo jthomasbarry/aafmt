@@ -4,7 +4,7 @@
     <video youtubeplaylist="PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo"/>
   </figure>
   <p>
-    Recall that according to <xref ref="definition_Functions_functionDef">Definition</xref>,
+    Recall that according to <xref ref="definition_Functions_FunctionDef">Definition</xref>,
     any function <m>f \colon A \to B</m> can be represented as a set of ordered pairs.
     More precisely,
     each element of<nbsp/><m>f</m> is an ordered pair <m>(a,b)</m>,

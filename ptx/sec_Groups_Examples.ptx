@@ -33,7 +33,7 @@
       </p>
       <p>
         To finish the proof that <m>{\mathbb R}^{\ast}</m> is a group,
-        we must establish axioms (2) through (4) in <xref ref="definition_Groups_group_definition">Definition</xref>.
+        we must establish axioms (2) through (4) in <xref ref="definition_Groups_groupDefinition">Definition</xref>.
         We leave this up to you in the following exercise:
       </p>
       <exercise xml:id="exercise_Groups_Rstar_group">
@@ -338,8 +338,8 @@
     <p>
       The previous two exercises follow a pattern that we may generalize:
     </p>
-    <definition xml:id = "definition_Groups_defProductOfGroup">
-    <!--  {defProductOfGroups}  -->
+    <definition xml:id = "definition_Groups_defProductOfGroups">
+    <!--  {defProductOfGroupss}  -->
       <statement>
         <p>
          Given two groups <m>G</m> and <m>H</m>,

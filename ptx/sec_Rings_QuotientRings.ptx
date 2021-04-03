@@ -59,7 +59,7 @@
     <p>
       We may recall the definition of <term>partition</term>
       from <xref ref="sec_EquivalenceRelations_PartitionsAndProperties">Section</xref>
-      (<xref ref="definition_EquivalenceRelations_defPartition">Definition</xref>),
+      (<xref ref="definition_EquivalenceRelations_Partition">Definition</xref>),
       which we repeat here for convenience.
     </p>
     <definition xml:id = "definition_Rings_partition">
@@ -88,7 +88,7 @@
       <em>inverse images</em>.
       The inverse images of <m>f</m> divide
       <m>{\mathbb Z}_{10}</m> into <em>equivalence classes</em>.
-      (Review <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>.)
+      (Review <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>.)
       (Actually, we showed in <xref ref="proposition_EquivalenceRelations_FuncIsRange">Proposition</xref>
       that the inverse images of a function always divide the domain into equivalence classes.)
     </p>

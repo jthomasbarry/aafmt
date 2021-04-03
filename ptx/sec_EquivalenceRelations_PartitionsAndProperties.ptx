@@ -194,7 +194,7 @@
     <statement>
       <p>
         In the following parts we will considering partitions of
-        <m>\mathbb{R}</m> and the associated binary relations defined by <xref ref="definition_EquivalenceRelations_partitionrelation">Definition</xref>.
+        <m>\mathbb{R}</m> and the associated binary relations defined by <xref ref="definition_EquivalenceRelations_PartitionRelation">Definition</xref>.
       </p>
       <ol label="a">
         <li>
@@ -272,7 +272,7 @@
     </statement>
   </exercise>
   <p>
-    To further explore <xref ref="definition_EquivalenceRelations_partitionrelation">Definition</xref>,
+    To further explore <xref ref="definition_EquivalenceRelations_PartitionRelation">Definition</xref>,
     we let <m>A=\{a,b,c,\ldots,i\}</m> which has been partitioned into subsets <m>A_1, \ldots, A_5</m>.
     <xref ref="fig_partition_discrete">Figure</xref> has a drawing of <m>A</m>.
   </p>

@@ -1,4 +1,4 @@
-<section>
+<section xml:id = "sec_GNUDoc_CollectDocs">
   <title>6.<nbsp/>Collections Of Documents</title>
   <p>
     You may make a collection consisting of the Document and other documents released under this License,

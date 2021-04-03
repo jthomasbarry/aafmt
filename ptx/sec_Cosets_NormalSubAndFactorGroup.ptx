@@ -213,8 +213,8 @@
       <xref ref="proposition_Cosets_normal_normalequivalents">Proposition</xref>
       enables us to formulate an alternative definition for normal subgroups:
     </p>
-    <definition xml:id = "definition_Cosets_NormalSubgroup">
-    <!-- {normal_alt}  -->
+    <definition xml:id = "definition_Cosets_NormalAlt">
+    <!-- {NormalAlt}  -->
       <statement>
         <p>
           Given a group <m>G</m>,
@@ -231,8 +231,8 @@
     <exercise xml:id="exercise_Cosets_ghg-1_prove">
       <statement>
         <p>
-          Prove that <xref ref="definition_Cosets_normal_alt">Definition</xref>
-          is equivalent to <xref ref="definition_Cosets_normal_sub">Definition</xref>. (*Hint*)
+          Prove that <xref ref="definition_Cosets_NormalAlt">Definition</xref>
+          is equivalent to <xref ref="definition_Cosets_NormalSubgroup">Definition</xref>. (*Hint*)
         </p>
       </statement>
     </exercise>
@@ -458,7 +458,7 @@
       But we shouldn't jump the gun:
       we've only shown it's true for a special case.
       Now we have to get down to the hard work of proving it in general.
-      First we have to generalize <xref ref="definition_Cosets_setplus">Definition</xref> to other group operations.
+      First we have to generalize <xref ref="definition_Cosets_SetAddition">Definition</xref> to other group operations.
     </p>
     <definition xml:id = "definition_Cosets_SetComposition">
     <!-- {setcomp} -->
@@ -524,10 +524,10 @@
       Let's define a special notation for our new discovery.
     </p>
     <definition xml:id="definition_Cosets_FactorGroup">
-    <!-- {notefactor} -->
+    <!-- {notefactor} {factor_group} -->
       <statement>
         <p>
-          {factor_group} If <m>N</m> is a normal subgroup of a group <m>G</m>,
+          If <m>N</m> is a normal subgroup of a group <m>G</m>,
           then the group of cosets of <m>N</m> under the operation of set composition is denoted as <m>G/N</m> This group is called the
           <term>quotient group</term>
               <idx><h>Group</h><h>quotient</h></idx>
@@ -571,7 +571,7 @@
           Consider the normal subgroup of
           <m>S_3, H = \{ (1), (123), (132) \}</m> which we started exploring in <xref ref="example_Cosets_S3_Cosets">Example</xref>.
           The cosets of <m>H</m> in <m>S_3</m> were <m>H</m> and <m>(12) N</m>.
-          Using the group operation from <xref ref="definition_Cosets_factor_group">Defintion</xref>
+          Using the group operation from <xref ref="definition_Cosets_FactorGroup">Defintion</xref>
           to compose these cosets together,
           the quotient group <m>S_3 / N</m> then has the following Cayley table.
         </p>
@@ -686,7 +686,7 @@
           The element <m>r</m> generates the cyclic subgroup of rotations,
           <m>R_n</m>, of <m>D_n</m>.
           Since <m>(sr^k)r(sr^k)^{-1} = sr^krr^{-k}s = r^{-1} \in R_n</m>,
-          then by <xref ref="definition_Cosets_normal_alt">Definition</xref>
+          then by <xref ref="definition_Cosets_NormalAlt">Definition</xref>
           the group of rotations is a normal subgroup of <m>D_n</m>;
           therefore, <m>D_n / R_n</m> is a group.
           Now there are <m>2n</m> symmetries in <m>D_n</m> and <m>n</m> rotations in <m>R_n</m>;

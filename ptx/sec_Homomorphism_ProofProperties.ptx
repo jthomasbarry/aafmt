@@ -148,10 +148,11 @@
     One of the patterns we saw in our examples that we haven't verified yet was that the elements in <m>G</m> that map to the identity of <m>H</m> formed a normal subgroup in <m>G</m>.
     We can now prove this in general, but first a definition:
   </p>
-  <definition xml:id="kernelofphi">
+  <definition xml:id="definition_Homomorphism_defkernel">
+  <!-- {defkernel}  kernelofphi-->
     <statement>
       <p>
-        {defkernel} Let <m>f : G \rightarrow H</m> be a homomorphism and suppose that <m>e_H</m> is the identity of <m>H</m>.
+        Let <m>f : G \rightarrow H</m> be a homomorphism and suppose that <m>e_H</m> is the identity of <m>H</m>.
         The set <m>f^{-1} ( \{ e_H \})</m> is called the
         <term> kernel</term><idx><h>Kernel</h><h>of a homomorphism</h></idx>
             <idx><h>Homomorphism</h><h>kernel</h></idx>

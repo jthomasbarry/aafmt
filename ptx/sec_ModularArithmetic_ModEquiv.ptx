@@ -602,7 +602,7 @@
     This set of remainders has a special name,
     which later on we'll use extensively:
   </p>
-  <definition xml:id = definition_ModularArithmetic_intModn>
+  <definition xml:id = "definition_ModularArithmetic_intModn">
   <!-- {integers_mod_n} -->
     <statement>
       <p>

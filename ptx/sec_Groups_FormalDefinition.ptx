@@ -86,7 +86,7 @@
     we now proudly present the following formal definition.
   </p>
   <definition xml:id = "definition_Groups_groupDefinition">
-  <!-- {group_definition}  -->
+  <!-- {groupDefinition}  -->
     <statement>
       <p>
         A <term>group</term>
@@ -222,7 +222,7 @@
   <exercise xml:id="exercise_Groups_trivial">
     <statement>
       <p>
-        Prove that the trivial group is in fact a group according to <xref ref="definition_Groups_group_definition">Definition</xref>.
+        Prove that the trivial group is in fact a group according to <xref ref="definition_Groups_groupDefinition">Definition</xref>.
       </p>
     </statement>
   </exercise>

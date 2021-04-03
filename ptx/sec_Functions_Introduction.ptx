@@ -609,7 +609,7 @@
       This view leads to our official definition of a function:<idx><h>Function</h><h>formal definition</h></idx>
     </p>
     <definition xml:id = 'definition_Functions_FunctionDef'>
-    <!-- {functionDef} -->
+    <!-- {FunctionDef} -->
       <statement>
         <p>
            Suppose <m>A</m> and<nbsp/><m>B</m> are sets.

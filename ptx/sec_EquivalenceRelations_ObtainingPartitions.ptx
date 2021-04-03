@@ -194,7 +194,7 @@
           <li>
             <p>
               Use the reflexive property of <m>\sim</m>,
-              together with <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>
+              together with <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>
             </p>
           </li>
           <li>
@@ -234,7 +234,7 @@
                 <li>
                   <p>
                     Choose any <m>a_3 \in [a_1]</m>.
-                    Use <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>
+                    Use <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>
                     together with the transitive property to show that <m>a_3 \in [a_2]</m>.
                     Conclude that every element of <m>[a_1]</m> is also an element of <m>[a_2]</m>.
                   </p>
@@ -252,7 +252,7 @@
               You can prove this one by contradiction.
               Suppose the intersection is non-empty.
               Choose an element in the intersection.
-              Use <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>
+              Use <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>
               and the transitive property to derive a contradiction.
             </p>
           </li>
@@ -298,7 +298,7 @@
             </li>
             <li>
               <p>
-                By <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>,
+                By <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>,
                 this means <m>a \sim \_\_\_\_\_\_\_\_</m> and <m>a \sim \_\_\_\_\_\_\_\_</m>.
               </p>
             </li>
