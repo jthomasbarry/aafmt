@@ -20,10 +20,11 @@
       First of all, let's give a precise mathematical definition for
       <q>set</q>:
     </p>
-    <definition xml:id="sets_membership">
+    <definition xml:id="definition_Sets_defSet">
+    <!-- {defSet}  -->
       <statement>
         <p>
-          {defSet} A <term>set</term>
+          A <term>set</term>
               <idx><h>Set</h><h>definition of</h></idx>
           is a well-defined collection of objects:
           that is, it is defined in such a manner that we can determine for any given object <m>x</m> whether or not <m>x</m> belongs to the set.
@@ -314,10 +315,11 @@
   </subsection>
   <subsection xml:id="subset_Sets_SubsetsAndProperSubsets">
     <title>Subsets and proper subsets</title>
-    <definition xml:id="setcontain">
+    <definition xml:id="definition_Sets_subset">
+    <!-- {subset}  -->
       <statement>
         <p>
-          {subset} A set <m>A</m> is a <term>subset</term><idx><h>Subset</h><h>definition of</h></idx> of <m>B</m>,
+          A set <m>A</m> is a <term>subset</term><idx><h>Subset</h><h>definition of</h></idx> of <m>B</m>,
           written <m>A \subset B</m> or <m>B \supset A</m>,
           if every element of <m>A</m> is also an element of <m>B</m>.
         </p>

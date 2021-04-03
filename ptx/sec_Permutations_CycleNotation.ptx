@@ -602,7 +602,7 @@
         </p>
       </statement>
     </example>
-    <figure xml:id="permute_cycle_rep">
+    <figure xml:id="Permutations_cycle_rep">
       <caption>(a) Digraph representation of permutation (b) Rearrangement of digraph into cycles</caption>
       <image width="42%" source="images/cycle_rep.png"/>
     </figure>

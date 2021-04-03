@@ -357,10 +357,11 @@
         </p>
       </statement>
     </exercise>
-    <proposition>
+    <proposition xml:id = "proposition_Polynomials_Division_for_Polynomials">
+    <!-- {Division for Polynomials}  -->
       <statement>
         <p>
-          {Division for Polynomials} <em>(Division algorithm for polynomials)</em>
+          <em>(Division algorithm for polynomials)</em>
           Suppose that the set <m>F</m> has addition and multiplication operations that satisfy (I)-(VII).
           Let <m>f(x)</m> and <m>g(x)</m> be nonzero polynomials in <m>F[x]</m>,
           where the degree of <m>g(x)</m> is greater than 0.

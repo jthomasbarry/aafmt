@@ -1001,7 +1001,7 @@ return gcdRecurse(b, remainder);
       In the proof, we use the terms
       <q>prime</q>
       and
-      <q>relatively prime</q>: recall that a prime number is a natural number <m>>1</m> whose only factor <m>>1</m> is itself (<xref ref="definition_ComplexNumbers_defPrime">Definition</xref>);
+      <q>relatively prime</q>: recall that a prime number is a natural number <m>>1</m> whose only factor <m>>1</m> is itself (<xref ref="definition_ComplexNumbers_PrimeNumber">Definition</xref>);
       and two numbers are <em>relatively prime</em>
       if they have no common factors <m>>1</m>.
           <idx><h>Prime</h><h>relatively</h></idx>
