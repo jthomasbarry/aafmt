@@ -345,8 +345,9 @@
                   </li>
                 </ul>
               </p>
-              Just as in the case of mod 3, whenever we're doing arithmetic mod <m>n</m> you should understand that we are using these definitions of <m>+</m>,
-              <m>-</m>, and<nbsp/><m>\cdot</m>.
+              <p> Just as in the case of mod 3, whenever we're doing arithmetic mod <m>n</m> you should understand that we are using these definitions of <m>+</m>,
+                  <m>-</m>, and<nbsp/><m>\cdot</m>. 
+              </p>
             </li>
           </ol>
         </p>

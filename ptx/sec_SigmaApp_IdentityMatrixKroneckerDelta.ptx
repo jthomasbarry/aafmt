@@ -34,7 +34,7 @@
       [I]_{i,j} = \delta_{ij}
     </me>.
   </p>
-  <exercise xml:id="exercise_SigmaNotation_KroneckerIdentity">
+  <exercise xml:id="exercise_SigmaApp_KroneckerIdentity">
     <statement>
       <ol label="a">
         <li>

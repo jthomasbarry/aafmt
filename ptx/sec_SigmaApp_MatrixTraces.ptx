@@ -23,7 +23,7 @@
   <p>
     The next exercise covers some basic properties of traces:
   </p>
-  <exercise xml:id="exercise_SigmaNotation_trace1">
+  <exercise xml:id="exercise_SigmaApp_trace1">
     <statement>
       <ol label="a">
         <li>
@@ -95,7 +95,7 @@
       </p>
     </statement>
   </exercise>
-  <exercise xml:id="exercise_SigmaNotation_trace3">
+  <exercise xml:id="exercise_SigmaApp_trace3">
     <statement>
       <p>
         Show that <m>\text{ Tr } ({ABC}) = \text{ Tr } ({CAB})</m>,
@@ -116,7 +116,7 @@
       </p>
     </statement>
   </exercise>
-  <exercise xml:id="exercise_SigmaNotation_linalg">
+  <exercise xml:id="exercise_SigmaApp_linalg">
     <statement>
       <p>
         In linear algebra, given two

@@ -218,10 +218,12 @@
                 </p>
               </li>
             </ol>
-            In (i), use the fact that <m>[a] \subset S</m>.
-            In (ii), use (a) above to show that every element of <m>S</m> is in at least one equivalence class.
-            (Recall also that <sq><m>\subset</m></sq> means
-            <q>contained in</q>, and includes the case where the two sets are equal.)
+            <p>
+              In (i), use the fact that <m>[a] \subset S</m>.
+              In (ii), use (a) above to show that every element of <m>S</m> is in at least one equivalence class.
+              (Recall also that <sq><m>\subset</m></sq> means
+              <q>contained in</q>, and includes the case where the two sets are equal.)
+            </p>
           </li>
           <li>
             <p>

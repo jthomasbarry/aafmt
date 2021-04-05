@@ -191,7 +191,7 @@
       </ol>
     </statement>
   </exercise>
-  <exercise xml:id="exercise_SigmaNotation_sigmaAssoc">
+  <exercise xml:id="exercise_SigmaApp_sigmaAssoc">
     <statement>
       <p>
         Given three matrices <m>A, B, C</m> with sizes <m>m \times n, n \times p, p \times q</m> respectively.

@@ -29,7 +29,7 @@
   <p>
     Let's begin with an example that shows how polynomials can be related to matrices:
   </p>
-  <example xml:id="example_PolyVec_multx2">
+  <example xml:id="example_ExploringPolynomials_multx2">
     <statement>
       <p>
         Let <m>p(x) = 3x^2 - 7x + 2</m>.
@@ -58,7 +58,7 @@
       </p>
     </statement>
   </example>
-  <exercise xml:id="exercise_PolyVec_multx3">
+  <exercise xml:id="exercise_ExploringPolynomials_multx3">
     <statement>
       <p>
         Compute the vector representation of
@@ -508,7 +508,7 @@
     The previous exercise (parts (c),(d)) have shown that <m>\phi</m> maps <m>P[x]</m> into <m>B</m>.
     In fact, <m>\phi</m> maps <m>P[x]</m> onto <m>B</m>:
   </p>
-  <exercise xml:id="exercise_PolyVec_phi_onto">
+  <exercise xml:id="exercise_ExploringPolynomials_phi_onto">
     <statement>
       <p>
         Let <m>M</m> be an arbitrary matrix in <m>B</m>.
@@ -645,7 +645,7 @@
       </p>
     </statement>
   </proposition>
-  <exercise xml:id="exercise_PolyVec_propPhi">
+  <exercise xml:id="exercise_ExploringPolynomials_propPhi">
     <statement>
       <p>
         Fill in the blanks the following proof. (*Hint*)

@@ -127,7 +127,7 @@
       Recall that the inverse of a matrix <m>A</m> is a matrix <m>A^{-1}</m> such that
       <m>AA^{-1}=I</m> and <m>A^{-1}A=I</m>.
     </p>
-    <exercise xml:id="exercise_SigmaNotation_inverse1">
+    <exercise xml:id="exercise_SigmaApp_inverse1">
       <statement>
         <ol label="a">
           <li>

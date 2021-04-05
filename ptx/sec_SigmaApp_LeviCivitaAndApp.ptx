@@ -102,7 +102,7 @@
       <m>\epsilon_{ijk}</m> is most useful in three dimensions,
       as we'll see shortly.
     </p>
-    <exercise xml:id="exercise_SigmaNotation_KLC">
+    <exercise xml:id="exercise_SigmaApp_KLC">
       <statement>
         <p>
           Using the general definition of the Levi-Civita symbol,
@@ -143,7 +143,7 @@
       we have to add and subtract in a similar way.
       We can prove this using Levi-Civita symbols.
     </p>
-    <exercise xml:id="exercise_SigmaNotation_split">
+    <exercise xml:id="exercise_SigmaApp_split">
       <statement>
         <ol label="a">
           <li>
@@ -224,7 +224,7 @@
         \text{ det }  A = \sum_{i,j,k} \epsilon_{ijk} a_{1i} a_{2j} a_{3k}
       </me>.
     </p>
-    <exercise xml:id="exercise_SigmaNotation_rowExp">
+    <exercise xml:id="exercise_SigmaApp_rowExp">
       <statement>
         <p>
           Show that the above formula using
@@ -252,7 +252,7 @@
         \text{ det }  A = \sum_{\text{ permutations }  \phi} \text{ sign } (\phi) \cdot a_{1\phi(1)} a_{2\phi(2)} a_{3\phi(3)}
       </me>.
     </p>
-    <exercise xml:id="exercise_SigmaNotation_detTrans">
+    <exercise xml:id="exercise_SigmaApp_detTrans">
       <statement>
         <p>
           Use this formula to prove that the determinant of any
@@ -368,7 +368,7 @@
       Of the two sums on the right-hand side,
       the first makes zero contribution:
     </p>
-    <exercise xml:id="exercise_SigmaNotation_EqualZero">
+    <exercise xml:id="exercise_SigmaApp_EqualZero">
       <statement>
         <p>
           Given that <m>i=j</m>,
@@ -420,7 +420,7 @@
       A similar equality holds in the <m>3 \times 3</m> case
       (and indeed in the <m>n \times n</m> case).
     </p>
-    <exercise xml:id="exercise_SigmaNotation_detId">
+    <exercise xml:id="exercise_SigmaApp_detId">
       <statement>
         <ol label="a">
           <li>
@@ -857,7 +857,7 @@
       The symmetry method gives an added windfall,
       namely a general identity that will prove useful later:
     </p>
-    <exercise xml:id="exercise_SigmaNotation_2epsIdent">
+    <exercise xml:id="exercise_SigmaApp_2epsIdent">
       <statement>
         <p>
           Using some facts from the discussion above,
@@ -1126,7 +1126,7 @@
             Assuming this is true
             (you really should try to prove it, if you haven't already),
             this enables us to evaluate our expression quite nicely.
-            <exercise xml:id="exercise_SigmaNotation_nonzeroVec">
+            <exercise xml:id="exercise_SigmaApp_nonzeroVec">
               <statement>
                 <p>
                   Using the previous identity, show that

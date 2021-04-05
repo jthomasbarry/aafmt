@@ -190,7 +190,7 @@
               </li>
             </ul>
           </p>
-          This completes the proof that <m>(S, \ast)</m> is commutative.
+          <p>This completes the proof that <m>(S, \ast)</m> is commutative.</p>
         </li>
       </ol>
       <exercise xml:id="exercise_Groups_S_group">

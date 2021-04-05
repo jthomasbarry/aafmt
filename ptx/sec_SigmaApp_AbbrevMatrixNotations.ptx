@@ -66,7 +66,7 @@
       {d}_{i,m}=  a_{i,k} b_{k,j} c_{j,m}
     </me>.
   </p>
-  <exercise xml:id="exercise_SigmaNotation_abbreviated1">
+  <exercise xml:id="exercise_SigmaApp_abbreviated1">
     <statement>
       <p>
         Write the following expressions in both abbreviated notations.
@@ -86,7 +86,7 @@
       </p>
     </statement>
   </exercise>
-  <exercise xml:id="exercise_SigmaNotation_unabbreviated1">
+  <exercise xml:id="exercise_SigmaApp_unabbreviated1">
     <statement>
       <p>
         Suppose <m>A,B,C,D</m> are <m>n \times n</m> matrices.
