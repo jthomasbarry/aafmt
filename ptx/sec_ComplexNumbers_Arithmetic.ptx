@@ -266,7 +266,7 @@
       <statement>
         <p>
           Evaluate each of the following.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(3-2i)+ (5i-6)</m>
@@ -406,7 +406,7 @@
           Complete the proof of <xref ref="proposition_ComplexNumbers_nonzero_complex_product">Proposition</xref> by filling in the blanks.
           Note that some blanks may require an expression,
           and not just a single number or variable.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 The proof is by contradiction.
@@ -480,7 +480,7 @@
     <exercise xml:id="exercise_ComplexNumbers_tableentries">
       <statement>
         <p>
-          Complete all entries of <xref ref="additive_table">Table</xref>,
+          Complete all entries of <xref ref="additive_tableX">Table</xref>,
           which shows the additive properties of integers,
           rationals, reals, and complex numbers.
               <idx><h>Complex numbers</h><h>additive properties</h></idx>
@@ -538,8 +538,7 @@
               <cell></cell>
             </row>
             <row>
-              <cell>Associative law<idx><h>Associative property</h></idx>
-              </cell>
+              <cell>Associative law<idx><h>Associative property</h></idx></cell>
               <cell><m>n+(m+k)=(n+m)+k</m></cell>
               <cell><m>\frac{n}{m}+(\frac{p}{q}+\frac{j}{k}) = \cdots</m></cell>
               <cell><m>\cdots</m></cell>
@@ -553,8 +552,7 @@
               <cell></cell>
             </row>
             <row>
-              <cell>Commutative law<idx><h>Commutative property</h></idx>
-              </cell>
+              <cell>Commutative law<idx><h>Commutative property</h></idx></cell>
               <cell><m>n+m=m+n</m></cell>
               <cell><m>\cdots</m></cell>
               <cell><m>\cdots</m></cell>
@@ -694,7 +692,7 @@
       </statement>
     </exercise>
     <p>
-      <xref ref="additive_table">Tables</xref>- <xref ref="multiplicative_table"></xref>
+      <xref ref="additive_tableX">Tables</xref>- <xref ref="multiplicative_table"></xref>
       show that complex numbers also follow the same fundamental algebraic rules that real numbers do.
       This makes life a lot simpler!
       From now on,
@@ -713,10 +711,11 @@
       (Here and elsewhere, the square root symbol is used to denote the
       <em>positive</em> square root.)
     </p>
-    <definition>
+    <definition xml:id="definition_ComplexNumbers_Modulus">
+      <!-- {modulus} -->
       <statement>
         <p>
-          {modulus} For a complex number <m>z</m>,
+           For a complex number <m>z</m>,
           the <term>absolute value</term> or <term>modulus</term>
               <idx><h>Modulus</h></idx>
               <idx><h>Complex numbers</h><h>modulus</h></idx>
@@ -727,10 +726,11 @@
     <p>
       Complex numbers have an additional operation that real numbers do not have.
     </p>
-    <definition>
+    <definition xml:id = "definition_ComplexNumbers_ComplexConjugate">
+      <!-- {complexConjugate}  -->
       <statement>
         <p>
-          {complexConjugate} The <term>complex conjugate</term>
+          The <term>complex conjugate</term>
               <idx><h>Conjugate, complex</h></idx>
               <idx><h>Complex numbers</h><h>complex conjugate</h></idx>
           of a complex number <m>z=a+bi</m> is defined to be <m>\overline{z}=a-bi</m>.
@@ -785,7 +785,7 @@
       <statement>
         <p>
           Evaluate each of the following.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\overline{i}</m>
@@ -871,10 +871,10 @@
         Then
         <md>
           <mrow>\overline{z} + \overline{w} \amp = \overline{a + bi} + \overline{c + di}</mrow>
-          <mrow>\amp  = (a - bi) + (c - di) \amp  \textrm{by~definition~of~conjugate}</mrow>
+          <mrow>\amp  = (a - bi) + (c - di) \amp  \textrm{by definition of conjugate}</mrow>
           <mrow>\amp  = (a + c) - (b + d)i \amp  \textrm{commutative, associative }</mrow>
-          <mrow>\amp  = \overline{(a + c) + (b + d)i} \amp  \textrm{by~definition~of~conjugate}</mrow>
-          <mrow>\amp  = \overline{z + w} \amp  \textrm{by~definition~of~complex~addition}</mrow>
+          <mrow>\amp  = \overline{(a + c) + (b + d)i} \amp  \textrm{by definition of conjugate}</mrow>
+          <mrow>\amp  = \overline{z + w} \amp  \textrm{by definition of complex addition}</mrow>
         </md>
       </p>
     </proof>
@@ -883,7 +883,7 @@
         <p>
           Prove each of the following propositions
           (follow the style of <xref ref="proposition_ComplexNumbers_conj_add">Proposition</xref>).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\overline{(\bar{z})} = z</m>
@@ -955,7 +955,7 @@
       <statement>
         <p>
           Suppose that <m>z</m> is a complex number such that <m>z^{-1} = \bar{z}</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Find the modulus of <m>z</m>.
@@ -972,7 +972,7 @@
     </exercise>
     <exercise xml:id="exercise_ComplexNumbers_abs1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that the complex number <m>z=a+bi</m> is a pure real number if and only if <m>\overline{z} = z</m>. (<em>Note</em>
@@ -989,7 +989,7 @@
           <li>
             <p>
               In view of part (a), complete the following statement:
-              <q>The complex number <m>z=a+bi</m> is a pure imaginary number if and only if <m>\overline{z} = \ldots \ldots</m>.</q>
+              <q>The complex number <m>z=a+bi</m> is a pure imaginary number if and only if <m>\overline{z} = \ldots</m>.</q>
               <em>Prove</em> your statement.
             </p>
           </li>
@@ -1002,7 +1002,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_abs2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that If <m>|z| = 1</m> and <m>z</m> is not a real number,
@@ -1021,7 +1021,7 @@
     </exercise>
     <exercise xml:id="exercise_ComplexNumbers_abs3">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Use appropriate properties from <xref ref="exercise_ComplexNumbers_cxprops">Exercise</xref> to prove the following:

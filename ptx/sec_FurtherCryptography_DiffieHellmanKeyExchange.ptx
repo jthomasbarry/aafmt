@@ -36,7 +36,7 @@
       Note that the DHKE is not used for encryption/decryption of messages,
       but only to establish a key that can be used to encrypt/decrypt subsequent messages.
       Follow the steps below to see the DHKE process.
-      <ol type="Step1">
+      <ol label="Step1">
         <li>
           <p>
             First, Moses and Rachael agree upon a pair of numbers <m>p</m> and <m>g</m>.
@@ -115,7 +115,7 @@
       <statement>
         <p>
           Key exchange between a sender and receiver (Moses and Rachael) using the DHKE is shown in the following steps.
-          <ol type="Step1">
+          <ol label="Step1">
             <li>
               <p>
                 Prior to sending data, Moses and Rachael agree <m>p</m> = 13 and <m>g</m>= 7;
@@ -169,7 +169,7 @@
           Suppose you want to conduct a DHKE with one person,
           and you are given <m>p</m> = 32452867;
           <m>g</m> = 54321; and <m>n</m> = 876.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 What number do you send?
@@ -195,7 +195,7 @@
           Suppose you want to conduct a DHKE with one person,
           and you are given <m>p</m> = 86028157;
           <m>g</m> = 98765; and <m>n</m> = 123.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 What number do you send?
@@ -243,7 +243,7 @@
     </p>
     <exercise xml:id="exercise_FurtherCryptography_DLex1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find all natural numbers <m>n</m> such that <m>\bmod(2^n,7)=4</m>.
@@ -282,7 +282,7 @@
     </p>
     <exercise xml:id="exercise_FurtherCryptography_DLex2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               We may define a function <m>f: \mathbb{N} \rightarrow \mathbb{Z}_7 \setminus \{0\}</m> by the equation:
@@ -449,7 +449,7 @@
           In each case,
           you will use the brute force method used in <xref ref="example_FurtherCryptography_one-way">Example</xref>,
           and write down how many discrete exponentials you need to compute in order to find the answer.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Given <m>\bmod(7^{m}, 41)=28</m>, solve for <m>m</m>.

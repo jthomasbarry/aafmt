@@ -1,6 +1,6 @@
 <section xml:id="sec_Isomorphism_AdditionalExercises">
   <title>Additional exercises</title>
-  <ol type="1">
+  <ol label="1">
     <li>
       <p>
         Let <m>\omega = \cis(2 \pi /n)</m>.
@@ -93,7 +93,7 @@
         Let <m>m, n \in {\mathbb Z}</m>.
         Prove that <m>\langle m \rangle \cap \langle n \rangle \cong \langle l \rangle</m> if and only if <m>d = \lcm(m,n)</m>.
         The following exercises will require this definition:
-        <definition>
+        <definition xml:id = "definition_Isomorphism_automorphism">
           <statement>
             <p>
               An <term>automorphism</term><idx><h>Automorphism</h><h>of a group</h></idx>
@@ -146,7 +146,7 @@
       </p>
     </li>
     <li>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let <m>G</m> be a group and <m>g \in G</m>.

@@ -23,9 +23,9 @@
   <p>
     The next exercise covers some basic properties of traces:
   </p>
-  <exercise xml:id="exercise_SigmaNotation_trace1">
+  <exercise xml:id="exercise_SigmaApp_trace1">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Prove that if <m>A</m> and <m>B</m> are square matrices of the same size,
@@ -95,7 +95,7 @@
       </p>
     </statement>
   </exercise>
-  <exercise xml:id="exercise_SigmaNotation_trace3">
+  <exercise xml:id="exercise_SigmaApp_trace3">
     <statement>
       <p>
         Show that <m>\text{ Tr } ({ABC}) = \text{ Tr } ({CAB})</m>,
@@ -116,14 +116,14 @@
       </p>
     </statement>
   </exercise>
-  <exercise xml:id="exercise_SigmaNotation_linalg">
+  <exercise xml:id="exercise_SigmaApp_linalg">
     <statement>
       <p>
         In linear algebra, given two
         <m>n \times n</m> matrices <m>A</m> and <m>B</m> we say that <m>A</m> is <term>similar</term>
             <idx><h>Matrices</h><h>similar</h></idx>
         to <m>B</m> if there exists an invertible matrix <m>S</m> such that <m>B = S^{-1}AS</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that if <m>A</m> is similar to <m>B</m>,

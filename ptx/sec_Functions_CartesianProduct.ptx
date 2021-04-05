@@ -11,10 +11,11 @@
     In order to define the Cartesian product,
     we will first need a preliminary definition:
   </p>
-  <definition>
+  <definition xml:id = "definition_Functions_orderedpair">
+    <!-- {orderedpair} -->
     <statement>
       <p>
-        {orderedpair} For any objects x and y, mathematicians use (x, y) to denote the
+        For any objects x and y, mathematicians use (x, y) to denote the
         <term>ordered pair</term><idx><h>Ordered pair</h><h>definition of</h></idx> whose first coordinate is <m>x</m> and whose second coordinate is <m>y</m>.
         Two ordered pairs are equal if and only if both coordinates are equal:
         <me>
@@ -54,10 +55,11 @@
     We arrive at our general definition of Cartesian product by replacing <m>{\mathbb R}</m> and
     <m>{\mathbb R}</m> in our previous example with arbitrary sets <m>A</m> and <m>B</m>:
   </p>
-  <definition>
+  <definition xml:id = "definition_Functions_cartesianprod">
+  <!-- {cartesianprod} -->
     <statement>
       <p>
-        {cartesianprod} For any sets <m>A</m> and <m>B</m>,
+        For any sets <m>A</m> and <m>B</m>,
         we define the <term>Cartesian product</term>
         of <m>A</m> and <m>B</m> (denoted
         <m>A \times B</m> as:<idx><h>Cartesian product</h><h>formal definition</h></idx>
@@ -105,7 +107,7 @@
     <statement>
       <p>
         Specify each set by listing its elements.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\{a, i\} \times \{n, t\}</m>
@@ -144,7 +146,7 @@
     <statement>
       <p>
         Let <m>A = \{a,b\}</m> and let <m>B = \{b,c\}</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write the elements of <m>A \times B</m>
@@ -235,7 +237,7 @@
   </proof>
   <exercise xml:id="exercise_Functions_9">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             If <m>B = \{\mbox{vanilla, chocolate,

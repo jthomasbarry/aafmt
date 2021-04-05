@@ -47,7 +47,7 @@
     </proof>
     <exercise xml:id="exercise_Isomorphism_cyclic_inf_isomorph_2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using <xref ref="proposition_Isomorphism_isomorph_theorem_2">Proposition</xref>,
@@ -88,7 +88,7 @@
     </exercise>
     <exercise xml:id="exercise_Isomorphism_cyclic_inf_isomorph3">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               In fact, the <em>converse</em> of <xref ref="proposition_Isomorphism_isomorph_theorem_3">Proposition</xref> is true:
@@ -156,7 +156,7 @@
         <p>
           Give examples of Cayley tables for binary operations that meet each of the following criteria. (You can make your row and column labels be the set of integers <m>\{1,2,..n\}</m>,
           for an appropriate value of <m>n</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 The binary operation has no identity.
@@ -262,7 +262,7 @@
     </p>
     <exercise xml:id="exercise_Isomorphism_cayley_ex">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give the Cayley table for <m>U(8)</m>.
@@ -375,7 +375,7 @@
     </proof>
     <exercise xml:id="exercise_Isomorphism_finish_proof">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>\phi_g : G \rightarrow G</m> defined in the above proof is a permutation on <m>G</m>.
@@ -399,7 +399,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using the left regular representation,
@@ -439,7 +439,7 @@
           <me>
             \tilde{\Phi}(g) := \tilde{\phi}_g
           </me>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that <m>\tilde{\phi}_g : G \rightarrow G</m> defined in the above proof is a permutation on <m>G</m>.
@@ -465,7 +465,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give the isomorphism based on the right regular representation for the group <m>\mathbb{Z}_3</m>.
@@ -483,7 +483,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using the right regular representation,

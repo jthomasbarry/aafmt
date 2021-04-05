@@ -66,12 +66,12 @@
       {d}_{i,m}=  a_{i,k} b_{k,j} c_{j,m}
     </me>.
   </p>
-  <exercise xml:id="exercise_SigmaNotation_abbreviated1">
+  <exercise xml:id="exercise_SigmaApp_abbreviated1">
     <statement>
       <p>
         Write the following expressions in both abbreviated notations.
         Note that all indices are summed over the full range of possible values.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\sum_{i=1}^m \left( \sum_{j=1}^n \left( \sum_{k=1}^p a_{i,j} b_{j,i} \right) c_{k,k}\right)</m>
@@ -86,12 +86,12 @@
       </p>
     </statement>
   </exercise>
-  <exercise xml:id="exercise_SigmaNotation_unabbreviated1">
+  <exercise xml:id="exercise_SigmaApp_unabbreviated1">
     <statement>
       <p>
         Suppose <m>A,B,C,D</m> are <m>n \times n</m> matrices.
         Write the complete (unabbreviated) expression corresponding to the following sums in Einstein notation:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>a_{i,j}a_{k,\ell}b_{p,k}b_{i,\ell}</m>

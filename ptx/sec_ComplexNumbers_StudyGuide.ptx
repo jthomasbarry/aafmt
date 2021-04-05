@@ -256,7 +256,7 @@
           <p>
             De Moivre's Theorem:
             <m>(r \cis \theta)^{n} = r^{n}\cis(n \theta)</m> {Notes}
-            <ol type="a">
+            <ol label="a">
               <li>
                 <p>
                   <m>r \cis \theta \text{ := } r(\cos\theta + i\sin\theta</m>);

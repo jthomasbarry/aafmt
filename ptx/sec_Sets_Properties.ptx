@@ -170,7 +170,7 @@
     </p>
     <p>
       (7) We show that these two sets are equal by showing that:
-      <ol type="I">
+      <ol label="I">
         <li>
           <p>
             Every element <m>x</m> in <m>A \cup (B \cap C)</m> is also an element of <m>(A \cup B) \cap (A \cup C)</m>;
@@ -276,7 +276,7 @@
             <idx><h>De Morgan's laws for sets</h></idx>
             <idx><h>Set operations</h><h>De Morgan's laws for sets</h></idx>(<em>De Morgan's Laws</em>) Let <m>A</m> and <m>B</m> be sets.
         Then
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               <m>(A \cup B)' = A' \cap B'</m>;
@@ -373,7 +373,7 @@
         (You may find it easiest to begin with the more complicated side of the equality,
         and simplify until it agrees with the other side. if you make that work,
         then start with the other side and simplify until the simplified versions of both sides finally agree.)
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>(A \cap B) \setminus B = \emptyset</m>.

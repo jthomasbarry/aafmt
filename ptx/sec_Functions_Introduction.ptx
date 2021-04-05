@@ -297,7 +297,7 @@
             <cell>9</cell>
           </row>
         </tabular>
-        <ol type="a">
+        <ol label="a">
           <li xml:id="FunctionByTableEx-domain">
             <p>
               What is the domain of<nbsp/><m>f</m>?
@@ -339,7 +339,6 @@
             <cell>price (in cents)</cell>
           </row>
           <row bottom="minor">
-            <cell></cell>
             <cell></cell>
             <cell></cell>
           </row>
@@ -447,7 +446,7 @@
         <p>
           Let <m>A = \{ \var{a}, \var{b}, \var{c}, \var{d} \}</m> and <m>B = \{1,3,5,7,9\}</m>.
           Which of the following sets of ordered pairs represent functions from<nbsp/><m>A</m> to<nbsp/><m>B</m>?
-          <ol type="a">
+          <ol label="a">
             <li xml:id="WhichAreFuncsEx-a1b3c5d7e9">
               <p>
                 <m>\{ (\var{a}, 1), (\var{b}, 3), (\var{c}, 5), (\var{d}, 7) \}</m>
@@ -609,14 +608,15 @@
       we learned how to view a function from <m>A</m> to <m>B</m> as a particular subset of <m>A \times B</m>.
       This view leads to our official definition of a function:<idx><h>Function</h><h>formal definition</h></idx>
     </p>
-    <definition>
+    <definition xml:id = 'definition_Functions_FunctionDef'>
+    <!-- {FunctionDef} -->
       <statement>
         <p>
-          {functionDef} Suppose <m>A</m> and<nbsp/><m>B</m> are sets.
+           Suppose <m>A</m> and<nbsp/><m>B</m> are sets.
         </p>
         <p>
           A set<nbsp/><m>f</m> is a <term>function from<nbsp/><m>A</m> to<nbsp/><m>B</m></term> if
-          <ol type="a">
+          <ol label="a">
             <li xml:id="FunctionDefn-func-pair">
               <p>
                 <m>f \subset A \times B</m>
@@ -821,7 +821,7 @@
             <cell></cell>
           </row>
         </tabular>
-        <ol type="a">
+        <ol label="a">
           <li xml:id="FunctionsChapExers-gTable-domain">
             <p>
               What is the domain of<nbsp/><m>g</m>?
@@ -879,7 +879,7 @@
         </p>
         <p>
           Describe the function in each of the following ways:
-          <ol type="a">
+          <ol label="a">
             <li xml:id="FunctionsChapExers-fFormula-table">
               <p>
                 Make a table.
@@ -916,7 +916,7 @@
               </p>
             </li>
           </ul>
-          <ol type="a">
+          <ol label="a">
             <li xml:id="FunctionsChapExers-Whichxy-yaxbyc">
               <p>
                 <m>\{(\var{y}, \var{a}), (\var{x}, \var{b}), (\var{y},\var{c})\}</m>
@@ -942,7 +942,7 @@
           Which of the following are functions from <m>\{1, 2, 3\}</m> to
           <m>\{\var{w},\var{h},\var{o}\}</m>? (If it is not such a function,
           then explain why not.)
-          <ol type="a">
+          <ol label="a">
             <li xml:id="FunctionsChapExers-Which123-1w1h1o">
               <p>
                 <m>\{(1, \var{w}), (1, \var{h}), (1,\var{o})\}</m>

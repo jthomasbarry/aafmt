@@ -6,10 +6,11 @@
     Thus symmetries are special cases of <em>permutations</em>,
     which are defined mathematically as follows.
   </p>
-  <definition>
+  <definition xml:id = "definition_Permutations_defperm">
+  <!-- {defperm}  -->
     <statement>
       <p>
-        {defperm} A bijection whose domain and codomain are equal is called a
+        A bijection whose domain and codomain are equal is called a
         <term>permutation</term><idx><h>Permutation</h><h>definition of</h></idx>.
             <idx><h>Bijection</h><h>as a permutation</h></idx>
         The set of all bijections from a finite set <m>X</m> to itself is called the
@@ -81,7 +82,7 @@
     <statement>
       <p>
         Suppose <m>X = \{A, B, C, D\}</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               How many permutations are there on <m>X</m>?

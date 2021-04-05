@@ -202,7 +202,7 @@
           <idx><h>Coset</h><h>double</h></idx>
       In the case where <m>G = A_4</m>,
         compute the double cosets for:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>H = K = \{ (1),(123), (132) \}</m>.

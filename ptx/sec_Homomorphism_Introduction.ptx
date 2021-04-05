@@ -173,10 +173,6 @@
         <cell></cell>
         <cell></cell>
         <cell></cell>
-        <cell></cell>
-        <cell></cell>
-        <cell></cell>
-        <cell></cell>
       </row>
       <row>
         <cell>1</cell>
@@ -471,7 +467,7 @@
   </p>
   <exercise xml:id="exercise_Homomorphism_Z8_04_i_iso">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Compute the Cayley table for <m>\langle i \rangle</m>.
@@ -719,7 +715,7 @@
     </ul>
     <exercise xml:id="exercise_Homomorphism_Z8_0246_1-1_iso">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Create the Cayley Table for the quotient group <m>{\mathbb Z}_8/ H</m>.

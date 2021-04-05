@@ -19,14 +19,14 @@
   <p>
     Here is the formal definition of a vector space:
   </p>
-  <definition>
+  <definition xml:id = "definition_ExploringPolynomials_VectorSpaceR">
     <statement>
       <p>
         A <term>vector space over the real numbers</term><idx><h>vector space</h><h>over
         <m>\mathbb{R}</m></h></idx> consists of a set <m>V</m> along with two operations '+' and ' <m>\cdot</m> ', subject to the conditions that for all vectors <m>\vec {v},\vec{w},\vec{u} \in V</m> and all scalars
         <m>r,
         s</m> <m>\in \mathbb{R}</m>:
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               The set <m>V</m> is closed under vector addition:

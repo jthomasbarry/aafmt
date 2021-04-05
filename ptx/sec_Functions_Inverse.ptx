@@ -97,7 +97,7 @@
         </p>
         <p>
           Then the following statements are also true:
-          <ol type="a">
+          <ol label="a">
             <li xml:id="x_g_y___InverseExer-g_f_x__">
               <p>
                 <m>g \bigl( f(x) \bigr) = x</m> for all <m>x \in X</m>. and
@@ -152,15 +152,16 @@
     <p>
       Finally, we can give the definition of an inverse function:
     </p>
-    <definition>
+    <definition xml:id = "definition_Functions_invfna">
+    <!-- {invfna} -->
       <statement>
         <p>
-          {invfna} Suppose <m>f \colon X \to Y</m> and <m>g \colon Y \to X</m> are functions.
+          Suppose <m>f \colon X \to Y</m> and <m>g \colon Y \to X</m> are functions.
           We say that <m>g</m> is an <term>inverse function </term>
               <idx><h>Inverse</h><h>function</h></idx>
               <idx><h>Function</h><h>inverse of</h></idx>
           for the function<nbsp/><m>f</m> if and only if:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>f \bigl( g(y) \bigr) = y</m> (in other words,
@@ -204,7 +205,7 @@
           In each case,
           use <xref ref="definition_Functions_invfna">Definition</xref>
           to determine whether <m>g</m> is an inverse of<nbsp/><m>f</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="VerifyInverseExers-_9x-6_">
               <p>
                 <m>f \colon \real \to \real</m> is defined by <m>f(x) = 9x - 6</m> and
@@ -279,7 +280,7 @@
         <em>(forward direction)</em> Assume there is a function
         <m>g \colon Y \to X</m> that is an inverse of<nbsp/><m>f</m>.
         Then by the definition of an inverse function,
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>f \bigl( g(y) \bigr) = y</m> for all <m>y \in Y</m>, and
@@ -337,7 +338,7 @@
         <p>
           Given a number <m>a \in \mathbb{Z}_n</m>,
           consider the function <m>f_a: \mathbb{Z}_n \rightarrow \mathbb{Z}_n</m> given by <m>f_a(m) = a \odot m</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that the function <m>f_6</m> defined on
@@ -373,7 +374,7 @@
     </p>
     <exercise xml:id="exercise_Functions_InverseUniqueExers">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li xml:id="InverseUniqueExers-bij">
             <p>
               Prove that any inverse of a bijection is a bijection.
@@ -390,7 +391,7 @@
       </statement>
     </exercise>
     <remark>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             <xref ref="exercise_Functions_InverseUniqueExers">Exercise</xref>
@@ -402,7 +403,7 @@
         </li>
         <li>
           <p>
-            According to <xref ref="definition_Functions_functionDef">Definition</xref>,
+            According to <xref ref="definition_Functions_FunctionDef">Definition</xref>,
             any function can be specified by a set of ordered pairs.
             That is, if <m>f:X \rightarrow Y</m>,
             we can also write <m>f \subset X \times Y</m>,
@@ -420,10 +421,11 @@
         </li>
       </ol>
     </remark>
-    <definition>
+    <definition xml:id = "definition_Functions_identityMap">
+    <!-- {identityMap}  -->
       <statement>
         <p>
-          {identityMap} For any set<nbsp/><m>A</m>,
+          For any set<nbsp/><m>A</m>,
           define the <term>identity map</term>
           <m>\Id_A \colon A \to A</m> by
           <m>\Id_A(a) = a</m> for every <m>a \in A</m>.
@@ -435,7 +437,7 @@
     </p>
     <exercise xml:id="exercise_Functions_IdAInverse">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>\Id_A</m> is invertible.(*Hint*)
@@ -451,7 +453,7 @@
     </exercise>
     <exercise xml:id="exercise_Functions_InverseIdentityExers">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li xml:id="InverseIdentityExers-InvOfComp">
             <p>
               Suppose <m>f \colon A \to B</m> and <m>g \colon B \to C</m> are bijections.

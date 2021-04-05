@@ -15,7 +15,7 @@
     <p>
       In this chapter we introduce another generalization:
       the idea of a mathematical <em>relation</em>,
-      which generalizes the concept of function as formally defined in <xref ref="definition_Functions_functionDef">Definition</xref>.
+      which generalizes the concept of function as formally defined in <xref ref="definition_Functions_FunctionDef">Definition</xref>.
       We explore various types of relations and their properties,
       and use these new ideas to envision modular arithmetic from a different perspective.
       The new concepts that we introduce in this chapter are foundational to the notions of <em>coset</em>

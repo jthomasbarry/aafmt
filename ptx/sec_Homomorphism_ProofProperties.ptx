@@ -127,7 +127,7 @@
     <statement>
       <p>
         Prove the following:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               If <m>f : G \rightarrow H</m> is a group homomorphism and <m>G</m> is abelian,
@@ -148,10 +148,11 @@
     One of the patterns we saw in our examples that we haven't verified yet was that the elements in <m>G</m> that map to the identity of <m>H</m> formed a normal subgroup in <m>G</m>.
     We can now prove this in general, but first a definition:
   </p>
-  <definition xml:id="kernelofphi">
+  <definition xml:id="definition_Homomorphism_defkernel">
+  <!-- {defkernel}  kernelofphi-->
     <statement>
       <p>
-        {defkernel} Let <m>f : G \rightarrow H</m> be a homomorphism and suppose that <m>e_H</m> is the identity of <m>H</m>.
+        Let <m>f : G \rightarrow H</m> be a homomorphism and suppose that <m>e_H</m> is the identity of <m>H</m>.
         The set <m>f^{-1} ( \{ e_H \})</m> is called the
         <term> kernel</term><idx><h>Kernel</h><h>of a homomorphism</h></idx>
             <idx><h>Homomorphism</h><h>kernel</h></idx>
@@ -179,7 +180,7 @@
     <statement>
       <p>
         What were the kernels of the homomorphisms in:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <xref ref="example_Homomorphism_Z_8_i_homomorph">Example</xref>

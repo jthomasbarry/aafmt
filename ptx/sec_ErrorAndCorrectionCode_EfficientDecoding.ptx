@@ -50,10 +50,11 @@
       <m>H{\bold x}</m> has special importance,
       so we create a special term for it:
     </p>
-    <definition>
+    <definition xml:id = "definition_ErrorAndCorrectionCode_syndomeOfx">
+    <!-- {syndomeOfx} -->
       <statement>
         <p>
-          {syndomeOfx} If <m>H</m> is an
+          If <m>H</m> is an
           <m>k \times n</m> matrix and <m>{\bold x} \in \mathbb{Z}_2^n</m>,
           then <m>H{\bold x}</m> is called the <term>syndrome</term>
               <idx><h>Syndrome of a code</h></idx>
@@ -335,7 +336,7 @@
     </proof>
     <p>
       This proposition gives us a three-step process for finding decoding:
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Compute the syndrome for the received codeword;

@@ -105,7 +105,7 @@
       <statement>
         <p>
           Suppose that <m>G</m> is a finite group with an element <m>g</m> of order 5 and an element <m>h</m> of order 7.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that <m>G</m> has subgroups of order 5 and 7. (*Hint*)
@@ -223,7 +223,7 @@
       that these elements actually form a group.
       There is a special notation for the number of elements in <m>U(n)</m>:
     </p>
-    <definition>
+    <definition xml:id = "definition_Cosets_EulerPhiFunction">
       <statement>
         <p>
           For <m>n>1</m>,
@@ -242,7 +242,7 @@
       <statement>
         <p>
           Evaluate the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\phi(12)</m>
@@ -339,7 +339,7 @@
     </proof>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Verify Euler's theorem for <m>n = 15</m> and <m>a = 4</m>.
@@ -358,7 +358,7 @@
         <p>
           Evaluate the following,
           using the results of <xref ref="exercise_Cosets_phivals">Exercise</xref>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\mod(5^{200},12)</m>
@@ -423,7 +423,7 @@
         <p>
           Let <m>G</m> be a group such that <m>|G| = p</m>,
           where <m>p</m> is a prime number.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Let <m>a</m> be an element of <m>G \setminus \{e\}</m>.

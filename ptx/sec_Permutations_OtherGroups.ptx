@@ -113,7 +113,7 @@
           For example, <m>(ab)=12</m> and
           <m>\sigma = (1234)(567)</m> corresponds to case (d),
           because <m>a</m> and <m>b</m> are consecuitve elements in one of the cycles of <m>\sigma</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(ab) = (36), \sigma = (123)(456)(78)</m>
@@ -269,10 +269,11 @@
       if <m>M</m> is even then <m>N</m> is odd: and vice versa.
       We may express this concisely using the following definition:
     </p>
-    <definition>
+    <definition xml:id = "definition_Permutations_defparity">
+    <!-- {defparity}  -->
       <statement>
         <p>
-          {defparity} for any permutation <m>\sigma</m> written in disjoint cycle notation,
+          For any permutation <m>\sigma</m> written in disjoint cycle notation,
           the number
           <me>
             \text{ mod(sum of cycle lengths minus number of cycles,2) }
@@ -391,7 +392,7 @@
     </p>
     <exercise xml:id="exercise_Permutations_Ex95">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that the product of two even permutations is even.
@@ -418,7 +419,7 @@
           For each of the following sets,
           describe which permutations are even and which are odd,
           according to their cycle structure. (*Hint*)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>S_6</m>
@@ -458,7 +459,7 @@
           <m>P_{\sigma}</m> is in fact known as the
           <term>permutation matrix</term>
           associated with the permutation <m>\sigma</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Write down the matrix <m>P_{\sigma}</m> when: (i)
@@ -522,7 +523,7 @@
     </p>
     <exercise xml:id="exercise_Permutations_A_nGroupProps">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>{\var id} \in A_n</m>.
@@ -635,7 +636,7 @@
         and not <m>S_n</m>).
         To show that <m>f</m> is a bijection,
         we need to show three things:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>B_n</m> is a valid codomain for <m>f</m>:
@@ -663,7 +664,7 @@
       </p>
       <exercise xml:id="exercise_Permutations_prove">
         <statement>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show part (a). (*Hint*)
@@ -685,7 +686,7 @@
     </proof>
     <exercise xml:id="exercise_Permutations_A4">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               What is <m>| A_4 |</m>?
@@ -707,7 +708,7 @@
           (You don't need to list all the permutations,
           just the cycle configurations e.g.
           <q>pair of 2-cycles</q>.)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>A_6</m>

@@ -6,7 +6,7 @@
     <xref ref="exercise_Isomorphism_iso_4">Exercise</xref>: Show a counterexample where the sum of two complex numbers is not the same as the sum of their corresponding ordered pairs.
   </p>
   <p>
-    <xref ref="exercise_Isomorphism_InvCompIso">Exercise</xref>(a): According to <xref ref="definition_Isomorphism_isomorph_defn">Definition</xref>,
+    <xref ref="exercise_Isomorphism_InvCompIso">Exercise</xref>(a): According to <xref ref="definition_Isomorphism_isomorphDefn">Definition</xref>,
     this involves proving two things about <m>\phi^{-1}</m>.
     What are they?
   </p>

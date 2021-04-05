@@ -14,7 +14,7 @@
     <statement>
       <p>
         The polynomials in <m>\mathbb{Z}_2[x]</m> are:
-        <ol type="">
+        <ol label="A">
           <li>
             <p>
               The constant polynomials: 1 and 0 (there are only 2)
@@ -39,7 +39,7 @@
   </example>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             How many different polynomials in <m>\mathbb{Z}_2[x]</m> have degree 3?

@@ -57,7 +57,7 @@
               Then
               <md>
                 <mrow>T_{k+1}\amp =T_{k}+T_{k-1}+\underline{~~~~} \text{ (by recurrence for \(T_n\)) }</mrow>
-                <mrow>\amp \lt 2^{k}+2^{k-1}+\underline{~~~~}  \text{ (strong ind. hyp. \\amp  (\(P(k), P(k-1),P(k-2)\)) }</mrow>
+                <mrow>\amp \lt 2^{k}+2^{k-1}+\underline{~~~~}  \text{ (strong ind. hyp. and  (\(P(k), P(k-1),P(k-2)\)) }</mrow>
                 <mrow>\amp =2^{k+1}\left(\frac12+\frac14+\underline{~~~~}\right)</mrow>
                 <mrow>\amp =2^{k+1}\cdot \underline{~~~~} \lt 2^{k+1}</mrow>
               </md>.

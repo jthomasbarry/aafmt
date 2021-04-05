@@ -160,11 +160,6 @@
             <cell></cell>
             <cell></cell>
             <cell></cell>
-            <cell></cell>
-            <cell></cell>
-            <cell></cell>
-            <cell></cell>
-            <cell></cell>
           </row>
           <row>
             <cell>0</cell>
@@ -207,10 +202,6 @@
             <cell><m>-i</m></cell>
           </row>
           <row bottom="minor">
-            <cell></cell>
-            <cell></cell>
-            <cell></cell>
-            <cell></cell>
             <cell></cell>
             <cell></cell>
             <cell></cell>
@@ -263,10 +254,6 @@
             <cell></cell>
             <cell></cell>
             <cell></cell>
-            <cell></cell>
-            <cell></cell>
-            <cell></cell>
-            <cell></cell>
           </row>
           <row>
             <cell><m>\var{id}</m></cell>
@@ -298,7 +285,7 @@
           </row>
         </tabular>
       </table>
-      <ol type="1">
+      <ol label="1">
         <li>
           <p>
             Comparing <m>{\mathbb Z_4}</m> and <m>\langle i \rangle</m>,
@@ -359,7 +346,7 @@
       <p>
         Determine whether each of the following functions are isomorphisms between the groups in <xref ref="example_Isomorphism_sym_ex">Example</xref>.
         Justify your answers.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>f: {\mathbb Z_4}  \longrightarrow \langle i \rangle</m> defined by

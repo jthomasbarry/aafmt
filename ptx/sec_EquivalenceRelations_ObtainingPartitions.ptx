@@ -46,10 +46,11 @@
       the only fact about given names that we used to define equivalence classes was that given name defines an equivalence relation on the set of interest.
       So it stands to reason that we can do something similar with any equivalence relation:
     </p>
-    <definition>
+    <definition xml:id = "definition_EquivalenceRelations_EquivRel">
+    <!-- {DefEquivRel} -->
       <statement>
         <p>
-          {DefEquivRel} Suppose <m>\sim</m> is an equivalence relation on a set<nbsp/><m>A</m>.
+          Suppose <m>\sim</m> is an equivalence relation on a set<nbsp/><m>A</m>.
           For each <m>a \in A</m>, the <term>equivalence class</term>
               <idx><h>Equivalence class</h></idx>
           of<nbsp/><m>a</m> is the following subset of<nbsp/><m>A</m>:
@@ -107,7 +108,7 @@
     </example>
     <exercise xml:id="exercise_EquivalenceRelations_EquivClassEasyEx">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li xml:id="EquivClassEasyEx-set">
             <p>
               Let <m>B = \{1,2,3,4,5\}</m> and
@@ -145,7 +146,7 @@
         <p>
           Suppose <m>\sim</m> is an equivalence relation on a set<nbsp/><m>S</m>.
           Then:
-          <ol type="a">
+          <ol label="a">
             <li xml:id="EquivRelProps-aIn">
               <p>
                 For all <m>a \in S</m>, we have <m>a \in [a]</m>.
@@ -189,11 +190,11 @@
           Prove the assertions in <xref ref="proposition_EquivalenceRelations_EquivRelProps">Proposition</xref>.
           You may use the following hints:
         </p>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Use the reflexive property of <m>\sim</m>,
-              together with <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>
+              together with <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>
             </p>
           </li>
           <li>
@@ -205,7 +206,7 @@
             <p>
               This can be done by showing:
             </p>
-            <ol type="i">
+            <ol label="i">
               <li>
                 <p>
                   <m>\bigcup_{a \in S} [a] \subset S</m>
@@ -217,10 +218,12 @@
                 </p>
               </li>
             </ol>
-            In (i), use the fact that <m>[a] \subset S</m>.
-            In (ii), use (a) above to show that every element of <m>S</m> is in at least one equivalence class.
-            (Recall also that <sq><m>\subset</m></sq> means
-            <q>contained in</q>, and includes the case where the two sets are equal.)
+            <p>
+              In (i), use the fact that <m>[a] \subset S</m>.
+              In (ii), use (a) above to show that every element of <m>S</m> is in at least one equivalence class.
+              (Recall also that <sq><m>\subset</m></sq> means
+              <q>contained in</q>, and includes the case where the two sets are equal.)
+            </p>
           </li>
           <li>
             <p>
@@ -233,7 +236,7 @@
                 <li>
                   <p>
                     Choose any <m>a_3 \in [a_1]</m>.
-                    Use <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>
+                    Use <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>
                     together with the transitive property to show that <m>a_3 \in [a_2]</m>.
                     Conclude that every element of <m>[a_1]</m> is also an element of <m>[a_2]</m>.
                   </p>
@@ -251,7 +254,7 @@
               You can prove this one by contradiction.
               Suppose the intersection is non-empty.
               Choose an element in the intersection.
-              Use <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>
+              Use <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>
               and the transitive property to derive a contradiction.
             </p>
           </li>
@@ -282,7 +285,7 @@
         <p>
           It's enough to show that any two equivalence classes <m>[a_1]</m> and<nbsp/><m>[a_2]</m> that are not disjoint must in fact be equal.
               <idx><h>Disjoint</h><h>applied to equivalence relations</h></idx>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Since the equivalence classes are not disjoint,
@@ -297,7 +300,7 @@
             </li>
             <li>
               <p>
-                By <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>,
+                By <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>,
                 this means <m>a \sim \_\_\_\_\_\_\_\_</m> and <m>a \sim \_\_\_\_\_\_\_\_</m>.
               </p>
             </li>
@@ -384,7 +387,7 @@
           <me>
             r_1 \cis(\theta_1) \sim_r r_2(\cis \theta_2)  \iff r_1 = r_2
           </me>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove that <m>\sim_r</m> thus defined is an equivalence relation.
@@ -436,7 +439,7 @@
           <me>
             r_1 \cis(\theta_1) \, \sim_{\theta} \, r_2(\cis \theta_2)  \iff \theta_1 = \theta_2
           </me>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove that <m>\sim_{\theta}</m> thus defined is an equivalence relation.
@@ -486,7 +489,7 @@
           that any partition produces an equivalence relation.
           We also know from <xref ref="proposition_EquivalenceRelations_EquivRel-_Part">Proposition</xref>
           that any equivalence relation produces a partition.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Suppose we begin with a partition <m>\mathcal{P}</m> on the set <m>A</m>,

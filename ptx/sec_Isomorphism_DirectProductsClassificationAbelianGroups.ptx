@@ -58,7 +58,7 @@
     </p>
     <exercise xml:id="exercise_Isomorphism_proof_thm_7">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that the set <m>G \times H</m> is closed under the binary operation defined in <xref ref="proposition_Isomorphism_isomorph_theorem_7">Proposition</xref>.
@@ -120,7 +120,7 @@
     </example>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the identity of the group
@@ -137,7 +137,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Consider the function <m>f: {\mathbb R} \times {\mathbb R} \rightarrow {\mathbb C}</m> defined by <m>f( (a,b) ) = a + bi</m>.
@@ -190,7 +190,7 @@
     </p>
     <exercise xml:id="exercise_Isomorphism_dirProdAbel">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose that the groups <m>G</m> and <m>H</m> are abelian.
@@ -368,7 +368,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               What function would you define in order to prove <xref ref="proposition_Isomorphism_isomorph_DPorder">Proposition</xref>?
@@ -526,7 +526,7 @@
       <statement>
         <p>
           Find the order of each of the following elements.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(3, 4)</m> in <m>{\mathbb Z}_4 \times {\mathbb Z}_6</m>
@@ -553,7 +553,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>\mathbb{Z}_4 \times \mathbb{Z}_9</m> is cyclic,
@@ -718,7 +718,7 @@
     </remark>
     <exercise xml:id="exercise_Isomorphism_prodfacabel0">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               It turns out that for each <m>k</m>,
@@ -772,7 +772,7 @@
     </example>
     <exercise xml:id="exercise_Isomorphism_prodfacabel2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove or disprove: There is an abelian group of order 22 that is <em>not</em> cyclic.
@@ -828,7 +828,7 @@
     </example>
     <exercise xml:id="exercise_Isomorphism_exel">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>\mathbb{Z}_{5^n}</m> contains an element of order 5, for any positive integer <m>n</m>.
@@ -871,7 +871,7 @@
       <statement>
         <p>
           (All of the exercises below assume that <m>G</m> is an abelian group.)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that if the prime <m>p</m> divides <m>|G|</m>,
@@ -952,7 +952,7 @@
     </example>
     <exercise xml:id="exercise_Isomorphism_subgpsAllOrders">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Let <m>p</m> be a prime.

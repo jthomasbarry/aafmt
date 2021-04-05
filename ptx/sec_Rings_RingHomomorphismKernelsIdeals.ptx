@@ -14,7 +14,7 @@
           where <m>n</m> is a fixed integer <m>> 1</m>.
           In <xref ref="proposition_ModularArithmetic_number_remainder">Proposition</xref>
           we showed that for any <m>\ell,m \in {\mathbb Z}</m> we have:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bmod(\ell+ m,n) = \bmod(\ell,n) \oplus \bmod(m,n)</m>, and
@@ -36,10 +36,11 @@
     <p>
       We may generalize this example with the following definition.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_homomorph">
+    <!-- {homomorph}  -->
       <statement>
         <p>
-          {homomorph} A function <m>f:R_1\rightarrow R_2</m> between rings <m>R_1,R_2</m> is called a
+          A function <m>f:R_1\rightarrow R_2</m> between rings <m>R_1,R_2</m> is called a
           <term>ring homomorphism</term>
           if <m>f</m> has the following properties:
           <men xml:id="eq_homo_add">
@@ -55,12 +56,12 @@
     <p>
       Notice that a homomorphism is an isomorphism without the bijection requirement.
       <xref ref="fig_ring_functions">Figure</xref>
-      shows the relationship between homomorphisms,
+      shows the relationship between homomorphisms
       isomorphisms and automorphisms.
     </p>
     <figure xml:id="fig_ring_functions">
       <caption>Ring Functions</caption>
-      <image width="75%" source="images/ringFunctions.png"/>
+      <image width="75%" source="images/ringFunctions.jpg"/>
     </figure>
     <p>
       Following are a number of examples of ring homomorphisms.
@@ -122,7 +123,7 @@
         <p>
           We will divide this proof into two parts,
           one for each property of ring homomorphisms:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Let <m>p(x),q(x)</m> be arbitrary elements of <m>{\mathbb R}[x]</m>,
@@ -178,7 +179,7 @@
             f(a_nx^n+a_{n-1}x^{n-1}+\cdots +a_0)=a_nB^n+a_{n-1}B^{n-1}+\cdots +a_0
           </me>,
           where <m>B= \begin{bmatrix}0 \amp  0 \amp  1\\ 1 \amp  0 \amp  0\\ 0 \amp  1 \amp  0 \end{bmatrix} </m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that <m>f</m> is onto.
@@ -200,10 +201,11 @@
       the kernel of a group homomorphism is the inverse image of the identity element of the codomain.
       We may make a similar definition for ring homomorphisms.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_kernel">
+    <!-- {kernel}  -->
       <statement>
         <p>
-          {kernel} If <m>f:R_1\rightarrow R_2</m> is a ring homomorphism,
+          If <m>f:R_1\rightarrow R_2</m> is a ring homomorphism,
           then the set <m>\{x\in R_1|f(x)=0\}</m> is called the <term>kernel</term>
           of <m>f</m>, notated <m>Ker(f)</m>.
         </p>
@@ -237,7 +239,7 @@
         <p>
           In <xref ref="exercise_Rings_R_C_homo">Exercise</xref>,
           we defined a function <m>f:{\mathbb R}[x]\rightarrow C_3({\mathbb R})</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 For what values of <m>a</m> is <m>x^3+a</m> in <m>Ker(f)</m>?
@@ -261,7 +263,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Given the homomorphism <m>f</m> defined in <xref ref="example_Rings_ring_homo">Example</xref>,
@@ -288,7 +290,7 @@
         <p>
           Given the function <m>f</m> defined in <xref ref="example_Rings_ring_homo">Example</xref>,
           and let <m>S=f^{-1}(0)</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that if <m>a,b \in S</m>, then <m>a+b \in S</m>.
@@ -353,7 +355,7 @@
                 <mrow>\amp a,b\in f^{-1}(0) \amp  \text{ given }</mrow>
                 <mrow>\amp f(a)=0,f(b)=0 \amp  \text{ def. of inverse }</mrow>
                 <mrow>\amp f(a+b)=f(a)+f(b) \amp  \text{ def. of homomorphism }</mrow>
-                <mrow>\amp f(a+b)=0+0=0 \amp  \text{ substitution \\amp  zero property }</mrow>
+                <mrow>\amp f(a+b)=0+0=0 \amp  \text{ substitution and  zero property }</mrow>
                 <mrow>\amp a+b\in f^{-1}(0) \amp  \text{ def. of inverse }</mrow>
               </md>
             </p>
@@ -364,7 +366,7 @@
                 <mrow>\amp a\in f^{-1}(0),~b\in R_1 \amp  \text{ given }</mrow>
                 <mrow>\amp f(a)=0 \amp  \text{ def. of inverse }</mrow>
                 <mrow>\amp f(a\cdot b)=f(a)\dot f(b) \amp  \text{ def. of homomorphism }</mrow>
-                <mrow>\amp f(a\cdot b)=0\cdot f(b)=0 \amp  \text{ substitution \\amp  Prop. <xref ref="proposition_Rings_add_inverse"></xref> }</mrow>
+                <mrow>\amp f(a\cdot b)=0\cdot f(b)=0 \amp  \text{ substitution and  Prop. <xref ref="proposition_Rings_add_inverse"></xref> }</mrow>
                 <mrow>\amp ab\in f^{-1}(0) \amp  \text{ def. of inverse }</mrow>
               </md>
             </p>
@@ -404,12 +406,13 @@
       Any set <m>J</m> which has properties (1-4) is called an <em>ideal</em>.
       We formalize the definition of ideal as follows.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defideal">
+    <!-- {defideal}  -->
       <statement>
         <p>
-          {defideal} Given a ring <m>R</m>,
+          Given a ring <m>R</m>,
           suppose <m>J \subset R</m> satisfies the following properties:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>J</m> is closed under the ring's additive operation:
@@ -470,7 +473,7 @@
       <statement>
       <p>
         Let <m>f:{\mathbb Z}\rightarrow {\mathbb Z}_7</m> be defined by : <m>f(x)=\bmod(x,7)</m>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove or disprove <m>f</m> is a ring homomorphism.
@@ -487,7 +490,7 @@
             </p>
           </li>
         </ol>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               To determine whether <m>f</m> is a ring homomorphism,
@@ -542,7 +545,7 @@
       <statement>
         <p>
           Let <m>f:{\mathbb C}\rightarrow {\mathbb R}</m> be defined by <m>f(a+bi)=a</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove or disprove: <m>f</m> is a ring homomorphism:
@@ -567,7 +570,7 @@
         <p>
           Let <m>f:{\mathbb C}\rightarrow {\mathbb R}</m> be defined by:
           <m>f(a+bi)=b</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove or disprove that <m>f</m> s a ring homomorphism.
@@ -592,7 +595,7 @@
         <p>
           Let <m>f:{\mathbb Z}_2\times {\mathbb Z}_2\rightarrow {\mathbb Z}_2</m> be defined by:
           <m>f(a,b)=a</m>. (Remember that <m>{\mathbb Z}_2\times{\mathbb Z}_2=\{(0,0),(0,1),(1,0),(1,1)\}</m>).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove or disprove: <m>f</m> is a ring homomorphism.
@@ -617,7 +620,7 @@
         <p>
           Let <m>f:{\mathbb Q}\times {\mathbb Q}\rightarrow {\mathbb Q}</m> be defined by:
           <m>f(a,b)=b</m>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove or disprove: <m>f</m> is a ring homomorphism.

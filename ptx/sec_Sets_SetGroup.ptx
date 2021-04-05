@@ -59,7 +59,7 @@
   </p>
   <exercise xml:id="exercise_Sets_31">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             List the <em>subsets</em> of <m>S = \{a,b,c\}</m>.
@@ -128,7 +128,7 @@
     <statement>
       <p>
         Let <m>G</m> be the set of subsets of the set <m>\{a,b,c\}</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Does the set <m>G</m> with the operation <m>\cup</m> have the closure property?
@@ -189,7 +189,7 @@
       <p>
         Given a set <m>A</m>,
         let <m>G</m> be the set of all subsets of <m>A</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Does the set <m>G</m> with the operation <m>\cap</m> have the closure property?

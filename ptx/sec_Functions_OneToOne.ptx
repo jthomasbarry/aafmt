@@ -27,10 +27,11 @@
                 </li>
               </ol>
             </p>
-            Then the inspector can arrest Bob for theft,
-            because a person cannot (legally) be the wife of more than one husband.<fn>
-            According to U.S. law as of 2017.
-            </fn>
+            <p>
+              Then the inspector can arrest Bob for theft,
+              because a person cannot (legally) be the wife of more than one husband.
+              <fn>According to U.S. law as of 2017.</fn>
+            </p>
           </li>
           <li>
             <p>
@@ -48,8 +49,10 @@
                 </li>
               </ol>
             </p>
-            Then the inspector does not know enough to be sure who the forger is,
-            because it could be some other child of Alice.
+            <p>
+              Then the inspector does not know enough to be sure who the forger is,
+              because it could be some other child of Alice.
+            </p>
           </li>
         </ul>
         <p>
@@ -148,10 +151,11 @@
     <p>
       We have given an informal idea of the meaning of one-to-one<ndash/>now it's time for a formal definition.
     </p>
-    <definition>
+    <definition xml:id = "definition_Functions_121defn">
+    <!-- {121defn}  -->
       <statement>
         <p>
-          {121defn} Suppose <m>f</m> is a function with domain <m>A</m> and codomain <m>B</m>.
+          Suppose <m>f</m> is a function with domain <m>A</m> and codomain <m>B</m>.
           We say <m>f</m> is <term>one-to-one</term>
           iff for all <m>a_1,a_2 \in A</m> such that
           <m>f(a_1) = f(a_2)</m>, we have <m>a_1 = a_2</m>.
@@ -171,7 +175,7 @@
           Each of the following sets of ordered pairs is a function from
           <m>\{1,2,3,4\}</m> to <m>\{\var{a},\var{b},\var{c},\var{d},\var{e}\}</m>.
           Either prove that the function is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="x11Exers-pairs-f">
               <p>
                 <m>f = \{ (1,\var{a}), (2,\var{b}), (3,\var{d}), (4,\var{e})\}</m>
@@ -232,7 +236,7 @@
           Determine which of the following functions are one-to-one.
           If so, give a proof.
           If not, give a counterexample.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>f\colon \mathbb{R} \to \mathbb{R}</m>,
@@ -423,7 +427,7 @@
       <statement>
         <p>
           Graph each function and use the horizontal line test to determine whether or not the following functions are one-to-one.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>f:[0,\pi] \rightarrow \mathbb{R}</m>, <m>f(x) = \cos(x)</m>.
@@ -461,7 +465,7 @@
     </exercise>
     <exercise xml:id="exercise_Functions_horizontal2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Sketch the function <m>f:\mathbb{R} \rightarrow \mathbb{R}</m>,
@@ -586,10 +590,11 @@
     <p>
       We formalize this equivalence in the following alternative definition of one-to-one:
     </p>
-    <definition>
+    <definition xml:id = "definition_Functions_121defn2">
+    <!-- {121defn2} -->
       <statement>
         <p>
-          {121defn2}<term>(Alternate)</term>
+          <term>(Alternate)</term>
           Suppose <m>f \colon A \to B</m>.
           We say <m>f</m> is a <term>one-to-one function</term><idx><h>One-to-one</h><h>alternate definition</h></idx> iff for all
           <m>a_1,a_2 \in A</m> such that <m>a_1 \neq a_2</m>,
@@ -626,7 +631,7 @@
     </example>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that any strictly increasing function from
@@ -668,7 +673,7 @@
         <p>
           For each of the following functions,
           either prove the function is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="x11Exers-formula-f">
               <p>
                 <m>f:[0,1] \rightarrow [0,1], f(x) = 1</m>.
@@ -723,7 +728,7 @@
         <p>
           For each function,
           either prove that it is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="IsIt11-linear">
               <p>
                 <m>f \colon \rational \to \rational</m> defined by <m>f(r)=3r/5 - 2</m>.
@@ -769,7 +774,7 @@
         <p>
           For each function,
           either prove that it is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="modular_g">
               <p>
                 <m>g \colon {\mathbb Z}_6 \to {\mathbb Z}_6</m> defined by <m>g(n)= n \oplus 2</m> .
@@ -827,7 +832,7 @@
         <p>
           For each function,
           either prove that it is one-to-one, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>g \colon {\mathbb C}\setminus \{0\} \to {\mathbb C}\setminus \{0\}</m> defined by <m>g(z) = z^{-1}</m> .

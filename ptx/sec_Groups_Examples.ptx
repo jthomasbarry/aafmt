@@ -10,7 +10,7 @@
       <p>
         The set <m>{\mathbb R} \setminus \{0 \}</m> of non-zero real numbers is written as <m>{\mathbb R}^{\ast}</m>.
         Let's prove that <m>({\mathbb R}^{\ast}, \cdot)</m> is a group.
-        <ol type="1">
+        <ol label="1">
           <li>
             <p>
               Closure: Suppose <m>a, b \in {\mathbb R}^{\ast}</m>.
@@ -33,12 +33,12 @@
       </p>
       <p>
         To finish the proof that <m>{\mathbb R}^{\ast}</m> is a group,
-        we must establish axioms (2) through (4) in <xref ref="definition_Groups_group_definition">Definition</xref>.
+        we must establish axioms (2) through (4) in <xref ref="definition_Groups_groupDefinition">Definition</xref>.
         We leave this up to you in the following exercise:
       </p>
       <exercise xml:id="exercise_Groups_Rstar_group">
         <statement>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Finish proving that <m>({\mathbb R}^{\ast}, \cdot)</m> is a group.
@@ -63,7 +63,7 @@
       <statement>
         <p>
           Let <m>{\mathbb C}^{\ast}</m> be the set of non-zero complex numbers.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Why is <m>{\mathbb C}^{\ast}</m> not a group under the operation of complex addition?
@@ -103,7 +103,7 @@
     </remark>
     <exercise xml:id="exercise_Groups_15">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Why is it impossible for a set of complex numbers <m>S</m> which has more than one element and includes 0 to be a group under multiplication?
@@ -129,14 +129,14 @@
         We will prove closure and the commutative property;
         the rest of the proof will be left to you.
       </p>
-      <ol type="1">
+      <ol label="1">
         <li>
           <p>
             Closure: Suppose <m>a, b \in S</m>.
             We need to show that <m>a \ast b \in S</m>;
             i.e. that (i) <m>a \ast b \in {\mathbb R}</m> and (ii) <m>a \ast b \neq -1</m>.
           </p>
-          <ol type="i">
+          <ol label="i">
             <li>
               <p>
                 By the closure of <m>({\mathbb R}, +), (a + b) \in {\mathbb R}</m>.
@@ -190,7 +190,7 @@
               </li>
             </ul>
           </p>
-          This completes the proof that <m>(S, \ast)</m> is commutative.
+          <p>This completes the proof that <m>(S, \ast)</m> is commutative.</p>
         </li>
       </ol>
       <exercise xml:id="exercise_Groups_S_group">
@@ -253,7 +253,7 @@
     </example>
     <exercise xml:id="exercise_Groups_QuatEx">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Use the information given above to complete the Cayley table for <m>Q_8</m>.
@@ -275,7 +275,7 @@
         <p>
           Let <m>H = {\mathbb Z} \times {\mathbb Z}</m>
           (all integer coordinate-pairs).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Define a binary operation <m>\circ</m> on <m>H</m> by <m>(a,b) \circ (c,d) = (a + c , b + d)</m>,
@@ -305,7 +305,7 @@
         <p>
           Let <m>G = {\mathbb R}^{\ast} \times {\mathbb Z}</m> (all pairs such that the first element is a nonzero real number,
           and the second is an integer)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Define a binary operation <m>\circ</m> on <m>G</m> by <m>(a,m) \circ (b,n) = (a+b, m+n)</m>.
@@ -338,10 +338,11 @@
     <p>
       The previous two exercises follow a pattern that we may generalize:
     </p>
-    <definition>
+    <definition xml:id = "definition_Groups_defProductOfGroups">
+    <!--  {defProductOfGroupss}  -->
       <statement>
         <p>
-          {defProductOfGroups} Given two groups <m>G</m> and <m>H</m>,
+         Given two groups <m>G</m> and <m>H</m>,
           we define the <em>product</em>
               <idx><h>Product</h><h>of groups</h></idx>
           of groups <m>G</m> and <m>H</m>
@@ -359,7 +360,7 @@
     </definition>
     <exercise xml:id="exercise_Groups_prod_of_groups">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Consider <m>(3,6)</m> and <m>(2,4)</m> as elements of <m>{\mathbb Z}_7 \times {\mathbb Z}_7</m>.
@@ -441,7 +442,7 @@
           Support your answer in each case.
           Assume that the associative property holds in each case.
           <em>Note</em> the identity is not always the first element listed!
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <tabular>
@@ -643,7 +644,7 @@
         <p>
           For each of the following multiplication tables,
           fill in the blanks to make a Cayley table for a group.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <tabular>
@@ -846,7 +847,7 @@
         <p>
           * Show that it is <em>impossible</em>
           to complete the following Cayley tables to make a group.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <tabular>
@@ -1248,10 +1249,11 @@
     <p>
       For convenience, let's define some notation:
     </p>
-    <definition>
+    <definition xml:id = "definition_Groups_DefnOfUnits">
+    <!-- {DefnOfUnits}  -->
       <statement>
         <p>
-          {DefnOfUnits} The set of nonzero numbers in
+          The set of nonzero numbers in
           <m>{\mathbb Z}_n</m> that are relatively prime to <m>n</m> is called the
           <term>set of units of <m>{\mathbb Z}_n</m></term>,
           denoted by <term><m>U(n)</m></term><idx><h>Units</h><h>group of (<m>U(n)</m>)</h></idx>.
@@ -1275,7 +1277,7 @@
           we prove that <m>U(n)</m> is a group under multiplication mod <m>n</m> for any <m>n</m>.
           We know that modular multiplication is associative,
           so it remains to show the closure and inverse properties.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Fill in the blanks to show that <m>U(n)</m> is closed under modular multiplication: Let <m>k,m</m> be arbitrary elements of <m>U(n)</m>.
@@ -1345,7 +1347,7 @@
           <me>
             {\mathbb M}_2 ( {\mathbb C}) = \left\{ \begin{pmatrix}a \amp  b \\ c \amp  d \end{pmatrix}  ~|~ a,b,c,d \in {\mathbb C} \right\}
           </me>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that <m>{\mathbb M}_2 ( {\mathbb C})</m> a group under matrix addition.
@@ -1385,10 +1387,11 @@
       To specify those which are included,
       we need the following definition
     </p>
-    <definition>
+    <definition xml:id = "definition_Groups_MatDet">
+    <!-- {MatDet}  -->
       <statement>
         <p>
-          {MatDet} For the <m>2\times 2</m> matrix <m>A = \begin{pmatrix}a \amp b \\ c \amp d \end{pmatrix}</m>,
+          For the <m>2\times 2</m> matrix <m>A = \begin{pmatrix}a \amp b \\ c \amp d \end{pmatrix}</m>,
           the quantity <m>ad-bc</m> is called the
           <em>determinant</em><idx><h>Determinant</h><h>of a 2 <times/> 2 matrix</h></idx> of <m>A</m> and is denoted by <m>\det(A)</m>.
         </p>
@@ -1416,10 +1419,11 @@
       We're now ready to define a set of
       <m>2\times 2</m> matrices which is suitable to form a multiplicative group.
     </p>
-    <definition>
+    <definition xml:id = "definition_Groups_GL2">
+    <!-- {GL2}  -->
       <statement>
         <p>
-          {GL2} Let <m>GL_2({\mathbb C})</m> be the subset of
+          Let <m>GL_2({\mathbb C})</m> be the subset of
           <m>{\mathbb M}_2 ( {\mathbb C})</m> consisting of matrices <m>A</m> such that
           <me>
             A = \begin{pmatrix}a \amp  b \\ c \amp  d \end{pmatrix}  \text{ and }  \det(A) \neq 0
@@ -1435,7 +1439,7 @@
         <p>
               <idx><h>Matrix groups</h><h><m>GL_2</m></h></idx>
               <idx><h>Matrices</h><h>invertible</h></idx>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that for any matrix <m>A \in GL_2(\mathbb{C})</m>,
@@ -1489,10 +1493,11 @@
       we present an alternative way of characterizing the
       <m>n \times n</m> matrices that are suitable members of a multiplicative group.
     </p>
-    <definition>
+    <definition xml:id = "definition_Groups_inversibleMatrix">
+    <!-- {inversibleMatrix}  -->
       <statement>
         <p>
-          {inversibleMatrix} An <m>n \times n</m> matrix <m>A</m> is called <em>invertible</em>
+          An <m>n \times n</m> matrix <m>A</m> is called <em>invertible</em>
               <idx><h>Matrix</h><h>nvertible</h></idx>
           if there exists a <m>n \times n</m> matrix <m>B</m> such that <m>AB = BA = I_n</m>,
           where <m>I_n</m> is the <m>n \times n</m> identity matrix.
@@ -1511,10 +1516,11 @@
         </p>
       </statement>
     </exercise>
-    <definition>
+    <definition xml:id = "definition_Groups_Gln">
+    <!-- {Gln}  -->
       <statement>
         <p>
-          {Gln} The set of <m>n \times n</m> invertible matrices is called the <m>n</m> dimensional
+          The set of <m>n \times n</m> invertible matrices is called the <m>n</m> dimensional
           <term>general linear group</term>,
           and is denoted by <m>GL_n(\mathbb{C})</m>.
         </p>

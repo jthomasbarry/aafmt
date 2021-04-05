@@ -11,10 +11,11 @@
     which in fact turns out to be a group.
     To show this, we must first define a group operation:
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_group">
+  <!-- {group}  -->
     <statement>
       <p>
-        {group} The group <m>\mathbb{Z}_2^n</m> consists of the set of all binary <m>n</m>-tuples,
+        The group <m>\mathbb{Z}_2^n</m> consists of the set of all binary <m>n</m>-tuples,
         together with an operation
         <q>+</q>
         defined as follows:
@@ -44,7 +45,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that if <m>{\bold x}</m> and
@@ -108,7 +109,7 @@
         Let <m>{\bold x}</m>, <m>{\bold y}</m>,
         and <m>{\bold z}</m> be binary <m>n</m>-tuples.
         Then
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>w({\bold x}) = d({\bold x},{\bold 0})</m>
@@ -130,12 +131,12 @@
   </proposition>
   <p>
     We have already shown (a) in the definition of weight
-    (<xref ref="definition_ErrorAndCorrectionCode_weight">Definition</xref>).
+    (<xref ref="definition_ErrorAndCorrectionCode_HammingDistance">Definition</xref>).
     Parts (b) and (c) are for you to prove:
   </p>
   <exercise xml:id="exercise_ErrorAndCorrectionCode_hamming">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Prove part (b) of <xref ref="proposition_ErrorAndCorrectionCode_norm">Proposition</xref>
@@ -159,10 +160,11 @@
     have special properties that enable efficient encoding and decoding.
     Accordingly, we define:
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_groupCode">
+  <!-- {groupCode}  -->
     <statement>
       <p>
-        {groupCode} A <term>group code</term>
+        A <term>group code</term>
             <idx><h>Code</h><h>group</h></idx>
             <idx><h>Group code</h></idx>
         is a set of codewords that is also a subgroup of <m>{\Bbb Z}_2^n</m>.
@@ -183,7 +185,7 @@
   </p>
   <exercise xml:id="exercise_ErrorAndCorrectionCode_ctns0">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that a set of codewords in

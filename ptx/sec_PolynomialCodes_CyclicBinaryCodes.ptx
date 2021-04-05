@@ -21,7 +21,7 @@
     However there is an additional interesting and useful property of these codewords.
     In order to describe the property we need the following definition.
   </p>
-  <definition>
+  <definition xml:id = "definition_PolynomialCodes_cyclicShift1">
     <statement>
       <p>
         The <term> cyclic 1-shift</term>
@@ -47,7 +47,7 @@
     <statement>
       <p>
         Shift the following codewords by the given cyclic shift.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               (1011) 1-shifted
@@ -103,10 +103,11 @@
     This is the same as stating that the set of codewords is
     <em>closed</em> under cyclic 1-shifts.
   </p>
-  <definition>
+  <definition xml:id = "definition_PolynomialCodes_defcycliccode">
+  <!-- {defcycliccode}  -->
     <statement>
       <p>
-        {defcycliccode} A linear code that is closed under cyclic 1-shifts is said to be a
+        A linear code that is closed under cyclic 1-shifts is said to be a
         <term> cyclic code</term>.
             <idx><h>Cyclic</h><h>code</h></idx>
       </p>
@@ -148,7 +149,7 @@
       <p>
         For each of the following sets of code words,
         prove or disprove that they are closed under cyclic 1-shifts.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <me>
@@ -176,7 +177,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Prove or disprove: A cyclic code is closed under cylic <m>2</m>-shifts.
@@ -229,7 +230,7 @@
   </example>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Give an example of a binary code that is not reversible.

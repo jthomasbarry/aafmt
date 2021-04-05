@@ -45,7 +45,7 @@
       and it certainly wouldn't be good for Jennifer's customers if their credit card numbers were stolen.
       So she needs a suitable code for the credit card information in order to protect her customer's privacy.
       The code may be constructed as follows:
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Choose two random 150-digit prime numbers <m>p</m> and <m>q</m>.
@@ -246,7 +246,7 @@
           This problem demonstrates a fast method for computing very large powers of numbers in modular arithmetic using a spreadsheet.
           You will need this method in order to do the subsequent problems.
           We will demonstrate the method by computing <m>\bmod(23^{485} ,617)</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Use a spreadsheet to compute the following sequence of numbers:
@@ -361,7 +361,7 @@
           divide the plaintext into blocks of integers of length 2;
           that is, if the plaintext is <m>142528</m>,
           encode 14, 25, and 28 separately.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>n = 3551, E = 629</m>, plaintext = 31
@@ -392,7 +392,7 @@
           Decrypt each of the following RSA messages <m>y</m>.
           (In this case,
           do not break <m>y</m> into blocks<ndash/>decode the entire number.)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>n = 3551, D = 1997, y = 2791</m>
@@ -429,7 +429,7 @@
       <statement>
         <p>
           Construct an RSA cryptosystem as follows:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 On the web, find two four-digit primes
@@ -612,7 +612,7 @@
       </p>
       <exercise xml:id="exercise_Cryptography_FermatEfficient">
         <statement>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Assuming that <m>n</m> is an odd number,
@@ -655,7 +655,7 @@
       </p>
       <exercise xml:id="exercise_Cryptography_bruteb">
         <statement>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Create a spreadsheet that factors large numbers using the brute force scheme.
@@ -684,9 +684,11 @@
                   </li>
                 </ul>
               </p>
-              You may obtain the rest of the formulas using the spreadsheet's
-              <q>fill down</q>
-              capability.
+              <p>
+                You may obtain the rest of the formulas using the spreadsheet's
+                <q>fill down</q>
+                capability.
+              </p>
             </li>
             <li>
               <p>
@@ -728,7 +730,7 @@
       </figure>
       <exercise xml:id="exercise_Cryptography_FermatSpreadsheet">
         <statement>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Make a spreadsheet for Fermat's factoring method.
@@ -767,9 +769,11 @@
                   </li>
                 </ul>
               </p>
-              You may obtain the rest of the formulas using the spreadsheet's
-              <q>fill down</q>
-              capability.
+              <p>
+                You may obtain the rest of the formulas using the spreadsheet's
+                <q>fill down</q>
+                capability.
+              </p>
             </li>
             <li>
               <p>

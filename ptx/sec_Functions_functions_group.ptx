@@ -112,7 +112,7 @@
   </p>
   <exercise xml:id="exercise_Functions_GpCompFun">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let <m>G_1</m> be the set of all nonzero functions from <m>\mathbb{R}</m> to

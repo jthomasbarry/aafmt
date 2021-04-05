@@ -5,10 +5,11 @@
     Just like groups have subgroups,
     rings have <em>subrings</em>.
   </p>
-  <definition>
+  <definition xml:id = "definition_Rings_subring">
+  <!-- {subring}  -->
     <statement>
       <p>
-        {subring} A ring that is a subset of another ring is called a <term>subring</term>.
+        A ring that is a subset of another ring is called a <term>subring</term>.
       </p>
     </statement>
   </definition>
@@ -60,7 +61,7 @@
   </p>
   <p>
     Examples of subrings:
-    <ol type="a">
+    <ol label="a">
       <li>
         <p>
           <m>{\mathbb Z}</m> is a subring in <m>{\mathbb Q}</m>.
@@ -135,7 +136,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that the set of all matrices of the form:
@@ -201,7 +202,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Prove or disprove: <m>2{\mathbb Z}</m> is a subring

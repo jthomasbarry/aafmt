@@ -8,10 +8,11 @@
       We will see that ring elements do not
       <em>always</em> follow this rule.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_zeroDivisor">
+    <!-- {zero_divisor}  -->
       <statement>
         <p>
-          {zero_divisor} If <m>a,b\in R</m> with <m>a\neq 0,~b\neq 0</m>,
+          If <m>a,b\in R</m> with <m>a\neq 0,~b\neq 0</m>,
           and <m>ab=0</m>,
           then <m>a</m> and <m>b</m> are called
           <term>zero divisors</term>.
@@ -76,10 +77,11 @@
     <p>
       Many rings have no zero divisors, other than zero itself.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_int_dom">
+    <!-- {int_dom}  -->
       <statement>
         <p>
-          {int_dom} A commutative ring that has no zero divisors is called an
+          A commutative ring that has no zero divisors is called an
           <term>integral domain</term>.
         </p>
       </statement>
@@ -103,7 +105,7 @@
         <p>
           Suppose <m>{\mathbb Z}_p</m> has a zero divisor
           <m>a\in{\mathbb Z}_p</m> such that <m>a\neq 0</m>.
-          Then by <xref ref="definition_Rings_zero_divisor">Definition</xref>,
+          Then by <xref ref="definition_Rings_zeroDivisor">Definition</xref>,
           there is some <m>b\in{\mathbb Z}_p</m> such that <m>b\neq 0</m> and <m>a\odot b=0</m>.
           So:
           <md>
@@ -161,7 +163,7 @@
       <statement>
         <p>
           Prove or disprove:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 The ring <m>M_2(R)</m> is an integral domain.
@@ -215,10 +217,11 @@
       <m>R</m>.
       We can now combine this idea with that of the integral domain.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_principal_ideal_dom">
+    <!-- {princ_ideal_dom}  -->
       <statement>
         <p>
-          {princ_ideal_dom} A <term>principal ideal domain</term> is an integral domain,
+          A <term>principal ideal domain</term> is an integral domain,
           all of whose ideals are principal.
         </p>
       </statement>
@@ -258,7 +261,7 @@
     </proof>
     <exercise xml:id="exercise_Rings_prime_ideals">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose <m>J=\{\cdots,-14,-7,0,7,14,\cdots\}</m> in the example above.
@@ -281,20 +284,22 @@
       The previous exercise is an example of a
       <em>prime ideal</em>, defined below.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_prime_ideal">
+    <!-- {prime_ideal}  -->
       <statement>
         <p>
-          {prime_ideal} A <term>prime ideal</term>
+          A <term>prime ideal</term>
           <m>J\subset R</m> is an ideal such that if
           <m>p,q\in R</m> and <m>p\cdot q\in J</m>,
           then either <m>p\in J</m> or <m>q\in J</m>.
         </p>
       </statement>
     </definition>
-    <definition>
+    <definition xml:id = "definition_Rings_prime_element">
+    <!-- {prime element}  -->
       <statement>
         <p>
-          {prime element} When a principal ideal <m>Ra</m> is also a prime ideal,
+          When a principal ideal <m>Ra</m> is also a prime ideal,
           then the generator <m>a</m> is called a
           <term>prime element</term>
         </p>
@@ -307,10 +312,11 @@
       <em>not</em> a prime element.
       The following definition applies to powers of prime elements.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_prime_power_ideal">
+    <!-- {prime_power_ideal}  -->
       <statement>
         <p>
-          {prime_power_ideal} Suppose <m>a</m> is a prime element in the ring <m>R</m>.
+          Suppose <m>a</m> is a prime element in the ring <m>R</m>.
           Then for any positive integer <m>n</m>,
           <m>a^n</m> is called a <term>prime power</term>
           and <m>R(a^n)</m> is called a <term>prime power ideal</term>.
@@ -322,7 +328,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               In the ring of integers, show that <m>2{\mathbb Z}</m> is a prime ideal.
@@ -433,10 +439,11 @@
       <em>nonzero</em> element of a ring.
       Such a ring is called a <em>division ring</em>.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_defdivisionring">
+    <!-- {defdivisionring}  -->
       <statement>
         <p>
-          {defdivisionring} Given a ring <m>R</m> suppose every nonzero element of <m>R</m> has a multiplicative inverse in <m>R</m>,
+          Given a ring <m>R</m> suppose every nonzero element of <m>R</m> has a multiplicative inverse in <m>R</m>,
           then <m>R</m> is called a <term>division ring</term>.
         </p>
       </statement>
@@ -449,7 +456,7 @@
     <p>
       <m>Q_8=\{1,-1,i,-i,j,-j,k,-k\}</m>,
       with the following relations:
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             <m>1</m> is the identity
@@ -498,10 +505,11 @@
       are widely used today in computer graphics to describe motion in three dimensional space and multiple antennae communications systems.
       We may define this set formally as follows.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_quaternionring">
+    <!-- {quaternionring}  -->
       <statement>
         <p>
-          {quaternionring} The set of real <term>quaternions</term>,
+          The set of real <term>quaternions</term>,
           denoted by <m>{\mathbb H}</m>, is defined by:
           <m>{\mathbb H}=\{a_0+a_1i+a_2j+a_3k:a_0,a_1,a_2,a_3\in {\mathbb R}\}</m>,
         </p>
@@ -529,7 +537,7 @@
       <statement>
         <p>
           Evaluate the following products of quaternions.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1+i+j+k)^2</m>
@@ -580,7 +588,7 @@
       can refer to different things in different contexts.
       The reader must always consider context to fully understand the meaning of such terms.)
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_conjugate">
       <statement>
         <p>
           Let <m>a=a_0+a_1i+a_2j+a_3k\in{\mathbb H}</m>.
@@ -600,7 +608,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using <m>a</m> and <m>\bar{a}</m> as defined above,
@@ -630,7 +638,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Give three examples of infinite division rings.
@@ -648,10 +656,11 @@
       Division rings with commutative multiplication are called <em>fields</em>.
       Fields are one of the most important objects of study in all of mathematics.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_deffield">
+    <!-- {deffield}  -->
       <statement>
         <p>
-          {deffield} A division ring <m>F</m> is called a <term>field</term>
+          A division ring <m>F</m> is called a <term>field</term>
           if the multiplication operation is commutative.
         </p>
       </statement>
@@ -664,7 +673,7 @@
     </p>
     <figure xml:id="fig_ring_classes">
       <caption>Ring Classes</caption>
-      <image width="92.5%" source="images/RingClasses.png"/>
+      <image width="92.5%" source="images/RingClasses.jpg"/>
     </figure>
     <exercise xml:id="exercise_Rings_poly47">
       <statement>

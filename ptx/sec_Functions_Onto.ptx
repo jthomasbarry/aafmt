@@ -79,10 +79,11 @@
     <p>
       The following is the "official" definition of onto.
     </p>
-    <definition>
+    <definition xml:id ="definition_Functions_ontoDef">
+    <!-- {ontoDef}  -->
       <statement>
         <p>
-          {ontoDef} Suppose <m>f \colon A \to B</m>.
+          Suppose <m>f \colon A \to B</m>.
           We say <m>f</m> is <term>onto</term>
           if for all <m>b \in B</m>,
               <idx><h>Onto</h><h>formal definition</h></idx>
@@ -118,7 +119,7 @@
           Each of the following sets of ordered pairs is a function from
           <m>\{1,2,3,4,5\}</m> to <m>\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}</m>.
           Either prove that the function is onto, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="OntoExers-pairs-a">
               <p>
                 <m>a = \{ (1,\clubsuit), (2,\diamondsuit), (3,\heartsuit), (4,\spadesuit), (5,\clubsuit) \}</m>
@@ -287,7 +288,7 @@
           Use the horizontal line test to determine whether the following functions are onto.
           For those functions that are not onto,
           give a <m>y</m> in the codomain which is not in the range of the function.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>g \colon \mathbb{R} \to \mathbb{R}</m>, <m>g(x) = 5x - 2</m>
@@ -465,7 +466,7 @@
         <p>
           For each function,
           either prove that it is onto, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="OntoExers-formula-a_x_">
               <p>
                 <m>f: \mathbb{R} \rightarrow \mathbb{R}, f(x) = 1</m>.
@@ -530,7 +531,7 @@
         <p>
           For each of the following functions,
           either prove that it is onto, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>g \colon {\mathbb C} \to {\mathbb C}</m> defined by <m>g(z) = z^2+1</m>.
@@ -565,7 +566,7 @@
         <p>
           For each of the following functions,
           either prove that it is onto, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="modular_m30">
               <p>
                 <m>g \colon {\mathbb Z}_6 \to {\mathbb Z}_{6}</m> defined by <m>g(x) = x \oplus x</m> .

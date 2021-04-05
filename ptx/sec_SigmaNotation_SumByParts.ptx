@@ -245,7 +245,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Evaluate <m>\sum_{k=1}^{n}3^{k}k</m>.

@@ -55,7 +55,7 @@
   <xi:include  href="sec_Groups_FormalDefinition.ptx"/>
   <xi:include  href="sec_Groups_Examples.ptx"/>
   <xi:include  href="sec_Groups_GroupProperties.ptx"/>
-  <xi:include  href="subsec_Groups_GroupProperties_Subgroups.ptx"/>
+  <xi:include  href="sec_Groups_Subgroups.ptx"/>
   <xi:include  href="sec_Groups_CyclicGroups.ptx"/>
   <xi:include  href="sec_Groups_AdditionalExercises.ptx"/>
   <xi:include  href="sec_Groups_Hints.ptx"/>

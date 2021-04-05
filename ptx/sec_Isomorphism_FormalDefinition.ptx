@@ -4,10 +4,11 @@
     So let's buckle down and get mathematical.
     We start with a rigorous definition of isomorphism:
   </p>
-  <definition>
+  <definition xml:id ="definition_Isomorphism_isomorphDefn">
+  <!-- {isomorph_defn}  -->
     <statement>
       <p>
-        {isomorph_defn} Two groups <m>(G, \cdot)</m> and
+        Two groups <m>(G, \cdot)</m> and
         <m>(H, \circ)</m> are <term>isomorphic</term>
             <idx><h>Group</h><h>isomorphic</h></idx>
         if there exists a bijection
@@ -35,7 +36,7 @@
   </remark>
   <remark>
     <p>
-      <xref ref="definition_Isomorphism_isomorph_defn">Definition</xref>
+      <xref ref="definition_Isomorphism_isomorphDefn">Definition</xref>
       specifies that any isomorphism must be a bijection,
       i.e. a function that is 1-1 and onto.
       <xref ref="proposition_Functions_InverseBijection">Proposition</xref>
@@ -46,12 +47,12 @@
   </remark>
   <exercise xml:id="exercise_Isomorphism_iso_8">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let consider the function <m>\phi : \mathbb{R} \rightarrow \mathbb{R}</m> defined by:
             <m>\phi(x) = 5x</m>.
-            Use <xref ref="definition_Isomorphism_isomorph_defn">Definition</xref>
+            Use <xref ref="definition_Isomorphism_isomorphDefn">Definition</xref>
             to show that <m>\phi</m> defines an isomorphism.
             What are the two isomorphic groups involved?
           </p>
@@ -173,7 +174,7 @@
   </p>
   <exercise xml:id="exercise_Isomorphism_InvCompIso">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Given that <m>\phi : G \rightarrow H</m> is an isomorphism,

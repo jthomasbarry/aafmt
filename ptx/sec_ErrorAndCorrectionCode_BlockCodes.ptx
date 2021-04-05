@@ -28,10 +28,11 @@
     In the following, the notation
     <m>\mathbb{Z}^{m}_{2}</m> denotes the set of binary <m>m</m>-tuples.
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_BlockCode">
+  <!-- {BlockCode} -->
     <statement>
       <p>
-        {BlockCode} a <m>(n, m)</m> <term>block code</term>
+        a <m>(n, m)</m> <term>block code</term>
             <idx><h>Block code</h></idx>
         consists of a one-to-one <term>encoding function</term>
             <idx><h>Function</h><h>encoding</h></idx>
@@ -69,7 +70,7 @@
   </remark>
   <exercise xml:id="exercise_ErrorAndCorrectionCode_DEstuff">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Explain why the definition requires that
@@ -146,7 +147,7 @@
   </example>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that the function <m>D(x)</m> given above is a decoding function (remember that based on <xref ref="exercise_ErrorAndCorrectionCode_DEstuff">Exercise</xref>(b) it's enough to prove that <m>D \compose E = \var{id}</m>).
@@ -170,7 +171,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Consider an even-parity coding system in which codewords have <m>k</m> bits.
@@ -205,10 +206,11 @@
     <q>distance</q>
     between code words, defined as follows.
   </p>
-  <definition>
+  <definition xml:id = "definition_ErrorAndCorrectionCode_HammingDistance">
+  <!-- {weight}  -->
     <statement>
       <p>
-        {weight} Let <m>{\bold x} = (x_1, \ldots,
+        Let <m>{\bold x} = (x_1, \ldots,
         x_n)</m> and <m>{\bold y} = (y_1, \ldots,
         y_n)</m> be binary <m>n</m>-tuples.
         The <term>Hamming distance</term>
@@ -462,7 +464,7 @@
         Let <m>{\bold x}</m>, <m>{\bold y}</m>,
         and <m>{\bold z}</m> be binary <m>n</m>-tuples.
         Then
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>d( {\bold x}, {\bold y}) \geq 0</m>,

@@ -216,7 +216,7 @@
       <p>
         Verify the following entries in <xref ref="S3_table">Table</xref>
         by (i) writing the symmetries in tableau form and (ii) computing the composition directly.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Row 2, column 4
@@ -246,7 +246,7 @@
       <p>
         Use <xref ref="S3_table">Table</xref>
         to answer the following questions.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Explain why <xref ref="S3_table">Table</xref>
@@ -361,7 +361,7 @@
       we showed that every bijection has an inverse <m>s^{-1}</m>.
       It remains to show that <m>s^{-1}</m> is itself a symmetry.
       This means that we have to show:
-      <ol type="i">
+      <ol label="i">
         <li>
           <p>
             <m>s^{-1}</m> leaves distances unchanged between points in the figure;
@@ -381,7 +381,7 @@
     </p>
     <p>
       These three items are proved as follows:
-      <ol type="i">
+      <ol label="i">
         <li>
           <p>
             This proof is similar to (ii),
@@ -456,7 +456,7 @@
   </exercise>
   <exercise xml:id="exercise_Symmetry_symm_rectangle">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Write the Cayley table for the symmetries of a rectangle.
@@ -472,7 +472,7 @@
   </exercise>
   <exercise xml:id="exercise_Symmetry_symm_square">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Describe all symmetries of a square (For example,
@@ -511,7 +511,7 @@
     <statement>
       <p>
         With reference to the logos in <xref ref="logos">Figure</xref>:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               For which logos do the set of symmetries include all symmetries of the equilateral triangle? (Note:

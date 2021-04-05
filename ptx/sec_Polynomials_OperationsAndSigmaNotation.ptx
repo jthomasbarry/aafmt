@@ -18,10 +18,11 @@
   <p>
     First we give the summation representation for an arbitrary polynomial:
   </p>
-  <definition>
+  <definition xml:id = "definition_Polynomials_sumPoly">
+  <!-- {sumPoly}  -->
     <statement>
       <p>
-        {sumPoly} A polynomial may be written as
+        A polynomial may be written as
         <me>
           f(x) = a_0 + a_1 x +a_2 x^2 + \cdots + a_N x^N = \sum^{N}_{n=0} a_n x^n
         </me>,
@@ -61,7 +62,7 @@
     <statement>
       <p>
         Express the following polynomials in summation notation:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>p_1(x)=1 + x+x^2+x^3</m>
@@ -106,7 +107,7 @@
       </p>
       <p>
         {Answers:}
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>p_1(x) = \sum_{j=0}^{3} x^j</m>
@@ -160,7 +161,7 @@
     <statement>
       <p>
         Write down the polynomial that each summation represents.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>p(x) = \sum_{j=0}^{6}( j^2+2)x^{3j}</m>
@@ -185,7 +186,7 @@
       <p>
         Re-express the following polynomials in summation notation,
         and give the degree of each polynomial.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>2 + 0x + 6x^2 + 0x^3 + 10x^4 + 0x^5 + 14x^6 +0x^7 + 18x^8</m>
@@ -233,10 +234,11 @@
     Although the following definition may seem rather obvious,
     nonetheless we should state it to be precise.
   </p>
-  <definition>
+  <definition xml:id = "definition_Polynomials_PolynomialEquality">
+  <!-- {PolynomialEquality}  -->
     <statement>
       <p>
-        {PolynomialEquality} Two polynomials are said to be
+        Two polynomials are said to be
         <term>equal</term><idx><h>Equality</h><h>of polynomials</h></idx> if and only if their corresponding coefficients are equal.
         That is, if we let
         <me>
@@ -250,10 +252,11 @@
   <p>
     Now we're ready to express our arithmetical rules in summation notation.
   </p>
-  <definition>
+  <definition xml:id = "definition_Polynomials_defsumpoly">
+  <!-- {defsumpoly}  -->
     <statement>
       <p>
-        {defsumpoly} We define the <em>sum of two polynomials</em><idx><h>Sum</h><h>of polynomials</h></idx>
+        We define the <em>sum of two polynomials</em><idx><h>Sum</h><h>of polynomials</h></idx>
             <idx><h>Polynomials</h><h>sum</h></idx>
         as follows.
         Let
@@ -350,10 +353,11 @@
     This is the coefficient of <m>x^k</m> in the summation notation expression for the product.
     At last we have our general formula:
   </p>
-  <definition>
+  <definition xml:id = "definition_Polynomials_defprodpoly">
+  <!-- {defprodpoly}  -->
     <statement>
       <p>
-        {defprodpoly} The <em>product of two polynomials</em><idx><h>Product</h><h>of polynomials</h></idx>
+        The <em>product of two polynomials</em><idx><h>Product</h><h>of polynomials</h></idx>
             <idx><h>Polynomials</h><h>product</h></idx> <m>p(x)= \sum^{M}_{m=0} a_m x^m</m> and <m>q(x)=\sum^{N}_{n=0} b_n x^n</m> is given by:
         <me>
           p(x) q(x) = \sum_{k=0}^{M+N} c_k x^k
@@ -425,7 +429,7 @@
         first, by following the procedure described in <xref ref="sec_Polynomials_PolynomialArithmetic">Section</xref>;
         and second, by using the coefficient formula in <xref ref="definition_Polynomials_defprodpoly">Definition</xref> directly.
         Verify that the two methods agree.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>(-5+x)(3x+ x^2)</m>
@@ -456,7 +460,7 @@
   </p>
   <exercise xml:id="exercise_Polynomials_multform">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Give the coefficient of <m>x^{100}</m> in the polynomial <m>p(x)^2</m>,

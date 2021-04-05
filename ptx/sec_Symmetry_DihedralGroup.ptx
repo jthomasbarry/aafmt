@@ -109,7 +109,7 @@
   </p>
   <exercise xml:id="exercise_Symmetry_InverseRot">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Using the above definition of <m>r^k</m>,
@@ -159,7 +159,7 @@
   </p>
   <exercise xml:id="exercise_Symmetry_reflection_pentagon">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Write the reflection <m>s</m> for the pentagon in tableau form.
@@ -181,7 +181,7 @@
   </exercise>
   <exercise xml:id="exercise_Symmetry_31">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Write the reflection <m>s</m> for the octagon in tableau form.
@@ -405,7 +405,7 @@
   </figure>
   <exercise xml:id="exercise_Symmetry_36">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             List four reflections of the square in tableau form. (*Hint*)
@@ -437,7 +437,7 @@
   </exercise>
   <exercise xml:id="exercise_Symmetry_PentagonRefl">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             List five reflections of the pentagon in tableau form. (*Hint*)
@@ -469,7 +469,7 @@
   </exercise>
   <exercise xml:id="exercise_Symmetry_HexagonRefl">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             List six reflections of the hexagon in tableau form. (*Hint*)
@@ -501,7 +501,7 @@
   </exercise>
   <exercise xml:id="exercise_Symmetry_nonagon">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Complete the second row of the following tableau that represents the reflection of the nonagon that fixes vertex 4:
@@ -563,7 +563,7 @@
   </proposition>
   <exercise xml:id="exercise_Symmetry_41">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Based on results we've shown,
@@ -595,7 +595,7 @@
         Every element of the group <m>D_n</m>, <m>n \geq 3</m>,
         consists of all compositions of the two elements <m>r</m> and <m>s</m>,
         satisfying the relations:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>r^n = {\var id}</m>
@@ -673,7 +673,7 @@
         compute the following.
         Express your answers in the form <m>s^m r^n</m>,
         where <m>m,n</m> are positive integers.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>r^3sr^{3}</m>
@@ -723,7 +723,7 @@
   </exercise>
   <exercise xml:id="exercise_Symmetry_Darb">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             In the group <m>D_n</m>,
@@ -749,7 +749,7 @@
   </exercise>
   <exercise xml:id="exercise_Symmetry_Darbb">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             In the group <m>D_n</m>,

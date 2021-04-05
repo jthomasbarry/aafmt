@@ -110,7 +110,7 @@
       <statement>
         <p>
           Using the method above, find the smallest measure given sticks of length:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 30 cm and 77 cm.
@@ -139,7 +139,7 @@
       <statement>
         <p>
           Using the method above:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Convert the measurements in <xref ref="exercise_ModularArithmetic_stick_units">Exercise</xref> part (a) into millimeters,
@@ -271,7 +271,7 @@
         This proof is broken up into two parts, (A) and (B).
         Part (A) shows that the algorithm always produces a divisor of the two given integers.
         Part (B) shows that the produced divisor is indeed the gcd.
-        <ol type="A">
+        <ol label="A">
           <li>
             <p>
               Given integers <m>a</m> and <m>b</m> and <m>a>b</m> if we were to plug them into the Euclidean Algorithm we get:
@@ -332,7 +332,7 @@
     </proof>
     <p>
       The Euclidean algorithm may be summarized as follows.
-      <ol type="1">
+      <ol label="1">
         <li>
           <p>
             Start with two integers <m>a</m> and <m>b</m> where <m>a > b</m>
@@ -359,7 +359,7 @@
       <statement>
         <p>
           What is the greatest common divisor of:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 1168 and 2338?
@@ -390,7 +390,7 @@
     </p>
     <exercise xml:id="exercise_ModularArithmetic_71">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>r_2</m> can also be written in the form:
@@ -518,10 +518,11 @@ return gcdRecurse(b, remainder);
       Let's look now at another type of problem,
       which has played a key role in the history of mathematics.
     </p>
-    <definition>
+    <definition xml:id =  "definition_ModularArithmetic_dioequiv">
+    <!-- {dioequiv}  -->
       <statement>
         <p>
-          {dioequiv} A <term>Diophantine equation</term>
+          A <term>Diophantine equation</term>
               <idx><h>Diophantine equation</h></idx>
               <idx><h>Equation,Diophantine</h></idx>
           in the variables <m>m, n</m> is an equation of the form
@@ -762,7 +763,7 @@ return gcdRecurse(b, remainder);
         <p>
           Using the process above,
           find all integer solutions to the following equations.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>45m + 16n = 27</m>
@@ -819,7 +820,7 @@ return gcdRecurse(b, remainder);
       <statement>
         <p>
           Explain why the following Diophantine equations have no integer solutions.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>2m + 4n = 1</m> (*Hint*)
@@ -891,7 +892,7 @@ return gcdRecurse(b, remainder);
     </p>
     <exercise xml:id="exercise_ModularArithmetic_m518">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the general integer solution to:
@@ -958,7 +959,7 @@ return gcdRecurse(b, remainder);
           Which of the following equations have integer solutions?
           If solutions exist, find them all.
           If no solutions exist, prove it!
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>15x \equiv 3 \pmod{12}</m>
@@ -1000,7 +1001,7 @@ return gcdRecurse(b, remainder);
       In the proof, we use the terms
       <q>prime</q>
       and
-      <q>relatively prime</q>: recall that a prime number is a natural number <m>>1</m> whose only factor <m>>1</m> is itself (<xref ref="definition_ComplexNumbers_defPrime">Definition</xref>);
+      <q>relatively prime</q>: recall that a prime number is a natural number <m>>1</m> whose only factor <m>>1</m> is itself (<xref ref="definition_ComplexNumbers_PrimeNumber">Definition</xref>);
       and two numbers are <em>relatively prime</em>
       if they have no common factors <m>>1</m>.
           <idx><h>Prime</h><h>relatively</h></idx>
@@ -1008,7 +1009,7 @@ return gcdRecurse(b, remainder);
     </p>
     <exercise xml:id="exercise_ModularArithmetic_EuclidLemmaProof">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Let <m>p</m> be a prime, and let <m>a</m> be an integer.
@@ -1203,7 +1204,7 @@ return gcdRecurse(b, remainder);
         <p>
           Prove or disprove that the following sets form a group by either finding a multiplicative inverse for all members,
           or by finding a member that does not have a multiplicative inverse.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\mathbb{Z}_5\setminus \{0\}</m>
@@ -1269,7 +1270,7 @@ return gcdRecurse(b, remainder);
         <p>
           Let <m>n>1</m> be an integer,
           and let <m>a</m> be an element of <m>\mathbb{Z}_n \setminus \{0\}</m>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Prove the
@@ -1379,7 +1380,7 @@ return gcdRecurse(b, remainder);
       <statement>
         <p>
           Solve the following pairs of congruences or show that they have no common solution:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>x \equiv 2 \pmod{3}; x \equiv 3 \pmod{4}</m>.
@@ -1406,7 +1407,7 @@ return gcdRecurse(b, remainder);
     </exercise>
     <exercise xml:id="exercise_ModularArithmetic_congruence">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find a pair of congruences of the form:
@@ -1476,7 +1477,7 @@ return gcdRecurse(b, remainder);
       <statement>
         <p>
           Solve the following sets of congruences or show that they do not have a solution:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>x \equiv 2 \pmod{3}; x \equiv 3 \pmod{4}; x \equiv 4 \pmod{5}</m>.

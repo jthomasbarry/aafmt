@@ -20,10 +20,11 @@
       First of all, let's give a precise mathematical definition for
       <q>set</q>:
     </p>
-    <definition xml:id="sets_membership">
+    <definition xml:id="definition_Sets_defSet">
+    <!-- {defSet}  -->
       <statement>
         <p>
-          {defSet} A <term>set</term>
+          A <term>set</term>
               <idx><h>Set</h><h>definition of</h></idx>
           is a well-defined collection of objects:
           that is, it is defined in such a manner that we can determine for any given object <m>x</m> whether or not <m>x</m> belongs to the set.
@@ -94,7 +95,7 @@
     </p>
     <exercise xml:id="exercise_Sets_set1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               What elements are in the following set:
@@ -171,7 +172,7 @@
     </p>
     <exercise xml:id="exercise_Sets_SetSet">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Describe the <m>21^{st}</m> century as a set of sets of sets of sets of sets of sets of sets. (*Hint*)
@@ -314,10 +315,11 @@
   </subsection>
   <subsection xml:id="subset_Sets_SubsetsAndProperSubsets">
     <title>Subsets and proper subsets</title>
-    <definition xml:id="setcontain">
+    <definition xml:id="definition_Sets_subset">
+    <!-- {subset}  -->
       <statement>
         <p>
-          {subset} A set <m>A</m> is a <term>subset</term><idx><h>Subset</h><h>definition of</h></idx> of <m>B</m>,
+          A set <m>A</m> is a <term>subset</term><idx><h>Subset</h><h>definition of</h></idx> of <m>B</m>,
           written <m>A \subset B</m> or <m>B \supset A</m>,
           if every element of <m>A</m> is also an element of <m>B</m>.
         </p>
@@ -326,7 +328,7 @@
     <p>
       For example, using this notation we may write:
       <me>
-        \{\text{ sons of John and Jane Doe } \} \subset \{\text{ children of John and Jane Doe\ }}
+        \{\text{ sons of John and Jane Doe } \} \subset \{\text{ children of John and Jane Doe } \}
       </me>
       and
       <me>
@@ -393,7 +395,7 @@
       <statement>
         <p>
           Let <m>S</m> be a set with a single element.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 How many subsets does it have?
@@ -420,7 +422,7 @@
     </exercise>
     <exercise xml:id="exercise_Sets_7">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Can you give an example of a set with exactly three subsets?
@@ -460,10 +462,11 @@
           <idx><h>Set operations</h></idx>
       The mathematical definitions of the basic set operations are as follows:
     </p>
-    <definition>
+    <definition xml:id = "definition_Sets_union">
+    <!-- {union}  -->
       <statement>
         <p>
-          {union} The <term>union</term>
+          The <term>union</term>
           <m>A \cup B</m> of two sets <m>A</m> and <m>B</m> is defined as<idx><h>Set operations</h><h>union</h></idx>
               <idx><h>Union</h></idx>
           <men xml:id="union">
@@ -472,10 +475,11 @@
         </p>
       </statement>
     </definition>
-    <definition>
+    <definition xml:id = "definition_Sets_intersection">
+    <!-- {intersection}  -->
       <statement>
         <p>
-          {intersection} the <term>intersection</term>
+          The <term>intersection</term>
           of <m>A</m> and <m>B</m> is defined by <idx><h>Set operations</h><h>intersection</h></idx>
               <idx><h>Intersection</h></idx>
           <men xml:id="intersection">
@@ -520,7 +524,7 @@
     </remark>
     <exercise xml:id="exercise_Sets_12">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find three sets <m>A_1, A_2, A_3</m> such that
@@ -575,7 +579,7 @@
               </p>
             </li>
           </ul>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bigcup_{i = 1}^{n} \{i\}</m>
@@ -595,7 +599,7 @@
         </p>
         <p>
           Solutions:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bigcup_{i = 1}^{n} \{i\} = \{1\} \bigcup \{2\} \bigcup \{ 3 \} \bigcup \ldots \bigcup \{n\}</m>
@@ -640,7 +644,7 @@
               </p>
             </li>
           </ul>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\bigcap_{i = 1}^{n} \{i\}</m>
@@ -672,7 +676,7 @@
     </exercise>
     <exercise xml:id="exercise_Sets_15">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find an infinite collection of sets <m>\{A_i\}, i = 1,2,3,\ldots</m> such that (i)
@@ -722,7 +726,7 @@
     </p>
     <exercise xml:id="exercise_Sets_16">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find disjoint nonempty sets
@@ -755,10 +759,11 @@
         A' = \{ x : x \in U \text{ and }  x \notin A \}
       </me>.
     </p>
-    <definition>
+    <definition xml:id = "definition_Sets_setDifference">
+    <!-- {setDifference} -->
       <statement>
         <p>
-          {setDifference}<idx><h>Set operations</h><h>set difference</h></idx> The <term>difference</term>
+          <idx><h>Set operations</h><h>set difference</h></idx> The <term>difference</term>
           of two sets <m>A</m> and <m>B</m> is defined as
               <idx><h>Set difference</h></idx>
           <me>
@@ -797,7 +802,7 @@
         </p>
         <p>
           Then specify the following sets:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>A \cap B</m>
@@ -822,7 +827,7 @@
         </p>
         <p>
           Solutions:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <md>
@@ -877,7 +882,7 @@
           Specify each of the following sets.
           You may specify a set either by describing a property,
           by enumerating the elements, or as one of the four sets <m>A, B, C, D</m>:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(A \cap B) \setminus C</m>
@@ -910,7 +915,7 @@
         <p>
           Describe each of the following sets.
           Make your description as concise as possible.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>A \cap B</m>

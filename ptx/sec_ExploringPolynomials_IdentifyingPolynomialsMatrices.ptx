@@ -29,7 +29,7 @@
   <p>
     Let's begin with an example that shows how polynomials can be related to matrices:
   </p>
-  <example xml:id="example_PolyVec_multx2">
+  <example xml:id="example_ExploringPolynomials_multx2">
     <statement>
       <p>
         Let <m>p(x) = 3x^2 - 7x + 2</m>.
@@ -58,7 +58,7 @@
       </p>
     </statement>
   </example>
-  <exercise xml:id="exercise_PolyVec_multx3">
+  <exercise xml:id="exercise_ExploringPolynomials_multx3">
     <statement>
       <p>
         Compute the vector representation of
@@ -70,7 +70,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             What matrix can we multiply the vector representation of <m>p(x)</m> by to give the vector representation of <m>5 \cdot p(x)</m>?
@@ -204,7 +204,7 @@
     <statement>
       <p>
         Find the matrix <m>\phi_6(p(x))</m> related to each polynomial <m>p(x)</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>p(x) = 7x^2 - 2x + 3</m>
@@ -234,7 +234,7 @@
       <p>
         In each case, find the polynomial <m>p(x)</m> such that
         <m>\phi(p(x))</m> equals the given matrix:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <me>
@@ -269,7 +269,7 @@
         determine whether or not it corresponds to a polynomial.
         If it does, give the polynomial;
         and if not, explain why not.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <me>
@@ -337,7 +337,7 @@
         Find the matrices that represent the polynomials <m>p(x)</m> and <m>q(x)</m> in each case,
         and verify that the sum is equal to
         <m>\phi_m(p(x)+q(x))</m> for the given <m>m</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>p(x)=x^5+1</m> and <m>q(x)=x^3+5^2 (m=7)</m>
@@ -410,7 +410,7 @@
     <statement>
       <p>
         Find the <m>m\times m</m> matrices that represent the polynomials <m>p(x)</m> and <m>q(x)</m> and verify that the product of these two matrices is the matrix which represents <m>p(x)q(x)</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>p(x)=x^5+1</m> and <m>q(x)=x^3+5^2</m> (with <m>m=10</m>)
@@ -473,7 +473,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Find an infinite matrix <m>M</m> such that
@@ -508,7 +508,7 @@
     The previous exercise (parts (c),(d)) have shown that <m>\phi</m> maps <m>P[x]</m> into <m>B</m>.
     In fact, <m>\phi</m> maps <m>P[x]</m> onto <m>B</m>:
   </p>
-  <exercise xml:id="exercise_PolyVec_phi_onto">
+  <exercise xml:id="exercise_ExploringPolynomials_phi_onto">
     <statement>
       <p>
         Let <m>M</m> be an arbitrary matrix in <m>B</m>.
@@ -645,7 +645,7 @@
       </p>
     </statement>
   </proposition>
-  <exercise xml:id="exercise_PolyVec_propPhi">
+  <exercise xml:id="exercise_ExploringPolynomials_propPhi">
     <statement>
       <p>
         Fill in the blanks the following proof. (*Hint*)

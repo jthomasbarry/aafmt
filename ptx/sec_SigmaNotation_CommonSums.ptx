@@ -52,7 +52,7 @@
   </p>
   <exercise xml:id="exercise_SigmaNotation_common1">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Write the sum of odd integers from <m>2a+1</m> to <m>2k+1</m> in sigma notation.
@@ -153,7 +153,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Evaluate <m>\sum_{n=0}^{10} \left(\frac{4}{5}\right)^n</m>.
@@ -194,7 +194,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Let <m>z = \cis (2\pi/3)</m>.

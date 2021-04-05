@@ -29,7 +29,7 @@
     <p>
       Now let's demonstrate the power of our new notation to prove an important property of transpose:
     </p>
-    <proposition xml:id="proposition_SigmaNotation_prodTrans">
+    <proposition xml:id="proposition_SigmaApp_prodTrans">
       <statement>
         <p>
           If <m>A</m> and <m>B</m> are matrices such that the matrix product is defined, then
@@ -96,7 +96,7 @@
           where <m>M_n(\mathbb{R})</m> is the set of
           <m>n \times n</m> matrices with real-number entries.
           Prove or disprove the following:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Transpose defines an invertible function from
@@ -127,9 +127,9 @@
       Recall that the inverse of a matrix <m>A</m> is a matrix <m>A^{-1}</m> such that
       <m>AA^{-1}=I</m> and <m>A^{-1}A=I</m>.
     </p>
-    <exercise xml:id="exercise_SigmaNotation_inverse1">
+    <exercise xml:id="exercise_SigmaApp_inverse1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Express the equations <m>AA^{-1}=I</m> and

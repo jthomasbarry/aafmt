@@ -58,7 +58,7 @@
     </example>
     <exercise xml:id="exercise_Cryptography_encode1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Encode IXLOVEXMATH using the cryptosystem in <xref ref="example_Cryptography_ex1">Example</xref>.
@@ -74,7 +74,7 @@
     </exercise>
     <exercise xml:id="exercise_Cryptography_decode1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Decode ZLOOA WKLVA EHARQ WKHA ILQDO, which was encoded using the cryptosystem in <xref ref="example_Cryptography_ex1">Example</xref>.
@@ -90,7 +90,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               The following is a ciphertext that was encoded using a shift code with a shift of 9.
@@ -173,7 +173,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               For the English alphabet, how many different shift codes are there?
@@ -219,7 +219,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Which of the numbers 0, 1, 2, <m>\dots</m>, 10 have inverses mod 26?
@@ -238,7 +238,7 @@
         <p>
           Find the decoding function for the following affine encoding functions
           (used on the English alphabet).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>f(n)=(3 \odot n) \oplus 14</m>
@@ -300,7 +300,7 @@
           For each of the following functions, (i) determine whether the function is a valid encoding function; (ii) if the function is valid,
           find the decoding function.
           (Assume the function is working on an alphabet with 26 letters.)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>f(n) = (4 \odot n) \oplus 7</m>
@@ -327,7 +327,7 @@
     </exercise>
     <exercise xml:id="exercise_Cryptography_english">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               The general form for an affine cryptosystem encoding function is <m>f(n) = (a \odot n) \oplus b</m>.
@@ -381,7 +381,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               The following message was encoded using an affine cryptosystem that encodes A as M and B as B. CKMYCZMLCOZCWKOHUCKDOHLMZLLNMZGZOEVUFYU Find the plaintext.
@@ -476,7 +476,7 @@
       <statement>
         <p>
           Perform the following operations using modular matrix multiplication (mod 26):
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\left( \begin{array}{cc} 5 \amp 6 \\ 7 \amp 8 \end{array} \right) \left( \begin{array}{c} 4 \\ 4 \end{array} \right)</m>
@@ -598,7 +598,7 @@
         <p>
           Find matrix inverses in <m>{\Bbb Z}_{26}</m> for the following matrices.
           If no inverse exists, then prove there is no inverse.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\left( \begin{array}{cc} 9 \amp 2 \\ 20 \amp 5 \end{array} \right)</m>
@@ -638,7 +638,7 @@
           <me>
             A = \left( \begin{array}{cc} 3 \amp  4 \\ 2 \amp  3 \end{array} \right),~~ \text{ and~ }  {\bold b} = \left( \begin{array}{c} 2 \\ 5 \end{array} \right)
           </me>.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Use the encryption function
@@ -686,7 +686,7 @@
             <caption>Automatic shift encoder for English.</caption>
             <image width="56%" source="images/AutoShiftEnc.png"/>
           </figure>
-          <ol type="i">
+          <ol label="i">
             <li>
               <p>
                 Put the Shift value in cell C2.
@@ -879,7 +879,7 @@
           <p>
             Use your spreadsheet to decode the following words that were encoded using
             <m>f({\bold p}) = A {\bold p} + {\bold b}</m> with the given <m>A</m> and <m>{\bold b}</m>.
-            <ol type="a">
+            <ol label="a">
               <li>
                 <p>
                   VVDGOFOKLY, <m>A= \left( \begin{array}{cc} 13 \amp 5 \\ 9 \amp 2 \end{array} \right)</m>,

@@ -81,7 +81,7 @@
           <me>
             \left(\sum_{i=0}^n x_i \right) \cdot  \left(  \sum_{i=0}^n y_i \right) \stackrel{?}{=} \sum_{i=0}^n x_i y_i
           </me>
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Is this statement always true?
@@ -107,7 +107,7 @@
         <p>
           Given that <m>\sum_{i=1}^{20} i = 210</m> and
           <m>\sum_{i=1}^{20} i^2 = 2870</m>, Evaluate the following double sums:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <me>

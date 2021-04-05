@@ -56,8 +56,8 @@
     <p>
       You should already know that a point in a plane can also be considered as a <em>vector</em>:
       in other words,
-      the ordered pair <m>(a,b)</m> can be identified with the vector <m>a</m><em>i</em> + <m>b</m><em>j</em>,
-      where <em>i</em> and <em>j</em>
+      the ordered pair <m>(a,b)</m> can be identified with the vector <m>ai +bj</m>,
+      where <m>i</m> and <m>j</m>
       are the unit vectors in the <m>x+</m> and <m>y+</m> directions,
       respectively.
       So complex numbers can also be considered as two-dimensional vectors.
@@ -65,7 +65,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_19">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write the numbers <m>3 + 7i</m> and <m>-5 + 9i</m> as vectors.
@@ -246,7 +246,7 @@
           (that is, write as <m>a + bi</m>).
           Give <em>exact</em> answers and not decimals
           (use square roots if necessary).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>2 \cis(\pi / 6 )</m>
@@ -291,7 +291,7 @@
         <p>
           Convert the following complex numbers to polar representation (Give exact answers,
           no decimal approximations).
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>1-i</m>
@@ -357,7 +357,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_cos_form2">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <xref ref="fig_polarcoord">Figure</xref>
@@ -383,7 +383,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_23">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Consider the following set of complex numbers:
@@ -493,7 +493,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_polar_z_inv">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Let <m>z = 13 \cis\left(\frac{5\pi}{7}\right)</m>.
@@ -619,7 +619,7 @@
           Calculate each of the following products using complex polar arithmetic.
           Give the answer in rectangular form if you can do so without using roots or decimals.
           Otherwise, leave the answer in polar form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>2\cis\left(\frac{\pi}{4}\right) \cdot \frac{1}{2} \cis\left( \frac{3\pi}{4}\right)</m>
@@ -654,7 +654,7 @@
         <p>
           Calculate each of the following quotients using complex polar arithmetic.
           Give the answers in polar form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\dfrac{5\cis\left( \frac{5\pi}{6}\right)}{2\cis \left( \frac{\pi}{2}\right)}</m>
@@ -772,7 +772,7 @@
           <md>
             <mrow>(r\cis\theta)^{3} \amp = r\cis\theta \cdot (\underline{~\lt 1>~})^{2} \amp  \text{ (associative) }</mrow>
             <mrow>\amp =  r\cis\theta \cdot (r^{2} \cdot\underline{~\lt 2>~}) \amp  \text{ (by the previous exercise) }</mrow>
-            <mrow>\amp =  r^{3} \cdot \cis( \theta +  \underline{~\lt 3>~})) \amp  \mbox{(by <xref ref="proposition_ComplexNumbers_polar_mult">Proposition</xref>)}</mrow>
+            <mrow>\amp =  r^{3} \cdot \cis( \theta +  \underline{~\lt 3>~})) \amp  \text{(by } <xref ref="proposition_ComplexNumbers_polar_mult">Proposition</xref>\text{)} </mrow>
             <mrow>\amp =   \underline{~\lt 4>~}) \amp  \mbox{(by basic algebra)}</mrow>
           </md>
         </p>
@@ -874,10 +874,11 @@
       we know <m>x^{-n}</m> means <m>(x^n)^{-1}</m>.
       Complex numbers happen to work the same way.
     </p>
-    <definition>
+    <definition xml:id ="definition_ComplexNumbers_negpower">
+      <!-- {polar_negpower} -->
       <statement>
         <p>
-          {polar_negpower} Given a complex number <m>z=r\cis\theta</m>,
+          Given a complex number <m>z=r\cis\theta</m>,
           <me>
             z^{-n} = (z^n)^{-1}
           </me>.
@@ -893,7 +894,7 @@
             <mrow>z^{-3} \amp  = (z^3)^{-1}</mrow>
             <mrow>\amp  = ([2\cis(\pi/4)]^3)^{-1}</mrow>
             <mrow>\amp  = (8\cis(3\pi/4))^{-1}  \mbox{ (by de Moivre's Theorem) }</mrow>
-            <mrow>\amp  = \frac{1}{8}\cis(5\pi/4) \qquad \mbox{ (by <xref ref="exercise_ComplexNumbers_polar_z_inv">Exercise</xref>) }</mrow>
+            <mrow>\amp  = \frac{1}{8}\cis(5\pi/4) \qquad \text{(by } <xref ref="exercise_ComplexNumbers_polar_z_inv">Exercise</xref> \text{)} </mrow>
           </md>
         </p>
       </statement>
@@ -904,7 +905,7 @@
           Calculate each of the following expressions.
           Write the answer as <m>a + bi</m> if you can do so without using roots or decimals.
           Otherwise, you may leave the answer in polar form.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>(1+i)^{-3}</m>
@@ -1028,7 +1029,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_cos_form">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Using de Moivre's formula for <m>z^3</m> where <m>z = \cis \theta</m>,

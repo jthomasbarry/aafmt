@@ -51,7 +51,7 @@
     <statement>
       <p>
         Fill in the blanks to complete the following proof of <xref ref="proposition_Groups_inv_unique">Proposition</xref>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               By the definition of inverse,
@@ -82,7 +82,7 @@
   </exercise>
   <exercise xml:id="exercise_Groups_39">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Consider the group <m>{\mathbb C}^{\ast}</m>,
@@ -237,7 +237,7 @@
   </proof>
   <exercise xml:id="exercise_Groups_inv_prod">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Suppose <m>a,b \in {\mathbb C}^{\ast}</m>,
@@ -316,7 +316,7 @@
   </p>
   <exercise xml:id="exercise_Groups_48">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Complete the proof that <m>ax=b</m> has a unique solution by filling in the blanks:  Suppose that <m>ax = b</m>.
@@ -437,7 +437,7 @@
   </exercise>
   <exercise xml:id="exercise_Groups_54">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Given a group <m>G</m> and <m>a, b \in G</m>,
@@ -492,7 +492,7 @@
   </p>
   <exercise xml:id="exercise_Groups_56">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             To prove <xref ref="proposition_Groups_cancel">Proposition</xref>,
@@ -512,10 +512,11 @@
   <p>
     We can use exponential notation for groups just as we do in ordinary algebra:
   </p>
-  <definition>
+  <definition xml:id = "definition_Groups_DefGroupExponents">
+  <!-- {DefGroupExponents}  -->
     <statement>
       <p>
-        {DefGroupExponents} If <m>G</m> is a group and <m>g \in G</m>,
+        If <m>G</m> is a group and <m>g \in G</m>,
         then we define <m>g^0 = e</m>.
         For <m>n \in {\mathbb N}</m>, we define
         <me>

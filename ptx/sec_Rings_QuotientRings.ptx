@@ -8,7 +8,7 @@
   <example>
     <p>
       Define <m>f: {\mathbb Z}_{10}\rightarrow {\mathbb Z}_5</m> by <m>f(n)=\bmod(n,5)</m>.
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Show that <m>f</m> is a ring homomorphism.
@@ -25,7 +25,7 @@
           </p>
         </li>
       </ol>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             <md>
@@ -59,15 +59,16 @@
     <p>
       We may recall the definition of <term>partition</term>
       from <xref ref="sec_EquivalenceRelations_PartitionsAndProperties">Section</xref>
-      (<xref ref="definition_EquivalenceRelations_defPartition">Definition</xref>),
+      (<xref ref="definition_EquivalenceRelations_Partition">Definition</xref>),
       which we repeat here for convenience.
     </p>
-    <definition>
+    <definition xml:id = "definition_Rings_partition">
+    <!-- {partition}  -->
       <statement>
         <p>
-          {partition} A <term>partition</term>
+          A <term>partition</term>
           of a set <m>S</m> is a set of subsets <m>A_1,\dots A_n</m> such that:
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>\cup_{m=1}^n A_m=S</m>
@@ -87,13 +88,13 @@
       <em>inverse images</em>.
       The inverse images of <m>f</m> divide
       <m>{\mathbb Z}_{10}</m> into <em>equivalence classes</em>.
-      (Review <xref ref="definition_EquivalenceRelations_DefEquivRel">Definition</xref>.)
+      (Review <xref ref="definition_EquivalenceRelations_EquivRel">Definition</xref>.)
       (Actually, we showed in <xref ref="proposition_EquivalenceRelations_FuncIsRange">Proposition</xref>
       that the inverse images of a function always divide the domain into equivalence classes.)
     </p>
     <figure xml:id="fig_equiv_class">
       <caption>Equivalence classes</caption>
-      <image width="65%" source="images/Equivalence Class Image.png"/>
+      <image width="65%" source="images/Equivalence Class Image.jpg"/>
     </figure>
     <p>
       We can create an addition and multiplication table on the equivalence classes.
@@ -299,10 +300,11 @@
     (Recall we used a similar notation for quotient groups.)
     We will formally define quotient rings below.
   </p>
-  <definition>
+  <definition xml:id = "definition_Rings_qoutientRing">
+  <!-- {quotient ring}  -->
     <statement>
       <p>
-        {quotient ring} Let <m>J</m> be an ideal of ring <m>R</m>.
+        Let <m>J</m> be an ideal of ring <m>R</m>.
         The <term>quotient ring</term> of <m>R</m> by <m>D</m> is the set <m>R/J</m> consisting of all equivalence classes modulo <m>J</m> in <m>R</m>,
         together with binary operations <m>+</m> and <m>\cdot</m> defined by the following:
         <md>
@@ -330,7 +332,7 @@
     <statement>
       <p>
         Define <m>f:{\mathbb Z}_3\times {\mathbb Z}_3\rightarrow {\mathbb Z}_3</m> by <m>f(a,b)=a</m>.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Show that <m>f</m> is a ring homomorphism.

@@ -32,7 +32,7 @@
       Thanks to Tom Judson for material used in this chapter.
     </p>
   </introduction>
-  <xi:include  href="sec_Symmetry_DefinitionAndexamples.ptx"/>
+  <xi:include  href="sec_Symmetry_DefinitionAndExamples.ptx"/>
   <xi:include  href="sec_Symmetry_Composition.ptx"/>
   <xi:include  href="sec_Symmetry_Group.ptx"/>
   <xi:include  href="sec_Symmetry_DihedralGroup.ptx"/>

@@ -15,10 +15,11 @@
     <figure>
       <video youtubeplaylist="PL2uooHqQ6T7PW5na4EX8rQX2WvBBdM8Qo"/>
     </figure>
-    <definition>
+    <definition xml:id = "definition_ErrorAndCorrectionCode_CanonicalParityCheckMatrix">
+    <!-- {CanonicalParityCheckMatrix} -->
       <statement>
         <p>
-          {CanonicalParityCheckMatrix} Suppose that <m>H</m> is a
+           Suppose that <m>H</m> is a
           <m>k \times n</m> matrix with entries in <m>\mathbb{Z}_2</m> and <m>n > k</m>.
           If the last <m>k</m> columns of the matrix form the
           <m>k \times k</m> identity matrix, <m>I_k</m>,
@@ -121,10 +122,11 @@
       <xref ref="proposition_ErrorAndCorrectionCode_RowEchelon">Proposition</xref>
       motivates the following definitions.
     </p>
-    <definition>
+    <definition xml:id = "definition_ErrorAndCorrectionCode_InformBits">
+    <!-- {InformBits}  -->
       <statement>
         <p>
-          {InformBits} Let <m>H</m> be a canonical parity-check matrix,
+          Let <m>H</m> be a canonical parity-check matrix,
           and let <m>{\bold x}</m> be a codeword in Null(<m>H</m>).
           Then the first <m>n-k</m> bits of <m>{\bold x}</m> are called
           <term> information bits</term>
@@ -142,7 +144,7 @@
     </p>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Find the canonical parity-check matrix for a code that performs a single even parity check for three information bits (i.e. 3 information bits, 1 check bit).
@@ -191,10 +193,11 @@
       let's begin on our new code generation method.
       First, a definition:
     </p>
-    <definition>
+    <definition xml:id = "definition_ErrorAndCorrectionCode_GeneratorMatrix">
+      <!-- {GeneratorMatrix} -->
       <statement>
         <p>
-          {GeneratorMatrix} With each
+          With each
           <m>k \times n</m> canonical parity-check matrix
           <m>H= (A \mid I_k)</m> we can associate an <m>n \times (n-k)</m>
           <term>standard generator matrix</term>
@@ -322,7 +325,7 @@
           Use the standard generator matrix to compute codewords
           (make a table similar to <xref ref="table_ErrorAndCorrectionCode_generator">Table</xref>),
           and verify that the codewords are in the null space of the canonical parity-check matrix.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <me>
@@ -682,7 +685,7 @@
           Suppose we want to design a code that encodes each of the 128 ASCII characters as a single codeword,
           such that the code also can detect and/or correct single-bit errors.
           We also want codewords to be as short as possible to speed up transmission.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 How many information bits are in each codeword?
@@ -711,7 +714,7 @@
     </exercise>
     <exercise>
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               What is the smallest possible codeword size for a single error-correcting code with 20 information bits per codeword?

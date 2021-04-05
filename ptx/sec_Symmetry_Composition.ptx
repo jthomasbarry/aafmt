@@ -27,7 +27,7 @@
         from left to right.
         Admittedly this is confusing,
         but that's what people call it so what can you do?)
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write the function <m>r_{180}</m> in ordered pair notation.
@@ -151,7 +151,7 @@
   </example>
   <exercise xml:id="exercise_Symmetry_CompSymm">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Write <m>s_h</m> in tableau form,
@@ -212,7 +212,7 @@
       <p>
         With reference to the hexagon in <xref ref="fig_hex60rot">Figure</xref>,
         for the symmetries <m>f</m> and <m>g</m> in parts (a)-(d) below:
-        <ol type="i">
+        <ol label="i">
           <li>
             <p>
               Write the symmetries <m>f</m> and <m>g</m> in tableau form.
@@ -236,7 +236,7 @@
         Note <m>{\var id}</m> denotes the identity symmetry,
         that is the symmetry that leaves all points unchanged.
         Also, all rotations are counterclockwise.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>f=</m> rotation by <m>240^\circ,

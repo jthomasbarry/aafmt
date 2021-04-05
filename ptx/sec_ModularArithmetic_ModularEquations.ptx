@@ -39,7 +39,7 @@
           If they don't add to zero,
           then the device knows it hasn't scanned properly. (Smart little bugger,
           that scanner is!)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that the UPC number 0-50000-30042-6, which appears in <xref ref="groups_figure_3">Figure</xref>,
@@ -117,7 +117,7 @@
           One complication is that <m>d_{10}</m> might have to be a 10 to make the inner product zero;
           in this case,
           the character <sq>X</sq> is used in the last place to represent 10.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 Show that 3-540-96035-X is a valid ISBN-10 code.
@@ -367,7 +367,7 @@
       <statement>
         <p>
           Find all <m>x \in {\mathbb Z}</m> satisfying each of the following equations.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>5 + x \equiv 1 \pmod{ 3}</m>
@@ -488,7 +488,7 @@
     </remark>
     <p>
       In summary, a general method for solving modular equations is:
-      <ol type="1">
+      <ol label="1">
         <li>
           <p>
             Turn the <m>\equiv</m> sign into an <m>=</m> sign using the definition of modular equivalence
@@ -529,7 +529,7 @@
           then you can say
           <q>no solution</q>
           <ndash/> but show why!)
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>9x \equiv 3 \pmod{ 5}</m>
@@ -649,7 +649,7 @@
       <statement>
         <p>
           Find all <m>x \in {\mathbb Z}</m> satisfying each of the following equations.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>112x \equiv 2 \pmod{ 6}</m>

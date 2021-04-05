@@ -57,7 +57,7 @@
       Your simple calculator can't help you with that one!<fn>
       It's true that the fancier graphing calculators can handle it,
       but that's beside the point.
-      </fn> If you try to take the square root of -1, the calculator will choke out <c>ERR OR</c> or some similar message of distress.
+      </fn> If you try to take the square root of -1, the calculator will choke out <c>ERROR</c> or some similar message of distress.
       But why does it do this?
       Doesn't <m>-1</m> have a square root?
     </p>
@@ -161,14 +161,14 @@
       </p>
       <p>
         The proof is by contradiction.
-        Suppose <m>\exists \emph{a} \in \mathbb{R}</m> such that <m>a^{2}=-1</m>
+        Suppose <m>\exists a \in \mathbb{R}</m> such that <m>a^{2}=-1</m>
         (note the symbol
         <q><m>\exists</m></q>
         means
         <q>there exists,</q>
         the symbol <m>\mathbb{R}</m> denotes the real numbers,
         and the expression
-        <q><m>\emph{a} \in \mathbb{R}</m></q>
+        <q><m>a \in \mathbb{R}</m></q>
         means that <m>a</m> is contained in <m>\mathbb{R}</m>,
         that is, <m>a</m> is a real number).
       </p>
@@ -230,17 +230,18 @@
       Based on this observation, we may generalize the notion of
       <q>root</q>:
     </p>
-    <definition>
+    <definition xml:id = "definition_ComplexNumbers_Root">
+    <!-- {root} -->
       <statement>
         <p>
-          {root} Given a function <m>f(x)</m> which is defined on the real numbers and takes real values,
+           Given a function <m>f(x)</m> which is defined on the real numbers and takes real values,
           then a <em>root</em><idx><h>Root</h><h>of a real function</h></idx> of <m>f(x)</m> is any solution of the equation <m>f(x)=0</m>.
         </p>
       </statement>
     </definition>
     <exercise xml:id="exercise_ComplexNumbers_graph">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Sketch the function <m>f(x) = x^2 + 9</m>.
@@ -320,7 +321,7 @@
       The web site http://math.fullerton.edu/mathews/n2003/ComplexNumberOrigin.html gives more information about the origin of complex numbers.
       </fn>
     </p>
-    <definition>
+    <definition xml:id = 'definition_ComplexNumbers_ComplexNumbers'>
       <statement>
         <p>
           The <term>complex numbers</term><idx><h>Complex numbers</h><h>definition</h></idx> are defined as
@@ -377,7 +378,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_1">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Write down the complex number with real part 0 and imaginary part 7.
@@ -421,7 +422,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_m2even">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Fill in the blanks: The product of two odd integers is
@@ -588,7 +589,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_6">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Prove that the cube root of 2 is irrational. (*Hint*)
@@ -652,11 +653,11 @@
       Before giving this lemma, let's be precise about what we mean by
       <q>prime number</q>:
     </p>
-    <definition>
+    <definition xml:id= "definition_ComplexNumbers_PrimeNumber">
+      <!--{PrimeNumber} -->
       <statement>
         <p>
-          {defPrime} A <em>prime number</em>
-              <idx><h>Prime</h><h>definition</h></idx>
+          A <em>prime number</em> <idx><h>Prime</h><h>definition</h></idx>
           is a natural number (i.e. positive integer) bigger than 1 that only has one factor bigger than 1, namely itself.
         </p>
       </statement>
@@ -717,7 +718,7 @@
     </exercise>
     <exercise xml:id="exercise_ComplexNumbers_6aa">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose that <m>a,b,c</m> are integers and <m>(a/b)^2 = c</m>.
@@ -765,7 +766,7 @@
     </p>
     <exercise xml:id="exercise_ComplexNumbers_root3">
       <statement>
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               Suppose that:
@@ -787,8 +788,10 @@
                 </li>
               </ul>
             </p>
-            What can you conclude about <m>n</m>?
-            Make a clear statement and <em>prove</em> your statement. (*Hint*)
+            <p>
+              What can you conclude about <m>n</m>?
+              Make a clear statement and <em>prove</em> your statement. (*Hint*)
+          </p>
           </li>
           <li>
             <p>

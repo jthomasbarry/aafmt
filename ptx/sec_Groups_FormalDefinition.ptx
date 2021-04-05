@@ -16,7 +16,7 @@
   </p>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             What operation is the set <m>{\mathbb Z}_n</m> a group under?
@@ -34,10 +34,11 @@
     The following definition formalizes the notion of
     <q>operation</q>.
   </p>
-  <definition>
+  <definition xml:id = "definition_Groups_groupOp">
+  <!-- {group_op} -->
     <statement>
       <p>
-        {group_op} A <term>binary operation</term>
+         A <term>binary operation</term>
             <idx><h>Binary</h><h>operation</h></idx>
             <idx><h>Operation</h><h>binary</h></idx>
         or <term>law of composition</term><idx><h>Composition</h><h>law of</h></idx>
@@ -84,10 +85,11 @@
     Building on our previous discussion,
     we now proudly present the following formal definition.
   </p>
-  <definition>
+  <definition xml:id = "definition_Groups_groupDefinition">
+  <!-- {groupDefinition}  -->
     <statement>
       <p>
-        {group_definition} A <term>group</term>
+        A <term>group</term>
             <idx><h>Group</h><h>definition</h></idx>
         <m>(G, \circ )</m> is a set <m>G</m> together with a law of composition
         <m>(a,b) \mapsto a \circ b</m> that satisfies the following axioms.
@@ -154,10 +156,11 @@
     One very important class of groups is the commutative groups,
     which are given their own special designation:
   </p>
-  <definition>
+  <definition xml:id = "definition_Groups_abelianGroup">
+  <!-- {abelian_group}  -->
     <statement>
       <p>
-        {abelian_group} A group <m>(G,\circ)</m> with the property that <m>a \circ b = b \circ a</m> for all
+        A group <m>(G,\circ)</m> with the property that <m>a \circ b = b \circ a</m> for all
         <m>a,
         b \in G</m> is called <term>abelian</term>
             <idx><h>Abelian group</h></idx>
@@ -181,10 +184,11 @@
   <p>
     Finally, based on our discussion before about the order of sets, we have:
   </p>
-  <definition>
+  <definition xml:id = "definition_Groups_groupOrder">
+  <!-- {group_order}  -->
     <statement>
       <p>
-        {group_order} A group is <term>finite</term>,
+        A group is <term>finite</term>,
             <idx><h>Group</h><h>finite</h></idx>
         or has <term>finite order</term>,
         if it contains a finite number of elements The <em>order</em>
@@ -204,10 +208,11 @@
     while the integers <m>{\mathbb Z}</m> form an infinite group under addition,
     and we sometimes write <m>|{\mathbb Z}| = \infty</m>.
   </p>
-  <definition>
+  <definition xml:id = 'definition_Groups_trivialGroup'>
+  <!-- {trivial_group}  -->
     <statement>
       <p>
-        {trivial_group} The <term>trivial group</term>,
+        The <term>trivial group</term>,
             <idx><h>Group</h><h>trivial</h></idx>
         consists of the single element <m>e</m>
         (or <m>{\var id}</m>, in our previous notation).
@@ -217,7 +222,7 @@
   <exercise xml:id="exercise_Groups_trivial">
     <statement>
       <p>
-        Prove that the trivial group is in fact a group according to <xref ref="definition_Groups_group_definition">Definition</xref>.
+        Prove that the trivial group is in fact a group according to <xref ref="definition_Groups_groupDefinition">Definition</xref>.
       </p>
     </statement>
   </exercise>

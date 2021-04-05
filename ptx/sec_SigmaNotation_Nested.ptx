@@ -52,7 +52,7 @@
       <p>
         Take the following sigma notation examples and change the formula and final value so that the starting value becomes 0 and the sum maintains the same value.
         Calculate the value of both the listed sum and the resulting sum to show that the value is the same.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\displaystyle{\sum_{i=3}^{7}2i}</m>
@@ -131,7 +131,7 @@
       <p>
         By splitting up the sums and rearranging,
         evaluate the following sums:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\sum_{k=1}^{14} \text{ cis } \left(\frac{6\pi k}{7} \right)</m>
@@ -187,7 +187,7 @@
       <p>
         By following the above argument backwards,
         write the following expressions as a product of sums:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <me>
@@ -275,7 +275,7 @@
         (similar to <xref ref="fig_summation1">Figure</xref>)
         for each of the following sums.
         Then use the grid point diagram as a guide to exchanging the order of summation.
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\displaystyle{\sum_{i=0}^{4}\sum_{j=0}^{8}i}</m>
@@ -318,7 +318,7 @@
   </exercise>
   <exercise xml:id="exercise_SigmaNotation_interchangeSum">
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             Using a grid point diagram,
@@ -352,7 +352,7 @@
   </exercise>
   <exercise>
     <statement>
-      <ol type="a">
+      <ol label="a">
         <li>
           <p>
             In <xref ref="exercise_SigmaNotation_interchangeSum">Exercise</xref>,
@@ -385,7 +385,7 @@
       <p>
         Using exchange of summation and other sum manipulation techniques,
         find the exact values of the following sums:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               <m>\displaystyle{\sum_{i=1}^{9} \sum_{j=1}^{7} i(8-j)}</m>

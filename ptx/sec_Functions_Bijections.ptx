@@ -10,10 +10,11 @@
       <q>especially nice</q>
       functions are both one-to-one and onto.
     </p>
-    <definition>
+    <definition xml:id = "definition_Functions_Bijection">
+      <!-- {Bijection} -->
       <statement>
         <p>
-          {Bijection} A function is a <term>bijection</term>
+           A function is a <term>bijection</term>
           if and only if it is both one-to-one and onto.
               <idx><h>Bijection</h><h>definition of</h></idx>
         </p>
@@ -206,7 +207,7 @@
         <p>
           For each function below,
           either prove that it's a bijection, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="BijectRtoRExer-_5x_2_">
               <p>
                 <m>a:[-3,3] \rightarrow [-20,20], a(x) = 5x+2</m>
@@ -272,7 +273,7 @@
         <p>
           Let <m>a,b \in \mathbb{R}</m>,
           and define <m>f \colon \mathbb{R} \to \mathbb{R}</m> by <m>f(x) = a x + b</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="LinearWhenBijectionExer-not0">
               <p>
                 Show that if <m>a \neq 0</m>,
@@ -316,7 +317,7 @@
           To complete the actual proof,
           we may prove onto and one-to-one separately.
           We may prove the function is onto by proving:
-          <ol type="a">
+          <ol label="a">
             <li>
               <title>(a)</title>
               <p>
@@ -339,7 +340,7 @@
         </p>
         <p>
           To show that <m>f(x)</m> is one-to-one, we will need to show:
-          <ol type="a">
+          <ol label="a">
             <li>
               <title>(c)</title>
               <p>
@@ -389,7 +390,7 @@
         </p>
         <p>
           Prove or disprove:
-          <ol type="a">
+          <ol label="a">
             <li xml:id="OntoCasesExer-fOnto">
               <p>
                 <m>f</m> is onto;
@@ -414,7 +415,7 @@
         </p>
         <p>
           Prove or disprove:
-          <ol type="a">
+          <ol label="a">
             <li xml:id="OntoCasesExer-gNotOnto">
               <p>
                 <m>g</m> is onto;
@@ -456,7 +457,7 @@
         <p>
           For each function,
           either prove that it is a bijection, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li>
               <p>
                 <m>h \colon {\mathbb C}\setminus \{-3\} \to {\mathbb C}\setminus \{0\}</m> defined by <m>h(z) = \dfrac{1}{z+3}</m> .
@@ -504,7 +505,7 @@
         <p>
           For each function,
           either prove that it is a bijection, or prove that it is not.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="modular9">
               <p>
                 <m>g \colon {\mathbb Z}_9 \to {\mathbb Z}_9</m> defined by <m>g(x)= (x \odot 3) \oplus 3</m> .
@@ -548,7 +549,7 @@
       <statement>
         <p>
           Define <m>f \colon \mathbb{N} \times \mathbb{N} \to \mathbb{N}</m> by <m>f(m,n) = m^2 + n - 1</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="NxNBijection-m2_n-onto">
               <p>
                 Prove or disprove: <m>f</m> is onto. (*Hint*)
@@ -572,7 +573,7 @@
       <statement>
         <p>
           Define <m>g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}</m> by <m>g(m,n) = (m + n, m + 2n)</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="NxNBijection-mpmn-notonto1">
               <p>
                 Prove or disprove: <m>g</m> is onto. (*Hint*)
@@ -596,7 +597,7 @@
       <statement>
         <p>
           Define <m>g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}</m> by <m>g(m,n) = (m + n, m - n)</m>.
-          <ol type="a">
+          <ol label="a">
             <li xml:id="NxNBijection-mpmn-notonto">
               <p>
                 *Prove or disprove: <m>g</m> is onto.

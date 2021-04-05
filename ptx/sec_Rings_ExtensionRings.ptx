@@ -7,10 +7,11 @@
     We can also extend a ring into a larger set, called an extension ring.
     We would say that <m>{\mathbb Z}_6</m> is an extension ring of <m>\{0,2,4\}</m>.
   </p>
-  <definition>
+  <definition xml:id = "definition_Rings_extRing">
+  <!-- {ext_ring}  -->
     <statement>
       <p>
-        {ext_ring} If <m>R</m> is a subring of <m>S</m>,
+        If <m>R</m> is a subring of <m>S</m>,
         then we can say that <m>S</m> is an
         <term>extension ring</term> of <m>R</m>.
       </p>
@@ -274,7 +275,7 @@
     <statement>
       <p>
         Find the inverse of <m>1+x</m> in <m>\widehat{{\mathbb Z}}_{2}[x]</m> by the:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               long division method
@@ -293,7 +294,7 @@
     <statement>
       <p>
         Find the inverse of <m>3+2x</m> in <m>\widehat{{\mathbb Z}}_{5}[x]</m> by the:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               long division method
@@ -315,7 +316,7 @@
         <m>(1+2x+3x^2)</m> in <m>\widehat{{\mathbb Z}}_5[x]</m>,
         in <m>\widehat{{\mathbb Z}}_7[x]</m>,
         and in <m>\widehat{{\mathbb Q}}[x]</m> by the:
-        <ol type="a">
+        <ol label="a">
           <li>
             <p>
               long division method
