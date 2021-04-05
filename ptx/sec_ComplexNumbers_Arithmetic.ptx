@@ -538,8 +538,7 @@
               <cell></cell>
             </row>
             <row>
-              <cell>Associative law<idx><h>Associative property</h></idx>
-              </cell>
+              <cell>Associative law<idx><h>Associative property</h></idx></cell>
               <cell><m>n+(m+k)=(n+m)+k</m></cell>
               <cell><m>\frac{n}{m}+(\frac{p}{q}+\frac{j}{k}) = \cdots</m></cell>
               <cell><m>\cdots</m></cell>
@@ -553,8 +552,7 @@
               <cell></cell>
             </row>
             <row>
-              <cell>Commutative law<idx><h>Commutative property</h></idx>
-              </cell>
+              <cell>Commutative law<idx><h>Commutative property</h></idx></cell>
               <cell><m>n+m=m+n</m></cell>
               <cell><m>\cdots</m></cell>
               <cell><m>\cdots</m></cell>
