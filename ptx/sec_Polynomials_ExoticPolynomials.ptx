@@ -185,7 +185,7 @@
             <p>
               Repeat the proof of (b),
               except use general polynomials
-              <m>p(x) = \sum_{j=1}^n a_jx^j</m> and <m>q(x) = \sum_{k=1}^m b_k x^k</m>.
+              <m>p(x) = \sum_{j=0}^J a_jx^j</m> and <m>q(x) = \sum_{k=0}^K b_k x^k</m>.
             </p>
           </li>
         </ol>
