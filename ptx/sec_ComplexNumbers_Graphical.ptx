@@ -124,7 +124,10 @@
           <idx><h>Polar coordinates</h></idx>
           <idx><h>Complex numbers</h><h>polar representation</h></idx>
       The distance <m>r</m> is the absolute value or modulus defined previously, while the angle <m>\theta</m> is called the <em><em>argument</em></em><idx><h>Argument</h><h>of complex number</h></idx>
-      of the complex number <m>z</m>.
+      of the complex number <m>z</m>. Arguments are a little tricky, because a complex number
+	  has more than one argument--infinitely many in fact, because adding any multiple of 
+	  <m>2\pi</m> to an angle doesn't chage the angle's orientation. Typically, when talking about 
+	  the argument of a complex number we prefer the value between 0 and <m>2\pi</m>. 
     </p>
     <figure xml:id="fig_polarcoord">
       <caption>Polar coordinates of a complex number</caption>

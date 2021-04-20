@@ -355,7 +355,8 @@
   </proposition>
   <proof>
     <p>
-      To show right distributivity, we have:
+      We give the steps of the proof of right distributivity, and leave it up to you
+	  to supply the reasons.
       <md>
         <mrow>(q(x)+r(x)) p(x)=\amp \bigg(\sum^{n}_{j=0} b_j x^j +  \sum^{\ell}_{j=0} c_jx^j\bigg)\sum^{m}_{i=0} a_i x^i</mrow>
         <mrow>=\amp \bigg(\sum_{j=0}^{\max(n,\ell)} (b_j + c_j) x^j\bigg)\sum^{m}_{i=0} a_i x^i</mrow>
@@ -369,7 +370,9 @@
         <mrow>=\amp q(x)p(x)+r(x)p(x)</mrow>
       </md>,
       which gives us right distributivity.
-      We'll leave left distributivity up to you:
+      The proof of left distributivity is almost identical, except the sum goes on the right 
+	  instead of the left. Note that both distributivities hold even if multiplication in <m> R</m> is not 
+	  commutative.
     </p>
     <exercise>
       <statement>
