@@ -695,7 +695,10 @@ The proof that $GL_2({\mathbb C})$ is a group is contained in the following exer
 \begin{exercise}{GL2_group}\index{Matrix groups!$GL_2$}\index{Matrices!invertible}
 \begin{enumerate}[(a)]
 \item
-Show that for any matrix $A \in GL_2(\mathbb{C})$, the matrix
+Show that for any matrix $A = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix} \in GL_2(\mathbb{C})$, the matrix
 \[
 B =
 \frac{1}{\det(A)}\begin{pmatrix}
@@ -1660,7 +1663,7 @@ Let $G$ be a group and $a$ be any element in $G$.  Then the set
 \[
 \langle a \rangle  = \{ a^k : k \in {\mathbb Z} \}\label{generatedby}
 \]
-is a subgroup of $G$.  Furthermore, any subgroup of $G$ which contains $a$ must also contain $\langle a \rangle$. 
+is a subgroup of $G$.   
 \end{prop}
  
  \begin{proof}
@@ -1670,8 +1673,6 @@ definition of $\langle a \rangle$ we can write $g = a^m$ and $h = a^n$
 for some integers $m$ and $n$. So $gh = a^m a^n = a^{m+n}$ is again in
 $\langle a \rangle $. Finally, if $g = a^n$ in $\langle a \rangle $,
 then the inverse $g^{-1} = a^{-n}$ is also in $\langle a \rangle $.
-Clearly, any subgroup $H$ of $G$ containing $a$ must contain all the
-powers of $a$ by closure; hence, $H$ contains $\langle a \rangle $.
 \end{proof}
  
 \medskip

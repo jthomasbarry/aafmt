@@ -814,10 +814,10 @@ statements are equivalent.
 The subgroup $N$ is normal in $G$. 
  
 \item
-For all $g \in G$, $gNg^{-1} \subset N$. 
+For all $g \in G, gNg^{-1} \subset N$. 
  
 \item
-For all $g \in G$, $gNg^{-1} = N$.
+For all $g \in G, gNg^{-1} = N$.
  
 \end{enumerate}
 \end{prop}
@@ -848,8 +848,12 @@ $gn = n' g$ or $gN \subset Ng$. Similarly, $Ng \subset gN$.
 
 \begin{defn}{normal_alt}
  Given a group $G$, a subgroup $H \subset G$ is called a 
-\term{normal subgroup}\index{Subgroup!normal} if for every $g \in G$ and for every $h \in H$, we have that $ghg^{-1} \in H$  (alternatively, we can write this condition as: $gHg^{-1} = H$).
+\term{normal subgroup}\index{Subgroup!normal} if for every $g \in G$ and for every $h \in H$, we have that $ghg^{-1} \in H$.
 \end{defn}
+
+\begin{exercise}
+Define the set   $gHg^{-1}$ as follows: $gHg^{-1} = \{ghg^{-1}, h \in H\}$.  Show that Definition~\ref{definition:Cosets:normal_alt} is equivalent to the condition that  $gHg^{-1} = H$.  
+\end{exercise}
 
 \begin{exercise}{ghg-1_prove}
 Prove that Definition~\ref{definition:Cosets:normal_alt} is equivalent to Definition~\ref{definition:Cosets:normal_sub}.
