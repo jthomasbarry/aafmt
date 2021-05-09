@@ -525,7 +525,7 @@ Suppose a third party knows $E_1, E_2, A,$ and $C$. What else would a third part
 \begin{exercise}{}
 \begin{enumerate}[a]
 \item
-Suppose Rachael wants to send a character to Moses.  What information should she send?
+Suppose Rachael wants to send a character $R$ to Moses.  What information should she send to him? Give explicit formulas for this information.
 \item
 What equation should Moses use to decode the information from Rachael?
 \end{enumerate}
@@ -539,7 +539,7 @@ To see how this works in practice, let's consider a simple example (reader bewar
 	  \caption{\label{fig:DH:DHKE_11} Elliptic Curve, $(y^2 = x^3 + 2x + 9)$ in $Z_{37}$ x $Z_{37}$, (from reference (\ref{Kumar}))}
 \end{figure}
 
-In order to encode letters and numbers, we first need to assign different characters to different points on the curve. The table in Figure~\ref{fig:DH:DHKE_17} gives the character assignment that we'll use. Notice the order of points in the table: we start with (5,25), then the second number $(1,30) =(5,25)+(5,25)$, the third number $(21,32)=(5,25)+(5,25)+(5,25)=3(5,25)$, and so on. The information required to create this table is public knowledge, so anyone can duplicate it (for a practical code, the table would be much, much larger and impossible to compute even with the fastest computers) . Note that in the case of a very large modulus, there is no difficulty in assigning a single character to multiple points on the curve, as long as each point has no more than one character assigned to it.
+In order to encode letters and numbers, we first need to assign different characters to different points on the curve. The table in Figure~\ref{fig:DH:DHKE_17} gives the character assignment that we'll use. Notice the order of points in the table: we start with $(5,25)$, then the second number $(1,30) =(5,25)+(5,25)$, the third number $(21,32)=(5,25)+(5,25)+(5,25)=3(5,25)$, and so on. The information required to create this table is public knowledge, so anyone can duplicate it (for a practical code, the table would be much, much larger and impossible to compute even with the fastest computers) . Note that in the case of a very large modulus, there is no difficulty in assigning a single character to multiple points on the curve, as long as each point has no more than one character assigned to it.
 
 \begin{figure}[htbp]
 	   \center{\includegraphics[width=5.25in]
@@ -550,15 +550,15 @@ In order to encode letters and numbers, we first need to assign different charac
 
 \begin{example}{26} Moses will send the message, ``attack" using the code table above. The point $C$ is chosen as $(9,4)$. 
 
-First, Rachael must establish her private and public key (Moses doesn't have to, because he's only sending and not receiving). Rachael chooses $\alpha= 5$, so that $A = 5C = 5(9,4)$. In this simple case, we  may use  the table in Figure~\ref{fig:DH:DHKE_17} to facilitate the calculation of $A$.  Notice that the point $C=(9,4)$ is the $11^{\textrm{th}}$ point in the table (counting $\infty$ as the zeroth point, (5,25) as the first point, (1,30) as the second point, etc). This means that $C = 11(5,25)$, and thus $5C = 5\cdot11(5,25) = 55(5,25)$.  However the point $(5,25)$ generates a cyclic group of order 37, and $\mod(55,37)=18$, so $55(5,25)=18(5,25)$.  The $18^{\textrm{th}}$ entry in the table is (35,21), which is Rachael's public key $A$.
+First, Rachael must establish her private and public key (Moses doesn't have to, because he's only sending and not receiving). Rachael chooses $\alpha= 5$, so that $A = 5C = 5(9,4)$. In this simple case, we  may use  the table in Figure~\ref{fig:DH:DHKE_17} to facilitate the calculation of $A$ (this would be impossible in a practical system--the number of entries in the table would be much larger than the number of atoms in the universe).  Notice that the point $C=(9,4)$ is the $11^{\textrm{th}}$ point in the table (counting $\infty$ as the zeroth point, (5,25) as the first point, $(1,30)$ as the second point, etc). This means that $C = 11(5,25)$, and thus $5C = 5\cdot11(5,25) = 55(5,25)$.  However the point $(5,25)$ generates a cyclic group of order $43$ (note there are $43$ elements in the table in Figure~\ref{fig:DH:DHKE_17}), and $\mod(55,43)=12$, so $55(5,25)=12(5,25)$.  The $12^{\textrm{th}}$ entry in the table is $(2,24)$, which is Rachael's public key $A$.
 
-Now Moses must encrypt his message one character at a time. The first character of ``attack'' is ``a'', which according to the table corresponds to $M=(5,25)$.  Let's suppose that Moses chooses $\gamma = 8$ for this character. We thus obtain:
+Now Moses must encrypt his message one character at a time. The first character of ``attack'' is ``a'', which according to the table corresponds to $M=(5,25)$.  Let's suppose that Moses chooses $\gamma = 7$ for this character. We thus obtain:
 \[
-E_1=\gamma C = 8(9,4)=(33,14)  \text{   and   } 
-E_2 = M +  \gamma A=(5,25) + 8(35,21) = (15,11). 
+E_1=\gamma C = 7(9,4)=(15,11)  \text{   and   } 
+E_2 = M +  \gamma A=(5,25) + 7(2,24) = (5,12). 
 \]
 
-Thus Moses should send the pair of points $(33,14)$ and $(15,11)$ to Rachael. Since $(33,14)$ and $(15,11)$ are the $18^{\textrm{th}}$ and $34^{\textrm{th}}$ entries of the table respectively, it's easier for him simply to send the numbers 18 and 34, because Rachael can easily recover the points from these numbers.
+Thus Moses should send the pair of points $(15,11)$ and $(5,12)$ to Rachael. 
 
 \begin{exercise}{}
 \begin{enumerate}[a]
