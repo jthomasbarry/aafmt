@@ -165,7 +165,7 @@ Thus the remainder when $a$ is divided by $m$ is unique, and the proof is comple
 
 We'll use the notation ``mod($a,m$)'' to indicate the remainder of $a$ when divided by $m$.  This notation  is used in most mathematical software (such as Excel, Matlab, and so on), and it reflects the fact that the remainder is a function of $a$ and $m$. 
 
-\begin{rem} Unlike many  references, we do \emph{not} use the expressions  ``$a \bmod m$'' or ``$a \pmod m$'' to denote the remainder when $a$ is divided by $m$.  In this book we \emph{never} write  ``$a \bmod m$'' or ``$a \pmod m$'' as stand-alone expressions.   In the expression $a \equiv b \pmod n$, the $\pmod n$ refers to the `$\equiv$' and not to the $b$. So it's true that $2 = 17 \pmod 5$, and it's also true that $17 \equiv 2 \pmod{5}$.  
+\begin{rem} Unlike many  references, we do \emph{not} use the expressions  ``$a \bmod m$'' or ``$a \pmod m$'' to denote the remainder when $a$ is divided by $m$.  In this book we \emph{never} write  ``$a \bmod m$'' or ``$a \pmod m$'' as stand-alone expressions.  Here's the reason why.  Suppose for the moment that we do use $17 \pmod 5$ to denote the remainder of 17 mod 5. Then we could write $2 = 17 \pmod 5$, but it would be \emph{false} to write  $17 = 2 \pmod 5$, since 17 is not the remainder of 2 mod 5.    In tthis book  the $\pmod n$ refers to the relation `$\equiv$' and not to the $b$. Thus for us, $2 \equiv 17 \pmod 5$, and  $17 \equiv 2 \pmod{5}$ are both correct.  
 \end{rem}
 
 Now that we know that unique remainders really do always exist, we're in a position to use them in our definition of modular equivalence: 

@@ -169,7 +169,6 @@ Complete the following exercises using the recursive method from Equation~\eqref
 \item Find the 2nd decimal digit of 0.238 base 10
 \item Find the 4th decimal digit of 0.54289 base 10
 \item Find the 3rd decimal digit of 0.7129 base 10
-
 \end{enumerate}
 \end{exercise}
 
@@ -196,12 +195,25 @@ Consider the infinite sequence: $\bmod(10,n)$, $\bmod(10^{2},n)$, $\bmod(10^{3},
 Since $\bmod(10^{k},n)=\bmod(10^{j},n)$, it follows by substitution that
 
 \begin{equation*}
-\bmod(10^{j},n)=\bmod(10^j,n)\odot \bmod(10^{k-j},n)
+\bmod(10^{j},n)=\bmod(10^j,n)\odot \bmod(10^{k-j},n),
 \end{equation*}
-
-Which implies $\bmod(10^{k-j},n)=1$.
+which ``implies'' $\bmod(10^{k-j},n)=1$ (\emph{but see Exercise~\ref{exercise:ModularArithmeticBases:need_inverse}!})
 So if we set $m=k-j$, we have $\bmod(10^{m},n)=1$, and the proof is finished.
 \end{proof}
+
+\begin{exercise} {need_inverse}
+\begin{enumerate}
+\item What is wrong with the following argument?
+\begin{align*}
+16 &= 4 \cdot 4 \\
+\bmod(16,6) &= \bmod(4 \cdot 4,6) \\
+4 &= \bmod(4 ,6) \odot \bmod(4 ,6) \\
+4\odot 1 &= 4 \odot 4  \quad \text{(in mod 6)}\\
+1 &= 4 \quad \text{(in mod 6)}.
+\end{align*}
+\item Explain why the condition $\gcd(n,10)=1$ is required in Proposition~\ref{proposition:ModularArithmeticBases:10power}.
+\end{enumerate}
+\end{exercise}
 
 Proposition~\ref{proposition:ModularArithmeticBases:10power} leads to the following definition:
 
